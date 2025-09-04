@@ -1,0 +1,143 @@
+#You will need to make your own COPY in a new location of the following file:
+#C:\Program Files (x86)\Steam\steamapps\common\BZ2R\bz2r_res\interface    sprite.txt
+# COPY AND PASTE NEW RETICLE DESCRIPTIONS BELOW INTO YOUR OWN sprite.txt file 
+# at the end of it after all the sprites in the default file.
+# Make the sprite.txt into a sprite.stb file.
+# Get the stb maker here: www.bzscrap.org/downloads/Utilities/BZ2/sprite.zip
+# Place your custom .stb file in your CONFIG mod package
+# If you make your own new reticles included in an asset pack, 
+# it would be good if you made a spriteX.txt file like this one 
+# so other modders can use the reticles in your asset pack in their own config mod. 
+# If you don't (or they don't) the weapons with your custom reticles, 
+# will be ugly little white squares and not reticles.
+--------------------------------------------------------
+# first column are custom reticle names
+# second column are custom made reticle images
+# rest are (relative) measurements from your sprite image files.
+# you need to figure those out for yourself.
+--------------------------------------------------------
+
+# Lens Flare  --can't find where this is used in BZCC (not used on lights or active engine flame)
+# Plasma Ball  --can't find where this is used in BZCC (not used on lights or active engine flame) 
+
+# Spark Particle  --sniper dot only in BZCC  --"particle" used for many things so need custom image for default reticle
+"particle.0"		snipecox	0	0	128	128	128	128	0x40220000
+
+# Coxxon REcreated reticles (originally for BZTC)
+# NSDF Cannon Reticles
+"gstbaa"		ar_cann		0	0	32	32	128	128	0x40650000
+"gstbpa"		ar_cann		32	0	32	32	128	128	0x40650000
+"gstbsa"		ar_cann		64	0	32	32	128	128	0x40650000
+"gplasa"		ar_cann		96	0	32	32	128	128	0x40650000
+"gblsta"		ar_cann		0	32	32	32	128	128	0x40650000
+"gmagga.0"		ar_mag		0	0	64	32	128	128	0x40650000
+"gmagga.1"		ar_mag		0	32	64	32	128	128	0x40650000
+"gmagga.2"		ar_mag		0	64	64	32	128	128	0x40650000
+"gmagga.3"		ar_mag		0	96	64	32	128	128	0x40650000
+"gmagga.4"		ar_mag		64	0	64	32	128	128	0x40650000
+"gmagga.5"		ar_mag		64	32	64	32	128	128	0x40650000
+"gmagga.6"		ar_mag		64	64	64	32	128	128	0x40650000
+"gflsha"		ar_cann		96	64	32	32	128	128	0x40650000
+"garcca_c"		ar_cann2	0	0	32	32	128	128	0x40650000
+"garcca_a"		ar_cann2	32	0	32	32	128	128	0x40650000
+"gquila_c"		ar_cann2	64	0	32	32	128	128	0x40650000
+"gfanga_a"		ar_cann2	96	0	32	32	128	128	0x40650000
+"gplasa_c"		ar_cann2	0	32	32	32	128	128	0x40650000
+"gplasa_a"		ar_cann2	32	32	32	32	128	128	0x40650000
+"gsoncs_c"		ar_cann2	64	32	32	32	128	128	0x40650000
+"gsoncs_a"		ar_cann2	96	32	32	32	128	128	0x40650000
+"gbolta"		ar_mort2	64	64	32	32	128	128	0x40650000
+"gnavba"		ar_mort2	96	64	32	32	128	128	0x40650000
+"gbls2a"		ar_rckt2	32	96	48	32	128	128	0x40650000
+
+# NSDF Gun Reticles
+"gminia"		ar_cann		32	32	32	32	128	128	0x40650000
+"gchana"		ar_cann		64	32	32	32	128	128	0x40650000
+"glasea"		ar_cann		96	32	32	32	128	128	0x40650000
+"gpumma"		ar_cann		0	64	32	32	128	128	0x40650000
+"giongs"		ar_cann2	0	64	32	32	128	128	0x40650000
+"glocks"		ar_cann2	96	64	32	32	128	128	0x40650000
+
+# NSDF Hand/Personnel Reticles
+"gsnipa"		ar_cann		32	64	32	32	128	128	0x40650000
+"gstara"		ar_cann		64	64	32	32	128	128	0x40650000
+"gsnips"		ar_cann2	32	64	32	32	128	128	0x40650000
+"gshots"		ar_cann2	64	64	32	32	128	128	0x40650000
+
+# Nsdf Mortar Reticles
+"gmorta"		ar_mort		0	64	64	32	128	128	0x40650000
+"gmdmga.0"		ar_mort		64	64	64	32	128	128	0x40650000
+"gmdmga.1"		ar_mort		64	96	64	32	128	128	0x40650000
+"gsplna"		ar_mort		0	96	64	32	128	128	0x40650000
+"gartla"		ar_mort2	0	0	64	32	128	128	0x40650000
+"gresna"		ar_mort2	0	32	64	32	128	128	0x40650000
+"ggasma"		ar_mort2	0	64	64	32	128	128	0x40650000
+"glocka"		ar_mort2	0	96	64	32	128	128	0x40650000
+"gpopga"		ar_mort2	64	96	64	32	128	128	0x40650000
+
+# NSDF Rocket Reticles	
+"ghorna.0"		ar_horn		0	0	64	32	128	128	0x40650000
+"ghorna.1"		ar_horn		0	32	64	32	128	128	0x40650000
+"ghorna.2"		ar_horn		0	64	64	32	128	128	0x40650000
+"ghorna.3"		ar_horn		0	96	64	32	128	128	0x40650000
+"ghorna.A"		ar_horn		64	0	64	64	128	128	0x40650000
+"ghorna.B"		ar_horn		64	64	64	64	128	128	0x40650000
+"gshdwa.0"		ar_shad		0	0	64	32	128	128	0x40650000
+"gshdwa.1"		ar_shad		0	32	64	32	128	128	0x40650000
+"gshdwa.2"		ar_shad		0	64	64	32	128	128	0x40650000	
+"gshdwa.3"		ar_shad		0	96	64	32	128	128	0x40650000
+"gshdwa.A"		ar_shad		64	0	64	64	128	128	0x40650000
+"gshdwa.B"		ar_shad		64	64	64	64	128	128	0x40650000
+"gcomta.0"		ar_comt		0	0	64	32	128	128	0x40650000
+"gcomta.1"		ar_comt		0	32	64	32	128	128	0x40650000
+"gcomta.2"		ar_comt		0	64	64	32	128	128	0x40650000
+"gcomta.3"		ar_comt		0	96	64	32	128	128	0x40650000
+"gcomta.A"		ar_comt		64	0	64	64	128	128	0x40650000
+"gcomta.B"		ar_comt		64	64	64	64	128	128	0x40650000
+"gtagga.0"		ar_rckt		0	64	64	32	128	128	0x40650000
+"gtagga.1"		ar_rckt		0	96	64	32	128	128	0x40650000
+"gtagga.2"		ar_rckt		64	0	64	32	128	128	0x40650000
+"gsalva"		ar_rckt		0	32	64	32	128	128	0x40650000
+"gfafma"		ar_rckt		0	0	64	32	128	128	0x40650000
+"grckta"		ar_rckt		64	32	64	32	128	128	0x40650000
+"gsanda"		ar_rckt		64	96	64	32	128	128	0x40650000
+"gmulta_c.0"		ar_rckt2	0	0	32	32	128	128	0x40650000
+"gmulta_c.1"		ar_rckt2	0	32	32	32	128	128	0x40650000
+"gmulta_c.2"		ar_rckt2	0	64	32	32	128	128	0x40650000
+"gmulta_c.3"		ar_rckt2	0	96	32	32	128	128	0x40650000
+#added 4 with 5 missiles
+"gmulta_c.4"		ar_rckt2	32	0	32	32	128	128	0x40650000
+"gmlcka_a"		ar_rckt2	32	0	32	32	128	128	0x40650000
+"gstnga_a"		ar_rckt2	32	32	48	32	128	128	0x40650000
+"gstnga_c"		ar_rckt2	32	64	48	32	128	128	0x40650000
+"gwaspa"		ar_mort2	64	32	64	32	128	128	0x40650000
+
+# NSDF Special Reticles
+"gflara"		ar_cann		0	96	32	32	128	128	0x40650000
+"gmcura"		ar_cann		32	96	32	32	128	128	0x40650000
+"gmitsa"		ar_cann		64	96	32	32	128	128	0x40650000
+"gproxa"		ar_cann		96	96	32	32	128	128	0x40650000
+"gflars"		ar_cann2	0	96	32	32	128	128	0x40650000
+"gbolts"		ar_cann2	32	96	32	32	128	128	0x40650000
+"gseeka"		ar_cann2	64	96	32	32	128	128	0x40650000
+"gproxs"		ar_cann2	96	96	32	32	128	128	0x40650000
+"gphana.0"		ar_mort		0	0	32	32	128	128	0x40650000
+"gphana.1"		ar_mort		32	0	32	32	128	128	0x40650000
+"gredfa.0"		ar_mort		64	0	32	32	128	128	0x40650000
+"gredfa.1"		ar_mort		96	0	32	32	128	128	0x40650000
+"ghosta.0"		ar_mort		0	32	32	32	128	128	0x40650000
+"ghosta.1"		ar_mort		32	32	32	32	128	128	0x40650000
+"gsitea.0"		ar_mort		64	32	32	32	128	128	0x40650000
+"gsitea.1"		ar_mort		96	32	32	32	128	128	0x40650000
+"gjaxxa.0"		ar_rckt		64	64	32	32	128	128	0x40650000
+"gjaxxa.1"		ar_rckt		96	64	32	32	128	128	0x40650000
+"gforca.0"		ar_mort		0	32	32	32	128	128	0x40650000
+"gforca.1"		ar_mort		32	32	32	32	128	128	0x40650000
+"gblnka.0"		ar_rckt2	64	0	32	32	128	128	0x40650000
+"gblnka.1"		ar_rckt2	96	0	32	32	128	128	0x40650000
+"gstata.0"		ar_mort2	64	0	32	32	128	128	0x40650000
+"gstata.1"		ar_mort2	96	0	32	32	128	128	0x40650000 
+#ladder center - have reticle, used odf format, works on weapons, but wpnladder doesn't work in game
+"gmortar.L0"		ar_rckt2	128	32	32	8	128	128	0x40220000
+#ladder rungs
+"gmortar.L1"		ar_rckt2	128	40	32	8	128	128	0x40220000

@@ -1,0 +1,20 @@
+
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gquila_c"
+classLabel = "cannon"
+altName = "gquila_c"
+ordName = "oquila_a"
+wpnName = "Fang A"
+fireSound = "chaff01.wav"
+wpnReticle = "gfanga_a"
+wpnCategory = "CANN"
+isAssault = 1
+aiRange = 50
+
+[CannonClass]
+shotDelay = 2.0 // .5/sec
+salvoCount = 15
+salvoDelay = 0.001
+shotVariance = 0.5
+shotAlternate = 0

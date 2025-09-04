@@ -1,0 +1,19 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gstnga_a"
+classLabel = "cannon"
+altName = "gstnga_c"
+ordName = "ostnga_a";
+wpnName = "Swarm Launcher C"
+fireSound = "gmagg06.wav"
+wpnReticle = "gstnga_a"
+wpnCategory = "ROCK"
+isAssault = 1
+aiRange = 100
+
+[CannonClass]
+shotDelay = 3.0
+salvoDelay = 0.1
+salvoCount = 10
+shotVariance = 0.5
+shotAlternate = 1  //Coxxon

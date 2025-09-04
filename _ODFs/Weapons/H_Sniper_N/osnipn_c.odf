@@ -1,0 +1,33 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "osnipn_c"
+classLabel = "bullet"
+shotGeometry = NULL  //"aosnipcox00.fbx"  //
+xplGround = "xbulgnd"
+xplVehicle = "xbulcar"
+xplBuilding = "xbulbld"
+xplPerson = "xpersonbztc"  //rifle
+
+ammoCost = 2
+lifeSpan = 2.0  //rifle  //200.0m  //300.0m
+shotSpeed = 100.0  //rifle  //300.0
+
+damageValue(N) = 10  //Coxxon  //5  //
+damageValue(L) = 6  //Coxxon  //3  //
+damageValue(H) = 4  //coxoxn  //0  //
+
+damageValue(S) = 6  //Coxxon  //3  //
+damageValue(D) = 9  //Coxxon  //5  //
+damageValue(A) = 10  //impact Coxxon  //3  //
+
+renderName = "osnipn_c.tracer"
+
+[tracer]
+renderBase = "draw_tracer"
+textureBlend = "one one modulate"
+textureName = "aotrcrblucox00.tga"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.05
+finishRadius = 0.05
+tracerLength = 2.0

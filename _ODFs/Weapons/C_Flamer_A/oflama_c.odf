@@ -1,0 +1,33 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "oflama_c"
+classLabel = "bullet"
+
+shotGeometry = NULL
+shotRadius = 1.0
+xplGround = "xflmhit"
+xplVehicle = "xflmhit"
+xplBuilding = "xflmhit"
+
+renderName = "oflama_c.puff"
+ammoCost = 1
+lifeSpan = 1.0
+shotSpeed = 50.0
+
+damageValue(N) = 25 // none
+damageValue(L) = 10 // light
+damageValue(H) = 5 // heavy
+
+damageValue(S) = 10  //Coxxon  //10 // standard
+damageValue(D) = 5  //Coxxon  //15 // deflection
+damageValue(A) = 2  //Coxxon  //5 // assault
+
+[Puff]
+renderBase = "draw_twirl"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 128"
+finishColor = "255 255 255 0"
+startRadius = 1.0
+finishRadius = 5.0
+animateTime = 1.0

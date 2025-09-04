@@ -1,0 +1,185 @@
+[GameObjectClass]
+baseName = "sbhqtr"
+classLabel = "jammer"
+geometryName = "sbhqtrcox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "sbhqtrcox00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+collisionRadius = 10.0  //bztc bldg
+scrapCost = 90  //hqtr
+scrapValue = 20
+maxHealth = 3000  //hqtr
+maxAmmo = 0
+unitName = "HQ Tower"  //"Jammer"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+ownsTerrain = 1  //1 if no baseplate faction
+isAssault = 1  //bzcc
+armorClass = H
+//buildSupport = "A"  //hqtr
+//buildRequire = "F"  //hqtr
+isSingle = 1  //hqtr
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+
+buildRequire = "F"
+buildSupport = "A"
+powerCost = 0
+
+/////// REQUIREMENTS ///////////////
+//requireCount = 2
+//requireName1 = "sbtcen"
+//requireText1 = "Build Field Lab"
+//requireName2 = "sbtrain"
+//requireText2 = "Build Barracks"
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "sbhqtr"
+provideName2 = "VIRTUAL_CLASS_JAMMER"
+provideName3 = "base"
+provideName4 = "xbhqtr"
+
+///////// LIGHTS & EFFECTS /////////
+LightsOffEffectsMask = 65535
+lightHard1 = "hp_light_1"
+lightName1 = "omnired8"
+lightHard2 = "hp_light_2"
+lightName2 = "hltred"
+lightHard3 = "hp_light_3"
+lightName3 = "hltred"
+lightHard4 = "hp_light_4"
+lightName4 = "hltred"
+//lightHard5 = "hp_light_5"
+//lightName5 = "omnired5"
+
+//smoke1
+effectHard1 = "hp_smoke_1"
+effectName1 = "dmgbldg1"
+effectMinHealth1 = 0.6
+effectMaxHealth1 = 0.8
+effectHard2 = "hp_smoke_1"
+effectName2 = "dmgbldg2"
+effectMinHealth2 = 0.4
+effectMaxHealth2 = 0.6
+effectHard3 = "hp_smoke_1"
+effectName3 = "dmgbldg3"
+effectMinHealth3 = 0.2
+effectMaxHealth3 = 0.4
+effectHard4 = "hp_smoke_1"
+effectName4 = "dmgbldg4"
+effectMinHealth4 = 0.0
+effectMaxHealth4 = 0.2
+//smoke2
+effectHard5 = "hp_smoke_2"
+effectName5 = "dmgbldg1"
+effectMinHealth5 = 0.6
+effectMaxHealth5 = 0.8
+effectHard6 = "hp_smoke_2"
+effectName6 = "dmgbldg2"
+effectMinHealth6 = 0.4
+effectMaxHealth6 = 0.6
+effectHard7 = "hp_smoke_2"
+effectName7 = "dmgbldg3"
+effectMinHealth7 = 0.2
+effectMaxHealth7 = 0.4
+effectHard8 = "hp_smoke_2"
+effectName8 = "dmgbldg4"
+effectMinHealth8 = 0.0
+effectMaxHealth8 = 0.2
+//smoke3
+effectHard9 = "hp_smoke_3"
+effectName9 = "dmgbldg1"
+effectMinHealth9 = 0.6
+effectMaxHealth9 = 0.8
+effectHard10 = "hp_smoke_3"
+effectName10 = "dmgbldg2"
+effectMinHealth10 = 0.4
+effectMaxHealth10 = 0.6
+effectHard11 = "hp_smoke_3"
+effectName11 = "dmgbldg3"
+effectMinHealth11 = 0.2
+effectMaxHealth11 = 0.4
+effectHard12 = "hp_smoke_3"
+effectName12 = "dmgbldg4"
+effectMinHealth12 = 0.0
+effectMaxHealth12 = 0.2
+//smoke4  //no dmg1
+effectHard13 = "hp_smoke_4"
+effectName13 = "dmgbldg2"
+effectMinHealth13 = 0.4
+effectMaxHealth13 = 0.6
+effectHard14 = "hp_smoke_4"
+effectName14 = "dmgbldg3"
+effectMinHealth14 = 0.2
+effectMaxHealth14 = 0.4
+effectHard15 = "hp_smoke_4"
+effectName15 = "dmgbldg4"
+effectMinHealth15 = 0.0
+effectMaxHealth15 = 0.2
+
+effectHard16 = "hp_emit_1"
+effectName16 = "sbhqtr.wave"  //"sbhqtr.lighting"
+effectFlags16 = "447" //447 on  479 off
+//effectHard16 = "hp_emit_1"  //"hp_emit_2"
+//effectName16 = "sbhqtr.wave"
+//effectFlags16 = "447" //447 on  479 off
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_sbhqtrcox"
+chunkEffect1 = "sbhqtrcoxchk01.fbx"  chunkEffect2 = "sbhqtrcoxchk02.fbx"  chunkEffect3 = "sbhqtrcoxchk03.fbx"  chunkEffect4 = "sbhqtrcoxchk04.fbx"  chunkEffect5 = "sbhqtrcoxchk05.fbx"  HasSeparateChunks = true numChunks = 5numChunks1 = 1numChunks2 = 1numChunks3 = 1numChunks4 = 1numChunks5 = 1
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+[lighting]
+renderBase = "draw_sprite"
+textureName = "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "255 100 0 150"
+startRadius = 2.0
+
+[wave]
+renderBase = "draw_emit"
+emitName = "sbhqtr.ring"
+emitDelay = 0.2
+emitVelocity = "0.0 -5.0 0.0"
+emitVariance = "0.5 0.5 0.5"
+
+[ring]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_wave"
+textureName = "wave.tga"
+textureBlend = "one one modulate"
+startColor = "255 50 0 200"
+finishColor = "255 0 0 255"
+startRadius = 1.5
+finishRadius = 0.05
+animateTime = 1.0
+waveAngle = 3.14159265359
+waveDepth = 2.0
+waveColorCenter = "255 255 255 255"
+waveColorEdge = "255 255 255 255"
+waveSegments = 32  //64
+maxCount = 128  //256
+
+////////////////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "abhqcpe0.wav"
+//bldEdge = "wwww"  //bldg
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+////////////////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 100
+
+////////////////////////////////////////////////////////////////////////
+[JammerTowerClass]
+jammerRange = 150.0  //200.0  //hqtr

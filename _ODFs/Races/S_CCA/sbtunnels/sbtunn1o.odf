@@ -1,0 +1,30 @@
+//tunnel - full 32m x 32m area
+[GameObjectClass]
+baseName = "sbtunn1o"
+classLabel = "i76building"
+geometryName = "sbtunncox1o.fbx"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+unitName = "open sides"
+heatSignature = 1.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 1.0  //bztc vehc
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+ownsTerrain = 1
+//bah AlignTerrainReplaceType = 5  //0-5  //tunnel
+AllowSeismic = 0
+
+[BuildingClass]
+CanDemolish = false
+tunnelCount = 1
+
+tunnel01X0 = 0
+tunnel01Z0 = 0
+tunnel01DX = 4
+tunnel01DZ = 4
+tunnel01Edge = "ffff"

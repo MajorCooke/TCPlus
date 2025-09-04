@@ -1,0 +1,121 @@
+/////////Coxxon - BZTC/////////
+// Special for RS13
+[GameObjectClass]
+baseName = "kbsilodw13"
+classLabel = "silo"
+geometryName = "kbsilocox01.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "kbsilocox01.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = 1
+scrapCost = 40
+scrapValue = 20
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Hi-Capacity Silo"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 10.0  //bztc bldg
+isAssault = 1  //bztc
+canInteract = 1 // for missile lock
+armorClass = H
+ownsTerrain = 1  //1 if no baseplate faction
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+AllowMDMCollisionDetonation = 1  //Coxxon
+buildSupport = "A"
+buildRequire = "F"
+powerCost = 0
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+provideName1 = "kbsilodw13"
+provideName2 = "VIRTUAL_CLASS_SILO"
+provideName3 = "VIRTUAL_CLASS_STORAGE"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "xpl_crash_kbsilocox"  //"x_bztc_bld"
+//xplcrash = "xpl_crash_kbsilocox"
+
+//chunkEffect1 = "kbsilocoxchk01.fbx"  
+//chunkEffect2 = "kbsilocoxchk02.fbx"  
+//chunkEffect3 = "kbsilocoxchk03.fbx"  
+//chunkEffect4 = "kbsilocoxchk04.fbx"  
+//chunkEffect5 = "kbsilocoxchk05.fbx"  
+//HasSeparateChunks = true 
+//numChunks = 5
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+/////////LIGHTS AND EFFECTS/////////
+effectHard1 = "hp_emit_1"
+effectName1 = "vfxbztclight.blueblink"
+effectHard2 = "hp_emit_2"
+effectName2 = "vfxbztclight.blueblink"
+effectHard3 = "hp_emit_3"
+effectName3 = "vfxbztcbldgs.scavsmoke"
+effectHard4 = "hp_emit_4"
+effectName4 = "vfxbztcbldgs.scavsmoke"
+effectHard5 = "hp_emit_5"
+effectName5 = "vfxbztcbldgs.scavsmoke"
+effectHard6 = "hp_emit_6"
+effectName6 = "vfxbztcbldgs.scavsmoke"
+effectHard7 = "hp_emit_7"
+effectName7 = "vfxbztcbldgs.scavsmoke"
+effectHard8 = "hp_emit_8"
+effectName8 = "vfxbztcbldgs.scavsmoke"
+effectHard9 = "hp_emit_9"
+effectName9 = "vfxbztcbldgs.scavsmoke"
+effectHard10 = "hp_emit_10"
+effectName10 = "vfxbztcbldgs.scavsmoke"
+
+//smoke1
+effectHard11 = "hp_smoke_1"
+effectName11 = "dmgbldg2"
+effectMinHealth11 = 0.6
+effectMaxHealth11 = 0.8
+effectHard12 = "hp_smoke_1"
+effectName12 = "dmgbldg3"
+effectMinHealth12 = 0.4
+effectMaxHealth12 = 0.6
+effectHard13 = "hp_smoke_1"
+effectName13 = "dmgbldg4"
+effectMinHealth13 = 0.0
+effectMaxHealth13 = 0.4
+//smoke2
+effectHard14 = "hp_smoke_2"
+effectName14 = "dmgbldg2"
+effectMinHealth14 = 0.6
+effectMaxHealth14 = 0.8
+effectHard15 = "hp_smoke_2"
+effectName15 = "dmgbldg3"
+effectMinHealth15 = 0.4
+effectMaxHealth15 = 0.6
+effectHard16 = "hp_smoke_2"
+effectName16 = "dmgbldg4"
+effectMinHealth16 = 0.0
+effectMaxHealth16 = 0.4
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "absiloe0.wav"
+//bldEdge = "wwww"  //bldg
+
+///////// EXPLOSION AID /////////
+UseCollapse = false
+UseChunks = false  //for deployed scavs  //true
+UseExplosion = true
+
+////////////////////////////////////////////////////////////////
+[SiloClass]
+initDelay = 2.0  //1e6
+scrapDelay = 3.0 //1e6
+scrapHold = 50
+detectRange = 100

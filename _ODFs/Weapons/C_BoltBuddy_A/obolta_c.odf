@@ -1,0 +1,57 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "gbolta_c"
+classLabel = "beam"
+
+shotGeometry = NULL
+xplGround = "xboltgnd"
+xplVehicle = "xboltcar"
+xplBuilding = "xboltbld"
+
+ammoCost = 11
+lifeSpan = 100e-3  //6
+shotSpeed = 1e3  //6
+//lower damage since instahit
+damageValue(N) = 100  //Coxxon  //130 // none
+damageValue(L) = 90  //Coxxon  //120 // light
+damageValue(H) = 70  //Coxxon  //100 // heavy
+
+damageValue(S) = 90  //Coxxon  //120 // standard
+damageValue(D) = 100 //Coxxon  //100 // deflection
+damageValue(A) = 70  //Coxxon  //130 // absorption
+
+renderName = "obolta_c.render"
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "obolta_c.core"
+renderName2 = "obolta_c.bolt"
+renderName3 = "obolta_c.bolt"
+renderName4 = "obolta_c.bolt"
+
+[Core]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "0 255 255 0"
+startRadius = 0.5
+finishRadius = 0.3
+segmentLength = 2.0
+segmentVariance = "0.5 0.5 0.5"
+animateTime = 0.2
+textureRate = 0.01
+
+[Bolt]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "50 150 255 255"  //"0 255 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.3
+finishRadius = 0.1  //0.2
+segmentLength = 2.0
+segmentVariance = "1.0 1.0 0.5"
+animateTime = 0.3
+textureRate = 0.01

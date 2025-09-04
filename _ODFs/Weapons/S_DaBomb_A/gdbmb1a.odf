@@ -1,0 +1,18 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "gdbmb1a"
+classLabel = "satchel"
+geometryName = "dorelc02.fbx"
+geometryScale = 1.0
+scrapCost = 0
+scrapValue = 0
+maxHealth = 1000
+maxAmmo = 1
+unitName = "Da Bomb!"
+explosionName = "xbmbxpl"
+
+[BuildingClass]
+
+[MineClass]
+lifeSpan = 30.0
+xplBlast = "xdabomb"

@@ -1,0 +1,207 @@
+/////////Coxxon - BZTC/////////
+//specail arkin AOC tug
+[GameObjectClass]
+baseName = "nvark0"
+classLabel = "tug"
+geometryName = "nvarkncox00.fbx"
+cockpitName = "nvarkncox_cockpit.fbx"
+animCount = 3
+animName1 = "forward"
+animFile1 = "nvarkncoxsf.fbx"
+animName2 = "neutral"
+animFile2 = "nvarkncoxsn.fbx"
+animName3 = "reverse"
+animFile3 = "nvarkncoxsr.fbx"
+scrapValue = 40
+scrapCost = 85
+buildTime = 10.0
+maxHealth = 8000  //nvark
+addHealth = 100  //nvark
+maxAmmo = 5000
+addAmmo = 40
+unitName = "AOC-NX tug"
+//unitIcon = "icon_nvark0.tga"
+//unitStatus = "wire_nvark0.tga"
+//infoName = "nvark1.inf"  //or baseName, or provide name
+aiName = "TugFriend"
+aiName2 = "TugFriend"
+heatSignature = 0.1
+imageSignature = 2.0
+radarSignature = 2.0
+isAssault = 1  //bztc
+armorClass = H
+boxCollide = 1
+needPilot = 1  //tug
+addPilot = 1  //tug
+//collisionRadius = 1.0  //bzcc vehc
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 2
+provideName1 = "nvark0"
+provideName2 = "VIRTUAL_CLASS_TUG"
+
+//stasis shield
+weaponHard5 = "HP_SHIELD"
+weaponName5 = "gsldsa"
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltwbl"
+lightHard2 = "hp_light_2"
+lightName2 = "omniwyl2"  
+LightsOnlyWhenPiloted = true
+
+effectHard1 = "hp_dust_1"
+effectName1 = "vfxbztcdusts.dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0
+effectMinVelocity1 = 10.0
+effectMaxVelocity1 = 500.0
+effectHard2 = "hp_dust_2"
+effectName2 = "vfxbztcdusts.dusttrail"
+effectMinAltitude2 = 0.0
+effectMaxAltitude2 = 5.0
+effectMinVelocity2 = 10.0
+effectMaxVelocity2 = 500.0
+effectHard3 = "hp_dust_0" 
+effectName3 = "vfxbztcdusts.dustpuff"
+effectMinAltitude3 = 0.0
+effectMaxAltitude3 = 4.0  //20.0  //
+effectMinVelocity3 = 0.0
+effectMaxVelocity3 = 10.0
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "hp_smoke_1"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "hp_smoke_1"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "hp_smoke_1"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "hp_smoke_1"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+//////////////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 300.0
+periodScan = 5.0
+velocJam = 5.0
+braccelFactor = 0.05
+strafeFactor = 0.1
+steerFactor = 1.0
+omegaFactor = 0.2
+velFactor = 0.2
+//avoidSpeed = 20
+//topSpeed = 30
+canRescue = 1  //tug
+canSnipe = 1  //tug
+//NavIsDropped = true //drop behind - bugged, immed removes nav/camr in MP/MPI
+//NavDropSound = "gprox00.wav"  //sound if navisdropped true
+NavConfig = "apcamra" //specify nav beacon/camera type
+AllowedControlsWhenTugged = 31  //7dflt Sumup: 1hop 2bail 4wcycle 8steer 16weapuse
+engageRange = 120
+//RetargetOnStrafe = true  //tnk
+attackTask = "MortarBikeAttack"  //"AssaultTankAttack"
+subattackTask = "MortarBikeSubAttack"  //"SupportSubAttack"
+subAttackClass = "ANS" //target:Air/grouNd attack:Deploy/Normal range:weaponS/eNgage 
+//attackTaskUsesGroups = false  //Coxxon
+GoToTaskHasLeader = false  //Coxxon
+damageEffect1 = "dmgvhcl1"  //less stock dmg effect
+damageEffect2 = "dmgvhcl1"  //but still some sparks
+damageEffect3 = "dmgvhcl1"  //also lower visibility
+damageEffect4 = "dmgvhcl1"  //on cloaked units
+
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_nvark0cox"
+
+//chunkEffect1 = "nvarkncoxchk01.fbx"  
+//chunkEffect2 = "nvarkncoxchk02.fbx"
+//chunkEffect3 = "nvarkncoxchk03.fbx"
+//chunkEffect4 = "nvarkncoxchk04.fbx"
+//chunkEffect5 = "nvarkncoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 6
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 2
+//numChunks4 = 1
+//numChunks5 = 1
+
+/////////MESSAGES/////////
+selectWaitMsg = "avhaulve.wav"  //hauler here  //"avhaulv0.wav"  //ready to go ORIG
+selectAttackMsg = "avhaulvb.wav"  //hauling cargo  //"avhaulv1.wav"  //loading up  //"avhaulv0.wav"  //ready to go
+selectGoMsg = "avhaulvc.wav"  //in transit
+selectOtherMsg = "avhaulve.wav"  //hauler here
+goMsg = "avhaulvc.wav"  //in transit
+goObjectMsg = "avhaulv5.wav"  //Keep your pants on
+attackMsg = "avhaulvb.wav"  //hauling cargo  //"avhaulv2.wav"  //dropping cargo
+followMeMsg = "avhaulv3.wav"  //following
+followMsg = "avhaulv3.wav"  //following
+selectFollowMsg = "avhaulv3.wav"  //following
+repairMsg = "avhaulv4.wav"  //i guess that too
+reloadMsg = "avhaulv5.wav"  //yes sir
+rescueMsg = "avhaulv5.wav"  //Keep your pants on
+recycleMsg = "avhaulv6.wav"  //out with the old aaa
+otherMsg = "avhaulvd.wav"  //yes sir
+user1Msg = "avhaulve.wav"  //hauler here
+killedMsg = "avhaulve.wav"  //hauler here  //"avhaulvb.wav"  //hauling cargo
+selectPickupMsg = "avhaulv1.wav"  //loading up
+selectDropoffMsg = "avhaulv2.wav"  //dropping cargo
+PickupMsg = "avhaulv1.wav"  //loading up
+DropoffMsg = "avhaulv2.wav"  //dropping cargo
+selectCarryMsg = "avhaulvb.wav"  //hauling cargo
+//diedMsg = "abetty1.wav"  //unit lost
+
+BailSound = "bail.wav"
+CollideTerrainSound = "vnvcs1.wav"
+CollideBldgSound = "vnvcs3.wav"
+CollideOtherSound = "vvcre2.wav"  //"vvcbb3.wav"
+
+////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+setAltitude = 1.0  
+accelDragStop = 20.0
+accelDragFull = 1.0
+alphaTrack = 20.0
+alphaDamp = 5.0
+pitchPitch = 0.25
+pitchThrust = 0.1
+rollStrafe = 0.1
+rollSteer = 0.1
+velocForward = 20.0
+velocReverse = 15.0
+velocStrafe = 15.0
+accelThrust = 20.0
+accelBrake = 75.0
+omegaSpin = 3.5
+omegaTurn = 1.5
+alphaSteer = 5.0
+accelJump = 20.0
+
+soundThrust =  "avhaule3.wav"  //"iengf.wav"
+soundJump = "avhaule5.wav"  //"avrckte1.wav"
+
+////////////////////////////////////////////////////////////////
+[TugClass]
+dockSpeed = 4.0
+fieldRadius = 25.0  //lrger works better  20.0  //tug
+fieldOffset = -12.0  //put cargo up front
+accelCenter = 0.0
+accelEdge = -200.0
+accelDrag = 10.0
+alphaDamp = 5.0
+alphaTrack = 15.0
+UseLiftSpring = true  //tug 1 to adjust CargoLiftSpring
+CargoLiftSpring = 10.0  //tug 10def -  only if ULS is true
+RotateWithTug = true  //tug
+soundDeploy = "avhaule0.wav"  //pickup sound?  //"trdeploy.wav"
+soundUndeploy = "avhaule0.wav"  //pickup sound?  //"trundepl.wav"

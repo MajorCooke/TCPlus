@@ -1,0 +1,59 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "poolbztc"
+classLabel = "deposit"
+geometryName = "poolbztccox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "poolbztccox00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+scrapCost = 0
+scrapValue = 0
+maxHealth = 20
+maxAmmo = 0
+unitName = "bio-metal pool"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+collisionRadius = 1.0
+AllowUndergroundSpawn = true
+hitType = "G"
+
+/////// PROVIDES ///////////////////
+provideCount = 2
+provideName1 = "biometal"
+provideName2 = "poolbztc"
+
+///////// LIGHTS & EFFECTS /////////
+//lightHard1 = "hp_light_1"
+//lightName1 = "omniwbl16"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "poolbztc.steam"
+
+[steam]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "150 150 200 200"  //Coxxon  //"153 153 200 150"
+finishColor = "76 76 100 0"
+startRadius = 5.5
+finishRadius = 8.0
+animateTime = 1.0
+emitDelay = 0.05  //Coxxon  //0.1
+emitVelocity = "0.5 20.0 0.5"  //Coxxon  //"0.5 10.0 0.5"
+emitVariance = "15.0 1.0 15.0"  //Coxxon  //"10.0 1.0 10.0"
+emitLife = 1.0
+
+////////////////////////////////////////////////////////////////////////
+[BuildingClass]
+tunnelCount = 1
+tunnel01X0 = 1
+tunnel01Z0 = 1
+tunnel01DX = 2
+tunnel01DZ = 2
+tunnel01Edge = "tttt"
+
+////////////////////////////////////////////////////////////////////////
+[DepositClass]

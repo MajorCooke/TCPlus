@@ -1,0 +1,27 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "osnipa_a"
+classLabel = "snipershell"
+
+shotGeometry = NULL
+
+xplGround = "xbulgnd"
+xplVehicle = "xbulcar"
+xplBuilding = "xbulbld"
+xplPerson = "xpersonbztc"  //rifle
+
+ammoCost = 1  //snipe  //100
+lifeSpan = 300e-6  // 300m   //snipe  
+shotSpeed = 1e6  //snipe
+
+damageValue(N) = 200  //snipe  //100
+damageValue(L) = 50  //snipe
+damageValue(H) = 0  //snipe
+
+damageValue(S) = 50  //snipe
+damageValue(D) = 0  //snipe
+damageValue(A) = 200  //snipe  //100
+
+[SniperShellClass]
+killRadius = 0.5
+killLength = 15.0

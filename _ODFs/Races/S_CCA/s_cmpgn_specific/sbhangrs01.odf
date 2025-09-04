@@ -1,0 +1,138 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "sbhang"
+geometryName = "sbhangcox00.fbx"
+classLabel = "supplydepot"
+collisionRadius = 10.0  //bztc bldg
+scrapCost = 50
+scrapValue = 10
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Hangar"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+ownsTerrain = 1  //1 if no baseplate faction
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+
+/////// REQUIREMENTS ///////////////
+requireCount = 1
+requireName1 = "sbfact"
+requireText1 = "Build Factory"
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+
+provideName5 = "sbsbayrs01"
+
+///////// LIGHTS & EFFECTS /////////
+effectHard1 = "hp_emit_1"
+effectName1 = "vfxbztclight.redblink"
+effectFlags1 = "447" //447 on  479 off
+effectHard2 = "hp_emit_2"
+effectName2 = "vfxbztclight.redblink"
+effectFlags2 = "447" //447 on  479 off
+effectHard3 = "hp_emit_3"
+effectName3 = "vfxbztclight.redblink"
+effectFlags3 = "447" //447 on  479 off
+effectHard4 = "hp_emit_4"
+effectName4 = "vfxbztclight.redblink"
+effectFlags4 = "447" //447 on  479 off
+//smoke1
+effectHard5 = "hp_smoke_1"
+effectName5 = "dmgbldg2"
+effectMinHealth5 = 0.6
+effectMaxHealth5 = 0.8
+effectHard6 = "hp_smoke_1"
+effectName6 = "dmgbldg3"
+effectMinHealth6 = 0.4
+effectMaxHealth6 = 0.6
+effectHard7 = "hp_smoke_1"
+effectName7 = "dmgbldg4"
+effectMinHealth7 = 0.0
+effectMaxHealth7 = 0.4
+//smoke2
+effectHard8 = "hp_smoke_2"
+effectName8 = "dmgbldg2"
+effectMinHealth8 = 0.6
+effectMaxHealth8 = 0.8
+effectHard9 = "hp_smoke_2"
+effectName9 = "dmgbldg3"
+effectMinHealth9 = 0.4
+effectMaxHealth9 = 0.6
+effectHard10 = "hp_smoke_2"
+effectName10 = "dmgbldg4"
+effectMinHealth10 = 0.0
+effectMaxHealth10 = 0.4
+//smoke3
+effectHard11 = "hp_smoke_3"
+effectName11 = "dmgbldg2"
+effectMinHealth11 = 0.6
+effectMaxHealth11 = 0.8
+effectHard12 = "hp_smoke_3"
+effectName12 = "dmgbldg3"
+effectMinHealth12 = 0.4
+effectMaxHealth12 = 0.6
+effectHard13 = "hp_smoke_3"
+effectName13 = "dmgbldg4"
+effectMinHealth13 = 0.0
+effectMaxHealth13 = 0.4
+//smoke4
+effectHard14 = "hp_smoke_4"
+effectName14 = "dmgbldg2"
+effectMinHealth14 = 0.6
+effectMaxHealth14 = 0.8
+effectHard15 = "hp_smoke_4"
+effectName15 = "dmgbldg3"
+effectMinHealth15 = 0.4
+effectMaxHealth15 = 0.6
+effectHard16 = "hp_smoke_4"
+effectName16 = "dmgbldg4"
+effectMinHealth16 = 0.0
+effectMaxHealth16 = 0.4
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_sbhangcox"
+chunkEffect1 = "sbhangcoxchk01.fbx"  
+chunkEffect2 = "sbhangcoxchk02.fbx"  
+chunkEffect3 = "sbhangcoxchk03.fbx"  
+chunkEffect4 = "sbhangcoxchk04.fbx"  
+chunkEffect5 = "sbhangcoxchk05.fbx"  
+HasSeparateChunks = true 
+numChunks = 5
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 1
+numChunks5 = 1
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 100
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "sbhange0.wav"  //"iarm01.wav"
+//bldEdge = "wwww"  //bldg
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg
+UseChunks = true  //bldg
+UseExplosion = true  //bldg
+
+///////////////////////////////////////////////////////////////
+[SupplyDepotClass]
+supplyRange = 48.0  //since no tunnel
+supplyRate = 150.0
+ServiceParallel = 1  //Coxxon
+supplySound = "abhange2.wav"
+
+// Individual classification tweakers
+serviceSTs = 1
+serviceCraft = 1
+serviceBuildings = 0
+servicePilots = 1
+serviceOther = 0

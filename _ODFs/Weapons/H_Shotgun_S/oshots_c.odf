@@ -1,0 +1,29 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "oshots_c"
+classLabel = "bullet"
+shotGeometry = NULL
+xplGround = "xbulgnd"
+xplVehicle = "xbulcar"
+xplBuilding = "xbulbld"
+renderName = "oshots_c.render"
+
+ammoCost = 1
+lifeSpan = 1.0
+shotSpeed = 105.0  //Coxxon  //150.0
+damageValue(N) = 10
+damageValue(L) = 5
+damageValue(H) = 2
+damageValue(S) = 5
+damageValue(D) = 2
+damageValue(A) = 10
+
+[Render]
+renderBase = "draw_twirl"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 127 0 127"
+finishColor = "255 127 0 127"
+startRadius = 0.1
+finishRadius = 0.1
+animateTime = 1.0

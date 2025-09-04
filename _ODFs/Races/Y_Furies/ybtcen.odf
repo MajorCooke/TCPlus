@@ -1,0 +1,169 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "ybtcen"
+classLabel = "techcenter"
+geometryName = "ybtcencox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "ybtcencox00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+scrapCost = 80
+scrapValue = 30
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Field Lab"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 10.0  //bztc bldg
+isAssault = 1  //bztc
+isSingle = 1
+armorClass = H
+ownsTerrain = 1  //1 if no baseplate faction
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+
+/////// REQUIREMENTS ///////////////
+requireCount = 2
+requireName1 = "ybarmo"
+requireText1 = "Build Armory"
+requireName2 = "ybsbay"
+requireText2 = "Build Supply Hangar"
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "ybtcen"
+provideName2 = "VIRTUAL_CLASS_TECHCENTER"
+provideName3 = "base"
+provideName4 = "xbtcen"
+
+///////// LIGHTS & EFFECTS /////////
+LightsOffEffectsMask = 65535
+lightHard1 = "hp_light_1"
+lightName1 = "omnifbl8"
+lightHard2 = "hp_light_2"
+lightName2 = "omnifbl8"
+lightHard3 = "hp_light_3"
+lightName3 = "omnifbl5"
+lightHard4 = "hp_light_4"
+lightName4 = "omnifbl5"
+
+//smoke1
+effectHard1 = "hp_smoke_1"
+effectName1 = "dmgbldg1"
+effectMinHealth1 = 0.6
+effectMaxHealth1 = 0.8
+effectHard2 = "hp_smoke_1"
+effectName2 = "dmgbldg2"
+effectMinHealth2 = 0.4
+effectMaxHealth2 = 0.6
+effectHard3 = "hp_smoke_1"
+effectName3 = "dmgbldg3"
+effectMinHealth3 = 0.2
+effectMaxHealth3 = 0.4
+effectHard4 = "hp_smoke_1"
+effectName4 = "dmgbldg4"
+effectMinHealth4 = 0.0
+effectMaxHealth4 = 0.2
+//smoke2
+effectHard5 = "hp_smoke_2"
+effectName5 = "dmgbldg1"
+effectMinHealth5 = 0.6
+effectMaxHealth5 = 0.8
+effectHard6 = "hp_smoke_2"
+effectName6 = "dmgbldg2"
+effectMinHealth6 = 0.4
+effectMaxHealth6 = 0.6
+effectHard7 = "hp_smoke_2"
+effectName7 = "dmgbldg3"
+effectMinHealth7 = 0.2
+effectMaxHealth7 = 0.4
+effectHard8 = "hp_smoke_2"
+effectName8 = "dmgbldg4"
+effectMinHealth8 = 0.0
+effectMaxHealth8 = 0.2
+//smoke3
+effectHard9 = "hp_smoke_3"
+effectName9 = "dmgbldg1"
+effectMinHealth9 = 0.6
+effectMaxHealth9 = 0.8
+effectHard10 = "hp_smoke_3"
+effectName10 = "dmgbldg2"
+effectMinHealth10 = 0.4
+effectMaxHealth10 = 0.6
+effectHard11 = "hp_smoke_3"
+effectName11 = "dmgbldg3"
+effectMinHealth11 = 0.2
+effectMaxHealth11 = 0.4
+effectHard12 = "hp_smoke_3"
+effectName12 = "dmgbldg4"
+effectMinHealth12 = 0.0
+effectMaxHealth12 = 0.2
+
+effectHard13 = "hp_emit_1"
+effectName13 = "ybtcen.pulse"
+effectFlags13 = "447" //447 on  479 off
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_ybtcencox"
+chunkEffect1 = "ybtcencoxchk01.fbx"  
+chunkEffect2 = "ybtcencoxchk02.fbx"  
+chunkEffect3 = "ybtcencoxchk03.fbx"  
+chunkEffect4 = "ybtcencoxchk04.fbx"  
+chunkEffect5 = "ybtcencoxchk05.fbx"  
+HasSeparateChunks = true 
+numChunks = 8
+numChunks1 = 4
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 1
+numChunks5 = 1
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+[pulse]
+renderBase = "draw_emit"
+emitName = "ybtcen.ring"
+emitDelay = 0.1
+emitVelocity = "0.0 15.0 0.0"
+emitVariance = "0.5 0.5 0.5"
+
+[ring]
+simulateBase = "sim_smoke"
+renderBase = "draw_wave"
+textureName = "wave.tga"
+textureBlend = "one one modulate"
+startColor = "200 200 255 100"
+finishColor = "0 0 255 200"
+startRadius = 2.0
+finishRadius = 0.5
+lifeTime = 1.0
+animateTime = 1.0
+waveAngle = 3.14159265359
+waveDepth = 1.0
+waveColorCenter = "0 255 255 255"
+waveColorEdge = "0 0 255 255"
+waveSegments = 32
+maxCount = 128
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "iabomb01.wav"  //"pow_done.wav"  //
+//bldEdge = "wwww"  //bldg
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 100
+
+//powerTap1 = "HP_TAP_1"
+//powerName = "ybnstg"
+//detectRange = 100
+//PoweredByTaps = false  //false - trad power and nonpower addon
+//AutoBuildTap1 = true  //true build tap on init creation
+//DestroyTapsWithParent = true  //true default

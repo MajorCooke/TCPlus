@@ -1,0 +1,43 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gbazok_c"
+classLabel = "cannon"
+
+// external geometry
+geometryName = "kgbazoocox_skel.fbx"
+//geometryScale = 0.12
+animCount = 4
+animName1 = "stand"
+animFile1 = "kgbazoocox_skel.fbx"
+animName2 = "walk"
+animFile2 = "kgbazoocox_skel.fbx"
+animName3 = "crouch"
+animFile3 = "kgbazoocox_skel.fbx"
+animName4 = "jump"
+animFile4 = "kgbazoocox_skel.fbx"
+
+// cockpit geometry
+cockpitName = "kwbazoocox_cockpit_skel.fbx"
+//cockpitScale = 0.12
+animCountCockpit = 4
+animNameCockpit1 = "stand"
+animFileCockpit1 = "kwbazoocox_cockpit_skel.fbx"
+animNameCockpit2 = "walk"
+animFileCockpit2 = "kwbazoocox_cockpit_walk.fbx"
+animNameCockpit3 = "crouch"
+animFileCockpit3 = "kwbazoocox_cockpit_crch.fbx"
+animNameCockpit4 = "jump"
+animFileCockpit4 = "kwbazoocox_cockpit_skel.fbx"
+
+ordName = "obazok_c"
+wpnName = "Bazooka C"
+fireSound = "fmiss01.wav"
+wpnReticle = "gstara"
+wpnCategory = "HAND"
+isAssault = 0
+isFlying = 1
+altName = "gbazok_a"
+
+[CannonClass]
+shotDelay = 2.0  //1.5
+

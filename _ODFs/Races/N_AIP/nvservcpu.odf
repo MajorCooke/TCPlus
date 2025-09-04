@@ -1,0 +1,21 @@
+/////////Coxxon - BZTC/////////
+//MADE INTO A HOVER SERVICE - SEE SERVICEH/SERVICEHPROCESS/SERVICETRUCKH
+[GameObjectClass]
+baseName = "nvservcpu"
+classLabel = "nvserv"
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+provideName4 = "nvservcpu"
+
+///////////////////////////////////////////////////////////////
+[CraftClass]
+
+//////////////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+
+/////////////////////////////////////////////////////////////
+[ServiceTruckH]
+// Individual classification tweakers
+serviceSTs = 1
+serviceBuildings = 1

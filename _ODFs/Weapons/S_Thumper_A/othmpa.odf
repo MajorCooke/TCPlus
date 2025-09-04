@@ -1,0 +1,82 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "othmpa"
+classLabel = "seismic"
+shotSound = "gquak00.wav"
+ammoCost = 1000
+lifeSpan = 10.0  //dflt Coxxon  //7.0  //210m  //10.0
+shotSpeed = 20.0  //dflt Coxxon  //30.0  //20.0
+renderName = "othmpa.dust"
+
+//crank these up to get them to work - Coxxon
+//faster wave moves, higher damage needed to be useful
+damageValue(N) = 1800  //1800  //250//orig  //
+damageValue(L) = 1400  //1400  //200//orig  //
+damageValue(H) = 500  //1500  //150//orig  //
+
+damageValue(S) = 1000  //1400  //2000  //200//orig  //
+damageValue(D) = 500  //1000  //1500  //150//orig  //
+damageValue(A) = 1500  //1800  //2500  //250//orig  //
+
+[SeismicWaveClass]
+waveRadius = 50.0
+waveHeight = 6.0
+waveFrontFrequency = 1.0
+rampUpTime = 5.0
+rampDownTime = 2.0
+sweepOmega = 50.0
+sweepVeloc = 30.0
+shakeFrequency = 30.0
+shakeOmega = 20.0
+shakeVeloc = 50.0
+dampOmega = 0.0
+levelOmega = 0.0
+buildingScale = 1.0
+
+//replaced with SeismicWaveClass
+[SeismicClass]
+//from changelog by KEN
+//waveRadius = 50.0	// maximum extents of the wave 
+//waveHeight = 2.0  //Coxxon  5.0	// peak height/depth of the wave 
+//rampUpTime = 2.0  //Coxxon  5.0	// time to ramp up after launch 
+//rampDownTime = 2.0	// time to ramp down before expiration 
+//sweepOmega = 100.0	// angular sweep/push effect 
+//sweepVeloc = 2.0  //Coxxon  50.0	// linear sweep/push effect 
+//shakeOmega = 1.0	// angular shake effect 
+//shakeVeloc = 5.0	// linear shake effect 
+//buildingScale = 1.0	// scale damage for buildings
+
+[render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "othmpa.dust"
+renderName2 = "othmpa.wavecrack"
+
+[dust]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "100 70 30 255"  //100"
+finishColor = "200 180 150 0"
+startRadius = 1.0
+finishRadius = 15.0
+animateTime = 7.0  //same as "lifeSpan"
+emitDelay = 0.01  //0.02
+emitVelocity = "0.0 0.0 40.0"  //same as "shotspeed"
+emitVariance = "40.0 20.0 0.0"
+emitLife = 7.0  //same as "lifeSpan"
+
+[wavecrack]
+//lifeTime = 4.0
+renderBase = "draw_planar"
+textureName = "thumpcrack.tga"  //"wavecrack.tga"
+textureBlend = "one one modulate"  //"srcalpha invsrcalpha modulatealpha"
+startColor = "255 0 0 255"
+finishColor = "255 255 0 255"
+startRadius = 1.0
+finishRadius = 10.0
+animateTime = 4.0
+emitDelay = 0.5  //0.02
+emitVelocity = "0.0 0.0 -40.0"  //same as "shotspeed"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 4.0  //same as "lifeSpan"

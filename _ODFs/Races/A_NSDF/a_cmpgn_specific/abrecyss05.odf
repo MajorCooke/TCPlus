@@ -1,0 +1,35 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "abrecyss05"
+classLabel = "abrecy"
+unitName = "Wyoming"
+upgradeName = "avrecyss05"
+InfoName = "abrecy.inf"
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+
+provideName5 = "abrecyss05"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_abrecycox"
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+
+///////////////////////////////////////////////////////////////
+[FactoryClass]
+buildItem3 = ""  //"avturr"  //try to avoid quirk in BZCC new pathing that can potentially cause problem specific to this mission map 
+buildItem5 = "avconsss05"
+
+[BuildGroup10] 
+buildLabel = "Production Units"
+buildItem1 = "avfactss05"
+buildItem2 = "avarmoss05"
+
+///////////////////////////////////////////////////////////////
+[RecyclerClass]

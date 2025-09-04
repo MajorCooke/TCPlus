@@ -1,0 +1,44 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "abrecyss09"
+classLabel = "abrecy"
+unitName = "Wyoming"
+upgradeName = "avrecyss09"
+InfoName = "abrecy.inf"
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+
+provideName5 = "abrecyss09"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_abrecycox"
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+
+///////////////////////////////////////////////////////////////
+[FactoryClass]
+//buildItem1 = "avscav"
+//buildItem2 = "avscout"
+//buildItem3 = "avturr"
+//buildItem4 = "avtug"
+buildItem5 = "avconsss09"
+//buildItem6 = "avserv"
+//buildItem7 = "apserva"
+//buildItem8 = "avltk2"
+//buildItem8 = ""
+//buildItem9 = ""
+//buildItem10 = ""
+
+[BuildGroup10] 
+buildLabel = "Production Units"
+buildItem1 = "avfactss09"
+buildItem2 = "avarmoss09"
+
+///////////////////////////////////////////////////////////////
+[RecyclerClass]

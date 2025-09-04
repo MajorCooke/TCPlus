@@ -1,0 +1,6 @@
+REPAIR KIT powerup
+Repairs up to 1000 damage to a vehicle's hull.
+
+COST: 1
+HULL: 150
+BUILDER: SLF or Recycler

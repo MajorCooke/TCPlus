@@ -1,0 +1,33 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ostnga_a"
+classLabel = "thermalmissile"
+
+shotGeometry = "aostngcox00.fbx"
+shotSound = "crckt02.wav"
+
+renderName = "ostnga_c.render"
+
+xplGround = "xmslgnd"
+xplVehicle = "xstngacar"  //"xstingcar_c"
+xplBuilding = "xstingcar_c"
+
+ammoCost = 25
+lifeSpan = 2.5 // 100m
+shotSpeed = 40.0
+
+damageValue(N) = 140 // 280 // none // 480 960 1440 1920 2400 2880
+damageValue(L) = 125 // 250 // light // 375 750 1125 1500 1875 2250
+damageValue(H) = 100 // 200 // heavy // 250 500 750 100 1250 1500
+
+damageValue(S) = 125 // 250 // standard // 375 750 1125 1500 1875 2250
+damageValue(D) = 100 // 200 // deflection // 400 800 1200 1600 2000 2400
+damageValue(A) = 140 // 280 // absorption // 330 660 990 1320 1675 1980
+
+[MissileClass]
+omegaTurn = 1.0
+omegaWaver = 1.0
+rateWaver = 4.0
+
+[ThermalMissileClass]
+coneAngle = 0.5

@@ -1,0 +1,33 @@
+/////////Coxxon - BZTC/////////
+//can be spawned from a power tap to act as killer of player/AI units in a hole
+[GameObjectClass]
+baseName = "gflar2oly"
+classLabel = "flare"
+geometryName = NULL  //"aoflarcox00.fbx"  //"igflar00.fbx"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 150000
+maxAmmo = 800000
+unitName = "ChasmFlare"
+heatSignature = 0.0  //100.0
+VehicleSearchFilter = 2 // 0 vehicles, 1 pilots, 2 vehicles+pilots+animals, 3 plants, 4 buildings
+
+[MineClass]
+lifeSpan = -1.0  //29.0  //1 less than spawn  //-1 infinite
+
+[FlareMineClass]
+//payloadName = "oflaroly"
+//fireSound = "smine01.wav"
+triggerDelay = 0.0  //0.1
+shotDelay = 0.02
+//shotVariance = 0.2
+damageRadius = 130.0  //20.0
+damageValue(N) = 500 // none
+damageValue(L) = 500 // light
+damageValue(H) = 500 // heavy
+damageValue(S) = 500 // standard
+damageValue(D) = 500 // deflection
+damageValue(A) = 500 // absorption
+//kickRadius = 20.0
+//kickVeloc = 0.2
+//kickOmega = 0.5

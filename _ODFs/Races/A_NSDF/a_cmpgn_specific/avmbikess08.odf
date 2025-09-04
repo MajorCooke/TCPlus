@@ -1,0 +1,36 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "avmbikess08"
+classLabel = "avmbike"  //"wingman"
+unitIcon = "icon_avmbike.png"
+unitStatus = "wire_avmbike.png"
+infoName = "avmbike.inf"  //or baseName, or provide name
+
+/////// OBJECT LIMIT //////////////
+LimitClass1 = "avmbikess08"
+LimitClass1Count = 6
+LimitClass1Text = "Limit reached."
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName4 = "avmbikess08"
+
+//////////////////////////////////////////////////////////////////////////
+[CraftClass]
+xplcrash = "xpl_crash_avmbikecox"  //USE THIS FOR MOST CRAFT
+
+//chunkEffect1 = "avmbikecoxchk01.fbx"  
+//chunkEffect2 = "avmbikecoxchk02.fbx"
+//chunkEffect3 = "avmbikecoxchk03.fbx"
+//chunkEffect4 = "avmbikecoxchk04.fbx"
+//chunkEffect5 = "avmbikecoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 5
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+//////////////////////////////////////////////////////////////////////////
+[HoverCraftClass]

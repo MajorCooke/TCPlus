@@ -1,0 +1,208 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "kvcons"
+classLabel = "constructionrig"
+geometryName = "kvconscox_skel.fbx"
+animCount = 12
+animName1 = "idle"
+animFile1 = "kvconscox_idle.fbx"
+animName2 = "idle2"
+animFile2 = "kvconscox_idle.fbx"
+animName3 = "idle3"
+animFile3 = "kvconscox_idle.fbx"
+animName4 = "sitdown"
+animFile4 = "kvconscox_turn.fbx"
+animName5 = "walk"
+animFile5 = "kvconscox_walk.fbx"
+animName6 = "turn"
+animFile6 = "kvconscox_turn.fbx"
+animName7 = "death"
+animFile7 = "kvconscox_death.fbx"
+animName8 = "death2"
+animFile8 = "kvconscox_death.fbx"
+animName9 = "death3"
+animFile9 = "kvconscox_death.fbx"
+animName10 = "cons"
+animFile10 = "kvconscox_cons.fbx"
+animName11 = "cons2"
+animFile11 = "kvconscox_cons.fbx"
+animName12 = "cons3"
+animFile12 = "kvconscox_cons.fbx"
+collisionRadius = 5.0  //cons
+scrapValue = 10  //Coxxon  //20
+scrapCost = 40
+buildTime = 5.0  //Coxxon  //10.0
+maxHealth = 2000
+maxAmmo = 0
+unitName = "Rat rig"
+aiName = "RigFriend"
+aiName2 = "RigEnemy"
+heatSignature = 1.0
+imageSignature = 2.0
+radarSignature = 2.0
+isAssault = 1  //bztc
+armorClass = H
+boxCollide = 1
+//UseVehicleCrashOnDeath = true
+//needPilot = 1  //drive everything - Coxxon
+//addPilot = 1  //Coxxon
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 2
+provideName1 = "kvcons"
+provideName2 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltwbl"
+lightHard2 = "hp_light_2"
+lightName2 = "hltwbl"
+
+effectHard1 = "hp_dust_1"
+effectName1 = "vfxbztcthrst.thrustyellowsml"
+effectFlags1 = 2147483135  //move ON
+effectHard2 = "hp_dust_2"
+effectName2 = "vfxbztcthrst.thrustyellowsml"
+effectFlags2 = 2147483135  //move ON
+effectHard3 = "hp_dust_3"
+effectName3 = "vfxbztcthrst.thrustbluesml"
+effectFlags3 = 2147483135  //move ON
+effectHard4 = "hp_dust_0"
+effectName4 = "vfxbztcdusts.dusttrail"
+effectFlags4 = 2147483135  //move ON
+effectHard5 = "hp_dust_0" 
+effectName5 = "vfxbztcdusts.dustpuff"
+effectFlags5 = 2147482615  //undeployed, move OFF
+effectHard6 = "hp_emit_0"
+effectName6 = "vfxbztcbldgs.buildsmoke1"
+effectFlags6 = 2147483631  //deployed
+effectHard7 = "hp_emit_1"
+effectName7 = "vfxbztcbldgs.buildsmoke1"
+effectFlags7 = 2147483631  //deployed
+effectHard8 = "hp_emit_2"
+effectName8 = "vfxbztcbldgs.buildsmoke1"
+effectFlags8 = 2147483631  //deployed
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "hp_smoke_1"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "hp_smoke_1"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "hp_smoke_1"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "hp_smoke_1"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+////////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 400.0
+periodScan = 5.0
+velocJam = 5.0
+TeamTransferrable = false
+braccelFactor = 0.1
+velFactor = 0.4
+steerFactor = 1.4
+omegaFactor = 0.3
+strafeFactor = 0.1
+//avoidSpeed = 5
+modeText19 = "Rebuild Addon"  //MODE_POWER = 19  //cons
+//canHunt = 1	//works as a hold command, but
+//modeText11 = "Hold"  //overridden at 6 with "power" cmd
+damageEffect1 = "dmgvhcl1"  //less stock dmg effect
+damageEffect2 = "dmgvhcl1"  //but still some sparks
+damageEffect3 = "dmgvhcl1"  //also lower visibility
+damageEffect4 = "dmgvhcl1"  //on cloaked units
+
+/////////MESSAGES/////////
+selectUser1Msg = "kvconsv2.wav"  //i am building COX MOD
+selectUser2Msg = "kvconsvd.wav"  //not enough power COX MOD
+selectWaitMsg = "kvconsva.wav"  //construction rig here COX MOD
+selectGoMsg = "kvconsv0.wav"  //on my way COX MOD
+selectOtherMsg = "kvconsva.wav"  //construction rig here COX MOD
+selectFollowMsg = "kvconsv3.wav"  //following COX MOD
+recycleMsg =  "kvconsv6.wav"  //sorry charlie COX MOD
+attackMsg = "kvconsv7.wav"  //ready to build COX MOD
+goMsg = "kvconsv8.wav"  //in transit COX MOD
+goObjectMsg = "kvconsv8.wav"  //in transit COX MOD
+user1Msg = "kvconsv1.wav"  //construction in progress COX MOD
+user2Msg = "kvconsvb.wav"  //building complete COX MOD
+followMsg = "kvconsv3.wav"  //following COX MOD
+followMeMsg = "kvconsv3.wav"  //following COX MOD
+otherMsg = "kvconsv9.wav"  //ah yes sir COX MOD
+holdMsg =  "kvconsv9.wav"  //ah yes sir COX MOD
+//diedMsg =  "kbetty1.wav"
+
+BailSound = "bail.wav"
+CollideTerrainSound = "vnvcs1.wav"
+CollideBldgSound = "vnvcs3.wav"
+CollideOtherSound = "vvcre2.wav"  //"vvcbb3.wav"
+
+////////////////////////////////////////////////////////////
+[HoverCraftClass]
+velocForward = 12.0
+velocReverse = 12.0
+velocStrafe = 12.0
+accelThrust = 20.0
+accelBrake = 70.0
+accelDragStop = 2.0
+accelJump = 0.0
+setAltitude = 0.0 // how high off the ground
+alphaTrack = 20.0
+alphaDamp = 5.0
+pitchPitch = 0.0 //nose up
+pitchThrust = 0.0 //nose down
+rollStrafe = 0.0 //rolls while strafing
+omegaSpin = 3.0 //spinning in place speed
+omegaTurn = 2.0 //turning while moving speed
+alphasteer = 2.0 //how fast it responds to steering
+rollSteer = 0.0 //rolls while steering
+accelDragFull = 0.0 //nothing
+flattenTrackNormal = 2.0f  //BZ2 value - upright on sharper slopes
+
+soundThrust = "avcnste0.wav"
+soundSteer = "avcnste1.wav"
+
+////////////////////////////////////////////////////////////
+[DeployableClass]
+timeDeploy = 3.0  //2.0
+timeUndeploy = 3.0  // 2.0
+soundDeploy = "avartle0.wav"
+soundUndeploy = "avartle4.wav"
+
+////////////////////////////////////////////////////////////
+[ConstructionRigClass]
+buildItem1 = "kbpgen"
+buildItem2 = "kbfact"
+buildItem3 = "kbcbun"
+buildItem4 = "kbarmo"
+buildItem5 = "kbsbay"
+buildItem6 = "kbgtow"  //also have kbgtow1 flash tower
+buildItem7 = "kbtrain"
+buildItem8 = "kbtcen"
+buildItem9 = "kbhqtr"
+buildItem10 = "kbshld"
+
+ChromeEffect = 0  // 0 = line, 1 = chrome 
+ChromeTexture = "reflection3.tga"
+AnimateChrome = 1  //0 = static, 1 = animated 
+BuildSparkConfig = "sparkerA"  //"sparker"  // renderer to apply at build vertices 
+LineStartColor = "255 200 0 155"  // line effect start color 
+LineFinishColor = "255 150 0 50"  // line effect finish color ...
+BeamColor = "255 150 0 0"
+LineSolidColor = "255 150 0 70" 	// LOD Line color.
+SolidColorDistance = 150.0 
+MaxLineDistance = 250.0 
+
+soundBuild = "avrecye2cox.wav"  //"ivrecye3.wav"
+soundFinish = "avrecye9.wav"  //"ivrecye5.wav"
+soundCancel = "mnu_buzz.wav"  //"cgrowl.wav"  //"locking3.wav"

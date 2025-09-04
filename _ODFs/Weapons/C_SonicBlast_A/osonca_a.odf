@@ -1,0 +1,63 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "osonca_a"
+classLabel = "bullet"
+
+shotSound = "sonic03b.wav"
+
+shotGeometry = NULL
+shotRadius = 1.0
+xplGround = "xsonicgnd_a"
+xplVehicle = "xsoniccar_c"
+xplBuilding = "xsoniccar_c"
+
+renderName = "osonca_a.render"
+ammoCost = 2.5
+lifeSpan = 0.8 // 40m
+shotSpeed = 50.0
+
+damageValue(N) = 60  //Coxxon  //6 // none // 300
+damageValue(L) = 40  //Coxxon  //4 // light // 200
+damageValue(H) = 20  //Coxxon  //2 // heavy // 100
+
+damageValue(S) = 40  //Coxxon  //4 // standard // 300
+damageValue(D) = 60  //Coxxon  //6 // deflection // 500
+damageValue(A) = 20  //Coxxon  //2 // assault // 100
+
+[Render]
+renderBase = "draw_multi"
+
+renderCount = 3
+renderName1 = "osonca_a.core"
+renderName2 = "osonca_a.puff"
+renderName3 = "osonca_a.light"
+
+[Core]
+renderBase = "draw_twirl"
+textureName = "plasma.tga" //flame2
+textureBlend = "one one modulate"
+startColor = "255 155 155 255"
+finishColor = "255 200 0 155"
+startRadius = 0.1
+finishRadius = 1.0
+animateTime = 1.0
+
+[Puff]
+renderBase = "draw_twirl"
+textureName = "plasma.tga" //flame2
+textureBlend = "one one modulate"
+startColor = "50 50 0 160"
+finishColor = "255 0 0 0"
+startRadius = 0.01
+finishRadius = 5.0
+animateTime = 1.0
+
+[light]
+renderBase = "draw_light"
+startColor = "20 80 180 200"
+finishColor = "20 80 180 200"
+startRadius = 16.0  //ord light
+finishRadius = 16.0  //ord light
+attenuateConstant = 0.0  //ord light
+attenuateQuadratic = 1.0  //ord light
+attenuateLinear = 0.0  //ord light

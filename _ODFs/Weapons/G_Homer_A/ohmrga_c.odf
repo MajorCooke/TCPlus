@@ -1,0 +1,78 @@
+/////////Coxxon - BZTC/////////
+//a faf type "bullet"
+[OrdnanceClass]
+baseName = "ohmrga_c"
+classLabel = "thermalmissile"
+shotGeometry = NULL
+xplGround = "xbulgnd"
+xplVehicle = "xbulcar"
+xplBuilding = "xbulbld"
+
+ammoCost = 4  //Coxxon  //2.0  //1.25
+lifeSpan = 0.7  //Coxxon  //0.35 // 105m
+shotSpeed = 150.0  //Coxxon  //300.0
+
+//0.7  150.0  105m  //Coxxon
+
+//lil less since homer and energy
+damageValue(N) = 30  //33  //Coxxon  //11 // none
+damageValue(L) = 22  //24  //Coxxon  //8 // light
+damageValue(H) = 13  //15  //Coxxon  //5 // heavy
+
+damageValue(S) = 22  //Coxxon  //standard
+damageValue(D) = 30  //Coxxon  //deflection
+damageValue(A) = 13  //Coxxon  //absorption
+
+renderName = "ohmrga_c.tracer"  //render"  //
+
+[MissileClass]
+omegaTurn = 3.0  //Coxxon  //1.0
+
+[ThermalMissileClass]
+coneAngle = 0.7  //Coxxon  //0.5
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "ohmrga_c.flame"  //flame then core
+renderName2 = "ohmrga_c.core"
+
+[core]
+renderBase = "draw_twirl_trail"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 200"
+startRadius = 0.05
+finishRadius = 0.0
+rotationRate = 10.0
+animateTime = 0.02
+emitDelay = 0.0001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 0.015
+
+[flame]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 200 255 200"
+finishColor = "0 200 255 150"
+startRadius = 0.1
+finishRadius = 0.0
+rotationRate = 10.0
+animateTime = 0.015
+emitDelay = 0.0001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 0.015
+
+[tracer]
+renderBase = "draw_tracer"
+textureBlend = "one one modulate"
+textureName = "aotrcrcyncox00.tga"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.1
+finishRadius = 0.1
+tracerLength = 4.0

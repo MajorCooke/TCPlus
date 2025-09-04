@@ -1,0 +1,250 @@
+/////////Coxxon - BZTC/////////
+//The "sav" class and AI may not follow orders properly after it attacks something, such as attack, follow, or rescue, as well it may not accept AIP orders. While this fits with the 'independent' mind of a SAV, it hampers gameplay.
+//So made it a hovertank, besides, the high altitude attack isn't particularly effective anyway, and the sav flying through terrain is bad.
+//yvrcktorig.odf is the original sav class version.
+[GameObjectClass]
+baseName = "yvrckt"
+classLabel = "wingman"
+geometryName = "yvrcktcox00.fbx"
+cockpitName = "yvrcktcox_cockpit.fbx"
+scrapValue = 30
+scrapCost = 65
+customCost = 80
+buildTime = 15.0  //sav
+customTime = 20.0  //sav
+maxHealth = 6000  //7000  //sav
+addHealth = 20  //sav
+maxAmmo = 4000  //sav
+addAmmo = 20  //sav
+unitName = "Athos sav"  //"SAV rkt"
+//unitIcon = "icon_yvrckt.png"
+//unitStatus = "wire_yvrckt.png"
+//infoName = "yvrckt.inf"
+//unitIcon = "icon_avmbike.png"
+//unitStatus = "wire_avmbike.png"
+//infoName = "avmbike.inf"  //or baseName, or provide name
+aiName = "RocketTankFriend"  //sav
+aiName2 = "RocketTankEnemy"  //sav
+heatSignature = 0.5  //sav
+imageSignature = 0.8  //sav
+radarSignature = 1.0  //sav
+canSnipe = 0  //sav
+isAssault = 1  //bztc
+armorClass = H  //sav
+boxCollide = 1
+//collisionRadius = 1.0  //bzcc vehc
+//collisionName = "yvrcktcollide.fbx"
+
+/////// OBJECT LIMIT //////////////
+LimitClass1 = "yvrckt"
+LimitClass1Count = 6  //yvrckt
+LimitClass1Text = "Player limit reached."
+
+TeamLimitClass1 = "yvrckt"
+TeamLimitClass1Count = 12
+TeamLimitClass1Text = "Teams limit reached."
+
+/////// REQUIREMENTS ///////////////
+requireCount = 1
+requireName1 = "ybsbay"
+requireText1 = "Build Supply Hangar"
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+provideName1 = "yvrckt"
+provideName2 = "VIRTUAL_CLASS_SAV"
+provideName3 = "assault"
+provideName4 = "flier"
+provideName5 = "DefendUnit"
+
+/////// weapons ////////////////////
+weaponMask = 11111
+weaponHard1 = "HP_CANNON_3" //0 central,  1, 2 lower nose sides, 3,4 upper nose sides
+weaponName1 = "gbolta_a"
+weaponAssault1 = 1
+weaponHard2 = "HP_CANNON_4"
+weaponName2 = "gbolta_a"
+weaponAssault2 = 1
+weaponHard3 = "HP_ROCKET_tail"  //1-4 (across front), 0 (body center),  tail
+weaponName3 = "gwaspa"
+weaponAssault3 = 1
+weaponHard4 = "HP_SPECIAL_1"
+weaponName4 = ""
+weaponAssault4 = 0
+weaponHard5 = "HP_SHIELD"
+weaponName5 = ""
+weaponAssault5 = 0
+
+//also available: hp_cannon_0-4, hp_gun_1-2, hp_rocket_1-2, hp_mortar_1-2, hp_special_1
+
+/////////LIGHTS AND EFFECTS//////////////////
+//light 1-14 avail
+lightHard1 = "hp_light_1"
+lightName1 = "hltred"
+lightHard2 = "hp_light_2"
+lightName2 = "hltred"
+lightHard3 = "hp_light_3"
+lightName3 = "hltred"
+lightHard4 = "hp_light_4"
+lightName4 = "hltred"
+LightsOnlyWhenPiloted = true
+
+effectHard1 = "hp_dust_1"
+effectName1 = "vfxbztcdusts.dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0
+effectMinVelocity1 = 5.0
+effectMaxVelocity1 = 500.0
+effectHard2 = "hp_emit_1"
+effectName2 = "yvrckt.exhaust"
+effectMinAltitude2 = 0.0
+effectMaxAltitude2 = 100.0
+effectMinVelocity2 = 5.0
+effectMaxVelocity2 = 500.0
+effectHard3 = "hp_dust_0" 
+effectName3 = "vfxbztcdusts.dustpuff"
+effectMinAltitude3 = 0.0
+effectMaxAltitude3 = 5.0
+effectMinVelocity3 = 0.0
+effectMaxVelocity3 = 10.0
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "hp_smoke_1"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "hp_smoke_1"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "hp_smoke_1"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "hp_smoke_1"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+[exhaust]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.01
+emitDelayVar = 0.03
+emitVelocity = "0.0 0.0 -5.0"
+emitVariance = "3.0 3.0 0.0" 
+emitInherit = "0.2 0.2 0.2"
+emitLife = 1.0
+textureName =  "twin.tga"
+textureBlend = "one one modulate"
+startColor = "0 100 255 255"
+finishColor = "0 255 255 0"
+startRadius = 3.0
+finishRadius = 0.1
+animateTime = 1.0
+rotationRate = 0.5
+
+//////////////////////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 300.0  //rkt
+periodScan = 5.0
+velocJam = 5.0
+engageRange = 200.0  //rkt
+//RetargetOnStrafe = true  //tnk
+attackTask = "AssaultTankAttack"  //"MortarBikeAttack"  //mbike
+subattackTask = "SupportSubAttack"  //mbike
+subAttackClass = "ANS" //target:Air/grouNd attack:Deploy/Normal range:weaponS/eNgage 
+//attackTaskUsesGroups = false  //Coxxon
+GoToTaskHasLeader = false  //Coxxon
+canHunt = 1	// defaults to 0
+//NavIsDropped = true //drop behind - bugged, immed removes nav/camr in MP/MPI
+//NavDropSound = "gprox00.wav"  //sound if navisdropped true
+NavConfig = "apcamry" //specify nav beacon/camera type
+AllowedControlsWhenTugged = 31  //7dflt Sumup: 1hop 2bail 4wcycle 8steer 16weapuse
+braccelFactor = 0.03
+velFactor = 0.2
+steerFactor = 1.5
+omegaFactor = 0.2
+strafeFactor = 0.2
+//avoidSpeed = 20;
+//topSpeed = 25;
+//CockpitSniperRadius = 0.1  //sav
+
+//OffensiveProcessIsTenacious = false  //Coxxon  true
+//OffensiveProcessIsTenaciousAITeam = false  //Coxxon
+//DoBlastUsesFields = true  //false  //Coxxon
+//SitAttackAllowIndependence = true  //Coxxon  false
+//SitAttackAllowCounterattack = true  //Coxxon  false
+
+damageEffect1 = "dmgvhcl1"  //less stock dmg effect
+damageEffect2 = "dmgvhcl1"  //but still some sparks
+damageEffect3 = "dmgvhcl1"  //also lower visibility
+damageEffect4 = "dmgvhcl1"  //on cloaked units
+
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_yvrcktcox"
+
+//chunkEffect1 = "yvrcktcoxchk01.fbx"  
+//chunkEffect2 = "yvrcktcoxchk02.fbx"
+//chunkEffect3 = "yvrcktcoxchk03.fbx"
+//chunkEffect4 = "yvrcktcoxchk04.fbx"
+//chunkEffect5 = "yvrcktcoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 5
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+/////////MESSAGES/////////
+selectAttackMsg = "yvhrazvm.wav"  //they are shooting at me
+selectWaitMsg = "yvhrazvj.wav"  //heavy razor
+selectFollowMsg = "yvhrazv3.wav"  //I will follow
+selectGoMsg = "yvhrazvg.wav"  //onroute
+selectOtherMsg = "yvhrazvj.wav"  //heavy razor
+goMsg = "yvhrazv0.wav"  //engaging thrusters
+goObjectMsg = "yvhrazvi.wav"  //yes sir
+holdMsg = "yvhrazvl.wav"  //slowing down
+attackMsg = "yvhrazvd.wav"  //attacking enemy  //"yvhrazv2.wav"  //understood
+followMsg = "yvhrazv7.wav"  //i will defend
+followMeMsg = "yvhrazvh.wav"  //protecting
+repairMsg = "yvhrazv4.wav"  //repairing
+reloadMsg = "yvhrazv5.wav"  //reloading
+rescueMsg = "yvhrazv8.wav"  //immediately
+recycleMsg = "yvhrazvn.wav"  //now I rest
+otherMsg = "yvhrazvf.wav"  //your orders?
+user1Msg = "yvhrazv6.wav"  //patroling the area
+user2Msg = "yvhrazve.wav"  //niet
+killedMsg = "yvhrazvk.wav"  //another has died
+//diedMsg = ""  //"rbetty3.wav"
+//"yvhrazv9.wav"  //thank you
+
+BailSound = "bail.wav"
+CollideTerrainSound = "vnvcs1.wav"
+CollideBldgSound = "vnvcs3.wav"
+CollideOtherSound = "vvcre2.wav"  //"vvcbb3.wav"
+
+//////////////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+//10ms = 22.37mph  29.055ms = 65mph
+velocForward = 40.0  //sav
+velocReverse = 20.0  //sav
+velocStrafe = 20.0  /sav
+accelThrust = 50.0  //sav
+accelDragStop = 10.0  //sav
+accelJump = 50.0  //sav
+setAltitude = 15.0  //sav
+alphaTrack = 20.0 //springs speed it rights itself 
+alphaDamp = 5.0 //shocks 
+pitchPitch = 0.25 //nose up 
+pitchThrust = 0.0 //sav nose down 
+rollStrafe = 0.02 //sav
+omegaSpin = 3.75 //spinning in place speed 
+omegaTurn = 2.75 //turning while moving speed 
+alphaSteer = 7.0 //how fast it responds to steering 
+rollSteer = 0.05 //sav
+soundThrust = "avsavecox0.wav"  //lower vol ver - Coxxon  //"avsave0.wav"
+soundJump = "avsave5.wav"  //"yvturbocox01.wav"
+THRUST_VOLUME_BASE_USER = 0.5  //turn back was too loud Coxxon
+
+//soundDeploy = "avsave6.wav"
+//soundUndeploy = "avsave5.wav"

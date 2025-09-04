@@ -1,0 +1,227 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "bvtank"
+classLabel = "wingman"
+geometryName = "bvtankcox00.fbx"
+cockpitName= "bvtankcox_cockpit.fbx"
+animCount = 4
+animName1 = "loop"
+animFile1 = "bvtankcox00.fbx"
+runAnimation = "loop"
+runAnimIsLooped = true
+animName2 = "forward"
+animFile2 = "avtankcoxsf.fbx"
+animName3 = "neutral"
+animFile3 = "avtankcoxsn.fbx"
+animName4 = "reverse"
+animFile4 = "avtankcoxsr.fbx"
+scrapValue = 15  //25
+scrapCost = 55
+customCost = 65
+buildTime = 10.0  //Coxxon  //15.0
+customTime = 15.0
+maxHealth = 3500
+addHealth = 1
+maxAmmo = 2200
+addAmmo = 5
+unitName = "Grizzly mbt"  //tank  //"Doberman"  //
+//unitIcon = "icon_bvtank.png"
+//unitStatus = "wire_bvtank.png"
+//infoName = "bvtank.inf"  //or baseName, or provide name
+aiName = "TankFriend"  //basetank
+aiName2 = "TankEnemy"  //basetank
+heatSignature = 2.0
+imageSignature = 2.5
+radarSignature = 0.5
+isAssault = 0
+armorClass = L
+boxCollide = 1
+//CockpitSniperRadius = 1.0  //stock sniper shell has 0.5 default
+//collisionRadius = 1.0  //bzcc vehc
+//collisionName = "avtankcollide.fbx"
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+provideName1 = "bvtank"
+provideName2 = "VIRTUAL_CLASS_TANK"
+provideName3 = "DefendUnit"
+
+/////// WEAPONS ////////////////////
+weaponMask = 00001  //tank
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = "gstbsa_c"
+recoilName1 = "recoil1"
+recoilDist1 = -1.0  //tank
+weaponAssault1 = 0
+//weaponGroup1 = 0
+weaponHard2 = "HP_GUN_1"
+weaponName2 = ""
+recoilName2 = "recoil2"
+recoilDist2 = -0.5
+weaponAssault2 = 0
+//weaponGroup2 = 1
+weaponHard3 = "HP_GUN_2"
+weaponName3 = ""
+recoilName3 = "recoil3"
+recoilDist3 = -0.5
+weaponAssault3 = 0
+//weaponGroup2 = 1
+weaponHard4 = "HP_MORTAR_1"
+weaponName4 = "gspln0a"
+recoilName4 = "recoil4"
+weaponAssault4 = 0
+recoilDist4 = -0.5
+//weaponGroup3 = 2
+weaponHard5 = "hp_special_1"
+weaponName5 = "gproxa"
+weaponAssault5 = 0
+//weaponGroup4 = 3
+
+/////////LIGHTS AND EFFECTS//////////////////
+//*  //tank light
+lightHard1 = "hp_light_1"
+lightName1 = "hltwyl"
+LightsOnlyWhenPiloted = true
+//*/
+effectHard1 = "hp_dust_1"
+effectName1 = "vfxbztcdusts.dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0
+effectMinVelocity1 = 10.0
+effectMaxVelocity1 = 500.0
+effectHard2 = "hp_dust_2"
+effectName2 = "vfxbztcdusts.dusttrail"
+effectMinAltitude2 = 0.0
+effectMaxAltitude2 = 5.0
+effectMinVelocity2 = 10.0
+effectMaxVelocity2 = 500.0
+effectHard3 = "hp_dust_0" 
+effectName3 = "vfxbztcdusts.dustpuff"
+effectMinAltitude3 = 0.0
+effectMaxAltitude3 = 3.0
+effectMinVelocity3 = 0.0
+effectMaxVelocity3 = 10.0
+//effectHard4 = "hp_dust_0"  //low ctr rear
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "hp_smoke_1"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "hp_smoke_1"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "hp_smoke_1"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "hp_smoke_1"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+//////////////////////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 300.0
+periodScan = 5.0
+velocJam = 5.0
+engageRange = 120
+//RetargetOnStrafe = true  //tnk
+attackTask = "MortarBikeAttack"  //basetank
+subattackTask = "SupportSubAttack"  //basetank
+subAttackClass = "ANS" //target:Air/grouNd attack:Deploy/Normal range:weaponS/eNgage 
+//attackTaskUsesGroups = false  //Coxxon
+GoToTaskHasLeader = false  //Coxxon
+canHunt = 1	// defaults to 0
+//NavIsDropped = true //drop behind - bugged, immed removes nav/camr in MP/MPI
+//NavDropSound = "gprox00.wav"  //sound if navisdropped true
+NavConfig = "apcamrb" //specify nav beacon/camera type
+AllowedControlsWhenTugged = 31  //7dflt Sumup: 1hop 2bail 4wcycle 8steer 16weapuse
+braccelFactor = 0.03
+velFactor = 0.2
+steerFactor = 1.5
+omegaFactor = 0.2
+strafeFactor = 0.2
+//avoidSpeed = 20;
+//topSpeed = 30;
+
+//OffensiveProcessIsTenacious = false  //Coxxon  true
+//OffensiveProcessIsTenaciousAITeam = false  //Coxxon
+//DoBlastUsesFields = true  //false  //Coxxon
+//SitAttackAllowIndependence = true  //Coxxon  false
+//SitAttackAllowCounterattack = true  //Coxxon  false
+
+damageEffect1 = "dmgvhcl1"  //less stock dmg effect
+damageEffect2 = "dmgvhcl1"  //but still some sparks
+damageEffect3 = "dmgvhcl1"  //also lower visibility
+damageEffect4 = "dmgvhcl1"  //on cloaked units
+
+/////////CRASH INTO COMPONENT PARTS/////////
+//XplSnipe - Explosion ODF used for when a ship is sniped. 
+//XplChunk - Explosion ODF used for the chunks when a ship is killed. 
+//XplCrash - Explosion ODF used for when the ship's "crashing mesh" blows.
+//run on each veh/bld for xsi to msh - 5 at a time - can sub other units
+//explosionName = "xpl_crash_bvtankcox"
+//xplChunk = "xpl_crash_bvtankcox"
+
+xplcrash = "xpl_crash_bvtankcox"  //use for vehicles
+
+//chunkEffect1 = "bvtankcoxchk01.fbx"  
+//chunkEffect2 = "bvtankcoxchk02.fbx"
+//chunkEffect3 = "bvtankcoxchk03.fbx"
+//chunkEffect4 = "bvtankcoxchk04.fbx"
+//chunkEffect5 = "bvtankcoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 5
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+/////////MESSAGES/////////
+selectWaitMsg = "avtankvp.wav"  //grizzly here
+selectAttackMsg = "avtankvj.wav"  //attacking enemy
+selectFollowMsg = "avtankvb.wav"  //herding sheep
+selectGoMsg = "avtankvm.wav"  //moving
+selectOtherMsg = "avtankv0.wav"  //whos next
+goMsg = "avtankv1.wav"  //rolling
+attackMsg = "avtankv2.wav"  //no mercy
+followMeMsg = "avtankv4.wav"  //lead on
+followMsg = "avtankvk.wav"  //protecting the flock
+repairMsg = "avtankv8.wav"  //repairing
+reloadMsg = "avtankv9.wav"  //reloading
+rescueMsg = "avtankvc.wav"  //stay put
+recycleMsg = "avtankvd.wav"  //farewell fine ride
+otherMsg = "avtankvn.wav"  //yes sir
+user1Msg = "avtankva.wav"  //with pleasure
+killedMsg = "avtankv3.wav"  //eat dirt commy pinko
+//diedMsg = "abetty3.wav"  //offensive unit lost
+
+BailSound = "bail.wav"
+CollideTerrainSound = "vnvcs1.wav"
+CollideBldgSound = "vnvcs3.wav"
+CollideOtherSound = "vvcre2.wav"  //"vvcbb3.wav"
+
+//////////////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+//10ms = 22.37mph  29.055ms = 65mph
+velocForward = 30.0  //tnk  //28.5
+velocReverse = 20.0 //tnk 
+velocStrafe = 16.0 // tnk
+accelThrust = 24.0 //acceleration 
+accelDragStop = 6.0 //how fast it stops once hands are off controls 
+accelJump = 15.0 // 
+setAltitude = 1.0  // how high off the ground
+alphaTrack = 21.0 //springs speed it rights itself 
+alphaDamp = 8.0 //shocks 
+pitchPitch = 0.25 //nose up 
+pitchThrust = 0.1 //nose down 
+rollStrafe = 0.08 //rolls while strafing 
+omegaSpin = 6.0 //spinning in place speed 
+omegaTurn = 2.3 //turning while moving speed 
+alphaSteer = 7.0 //how fast it responds to steering 
+rollSteer = 0.08 //rolls while steering 
+soundThrust = "avtanke0.wav"
+soundJump = "avtanke3.wav"
+THRUST_VOLUME_BASE_USER = 0.5  //turn back was too loud Coxxon

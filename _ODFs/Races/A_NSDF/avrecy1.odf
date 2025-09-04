@@ -1,0 +1,32 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "avrecy1"
+classLabel = "avrecy"
+unitIcon = "icon_avrecy.png"
+unitStatus = "wire_avrecy.png"
+//infoName = "avrecy.inf"
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+provideName1 = "avrecy"
+provideName2 = "avrecycpu"
+provideName3 = "VIRTUAL_CLASS_RECYCLER"
+provideName4 = "VIRTUAL_CLASS_RECYCLERVEHICLE"
+provideName5 = "avrecy1"
+
+//////////////////////////////////////////////////////////
+[CraftClass]
+
+/////////CRASH EXPLODE INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_avrecycox"
+
+/////////////////////////////////////////////////////////
+[DeployableClass]
+
+/////////////////////////////////////////////////////////
+[DeployBuildingHClass]
+deployName = "abrecy1"
+
+////////////////////////////////////////////////////////
+[RecyclerVehicleHClass]

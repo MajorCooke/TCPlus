@@ -1,0 +1,31 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "abrecyss01"
+classLabel = "abrecy"
+unitName = "Old Betsy"
+upgradeName = "avrecyss01"
+InfoName = "abrecy.inf"
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+
+provideName5 = "abrecyss01"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_abrecycox"
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+
+///////////////////////////////////////////////////////////////
+[FactoryClass]
+buildItem1 = "avscavss1"
+
+///////////////////////////////////////////////////////////////
+[RecyclerClass]
+scrapHold = 300  //40
+scrapDelay = 3600.0  //3.0 // # of seconds before +1 scrap

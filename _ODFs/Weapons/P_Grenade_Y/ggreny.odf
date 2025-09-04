@@ -1,0 +1,17 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "ggreny"
+classLabel = "mortar"
+geometryName = "yggrencox00.fbx"
+ordName = "ogreny"
+wpnName = "Grenade"
+wpnIcon = "wire_ggreny%d.tga"
+fireSound = "mort01.wav"
+wpnReticle = "gmorta"  //"gmortar"
+wpnLadder = "gmortar.L0"
+wpnCategory = "PACK"
+localAmmo = 3
+canSelect = false
+
+[CannonClass]
+shotDelay = 2.0

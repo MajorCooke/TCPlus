@@ -1,0 +1,111 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "olybldg01"
+classLabel = "techcenter"
+geometryName = "olybldgcox01.fbx"
+scrapCost = 200
+scrapValue = 50
+maxHealth = 30000
+addHealth = 50
+unitName = "Cth Docking Tower"
+heatSignature = 1.0
+imageSignature = 2.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+AllowSeismic = 0
+UseCollisionMeshForPathing = 1  //olypyra
+buildSupport = "A"
+buildRequire = "F"
+powerCost = 0
+collisionRadius = 32.0  //olypyra
+ownsTerrain = 1  //no baseplate
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 1
+provideName1 = "olybldg01"
+
+/////// LIGHTS and EFFECTS /////////
+lightHard1 = "hp_light_1"
+lightName1 = "omniwyl8"
+
+//smoke1
+effectHard1 = "hp_smoke_1"
+effectName1 = "dmgbldg1"
+effectMinHealth1 = 0.6
+effectMaxHealth1 = 0.8
+effectHard2 = "hp_smoke_1"
+effectName2 = "dmgbldg2"
+effectMinHealth2 = 0.4
+effectMaxHealth2 = 0.6
+effectHard3 = "hp_smoke_1"
+effectName3 = "dmgbldg3"
+effectMinHealth3 = 0.2
+effectMaxHealth3 = 0.4
+effectHard4 = "hp_smoke_1"
+effectName4 = "dmgbldg4"
+effectMinHealth4 = 0.0
+effectMaxHealth4 = 0.2
+//smoke2
+effectHard5 = "hp_smoke_2"
+effectName5 = "dmgbldg1"
+effectMinHealth5 = 0.6
+effectMaxHealth5 = 0.8
+effectHard6 = "hp_smoke_2"
+effectName6 = "dmgbldg2"
+effectMinHealth6 = 0.4
+effectMaxHealth6 = 0.6
+effectHard7 = "hp_smoke_2"
+effectName7 = "dmgbldg3"
+effectMinHealth7 = 0.2
+effectMaxHealth7 = 0.4
+effectHard8 = "hp_smoke_2"
+effectName8 = "dmgbldg4"
+effectMinHealth8 = 0.0
+effectMaxHealth8 = 0.2
+//smoke3
+effectHard9 = "hp_smoke_3"
+effectName9 = "dmgbldg1"
+effectMinHealth9 = 0.6
+effectMaxHealth9 = 0.8
+effectHard10 = "hp_smoke_3"
+effectName10 = "dmgbldg2"
+effectMinHealth10 = 0.4
+effectMaxHealth10 = 0.6
+effectHard11 = "hp_smoke_3"
+effectName11 = "dmgbldg3"
+effectMinHealth11 = 0.2
+effectMaxHealth11 = 0.4
+effectHard12 = "hp_smoke_3"
+effectName12 = "dmgbldg4"
+effectMinHealth12 = 0.0
+effectMaxHealth12 = 0.2
+//smoke4
+effectHard13 = "hp_smoke_4"
+effectName13 = "dmgbldg1"
+effectMinHealth13 = 0.6
+effectMaxHealth13 = 0.8
+effectHard14 = "hp_smoke_4"
+effectName14 = "dmgbldg2"
+effectMinHealth14 = 0.4
+effectMaxHealth14 = 0.6
+effectHard15 = "hp_smoke_4"
+effectName15 = "dmgbldg3"
+effectMinHealth15 = 0.2
+effectMaxHealth15 = 0.4
+effectHard16 = "hp_smoke_4"
+effectName16 = "dmgbldg4"
+effectMinHealth16 = 0.0
+effectMaxHealth16 = 0.2
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"  //gtow/spire "turret" class different
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+bldEdge = "wwww"
+soundAmbient = "denv01.wav"

@@ -1,0 +1,19 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "osatc0s"
+classLabel = "satchel"
+geometryName = "agsatccox00.fbx"
+geometryScale = 0.12
+scrapCost = 0
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 1
+unitName = "Satchel 0s"
+ignoreMissingInf = true  //Coxxon
+
+[BuildingClass]
+soundAmbient = "switch01.wav"
+
+[MineClass]
+lifeSpan = 0.1  //instant boom  //30.0
+xplBlast = "xsatxpl"

@@ -1,0 +1,31 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ofafxa"
+classLabel = "thermalmissile"
+
+shotGeometry = "aofafmcox00.fbx"  //"iorckt00.fbx"
+shotSound = "crckt02.wav"
+
+renderName = "ofafma_c.render"  //from std ofafma_c
+
+xplGround = "xfafgnd"
+xplVehicle = "xfafmsl"
+xplBuilding = "xfafmsl"
+
+ammoCost = 3
+lifeSpan = 3.0 // 150m
+shotSpeed = 50.0
+
+damageValue(N) = 20 // none
+damageValue(L) = 20 // light
+damageValue(H) = 20 // heavy
+
+damageValue(S) = 20 // standard
+damageValue(D) = 20 // deflection
+damageValue(A) = 20 // absorption
+
+[MissileClass]
+omegaTurn = 0.5
+
+[ThermalMissileClass]
+coneAngle = 0.4

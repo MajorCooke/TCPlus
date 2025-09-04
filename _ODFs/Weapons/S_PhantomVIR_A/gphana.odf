@@ -1,0 +1,15 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gphana"
+classLabel = "imagerefract"
+ordName = NULL
+wpnName = "Phantom VIR"
+fireSound = "phan01.wav"
+wpnReticle = "gphana.0"
+wpnPriority = 0
+wpnCategory = "SPEC"
+
+[SpecialItemClass]
+activeSound = "gphan01.wav"
+expireSound = "phan03.wav"
+ammoCost = 40  //Coxxon  //20

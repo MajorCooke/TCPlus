@@ -1,0 +1,18 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gstnga_c"
+classLabel = "cannon"
+altName = "gstnga_a"
+ordName = "ostnga_c"
+wpnName = "Stinger Msl C"
+fireSound = "gsand00.wav"
+wpnReticle = "gstnga_c"
+wpnCategory = "ROCK"
+aiRange = 200
+isAssault = 0
+
+[CannonClass]
+shotDelay = 1.0
+salvoDelay = 0.1
+salvoCount = 5
+shotAlternate = 1

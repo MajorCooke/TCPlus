@@ -1,0 +1,47 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "apcamrr"
+classLabel = "camerapod"  //"beacon"  //
+geometryName = "rbcamrcox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "rbcamrcox00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+scrapCost = 10  //cam
+scrapValue = 0
+maxHealth = 1000  //500  //camr
+addHealth = 10  //camr
+maxAmmo = 0
+unitName = ""  //"Camera Pod"
+aiName = "CameraPodProcess"
+ScanTeamLimit = 2 //camr   0 all, 1 team, 2 allies
+CanBeIdleVictim = false  //camr
+Tuggable = 0  //-1 default, 0 never, 1 always
+
+///////// LIGHTS & EFFECTS /////////
+effectHard1 = "hp_emit_1"
+effectName1 = "vfxbztclight.redblink"
+effectMinAltitude1 = -1.0
+effectMaxAltitude1 = 10.0  
+effectMinVelocity1 = 0.0
+effectMaxVelocity1 = 5.0
+effectHard2 = "hp_emit_2"
+effectName2 = "vfxbztcthrst.thrusttinyred"
+effectMinAltitude2 = -1.0
+effectMaxAltitude2 = 1000.0  
+effectMinVelocity2 = 0.0
+effectMaxVelocity2 = 500.0 
+effectHard3 = "hp_com"
+effectName3 = "dmgvhcl1"
+effectMinHealth3 = 0.6
+effectMaxHealth3 = 0.9
+effectHard4 = "hp_com"
+effectName4 = "dmgvhcl2"
+effectMinHealth4 = 0.0
+effectMaxHealth4 = 0.6
+
+[CameraPodClass]
+omegaSpin = 0.1  //changing does nothing 1.372  Coxxon  //1.0
+rangeScan = 0.0
+periodScan = 0.0

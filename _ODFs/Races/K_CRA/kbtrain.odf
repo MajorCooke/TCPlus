@@ -1,0 +1,183 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "kbtrain"
+classLabel = "barracks"
+geometryName = "kbtraincox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "kbtraincox00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+collisionRadius = 10.0  //bztc bldg
+scrapCost = 70
+scrapValue = 30
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Barracks"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+ownsTerrain = 1  //1 if no baseplate faction
+//isSingle = 1
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+
+buildRequire = "F"
+buildSupport = "A"
+powerCost = 0
+
+/////// REQUIREMENTS ///////////////
+//requireCount = 2
+//requireName1 = "kbcbun"
+//requireText1 = "Build Comm Tower"
+//requireName2 = "kbarmo"
+//requireText2 = "Build Armory"
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "kbtrain"
+provideName2 = "VIRTUAL_CLASS_BARRACKS"
+provideName3 = "base"
+provideName4 = "xbtrain"
+
+///////// LIGHTS & EFFECTS /////////
+LightsOffEffectsMask = 65535
+lightHard1 = "hp_light_1"
+lightName1 = "omniorg8"
+lightHard2 = "hp_light_2"
+lightName2 = "omniorg8"
+lightHard3 = "hp_light_3"
+lightName3 = "omniorg8"
+lightHard4 = "hp_light_4"
+lightName4 = "omniorg8"
+lightHard5 = "hp_light_5"
+lightName5 = "omniorg8"
+lightHard6 = "hp_light_6"
+lightName6 = "omniorg8"
+lightHard7 = "hp_light_7"
+lightName7 = "omniorg8"
+lightHard8 = "hp_light_8"
+lightName8 = "omniorg8"
+lightHard9 = "hp_light_9"
+lightName9 = "omniorg8"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "kbtrain.smoke"
+effectFlags1 = "447" //447 on  479 off
+effectHard2 = "hp_emit_2"
+effectName2 = "kbtrain.smoke"
+effectFlags2 = "447" //447 on  479 off
+effectHard3 = "hp_emit_3"
+effectName3 = "kbtrain.smoke"
+effectFlags3 = "447" //447 on  479 off
+//THERE IS NO 4 EFFECT
+//smoke1
+effectHard5 = "hp_smoke_1"
+effectName5 = "dmgbldg1"
+effectMinHealth5 = 0.6
+effectMaxHealth5 = 0.8
+effectHard6 = "hp_smoke_1"
+effectName6 = "dmgbldg2"
+effectMinHealth6 = 0.4
+effectMaxHealth6 = 0.6
+effectHard7 = "hp_smoke_1"
+effectName7 = "dmgbldg3"
+effectMinHealth7 = 0.2
+effectMaxHealth7 = 0.4
+effectHard8 = "hp_smoke_1"
+effectName8 = "dmgbldg4"
+effectMinHealth8 = 0.0
+effectMaxHealth8 = 0.2
+//smoke2
+effectHard9 = "hp_smoke_2"
+effectName9 = "dmgbldg1"
+effectMinHealth9 = 0.6
+effectMaxHealth9 = 0.8
+effectHard10 = "hp_smoke_2"
+effectName10 = "dmgbldg2"
+effectMinHealth10 = 0.4
+effectMaxHealth10 = 0.6
+effectHard11 = "hp_smoke_2"
+effectName11 = "dmgbldg3"
+effectMinHealth11 = 0.2
+effectMaxHealth11 = 0.4
+effectHard12 = "hp_smoke_2"
+effectName12 = "dmgbldg4"
+effectMinHealth12 = 0.0
+effectMaxHealth12 = 0.2
+//smoke3
+effectHard13 = "hp_smoke_3"
+effectName13 = "dmgbldg1"
+effectMinHealth13 = 0.6
+effectMaxHealth13 = 0.8
+effectHard14 = "hp_smoke_3"
+effectName14 = "dmgbldg2"
+effectMinHealth14 = 0.4
+effectMaxHealth14 = 0.6
+effectHard15 = "hp_smoke_3"
+effectName15 = "dmgbldg3"
+effectMinHealth15 = 0.2
+effectMaxHealth15 = 0.4
+effectHard16 = "hp_smoke_3"
+effectName16 = "dmgbldg4"
+effectMinHealth16 = 0.0
+effectMaxHealth16 = 0.2
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_kbtraincox"
+chunkEffect1 = "kbtraincoxchk01.fbx"  
+chunkEffect2 = "kbtraincoxchk02.fbx"  
+chunkEffect3 = "kbtraincoxchk03.fbx"  
+chunkEffect4 = "kbtraincoxchk04.fbx"  
+chunkEffect5 = "kbtraincoxchk05.fbx"  
+HasSeparateChunks = true 
+numChunks = 15
+numChunks1 = 3
+numChunks2 = 3
+numChunks3 = 3
+numChunks4 = 3
+numChunks5 = 3
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+[smoke]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.03
+emitVelocity = "0.0 5.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = 0.5
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "100 100 170 60"
+finishColor = "180 180 200 0"
+startRadius = 1.0
+finishRadius = 2.0
+animateTime = 0.5
+rotationRate = 0.25
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 100
+powerTap1 = "HP_TAP_1"
+powerName = "kbtwrg"
+PoweredByTaps = false  //false - trad power and nonpower addon
+AutoBuildTap1 = true  //true build tap on init creation
+//DestroyTapsWithParent = true  //true default
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "sbbarre0.wav"
+//bldEdge = "wwww"  //bldg
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+///////////////////////////////////////////////////////////////
+[BarracksClass]  //trn Coxxon
+pilotHold = 500  //trn Coxxon

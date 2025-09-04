@@ -1,0 +1,17 @@
+/////////Coxxon - BZTC/////////
+//deathmatch ordnance
+[OrdnanceClass]
+baseName = "ominiad"
+classLabel = "ominia_c"  //"bullet"
+
+ammoCost = 4  //Coxxon  //1.25
+lifeSpan = 0.6 // 180m
+shotSpeed = 300.0
+
+damageValue(N) = 30  //Coxxon  //10 // none // 220
+damageValue(L) = 24  //Coxxon  //8 // light // 160
+damageValue(H) = 15  //Coxxon  //5 // heavy // 100
+
+damageValue(S) = 24  //Coxxon  //8 // standard // 80
+damageValue(D) = 15  //Coxxon  //5 // deflection // 100
+damageValue(A) = 33  //Coxxon  //11 // absorption 110

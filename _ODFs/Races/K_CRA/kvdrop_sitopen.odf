@@ -1,0 +1,73 @@
+//////////Coxxon - BZTC//////////
+[GameObjectClass]
+baseName = "kvdrop_sitopen"
+classLabel = "i76building"
+geometryName = "kvdropcox_sitopen.fbx"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 10000
+maxAmmo = 0
+unitName = "Elephant"
+heatSignature = 0.8
+imageSignature = 8.0
+radarSignature = 1.0
+ownsTerrain = 1
+canDetect = 0
+canInteract = 0
+//canCollide = 1  //avdrop
+armorClass = H
+collisionRadius = 1.0  //avdrop
+
+///////// LIGHTS & EFFECTS /////////
+//lightHard1 = "hp_light_1"
+//lightName1 = "omniwbl16"
+//lightHard2 = "hp_light_2"
+//lightName2 = "omniwbl16"
+//lightHard3 = "hp_light_3"
+//lightName3 = "omniwbl16"
+
+lightHard1 = "hp_light_6"
+lightName1 = "hltwbl"
+lightHard2 = "hp_light_7"
+lightName2 = "hltwbl"
+lightHard3 = "hp_light_8"
+lightName3 = "hltwbl"
+lightHard4 = "hp_light_9"
+lightName4 = "hltwbl"
+lightHard5 = "hp_light_10"
+lightName5 = "hltwbl"
+lightHard6 = "hp_light_11"
+lightName6 = "hltwbl"
+lightHard7 = "hp_light_12"
+lightName7 = "hltwbl"
+lightHard8 = "hp_light_13"
+lightName8 = "hltwbl"
+
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "hp_smoke_1"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "hp_smoke_1"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "hp_smoke_1"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "hp_smoke_1"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+[BuildingClass]
+
+//no tunnel in bzcc
+tunnelCount = 1
+bldEdge = "twww"
+tunnel01X0 = 2
+tunnel01Z0 = 1
+tunnel01DX = 4
+tunnel01DZ = 5
+tunnel01Edge = "twww"

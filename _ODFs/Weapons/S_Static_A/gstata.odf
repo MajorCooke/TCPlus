@@ -1,0 +1,39 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gstata"
+classLabel = "damagefield"
+ordName = NULL
+wpnName = "Static Charge"
+fireSound = "stat01.wav"
+wpnReticle = "gstata.0"
+wpnCategory = "SPEC"
+isAssault = 0
+flashName = "gstata.render";
+
+[DamageFieldClass]
+ammoCost = 200.0
+damageRadius = 20.0
+
+damageValue(N) = 400.0 // none
+damageValue(L) = 300.0 // light
+damageValue(H) = 100.0 // heavy
+
+damageValue(S) = 300.0 // standard
+damageValue(D) = 400.0 // deflection
+damageValue(A) = 100.0 // absorption
+
+activeSound = "sgtow01.wav"
+
+[Render]
+renderBase = "draw_static"
+textureName = "static.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.1
+finishRadius = 0.5
+emitDelay = 0.005
+emitDelayVar = 0.0
+innerRadius = 4.0
+outerRadius = 10.0
+segmentTime = 0.4

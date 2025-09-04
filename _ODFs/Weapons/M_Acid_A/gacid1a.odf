@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gacid1a"
+classLabel = "mortar"
+ordName = "gacid2a"
+wpnName = "Acid Cloud"
+fireSound = "mdmort01.wav"
+flashName = "ghwtza.render"
+wpnReticle = "ggasma"
+wpnLadder = "gmortar.L0"  //have reticle and in sprite table stb, but will not show as ladder
+wpnPriority = 2
+wpnCategory = "MORT"
+aiRange = 350
+
+[CannonClass]
+shotDelay = 20.0

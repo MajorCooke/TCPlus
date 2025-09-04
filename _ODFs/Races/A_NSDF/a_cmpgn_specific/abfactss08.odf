@@ -1,0 +1,25 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "abfactss08"
+classLabel = "abfact"
+infoName = "abfact.inf"
+upgradeName = "avfactss08"
+isSingle = 1  //depbld  Coxxon
+
+provideCount = 4
+
+provideName4 = "abfactss08"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_abfactcox"
+
+/////////////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+
+/////////////////////////////////////////////////////////////////////
+[BuildingClass]
+
+/////////////////////////////////////////////////////////////////////
+[FactoryClass]
+buildItem10 = "avtug"  //"avtugss08"  //for this mission

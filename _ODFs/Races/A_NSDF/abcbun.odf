@@ -1,0 +1,178 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "abcbun"
+classLabel = "commbunker"
+geometryName = "abcbuncox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "abcbuncox00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+collisionRadius = 10.0  //bztc bldg
+scrapCost = 60  //50  //cbun
+scrapValue = 20
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Comm Tower"
+aiName = "CommTowerProcess"
+aiName2 = "CommTowerProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+ownsTerrain = 1  //1 if no baseplate faction
+isSingle = 1  //cbun
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+requireReplaceTerrainPhysics = 1  //bzcc  //cbun
+CategoryTypeOverride = 4  //cbun  //14 //TEAM_SLOT_COMMTOWER
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0  //cbun
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "abcbun"
+provideName2 = "VIRTUAL_CLASS_COMMBUNKER"
+provideName3 = "base"
+provideName4 = "xbcbun"
+
+///////// LIGHTS & EFFECTS /////////
+LightsOffEffectsMask = 65535
+lightHard1 = "hp_light_1"
+lightName1 = "omniorg5"
+lightHard2 = "hp_light_2"
+lightName2 = "omniorg5"
+lightHard3 = "hp_light_3"
+lightName3 = "omniorg5"
+lightHard4 = "hp_light_4"
+lightName4 = "omniorg5"
+lightHard5 = "hp_light_0"
+lightName5 = "omniwbl8"
+//NO DMG1 SO CAN HAVE 5 FLAMES WITH 1-3 DMG
+//smoke1
+effectHard1 = "hp_smoke_1"
+effectName1 = "dmgbldg2"
+effectMinHealth1 = 0.4
+effectMaxHealth1 = 0.6
+effectHard2 = "hp_smoke_1"
+effectName2 = "dmgbldg3"
+effectMinHealth2 = 0.2
+effectMaxHealth2 = 0.4
+effectHard3 = "hp_smoke_1"
+effectName3 = "dmgbldg4"
+effectMinHealth3 = 0.0
+effectMaxHealth3 = 0.2
+//smoke2
+effectHard4 = "hp_smoke_2"
+effectName4 = "dmgbldg2"
+effectMinHealth4 = 0.4
+effectMaxHealth4 = 0.6
+effectHard5 = "hp_smoke_2"
+effectName5 = "dmgbldg3"
+effectMinHealth5 = 0.2
+effectMaxHealth5 = 0.4
+effectHard6 = "hp_smoke_2"
+effectName6 = "dmgbldg4"
+effectMinHealth6 = 0.0
+effectMaxHealth6 = 0.2
+//smoke3
+effectHard7 = "hp_smoke_3"
+effectName7 = "dmgbldg2"
+effectMinHealth7 = 0.4
+effectMaxHealth7 = 0.6
+effectHard8 = "hp_smoke_3"
+effectName8 = "dmgbldg3"
+effectMinHealth8 = 0.2
+effectMaxHealth8 = 0.4
+effectHard9 = "hp_smoke_3"
+effectName9 = "dmgbldg4"
+effectMinHealth9 = 0.0
+effectMaxHealth9 = 0.2
+//smoke4
+effectHard10 = "hp_smoke_4"
+effectName10 = "dmgbldg2"
+effectMinHealth10 = 0.4
+effectMaxHealth10 = 0.6
+effectHard11 = "hp_smoke_4"
+effectName11 = "dmgbldg3"
+effectMinHealth11 = 0.2
+effectMaxHealth11 = 0.4
+effectHard12 = "hp_smoke_4"
+effectName12 = "dmgbldg4"
+effectMinHealth12 = 0.0
+effectMaxHealth12 = 0.2
+//smoke5
+effectHard13 = "hp_smoke_5"
+effectName13 = "dmgbldg2"
+effectMinHealth13 = 0.4
+effectMaxHealth13 = 0.6
+effectHard14 = "hp_smoke_5"
+effectName14 = "dmgbldg3"
+effectMinHealth14 = 0.2
+effectMaxHealth14 = 0.4
+effectHard15 = "hp_smoke_5"
+effectName15 = "dmgbldg4"
+effectMinHealth15 = 0.0
+effectMaxHealth15 = 0.2
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_abcbuncox"
+
+chunkEffect1 = "abcbuncoxchk01.fbx"  
+chunkEffect2 = "abcbuncoxchk02.fbx"  
+chunkEffect3 = "abcbuncoxchk03.fbx"  
+chunkEffect4 = "abcbuncoxchk04.fbx"  
+chunkEffect5 = "abcbuncoxchk05.fbx"  
+HasSeparateChunks = true 
+numChunks = 14
+numChunks1 = 4
+numChunks2 = 4
+numChunks3 = 3
+numChunks4 = 2
+numChunks5 = 1
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+////////////////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "abcomme0.wav"
+SoundAmbientDist = 0.4  //cbun
+//bldEdge = "wwww"  //bldg
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+////////////////////////////////////////////////////////////////////////
+[CommBunkerClass]
+rangeScan = 800  //cbun  //400
+periodScan = 0.0
+MinViewDist = 50.0  //cbun
+viewDist = 200.0  //cbun
+MaxViewDist = 300.0  //cbun
+
+//viewZoom = 1.5  //cbun
+//minZoom = 0.25  //cbun  //1.0
+//maxZoom = 3.0  //cbun
+//viewPitch = 1.0  //cbun
+//minPitch = 0.4  //cbun  //0.75
+//maxPitch = 1.5  //cbun
+//nearPlane = 1  //cbun
+//farPlane = 1000  //cbun
+disableFog = 0  //cbun
+
+////////////////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 300  //cbun
+CanBasepanelSelect = true  //cbun
+PanelIcon = "icon_base_cbun.png"  //cbun
+ShowIcon = true  //cbun
+
+//powerTap1 = "hp_com"
+//powerName = "gcleara"
+//PoweredByTaps = false  //false - trad power and nonpower addon
+//AutoBuildTap1 = true  //true build tap on init creation
+//DestroyTapsWithParent = true  //true default

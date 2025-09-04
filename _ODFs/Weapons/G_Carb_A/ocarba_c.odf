@@ -1,0 +1,53 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ocarba_c"
+classLabel = "bullet"
+shotGeometry = NULL  //"aochancox00.fbx"  //
+shotSound = "stabacox.wav"  //NULL  //"Ordin_a.wav"
+xplGround = "xbulgnd"
+xplVehicle = "xbulcar"
+xplBuilding = "xbulbld"
+
+ammoCost = 12.0  //Coxxon  //1.25
+lifeSpan = 0.53  //106m  //0.35 // 105m
+shotSpeed = 200.0  //300.0
+
+damageValue(N) = 65  //55  //Coxxon  //11 // none // 200
+damageValue(L) = 55  //40  //Coxxon  //8 // light // 160
+damageValue(H) = 45  //25  //Coxxon  //5 // heavy // 100
+
+damageValue(S) = 55  //40  //Coxxon  //8 // standard // 160
+damageValue(D) = 45  //25  //Coxxon  //5 // deflection // 100
+damageValue(A) = 65  //50  //Coxxon  //10 // absorption // 200
+
+renderName = "ocarba_c.render"
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "ocarba_c.smoke"  //smoke then core
+renderName2 = "ocarba_c.tracer"
+
+[Smoke]  //mod from default faf misl
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "70 80 120 64"
+finishColor = "70 70 70 0"
+startRadius = 0.3
+finishRadius = 0.7
+animateTime = 1.5
+emitDelay = 0.005
+emitVelocity = "0.0 1.0 0.0"
+emitVariance = "0.6 0.6 0.6"
+emitLife = 1.5
+
+[tracer]
+renderBase = "draw_tracer"
+textureBlend = "one one modulate"
+textureName = "aotrcrwhtcox00.tga"  //"aolbltwhtcox00.tga"  //
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.15
+finishRadius = 0.15
+tracerLength = 6.0

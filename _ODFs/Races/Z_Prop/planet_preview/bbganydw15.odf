@@ -1,0 +1,50 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+classLabel = "I76Building"
+geometryName = "bbganydw1500.fbx"
+animCount = 1
+animName1 = "flyby"
+animFile1 = "bbganydw1501.fbx"
+collisionRadius = 0.1
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+unitName = "DW15 END Ganymede"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+canCollide = 0
+ignoremissinginf = 1
+
+///////// LIGHTS & EFFECTS /////////
+lightHard1 = "hp_light_1"
+lightName1 = "omniwbl2"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "bbganydw15.thrust"
+//effectHard2 = "hp_emit_2"
+//effectName2 = "ganydw15.    "
+
+[thrust]
+renderBase = "draw_twirl_trail"  //"draw_sprite"
+emitDelay = 0.02
+emitDelayVar = 0.03
+emitVelocity = "0.0 0.0 -5.0"
+emitVariance = "2.0 0.0 2.0" 
+emitInherit = "0.2 0.2 0.2"
+emitLife = 0.1
+textureName = "lighthalo.tga"  //"lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "200 255 255 100"
+finishColor = "255 250 0 50"
+startRadius = 2.0
+finishRadius = 0.2
+animateTime = 0.1
+rotationRate = 10.0
+
+[BuildingClass]
+bldEdge = "tttt"  //ssend

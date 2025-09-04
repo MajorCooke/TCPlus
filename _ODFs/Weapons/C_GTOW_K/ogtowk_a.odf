@@ -1,0 +1,18 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ogtowk_a"
+classLabel = "ogtowk_c"
+
+ammoCost = -1
+lifeSpan = 2.0 // 200m
+shotSpeed = 100.0
+
+//BASE V0 VERSION DOES LESS DMG THAN  UPGRADE V1 
+//(130% dmg of single sbgtow/ibgtow shot)
+damageValue(N) = 200  //Coxxon  //150 // none
+damageValue(L) = 160  //Coxxon  //120 // light
+damageValue(H) = 65  //Coxxon  //50 // heavy
+
+damageValue(S) = 160  //Coxxon  //120 // standard
+damageValue(D) = 200  //Coxxon  //150 // deflection
+damageValue(A) = 65  //Coxxon  //50 // absorption

@@ -1,0 +1,194 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "bbfactd4"
+classLabel = "factory"
+geometryName = "bbfactcox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "bbfactcox01.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = 1
+scrapCost = 55
+scrapValue = 15
+maxHealth = 6000
+//addHealth = 10  //fact  Coxxon
+maxAmmo = 0
+unitName = "Factory"
+infoName = "bbfact.inf"
+aiName = "BuildingProcess"
+aiName2 = "BuildingProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+collisionRadius = 10.0  //lrg bldg
+powerCost = 0
+ownsTerrain = 1  //1 if no baseplate faction
+//buildSupport = "A"  //def recy
+buildRequire = "N"  //"F"//def recy
+allowMDMCollisionDetonation = 1  //Coxxon
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+upgradeName = "bvfactd5"
+
+//isSingle = 1  //depbld  Coxxon//limitClass1 = "bbfactd4"  //depbld Coxxon
+//limitClass1Count = 1  //depbld Coxxon
+//limitClass1Text = "Only One Allowed"  //depbld Coxxon
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+provideName1 = "bbfactd4"
+provideName2 = "VIRTUAL_CLASS_FACTORY"
+provideName3 = "xbfact"
+
+/////////LIGHTS AND EFFECTS/////////
+lightHard1 = "hp_light_7"
+lightName1 = "hltwgn"
+lightHard2 = "hp_light_8"
+lightName2 = "hltwgn"
+lightHard3 = "hp_light_5" //vehicle build area
+lightName3 = "omnired8"
+lightHard4 = "hp_light_13"  //interior
+lightName4 = "omniwrd5"
+
+effectHard1 = "hp_light_6"
+effectName1 = "vfxbztclight.blueblink"
+effectHard2 = "hp_light_7"
+effectName2 = "vfxbztclight.greenblink"
+effectHard3 = "hp_light_8"
+effectName3 = "vfxbztclight.greenblink"
+effectHard4 = "hp_emit_2"
+effectName4 = "vfxbztcbldgs.smokestack"
+effectHard5 = "hp_emit_3"
+effectName5 = "vfxbztcbldgs.projectornsdf"
+effectHard6 = "hp_emit_4"
+effectName6 = "vfxbztcbldgs.projectornsdf"
+//smoke1  --NO DMG 1
+effectHard7 = "hp_smoke_1"
+effectName7 = "dmgbldg2"
+effectMinHealth7 = 0.4
+effectMaxHealth7 = 0.6
+effectHard8 = "hp_smoke_1"
+effectName8 = "dmgbldg3"
+effectMinHealth8 = 0.2
+effectMaxHealth8 = 0.4
+effectHard9 = "hp_smoke_1"
+effectName9 = "dmgbldg4"
+effectMinHealth9 = 0.0
+effectMaxHealth9 = 0.2
+//smoke2  --NO DMG 1
+effectHard10 = "hp_smoke_2"
+effectName10 = "dmgbldg2"
+effectMinHealth10 = 0.4
+effectMaxHealth10 = 0.6
+effectHard11 = "hp_smoke_2"
+effectName11 = "dmgbldg3"
+effectMinHealth11 = 0.2
+effectMaxHealth11 = 0.4
+effectHard12 = "hp_smoke_2"
+effectName12 = "dmgbldg4"
+effectMinHealth12 = 0.0
+effectMaxHealth12 = 0.2
+//smoke3
+effectHard13 = "hp_smoke_3"
+effectName13 = "dmgbldg1"
+effectMinHealth13 = 0.6
+effectMaxHealth13 = 0.8
+effectHard14 = "hp_smoke_3"
+effectName14 = "dmgbldg2"
+effectMinHealth14 = 0.4
+effectMaxHealth14 = 0.6
+effectHard15 = "hp_smoke_3"
+effectName15 = "dmgbldg3"
+effectMinHealth15 = 0.2
+effectMaxHealth15 = 0.4
+effectHard16 = "hp_smoke_3"
+effectName16 = "dmgbldg4"
+effectMinHealth16 = 0.0
+effectMaxHealth16 = 0.2
+//no long used anyway
+//effectHard7 = "hp_emit_1"
+//effectName7 = "vfxbztcbldgs.kbrecyring"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_bbfactcox"
+
+chunkEffect1 = "bvfactcoxchk08.fbx"  
+chunkEffect2 = "bvfactcoxchk09.fbx"  
+chunkEffect3 = "bvfactcoxchk10.fbx"  
+chunkEffect4 = "bvfactcoxchk11.fbx"  
+chunkEffect5 = "bvfactcoxchk12.fbx"  
+//"bvfactcoxchk06.fbx"  
+//"bvfactcoxchk07.fbx"  
+HasSeparateChunks = true 
+numChunks = 5
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 1
+numChunks5 = 1
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+/////////////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 100
+SoundSelect = "avmufv0b.wav"  //SPECIAL click + unit factory here  //"cfigclk.wav"
+SoundDeselect = "cornrclk.wav"
+
+/////////////////////////////////////////////////////////////////////
+[BuildingClass]
+bldEdge = "wwww"  //recy
+tunnelCount = 1
+tunnel01X0 = 3
+tunnel01Z0 = 3
+tunnel01DX = 2
+tunnel01DZ = 4
+tunnel01Edge = "wwtw"
+
+soundAmbient = "ibfact00.wav"
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+/////////////////////////////////////////////////////////////////////
+[FactoryClass]
+ChromeEffect = 0  // 0 = line, 1 = chrome 
+ChromeTexture = "reflection3.tga"  // reflection map texture 
+AnimateChrome = 1  //0 = static, 1 = animated 
+BuildSparkConfig = "sparkerA"  //"sparker"  // renderer to apply at build vertices 
+LineStartColor = "0 255 0 55"  // line effect start color 
+LineFinishColor = "50 150 0 20"  // line effect finish color ...
+BeamColor = "0 200 50 255"  //Coxxon  //"0 127 255 31"
+lineSolidColor = "0 255 0 70" 	// LOD Line color.
+KickAllCraft = true
+//scaleVelY = 5.0  //fact kick
+MultVelXZ = 2.0  //fact kick
+//DropoffDX = 0.0
+DropoffDZ = 28.0  //abfact
+
+soundBuild = "avrecye2cox.wav"  //"ibrecy02.wav"
+soundCancel = "mnu_buzz.wav"  //"cgrowl.wav"  //"locking3.wav"
+soundFinish = "avrecye9.wav"  //"iapc04.wav"
+reloadMsg = "avmufv1.wav"  //building underway
+rescueMsg = "avmufv2.wav"  //unit complete
+deployedMsg = "avmufvf.wav"  //unit factory online
+
+//weaponConfig = "bweapon.odf" //for reference/must use .odf - Coxxon
+
+buildItem1 = "bvmbike"
+buildItem2 = "bvmisl"
+buildItem3 = "bvtank"
+buildItem4 = "bvrckt"
+buildItem5 = "bvartl"
+buildItem6 = "bvwalk"
+buildItem7 = "bvapc"
+//buildItem8 = ""
+buildItem9 = "bvmine"
+//buildItem10 = ""

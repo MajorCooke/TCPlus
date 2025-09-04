@@ -1,0 +1,70 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ogtowa_c"
+classLabel = "beam"
+shotGeometry = NULL
+xplGround = "xgtowagnd_c"
+xplVehicle = "xgtowacar_c"
+xplBuilding = "xgtowabld_c"
+ammoCost = -1  //gtow
+lifeSpan = 170e-3 // 170m
+shotSpeed = 1e3
+
+damageValue(N) = 325 // none
+damageValue(L) = 275 // light
+damageValue(H) = 125 // heavy
+
+damageValue(S) = 275  // standard
+damageValue(D) = 325  // deflection
+damageValue(A) = 125  // absorption
+
+renderName = "ogtowa_c.render"
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2  //no sparkle
+renderName1 = "ogtowa_c.beam"
+renderName2 = "ogtowa_c.fringe"
+renderName3 = "ogtowa_c.sparkle"
+
+[Beam]
+renderBase = "draw_bolt"
+textureName = "blastenergy.tga" //bzcc NULL
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 100 0 100"
+startRadius = 0.5
+finishRadius = 0.1
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.1
+textureRate = 0.1  //Coxxon  //0.01
+Texturespeed = -32  //bzcc
+
+[Fringe]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 0 0 10"
+startRadius = 0.1
+finishRadius = 1.0
+segmentLength = 5.0
+segmentVariance = "1.0 1.0 1.0"
+animateTime = 0.05
+textureRate = 0.01
+textureSpeed = -20.0  //bzcc  //5.0
+
+[Sparkle]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureblend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 200 0 100"
+startRadius = 0.3
+finishRadius = 0.1
+animateTime = 0.3
+emitDelay = 0.002
+emitVariance = "2.0 2.0 2.0"
+emitVelocity = "0.0 0.0 10.0"
+emitLife = 0.1

@@ -1,0 +1,230 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "kvrckt"
+classLabel = "wingman"
+geometryName = "kvrcktcox00.fbx"
+cockpitName = "kvrcktcox_cockpit.fbx"
+animCount = 3
+animName1 = "forward"
+animFile1 = "kvrcktcoxsf.fbx"
+animName2 = "neutral"
+animFile2 = "kvrcktcoxsn.fbx"
+animName3 = "reverse"
+animFile3 = "kvrcktcoxsr.fbx"
+scrapValue = 25
+scrapCost = 65
+customCost = 80  //Coxxon  //75
+buildTime = 15.0
+customTime = 20.0
+maxHealth = 4000  //rkt
+maxAmmo = 4000  //rkt
+addHealth = 1
+addAmmo = 10  //rkt
+unitName = "Phoenix rkt"
+unitIcon = "icon_kvrckt.png"
+unitStatus = "wire_kvrckt.png"
+infoName = "kvrckt.inf"  //or baseName, or provide name
+aiName = "RocketTankFriend"  //lockon
+aiName2 = "RocketTankEnemy"  //lockon
+heatSignature = 0.5
+imageSignature = 2.5
+radarSignature = 0.1
+armorClass = H  //rkt
+boxCollide = 1
+//canSnipe = 1  //wingman allows snipe
+//collisionRadius = 1.0  //bzcc vehc
+//collisionName = "kvrcktcollide.fbx"
+
+/////// REQUIREMENTS ///////////////	
+//requireCount = 1
+//requireName1 = "kbsbay"
+//requireText1 = "Build Supply Hangar"
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+provideName1 = "kvrckt"
+provideName2 = "VIRTUAL_CLASS_ROCKETTANK"
+provideName3 = "assault"
+provideName4 = "DefendUnit"
+provideName5 = "AntiAir"
+
+/////// WEAPONS ////////////////////
+weaponMask = 11111  //rkt
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = ""
+recoilName1 = "recoil7"  //"recoil8" 2nd cann
+recoilDist1 = -1.0  //tank
+weaponAssault1 = 1
+//weaponGroup1 = 0
+weaponHard2 = "HP_GUN_1"
+weaponName2 = ""
+recoilName2 = "recoil5"
+recoilDist2 = -1.0  //tank
+weaponAssault2 = 1
+//weaponGroup2 = 1
+weaponHard3 = "HP_GUN_2"
+weaponName3 = ""
+recoilName3 = "recoil6"
+recoilDist3 = -1.0  //tank
+weaponAssault3 = 1
+//weaponGroup2 = 1
+weaponHard4 = "HP_ROCKET_1"
+weaponName4 = "grktba_a"  //"grktbomb_c"
+recoilName4 = "recoil1"  //"recoil3" outer rckt
+recoilDist4 = -1.0  //tank
+weaponAssault4 = 1
+//weaponGroup3 = 1
+weaponHard5 = "HP_ROCKET_2"
+weaponName5 = "grktba_a"  //"grktbomb_c"
+recoilName5 = "recoil2"  //"recoil4" outer rckt
+recoilDist5 = -1.0  //tank
+weaponAssault5 = 1
+//weaponGroup3 = 1
+//"recoil9" "recoil10" are launch boxes
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltwyl"  
+LightsOnlyWhenPiloted = true
+
+effectHard1 = "hp_dust_1"
+effectName1 = "vfxbztcdusts.dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0
+effectMinVelocity1 = 10.0
+effectMaxVelocity1 = 500.0
+effectHard2 = "hp_dust_2"
+effectName2 = "vfxbztcdusts.dusttrail"
+effectMinAltitude2 = 0.0
+effectMaxAltitude2 = 5.0
+effectMinVelocity2 = 10.0
+effectMaxVelocity2 = 500.0
+effectHard3 = "hp_dust_0" 
+effectName3 = "vfxbztcdusts.dustpuff"
+effectMinAltitude3 = 0.0
+effectMaxAltitude3 = 3.0
+effectMinVelocity3 = 0.0
+effectMaxVelocity3 = 10.0
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "hp_smoke_1"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "hp_smoke_1"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "hp_smoke_1"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "hp_smoke_1"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+//////////////////////////////////	
+[CraftClass]
+rangeScan = 300.0
+periodScan = 5.0
+velocJam = 5.0
+engageRange = 120
+braccelFactor = 0.05
+strafeFactor = 0.1
+steerFactor = 2.0  //herp  //1.0
+omegaFactor = 0.1  //herp  //0.2
+velFactor = 0.2
+//avoidSpeed = 20.0
+//topSpeed = 25.0
+//RetargetOnStrafe = true  //tnk
+attackTask = "AssaultTankAttack"  //"SupportProcess"  //rkt
+subattackTask = "SupportProcess"  //rkt
+subAttackClass = "ANS"
+//attackTaskUsesGroups = false  //Coxxon
+GoToTaskHasLeader = false  //Coxxon
+canHunt = 1	// defaults to 0
+//NavIsDropped = true //drop behind - bugged, immed removes nav/camr in MP/MPI
+//NavDropSound = "gprox00.wav"  //sound if navisdropped true
+NavConfig = "apcamrk" //specify nav beacon/camera type
+AllowedControlsWhenTugged = 31  //7dflt Sumup: 1hop 2bail 4wcycle 8steer 16weapuse
+//EndSlideWhenCanHit = 1  //rkt  //1-exit SLIDE as soon it can hit
+//MustBeLinedUpToHit = 1  //rkt  //AbleToHit calc for heading and fire cone
+
+//OffensiveProcessIsTenacious = false  //Coxxon  true
+//OffensiveProcessIsTenaciousAITeam = false  //Coxxon
+//DoBlastUsesFields = true  //false  //Coxxon
+//SitAttackAllowIndependence = true  //Coxxon  false
+//SitAttackAllowCounterattack = true  //Coxxon  false
+
+damageEffect1 = "dmgvhcl1"  //less stock dmg effect
+damageEffect2 = "dmgvhcl1"  //but still some sparks
+damageEffect3 = "dmgvhcl1"  //also lower visibility
+damageEffect4 = "dmgvhcl1"  //on cloaked units
+
+/////////CRASH INTO COMPONENT PARTS/////////
+//XplSnipe ship sniped, XplChunk chunks ship killed, XplCrash ship "crash mesh" blows.
+//explosionName = "xpl_crash_kvrcktcox"
+//xplChunk = "xpl_crash_kvrcktcox"
+xplcrash = "xpl_crash_kvrcktcox"  //USE THIS FOR MOST CRAFT
+
+//chunkEffect1 = "kvrcktcoxchk01.fbx"  
+//chunkEffect2 = "kvrcktcoxchk02.fbx"
+//chunkEffect3 = "kvrcktcoxchk03.fbx"
+//chunkEffect4 = "kvrcktcoxchk04.fbx"
+//chunkEffect5 = "kvrcktcoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 5
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+/////////MESSAGES/////////
+selectAttackMsg = "kvhrazv0.wav"  //engaging thrusters
+selectWaitMsg = "kvhrazvj.wav"  //bomber here
+selectFollowMsg = "kvhrazv7.wav"  //i will defend
+selectGoMsg = "kvhrazv2.wav"  //understood
+selectOtherMsg = "kvhrazvf.wav"  //your orders?
+goMsg = "kvhrazvg.wav"  //enroute
+goObjectMsg = "kvhrazvg.wav"  //enroute
+attackMsg = "kvhrazvd.wav"  //attacking enemy
+followMsg = "kvhrazvh.wav"  //protecting
+followMeMsg = "kvhrazv3.wav"  //i will follow
+repairMsg = "kvhrazv4.wav"  //repairing
+reloadMsg = "kvhrazv5.wav"  //reloading
+rescueMsg = "kvhrazv8.wav"  //immediately
+recycleMsg = "kvhrazv9.wav"  //thank you
+otherMsg = "kvhrazvf.wav"  //your orders?
+user1Msg = "kvhrazv6.wav"  //patrolling area
+holdMsg = "kvhrazvi.wav"  //yes sir
+killedMsg = "kvhrazvk.wav"  //China wins again
+//diedMsg = "kbetty3.wav"
+
+BailSound = "bail.wav"
+CollideTerrainSound = "vnvcs1.wav"
+CollideBldgSound = "vnvcs3.wav"
+CollideOtherSound = "vvcre2.wav"  //"vvcbb3.wav"
+
+//////////////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+setAltitude = 1.0  // how high off the ground
+accelDragStop = 4.0
+alphaTrack = 20.0
+alphaDamp = 5.0
+pitchPitch = 0.25
+pitchThrust = 0.1
+rollStrafe = 0.1
+rollSteer = 0.1
+velocForward = 30.0  //rkt  //25.0
+velocReverse = 20.0  //rkt
+velocStrafe = 20.0  //rkt  //tc14.0
+accelThrust = 20.0
+accelBrake = 40.0
+omegaSpin = 1.0  //rkt  //1.5  //1.0
+omegaTurn = 0.6  //rkt  //1.2
+alphaSteer = 4.0  //rkt  //7.0
+accelJump = 15.0  //rkt
+soundThrust= "kvhraze1.wav"
+soundJump= "kvhraze3.wav"
+THRUST_VOLUME_BASE_USER = 0.5  //turn back was too loud Coxxon

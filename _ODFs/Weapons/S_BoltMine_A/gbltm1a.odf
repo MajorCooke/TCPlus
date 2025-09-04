@@ -1,0 +1,13 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gbltm1a"
+classLabel = "dispenser"
+wpnName = "Arc Mine"
+fireSound = "mmine01.wav"
+wpnReticle = "gbolts"
+wpnPriority = 5
+wpnCategory = "SPEC"
+
+[DispenserClass]
+shotDelay = 5.0
+objectClass = "gbltm2a"

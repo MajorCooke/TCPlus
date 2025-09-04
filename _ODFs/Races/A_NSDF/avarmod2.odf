@@ -1,0 +1,6 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "avarmod2"
+classLabel = "avarmo"
+
+// [MC] I don't know what the point of all these deploy counters were for but I got rid of 'em. 

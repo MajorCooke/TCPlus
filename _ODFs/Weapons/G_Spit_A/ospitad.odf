@@ -1,0 +1,17 @@
+/////////Coxxon - BZTC/////////
+//deathmatch ordnance
+[OrdnanceClass]
+baseName = "ospitad"
+classLabel = "ospita_c"  //"bullet"
+
+ammoCost = 0.75  //Coxxon  //1.25
+lifeSpan = 0.6 // 180m
+shotSpeed = 300.0
+
+damageValue(N) = 7  //Coxxon  //10 // none // 220
+damageValue(L) = 6  //Coxxon  //8 // light // 160
+damageValue(H) = 5  //Coxxon  //5 // heavy // 100
+
+damageValue(S) = 5  //Coxxon  //8 // standard // 80
+damageValue(D) = 4  //Coxxon  //5 // deflection // 100
+damageValue(A) = 6  //Coxxon  //11 // absorption 110

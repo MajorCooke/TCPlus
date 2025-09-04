@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "orktba_a"
+classLabel = "orktba_c"
+
+ammoCost = 150  //Coxxon  //50
+lifeSpan = 4.0  //280.0m  //Coxxon  //5.0
+shotSpeed = 70.0  //Coxxon  //60.0
+
+damageValue(N) = 1200  //2400  //Coxxon  //500
+damageValue(L) = 1000  //1800  //Coxxon  //500
+damageValue(H) = 800  //1200  //Coxxon  //500
+
+damageValue(S) = 1000  //1800  //Coxxon  //500
+damageValue(D) = 1200  //2400  //Coxxon  //500
+damageValue(A) = 800  //1200  //Coxxon  //500

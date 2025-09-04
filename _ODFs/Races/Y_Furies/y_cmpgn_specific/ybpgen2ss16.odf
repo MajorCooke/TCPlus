@@ -1,0 +1,142 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "ybpgen2ss16"
+classLabel = "ybpgen2"
+geometryName = "ybpgencox02.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "ybpgencox02.fbx"
+scrapCost = 30
+scrapValue = 5
+maxHealth = 10000
+addHealth = 40
+maxAmmo = 0
+unitName = "Wind Power"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 10.0  //bztc bldg
+isAssault = 1  //bztc
+armorClass = H
+ownsTerrain = 1  //1 if no baseplate faction
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "ybpgen"
+provideName2 = "VIRTUAL_CLASS_POWERPLANT"
+provideName3 = "ybpgen2"
+provideName4 = "xbpgen"
+
+/////// LIGHTS & EFFECTS /////
+effectHard1 = "hp_emit_1"
+effectName1 = "ybpgen2.vortex"
+effectHard2 = "hp_emit_2"
+effectName2 = "ybpgen2.vortex"
+effectHard3 = "hp_emit_3"
+effectName3 = "ybpgen2.bolt"
+effectHard4 = "hp_emit_4"
+effectName4 = "ybpgen2.bolt"
+effectHard5 = "hp_emit_0"
+effectName5 = "ybpgen2.tower"
+//smoke1
+effectHard6 = "hp_smoke_1"
+effectName6 = "dmgbldg1"
+effectMinHealth6 = 0.8
+effectMaxHealth6 = 0.9
+effectHard7 = "hp_smoke_1"
+effectName7 = "dmgbldg2"
+effectMinHealth7 = 0.6
+effectMaxHealth7 = 0.8
+effectHard8 = "hp_smoke_1"
+effectName8 = "dmgbldg3"
+effectMinHealth8 = 0.4
+effectMaxHealth8 = 0.6
+effectHard9 = "hp_smoke_1"
+effectName9 = "dmgbldg4"
+effectMinHealth9 = 0.0
+effectMaxHealth9 = 0.4
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_ybpgencox02"
+
+chunkEffect1 = "ybpgencox02chk01.fbx"  
+chunkEffect2 = "ybpgencox02chk02.fbx"  
+chunkEffect3 = "ybpgencox02chk03.fbx"  
+chunkEffect4 = "ybpgencox02chk04.fbx"  
+chunkEffect5 = "ybpgencox02chk05.fbx"  
+HasSeparateChunks = true 
+numChunks = 5
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 1
+numChunks5 = 1
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+[vortex]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.1
+emitDelayVar = 0.01
+emitVelocity = "0.0 0.0 10.0"
+emitVariance = "4.0 4.0 0.0"
+emitLife = 1.8
+textureName =  "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "210 220 255 0"
+finishColor = "210 170 150 20"
+startRadius = 8.0
+finishRadius = 1.0
+animateTime = 1.8
+rotationRate = 5.0
+
+[bolt]
+renderBase = "draw_twirl_trail"
+emitDelay = 1.0
+emitLife = 0.1
+emitDelayVar = 0.5
+emitVelocity = "0.0 -1.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+textureName =  "boltcox00.png"
+textureBlend = "srcalpha invsrcalpha modulatealpha"  //<<color png
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 3.0
+finishRadius = 0.1
+animateTime = 0.1
+rotationRate = 20.0
+
+[tower]
+renderBase = "draw_twirl_trail"
+textureName =  "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 100"
+finishColor = "0 100 255 255"
+startRadius = 3.0
+finishRadius = 8.0
+rotationRate = 10.0
+emitDelay = 0.1
+emitVelocity = "0.0 -10.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 1.6
+animateTime = 1.6
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "abwpowe0bztc.wav"  //low volume  //wind
+//bldEdge = "wwww"  //bldg
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 50

@@ -1,0 +1,18 @@
+[GameObjectClass]
+baseName = "abnukeprop00"
+classLabel = "artifact"
+geometryName = "abbarrelcox00.fbx"
+scrapCost = 8
+scrapValue = 3
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Quakenuke"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+collisionRadius = 10.0  //bztc bldg  //bztc vehc
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+isAssault = 0
+canCollide = 1

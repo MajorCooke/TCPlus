@@ -1,0 +1,40 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gflshh_c"
+classLabel = "machinegun"
+altName = "gflshh_a"
+ordName = "oflshh_c"
+wpnName = "HRC Flash Beam C"
+fireSound = "flash01.wav"
+wpnReticle = "gflsha"
+wpnCategory = "CANN"
+isAssault = 0
+aiRange = 100
+flashName = "gflshh_c.flash"
+
+[CannonClass]
+shotDelay = 0.1
+
+[XFlash]
+simulateBase = "sim_null"
+lifeTime = 0.2
+renderBase = "draw_light"
+startColor = "255 255 0 300"
+finishColor = "255 0 0 300"
+startRadius = 10.0
+finishRadius = 10.0
+animateTime = 0.2
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 200 0 255"
+startRadius = 10.0
+finishRadius = 20.0
+animateTime = 0.1
+geomName = "g_sflash.fbx"

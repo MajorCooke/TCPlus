@@ -1,0 +1,197 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "kvtug"
+classLabel = "tug"
+geometryName = "kvtugcox00.fbx"
+cockpitName = "kvtugcox_cockpit.fbx"
+animCount = 3
+animName1 = "forward"
+animFile1 = "kvtugcoxsf.fbx"
+animName2 = "neutral"
+animFile2 = "kvtugcoxsn.fbx"
+animName3 = "reverse"
+animFile3 = "kvtugcoxsr.fbx"
+scrapValue = 10  //tug  //30
+scrapCost = 40 //tug  //45
+buildTime = 5.0  //Coxxon  //10.0
+maxHealth = 2500
+//addHealth = 1
+maxAmmo = 2200
+addAmmo = 5
+unitName = "Ox tug"
+//unitIcon = "icon_kvtug.tga"
+//unitStatus = "wire_kvtug.tga"
+//infoName = "kvtug.inf"  //or baseName, or provide name
+aiName = "TugFriend"
+aiName2 = "TugFriend"
+heatSignature = 0.1
+imageSignature = 2.0
+radarSignature = 2.0
+isAssault = 1  //bztc
+armorClass = L
+boxCollide = 1
+needPilot = 1  //tug
+addPilot = 1  //tug
+//collisionRadius = 1.0  //bzcc vehc
+//collisionName = "kvtugcollide.fbx"
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 2
+provideName1 = "kvtug"
+provideName2 = "VIRTUAL_CLASS_TUG"
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltwyl"
+lightHard2 = "hp_light_2"
+lightName2 = "hltwyl"  
+LightsOnlyWhenPiloted = true
+
+effectHard1 = "hp_dust_1"
+effectName1 = "vfxbztcdusts.dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0
+effectMinVelocity1 = 10.0
+effectMaxVelocity1 = 500.0
+effectHard2 = "hp_dust_2"
+effectName2 = "vfxbztcdusts.dusttrail"
+effectMinAltitude2 = 0.0
+effectMaxAltitude2 = 5.0
+effectMinVelocity2 = 10.0
+effectMaxVelocity2 = 500.0
+effectHard3 = "hp_dust_0" 
+effectName3 = "vfxbztcdusts.dustpuff"
+effectMinAltitude3 = 0.0
+effectMaxAltitude3 = 4.0  //20.0  //
+effectMinVelocity3 = 0.0
+effectMaxVelocity3 = 10.0
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "hp_smoke_1"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "hp_smoke_1"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "hp_smoke_1"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "hp_smoke_1"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+//////////////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 300.0
+periodScan = 5.0
+velocJam = 5.0
+braccelFactor = 0.05
+strafeFactor = 0.1
+steerFactor = 1.0
+omegaFactor = 0.2
+velFactor = 0.2
+//avoidSpeed = 20
+//topSpeed = 30
+canRescue = 1  //tug
+//attackTaskUsesGroups = false  //Coxxon
+GoToTaskHasLeader = false  //Coxxon
+canSnipe = 1  //tug
+//NavIsDropped = true //drop behind - bugged, immed removes nav/camr in MP/MPI
+//NavDropSound = "gprox00.wav"  //sound if navisdropped true
+NavConfig = "apcamrk" //specify nav beacon/camera type
+AllowedControlsWhenTugged = 31  //7dflt Sumup: 1hop 2bail 4wcycle 8steer 16weapuse
+damageEffect1 = "dmgvhcl1"  //less stock dmg effect
+damageEffect2 = "dmgvhcl1"  //but still some sparks
+damageEffect3 = "dmgvhcl1"  //also lower visibility
+damageEffect4 = "dmgvhcl1"  //on cloaked units
+
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_kvtugcox"
+
+//chunkEffect1 = "kvtugcoxchk01.fbx"  
+//chunkEffect2 = "kvtugcoxchk02.fbx"
+//chunkEffect3 = "kvtugcoxchk03.fbx"
+//chunkEffect4 = "kvtugcoxchk04.fbx"
+//chunkEffect5 = "kvtugcoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 5  TOTAL CHUNKS USED
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+/////////MESSAGES/////////
+selectWaitMsg = "kvhaulv0.wav"  //"cvhaulve.wav" 
+selectAttackMsg = "kvhaulvb.wav" 
+selectGoMsg = "kvhaulvc.wav"  //"cvhaulvd.wav"  //okay
+selectFollowMsg = "kvhaulv3.wav"
+selectOtherMsg = "kvhaulve.wav"
+goMsg = "kvhaulvc.wav"
+goObjectMsg = "kvhaulv5.wav"
+attackMsg = "kvhaulvb.wav"
+followMeMsg = "kvhaulv3.wav"
+followMsg = "kvhaulv3.wav"
+repairMsg = "kvhaulv4.wav"
+reloadMsg = "kvhaulv5.wav"
+rescueMsg = "kvhaulv5.wav"
+recycleMsg = "kvhaulv6.wav"
+otherMsg = "kvhaulvd.wav"  //"cvhaulv1.wav"
+user1Msg = "kvhaulve.wav"
+killedMsg = "kvhaulve.wav"
+selectPickupMsg = "kvhaulv1.wav"
+selectDropoffMsg = "kvhaulv2.wav"
+//diedMsg = "rbetty1.wav"  //unit lost
+PickupMsg = "kvhaulv1.wav"
+DropoffMsg = "kvhaulv2.wav"
+selectCarryMsg = "kvhaulvb.wav"
+
+BailSound = "bail.wav"
+CollideTerrainSound = "vnvcs1.wav"
+CollideBldgSound = "vnvcs3.wav"
+CollideOtherSound = "vvcre2.wav"  //"vvcbb3.wav"
+
+////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+setAltitude = 1.5  
+accelDragStop = 20.0
+accelDragFull = 1.0
+alphaTrack = 20.0
+alphaDamp = 5.0
+pitchPitch = 0.25
+pitchThrust = 0.1
+rollStrafe = 0.1
+rollSteer = 0.1
+velocForward = 15.0  //tug   //10.0
+velocReverse = 10.0
+velocStrafe = 10.0
+accelThrust = 20.0
+accelBrake = 75.0
+omegaSpin = 3.5
+omegaTurn = 1.5
+alphaSteer = 5.0
+accelJump = 20.0
+soundThrust =  "avhaule3.wav"
+soundJump = "avhaule5.wav"
+
+////////////////////////////////////////////////////////////////
+[TugClass]
+dockSpeed = 4.0
+fieldRadius = 25.0  //lrger works better  20.0  //tug
+fieldOffset = 0.0  //5.0  //put cargo in back
+accelCenter = 0.0
+accelEdge = -200.0
+accelDrag = 10.0
+alphaDamp = 5.0
+alphaTrack = 15.0
+UseLiftSpring = true  //tug 1 to adjust CargoLiftSpring
+CargoLiftSpring = 10.0  //tug 10def -  only if ULS is true
+RotateWithTug = true  //tug
+soundDeploy = "avhaule0.wav"  //pickup sound?  //"trdeploy.wav"
+soundUndeploy = "avhaule0.wav"  //pickup sound?  //"trundepl.wav"

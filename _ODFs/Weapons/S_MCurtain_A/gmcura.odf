@@ -1,0 +1,12 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gmcura"
+classLabel = "dispenser"
+wpnName = "M-Curtain"
+fireSound = "mmine01.wav"
+wpnReticle = "gmcura"
+wpnCategory = "SPEC"
+
+[DispenserClass]
+shotDelay = 40.0  //2.0
+objectClass = "omcura"

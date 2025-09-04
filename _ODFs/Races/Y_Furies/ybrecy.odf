@@ -1,0 +1,222 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "ybrecy"
+classLabel = "recycler"
+geometryName = "ybrecycox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "ybrecycox01.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = 1
+scrapCost = 40  //depbld  Coxxon
+scrapValue = 10
+buildTime = 5.0  //depbld  //10.0 
+maxHealth = 11000  //12000  //rcy
+addHealth = 1  //rcy  Coxxon
+maxAmmo = 0
+unitName = "Recycler"
+//infoName = "ybrecy.inf"
+aiName = "BuildingProcess"
+aiName2 = "BuildingProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+ownsTerrain = 1  //1 if no baseplate faction
+buildRequire = "N"  //"F"//def recy
+collisionRadius = 10.0  //lrg bldg
+armorClass = H
+powerCost = 0  //rcy stock
+AllowUndergroundSpawn = 1  //rcy stock
+UseCollisionMeshForPathing = 1  //rcy stock
+//allowMDMCollisionDetonation = 1
+upgradeName = "yvrecyd2"
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "ybrecy"
+provideName2 = "ybrecycpu"
+provideName3 = "VIRTUAL_CLASS_RECYCLER"
+provideName4 = "VIRTUAL_CLASS_RECYCLERBUILDING"
+
+/////////LIGHTS AND EFFECTS/////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltred"
+lightHard2 = "hp_light_2"
+lightName2 = "hltred"  
+lightHard3 = "hp_light_3"
+lightName3 = "hltred"
+lightHard4 = "hp_light_4"
+lightName4 = "hltred"  
+lightHard5 = "hp_light_5"
+lightName5 = "omnifbl16"
+lightHard6 = "hp_light_6"
+lightName6 = "hltwbl"
+lightHard7 = "hp_light_7"
+lightName7 = "omnifbl5"
+
+effectHard1 = "hp_light_6"
+effectName1 = "vfxbztclight.blueblink"
+effectHard2 = "hp_light_6"
+effectName2 = "vfxbztclight.greenblink"
+effectHard3 = "hp_emit_1"
+effectName3 = "vfxbztcbldgs.ybrecybeam2"
+effectHard4 = "hp_emit_2"
+effectName4 = "vfxbztcbldgs.ybrecybeam"
+effectHard5 = "hp_emit_3"
+effectName5 = "vfxbztcbldgs.ybrecybeam"
+//effectHard6 = "hp_pole_1"
+//effectName6 = "vfxbztcbldgs.ybrecypole"
+//effectHard7 = "hp_pole_2"
+//effectName7 = "vfxbztcbldgs.ybrecypole"
+//effectHard8 = "hp_flag_1"
+//effectName8 = "vfxbztcbldgs.ybrecyflag1"
+//effectHard9 = "hp_flag_2"
+//effectName9 = "vfxbztcbldgs.ybrecyflag2"
+
+//smoke1  //no dmg1
+effectHard6 = "hp_smoke_1"
+effectName6 = "dmgbldg2"
+effectMinHealth6 = 0.4
+effectMaxHealth6 = 0.6
+effectHard7 = "hp_smoke_1"
+effectName7 = "dmgbldg3"
+effectMinHealth7 = 0.2
+effectMaxHealth7 = 0.4
+effectHard8 = "hp_smoke_1"
+effectName8 = "dmgbldg4"
+effectMinHealth8 = 0.0
+effectMaxHealth8 = 0.2
+//smoke2
+effectHard9 = "hp_smoke_2"
+effectName9 = "dmgbldg1"
+effectMinHealth9 = 0.6
+effectMaxHealth9 = 0.8
+effectHard10 = "hp_smoke_2"
+effectName10 = "dmgbldg2"
+effectMinHealth10 = 0.4
+effectMaxHealth10 = 0.6
+effectHard11 = "hp_smoke_2"
+effectName11 = "dmgbldg3"
+effectMinHealth11 = 0.2
+effectMaxHealth11 = 0.4
+effectHard12 = "hp_smoke_2"
+effectName12 = "dmgbldg4"
+effectMinHealth12 = 0.0
+effectMaxHealth12 = 0.2
+//smoke3
+effectHard13 = "hp_smoke_3"
+effectName13 = "dmgbldg1"
+effectMinHealth13 = 0.6
+effectMaxHealth13 = 0.8
+effectHard14 = "hp_smoke_3"
+effectName14 = "dmgbldg2"
+effectMinHealth14 = 0.4
+effectMaxHealth14 = 0.6
+effectHard15 = "hp_smoke_3"
+effectName15 = "dmgbldg3"
+effectMinHealth15 = 0.2
+effectMaxHealth15 = 0.4
+effectHard16 = "hp_smoke_3"
+effectName16 = "dmgbldg4"
+effectMinHealth16 = 0.0
+effectMaxHealth16 = 0.2
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_ybrecycox"
+
+chunkEffect1 = "yvrecycoxchk01.fbx"  
+chunkEffect2 = "yvrecycoxchk02.fbx"
+chunkEffect3 = "yvrecycoxchk04.fbx"
+chunkEffect4 = "yvrecycoxchk07.fbx"
+chunkEffect5 = "yvrecycoxchk09.fbx"
+//1-10 avail
+HasSeparateChunks = true
+numChunks = 8
+numChunks1 = 1
+numChunks2 = 2
+numChunks3 = 2
+numChunks4 = 2
+numChunks5 = 1
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 100
+SoundSelect = "cfigclk.wav"
+SoundDeselect = "cornrclk.wav"
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+tunnelCount = 1
+tunnel01X0 = 2.8
+tunnel01Z0 = 3
+tunnel01DX = 2.4
+tunnel01DZ = 4
+tunnel01Edge = "wwtw"  //recy
+bldEdge = "wwww"  //recy
+
+//CanDemolish = true // Used when MP is off, or MP for same team or enemy team 
+//CanAlliedCommanderDemolish = true  // Used when MP teamplay is on & controlling unit is commander 
+//CanAlliedThugDemolish = false // Used if MP FFA is on, or teamplay is on & controlling unit is thug [NM]
+//AlignsToObject = false
+//ReplacesObject = true //false  //scavs default true for geyser
+soundAmbient = "sbrecy01.wav"  //"ibrecy01.wav"
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+///////////////////////////////////////////////////////////////
+[FactoryClass]
+ChromeEffect = 0  // 0 = line and puff, 1 = chrome only
+ChromeTexture = "reflection3.tga"  // reflection map texture 
+AnimateChrome = 1  // 0 = static, 1 = animated 
+BuildSparkConfig = "sparkerY"  // renderer to apply at build vertices 
+LineStartColor = "0 0 255 155"  // line effect start color 
+LineFinishColor = "0 155 255 20"  // line effect finish color ...
+BeamColor = "0 155 255 70"
+lineSolidColor = "0 150 255 70" // LOD Line color.
+KickAllCraft = true  //b/c vehc won't grab powerup, even if build node is more forward
+//scaleVelY = 5.0  //fact kick
+MultVelXZ = 2.0  //fact kick
+//DropoffDX = 0.0
+DropoffDZ = 32.0
+
+soundBuild = "yvrecye2cox.wav"  //SPECIAL VERSION
+soundCancel = "mnu_buzz.wav"  //"cgrowl.wav"  //"locking3.wav"
+soundFinish = "avrecye9.wav"  //"iapc04.wav"
+selectUser1Msg = "yvrecyvd.wav"  //building 
+reloadMsg = "yvrecyv8.wav"  //construction started
+rescueMsg = "yvrecyv3.wav"  //building complete
+selectOtherMsg = "yvrecyv0.wav"  //recycler here
+deployedMsg = "yvrecyv6.wav"  //deploying
+//diedMsg = "ybetty1.wav"
+
+//weaponConfig = "yweapon.odf" //for reference/must use .odf - Coxxon
+
+buildItem1 = "yvscav"
+buildItem2 = "yvscout"
+buildItem3 = "yvturr"
+buildItem4 = "yvtug"
+buildItem5 = "yvcons"
+buildItem6 = "yvserv"
+buildItem7 = "apservy"
+//buildItem8 = "prereserve for mp empty scout"
+//buildItem9 = "FREESLOT"
+//buildItem10 = "replaced by BuildGroup10"
+
+[BuildGroup10] 
+buildLabel = "Production Units"
+buildItem1 = "yvfact"
+buildItem2 = "yvarmo"
+
+///////////////////////////////////////////////////////////////
+[RecyclerClass]
+scrapHold = 40
+scrapDelay = 3.0 //abrecy
+//ScrapDropPoint = true  //for scavs set to drop off scrap
+//RequiresExtractor = 0 //abrecy

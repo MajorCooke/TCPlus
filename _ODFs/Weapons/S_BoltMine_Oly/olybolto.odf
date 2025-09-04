@@ -1,0 +1,36 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "olybolto"
+classLabel =  "bullet"
+
+shotGeometry = NULL
+xplGround = "xboltgnd"
+xplVehicle = "xlgtcar"
+xplBuilding = "xlgtbld"
+
+renderName = "olybolto.render"
+
+ammoCost = 0
+lifeSpan = 110e-6 // 110m
+shotSpeed = 1e6
+
+//more damage since less actual hits with variance
+damageValue(N) = 75  //25
+damageValue(L) = 60  //20
+damageValue(H) = 45 //15
+damageValue(S) = 60  //20
+damageValue(D) = 75  //25
+damageValue(A) = 45  //15
+
+[Render]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "0 0 255 255"
+finishColor = "150 120 0 100"
+startRadius = 1.0
+finishRadius = 0.1
+segmentLength = 4.0
+segmentVariance = "4.0 4.0 1.0"
+animateTime = 0.8
+textureRate = 0.01

@@ -1,0 +1,46 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "kbprtl"
+classLabel = "teleportal"
+geometryName = "nbgargcox00.fbx"
+scrapCost = 300
+scrapValue = 100
+buildTime = 480.0
+maxHealth = 50000
+addHealth = 20
+unitName = "Arkin Ind. Garage"
+heatSignature = 2.0
+imageSignature = 2.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+ownsTerrain = 1  //no base plate
+collisionRadius = 10.0  //bztc bldg
+powerCost = 0
+AllowSeismic = 0
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+isSingle = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "xbgarg"
+provideName2 = "VIRTUAL_CLASS_PORTAL"
+provideName3 = "base"
+provideName4 = "nbgarg"
+
+///////////////////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "iarm01.wav"
+CanDemolish = false
+tunnelCount = 1
+bldEdge = "twww"
+tunnel01X0 = 2
+tunnel01Z0 = 1
+tunnel01DX = 4
+tunnel01DZ = 12
+tunnel01Edge = "twww" // Entrance
+
+///////// EXPLOSION AID /////////
+UseCollapse = true
+UseChunks = false
+UseExplosion = true

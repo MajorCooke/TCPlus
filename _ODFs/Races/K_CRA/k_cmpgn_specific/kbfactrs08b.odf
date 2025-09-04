@@ -1,0 +1,30 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "kbfactrs08b"
+classLabel = "kbfact"  //"factory"
+upgradeName = "kvfactrs08b"
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+
+provideName4 = "kbfactrs08b"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_kbfactcox"
+
+/////////////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+
+/////////////////////////////////////////////////////////////////////
+[BuildingClass]
+
+/////////////////////////////////////////////////////////////////////
+[FactoryClass]
+
+//weaponConfig = "kweapon.odf" //for reference/must use .odf - Coxxon
+
+buildItem5 = "kvscout"  //no artl in orig "kvartl"

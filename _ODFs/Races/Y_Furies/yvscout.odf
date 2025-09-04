@@ -1,0 +1,200 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "yvscout"
+classLabel = "wingman"
+geometryName = "yvscoutcox00.fbx"
+cockpitName= "yvscoutcox_cockpit.fbx"
+animCount = 3
+animName1 = "forward"
+animFile1 = "yvscoutcoxsf.fbx"
+animName2 = "neutral"
+animFile2 = "yvscoutcoxsn.fbx"
+animName3 = "reverse"
+animFile3 = "yvscoutcoxsr.fbx"
+scrapValue = 15
+scrapCost = 40  //sct  //50
+customCost = 50
+buildTime = 10.0  //Coxxon  //15.0
+customTime = 15.0
+maxHealth = 1500  //sct  //1800
+addHealth = 1  //sct added
+maxAmmo = 1500
+addAmmo = 1  //sct  //bzcc
+unitName = "Damysus sct"  //"Dart sct"
+aiName = "ScoutFriend"
+aiName2 = "ScoutEnemy"
+heatSignature = 0.5
+imageSignature = 3.0
+radarSignature = 0.3
+isAssault = 0
+armorClass = N
+boxCollide = 1
+//collisionRadius = 1.0  //bzcc vehc
+//collisionName = "yvscoutcollide.fbx"
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+provideName1 = "yvscout"
+provideName2 = "VIRTUAL_CLASS_SCOUT"
+provideName3 = "DefendUnit"
+
+/////// weapons ////////////////////
+weaponMask = 00011
+weaponHard1 = "HP_GUN_1"
+weaponName1 = "ghmrga_c"
+weaponAssault1 = 0
+recoilName1 = "recoil1"
+weaponHard2 = "HP_GUN_2"
+weaponName2 = "ghmrga_c"
+weaponAssault2 = 0
+recoilName2 = "recoil2"
+weaponHard3 = "HP_ROCKET_1"
+weaponName3 = ""
+weaponAssault3 = 0
+weaponHard4 = "HP_ROCKET_2"
+weaponName4 = ""
+weaponAssault4 = 0
+weaponHard5 = "HP_SHIELD"
+weaponName5 = ""
+weaponAssault5 = 0
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltred"
+LightsOnlyWhenPiloted = true
+
+//hp_dust_1,_2 on tail spars
+effectHard1 = "hp_dust_3"
+effectName1 = "vfxbztcdusts.dusttrail2"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0  
+effectMinVelocity1 = 10.0
+effectMaxVelocity1 = 500.0
+effectHard2 = "hp_dust_0" 
+effectName2 = "vfxbztcdusts.dustpuff"
+effectMinAltitude2 = 0.0
+effectMaxAltitude2 = 3.0
+effectMinVelocity2 = 0.0
+effectMaxVelocity2 = 10.0
+effectHard3 = "hp_emit_1"
+effectName3 = "vfxbztcthrst.furythrustsmlblu"
+effectMinVelocity3 = 3.0
+effectMaxVelocity3 = 500.0
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "hp_smoke_1"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "hp_smoke_1"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "hp_smoke_1"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "hp_smoke_1"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+/////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 500.0  //sct  //450.0
+periodScan = 3.0  //sct  //5.0
+velocJam = 10.0
+engageRange = 130
+braccelFactor = 0.05
+velFactor = 0.2
+steerFactor = 1.0
+omegaFactor = 0.5
+strafeFactor = 0.2
+//topSpeed = 30  //sct
+//avoidSpeed = 20  //sct
+//attackTaskUsesGroups = false  //Coxxon
+GoToTaskHasLeader = false  //Coxxon
+canHunt = 1	// defaults to 0
+//NavIsDropped = true //drop behind - bugged, immed removes nav/camr in MP/MPI
+//NavDropSound = "gprox00.wav"  //sound if navisdropped true
+NavConfig = "apcamry" //specify nav beacon/camera type
+AllowedControlsWhenTugged = 31  //7dflt Sumup: 1hop 2bail 4wcycle 8steer 16weapuse
+
+//OffensiveProcessIsTenacious = false  //Coxxon  true
+//OffensiveProcessIsTenaciousAITeam = false  //Coxxon
+//DoBlastUsesFields = true  //false  //Coxxon
+//SitAttackAllowIndependence = true  //Coxxon  false
+//SitAttackAllowCounterattack = true  //Coxxon  false
+
+damageEffect1 = "dmgvhcl1"  //less stock dmg effect
+damageEffect2 = "dmgvhcl1"  //but still some sparks
+damageEffect3 = "dmgvhcl1"  //also lower visibility
+damageEffect4 = "dmgvhcl1"  //on cloaked units
+
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_yvscoutcox"
+
+//chunkEffect1 = "yvscoutcoxchk01.fbx"  
+//chunkEffect2 = "yvscoutcoxchk02.fbx"
+//chunkEffect3 = "yvscoutcoxchk03.fbx"
+//chunkEffect4 = "yvscoutcoxchk04.fbx"
+//chunkEffect5 = "yvscoutcoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 5
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+/////////MESSAGES/////////
+selectWaitMsg = "yvfighvf.wav"  //at your disposal
+selectAttackMsg = "yvfighv2.wav"  //cry havok
+selectFollowMsg = "yvfighv7.wav"  //it will not be harmed
+selectGoMsg = "yvfighv0.wav"  //onward
+selectOtherMsg = "yvfighv6.wav"  //ah the hunt
+goMsg = "yvfighvg.wav"  //in transit
+attackMsg = "yvfighvd.wav"  //attacking
+followMeMsg = "yvfighv3.wav"  //as you wish
+followMsg = "yvfighv7.wav"  //it will not be harmed
+repairMsg = "yvfighv4.wav"  //my gratitude sir
+reloadMsg = "yvfighv5.wav"  //off to reload
+rescueMsg = "yvfighv8.wav"  //your salv approach
+recycleMsg = "yvfighvm.wav"  //left this mortal coil
+otherMsg = "yvfighvk.wav"  //scouting terrain
+holdMsg = "yvfighvh.wav"  //yes sir
+user1Msg = "yvfighv6.wav"  //ah the hunt
+killedMsg = "yvfighvj.wav"  //filfthy amers
+//diedMsg = "rbetty3.wav"
+//"yvfighve.wav"  //impossible sir
+
+BailSound = "bail.wav"
+CollideTerrainSound = "vnvcs1.wav"
+CollideBldgSound = "vnvcs3.wav"
+CollideOtherSound = "vvcre2.wav"  //"vvcbb3.wav"
+
+//////////////////////////////////////////////////////////
+[HoverCraftClass]
+velocForward = 40.0 //sct
+velocReverse = 20.0 //sct  Coxxon  //10.0
+velocStrafe = 20.0 //sct
+accelThrust = 25.0 // acceleration 
+accelDragStop = 5.0 // how fast it stops once hands are off controls 
+accelJump = 18.0
+aiAccelDrag = 10
+setAltitude = 1.0  // how high off the ground
+alphaTrack = 21.0 //springs speed it rights itself 
+alphaDamp = 8.0 //shocks 
+pitchPitch = 0.25 // nose up 
+pitchThrust = 0.05 // nose down 
+rollStrafe = 0.1 // rolls while strafing 
+omegaSpin = 3.5 // spinning in place speed 
+omegaTurn = 3.5 // turning while moving speed 
+alphasteer = 5.5 // how fast it responds to steering 
+rollSteer = 0.1 // rolls while steering 
+soundThrust = "yvthrustcox01.wav"
+soundJump = "yvturbocox01.wav"
+animSteer = "steer"
+THRUST_VOLUME_BASE_USER = 0.5  //turn back was too loud Coxxon

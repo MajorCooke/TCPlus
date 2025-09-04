@@ -1,0 +1,113 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "oblsta_c"
+classLabel = "beam"
+shotGeometry = NULL
+xplGround = "xblstgnd"
+xplVehicle = "xblstcar"
+xplBuilding = "xblstbld"
+
+ammoCost = 80  //Coxxon  //200
+lifeSpan = 130e-3  //130m  //Coxxon  //170e-3 // 170m
+shotSpeed = 1e3
+
+damageValue(N) = 600  //Coxxon  //800 // none // 400
+damageValue(L) = 500  //Coxxon  //600 // light // 300
+damageValue(H) = 400  //Coxxon  //300 // heavy // 150
+
+damageValue(S) = 500  //Coxxon  //500 // standard // 250
+damageValue(D) = 600  //Coxxon  //800 // deflection // 400
+damageValue(A) = 400  //Coxxon  //300 // absorption // 150
+
+renderName = "oblsta_c.render"
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2  //no sparkle
+renderName1 = "oblsta_c.beam"
+renderName2 = "oblsta_c.fringe"
+renderName3 = "oblsta_c.sparkle"
+
+[Beam]
+renderBase = "draw_bolt"
+textureName = "blastenergy.tga" //bzcc NULL
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 100 0 100"
+startRadius = 0.3  //c Coxxon
+finishRadius = 0.1
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.1
+textureRate = 0.1  //Coxxon  //0.01
+Texturespeed = -32  //bzcc
+
+[Fringe]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 0 0 10"
+startRadius = 0.1
+finishRadius = 0.6  //c Coxxon
+segmentLength = 5.0
+segmentVariance = "1.0 1.0 1.0"
+animateTime = 0.05
+textureRate = 0.01
+textureSpeed = -20.0  //bzcc  //5.0
+
+[Sparkle]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureblend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 200 0 100"
+startRadius = 0.3
+finishRadius = 0.1
+animateTime = 0.2
+emitDelay = 0.002
+emitVariance = "2.0 2.0 2.0"
+emitVelocity = "0.0 0.0 10.0"
+emitLife = 0.2
+
+
+//old stock version
+[xBeam]
+renderBase = "draw_bolt"
+textureName = NULL //"trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 200 255"  //Coxxon  //"200 255 200 255"
+finishColor = "255 200 0 255"  //Coxxon  //"0 255 0 255"
+startRadius = 0.3  //Coxxon  //0.15
+finishRadius = 0.1  //Coxxon  //0.05
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 1.0
+textureRate = 0.01
+
+[xFringe]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"  //NULL
+textureBlend = "one one modulate"
+startColor = "255 200 0 255"  //Coxxon//"0 0 255 255"
+finishColor = "180 100 50 0"  //Coxxon//"50 180 50 0"
+startRadius = 0.05
+finishRadius = 0.5
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 1.0
+textureRate = 0.01
+textureSpeed = -5.0  //Coxxon
+
+[xSparkle]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureblend = "one one modulate"
+startColor = "255 255 0 255"
+finishColor = "255 200 0 255"  //Coxxon//"0 100 255 255"
+startRadius = 0.3  //0.15
+finishRadius = 0.01
+animateTime = 2.0  //Coxxon  //1.0
+emitDelay = 0.002
+emitVariance = "2.0 2.0 2.0"
+emitLife = 2.0  //Coxxon //1.3

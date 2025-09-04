@@ -1,0 +1,39 @@
+//tall tunnel - full 128m x 128m area
+[GameObjectClass]
+baseName = "sbdoor10"
+classLabel = "i76building"
+geometryName = "sbdoorcox10_open.fbx"
+animCount = 3
+animName1 = "open"
+animFile1 = "sbdoorcox10_open.fbx"
+animName2 = "close"
+animFile2 = "sbdoorcox10_close.fbx"
+animName3 = "loop"
+animFile3 = "sbdoorcox10_loop.fbx"
+//RunAnimation = "loop"
+//RunAnimIsLooped = 1
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+unitName = "tall door"
+heatSignature = 1.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 1.0  //bztc vehc
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+ownsTerrain = 1
+//bah AlignTerrainReplaceType = 5  //0-5  //tunnel
+AllowSeismic = 0
+
+[BuildingClass]
+CanDemolish = false
+tunnelCount = 1
+
+tunnel01X0 = 0
+tunnel01Z0 = 0
+tunnel01DX = 4
+tunnel01DZ = 1
+tunnel01Edge = "fwfw"

@@ -1,0 +1,28 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "svmbikess01"
+classLabel = "svmbike"
+unitName = "Beta Contact"
+unitIcon = "icon_svmbike.png"
+unitStatus = "wire_svmbike.png"
+infoName = "svscoutss01.inf"
+
+//////////////////////////////////////////////////////////////////////////
+[CraftClass]
+xplcrash = "xpl_crash_svmbikecox"  //USE THIS FOR MOST CRAFT
+
+//chunkEffect1 = "svmbikecoxchk01.fbx"  
+//chunkEffect2 = "svmbikecoxchk02.fbx"
+//chunkEffect3 = "svmbikecoxchk03.fbx"
+//chunkEffect4 = "svmbikecoxchk04.fbx"
+//chunkEffect5 = "svmbikecoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 5
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+//////////////////////////////////////////////////////////////////////////
+[HoverCraftClass]

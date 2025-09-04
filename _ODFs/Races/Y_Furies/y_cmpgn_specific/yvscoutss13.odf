@@ -1,0 +1,14 @@
+/////////Coxxon - BZTC/////////
+//SPECIAL FOR SS13
+[GameObjectClass]
+baseName = "yvscoutss13"
+classLabel = "yvscout"
+unitName = "UFO alpha"
+infoName = "unknown13.inf"  //SPECIAL
+
+//////////////////////////////////////////////////////////////////////////
+[CraftClass]
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_yvscoutcox"
+
+CanAIEject = 0

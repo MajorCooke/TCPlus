@@ -1,0 +1,33 @@
+/////////Coxxon - BZTC////////
+[GameObjectClass]
+geometryName = "cthemblcox00.fbx"
+classLabel = "i76building"
+animCount = 1
+animName1 = "loop"
+animFile1 = "cthemblcox00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+scrapCost = 8
+scrapValue = 3
+maxHealth = 15000
+maxAmmo = 0
+unitName = "Cthnonian Emblem"
+heatSignature = 0.8
+imageSignature = 8.0
+radarSignature = 1.0
+ignoremissingINF = 1
+canDetect = 0
+canInteract = 0
+ownsTerrain = 0
+//collisionRadius = 5.0  //bztc bldg
+//AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+AllowSeismic = 0
+powerCost = 0
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "omniwyl64"  //16"  //8"
+
+[BuildingClass]
+//bldEdge = "wwww"
+//soundAmbient = "cenv04.wav"  //"cenv01.wav"  //"denv01.wav"  //"denv04.wav"

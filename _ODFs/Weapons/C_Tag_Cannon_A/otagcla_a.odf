@@ -1,0 +1,27 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "otagcla_c"
+classLabel = "leader"
+shotGeometry = "aoleadcox00.fbx"  //"aochancox00.fbx"
+xplGround = "xbulgnd"
+xplVehicle = "xleadcar"
+xplBuilding = "xleadbld"
+//RestoreFxSavegame = true  //meh
+RestoreFxLockstep = true  //keep blinking after hit
+//RestoreFxVisual = true  //mp safe?
+renderName = "otagcla_c.render"
+
+ammoCost = 1
+lifeSpan = 2.5  //250m  //Coxxon
+shotSpeed = 100.0
+
+damageValue(N) = 0 // none
+damageValue(L) = 0 // light
+damageValue(H) = 0 // heavy
+
+damageValue(S) = 0 // standard
+damageValue(D) = 0 // deflection
+damageValue(A) = 0 // absorption
+
+[LeaderRoundClass]
+stickTime = 4.0

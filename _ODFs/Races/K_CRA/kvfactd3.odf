@@ -1,0 +1,232 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "kvfactd3"
+classLabel = "recyclervehicleH"
+geometryName = "kvfactcox00.fbx"
+cockpitName = "kvtugcox_cockpit.fbx"
+animCount = 1
+animName1 = "deploy"
+animFile1 = "kvfactcox01.fbx"
+collisionRadius = 1.0  //bztc vehc
+scrapCost = 40  //depbld  Coxxon
+scrapValue = 10  //Coxxon
+buildTime = 5.0  //depbld  //10.0
+maxHealth = 5000  //Coxxon  //6000
+addHealth = 2  //Coxxon
+maxAmmo = 0
+unitName = "KU12 AMUF"
+unitIcon = "icon_kvfact.png"
+//unitStatus = "wire_kvfact.png"
+infoName = "kvfact.inf"
+aiName = "DeployBuildingHFriend"
+aiName2 = "DeployBuildingHEnemy"
+heatSignature = 2.0
+imageSignature = 5.0
+radarSignature = 5.0
+isAssault = 1  //bztc
+armorClass = H
+boxCollide = 1
+mass = 500000
+requireCount = 0
+//Tuggable = 0  //Coxxon
+
+//isSingle = 1
+limitClass1 = "kvfactd3"
+limitClass1Count = 1
+limitClass1Text = "Only One Allowed"
+
+/////// PROVIDES ///////////////////
+provideCount = 2
+provideName1 = "kvfactd3"
+provideName2 = "kvfactcpu"
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltwbl"
+lightHard2 = "hp_light_1"
+lightName2 = "hltwbl"
+
+//effectHard1 = "hp_dust_1"
+//effectName1= "vfxbztcdusts.dusttrail"
+//effectMinVelocity1 = 5.0
+//effectMaxVelocity1 = 500.0
+effectHard1 = "hp_dust_0" 
+effectName1 = "vfxbztcdusts.avrecypuff"
+effectMinVelocity1 = 0.0
+effectMaxVelocity1 = 3.0
+effectHard2 = "hp_emit_1"
+effectName2 = "vfxbztcthrst.thrustblue"
+effectMinVelocity2 = 5.0
+effectMaxVelocity2 = 500.0
+effectHard3 = "hp_emit_2"
+effectName3 = "vfxbztcthrst.thrustblue"
+effectMinVelocity3 = 5.0
+effectMaxVelocity3 = 500.0
+effectHard4 = "hp_emit_1"
+effectName4 = "vfxbztcdusts.dusttrail"
+effectMinVelocity4 = 5.0
+effectMaxVelocity4 = 500.0
+effectHard5= "hp_emit_2"
+effectName5 = "vfxbztcdusts.dusttrail"
+effectMinVelocity5 = 5.0
+effectMaxVelocity5 = 500.0
+//effectHard5 = "hp_dust_0"
+//effectName5 = "vfxbztcdusts.dusttrail"
+//effectMinVelocity5 = 5.0
+//effectMaxVelocity5 = 500.0
+
+//smoke1
+//effectHard5 = "hp_smoke_1"
+//effectName5 = "dmgbldg1"
+//effectMinHealth5 = 0.8
+//effectMaxHealth5 = 0.9
+effectHard6 = "hp_smoke_1"
+effectName6 = "dmgbldg2"
+effectMinHealth6 = 0.6
+effectMaxHealth6 = 0.8
+effectHard7 = "hp_smoke_1"
+effectName7 = "dmgbldg3"
+effectMinHealth7 = 0.4
+effectMaxHealth7 = 0.6
+effectHard8 = "hp_smoke_1"
+effectName8 = "dmgbldg4"
+effectMinHealth8 = 0.0
+effectMaxHealth8 = 0.4
+//smoke2
+effectHard9 = "hp_smoke_2"
+effectName9 = "dmgbldg1"
+effectMinHealth9 = 0.8
+effectMaxHealth9 = 0.9
+effectHard10 = "hp_smoke_2"
+effectName10 = "dmgbldg2"
+effectMinHealth10 = 0.6
+effectMaxHealth10 = 0.8
+effectHard11 = "hp_smoke_2"
+effectName11 = "dmgbldg3"
+effectMinHealth11 = 0.4
+effectMaxHealth11 = 0.6
+effectHard12 = "hp_smoke_2"
+effectName12 = "dmgbldg4"
+effectMinHealth12 = 0.0
+effectMaxHealth12 = 0.4
+//smoke3
+effectHard13 = "hp_smoke_3"
+effectName13 = "dmgbldg1"
+effectMinHealth13 = 0.8
+effectMaxHealth13 = 0.9
+effectHard14 = "hp_smoke_3"
+effectName14 = "dmgbldg2"
+effectMinHealth14 = 0.6
+effectMaxHealth14 = 0.8
+effectHard15 = "hp_smoke_3"
+effectName15 = "dmgbldg3"
+effectMinHealth15 = 0.4
+effectMaxHealth15 = 0.6
+effectHard16 = "hp_smoke_3"
+effectName16 = "dmgbldg4"
+effectMinHealth16 = 0.0
+effectMaxHealth16 = 0.4
+
+//////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 400.0
+periodScan = 5.0
+velocJam = 0.0
+TeamTransferrable = false
+//CanRecycle = true   //Coxxon
+damageEffect1 = "dmgvhcl1"  //less stock dmg effect
+damageEffect2 = "dmgvhcl1"  //but still some sparks
+damageEffect3 = "dmgvhcl1"  //also lower visibility
+damageEffect4 = "dmgvhcl1"  //on cloaked units
+
+/////////CRASH EXPLODE INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_kvfactcox"
+
+//chunkEffect1 = "kvfactcoxchk01.fbx"  
+//chunkEffect2 = "kvfactcoxchk02.fbx"  
+//chunkEffect3 = "kvfactcoxchk03.fbx"  
+//chunkEffect4 = "kvfactcoxchk04.fbx"  
+//chunkEffect5 = "kvfactcoxchk05.fbx"  
+//HasSeparateChunks = true 
+//numChunks = 5
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+
+/////////MESSAGES/////////
+holdMsg = "kvmufvf.wav"  //yes
+otherMsg = "kvmufv0.wav"  //unit factory
+selectWaitMsg = "kvmufv0.wav"  //unit factory  //BASIC SELECT UNIT
+user1Msg = "kvmufvf.wav"  //yes  //TELL TO DEPLOY
+user2Msg = "kvmufv0.wav"  //unit factory
+selectUser1Msg = "kvmufv0.wav"  //unit factory
+selectOtherMsg = "kvmufv0.wav"  //unit factory
+goMsg = "kvmufv3.wav"  //understood
+goObjectMsg = "kvmufvf.wav"  //yes
+followMeMsg = "kvmufv4.wav"  //following
+followMsg =  "cvmufv4.wav"  //following
+selectFollowMsg = "kvmufv4.wav"  //following
+recycleMsg = "kvmufv6.wav"  //recycling
+selectGoMsg = "kvmufvd.wav"  //moving to nav
+selectUser2Msg = "kvmufvc.wav"  //more power is needed
+//diedMsg = "rbetty1.wav"
+////BZ1:	
+selectReadyMsg = "kvmufv0.wav"  //unit factory
+repairMsg = "kvmufvh.wav"  //approaching geyser
+attackMsg = "kvmufv5.wav"  //no geyser is visible
+reloadMsg = "kvmufv1.wav"  //constructing
+rescueMsg = "kvmufv2.wav"  //unit complete  //"cvmufve.wav"  //building unit
+deployedMsg = "kvmufvb.wav"  //awaiting orders
+packedMsg = "kvmufvb.wav"  //awaiting orders
+
+//"cvmufva.wav"  //you are in the way
+
+///////
+BailSound = "bail.wav"
+CollideTerrainSound = "vnvcs1.wav"
+CollideBldgSound = "vnvcs3.wav"
+CollideOtherSound = "vvcre2.wav"
+
+////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+setAltitude = 2.0  //depbld
+accelBrake = 20.0
+accelDragStop = 4.0
+accelDragFull = 1.0
+accelJump = 15.0
+accelThrust = 50.0
+alphaDamp = 5.0
+alphaSteer = 5.0
+alphaTrack = 20.0
+pitchPitch = 0.1
+pitchThrust = 0.05
+rollStrafe = 0.05
+rollSteer = 0.05
+velocForward = 15.0
+velocReverse = 15.0
+velocStrafe = 15.0
+omegaSpin = 2.0
+omegaTurn = 1.0
+soundThrust =  "avmufe6.wav"  //"avthrustcox01.wav"
+soundJump = "avhaule5.wav"
+//engineSound = "avmufe2.wav"
+//treadSound = "avmufe6.wav"
+
+/////////////////////////////////////////////////////////
+[DeployableClass]
+soundDeploy = "avfactcoxD07s.wav"
+soundUndeploy = "avfactcoxD1.wav"  //"avrecycoxD1.wav"  //"avrecye5.wav"
+
+/////////////////////////////////////////////////////////
+[DeployBuildingHClass]
+CanDeploy = true
+deployName = "kbfactd3"
+timeDeploy = 5.0  //depbld
+timeUndeploy = 5.0  //depbld
+
+////////////////////////////////////////////////////////
+[RecyclerVehicleHClass]
+scrapHold = 0

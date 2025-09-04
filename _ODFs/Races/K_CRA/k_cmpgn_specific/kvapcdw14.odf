@@ -1,0 +1,23 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "kvapcdw14"
+classLabel = "kvapc"
+
+unitName = "Panda apc"
+unitIcon = "icon_kvapc.png"
+unitStatus = "wire_kvapc.png"
+infoName = "kvapc.inf"  //or baseName, or provide name
+
+//////////////////////////////////////////////////////////////////////////
+[CraftClass]
+
+avoidSpeed = 10.0  //apc
+topSpeed = 10.0  //apc
+
+//////////////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+velocForward = 10.0
+
+//////////////////////////////////////////////////////////////////////////
+[APCClass]
+

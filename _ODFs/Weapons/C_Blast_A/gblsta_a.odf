@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gblsta_a"
+classLabel = "cannon"
+altName = "gblsta_c"
+ordName = "oblsta_a"
+wpnName = "Blast A"
+fireSound = "gblas00.wav"  //"gblas00cox.wav"  //"blast01.wav"
+wpnReticle = "gbls2a"  //"gblsta"
+wpnCategory = "CANN"
+isAssault = 1
+aiRange = 170
+flashName = "gblsta_c.flash"
+
+[CannonClass]
+shotDelay = 2.0 // .5/sec

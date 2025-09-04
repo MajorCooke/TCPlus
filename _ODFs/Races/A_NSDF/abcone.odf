@@ -1,0 +1,116 @@
+/////////Coxxon - BZTC/////////
+//Animated NSDF rocketship prop
+[GameObjectClass]
+baseName = "abcone"
+geometryName = "abconecox00.fbx"
+classLabel = "powerlung"
+animCount = 1
+animName1 = "launch"
+animFile1 = "abconecox00.fbx"
+scrapCost = 200  //lpad
+scrapValue = 100
+buildTime = 480.0  //lpad
+maxHealth = 10000
+maxAmmo = 0
+unitName = "NSDF Rocketship"
+infoName = "abcone.inf"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+isAssault = 0
+armorClass = H
+collisionRadius = 1.0  //bztc lung
+
+///////// LIGHTS & EFFECTS /////////
+effectHard1 = "hp_emit_1"
+effectName1 = "abcone.render"
+effectHard2 = "hp_emit_2"
+effectName2 = "abcone.render"
+effectHard3 = "hp_emit_3"
+effectName3 = "abcone.render"
+effectHard4 = "hp_emit_4"
+effectName4 = "abcone.render"
+
+//smoke1
+effectHard5 = "hp_smoke_1"
+effectName5 = "dmgbldg1"
+effectMinHealth5 = 0.6
+effectMaxHealth5 = 0.8
+effectHard6 = "hp_smoke_1"
+effectName6 = "dmgbldg2"
+effectMinHealth6 = 0.4
+effectMaxHealth6 = 0.6
+effectHard7 = "hp_smoke_1"
+effectName7 = "dmgbldg3"
+effectMinHealth7 = 0.2
+effectMaxHealth7 = 0.4
+effectHard8 = "hp_smoke_1"
+effectName8 = "dmgbldg4"
+effectMinHealth8 = 0.0
+effectMaxHealth8 = 0.2
+//smoke2
+effectHard9 = "hp_smoke_2"
+effectName9 = "dmgbldg1"
+effectMinHealth9 = 0.6
+effectMaxHealth9 = 0.8
+effectHard10 = "hp_smoke_2"
+effectName10 = "dmgbldg2"
+effectMinHealth10 = 0.4
+effectMaxHealth10 = 0.6
+effectHard11 = "hp_smoke_2"
+effectName11 = "dmgbldg3"
+effectMinHealth11 = 0.2
+effectMaxHealth11 = 0.4
+effectHard12 = "hp_smoke_2"
+effectName12 = "dmgbldg4"
+effectMinHealth12 = 0.0
+effectMaxHealth12 = 0.2
+//smoke3
+effectHard13 = "hp_smoke_3"
+effectName13 = "dmgbldg1"
+effectMinHealth13 = 0.6
+effectMaxHealth13 = 0.8
+effectHard14 = "hp_smoke_3"
+effectName14 = "dmgbldg2"
+effectMinHealth14 = 0.4
+effectMaxHealth14 = 0.6
+effectHard15 = "hp_smoke_3"
+effectName15 = "dmgbldg3"
+effectMinHealth15 = 0.2
+effectMaxHealth15 = 0.4
+effectHard16 = "hp_smoke_3"
+effectName16 = "dmgbldg4"
+effectMinHealth16 = 0.0
+effectMaxHealth16 = 0.2
+
+[render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "abcone.flare"
+renderName2 = "abcone.smoketrail"
+
+[flare]
+renderBase = "draw_sprite"
+textureName = "lighthalo.tga"  //"lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 240 200 255"
+finishColor = "255 240 200 255"
+startRadius = 15.0
+finishRadius = 15.0
+
+[smoketrail]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.07
+emitDelayVar = 0.03
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = 15.0
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 100 0 255"
+finishColor = "255 240 230 0"
+startRadius = 5.0
+finishRadius = 15.0
+animateTime = 15.0
+rotationRate = 4.0

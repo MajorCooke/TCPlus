@@ -1,0 +1,24 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "ghorna_a"
+classLabel = "thermallauncher"
+altName = "ghorna_c"
+ordName = "ohorna_a"
+wpnName = "Thermal Hornet A"
+fireSound = "gmasg00.wav"  //"crckt01.wav"
+wpnReticle = "ghorna.0"  //"ghornet.0"
+wpnCategory = "ROCK"
+isAssault = 1
+aiRange = 210.0  //Coxxon  //150.0 ??
+
+[LauncherClass]
+lockRange = 210.0  //Coxxon  //225.0
+shotDelay = 1.0
+lockDelay = 3.0  //Coxxon  //2.0
+coneAngle = 0.075
+lockingReticle = "ghorna.A"  //"ghornet.A"
+lockingSound = "locking3.wav"  //"lock01.wav"
+lockedReticle = "ghorna.B"  //"ghornet.B"
+lockedSound = "locked3.wav"  //"lock02.wav"
+targetCount = 3
+targetReticle = "ghorna.1"  //"ghornet.1"

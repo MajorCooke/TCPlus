@@ -1,0 +1,18 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gpopg1a"
+classLabel = "cannon"
+ordName = "gpopg2a"
+wpnName = "LAT Popper Gun"
+fireSound = "gpopp00.wav"
+flashName = "ghwtza.render"
+wpnReticle = "gpopga"
+wpnLadder = "gmortar.L0"  //have reticle and in sprite table stb, but will not show as ladder  //"gpopgun.L0"
+wpnCategory = "MORT"
+aiRange = 200
+
+[CannonClass]
+shotDelay = 1.0
+shotPitch = 1.0
+shotLead = 0
+shotAlternate = 1  //Coxxon

@@ -1,0 +1,21 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "olyrelicprtl"
+classLabel = "artifact"
+geometryName = "olyrelicprtlcox10.fbx"  //<<half-size  //"olyrelicprtlcox00.fbx"  //<<orig full size
+animCount = 1
+animName1 = "loop"
+animFile1 = "olyrelicprtlcox10.fbx"  //<<half-size  //"olyrelicprtlcox00.fbx"  //<<orig full size
+RunAnimation = "loop"
+RunAnimIsLooped = true
+scrapCost = 1
+scrapValue = 0
+maxHealth = 6000
+addHealth = 30
+maxAmmo = 0
+unitName = "Portal Artifact"
+aiName = "PowerUpProcess"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+canCollide = 1

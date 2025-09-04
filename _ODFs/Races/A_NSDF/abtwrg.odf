@@ -1,0 +1,126 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "abtwrg"
+classLabel = "turret"  //"turrettank"  //towergun Coxxon
+geometryName = "abtwrgcox00.fbx"
+cockpitName = "avturrcox_cockpit.fbx"
+scrapCost = 20
+customCost = 40
+scrapValue = 10
+buildTime = 5.0
+customTime = 10.0
+maxHealth = 1800  //Coxxon not full turret  //2500
+maxAmmo = 10000 // 0 is *not* treated as infinite ammo!
+addAmmo = 10  //tur  Coxxon
+unitName = "MG Tower"
+aiName = "GunTowerFriend"
+aiName2 = "GunTowerEnemy"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+//collisionRadius = 1.0  //bzcc vehc
+isAssault = 0
+armorClass = N  //Coxxon  //L
+boxCollide = 1
+CanAcceptPowerups = 0
+//explosionName =  "x_bztc_car"  //"xpl_crash_abtwrgcox"  //gtow/spire "turret" class different
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+powerCost = 0
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+provideName1 = "abtwrg"
+provideName2 = "VIRTUAL_CLASS_GUNTOWER"
+provideName3 = "defender"
+
+/////// weapons ////////////////////
+//4 hp's available for most all weapon types
+weaponMask = 11111  //00011  //tur
+weaponHard1 = "HP_GUN_1"
+weaponName1 = "gminia_a"
+recoilName1 = "recoil1"
+weaponAssault1 = 1
+weaponHard2 = "HP_GUN_2"
+weaponName2 = "gminia_a"
+recoilName2 = "recoil2"
+weaponAssault2 = 1
+weaponHard3 = "HP_GUN_3"
+weaponName3 = "gminia_a"
+recoilName3 = "recoil3"
+weaponAssault3 = 1
+weaponHard4 = "HP_GUN_4"
+weaponName4 = "gminia_a"
+recoilName4 = "recoil4"
+weaponAssault4 = 1
+
+///////////////Coxxon/////////////////////
+turretCount = 2
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltwyl"
+LightsOnlyWhenPiloted = true
+
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "hp_smoke_1"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "hp_smoke_1"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "hp_smoke_1"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "hp_smoke_1"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+///////////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 300.0
+periodScan = 3.0
+velocJam = 1.0
+engageRange = 150
+weaponPitch = 1.5
+CanBailout = 0  //gtow
+CanUserBailout = 0  //gtow
+//RetargetOnStrafe = true  //tnk
+attackTask = "TurretAttack"
+subattackTask = "TurretDefendTask"
+subAttackClass = "ANS"
+damageEffect1 = "dmgvhcl1"  //less stock dmg effect
+damageEffect2 = "dmgvhcl1"  //but still some sparks
+damageEffect3 = "dmgvhcl1"  //also lower visibility
+damageEffect4 = "dmgvhcl1"  //on cloaked units
+
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "x_bztc_car"  //"xpl_crash_abtwrgcox"  //gtows are vehicles
+chunkEffect1 = "abtwrgcoxchk01.fbx"  
+chunkEffect2 = "abtwrgcoxchk02.fbx"
+chunkEffect3 = "abtwrgcoxchk03.fbx"
+chunkEffect4 = "abtwrgcoxchk04.fbx"
+chunkEffect5 = "abtwrgcoxchk05.fbx"
+HasSeparateChunks = true
+numChunks = 5
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 1
+numChunks5 = 1
+UseChunks = true
+UseExplosion = true
+
+///////////////////////////////////////////////////////////////
+[TurretCraftClass]
+omegaTurret = 2.0
+//alphaTurret = 5.0
+detectRange = 210

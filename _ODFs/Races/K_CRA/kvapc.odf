@@ -1,0 +1,204 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "kvapc"
+classLabel = "apc"
+geometryName = "kvapccox00.fbx"
+animCount = 3
+animName1 = "forward"
+animFile1 = "kvapccoxsf.fbx"
+animName2 = "neutral"
+animFile2 = "kvapccoxsn.fbx"
+animName3 = "reverse"
+animFile3 = "kvapccoxsr.fbx"
+cockpitName= "kvapccox_cockpit.fbx"
+//collisionRadius = 7.0  //avapc
+scrapValue = 20
+scrapCost = 50  //avapc
+customCost = 65  //avapc  //80
+buildTime = 10.0  //Coxxon  //20.0
+customTime = 20.0
+maxHealth = 7000  //avapc  //3000
+maxAmmo = 2000 // Can't be 0 for InternalSoldiersAreAmmo to work
+unitName = "Panda apc"
+aiName = "APCProcess"
+heatSignature = 10.0
+imageSignature = 0.5
+radarSignature = 0.0
+isAssault = 1  //bztc
+//canSnipe = 0  //see craft class Coxxon
+armorClass = H  //avapc  //L
+boxCollide = 1
+//SmartIsAirUnitCheck = true
+//collisionName = "kvapccollide.fbx"
+
+/////// BUILDLIMIT ///////////////
+//limitClass1 = "kvapc"  //avapc
+//limitClass1Count = 10  //avapc
+//limitClass1Text = "Limit Reached"  //avapc
+
+/////// REQUIREMENTS ///////////////
+//requireCount = 1
+//requireName1 = "kbtrain"
+//requireText1 = "Build Barracks"
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+provideName1 = "kvapc"
+provideName2 = "VIRTUAL_CLASS_APC"
+provideName3 = "flier"  //for aip that wants them
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltwyl"
+LightsOnlyWhenPiloted = true
+
+effectHard1 = "hp_dust_1"
+effectName1 = "vfxbztcdusts.dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0
+effectMinVelocity1 = 10.0
+effectMaxVelocity1 = 500.0
+effectHard2 = "hp_dust_2"
+effectName2 = "vfxbztcdusts.dusttrail"
+effectMinAltitude2 = 0.0
+effectMaxAltitude2 = 5.0
+effectMinVelocity2 = 10.0
+effectMaxVelocity2 = 500.0
+effectHard3 = "hp_dust_0" 
+effectName3 = "vfxbztcdusts.dustpuff"
+effectMinAltitude3 = 0.0
+effectMaxAltitude3 = 3.0
+effectMinVelocity3 = 0.0
+effectMaxVelocity3 = 10.0
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "hp_smoke_1"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "hp_smoke_1"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "hp_smoke_1"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "hp_smoke_1"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+//////////////////////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 200.0
+periodScan = 5.0
+velocJam = 0.0
+braccelFactor = 0.05
+strafeFactor = 0.1
+steerFactor = 1.0
+omegaFactor = 0.2
+velFactor = 0.2
+avoidSpeed = 12.0  //apc
+topSpeed = 15.0  //apc
+PathingType = 0 // -1 auto, 0 hvr, 1 walk, 2 pilot, 3 tread, 4 fly
+AvoidType = -1 // -1 auto, 0 None, 1 force, 2 plan
+//attackTaskUsesGroups = false  //Coxxon
+GoToTaskHasLeader = false  //Coxxon
+//NavIsDropped = true //drop behind - bugged, immed removes nav/camr in MP/MPI
+//NavDropSound = "gprox00.wav"  //sound if navisdropped true
+NavConfig = "apcamrk" //specify nav beacon/camera type
+AllowedControlsWhenTugged = 31  //7dflt Sumup: 1hop 2bail 4wcycle 8steer 16weapuse
+canRescue = 1   //Coxxon apc
+canSnipe = 1  //Coxxon apc
+//engageRange = 120  //apc
+//followRange = 16.0  //bztc
+damageEffect1 = "dmgvhcl1"  //less stock dmg effect
+damageEffect2 = "dmgvhcl1"  //but still some sparks
+damageEffect3 = "dmgvhcl1"  //also lower visibility
+damageEffect4 = "dmgvhcl1"  //on cloaked units
+
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_kvapccox"
+//chunkEffect1 = "kvapccoxchk01.fbx"  
+//chunkEffect2 = "kvapccoxchk02.fbx"
+//chunkEffect3 = "kvapccoxchk03.fbx"
+//chunkEffect4 = "kvapccoxchk04.fbx"
+//chunkEffect5 = "kvapccoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 5
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+/////////MESSAGES/////////
+selectWaitMsg = "kvapcva.wav"  //avapc ready
+//selectDropoffMsg = "kvapcvf.wav"  //deploying troops
+//selectPickupMsg = "kvapcvg.wav"  //receiving troops
+selectFollowMsg = "kvapcvh.wav"  //yes sir
+selectOtherMsg = "kvapcvh.wav"  //yes sir
+goMsg = "kvapcv0.wav"  //yes sir, immediately
+goObjectMsg = "kvapcv0.wav"  //yes sir, immediately
+holdMsg = "kvapcvh.wav"  //yes sir
+attackMsg = "kvapcvf.wav"  //deploying troops
+followMsg = "kvapcvh.wav"  //yes sir
+followMeMsg = "kvapcv0.wav"  //yes sir, immediately
+repairMsg = "kvapcv4.wav"  //repairing
+recycleMsg = "kvapcv6.wav"  //recycling
+rescueMsg = "kvapcv5.wav"  //approach for pickup
+otherMsg = "kvapcvh.wav"  //yes sir
+//deployedMsg = "kvapcv2.wav"  //opening hatch
+selectAttackMsg = "kvapcv9.wav"  //launching attack
+user1Msg = "kvapcv2.wav"  //opening hatch
+selectGoMsg = "kvapcv0.wav"  //yes sir, immediately
+//diedMsg = ""  //"kbetty3.wav"
+//"kvapcvs.wav"  //arrghh
+
+BailSound = "bail.wav"
+CollideTerrainSound = "vnvcs1.wav"
+CollideBldgSound = "vnvcs3.wav"
+CollideOtherSound = "vvcre2.wav"
+
+//////////////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+setAltitude = 1.5
+accelDragStop = 4.0
+accelDragFull = 1.0
+alphaTrack = 10.0
+alphaDamp = 3.0
+pitchPitch = 0.2  //avapc
+pitchThrust = 0.1
+rollStrafe = 0.1
+rollSteer = 0.1
+velocForward = 25.0  //avapc  //ai speed 15
+velocReverse  = 15.0  //avapc
+velocStrafe  = 15.0  //avapc
+accelThrust = 50.0
+accelBrake = 50.0
+omegaSpin = 2.0
+omegaTurn = 1.0
+alphaSteer = 5.0
+accelJump = 15.0  //avapc
+soundThrust = "kvapce0.wav"  //thrust
+soundJump = "kvapce3.wav"  //turbo
+soundDeploy = "avapce0x.wav"  //pack up
+soundUndeploy = "avapce2x.wav"  //pack up quick hollow
+
+//////////////////////////////////////////////////////////////////////////
+[APCClass]
+HovercraftPhysicsWhenUndeployed = true  //false
+soldierType = "kssold"
+soldierCount = 8  //avapc  //4  //easier to kill apc
+soldierDelay = 0.0 //avapc
+timeDeploy = 2.0
+//UseRecallSoldiers = true
+//RecallSoldiersTimeout = 30.0 // pre-pb6 defaulted to 5.0
+flightAltitude = 1.5  //avapc
+SoldierAltitude = 1.0 //soldier deploy start altitude
+InternalSoldiersAreAmmo = 1 //ammo meter % of soldiers in APC (updated occasionally)
+//SoldierExtraLife = 180  //AFTER APC is killed  120=default  0=infinite  0.5=quick death
+CanReloadAtRecycler = 1  //Coxxon
+//reloadClass = "kbtrain" // specify reload location if not barracks class
+//AltitudeLookahead = 1.0  //seconds it will look ahead for adjusting altitude
+//OverWater = 1 // 1 set altitude is over water height

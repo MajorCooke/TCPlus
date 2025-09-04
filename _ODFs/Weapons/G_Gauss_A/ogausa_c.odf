@@ -1,0 +1,56 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ogausa_c"
+classLabel = "beam"
+shotGeometry = NULL
+xplGround = "xgaussgnd"
+xplVehicle = "xgausscar"
+xplBuilding = "xgaussbld"
+
+renderName = "ogausa_c.render"
+
+ammoCost = 18
+lifeSpan = 139e-3 // 150m
+shotSpeed = 1e3
+
+damageValue(N) = 75 // none 
+damageValue(L) = 55 // light 
+damageValue(H) = 35 // heavy 
+
+damageValue(S) = 55 // standard // 200
+damageValue(D) = 30 // deflection // 150
+damageValue(A) = 75 // absorption // 250
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "ogausa_c.beam"
+renderName2 = "ogausa_c.ring"
+
+[Beam]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 127"
+finishColor = "0 127 255 0"
+startRadius = 0.1
+finishRadius = 0.05
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.3
+textureRate = 0.01
+textureSpeed = -0.1
+
+[Ring]
+renderBase = "draw_twirl_trail"
+textureName = "raindrop.tga"
+textureblend = "one one modulate"
+startColor = "0 127 255 31"
+finishColor = "0 0 255 0"
+startRadius = 0.2
+finishRadius = 0.8
+animateTime = 1.0
+emitDelay = 0.005
+emitVariance = "0.2 0.2 0.2"
+emitLife = 1.5
+rotationRate = 2.0

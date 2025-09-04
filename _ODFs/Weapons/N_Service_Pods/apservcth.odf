@@ -1,0 +1,45 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "apservcth"
+classLabel = "servicepod"
+geometryName = "apcthocox00.fbx
+animCount = 1
+animName1 = "loop"
+animFile1 = "apcthocox00.fbx
+RunAnimation = "loop"
+RunAnimIsLooped = true
+scrapCost = 2
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 0
+unitName = "Service Pod"
+aiName = "PowerUpProcess"
+buildTime = 5.0  //recy pod
+
+/////////LIGHTS and EFFECTS/////////
+lightHard1 = "hp_light_1"
+lightName1 = "omniwhite"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "apservcth.white"
+effectMinAltitude1 = 0.1  //pod
+effectMaxAltitude1 = 10.0  //pod
+effectHard2 = "hp_emit_2"
+effectName2 = "vfxbztcthrst.sprteggblue"
+effectMinAltitude2 = 4.0  //pod
+effectMaxAltitude2 = 500.0  //pod
+
+[white]
+renderBase = "draw_sprite"
+textureName = "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 200 120"
+startRadius = 2.0
+
+[PowerUpClass]
+soundPickup = "repair.wav"  //"pickup01.wav"
+soundReject = "reject.wav"
+
+[ServicePowerupClass]
+serviceUp = 1500
+localAmmoUp = 100  //Coxxon

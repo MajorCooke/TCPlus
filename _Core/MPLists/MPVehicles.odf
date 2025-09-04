@@ -1,0 +1,140 @@
+//
+// MPVehicles.odf - listing of multiplayer vehicles usable in BZ2
+//
+//
+// Tip: do not put .odf extension on cfg# = "" entries; added automatically on loading
+// 
+
+[MPVehicles]
+xsi1 = "avscoutcox00.fbx"
+cfg1 = "avscout"
+Description1 = "Razor NSDF"
+
+xsi2 = "bvscoutcox00.fbx"
+cfg2 = "bvscout"
+Description2 = "Razor BDS"
+
+xsi3 = "kvscoutcox00.fbx"
+cfg3 = "kvscout"
+Description3 = "Mongoose CRA"
+
+xsi4 = "svscoutcox00.fbx"
+cfg4 = "svscout"
+Description4 = "Flanker CCA"
+
+xsi5 = "mvscoutcox00.fbx"
+cfg5 = "mvscout"
+Description5 = "Flanker CBB"
+
+xsi6 = "yvscoutcox00.fbx"
+cfg6 = "yvscout"
+Description6 = "Damysus Fury"
+
+xsi7 = "ivscout00.fbx"
+cfg7 = "ivscout"
+Description7 = "Thunderbolt ISDF"
+
+xsi8 = "fvscout_skel.fbx"
+cfg8 = "fvscout"
+Description8 = "Drone Scion"
+
+///////////////////////////////////////
+xsi9 = "avmislcox00.fbx"
+cfg9 = "avmisl"
+Description9 = "Wolverine NSDF"
+
+xsi10 = "bvmislcox00.fbx"
+cfg10 = "bvmisl"
+Description10 = "Wolverine BDS"
+
+xsi11 = "kvmislcox00.fbx"
+cfg11 = "kvmisl"
+Description11 = "Dragon CRA"
+
+xsi12 = "svmislcox00.fbx"
+cfg12 = "svmisl"
+Description12 = "Tusker CCA"
+
+xsi13 = "mvmislcox00.fbx"
+cfg13 = "mvmisl"
+Description13 = "Tusker CBB"
+
+xsi14 = "yvmislcox00.fbx"
+cfg14 = "yvmisl"
+Description14 = "Medusa Fury"
+
+xsi15 = "ivmisl00.fbx"
+cfg15 = "ivmisl"
+Description15 = "Avenger ISDF"
+
+xsi16 = "fvlancer_skel.fbx"
+cfg16 = "fvarch"
+Description16 = "Lancer Scion"
+
+///////////////////////////////////////
+
+xsi17 = "bvtankcox00.fbx"
+cfg17 = "bvtank"
+Description17 = "Grizzly BDS"
+
+xsi18 = "kvtankcox00.fbx"
+cfg18 = "kvtank"
+Description18 = "Yeti CRA"
+
+xsi19 = "avtankcox00.fbx"
+cfg19 = "avtank"
+Description19 = "Grizzly NSDF"
+
+xsi20 = "svtankcox00.fbx"
+cfg20 = "svtank"
+Description20 = "Czar CCA"
+
+xsi21 = "mvtankcox00.fbx"
+cfg21 = "mvtank"
+Description21 = "Czar CBB"
+
+xsi22 = "yvtankcox00.fbx"
+cfg22 = "yvtank"
+Description22 = "Ladon Fury"
+
+xsi23 = "ivtank00.fbx"
+cfg23 = "ivtank"
+Description23 = "Sabre ISDF"
+
+xsi24 = "fvtank_skel.fbx"
+cfg24 = "fvtank"
+Description24 = "Warrior Scion"
+
+///////////////////////////////////////
+xsi25 = "avrcktcox00.fbx"
+cfg25 = "avrckt"
+Description25 = "Thunderbolt NSDF"
+
+xsi26 = "bvrcktcox00.fbx"
+cfg26 = "bvrckt"
+Description26 = "Thunderbolt BDS"
+
+xsi27 = "kvrcktcox00.fbx"
+cfg27 = "kvrckt"
+Description27 = "Phoenix CRA"
+
+xsi28 = "svrcktcox00.fbx"
+cfg28 = "svrckt"
+Description28 = "Grendel CCA"
+
+xsi29 = "mvrcktcox00.fbx"
+cfg29 = "mvrckt"
+Description29 = "Grendel CBB"
+
+xsi30 = "yvrcktcox00.fbx"
+cfg30 = "yvrckt"
+Description30 = "Athos Fury"
+
+xsi31 = "ivrckt00.fbx"
+cfg31 = "ivrckt"
+Description31 = "Griffin ISDF"
+
+xsi32 = "fvwalk_skel.fbx"
+cfg32 = "fvwalk"
+Description32 = "Mauler Scion"
+/////////////////END//////////////////////

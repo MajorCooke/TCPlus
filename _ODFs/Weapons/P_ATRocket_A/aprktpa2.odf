@@ -1,0 +1,27 @@
+/////////Coxxon - BZTC/////////
+//ONLY FOR BD03 MISSION - NOT MP BALANCED
+[GameObjectClass]
+geometryName = "appack00.fbx"
+classLabel = "wpnpower"
+scrapCost = 100  //atrp
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 0
+
+heatSignature = 0
+imageSignature = 0
+radarSignature = 0
+
+unitName = "NSDF AT-Rocket Mk2 Pack"
+aiName = "PowerUpProcess"
+buildTime = 0.5  //armo pod
+
+lightHard1 = "hp_light_1"
+lightName1 = "omniblue-ap"  //pack
+
+[PowerUpClass]
+soundPickup = "pickup01.wav"
+soundReject = "reject.wav"
+
+[WeaponPowerupClass]
+weaponName = "grktpa2"

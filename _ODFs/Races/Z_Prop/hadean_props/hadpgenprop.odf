@@ -1,0 +1,66 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "hadpgenprop"
+classLabel = "i76building"  //"powerplant"
+geometryName = "hadpgencox00.fbx"
+//NO ANIM FOR THIS ONE
+scrapCost = 30
+scrapValue = 5
+maxHealth = 3000
+maxAmmo = 0
+unitName = "L-Power had"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 10.0  //bztc bldg
+isAssault = 1  //bztc
+armorClass = H
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+requireReplaceTerrainPhysics = 1  //bzcc
+ownsTerrain = 1  //since no terrain plate had
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 2
+provideName1 = "hadpgenprop"
+provideName2 = "VIRTUAL_CLASS_POWERPLANT"
+
+/////////LIGHTS AND EFFECTS//////////////////
+//REMOVED TO MAKE IT LOOK INACTIVE
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_hadpgencox"
+
+chunkEffect1 = "hadpgencoxchk01.fbx"  
+chunkEffect2 = "hadpgencoxchk02.fbx"
+chunkEffect3 = "hadpgencoxchk03.fbx"
+chunkEffect4 = "hadpgencoxchk04.fbx"
+chunkEffect5 = "hadpgencoxchk05.fbx"
+HasSeparateChunks = true
+numChunks = 9
+numChunks1 = 1
+numChunks2 = 2
+numChunks3 = 2
+numChunks4 = 2
+numChunks5 = 2
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+//NO AMBIENT SOUND
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 50
+
+//////// EFFECTS DESCRIPTIONS  //////////
+//NO EFFECTS

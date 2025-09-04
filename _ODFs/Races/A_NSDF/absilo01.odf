@@ -1,0 +1,134 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "absilo01"
+classLabel = "silo"
+mrmFactor = 0
+geometryName = "absilocox01.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "absilocox01.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = 1
+scrapCost = 100
+scrapValue = 50
+maxHealth = 15000
+maxAmmo = 0
+unitName = "Compression Silo"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 10.0  //bztc bldg
+isAssault = 1  //bztc
+canInteract = 1 // for missile lock
+armorClass = H
+ownsTerrain = 1  //1 if no baseplate faction
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+AllowMDMCollisionDetonation = 1  //Coxxon
+buildSupport = "A"  //"N"
+buildRequire = "F"  //"N"
+powerCost = 0  //silo
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+provideName1 = "absilo01"
+provideName2 = "VIRTUAL_CLASS_SILO"
+provideName3 = "VIRTUAL_CLASS_STORAGE"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "xpl_crash_absilocox"
+
+//chunkEffect1 = "absilocoxchk01.fbx"  
+//chunkEffect2 = "absilocoxchk02.fbx"  
+//chunkEffect3 = "absilocoxchk03.fbx"  
+//chunkEffect4 = "absilocoxchk04.fbx"  
+//chunkEffect5 = "absilocoxchk05.fbx"  
+//HasSeparateChunks = true 
+//numChunks = 5
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+/////////LIGHTS AND EFFECTS/////////
+//smoke1
+effectHard1 = "hp_smoke_1"
+effectName1 = "dmgbldg1"
+effectMinHealth1 = 0.6
+effectMaxHealth1 = 0.8
+effectHard2 = "hp_smoke_1"
+effectName2 = "dmgbldg2"
+effectMinHealth2 = 0.4
+effectMaxHealth2 = 0.6
+effectHard3 = "hp_smoke_1"
+effectName3 = "dmgbldg3"
+effectMinHealth3 = 0.2
+effectMaxHealth3 = 0.4
+effectHard4 = "hp_smoke_1"
+effectName4 = "dmgbldg4"
+effectMinHealth4 = 0.0
+effectMaxHealth4 = 0.2
+//smoke2
+effectHard5 = "hp_smoke_2"
+effectName5 = "dmgbldg1"
+effectMinHealth5 = 0.6
+effectMaxHealth5 = 0.8
+effectHard6 = "hp_smoke_2"
+effectName6 = "dmgbldg2"
+effectMinHealth6 = 0.4
+effectMaxHealth6 = 0.6
+effectHard7 = "hp_smoke_2"
+effectName7 = "dmgbldg3"
+effectMinHealth7 = 0.2
+effectMaxHealth7 = 0.4
+effectHard8 = "hp_smoke_2"
+effectName8 = "dmgbldg4"
+effectMinHealth8 = 0.0
+effectMaxHealth8 = 0.2
+//smoke3
+effectHard9 = "hp_smoke_3"
+effectName9 = "dmgbldg1"
+effectMinHealth9 = 0.6
+effectMaxHealth9 = 0.8
+effectHard10 = "hp_smoke_3"
+effectName10 = "dmgbldg2"
+effectMinHealth10 = 0.4
+effectMaxHealth10 = 0.6
+effectHard11 = "hp_smoke_3"
+effectName11 = "dmgbldg3"
+effectMinHealth11 = 0.2
+effectMaxHealth11 = 0.4
+effectHard12 = "hp_smoke_3"
+effectName12 = "dmgbldg4"
+effectMinHealth12 = 0.0
+effectMaxHealth12 = 0.2
+
+effectHard13 = "hp_emit_1"
+effectName13 = "absilo.bluehalo"  //"vfxbztclight.blueblink"
+
+[bluehalo]
+renderBase = "draw_sprite"
+textureName = "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "100 150 255 100"
+startRadius = 1.5
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "absiloe0.wav"
+//bldEdge = "wwww"  //bldg
+
+///////// EXPLOSION AID /////////
+UseCollapse = false
+UseChunks = false  //for deployed scavs  //true
+UseExplosion = true
+
+////////////////////////////////////////////////////////////////
+[SiloClass]
+initDelay = 1e6
+scrapDelay = 1e6
+scrapHold = 300
+detectRange = 100

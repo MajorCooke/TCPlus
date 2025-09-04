@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ogarda_a"
+classLabel = "ogarda_c"
+
+ammoCost = 3
+lifeSpan = 0.6 // 120m
+shotSpeed = 200.0
+
+damageValue(N) = 100 // none
+damageValue(L) = 60 // light
+damageValue(H) = 20 // heavy
+
+damageValue(S) = 60 // standard
+damageValue(D) = 100 // deflection
+damageValue(A) = 20 // assault

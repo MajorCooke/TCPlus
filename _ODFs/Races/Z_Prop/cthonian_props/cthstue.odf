@@ -1,0 +1,75 @@
+/////////Coxxon - TCAI////////
+[GameObjectClass]
+geometryName = "cthstue00.fbx"
+classLabel = "i76building"
+scrapCost = 80
+scrapValue = 80
+maxHealth = 0
+maxAmmo = 0
+unitName = "Cthonian Statue"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+canDetect = 0
+buildSupport = "X"
+buildRequire = "X"
+//canInteract = 0
+ownsTerrain = 1
+collisionRadius = 3.0
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+AllowSeismic = 0
+powerCost = 0
+
+/////////LIGHTS AND EFFECTS//////////////////
+effectHard1 = "ball"
+effectName1 = "cthstue.render"
+
+//////////////////////////////////////////////////////////////////////
+[BuildingClass]
+bldEdge = "wwww"
+
+//////////RENDER//////////
+[render]
+renderBase = "draw_multi"
+renderCount = 2 
+//renderName1 = "cthstue.cyanstay"
+renderName1 = "cthstue.outsideout"
+renderName2 = "cthstue.aperlight"
+
+[aperlight]
+renderBase = "draw_light"
+startColor = "100 100 255 255"
+finishColor = "50 150 255 255"
+startRadius = 10.0
+finishRadius = 10.0
+animateTime = 10.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0
+emitDelay = 0.0  //5.0
+emitLife = 10.0
+
+[outsideout]
+renderBase = "draw_twirl_trail"
+textureName = "ring.tga"
+textureBlend = "one one modulate"
+startColor = "255 230 200 20"
+finishColor = "50 150 255 100"
+startRadius = 1.0
+finishRadius = 3.0
+animateTime = 1.0
+rotationRate = 5.0
+emitDelay = 0.05
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+emitLife = 1.0
+BottomInteractsWithTerrain = false
+maxDist = 980.0f  //render distance
+
+[cyanstay]
+renderBase = "draw_sprite"
+textureName = "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "50 150 255 100"
+startRadius = 3.0

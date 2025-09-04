@@ -1,0 +1,6 @@
+NAV BEACON CAMERA POD
+Can be used to send units through command interface. 
+Camera orients in the direction of user's vehicle.
+
+REQUIRE: None
+BUILDER: SLF Armory or equipped vehicles.

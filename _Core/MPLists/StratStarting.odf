@@ -1,0 +1,107 @@
+//
+// StratStarting.txt - Vehicles possible to start with in strat/MPI
+//
+//
+// NOTE: do not put .odf extension on the cfg# field; added
+// automatically on loading
+//
+// Also, please remember that these vehicle names will be changed to
+// the appropriate race at runtime, so make sure they exist across
+// races -- for example, ivmbike has no scion counterpart (fvmbike).
+// 
+// Unlike MPVehicles.txt, there are no XSI names. You still need to
+// have a unique identifier for the xsi# field, due to code
+// reasons. No more than 32 craft can be listed here. Also, do *NOT*
+// put more than 5 different types of units in here, as that'll exceed
+// the F#-keys available in MPI. There's a 4-player limit on MPI,
+// which means F7-F10 must be reserved for allies. With the recycler
+// on F1, that means the rest of the groups must fit in F2..F6 (i.e. 5
+// group types)
+//
+// The xsi#/cfg# fields must be 5 characters or longer, or the line
+// will be ignored. If there is a gap in numbering OR one numbered
+// entry does not have xsi#/cfg#/Description# fields that are valid,
+// then all processing STOPS.
+
+[StratStarting]
+xsi1 = "Turr01"
+cfg1 = "avturr_st"
+Description1 = "Turret"
+
+xsi2 = "Turr02"
+cfg2 = "avturr_st"
+Description2 = "Turret"
+
+xsi3 = "Turr03"
+cfg3 = "avturr_st"
+Description3 = "Turret"
+
+xsi4 = "Turr04"
+cfg4 = "avturr_st"
+Description4 = "Turret"
+
+xsi5 = "Scav01"
+cfg5 = "avscav"
+Description5 = "Scavenger"
+
+xsi6 = "Scav02"
+cfg6 = "avscav"
+Description6 = "Scavenger"
+
+xsi7 = "Scav03"
+cfg7 = "avscav"
+Description7 = "Scavenger"
+
+xsi8 = "Scav04"
+cfg8 = "avscav"
+Description8 = "Scavenger"
+
+xsi9 = "Scout01"
+cfg9 = "avscout"
+Description9 = "Scout"
+
+xsi10 = "Scout02"
+cfg10 = "avscout"
+Description10 = "Scout"
+
+xsi11 = "Scout03"
+cfg11 = "avscout"
+Description11 = "Scout"
+
+xsi12 = "Scout04"
+cfg12 = "avscout"
+Description12 = "Scout"
+
+xsi13 = "Tank01"
+cfg13 = "avtank"
+Description13 = "Tank"
+
+xsi14 = "Tank02"
+cfg14 = "avtank"
+Description14 = "Tank"
+
+xsi15 = "Tank03"
+cfg15 = "avtank"
+Description15 = "Tank"
+
+xsi16 = "Tank04"
+cfg16 = "avtank"
+Description16 = "Tank"
+
+xsi17 = "ATank01"
+cfg17 = "avwalk"
+Description17 = "Walker"
+
+xsi18 = "ATank02"
+cfg18 = "avwalk"
+Description18 = "Walker"
+
+xsi19 = "ATank03"
+cfg19 = "avwalk"
+Description19 = "Walker"
+
+xsi20 = "ATank04"
+cfg20 = "avwalk"
+Description20 = "Walker"
+
+

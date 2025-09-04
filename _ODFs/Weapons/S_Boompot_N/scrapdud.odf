@@ -1,0 +1,20 @@
+[GameObjectClass]
+geometryName = "npscr100.xsi"
+classLabel = "scrap"
+scrapCost = 0
+scrapValue = 10
+maxHealth = 0
+maxAmmo = 0
+unitName = "Scrap"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+ClearBuildZone = 1 // always push from building buildzone
+MaxChromeDistance = 50.0
+
+provideCount = 1
+provideName1 = "resource"
+
+[ScrapClass]
+lifeTime = 30.0
+lifeVariance = 1.0

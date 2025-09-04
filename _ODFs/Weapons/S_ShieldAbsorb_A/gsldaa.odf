@@ -1,0 +1,26 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gsldaa"
+classLabel = "shieldup"
+ordName = NULL
+wpnName = "Absorption"
+fireSound = "gphan00.wav"
+wpnReticle = "gabsorb"
+wpnPriority = 0
+wpnCategory = "SHIE"
+
+[ShieldUpgradeClass]
+
+// absorption shield (anti-energy)
+shieldClass = "A"
+
+animateTime = 1.5  //shie  //1.0
+colorRange = 0.7
+scaleStart = 0.1  //shie  //0.2
+scaleFinish = 1.0
+
+// [white->yellow->red]
+texturename = "absorb.tga"  //shie  //"ring.tga"
+startColor = "255 255 100 250"  //shie  //10"
+middleColor = "255 190 0 100"  //shie  //90"
+finishColor = "255 0 0 100"  //shie  //0"

@@ -1,0 +1,17 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gstbpa_a"
+classLabel = "cannon"
+altName = "gstbpa_c"
+ordName = "ostbpa_a"
+wpnName = "Pulse-Stabber A"
+fireSound = "gmagg06.wav"
+wpnReticle = "gstbpa"
+wpnCategory = "CANN"
+isAssault = 1
+flashName = "gstbpa_c.flash"  //"gstbas_c.smoke"  //
+aiRange = 200
+
+[CannonClass]
+shotDelay = 1.5 // 2/3sec
+shotAlternate = 1  //Coxxon //0

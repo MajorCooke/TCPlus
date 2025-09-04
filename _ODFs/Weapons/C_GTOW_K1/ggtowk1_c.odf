@@ -1,0 +1,30 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "ggtowk1_c"
+classLabel = "machinegun"
+altName = "ggtowk1_a"
+ordName = "ogtowk1_c"
+wpnName = "Slvo Flsh Twr C"
+fireSound = "flash01.wav"
+wpnReticle = "gflsha"
+wpnCategory = "CANN"
+isAssault = 0
+aiRange = 150
+flashName = "ggtowk1_c.flash"
+
+[CannonClass]
+shotDelay =  2.0
+salvoCount = 15
+salvoDelay = 0.067
+shotVariance = 0.02
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 200 0 255"
+startRadius = 10.0
+finishRadius = 20.0
+animateTime = 0.1
+geomName = "g_sflash.fbx"

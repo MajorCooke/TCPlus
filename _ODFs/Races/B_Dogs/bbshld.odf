@@ -1,0 +1,168 @@
+/////////Coxxon - BZTC/////////
+//NOT A "shieldtower" CLASS - PROVIDES HEALTH REGEN, WORKS BETTER THAN MITS MINE BUILDING
+[GameObjectClass]
+baseName = "bbshld"
+classLabel = "supplydepot"
+geometryName = "bbshldcox00.fbx"
+collisionRadius = 10.0  //bztc bldg
+scrapCost = 100
+scrapValue = 10
+maxHealth = 3000  //shld
+maxAmmo = 0
+unitName = "Health Shield"
+heatSignature = 0.8
+imageSignature = 8.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+ownsTerrain = 1  //1 if no baseplate faction
+isSingle = 0  //abshld
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+
+buildRequire = "F"
+buildSupport = "A"
+
+/////// BUILDLIMIT ///////////////
+limitClass1 = "bbshld"
+limitClass1Count = 1  //abshld
+limitClass1Text = "Limit Reached"
+
+/////// REQUIREMENTS ///////////////
+//requireCount = 1
+//requireName1 = "bbhqtr"
+//requireText1 = "Build Field HQ"
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "bbshld"
+provideName2 = "VIRTUAL_CLASS_SUPPLYDEPOT"
+provideName3 = "defender"  //shld
+provideName4 = "xbshld"
+
+///////// LIGHTS & EFFECTS /////////
+LightsOffEffectsMask = 65535
+//lightHard1 = "hp_light_1"
+//lightName1 = "omnicyn5"
+//lightHard2 = "hp_light_2"
+//lightName2 = "omnicyn5"
+//lightHard3 = "hp_light_3"
+//lightName3 = "omnicyn5"
+
+effectHard1 = "hp_emit_2"  //twrbot
+effectName1 = "bbshld.tower"
+effectFlags1 = "447" //447 on  479 off
+effectHard2 = "hp_emit_3"  //beam top
+effectName2 = "bbshld.beam"
+effectFlags2 = "447" //447 on  479 off
+effectHard3 = "hp_emit_5"  //top single
+effectName3 = "bbshld.top"
+effectFlags3 = "447" //447 on  479 off
+//smoke1
+effectHard4 = "hp_smoke_1"
+effectName4 = "dmgbldg1"
+effectMinHealth4 = 0.6
+effectMaxHealth4 = 0.8
+effectHard5 = "hp_smoke_1"
+effectName5 = "dmgbldg2"
+effectMinHealth5 = 0.4
+effectMaxHealth5 = 0.6
+effectHard6 = "hp_smoke_1"
+effectName6 = "dmgbldg3"
+effectMinHealth6 = 0.2
+effectMaxHealth6 = 0.4
+effectHard7 = "hp_smoke_1"
+effectName7 = "dmgbldg4"
+effectMinHealth7 = 0.0
+effectMaxHealth7 = 0.2
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_bbshldcox"
+
+chunkEffect1 = "bbshldcoxchk01.fbx"  
+chunkEffect2 = "bbshldcoxchk02.fbx"  
+chunkEffect3 = "bbshldcoxchk03.fbx"  
+chunkEffect4 = "bbshldcoxchk04.fbx"  
+chunkEffect5 = "bbshldcoxchk05.fbx"  
+HasSeparateChunks = true 
+numChunks = 5
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 1
+numChunks5 = 1
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+[tower]
+renderBase = "draw_twirl_trail"
+textureName =  "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "50 100 255 200"
+finishColor = "50 100 255 200"
+startRadius = 5.0
+finishRadius = 5.0
+rotationRate = 4.0
+emitDelay = 0.1
+emitVelocity = "0.0 3.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 2.1
+animateTime = 2.1
+
+[beam]
+renderBase = "draw_twirl_trail"
+textureName =  "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "50 100 255 200"
+finishColor = "50 100 255 200"
+startRadius = 2.0
+finishRadius = 2.0
+rotationRate = 4.0
+emitDelay = 0.1
+emitVelocity = "0.0 -3.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 2.0
+animateTime = 2.0
+
+[top]
+renderBase = "draw_twirl_trail"
+textureName =  "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "50 100 255 200"
+finishColor = "50 100 255 200"
+startRadius = 5.0
+finishRadius = 5.0
+rotationRate = 4.0
+emitDelay = 1.0
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 2.1
+animateTime = 2.1
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 100
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "abshlde0.wav"
+//bldEdge = "wwww"  //bldg
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+///////////////////////////////////////////////////////////////
+[SupplyDepotClass]
+supplyRange = 100.0  //abshld
+supplyRate = 100.0  //abshld
+ServiceParallel = 1
+supplySound = NULL
+
+// Individual classification tweakers
+serviceSTs = 0
+serviceCraft = 0
+serviceBuildings = 1
+servicePilots = 0
+serviceOther = 0

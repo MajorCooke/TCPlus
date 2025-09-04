@@ -1,0 +1,22 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+geometryName = "spawn01.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "spawn01.fbx"
+classLabel = "objectspawn"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+unitName = "Object Spawn"
+
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+collisionRadius = 0.0
+
+[ObjectSpawnClass]
+spawnName = "apmlcka"  //Multi-lock missile
+spawnDelay = 30.0
+spawnSound = "spawn.wav"

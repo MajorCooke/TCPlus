@@ -1,0 +1,30 @@
+/////////Coxxon - BZTC/////////
+//acts as a repel shield, based on mcurtain
+//friendly vehicles and projectiles pass through without being effected
+//enemy vehicles and projectiles are deflected away
+[GameObjectClass]
+baseName = "repelenemy400"
+geometryName = NULL  //"igmcur00.fbx"
+classLabel = "magnet"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+canInteract = 0
+ignoreMissingInf = 1
+
+[MineClass]
+lifeSpan = -1  //10800.0  //three hours
+
+[MagnetMineClass]
+triggerDelay = 0.1  //Coxxon  //1.0
+fieldRadius = 200.0
+objPushCenter = 50  //Coxxon  //-10.0
+objPushEdge = 30.0  //25.0
+objDragCenter = 0.2
+objDragEdge = 0.5
+ordPushCenter = 250.0  //Coxxon  //100.0
+ordPushEdge = 250.0
+ordDragCenter = 10.0  //Coxxon  //2.0
+ordDragEdge = 25.0  //Coxxon  //5.0
+
+TeamFilter = 51  //Pick craft and ordnance, and sum to specify effected: All c0/o0, Same Team c1/o16, Allies c2/o32, Enemies c3/o48, NotSameTeam c4/o64

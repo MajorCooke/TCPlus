@@ -1,0 +1,203 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "svturr"
+classLabel = "turrettank"
+geometryName = "svturrcox00.fbx"
+cockpitName = "svturrcox_cockpit.fbx"
+animCount = 4
+animName1 = "deploy"
+animFile1 = "svturrcox00.fbx"
+animName2 = "forward"
+animFile2 = "svturrcoxsf.fbx"
+animName3 = "neutral"
+animFile3 = "svturrcoxsn.fbx"
+animName4 = "reverse"
+animFile4 = "svturrcoxsr.fbx"
+scrapCost = 40
+customCost = 45
+scrapValue = 10
+buildTime = 10.0
+customTime = 15.0
+maxHealth = 2500
+//addHealth = 1  //Coxxon
+maxAmmo = 3000
+addAmmo = 10  //tur  Coxxon
+unitName = "PAK trt"
+aiName = "TurretTankFriend"
+aiName2 = "TurretTankEnemy"
+heatSignature = 0.1
+imageSignature = 1.0
+radarSignature = 0.1
+isAssault = 0
+armorClass = L
+//keep sphere boxCollide = 1
+//collisionRadius = 1.0  //bzcc vehc
+//collisionName = "avturrcollide.fbx"
+
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 3  //turr
+provideName1 = "svturr"
+provideName2 = "VIRTUAL_CLASS_TURRET"
+provideName3 = "defender"  //turr
+
+/////// weapons ////////////////////
+//3 hp's available for most all weapon types
+weaponMask = 00001  //tur
+weaponHard1 = "HP_GUN_1"
+weaponName1 = "gchana_a"
+recoilName1 = "recoil1"
+weaponAssault1 = 1
+weaponHard2 = "HP_GUN_2"
+weaponName2 = "gchana_a"
+recoilName2 = "recoil2"
+weaponAssault2 = 1
+weaponHard3 = "HP_GUN_3"
+weaponName3 = "gchana_a"
+recoilName3 = "recoil3"
+weaponAssault3 = 1
+
+///////////////Coxxon/////////////////////
+turretCount = 2
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltwyl"
+LightsOnlyWhenPiloted = true
+
+effectHard1 = "hp_dust_1"
+effectName1 = "vfxbztcdusts.dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0
+effectMinVelocity1 = 10.0
+effectMaxVelocity1 = 500.0
+effectHard2 = "hp_dust_0" 
+effectName2 = "vfxbztcdusts.dustpuff"
+effectMinAltitude2 = 0.0
+effectMaxAltitude2 = 3.0
+effectMinVelocity2 = 0.0
+effectMaxVelocity2 = 10.0
+effectFlags2 = "503"  //"503" undeployed  "495" deployed
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "hp_smoke_1"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "hp_smoke_1"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "hp_smoke_1"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "hp_smoke_1"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+////////////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 300.0
+periodScan = 3.0
+velocJam = 1.0
+engageRange = 150
+weaponPitch = 1.0
+//NavIsDropped = true //drop behind - bugged, immed removes nav/camr in MP/MPI
+//NavDropSound = "gprox00.wav"  //sound if navisdropped true
+NavConfig = "apcamrs" //specify nav beacon/camera type
+AllowedControlsWhenTugged = 31  //7dflt Sumup: 1hop 2bail 4wcycle 8steer 16weapuse
+canSnipe = 1  //UNdeployed only turr
+attackTask = "TurretAttack"
+subattackTask = "TurretDefendTask"
+subAttackClass = "ADS"  //Air/gNd  Dep/Nreg  Srng/eNg
+//attackTaskUsesGroups = false  //Coxxon
+GoToTaskHasLeader = false  //Coxxon
+damageEffect1 = "dmgvhcl1"  //less stock dmg effect
+damageEffect2 = "dmgvhcl1"  //but still some sparks
+damageEffect3 = "dmgvhcl1"  //also lower visibility
+damageEffect4 = "dmgvhcl1"  //on cloaked units
+
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_svturrcox"
+
+//chunkEffect1 = "svturrcoxchk01.fbx"  
+//chunkEffect2 = "svturrcoxchk02.fbx"
+//chunkEffect3 = "svturrcoxchk03.fbx"
+//chunkEffect4 = "svturrcoxchk04.fbx"
+//chunkEffect5 = "svturrcoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 6
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 2
+
+/////////MESSAGES/////////
+selectGoMsg = "svturrvj.wav"  //on my way
+selectAttackMsg = "svturrvc.wav"  //standing ground
+selectDeployMsg = "svturrv0.wav"  //deploying
+selectOtherMsg = "svturrvd.wav"  //what is it
+selectFollowMsg = "svturrv8.wav"  //lead the way
+selectWaitMsg = "svturrve.wav"  //PAK here
+holdMsg = "svturrv1.wav"  //yesss yess
+goMsg = "svturrvb.wav"  //im not there yet
+goObjectMsg = "svturrvb.wav"  //im not there yet
+followMeMsg = "svturrv8.wav"  //lead the way
+followMsg = "svturrvb.wav"  //im not there yet
+reloadMsg = "svturrvg.wav"  //fine
+repairMsg = "svturrvh.wav"  //dah
+rescueMsg = "svturrvj.wav"  //on my way
+recycleMsg = "svturrvf.wav"  //my pleasure
+otherMsg = "svturrvd.wav"  //my pleasure
+attackMsg = "svturrvf.wav"  //my pleasure
+deployedMsg = "svturrv6.wav"  //turret deployed
+user1Msg = "svturrvd.wav"  //what is it
+killedMsg = "" //doesn't exist "svturrv3.wav"
+//diedMsg = "rbetty2.wav"  //defensive unit lost
+//"svturrv9.wav"  //this is not possible
+
+BailSound = "bail.wav"
+CollideTerrainSound = "vnvcs1.wav"
+CollideBldgSound = "vnvcs3.wav"
+CollideOtherSound = "vvcre2.wav"  //"vvcbb3.wav"
+
+//////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+setAltitude = 1.0
+accelDragStop = 20.0
+alphaTrack = 20.0
+alphaDamp = 5.0
+pitchPitch = 0.1
+pitchThrust = 0.1
+rollStrafe = 0.1
+rollSteer = 0.1
+velocForward = 20.0
+velocReverse = 15.0
+velocStrafe = 15.0
+accelThrust = 50.0
+accelBrake = 50.0
+omegaSpin = 4.0
+omegaTurn = 1.5
+alphaSteer = 10.0
+accelJump = 15.0
+
+soundThrust = "svturre8.wav"
+soundJump = "svturre6.wav"
+
+////////////////////////////////////////////////////////////////
+[DeployableClass]
+timeDeploy = 5.0  //Coxxon  that's crazy ->//8.0
+timeUndeploy = 3.0
+heightDeploy = 0
+soundDeploy = "avturre4.wav"
+soundUndeploy = "avturre5.wav"
+
+///////////////////////////////////////////////////////////////
+[TurretTankClass]
+omegaTurret = 1.5  //turr  since barrel offset  //1.25
+alphaTurret = 5.0  //turr

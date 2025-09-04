@@ -1,0 +1,102 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "opblla_c"
+classLabel = "BULLET"
+shotSound = "igtow04.wav"
+shotGeometry = NULL
+shotRadius = 2.0
+xplGround = "xsplasgnd_c"
+xplVehicle = "xpbllacar"  //"xsplascar_c"
+xplBuilding = "xpbllacar"  //"xsplascar_c"
+
+renderName = "opblla_c.render"
+
+ammoCost = 10
+lifeSpan = 1.0 // 100m
+shotSpeed = 100.0
+
+damageValue(N) = 100 // none
+damageValue(L) = 80 // light
+damageValue(H) = 16 // heavy
+
+damageValue(S) = 80 // standard
+damageValue(D) = 100 // deflection
+damageValue(A) = 16 // absorbption
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "opblla_c.flare"
+renderName2 = "opblla_c.trail"
+renderName3 = "opblla_c.smoke"
+renderName4 = "opblla_c.light"
+
+[Flare]
+renderBase = "draw_twirl_trail"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "255 63 30 255"  //Coxxon  //"255 63 55 255"
+finishColor = "255 0 0 255"  //Coxxon  //"255 63 55 255"
+startRadius = 0.4
+finishRadius = 0.02
+rotationRate = 10.0
+animateTime = 0.02
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 3.0"
+emitLife = 0.02
+
+[Trail]
+renderBase = "draw_twirl_trail"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "255 60 0 255"  //Coxxon  //"255 63 55 255"
+finishColor = "255 0 0 0"  //Coxxon  //"255 63 55 255"
+startRadius = 0.2
+finishRadius = 0.001
+rotationRate = 0.6
+animateTime = 0.6
+emitDelay = 0.08
+emitVelocity = "0.1 0.1 0.0"
+emitVariance = "15.0 15.0 0.0"
+emitLife = 0.6
+
+[Smoke]  //Coxxon
+renderBase = "draw_twirl_trail"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 80 255"
+finishColor = "255 0 0 0"
+startRadius = 0.3  //Coxxon  //0.1
+finishRadius = 0.0
+animateTime = 0.6  //Coxxon  //1.5
+emitDelay = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 2.0"
+emitLife = 0.6  //Coxxon  //1.5
+
+[light]
+renderBase = "draw_light"
+startColor = "20 80 180 200"
+finishColor = "20 80 180 200"
+startRadius = 16.0  //ord light
+finishRadius = 16.0  //ord light
+attenuateConstant = 0.0  //ord light
+attenuateQuadratic = 1.0  //ord light
+attenuateLinear = 0.0  //ord light
+
+///////////test///////////////
+[flail]
+renderBase = "draw_twirl_trail"
+textureName = NULL  //"vxflailblu.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 1.0
+finishRadius = 1.0
+rotationRate = 1.0
+animateTime = 0.04  //0.02
+emitDelay = 0.01  //0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 3.0"
+emitLife = 0.04  //0.02

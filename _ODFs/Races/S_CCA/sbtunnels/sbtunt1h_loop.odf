@@ -1,0 +1,36 @@
+//tall tunnel - full 128m x 128m area
+[GameObjectClass]
+baseName = "sbtunt1h_loop"
+classLabel = "i76building"
+geometryName = "sbtuntcox1h_loop.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "sbtuntcox1h_loop.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = 1
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+unitName = "tall hangar"
+heatSignature = 1.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 1.0  //bztc vehc
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+ownsTerrain = 1
+//bah AlignTerrainReplaceType = 5  //0-5  //tunnel
+AllowSeismic = 0
+
+[BuildingClass]
+CanDemolish = false
+tunnelCount = 1
+bldEdge = wwww
+
+tunnel01X0 = 0
+tunnel01Z0 = 0
+tunnel01DX = 16
+tunnel01DZ = 16
+tunnel01Edge = "ffff"

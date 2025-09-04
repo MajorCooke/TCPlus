@@ -1,0 +1,37 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "svarmorb01"
+classLabel = "svarmo"
+
+unitName = "SU8 slf"
+unitIcon = "icon_svarmo.png"
+unitStatus = "wire_svarmo.png"
+infoName = "svarmo.inf"
+
+limitClass1 = "svarmo"
+limitClass1Count = 1
+limitClass1Text = "Only One Allowed"
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+
+provideName3 = "svarmorb01"
+
+//////////////////////////////////////////////////////////
+[CraftClass]
+/////////CRASH EXPLODE INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_svarmocox"
+
+////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+
+/////////////////////////////////////////////////////////
+[DeployableClass]
+
+/////////////////////////////////////////////////////////
+[DeployBuildingHClass]
+deployName = "sbarmorb01"
+
+////////////////////////////////////////////////////////
+[RecyclerVehicleHClass]
+scrapHold = 0

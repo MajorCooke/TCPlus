@@ -1,0 +1,26 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gsldsa"
+classLabel = "shieldup"
+ordName = NULL
+wpnName = "Stasis"
+fireSound = "gphan00.wav"
+wpnReticle = "gshield"
+wpnPriority = 0
+wpnCategory = "SHIE"
+
+[ShieldUpgradeClass]
+
+// stasis shield (balanced)
+shieldClass = "S"
+
+animateTime = 1.5  //shie  //1.2
+colorRange = 0.5
+scaleStart = 0.1  //shie  //0.2
+scaleFinish = 1.0
+
+// [white->cyan->blue]
+textureName = "ring.tga"  //shie  //"bulhit.tga"
+startColor = "255 255 255 60"  //shie  //10"
+middleColor = "0 200 255 160"  //shie  //110"
+finishColor = "0 0 255 100"  //shie  //0"

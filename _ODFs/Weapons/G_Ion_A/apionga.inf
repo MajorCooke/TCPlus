@@ -1,0 +1,5 @@
+ION gun
+Fires bolts of ion energy that are most effective against lighter armored units.
+
+C 100m  Amo L  FRate H  Damg (E)M
+A 150m  Amo L  FRate M  Damg (E)M

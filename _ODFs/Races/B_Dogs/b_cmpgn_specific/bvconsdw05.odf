@@ -1,0 +1,28 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "bvconsdw05"
+classLabel = "bvcons"  //"constructionrig"
+unitIcon = "icon_bvcons.png"
+unitStatus = "wire_bvcons.png"
+infoName = "bvcons.inf"
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+
+provideName3 = "bvconsdw05"
+
+////////////////////////////////////////////////////////////
+[CraftClass]
+modeText19 = "Rebuild Addon"  //MODE_POWER = 19  //cons
+
+////////////////////////////////////////////////////////////
+[HoverCraftClass]
+
+////////////////////////////////////////////////////////////
+[DeployableClass]
+
+////////////////////////////////////////////////////////////
+[ConstructionRigClass]
+buildItem1 = "bbpgen1"

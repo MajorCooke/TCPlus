@@ -1,0 +1,20 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "obolta_a"
+classLabel = "obolta_c"
+
+ammoCost = 100
+lifeSpan = 210e-3 //210m
+shotSpeed = 1e3
+
+xplGround = "xboltgnd"
+xplVehicle = "xboltcar_a"
+xplBuilding = "xboltbld"
+
+damageValue(N) = 1500 // none
+damageValue(L) = 1000 // light
+damageValue(H) = 500 // heavy
+
+damageValue(S) = 1000 // standard
+damageValue(D) = 1500 // deflection
+damageValue(A) = 500 // absorption

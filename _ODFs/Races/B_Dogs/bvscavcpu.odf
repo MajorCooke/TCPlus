@@ -1,0 +1,40 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "bvscavcpu"
+classLabel = "bvscav"
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+provideName2 = "bvscavcpu"
+provideName3 = "VIRTUAL_CLASS_SCAVENGER"
+
+//////////////////////////////////////////////////////////////////////////
+[CraftClass]
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_bvscavcox"
+
+//xplChunk = "x_bztc_car"
+//chunkEffect1 = "bvscavcoxchk01.fbx"  
+//chunkEffect2 = "bvscavcoxchk02.fbx"
+//chunkEffect3 = "bvscavcoxchk03.fbx"
+//chunkEffect4 = "bvscavcoxchk04.fbx"
+//chunkEffect5 = "bvscavcoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 7
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 2
+//numChunks5 = 2
+
+//////////////////////////////////////////////////////////////////////////
+[DeployableClass]
+
+//////////////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+
+//////////////////////////////////////////////////////////////////////////
+[ScavengerHClass]
+deployClass = "bbscav"  //bzcc
+ScavClassProvides = 22 		//bzcc see stock ivscavcpu
+lockScrap = true  //true scav don't go for same piece

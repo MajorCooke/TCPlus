@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+ //Yes, RAVE GUN (see techno cannon)
+[WeaponClass]
+baseName = "gravea_a"
+classLabel = "machinegun"
+ordName = "oravea_a"
+altName = "gravea_c"
+wpnName = "Rave Gun! A"
+fireSound = "grave00.wav"
+wpnReticle = "gblnka.1"
+wpnCategory = "GUN"
+isAssault = 1
+aiRange = 150
+
+[CannonClass]
+shotDelay = 0.4

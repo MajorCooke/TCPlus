@@ -1,0 +1,37 @@
+//tall tunnel - full 64m x 64m area
+[GameObjectClass]
+baseName = "olytunn1d"
+classLabel = "i76building"
+geometryName = "olytunncox1d_open.fbx"
+animCount = 3
+animName1 = "open"
+animFile1 = "olytunncox1d_open.fbx"
+animName2 = "close"
+animFile2 = "olytunncox1d_close.fbx"
+animName3 = "loop"
+animFile3 = "olytunncox1d_loop.fbx"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+unitName = "tall door"
+heatSignature = 1.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 1.0  //bztc vehc
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+ownsTerrain = 1
+//bah AlignTerrainReplaceType = 5  //0-5  //tunnel
+AllowSeismic = 0
+
+[BuildingClass]
+CanDemolish = false
+tunnelCount = 1
+
+tunnel01X0 = 0
+tunnel01Z0 = 0
+tunnel01DX = 8
+tunnel01DZ = 2
+tunnel01Edge = "fwfw"

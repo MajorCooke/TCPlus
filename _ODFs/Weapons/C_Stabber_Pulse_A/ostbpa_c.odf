@@ -1,0 +1,94 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ostbpa_c"
+classLabel = "pulse"
+shotGeometry = "aostbpcox01.fbx"  //"aostbpcox00.fbx"
+shotSound = "Ordin_c.wav"
+xplGround = "xpulgnd_c"
+xplVehicle = "xpulhit_c"
+xplBuilding = "xpulhit_c"
+
+ammoCost = 14
+lifeSpan = 1.429 // 100.03m
+shotSpeed = 70.0
+
+LifespanBeforeCollidesWithOwner = 2.0  //Coxxon  //0.2  BZCC DOESN'T WORK - bz1372 DOES
+
+damageValue(N) = 220 // none // 300
+damageValue(L) = 210 // light // 260
+damageValue(H) = 190 // heavy // 210
+
+damageValue(S) = 210 // standard // 260
+damageValue(D) = 190 // deflection // 270
+damageValue(A) = 220 // absorption // 240
+
+renderName = "ostbpa_c.render"
+
+///////////////////////////////////////////////////////
+[PulseShellClass]
+pulseDelay = 0.5  //compensate for above not working in BZCC  Coxxon  //0.3
+pulsePeriod = 0.5  //compensate for above not working in BZCC  Coxxon  //0.3
+xplPulse = "xpulemit_c"
+
+///////////////////////////////////////////////////////
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "ostbpa_c.smoke"
+//renderName2 = "ostbpa_c.tail"
+renderName2 = "ostbpa_c.core"
+renderName3 = "ostbpa_c.light"
+
+///////////////////////////////////////////////////////
+[tail]  //mod from default faf misl
+renderBase = "draw_twirl_trail"
+textureName = "twin.tga"
+textureBlend = "one one modulate"
+startColor = "100 0 100 200"  //"255 0 100 200"  //"255 255 255 255"
+finishColor = "255 0 100 0"  //"255 255 255 100"  //
+startRadius = 0.4  //0.5
+finishRadius = 0.0  //0.1
+animateTime = 0.3
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.6 0.6 0.6"
+emitLife = 0.3
+
+[core]
+renderBase = "draw_twirl_trail"
+textureName = "lighthalo.tga"  //stab  "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "100 60 180 155"
+finishColor = "55 0 100 30"
+startRadius = 0.8  //0.3
+finishRadius = 0.0  //0.1
+animateTime = 0.15
+rotationRate = 10.0
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 0.15
+
+[Smoke]  //mod from default faf misl
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "170 0 120 50"
+finishColor = "70 70 70 0"
+startRadius = 0.3
+finishRadius = 0.7
+animateTime = 0.6
+emitDelay = 0.01
+emitVelocity = "0.0 0.5 0.0"
+emitVariance = "0.6 0.6 0.6"
+emitLife = 0.6
+
+[light]
+renderBase = "draw_light"
+startColor = "100 60 180 200"
+finishColor = "100 60 180 200"
+startRadius = 16.0  //ord light
+finishRadius = 16.0  //ord light
+attenuateConstant = 0.0  //ord light
+attenuateQuadratic = 1.0  //ord light
+attenuateLinear = 0.0  //ord light

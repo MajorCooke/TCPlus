@@ -1,0 +1,25 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "abrecyss03"
+classLabel = "abrecy"
+unitName = "Carolina"
+upgradeName = "avrecyss03"
+InfoName = "abrecy.inf"
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+
+provideName5 = "abrecyss03"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_abrecycox"
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+
+///////////////////////////////////////////////////////////////
+[RecyclerClass]

@@ -1,0 +1,55 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ggtowy_c"
+classLabel = "beam"
+shotGeometry = NULL
+xplGround = "xgtowygnd_c"
+xplVehicle = "xgtowycar_c"
+xplBuilding = "xgtowybld_c"
+ammoCost = -1  //gtow
+lifeSpan = 0.1  //170e-3 // 170m
+shotSpeed = 1700  //1e3
+
+damageValue(N) = 60  //Coxxon  //80
+damageValue(L) = 40  //Coxxon  //60
+damageValue(H) = 26  //Coxxon  //40
+
+damageValue(S) = 40  //Coxxon  //60  // standard
+damageValue(D) = 60  //Coxxon  //80  // deflection
+damageValue(A) = 26  //Coxxon  //40  // absorption
+
+renderName = "ogtowy_c.render"
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "ogtowy_c.core"
+renderName2 = "ogtowy_c.bolt"
+renderName3 = "ogtowy_c.bolt"
+renderName4 = "ogtowy_c.bolt"
+
+[Core]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "0 255 255 0"
+startRadius = 0.5
+finishRadius = 0.3
+segmentLength = 2.0
+segmentVariance = "0.5 0.5 0.5"
+animateTime = 0.2
+textureRate = 0.01
+
+[Bolt]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.3
+finishRadius = 0.2
+segmentLength = 2.0
+segmentVariance = "2.0 2.0 0.5"
+animateTime = 0.3
+textureRate = 0.01

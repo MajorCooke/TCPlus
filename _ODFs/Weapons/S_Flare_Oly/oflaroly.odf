@@ -1,0 +1,33 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "oflaroly"
+classLabel = "bullet"
+shotGeometry = NULL
+shotRadius = 20.0  //Coxxon //1.0
+xplGround = "xflmhit"
+xplVehicle = "xflmhit"
+xplBuilding = NULL  //Coxxon "xflmhit"
+
+ammoCost = 1  //25
+lifeSpan = 1.0
+shotSpeed = 130.0
+
+damageValue(N) = 500
+damageValue(L) = 500
+damageValue(H) = 500
+damageValue(S) = 500
+damageValue(D) = 500
+damageValue(A) = 500
+
+renderName = "oflaroly.puff"
+
+[Puff]
+renderBase = "draw_twirl"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 128"
+finishColor = "255 255 255 0"
+startRadius = 10.0
+finishRadius = 10.0
+animateTime = 1.0
+

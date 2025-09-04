@@ -1,0 +1,79 @@
+/////////Coxxon - BZTC/////////
+//turret for cthbldg00 (x0)
+[GameObjectClass]
+baseName = "olybldgt0"
+classLabel = "turret"
+geometryName = "olybldgcoxt0.fbx"
+cockpitName = "ybgtowcox_cockpit.fbx"
+scrapCost = 50
+scrapValue = 0
+maxHealth = 5000
+addHealth = 5
+maxAmmo = 10000 // 0 is *not* treated as infinite ammo!
+unitName = "Pyramid Turret"
+//unitIcon = "icon_abgtow.png"
+aiName = "GunTowerFriend"
+aiName2 = "GunTowerEnemy"
+heatSignature = 1.0
+imageSignature = 2.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+AllowSeismic = 0
+CanAcceptPowerups = 0  //weird, ibgtow/fbspir don't need this
+//CanSelect = 0
+//CanInteract = 0
+powerCost = 0
+//collisionRadius = 1.0  //bztc vehc
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 1
+provideName1 = "olybldgt0"
+
+/////// WEAPONS ////////////////////
+//2 cann, 2 rckt avail
+weaponMask = 00011
+weaponHard1 = "hp_cannon_1"  //"hp_rocket_1"
+weaponName1 = "ggtowcth"  //"ghadtow_a"
+weaponAssault1 = 0
+//weaponHard2 = "hp_rocket_2"
+//weaponName2 = "ghadtow_a"
+//weaponAssault2 = 0
+
+/////// TURRETS ////////////////////
+turretCount = 2
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"  //gtow/spire "turret" class different
+
+///////////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 400.0
+periodScan = 3.0
+velocJam = 1.0
+engageRange = 200.0
+weaponPitch = 1.5
+CanBailout = 0  //gtow
+CanUserBailout = 0  //gtow
+CanAIEject = 0
+canRescue = 0
+//RetargetOnStrafe = true  //tnk
+attackTask = "TurretAttack"
+subattackTask = "TurretDefendTask"
+subAttackClass = "ANS"
+
+///////////////////////////////////////////////////////////////
+[TurretCraftClass]
+omegaTurret = 2.0
+detectRange = 400
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+bldEdge = "wwww"
+soundAmbient = "denv01.wav"

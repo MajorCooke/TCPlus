@@ -1,0 +1,33 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName "glasea_c"
+classLabel = "cannon"
+altName = "glasea_a"
+ordName = "olasea_c"
+wpnName = "CF Laser C"
+fireSound = "cgun01.wav"
+wpnReticle = "glasea"
+wpnCategory = "GUN"
+isAssault = 0
+aiRange = 120
+flashName = "glasea_c.flash"
+
+[CannonClass]
+shotDelay = 2.0 // .5/sec
+//salvoCount = 1  //prob don't need salvo stuff from orig  Coxxon
+//salvoDelay = 0.001
+//shotVariance = 0.0
+
+
+[Flash]
+simulateBase = "sim_null"
+lifeTime = 3.5
+renderBase = "draw_light"
+startColor = "255 50 0 255"  //Coxxon  //"0 0 255 700"
+finishColor = "255 50 0 255"  //Coxxon  //"0 255 255 700"
+startRadius = 20.0
+finishRadius = 20.0
+animateTime = 3.5
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0

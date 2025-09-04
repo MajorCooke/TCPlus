@@ -1,0 +1,28 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+geometryName = "wrldachlcox10.fbx"
+classLabel = "i76Building"
+collisionRadius = 0
+scrapCost = 0
+scrapValue = 0
+maxHealth = 1000  //wrld
+maxAmmo = 0
+unitName = "Achilles Dying"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+explosionName = "xplss17achl"  //wrld
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+ownsTerrain = 0
+canCollide = 0  //Coxxon
+ignoremissinginf = 1
+
+[BuildingClass]
+bldEdge = "tttt"
+
+///////// EXPLOSION AID /////////
+UseCollapse = false
+UseChunks = false  //wrld
+UseExplosion = true

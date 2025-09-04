@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gsanda_c"
+classLabel = "cannon"
+altName = "gsanda_a"
+ordName = "osanda_c"
+wpnName = "Sand Bag C"
+fireSound = "gsand00.wav"
+wpnReticle = "gsanda"
+wpnCategory = "ROCK"
+isAssault = 0
+aiRange = 130.0  //Coxxon
+
+[CannonClass]
+shotDelay =  2.0  //since Alt  //1.5
+shotAlternate = 1

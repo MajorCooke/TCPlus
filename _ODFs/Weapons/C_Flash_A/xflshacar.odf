@@ -1,0 +1,80 @@
+// =================
+// FLASH VEHICLE HIT
+// =================
+
+[ExplosionClass]
+classLabel = "explosion"
+
+particleTypes = 3
+particleClass1 = "xflshacar.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+particleInherit1 = "0.8 0.8 0.8"
+
+particleClass2 = "xflshacar.light"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+particleInherit2 = "0.8 0.8 0.8"
+
+particleClass3 = "xflshacar.sparkTrails"
+particleCount3 = 2 //4
+particleVeloc3 = "26.0 60.0 26.0"
+particleBias3 = "0.0 0.0 0.0"
+particleInherit3 = "0.8 0.8 0.8"
+
+explSound = "xehit1.wav"
+
+damageRadius = 10.0  //Coxxon  //0.0
+damageValue(N) = 1 //Coxxon  //0 // none
+damageValue(L) = 1 //Coxxon  //0 // light
+damageValue(H) = 1 //Coxxon  //0 // heavy
+damageValue(S) = 1 //Coxxon  //0 // standard
+damageValue(D) = 1 //Coxxon  //0 // deflection
+damageValue(A) = 1 //Coxxon  //0 // absorbtion
+
+//special this weapon
+kickRadius = 10.0  //car
+kickOmega = 0.5  //b/c so many shots
+kickVeloc = 0.5  //b/c so many shots
+
+[Core]
+simulateBase = "sim_smoke"
+lifeTime = 0.5
+renderBase = "draw_twirl"
+textureName = "ring.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 255"
+finishColor = "255 0 0 0"
+startRadius = 0.2
+finishRadius = 2.0
+animateTime = 0.5
+BottomInteractsWithTerrain = false
+
+[Light]
+simulateBase = "sim_smoke"
+lifeTime = 0.7
+renderBase = "draw_light"
+startColor = "255 180 100 855"
+finishColor = "255 140 50 0"
+startRadius = 10.0
+finishRadius = 0.0
+animateTime = 0.7
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+
+[SparkTrails]
+simulateBase = "sim_ember"
+lifeTime = 2.0
+renderBase = "draw_trail"
+textureName = "spark2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.3
+startColor = "255 255 63 255"
+finishColor = "255 200 0 0"
+startRadius = 0.1
+finishRadius = 0.0
+animateTime = 2.0
+segmentTime = 0.15
+segmentLength = 0.3
+

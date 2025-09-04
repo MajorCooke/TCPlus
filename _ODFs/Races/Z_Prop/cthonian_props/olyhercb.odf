@@ -1,0 +1,45 @@
+/////////Coxxon - BZTC////////
+//static model for Cthonian, Olympian, Hercules Brigade, Pegasus class starfighter
+[GameObjectClass]
+geometryName = "olyherccox0b.fbx"
+classLabel = "i76building"
+scrapCost = 8
+scrapValue = 3
+maxHealth = 12000
+maxAmmo = 0
+unitName = "Pegasus"
+heatSignature = 0.0  //0.8
+imageSignature = 0.0  //8.0
+radarSignature = 1.0
+collisionRadius = 1.0  //bztc vehc
+canDetect = 1
+canInteract = 1
+canSnipe = 0
+//canCollide = 1
+//boxCollide = 1
+ownsTerrain = 1
+AllowSeismic = 0
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_yvpegacox"
+
+chunkEffect1 = "olypegacoxchk01.fbx"  
+chunkEffect2 = "olypegacoxchk02.fbx"
+chunkEffect3 = "olypegacoxchk03.fbx"
+chunkEffect4 = "olypegacoxchk04.fbx"
+chunkEffect5 = "olypegacoxchk05.fbx"
+HasSeparateChunks = true
+numChunks = 5
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 1
+numChunks5 = 1
+
+[BuildingClass]
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid

@@ -1,0 +1,16 @@
+[GameObjectClass]
+baseName = "dummy01"
+classLabel = "powerlung"  //"i76building"  //
+scrapCost = 5
+scrapValue = 5
+maxHealth = 0
+maxAmmo = 0
+unitName = "Dummy01 dmy"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+isAssault = 0
+canInteract = 0
+armorClass = H
+ignoreMissingInf = 1
+AllowSeismic = 0

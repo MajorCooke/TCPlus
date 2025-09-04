@@ -1,0 +1,15 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gpblla_c"
+classLabel = "cannon"
+ordName = "opblla_c"
+altName = "gpblla_a"
+wpnName = "Plasma Ball C"
+fireSound = "gspst00.wav"
+wpnReticle = "gplasa_c"
+wpnCategory = "CANN"
+aiRange = 100
+
+[CannonClass]
+shotDelay = 0.33 // 3/sec
+shotAlternate = 0

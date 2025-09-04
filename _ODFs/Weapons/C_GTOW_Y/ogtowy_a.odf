@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ogtowy_a"
+classLabel = "ogtowy_c"
+ammoCost = -1  //gtow
+lifeSpan = 200e-3 // 200m
+shotSpeed = 1e3
+
+//3 shots/ 1/2 sec - so low damage
+damageValue(N) = 55  //Coxxon  //150 // none
+damageValue(L) = 40  //Coxxon  //120 // light
+damageValue(H) = 30  //Coxxon  //50 // heavy
+
+damageValue(S) = 40 //Coxxon  //120 // standard
+damageValue(D) = 55  //Coxxon  //150 // deflection
+damageValue(A) = 30  //Coxxon  //50 // absorption

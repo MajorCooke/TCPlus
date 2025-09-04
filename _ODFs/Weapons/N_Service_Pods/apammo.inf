@@ -1,0 +1,5 @@
+AMMO powerup
+Replenishes up to 500 units of a vehicle's ammo.
+
+COST: 1
+BUILDER: SLF or Recycler

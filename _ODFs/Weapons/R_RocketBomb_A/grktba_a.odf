@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "grktba_a"
+classLabel = "cannon"
+altName = "grktba_c"
+ordName = "orktba_a"
+wpnName = "Rocket Bomb A"
+fireSound = "gpopp00.wav"  //"crckt01.wav"  //
+wpnReticle = "grckta"
+wpnCategory = "ROCK"
+isAssault = 1
+aiRange = 250
+
+[CannonClass]
+shotDelay = 3.0  //Coxxon  //1.0 // 1/sec
+shotAlternate = 1

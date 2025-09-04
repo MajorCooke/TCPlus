@@ -1,0 +1,15 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "ksuser_m"
+classLabel = "kspilo"
+
+scrapValue = 0
+maxHealth = 250
+
+weaponName1 = "gsnpxk_c"
+weaponName2 = ""
+
+[CraftClass]
+
+[PersonClass]
+MicePitchSensitivity = 1.5

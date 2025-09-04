@@ -1,0 +1,9 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gstbla_c_gtank"
+classLabel = "gstbla_c_gun"
+altName = "gstbla_a_gtank"
+
+[CannonClass]
+shotDelay = 1.0 	// Since tanks have cannons and two miniguns, make it replicate classical tanks.
+shotAlternate = 1 	

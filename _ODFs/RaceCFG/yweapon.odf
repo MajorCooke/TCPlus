@@ -1,0 +1,78 @@
+[Gun]
+weaponCount = 5
+weaponName1 = "aphmrga"  //Homer  //armo  //fury
+weaponName2 = "apchana"  //chain gun  //armo
+weaponName6 = "apempla"  //EMP  //cbun
+weaponName4 = "appumma"  //Pummel  //sbay
+weaponName5 = "aplasea"  //CF laser  //tcen
+
+[Cannon]
+weaponCount = 10
+weaponName1 = "apbolta"  //Bolt  //cbun  //Fury
+weaponName2 = "apstbsa"  //Super Stab  //cbun
+weaponName3 = "apstbta"  //Stilleto Stab  //factg
+weaponName4 = "apstbpa"  //Pulse Stab  //sbay
+weaponName5 = "apstbva"	//Salvo Stab  //fact
+weaponName6 = "apstbra"  //Rapid Stab  //hqtr
+weaponName7 = "apflama"  //flamer  //train
+weaponName8 = "apquila"  //Quill  //sbay
+weaponName9 = "apsonca"  //Sonic  //cbun
+weaponName10 = "apmagga"  //Magg  //shld
+
+[Rocket]
+weaponCount = 9
+weaponName1 = "aprktba"  //Rocket Bomb  //armo
+weaponName2 = "apsanda"  //Sand Bag  //armo
+weaponName3 = "aphadey"  //Hades  //fact  //FURY SPECIFIC
+weaponName4 = "aphorna"  //Hornet  //fact
+weaponName5 = "apshdwa"  //Shadow Salvo  //sbay
+weaponName6 = "aptagga"  //TAG rockets  //tcen  //diff from cannon
+weaponName7 = "apwaspa"  //Wasp  //tcen
+weaponName8 = "apstnga"  //Stinger Swarm  //tcen
+weaponName9 = "apmlcka"	//Multilock Pred  //hqtr
+
+[Mortar]
+weaponCount = 7
+weaponName1 = "apmorta"  //standard mortar  //armo
+weaponName2 = "apmdmga"  //man-det mortar  //armo
+weaponName3 = "apresna"  //resin mortar  //sbay
+weaponName4 = "apacida"  //acid mortar  //sbay
+weaponName5 = "apsplna"  //splinter  //train
+weaponName6 = "appopga"  //popgun  //tcen
+weaponName7 = "aphwtza"  //howitzer  //tcen
+
+[Special]
+weaponCount = 12
+weaponName1 = "apjaxxa"  //Jaxx  //armo
+weaponName2 = "apseeka"  //Seeker  //sbay
+weaponName3 = "apbltma"  //bolt mine  //hqtr  //FURY SPECIFIC
+weaponName4 = "approxa"  //Prox Mine  //armo
+weaponName5 = "apfntna"  //Fountain  //hqtr  //rebalanced for BZTC
+weaponName6 = "apredfa"  //red field  //armo
+weaponName7 = "apphana"  //phantom vir  //armo
+weaponName8 = "apsitea"  //SITE camera  //armo
+weaponName9 = "apimgma"  //Imager  //armo
+weaponName10 = "apstata"  //Static field  //armo
+weaponName11 = "apthmpa"  //Thumper  //armo
+weaponName12 = "apblnka"  //blink  //shld
+
+[Shield]
+weaponCount = 3
+weaponName1 = "apsldaa"
+weaponName2 = "apsldda"
+weaponName3 = "apsldsa"
+
+[Hand]
+weaponCount = 3
+weaponName1 = "apbowwy"
+weaponName2 = "apsnipy"
+weaponName3 = "apshoty"
+
+[Pack]
+weaponCount = 2
+weaponName1 = "apgreny"  //grenade launcher  //train
+weaponName2 = "apjetpy"  //jetpack  //train
+weaponName3 = "aphovpy"  //hoverpack  //tcen  //3rd party BZ2 1.3
+weaponName4 = "aprktpy"  //AT-rocket pack  //hqtr"
+weaponName5 = "apsatcy"  //satchel charge  //shld  //rebalanced for BZTC
+

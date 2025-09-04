@@ -1,0 +1,15 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gwaspa"
+classLabel = "dispenser"
+wpnName = "WASP"
+fireSound = "gwasp00.wav"
+wpnReticle = "gwaspa"
+wpnCategory = "ROCK"
+aiRange = 300
+isAssault = 1
+
+[DispenserClass]
+shotDelay = 6.0
+//shotAlternate = 1  //doesn't work for this class :(
+objectClass = "owaspa"

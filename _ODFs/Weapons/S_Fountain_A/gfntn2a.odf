@@ -1,0 +1,35 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "gfntn2a"
+classLabel = "popper"
+shotGeometry = "aochancox00.fbx"  //Coxxon  //"gatst00.x"
+xplGround = "xplahit"
+xplVehicle = "xplahit"
+xplBuilding = "xplahit"
+renderName = "gfntn2a.render"
+
+ammoCost = 1
+lifeSpan = 1e30
+shotSpeed = 50.0
+damageValue(N) = 100
+damageValue(L) = 100
+damageValue(H) = 100
+damageValue(S) = 100
+damageValue(D) = 100
+damageValue(A) = 100
+
+[PopperClass]
+scanRange = 100.0
+launchXpl = "xplahit"
+launchOrd = "ofntna"
+
+[Render]
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.1
+startColor = "255 0 255 64"
+finishColor = "0 0 255 0"
+startRadius = 0.3
+finishRadius = 1.5
+segmentTime = 1.0

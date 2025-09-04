@@ -1,0 +1,13 @@
+/////////Coxxon - BZTC/////////
+//pusher mine to unstick stuck stuff
+[WeaponClass]
+baseName = "gcleara"
+classLabel = "dispenser"
+wpnName = "Clear Area"
+fireSound = NULL
+wpnReticle = "gmcurmin"
+wpnCategory = "SPEC"
+
+[DispenserClass]
+shotDelay = 60.0
+objectClass = "ocleara"

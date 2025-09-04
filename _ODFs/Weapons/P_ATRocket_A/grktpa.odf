@@ -1,0 +1,28 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "grktpa"
+classLabel = "thermallauncher"
+geometryName = "aggrencox00.fbx"
+ordName = "orktpa"
+wpnName = "AT-Rocket Pack"
+wpnIcon = "wire_grktp%d.tga"
+fireSound = "gmasg00.wav"  //"crckt01.wav"
+wpnReticle = "ghorna.0"  //"ghornet.0"
+wpnLadder = "gmortar.L0"  //this may not be needed
+wpnCategory = "PACK"
+localAmmo = 4  //rktp  //wireframe for 6
+canSelect = false  //rktp
+isAssault = 0
+aiRange = 150.0
+
+[LauncherClass]
+lockRange = 150.0
+shotDelay = 1.0
+lockDelay = 0.5
+coneAngle = 0.15  //Coxxon
+lockingReticle = "ghorna.A"  //"ghornet.A"
+lockingSound = "locking3.wav"  //"lock01.wav"
+lockedReticle = "ghorna.B"  //"ghornet.B"
+lockedSound = "locked3.wav"  //"lock02.wav"
+targetCount = 3
+targetReticle = "ghorna.1"  //"ghornet.1"

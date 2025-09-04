@@ -1,0 +1,136 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "hadgtow"
+classLabel = "turret"
+geometryName = "hadgtowcox00.fbx"
+cockpitName = "yvrcktcox_cockpit.fbx"
+scrapCost = 60
+scrapValue = 30
+maxHealth = 6000  //cost x 100  Coxxon
+addHealth = 10
+maxAmmo = 10000
+unitName = "Flash Tower had"
+unitIcon = "icon_hadgtow.png"
+aiName = "GunTowerFriend"
+aiName2 = "GunTowerEnemy"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+collisionRadius = 1.0  //gtow some gap
+canCollide = 0  //gtow correct for this class
+armorClass = H
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+requireReplaceTerrainPhysics = 1  //bzcc
+ownsTerrain = 1  //since no terrain plate had
+//boxCollide = 1  //gtow
+buildSupport = "A"
+buildRequire = "F"
+CanAcceptPowerups = 0  //weird, ibgtow/fbspir don't need this
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 4  //Coxxon
+provideName1 = "hadgtow"
+provideName2 = "VIRTUAL_CLASS_GUNTOWER"
+provideName3 = "defender"
+provideName4 = "ibgtow"  //so it doesn't race whine
+
+///// WEAPON ///////////////////////
+//Push Wave added to avoid easy circle-strafe kills of fbspir - Coxxon
+weaponMask = 00011  //Coxxon  //00001
+weaponHard1 = "hp_cannon_1"
+weaponName1 = "gflshh_a"
+weaponAssault1 = 0
+weaponHard2 = "hp_special_1"  //"hadgtowcox00"  //whoops forgot to make an hp so use geometry name
+weaponName2 = "gsprpa"  //"gspirpush"  //fires every 6 secs, lives 5 secs, pushes away enemy units - Coxxon
+weaponAssault2 = 0
+
+/////// TURRETS ///////////////////
+turretCount = 2
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+
+///////// LIGHTS & EFFECTS /////////
+lightHard1 = "hp_light_1"
+lightName1 = "spotorange"
+
+//smoke1
+effectHard1 = "hp_smoke_1"
+effectName1 = "dmgbldg1"
+effectMinHealth1 = 0.6
+effectMaxHealth1 = 0.8
+effectHard2 = "hp_smoke_1"
+effectName2 = "dmgbldg2"
+effectMinHealth2 = 0.4
+effectMaxHealth2 = 0.6
+effectHard3 = "hp_smoke_1"
+effectName3 = "dmgbldg3"
+effectMinHealth3 = 0.2
+effectMaxHealth3 = 0.4
+effectHard4 = "hp_smoke_1"
+effectName4 = "dmgbldg4"
+effectMinHealth4 = 0.0
+effectMaxHealth4 = 0.2
+
+effectHard5 = "hp_emit_1"
+effectName5 = "hadgtow.orangebig"
+effectFlags5 = "447" //447 on  479 off
+
+////////// EFFECTS DESCRIPTION //////////
+[orangebig]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 100 0 255"
+startRadius = 6.0
+
+/////////////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "sgtow01.wav"  //only works in fbspir
+bldEdge = "wwww"  //gtow
+
+/////////////////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 250.0
+periodScan = 0.0
+velocJam = 0.0
+weaponPitch = 2.0
+steerFactor = 2.0
+engageRange = 210
+CanBailout = 0  //gtow  //seems useless w/out cmd menu, but is in ibgtow and fbspir
+CanUserBailout = 0  //gtow  //avoid accidental self-destruct, but not in 180 ibgtow and fbspir
+//Coxxon - stupid that a tall gun tower/spire wouldn't be attacking a apc/bomber/archer
+//RetargetOnStrafe = true  //tnk
+attackTask = "TurretAttack"
+subattackTask = "TurretDefendTask"
+subAttackClass = "ANS"
+//prefer effect damageEffect1 = "dmgbldg1"
+//prefer effect damageEffect2 = "dmgbldg2"
+//prefer effect damageEffect3 = "dmgbldg3"
+//prefer effect damageEffect4 = "dmgbldg4"
+
+/////////CRASH INTO COMPONENT PARTS/////////
+//"x_bztc_bld"  //
+//xplcrash
+explosionName = "xpl_crash_hadgtowcox"  //gtow different
+
+//chunkEffect1 = "hadgtowcoxchk01.fbx"  
+//chunkEffect2 = "hadgtowcoxchk02.fbx"
+//chunkEffect3 = "hadgtowcoxchk03.fbx"
+//chunkEffect4 = "hadgtowcoxchk04.fbx"
+//chunkEffect5 = "hadgtowcoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 7
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 2
+//numChunks5 = 2
+
+/////////////////////////////////////////////////////////////////////
+[TurretCraftClass]
+omegaTurret = 3.0  //2.0
+detectRange = 210

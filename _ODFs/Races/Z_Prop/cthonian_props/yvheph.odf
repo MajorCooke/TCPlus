@@ -1,0 +1,168 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "yvheph"
+classLabel = "wingman"
+geometryName = "olyhephcox00.fbx"
+cockpitName= "olypegacox_cockpit.fbx"
+scrapValue = 20
+scrapCost = 100
+customCost = 120
+buildTime = 15.0  //Coxxon  //20.0  //avhtnk
+customTime = 25.0
+maxHealth = 10000  //avhtnk
+addHealth = 5.0
+maxAmmo = 10000  //avhtnk
+addAmmo = 30  //avhtnk
+unitName = "Hephestus htk"
+aiName = "TankFriend"  //basetank
+aiName2 = "TankEnemy"  //basetank
+heatSignature = 3.0
+imageSignature = 3.0
+radarSignature = 3.0
+isAssault = 1  //bztc
+armorClass = H
+boxCollide = 1
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+provideName1 = "yvpega"
+provideName2 = "VIRTUAL_CLASS_SCOUT"
+provideName3 = "DefendUnit"
+
+/////// WEAPONS ////////////////////
+weaponMask = 01111
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = "gflsha_a"  //"gflash_a"  //
+recoilName1 = "recoil1"
+weaponAssault1 = 1
+weaponHard2 = "HP_CANNON_2"
+weaponName2 = "gflsha_a"  //"gflash_a"  //
+6recoilName2 = "recoil2"
+weaponAssault2 = 1
+weaponHard3 = "HP_ROCKET_1"
+weaponName3 = "grktba_a"  //"rktbomb_a"  //
+recoilName3 = "recoil3"
+weaponAssault3 = 1
+weaponHard4 = "HP_ROCKET_2"
+weaponName4 = "grktba_a"  //"rktbomb_a"  //
+recoilName4 = "recoil4"
+weaponAssault4 = 1
+weaponHard5 = "HP_SHIELD"
+weaponName5 = "gsldda"
+weaponAssault5 = 0
+
+/////////LIGHTS AND EFFECTS//////////////////
+//none :(
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "hp_smoke_1"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "hp_smoke_1"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "hp_smoke_1"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "hp_smoke_1"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+/////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 300.0
+periodScan = 3.0
+velocJam = 10.0
+engageRange = 150
+braccelFactor = 0.05
+velFactor = 0.2
+steerFactor = 1.0
+omegaFactor = 0.5
+strafeFactor = 0.2
+//topSpeed = 30  //sct
+//avoidSpeed = 20  //sct
+//RetargetOnStrafe = true  //tnk
+attackTask = "MortarBikeAttack"  //basetank
+subattackTask = "SupportSubAttack"  //basetank
+//attackTaskUsesGroups = false  //Coxxon
+GoToTaskHasLeader = false  //Coxxon
+canHunt = 1	// defaults to 0
+//NavIsDropped = true //drop behind - bugged, immed removes nav/camr in MP/MPI
+//NavDropSound = "gprox00.wav"  //sound if navisdropped true
+NavConfig = "apcamry" //specify nav beacon/camera type
+AllowedControlsWhenTugged = 31  //7dflt Sumup: 1hop 2bail 4wcycle 8steer 16weapuse
+//canRescue = 0  //Coxxon
+//CanAIEject = 0  //Coxxon
+damageEffect1 = "dmgvhcl1"  //less stock dmg effect
+damageEffect2 = "dmgvhcl1"  //but still some sparks
+damageEffect3 = "dmgvhcl1"  //also lower visibility
+damageEffect4 = "dmgvhcl1"  //on cloaked units
+
+/////////CRASH INTO COMPONENT PARTS/////////
+//xplcrash = "xpl_crash_doesn't exist yet yvhephcox"
+
+//chunkEffect1 = "olyhephcoxchk01.fbx"  
+//chunkEffect2 = "olyhephcoxchk02.fbx"
+//chunkEffect3 = "olyhephcoxchk03.fbx"
+//chunkEffect4 = "olyhephcoxchk04.fbx"
+//chunkEffect5 = "olyhephcoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 5
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+/////////MESSAGES/////////
+selectWaitMsg = "fvartl04.wav"
+selectAttackMsg = "fvartl01.wav"
+selectFollowMsg = "fvartl03.wav"
+selectGoMsg = "fvartl02.wav"
+selectOtherMsg = "fvartl04.wav"
+holdMsg = "fvartl12.wav"
+goMsg = "fvartl05.wav"
+attackMsg = "fvartl06.wav"
+followMeMsg = "fvartl08.wav"
+followMsg = "fvartl03.wav"
+repairMsg = "fvartl09.wav"
+reloadMsg = "fvartl09.wav"
+rescueMsg = "fvartl10.wav"
+recycleMsg = "fvartl11.wav"
+otherMsg = "fvartl05.wav" 
+
+BailSound = "bail.wav"
+CollideTerrainSound = "vnvcs1.wav"
+CollideBldgSound = "vnvcs3.wav"
+CollideOtherSound = "vvcre2.wav"  //"vvcbb3.wav"
+
+//////////////////////////////////////////////////////////
+[HoverCraftClass]
+velocForward = 40.0 // 
+velocReverse = 20.0 // 
+velocStrafe = 30.0 // 
+accelThrust = 25.0 // acceleration 
+accelDragStop = 5.0 // how fast it stops once hands are off controls 
+accelJump = 30.0  //BIG JUMP FOR THIS ONE Coxxon
+aiAccelDrag = 10
+setAltitude = 15.0 // how high off the ground
+alphaTrack = 21.0 //springs speed it rights itself 
+alphaDamp = 8.0 //shocks 
+pitchPitch = 0.25 // nose up 
+pitchThrust = 0.05 // nose down 
+rollStrafe = 0.1 // rolls while strafing 
+omegaSpin = 3.5 // spinning in place speed 
+omegaTurn = 3.5 // turning while moving speed 
+alphasteer = 5.5 // how fast it responds to steering 
+rollSteer = 0.1 // rolls while steering 
+soundThrust = "yvthrustcox01.wav"
+//soundTurbo = "yvturbocox01.wav"  //not used in bzcc
+soundJump = "yvturbocox01.wav"
+animSteer = "steer"
+THRUST_VOLUME_BASE_USER = 0.5  //turn back was too loud Coxxon

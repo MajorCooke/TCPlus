@@ -1,0 +1,23 @@
+/////////Coxxon - BZTC/////////
+//Yes Techno CANNON, (see Rave Gun)
+[OrdnanceClass]
+baseName = "otecha_a"
+classLabel = "BULLET"
+
+shotGeometry = NULL
+shotRadius = 2.0
+xplGround = "xtechit"
+xplVehicle = "xtechit"
+xplBuilding = "xtechit"
+
+renderName = "otecha_c.render"
+ammoCost = 60
+lifeSpan = 3.0  //180
+shotSpeed = 60.0
+
+damageValue(N) = 400
+damageValue(L) = 300
+damageValue(H) = 200
+damageValue(S) = 300
+damageValue(D) = 400
+damageValue(A) = 200

@@ -1,0 +1,210 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "kbpgen1"
+classLabel = "powerplant"
+geometryName = "kbpgencox01.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "kbpgencox01.fbx"
+scrapCost = 30
+scrapValue = 5
+maxHealth = 3000
+maxAmmo = 0
+unitName = "Ltng Power"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 10.0  //bztc bldg
+isAssault = 1  //bztc
+armorClass = H
+ownsTerrain = 1  //1 if no baseplate faction
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+
+buildRequire = "F"
+buildSupport = "A"
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "kbpgen"
+provideName2 = "VIRTUAL_CLASS_POWERPLANT"
+provideName3 = "kbpgen1"
+provideName4 = "xbpgen"
+
+/////// LIGHTS & EFFECTS /////
+lightHard1 = "hp_light_1"
+lightName1 = "hltwyl"
+lightHard2 = "hp_light_2"
+lightName2 = "hltwyl"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "kbpgen1.rod1"
+effectHard2 = "hp_emit_2"
+effectName2 = "kbpgen1.rod2"
+effectHard3 = "hp_emit_3"
+effectName3 = "kbpgen1.rod3"
+effectHard4 = "hp_emit_4"
+effectName4 = "kbpgen1.render"
+//smoke1
+effectHard5 = "hp_smoke_1"
+effectName5 = "dmgbldg1"
+effectMinHealth5 = 0.6
+effectMaxHealth5 = 0.8
+effectHard6 = "hp_smoke_1"
+effectName6 = "dmgbldg2"
+effectMinHealth6 = 0.4
+effectMaxHealth6 = 0.6
+effectHard7 = "hp_smoke_1"
+effectName7 = "dmgbldg3"
+effectMinHealth7 = 0.2
+effectMaxHealth7 = 0.4
+effectHard8 = "hp_smoke_1"
+effectName8 = "dmgbldg4"
+effectMinHealth8 = 0.0
+effectMaxHealth8 = 0.2
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_kbpgencox01"
+
+chunkEffect1 = "kbpgencox01chk01.fbx"  
+chunkEffect2 = "kbpgencox01chk02.fbx"  
+chunkEffect3 = "kbpgencox01chk03.fbx"  
+chunkEffect4 = "kbpgencox01chk04.fbx"  
+chunkEffect5 = "kbpgencox01chk05.fbx"  
+HasSeparateChunks = true 
+numChunks = 9
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 3
+numChunks5 = 3
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+[rod1]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "kbpgen1.bolt1"
+renderName2 = "kbpgen1.tower"
+
+[rod2]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "kbpgen1.bolt2"
+renderName2 = "kbpgen1.tower"
+
+[rod3]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "kbpgen1.bolt3"
+renderName2 = "kbpgen1.tower"
+
+[bolt1]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.5
+emitLife = 1.0
+emitDelayVar = 0.5
+emitVelocity = "0.0 -16.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+textureName =  "boltcox00.png"
+textureBlend = "srcalpha invsrcalpha modulatealpha"  //<<color png
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 2.0
+finishRadius = 0.1
+animateTime = 1.0
+rotationRate = 20.0
+
+[bolt2]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.75
+emitLife = 1.0
+emitDelayVar = 0.5
+emitVelocity = "0.0 -16.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+textureName =  "boltcox00.png"
+textureBlend = "srcalpha invsrcalpha modulatealpha"  //<<color png
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 2.0
+finishRadius = 0.1
+animateTime = 1.0
+rotationRate = 20.0
+
+[bolt3]
+renderBase = "draw_twirl_trail"
+emitDelay = 1.0
+emitLife = 1.0
+emitDelayVar = 0.5
+emitVelocity = "0.0 -16.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+textureName =  "boltcox00.png"
+textureBlend = "srcalpha invsrcalpha modulatealpha"  //<<color png
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 2.0
+finishRadius = 0.1
+animateTime = 1.0
+rotationRate = 20.0
+
+[tower]
+renderBase = "draw_twirl_trail"
+textureName =  "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 100"
+finishColor = "0 100 255 255"
+startRadius = 1.5
+finishRadius = 3.0
+rotationRate = 10.0
+emitDelay = 0.1
+emitVelocity = "0.0 -10.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 1.2
+animateTime = 1.2
+
+[render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "kbpgen1.flare"
+renderName2 = "kbpgen1.flame"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName =  "lightflare.tga"
+textureBlend = "one one modulate"
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName =  "ring.tga"
+textureBlend = "one one modulate"
+startColor = "200 200 200 100"
+finishColor = "0 0 255 255"
+startRadius = 0.5
+finishRadius = 1.5
+emitDelay = 0.05
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+emitLife = 0.1
+animateTime = 0.1
+rotationRate = 5.0
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "ablplane0bztc.wav"  //low volume  //lightening
+SoundAmbientDist = 0.4  //pgen
+//bldEdge = "wwww"  //bldg
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 50

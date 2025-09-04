@@ -1,0 +1,217 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "avscout"
+classLabel = "wingman"
+geometryName = "avscoutcox00.fbx"
+animCount = 4
+animName1 = "loop"
+animFile1 = "avscoutcox00.fbx"
+runAnimation = "loop"
+runAnimIsLooped = true
+animName2 = "forward"
+animFile2 = "avscoutcoxsf.fbx"
+animName3 = "neutral"
+animFile3 = "avscoutcoxsn.fbx"
+animName4 = "reverse"
+animFile4 = "avscoutcoxsr.fbx"
+//animName5 = "sitdown"
+//animFile5 = "avscoutcox_sitdown.fbx"
+cockpitName = "avscoutcox_cockpit.fbx"
+animCountCockpit = 3
+animNameCockpit1 = "forward"
+animFileCockpit1 = "avscoutcox_cockpitsf.fbx"
+animNameCockpit2 = "neutral"
+animFileCockpit2 = "avscoutcox_cockpitsn.fbx"
+animNameCockpit3 = "reverse"
+animFileCockpit3 = "avscoutcox_cockpitsr.fbx"
+scrapValue = 15
+scrapCost = 40  //sct  //50
+customCost = 50
+buildTime = 10.0  //Coxxon  //15.0
+customTime = 15.0
+maxHealth = 1500  //sct  //1800
+addHealth = 1  //sct added
+maxAmmo = 1500
+addAmmo = 1  //sct  //bzcc
+unitName = "Razor sct"
+aiName = "ScoutFriend"
+aiName2 = "ScoutEnemy"
+heatSignature = 0.5
+imageSignature = 3.0
+radarSignature = 0.3
+isAssault = 0
+armorClass = N
+boxCollide = 1
+//collisionRadius = 1.0  //bzcc vehc
+//collisionName = "avscoutcollide.fbx"
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+provideName1 = "avscout"
+provideName2 = "VIRTUAL_CLASS_SCOUT"
+provideName3 = "DefendUnit"
+
+/////// weapons ////////////////////
+weaponMask = 11111  //00011
+weaponHard1 = "HP_GUN_1"
+weaponName1 = "gminia_c"
+weaponAssault1 = 0
+recoilName1 = "recoil1"
+weaponHard2 = "HP_GUN_2"
+weaponName2 = "gminia_c"
+weaponAssault2 = 0
+recoilName2 = "recoil2"
+weaponHard3 = "HP_ROCKET_1"
+weaponName3 = ""
+weaponAssault3 = 0
+recoilName3 = "recoil3"
+weaponHard4 = "HP_ROCKET_2"
+weaponName4 = ""
+weaponAssault4 = 0
+recoilName4 = "recoil4"
+weaponHard5 = "HP_SPECIAL_1"
+weaponName5 = ""
+weaponAssault5 = 0
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltwyl"
+LightsOnlyWhenPiloted = true
+
+effectHard1 = "hp_dust_1"
+effectName1 = "vfxbztcdusts.dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0  
+effectMinVelocity1 = 10.0
+effectMaxVelocity1 = 500.0
+effectHard2 = "hp_dust_2"
+effectName2 = "vfxbztcdusts.dusttrail"
+effectMinAltitude2 = 0.0
+effectMaxAltitude2 = 5.0  
+effectMinVelocity2 = 10.0
+effectMaxVelocity2 = 500.0
+effectHard3 = "hp_dust_0" 
+effectName3 = "vfxbztcdusts.dustpuff"
+effectMinAltitude3 = 0.0
+effectMaxAltitude3 = 3.0
+effectMinVelocity3 = 0.0
+effectMaxVelocity3 = 10.0
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "hp_smoke_1"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "hp_smoke_1"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "hp_smoke_1"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "hp_smoke_1"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+/////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 500.0  //sct  //450.0
+periodScan = 3.0  //sct  //5.0
+velocJam = 10.0
+engageRange = 130
+braccelFactor = 0.05
+velFactor = 0.2
+steerFactor = 1.0
+omegaFactor = 0.5
+strafeFactor = 0.2
+//topSpeed = 30  //sct
+//avoidSpeed = 20  //sct
+//attackTaskUsesGroups = false  //Coxxon
+GoToTaskHasLeader = false  //Coxxon
+canHunt = 1	// defaults to 0
+//NavIsDropped = true //drop behind - bugged, immed removes nav/camr in MP/MPI
+//NavDropSound = "gprox00.wav"  //sound if navisdropped true
+NavConfig = "apcamra" //specify nav beacon/camera type
+AllowedControlsWhenTugged = 31  //7dflt Sumup: 1hop 2bail 4wcycle 8steer 16weapuse
+
+//OffensiveProcessIsTenacious = false  //Coxxon  true
+//OffensiveProcessIsTenaciousAITeam = false  //Coxxon
+//DoBlastUsesFields = true  //false  //Coxxon
+//SitAttackAllowIndependence = true  //Coxxon  false
+//SitAttackAllowCounterattack = true  //Coxxon  false
+
+damageEffect1 = "dmgvhcl1"  //less stock dmg effect
+damageEffect2 = "dmgvhcl1"  //but still some sparks
+damageEffect3 = "dmgvhcl1"  //also lower visibility
+damageEffect4 = "dmgvhcl1"  //on cloaked units
+
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_avscoutcox"
+
+//chunkEffect1 = "avscoutcoxchk01.fbx"  
+//chunkEffect2 = "avscoutcoxchk02.fbx"
+//chunkEffect3 = "avscoutcoxchk03.fbx"
+//chunkEffect4 = "avscoutcoxchk04.fbx"
+//chunkEffect5 = "avscoutcoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 5
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+/////////MESSAGES/////////
+selectWaitMsg = "avfighvj.wav"  //razor here
+selectAttackMsg = "avfighv2.wav"  //let me at'em
+selectFollowMsg = "avfighv7.wav"  //protecting
+selectGoMsg = "avfighv0.wav"  //engaging thrusters
+selectOtherMsg = "avfighvj.wav"  //razor here
+goMsg = "avfighvg.wav"  //heading to nav
+attackMsg = "avfighvd.wav"  //fighting enemy
+followMeMsg = "avfighv3.wav"  //follow the leader
+followMsg = "avfighv3.wav"  //follow the leader
+repairMsg = "avfighv4.wav"  //yes sir
+reloadMsg = "avfighv5.wav"  //get ammo
+rescueMsg = "avfighv8.wav"  //on my way
+recycleMsg = "avfighv9.wav"  //recycling
+otherMsg = "avfighvh.wav"  //yes sir
+holdMsg = "avfighvf.wav"  //standing by
+user1Msg = "avfighv6.wav"  //with pleasure
+killedMsg = "avfighvm.wav"  //attack successful
+//diedMsg = ""  //"abetty3.wav"
+
+//"avfighve.wav"  //you don't pay me enuf
+//"avfighvk.wav"  //scouting terrain
+
+BailSound = "bail.wav"
+CollideTerrainSound = "vnvcs1.wav"
+CollideBldgSound = "vnvcs3.wav"
+CollideOtherSound = "vvcre2.wav"  //"vvcbb3.wav"
+
+//////////////////////////////////////////////////////////
+[HoverCraftClass]
+velocForward = 40.0 //sct
+velocReverse = 20.0 //sct  Coxxon  //10.0
+velocStrafe = 20.0 //sct
+accelThrust = 25.0 // acceleration 
+accelDragStop = 5.0 // how fast it stops once hands are off controls 
+accelJump = 18.0
+aiAccelDrag = 10
+setAltitude = 1.0  // how high off the ground
+alphaTrack = 21.0 //springs speed it rights itself 
+alphaDamp = 8.0 //shocks 
+pitchPitch = 0.25 // nose up 
+pitchThrust = 0.05 // nose down 
+rollStrafe = 0.1 // rolls while strafing 
+omegaSpin = 3.5 // spinning in place speed 
+omegaTurn = 3.5 // turning while moving speed 
+alphasteer = 5.5 // how fast it responds to steering 
+rollSteer = 0.1 // rolls while steering 
+soundThrust = "avfighe0.wav"  //eng idle
+soundJump = "avtanke3.wav"  //"avfighe3.wav"  //eng move
+THRUST_VOLUME_BASE_USER = 0.5  //turn back was too loud Coxxon

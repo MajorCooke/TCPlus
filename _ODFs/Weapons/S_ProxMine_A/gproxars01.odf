@@ -1,0 +1,12 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gproxars01"
+classLabel = "dispenser"
+wpnName = "Prox Mine Inf. Life"
+fireSound = "mmine01.wav"
+wpnReticle = "gproxa"
+wpnCategory = "SPEC"
+
+[DispenserClass]
+shotDelay = 2.0  //Coxxon  //4.0
+objectClass = "oproxars01"

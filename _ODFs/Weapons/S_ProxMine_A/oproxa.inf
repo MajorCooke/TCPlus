@@ -1,0 +1,4 @@
+PROXIMITY mine
+Mine that will explode when an enemy vehicle comes into range. Does not affect friendly units.
+
+C 32m  Amo L  FRate M  Damg (I)H

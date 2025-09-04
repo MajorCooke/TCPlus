@@ -1,0 +1,32 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "sbarmorb04"
+classLabel = "sbarmo"
+
+upgradeName = "svarmorb04"
+
+isSingle = 1  //depbld  Coxxon
+//limitClass1 = "sbarmo"  //depbld Coxxon
+//limitClass1Count = 1  //depbld Coxxon
+//limitClass1Text = "Only One Allowed"  //depbld Coxxon
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+
+provideName5 = "sbarmorb04"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_sbarmocox"
+
+//////////////////////////////////////////////////////////////////////////
+[BuildingClass]
+
+///////////////////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+
+///////////////////////////////////////////////////////////////////////////
+[ArmoryClass]
+soundBuild = "svslfvf.wav"  //building
+soundCancel = "mnu_buzz.wav"  //"cgrowl.wav"  //"locking3.wav"
+soundFinish = "svslfvcox02.wav"  //incoming supply SPECIAL

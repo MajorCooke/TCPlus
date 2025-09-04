@@ -1,0 +1,31 @@
+/////////Coxxon - BZTC/////////
+
+[GameObjectClass]
+baseName = "bvrecydw11"
+classLabel = "bvrecy"  //"recyclervehicle"
+unitIcon = "icon_bvrecy.png"
+unitStatus = "wire_bvrecy.png"
+infoName = "bvrecy.inf"
+
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+
+provideName5 = "bvrecydw11"
+
+//////////////////////////////////////////////////////////
+[CraftClass]
+
+/////////CRASH EXPLODE INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_bvrecycox"
+
+/////////////////////////////////////////////////////////
+[DeployableClass]
+
+/////////////////////////////////////////////////////////
+[DeployBuildingHClass]
+deployName = "bbrecydw11"
+
+////////////////////////////////////////////////////////
+[RecyclerVehicleHClass]

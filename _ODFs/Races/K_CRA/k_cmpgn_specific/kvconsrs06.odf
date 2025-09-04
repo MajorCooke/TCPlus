@@ -1,0 +1,30 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "kvconsrs06"
+classLabel = "kvcons"  //"constructionrig"
+unitIcon = "icon_kvcons.png"
+unitStatus = "wire_kvcons.png"
+//infoName = "kvcons.inf"
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+
+provideName3 = "kvconsrs06"
+
+////////////////////////////////////////////////////////////
+[CraftClass]
+modeText19 = "Rebuild Addon"  //MODE_POWER = 19  //cons
+
+////////////////////////////////////////////////////////////
+[HoverCraftClass]
+
+////////////////////////////////////////////////////////////
+[DeployableClass]
+
+////////////////////////////////////////////////////////////
+[ConstructionRigClass]
+buildItem1 = "kbpgen2"
+buildItem2 = "kbfactrs06"
+buildItem10 = ""

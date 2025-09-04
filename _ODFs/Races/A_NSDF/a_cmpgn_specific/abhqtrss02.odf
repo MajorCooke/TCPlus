@@ -1,0 +1,13 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "abhqtrss02"
+classLabel = "abhqtr"
+
+maxHealth = 10000
+
+unitName = "EN1 Command Tower"  //"Jammer"
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+provideName5 = "abhqtrss02"
+

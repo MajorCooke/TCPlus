@@ -1,0 +1,26 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "avconsss13"
+classLabel = "avcons"  //"constructionrig"
+unitIcon = "icon_avcons.png"
+unitStatus = "wire_avcons.png"
+//infoName = "avcons.inf"
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+
+provideName3 = "avconsss13"
+
+////////////////////////////////////////////////////////////
+[CraftClass]
+modeText19 = "Rebuild Addon"  //MODE_POWER = 19  //cons
+
+////////////////////////////////////////////////////////////
+[HoverCraftClass]
+
+////////////////////////////////////////////////////////////
+[DeployableClass]
+
+////////////////////////////////////////////////////////////
+[ConstructionRigClass]
+buildItem1 = "abpgen2"

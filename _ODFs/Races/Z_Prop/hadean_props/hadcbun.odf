@@ -1,0 +1,102 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "hadcbun"
+classLabel = "commbunker"
+geometryName = "hadcbuncox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "hadcbuncox00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+collisionRadius = 10.0  //bztc bldg
+scrapCost = 50
+scrapValue = 20
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Comm Bunker"
+aiName = "CommTowerProcess"
+aiName2 = "CommTowerProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+requireReplaceTerrainPhysics = 1  //bzcc
+ownsTerrain = 1  //since no terrain plate had
+
+/////// REQUIREMENTS ///////////////
+requireCount = 1
+requireName1 = "xbpgen"  //take out of race
+requireText1 = "Build Power"
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+provideName1 = "hadcbun"
+provideName2 = "VIRTUAL_CLASS_COMMBUNKER"
+provideName3 = "base"
+provideName4 = "ibcbun"  //so it doesn't race whine
+provideName5 = "xbcbun"
+
+///////// LIGHTS & EFFECTS /////////
+//smoke1
+effectHard1 = "hp_smoke_1"
+effectName1 = "dmgbldg1"
+effectMinHealth1 = 0.6
+effectMaxHealth1 = 0.8
+effectHard2 = "hp_smoke_1"
+effectName2 = "dmgbldg2"
+effectMinHealth2 = 0.4
+effectMaxHealth2 = 0.6
+effectHard3 = "hp_smoke_1"
+effectName3 = "dmgbldg3"
+effectMinHealth3 = 0.2
+effectMaxHealth3 = 0.4
+effectHard4 = "hp_smoke_1"
+effectName4 = "dmgbldg4"
+effectMinHealth4 = 0.0
+effectMaxHealth4 = 0.2
+
+effectHard5 = "hp_emit_1"
+effectName5 = "vfxbztcbldgs.kbrecyring"
+effectFlags5 = "447" //447 on  479 off
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_hadcbuncox"
+
+chunkEffect1 = "hadcbuncoxchk01.fbx"  
+chunkEffect2 = "hadcbuncoxchk02.fbx"  
+chunkEffect3 = "hadcbuncoxchk03.fbx"  
+chunkEffect4 = "hadcbuncoxchk04.fbx"  
+chunkEffect5 = "hadcbuncoxchk05.fbx"  
+HasSeparateChunks = true 
+numChunks = 5
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 1
+numChunks5 = 1
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+////////////////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "abhqcpe0.wav"  //"icomm01.wav"
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+////////////////////////////////////////////////////////////////////////
+[CommBunkerClass]
+rangeScan = 400
+periodScan = 0.0
+viewDist = 100.0
+MinViewDist = 50.0  //Coxxon
+MaxViewDist = 250.0  //Coxxon
+
+////////////////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 300

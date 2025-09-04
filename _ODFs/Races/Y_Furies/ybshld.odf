@@ -1,0 +1,147 @@
+/////////Coxxon - BZTC/////////
+//NOT A "shieldtower" CLASS - PROVIDES HEALTH REGEN, WORKS BETTER THAN MITS MINE BUILDING
+[GameObjectClass]
+baseName = "ybshld"
+classLabel = "supplydepot"
+geometryName = "ybshldcox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "ybshldcox00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = 1
+collisionRadius = 10.0  //bztc bldg
+scrapCost = 100
+scrapValue = 10
+maxHealth = 3000  //shld
+maxAmmo = 0
+unitName = "Health Shield"
+heatSignature = 0.8
+imageSignature = 8.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+ownsTerrain = 1  //1 if no baseplate faction
+isSingle = 0  //abshld
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+
+/////// BUILDLIMIT ///////////////
+limitClass1 = "ybshld"
+limitClass1Count = 1  //abshld
+limitClass1Text = "Limit Reached"
+
+/////// REQUIREMENTS ///////////////
+requireCount = 1
+requireName1 = "ybhqtr"
+requireText1 = "Build Field HQ"
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "ybshld"
+provideName2 = "VIRTUAL_CLASS_SUPPLYDEPOT"
+provideName3 = "defender"  //shld
+provideName4 = "xbshld"
+
+///////// LIGHTS & EFFECTS /////////
+LightsOffEffectsMask = 65535
+lightHard1 = "hp_light_1"
+lightName1 = "omnicyn5"
+lightHard2 = "hp_light_2"
+lightName2 = "omnicyn5"
+lightHard3 = "hp_light_3"
+lightName3 = "omnicyn5"
+lightHard4 = "hp_light_4"
+lightName4 = "omnicyn5"
+
+//smoke1
+effectHard1 = "hp_smoke_1"
+effectName1 = "dmgbldg1"
+effectMinHealth1 = 0.6
+effectMaxHealth1 = 0.8
+effectHard2 = "hp_smoke_1"
+effectName2 = "dmgbldg2"
+effectMinHealth2 = 0.4
+effectMaxHealth2 = 0.6
+effectHard3 = "hp_smoke_1"
+effectName3 = "dmgbldg3"
+effectMinHealth3 = 0.2
+effectMaxHealth3 = 0.4
+effectHard4 = "hp_smoke_1"
+effectName4 = "dmgbldg4"
+effectMinHealth4 = 0.0
+effectMaxHealth4 = 0.2
+
+effectHard5 = "hp_emit_4"
+effectName5 = "ybshld.tower"
+effectFlags5 = "447" //447 on  479 off
+
+//effectHard1 = "hp_emit_1"
+//effectName1 = "ybshld.tower"
+//effectFlags1 = "447" //447 on  479 off
+//effectHard2 = "hp_emit_2"
+//effectName2 = "ybshld.tower"
+//effectFlags2 = "447" //447 on  479 off
+//effectHard3 = "hp_emit_3"
+//effectName3 = "ybshld.tower"
+//effectFlags3 = "447" //447 on  479 off
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_ybshldcox"
+
+chunkEffect1 = "ybshldcoxchk01.fbx"  
+chunkEffect2 = "ybshldcoxchk02.fbx"  
+chunkEffect3 = "ybshldcoxchk03.fbx"  
+chunkEffect4 = "ybshldcoxchk04.fbx"  
+chunkEffect5 = "ybshldcoxchk05.fbx"  
+HasSeparateChunks = true 
+numChunks = 8
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 1
+numChunks5 = 4
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+[tower]
+renderBase = "draw_twirl_trail"
+textureName =  "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "50 100 255 200"
+finishColor = "50 100 255 10"
+startRadius = 1.0
+finishRadius = 5.0
+rotationRate = 4.0
+emitDelay = 0.1
+emitVelocity = "0.0 3.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 1.0
+animateTime = 1.0
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 100
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "abshlde0.wav"
+//bldEdge = "wwww"  //bldg
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+///////////////////////////////////////////////////////////////
+[SupplyDepotClass]
+supplyRange = 100.0  //abshld
+supplyRate = 100.0  //abshld
+ServiceParallel = 1
+supplySound = NULL
+
+// Individual classification tweakers
+serviceSTs = 0
+serviceCraft = 0
+serviceBuildings = 1
+servicePilots = 0
+serviceOther = 0

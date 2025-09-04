@@ -1,0 +1,6 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "ospilo"
+classLabel = "yspilo"
+
+[CraftClass]

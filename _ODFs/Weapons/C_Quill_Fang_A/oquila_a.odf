@@ -1,0 +1,63 @@
+
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "oquila_a"
+classLabel = "bullet"
+shotGeometry = NULL
+shotSound = "gquil03.wav"
+
+xplGround = "xquillgnd_a"
+xplVehicle = "xquillcar_a"
+xplBuilding = "xquillcar_a"
+
+renderName = "oquila_a.render"
+
+ammoCost = 10
+lifeSpan = 0.2 // 50m
+shotSpeed = 250.0
+
+damageValue(N) = 53.4 // none // 400.5
+damageValue(L) = 50.8 // light // 381
+damageValue(H) = 46.7 // heavy // 350.1
+
+damageValue(S) = 50.8 // standard // 381
+damageValue(D) = 40 // deflection // 300
+damageValue(A) = 53.4 // absorption // 400.5
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "oquila_a.trail"
+renderName2 = "oquila_a.light"
+renderName3 = "oquila_a.trail2"
+
+[Trail]
+renderBase = "draw_trail"
+textureName = "bulhit.tga"
+textureBlend = "one one modulate"
+startColor = "255 70 50 255"
+finishColor = "255 0 0 0"
+textureRate = 0.004
+startRadius = 0.19
+finishRadius = 0.005
+segmentTime = 0.3
+ 
+[Light]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 0 0 400"
+finishColor = "255 0 0 600"
+startRadius = 2.0 
+finishRadius = 2.0 
+
+[Trail2]
+renderBase = "draw_trail"
+textureName = "grndchar.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 0 0 255"
+finishColor = "255 255 255 0"
+textureRate = 0.004
+startRadius = 0.01
+finishRadius = 0.001
+segmentTime = 1.75

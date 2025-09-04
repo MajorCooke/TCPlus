@@ -1,0 +1,13 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+classLabel = "cannon"
+altName = "gfafma_a"
+ordName = "ofafxa"
+wpnName = "FAF-X Missile C"
+fireSound = "gsand00.wav"
+wpnReticle = "gfafma"
+wpnCategory = "ROCK"
+isAssault = 0
+
+[CannonClass]
+shotDelay = 1.0 // 1/sec

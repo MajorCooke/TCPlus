@@ -1,0 +1,23 @@
+/////////Coxxon - BZTC/////////
+ //Yes, GUN, Tech Cannon is CANN version
+[OrdnanceClass]
+baseName = "oravea_a"
+classLabel = "BULLET"
+
+shotGeometry = NULL
+shotRadius = 2.0
+xplGround = "xtechit"
+xplVehicle = "xtechit"
+xplBuilding = "xtechit"
+
+renderName = "oravea_c.render"
+ammoCost = 30
+lifeSpan = 3.0  //180
+shotSpeed = 60.0
+
+damageValue(N) = 200
+damageValue(L) = 150
+damageValue(H) = 100
+damageValue(S) = 150
+damageValue(D) = 200
+damageValue(A) = 100

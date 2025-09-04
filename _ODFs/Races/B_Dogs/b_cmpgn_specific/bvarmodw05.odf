@@ -1,0 +1,34 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "bvarmodw05"
+classLabel = "bvarmo"
+unitIcon = "icon_bvarmo.png"
+infoName = "bvarmo.inf"
+
+limitClass1 = "bvarmodw05"
+limitClass1Count = 1
+limitClass1Text = "Only One Allowed"
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+
+provideName3 = "bvarmodw05"
+
+//////////////////////////////////////////////////////////
+[CraftClass]
+/////////CRASH EXPLODE INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_bvarmocox"
+
+////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+
+/////////////////////////////////////////////////////////
+[DeployableClass]
+
+/////////////////////////////////////////////////////////
+[DeployBuildingHClass]
+deployName = "bbarmodw05"
+
+////////////////////////////////////////////////////////
+[RecyclerVehicleHClass]
+scrapHold = 0

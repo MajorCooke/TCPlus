@@ -1,0 +1,143 @@
+/////////Coxxon - BZTC/////////
+//the black dogs tro dw end scene cruise missile
+[GameObjectClass]
+baseName = "bvduke"
+classLabel = "wingman"
+geometryName = "bvdukecox00.fbx"
+scrapValue = 15
+scrapCost = 40  //sct  //50
+customCost = 50
+buildTime = 5.0  //Coxxon  //10.0  //sct  //15.0
+customTime = 15.0
+maxHealth = 1440  //sct  //1800
+addHealth = 1  //sct bzcc
+maxAmmo = 1500
+addAmmo = 2.0  //sct bzcc
+unitName = "BDS Duke Cruise Nuke"
+ignoreMissingInf = 1
+aiName = "ScoutFriend"
+aiName2 = "ScoutEnemy"
+heatSignature = 0.5
+imageSignature = 3.0
+radarSignature = 0.3
+isAssault = 0
+armorClass = N
+boxCollide = 1
+//collisionRadius = 1.0  //bzcc vehc
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "bvduke"
+provideName2 = "VIRTUAL_CLASS_SCOUT"
+provideName3 = "DefendUnit"
+provideName4 = "avduke"
+
+/////// weapons ////////////////////
+weaponMask = 11111  //00011
+weaponHard1 = "HP_GUN_1"
+weaponName1 = "gminia_c"
+weaponAssault1 = 0
+recoilName1 = "recoil1"
+weaponHard2 = "HP_GUN_2"
+weaponName2 = "gminia_c"
+weaponAssault2 = 0
+recoilName2 = "recoil2"
+weaponHard3 = "HP_ROCKET_1"
+weaponName3 = "gfafma_c"
+weaponAssault3 = 0
+recoilName3 = "recoil3"
+weaponHard4 = "HP_ROCKET_2"
+weaponName4 = "gfafma_c"
+weaponAssault4 = 0
+recoilName4 = "recoil4"
+weaponHard5 = "HP_SPECIAL_1"
+weaponName5 = ""
+weaponAssault5 = 0
+
+/////////LIGHTS AND EFFECTS//////////////////
+//lightHard1 = "hp_light_1"
+//lightName1 = "omniwbl2"
+//LightsOnlyWhenPiloted = true
+
+//effectHard1 = "hp_dust_1"
+//effectName1 = "vfxbztcdusts.dusttrail"
+//effectMinAltitude1 = 0.0
+//effectMaxAltitude1 = 5.0  
+//effectMinVelocity1 = 10.0
+//effectMaxVelocity1 = 500.0
+
+/////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 500.0  //sct  //450.0
+periodScan = 3.0  //sct  //5.0
+velocJam = 10.0
+engageRange = 130
+braccelFactor = 0.05
+velFactor = 0.2
+steerFactor = 1.0
+omegaFactor = 0.5
+strafeFactor = 0.2
+//topSpeed = 30  //sct
+//avoidSpeed = 20  //sct
+//attackTaskUsesGroups = false  //Coxxon
+GoToTaskHasLeader = false  //Coxxon
+canHunt = 1	// defaults to 0
+//NavIsDropped = true //drop behind - bugged, immed removes nav/camr in MP/MPI
+//NavDropSound = "gprox00.wav"  //sound if navisdropped true
+NavConfig = "apcamra" //specify nav beacon/camera type
+AllowedControlsWhenTugged = 31  //7dflt Sumup: 1hop 2bail 4wcycle 8steer 16weapuse
+
+
+/////////MESSAGES/////////
+selectWaitMsg = "avfighvj.wav"  //razor here
+selectAttackMsg = "avfighv2.wav"  //let me at'em
+selectFollowMsg = "avfighv7.wav"  //protecting
+selectGoMsg = "avfighv0.wav"  //engaging thrusters
+selectOtherMsg = "avfighvj.wav"  //razor here
+goMsg = "avfighvg.wav"  //heading to nav
+attackMsg = "avfighvd.wav"  //fighting enemy
+followMeMsg = "avfighv3.wav"  //follow the leader
+followMsg = "avfighv3.wav"  //follow the leader
+repairMsg = "avfighv4.wav"  //yes sir
+reloadMsg = "avfighv5.wav"  //get ammo
+rescueMsg = "avfighv8.wav"  //on my way
+recycleMsg = "avfighv9.wav"  //recycling
+otherMsg = "avfighvh.wav"  //yes sir
+holdMsg = "avfighvf.wav"  //standing by
+user1Msg = "avfighv6.wav"  //with pleasure
+killedMsg = "avfighvm.wav"  //attack successful
+//diedMsg = ""  //"abetty3.wav"
+
+//"avfighve.wav"  //you don't pay me enuf
+//"avfighvk.wav"  //scouting terrain
+
+BailSound = "bail.wav"
+CollideTerrainSound = "vnvcs1.wav"
+CollideBldgSound = "vnvcs3.wav"
+CollideOtherSound = "vvcre2.wav"  //"vvcbb3.wav"
+
+//////////////////////////////////////////////////////////
+[HoverCraftClass]
+velocForward = 70.0 // 
+velocReverse = 50.0 // 
+velocStrafe = 50.0 // 
+accelThrust = 25.0 // acceleration 
+accelDragStop = 5.0 // how fast it stops once hands are off controls 
+accelJump = 18.0
+aiAccelDrag = 10
+setAltitude = 4.0 // how high off the ground
+alphaTrack = 21.0 //springs speed it rights itself 
+alphaDamp = 8.0 //shocks 
+pitchPitch = 0.25 // nose up 
+pitchThrust = 0.05 // nose down 
+rollStrafe = 0.1 // rolls while strafing 
+omegaSpin = 3.5 // spinning in place speed 
+omegaTurn = 3.5 // turning while moving speed 
+alphasteer = 5.5 // how fast it responds to steering 
+rollSteer = 0.1 // rolls while steering 
+soundThrust = "avfighe0.wav"  //eng idle
+soundJump = "avfighe3.wav"  //eng move
+THRUST_VOLUME_BASE_USER = 0.5  //turn back was too loud Coxxon

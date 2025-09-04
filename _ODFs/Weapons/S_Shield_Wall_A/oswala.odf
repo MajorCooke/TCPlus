@@ -1,0 +1,22 @@
+/////////Coxxon - BZTC/////////
+//acts as a placeable shield wall
+// doesn't quite work as intended - need to have it dispensed
+[GameObjectClass]
+baseName = "oswala"
+geometryName = "aoswalcox00.fbx"  //single sided geometry
+classLabel = "proximity"  //"magnet"  //"i76building"  //
+scrapCost = 0
+scrapValue = 0
+maxHealth = 3000
+maxAmmo = 50
+ammoCost = 100
+unitName = "Shield Wall"
+
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+ownsTerrain = 1
+canCollide = 0
+
+[MineClass]
+lifeSpan = 20.0

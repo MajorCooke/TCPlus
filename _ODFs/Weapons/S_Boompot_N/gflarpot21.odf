@@ -1,0 +1,43 @@
+/////////Coxxon - BZTC/////////
+//10 HOUR, flaremine to simulate destructive gout of fire
+[GameObjectClass]
+baseName = "gflarpot21"
+classLabel = "flare"
+geometryName = "flarpotcox01.fbx"
+scrapCost = 0
+scrapValue = 0
+//buildTime = 4.0  //powerup
+maxHealth = 15000  //Coxxon
+addHealth = 2000  //Coxxon
+maxAmmo = 3000  //Coxxon
+addAmmo = 300  //Coxxon
+unitName = "Solar Flare explosion"
+
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+canCollide = 0
+canInteract = 0
+canDetect = 0
+allowseismic = 0 
+LeaveExplodeScorch = true
+
+[MineClass]
+lifeSpan = 36000.0  //Coxxon
+
+[FlareMineClass]
+payloadName = "oflarpot1"
+fireSound = "smine01.wav"
+triggerDelay = 0.0  //Coxxon  //1.0
+shotDelay = 0.05  //Coxxon  //0.02
+shotVariance = 1.0  //Coxxon  //0.2
+damageRadius = 20.0
+damageValue(N) = 100 // none
+damageValue(L) = 50 // light
+damageValue(H) = 5 // heavy
+damageValue(S) = 50 // standard
+damageValue(D) = 100 // deflection
+damageValue(A) = 5 // absorption
+kickRadius = 20.0
+kickVeloc = 0.2
+kickOmega = 0.5

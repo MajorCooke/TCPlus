@@ -1,0 +1,215 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "ybsbay"
+classLabel = "supplydepot"
+geometryName = "ybsbaycox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "ybsbaycox00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+scrapCost = 50
+scrapValue = 10
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Supply Hangar"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+ownsTerrain = 1  //1 if no baseplate faction
+isSingle = 0
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+collisionRadius = 10.0  //bztc bldg
+UseCollisionMeshForPathing = 1
+
+/////// BUILDLIMIT ///////////////
+limitClass1 = "xbsbay"
+limitClass1Count = 1
+limitClass1Text = "Limit Reached"
+
+/////// REQUIREMENTS ///////////////
+requireCount = 2
+requireName1 = "xbfact"
+requireText1 = "Build Factory"
+requireName2 = "xbarmo"
+requireText2 = "Build Armory"
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "ybsbay"
+provideName2 = "VIRTUAL_CLASS_SUPPLYDEPOT"
+provideName3 = "base"
+provideName4 = "xbsbay"
+
+///////// LIGHTS & EFFECTS /////////
+LightsOffEffectsMask = 65535
+lightHard1 = "hp_light_1"
+lightName1 = "omnired8"
+lightHard2 = "hp_light_2"
+lightName2 = "omnifbl16"
+lightHard3 = "hp_light_3"
+lightName3 = "omnifbl8"
+lightHard4 = "hp_light_4"
+lightName4 = "omnifbl8"
+lightHard5 = "hp_light_5"
+lightName5 = "omnifbl8"
+lightHard6 = "hp_light_6"
+lightName6 = "omnifbl8"
+lightHard7 = "hp_light_7"
+lightName7 = "omnifbl8"
+lightHard8 = "hp_light_8"
+lightName8 = "omnifbl8"
+lightHard9 = "hp_light_9"
+lightName9 = "omnifbl8"
+lightHard10 = "hp_light_10"
+lightName10 = "omnifbl8"
+lightHard11 = "hp_light_11"
+lightName11 = "omnifbl16"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "ybsbay.steam"
+effectFlags1 = "447" //447 on  479 off
+effectHard2 = "hp_emit_2"
+effectName2 = "ybsbay.steam"
+effectFlags2 = "447" //447 on  479 off
+effectHard3 = "hp_emit_3"
+effectName3 = "ybsbay.steam"
+effectFlags3 = "447" //447 on  479 off
+effectHard4 = "hp_emit_4"
+effectName4 = "ybsbay.steam2"
+effectFlags4 = "447" //447 on  479 off
+//smoke1
+effectHard5 = "hp_smoke_1"
+effectName5 = "dmgbldg1"
+effectMinHealth5 = 0.6
+effectMaxHealth5 = 0.8
+effectHard6 = "hp_smoke_1"
+effectName6 = "dmgbldg2"
+effectMinHealth6 = 0.4
+effectMaxHealth6 = 0.6
+effectHard7 = "hp_smoke_1"
+effectName7 = "dmgbldg3"
+effectMinHealth7 = 0.2
+effectMaxHealth7 = 0.4
+effectHard8 = "hp_smoke_1"
+effectName8 = "dmgbldg4"
+effectMinHealth8 = 0.0
+effectMaxHealth8 = 0.2
+//smoke2
+effectHard9 = "hp_smoke_2"
+effectName9 = "dmgbldg1"
+effectMinHealth9 = 0.6
+effectMaxHealth9 = 0.8
+effectHard10 = "hp_smoke_2"
+effectName10 = "dmgbldg2"
+effectMinHealth10 = 0.4
+effectMaxHealth10 = 0.6
+effectHard11 = "hp_smoke_2"
+effectName11 = "dmgbldg3"
+effectMinHealth11 = 0.2
+effectMaxHealth11 = 0.4
+effectHard12 = "hp_smoke_2"
+effectName12 = "dmgbldg4"
+effectMinHealth12 = 0.0
+effectMaxHealth12 = 0.2
+//smoke3
+effectHard13 = "hp_smoke_3"
+effectName13 = "dmgbldg1"
+effectMinHealth13 = 0.6
+effectMaxHealth13 = 0.8
+effectHard14 = "hp_smoke_3"
+effectName14 = "dmgbldg2"
+effectMinHealth14 = 0.4
+effectMaxHealth14 = 0.6
+effectHard15 = "hp_smoke_3"
+effectName15 = "dmgbldg3"
+effectMinHealth15 = 0.2
+effectMaxHealth15 = 0.4
+effectHard16 = "hp_smoke_3"
+effectName16 = "dmgbldg4"
+effectMinHealth16 = 0.0
+effectMaxHealth16 = 0.2
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_ybsbaycox"
+
+chunkEffect1 = "ybsbaycoxchk01.fbx"  
+chunkEffect2 = "ybsbaycoxchk02.fbx"  
+chunkEffect3 = "ybsbaycoxchk03.fbx"  
+chunkEffect4 = "ybsbaycoxchk04.fbx"  
+chunkEffect5 = "ybsbaycoxchk05.fbx"  
+HasSeparateChunks = true 
+numChunks = 7
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 1
+numChunks5 = 3
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+[steam]
+renderBase = "draw_twirl_trail"
+textureName =  "flame.tga"
+textureBlend = "one one modulate"
+startColor = "0 150 200 50"
+finishColor = "150 150 200 5"
+startRadius = 5.0
+finishRadius = 1.0
+animateTime = 2.0
+emitDelay = 0.1
+emitVelocity = "0.0 2.0 0.0"
+emitVariance = "3.0 0.0 3.0"
+emitLife = 2.0
+
+[steam2]
+renderBase = "draw_twirl_trail"
+textureName =  "flame.tga"
+textureBlend = "one one modulate"
+startColor = "200 150 0 100"
+finishColor = "150 100 0 10"
+startRadius = 3.0
+finishRadius = 6.0
+animateTime = 3.0
+emitDelay = 0.1
+emitVelocity = "0.0 10.0 0.0"
+emitVariance = "2.0 0.0 2.0"
+emitLife = 3.0
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 100
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+bldEdge = "wwww"  //sbay
+tunnelCount = 1
+tunnel01X0 = 1
+tunnel01Z0 = 1
+tunnel01Dx = 6
+tunnel01Dz = 4
+tunnel01Edge = "ttwt"
+
+soundAmbient = "denv01.wav"//"iarm01.wav"  //"abhange0.wav"
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+///////////////////////////////////////////////////////////////
+[SupplyDepotClass]
+supplyRange = 32.0
+supplyRate = 150.0
+ServiceParallel = 1  //Coxxon
+supplySound = "supply.wav"  //"abhange2.wav"  //BZ2>>> "mnu_empt.wav"
+
+// Individual classification tweakers
+serviceSTs = 1
+serviceCraft = 1
+serviceBuildings = 0
+servicePilots = 1
+serviceOther = 0

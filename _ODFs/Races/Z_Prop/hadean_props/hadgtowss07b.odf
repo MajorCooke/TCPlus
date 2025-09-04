@@ -1,0 +1,57 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "hadgtowss07b"
+classLabel = "i76building"  //"hadgtow"
+geometryName = "hadgtowcox00.fbx"
+infoName = "hadgtow.inf"
+ownsTerrain = 1  //since no terrain plate had
+canCollide = 0  //gtow correct for this class
+/////// PROVIDES ///////////////////
+provideCount = 6
+
+provideName6 = "hadgtowss07b"
+
+///////// LIGHTS & EFFECTS /////////
+lightHard1 = "hp_light_1"
+lightName1 = "spotorange"
+effectHard1 = "hp_emit_1"
+effectName1 = "hadgtow.orangebig"
+effectFlags1 = "447" //447 on  479 off
+
+/////////CRASH INTO COMPONENT PARTS/////////
+explosionName = "x_bztc_bld"
+//xplcrash = "x_bztc_bld"  //"xpl_crash_hadgtowcox"
+chunkEffect1 = "hadgtowcoxchk01.fbx"  
+chunkEffect2 = "hadgtowcoxchk02.fbx"
+chunkEffect3 = "hadgtowcoxchk03.fbx"
+chunkEffect4 = "hadgtowcoxchk04.fbx"
+chunkEffect5 = "hadgtowcoxchk05.fbx"
+HasSeparateChunks = true
+numChunks = 7
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 2
+numChunks5 = 2
+
+/////////////////////////////////////////////////////////////////////
+[EntityClass]
+
+/////////////////////////////////////////////////////////////////////
+[BuildingClass]
+
+/////////////////////////////////////////////////////////////////////
+[CraftClass]
+
+/////////////////////////////////////////////////////////////////////
+[TurretCraftClass]
+
+////////// EFFECTS DESCRIPTION //////////
+[orangebig]
+renderBase = "draw_sprite"
+textureName =  "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 100 0 255"
+finishColor = "255 50 0 255"
+startRadius = 6.0
+finishRadius = 6.0

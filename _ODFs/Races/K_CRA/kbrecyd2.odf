@@ -1,0 +1,201 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "kbrecyd2"
+classLabel = "recycler"
+geometryName = "kbrecycox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "kbrecycox01.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = 1
+scrapCost = 40  //depbld  Coxxon
+scrapValue = 10
+buildTime = 5.0  //depbld  //10.0 
+maxHealth = 11000  //12000  //rcy
+addHealth = 1  //rcy  Coxxon
+maxAmmo = 0
+unitName = "Recycler"
+infoName = "kbrecy.inf"
+aiName = "BuildingProcess"
+aiName2 = "BuildingProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+ownsTerrain = 1  //1 if no baseplate faction
+buildRequire = "N"  //"F"//def recy
+collisionRadius = 10.0  //lrg bldg
+armorClass = H
+powerCost = 0  //rcy stock
+AllowUndergroundSpawn = 1  //rcy stock
+UseCollisionMeshForPathing = 1  //rcy stock
+//allowMDMCollisionDetonation = 1
+upgradeName = "kvrecyd3"
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "kbrecyd2"
+provideName2 = "kbrecycpu"
+provideName3 = "VIRTUAL_CLASS_RECYCLER"
+provideName4 = "VIRTUAL_CLASS_RECYCLERBUILDING"
+
+/////////LIGHTS AND EFFECTS/////////
+lightHard1 = "hp_light_3"
+lightName1 = "hltwbl"
+lightHard2 = "hp_light_4"
+lightName2 = "omniwbl5"
+lightHard3 = "hp_light_5"
+lightName3 = "omniwbl16"
+
+effectHard1 = "hp_light_3"
+effectName1 = "vfxbztclight.blueblink"
+effectHard2 = "hp_light_11"
+effectName2 = "vfxbztclight.redblink"
+effectHard3 = "hp_light_12"
+effectName3 = "vfxbztclight.redblink"
+effectHard4 = "hp_emit_1"
+effectName4 = "vfxbztcbldgs.kbrecyring"
+effectHard5 = "hp_emit_2"
+effectName5 = "vfxbztcbldgs.kbrecyring"
+effectHard6 = "hp_light_3"
+effectName6 = "vfxbztcbldgs.kbrecyring"
+effectHard7 = "hp_emit_3"
+effectName7 = "vfxbztcbldgs.smokestack"
+//smoke1  //no dmg1
+effectHard8 = "hp_smoke_1"
+effectName8= "dmgbldg2"
+effectMinHealth8 = 0.4
+effectMaxHealth8 = 0.6
+effectHard9 = "hp_smoke_1"
+effectName9 = "dmgbldg3"
+effectMinHealth9 = 0.2
+effectMaxHealth9 = 0.4
+effectHard10 = "hp_smoke_1"
+effectName10 = "dmgbldg4"
+effectMinHealth10 = 0.0
+effectMaxHealth10 = 0.2
+//smoke2  //no dmg1
+effectHard11 = "hp_smoke_2"
+effectName11 = "dmgbldg2"
+effectMinHealth11 = 0.4
+effectMaxHealth11 = 0.6
+effectHard12 = "hp_smoke_2"
+effectName12 = "dmgbldg3"
+effectMinHealth12 = 0.2
+effectMaxHealth12 = 0.4
+effectHard13 = "hp_smoke_2"
+effectName13 = "dmgbldg4"
+effectMinHealth13 = 0.0
+effectMaxHealth13 = 0.2
+//smoke3  //no dmg1
+effectHard14 = "hp_smoke_3"
+effectName14 = "dmgbldg2"
+effectMinHealth14 = 0.4
+effectMaxHealth14 = 0.6
+effectHard15 = "hp_smoke_3"
+effectName15 = "dmgbldg3"
+effectMinHealth15 = 0.2
+effectMaxHealth15 = 0.4
+effectHard16 = "hp_smoke_3"
+effectName16 = "dmgbldg4"
+effectMinHealth16 = 0.0
+effectMaxHealth16 = 0.2
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_kbrecycox"
+
+chunkEffect1 = "kvrecycoxchk01.fbx"  
+chunkEffect2 = "kvrecycoxchk03.fbx"  
+chunkEffect3 = "kvrecycoxchk04.fbx"  
+chunkEffect4 = "kvrecycoxchk05.fbx"  
+chunkEffect5 = "kvrecycoxchk06.fbx" 
+//7 pieces total 
+HasSeparateChunks = true 
+numChunks = 8
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 2
+numChunks4 = 2
+numChunks5 = 2
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 100
+SoundSelect = "cfigclk.wav"
+SoundDeselect = "cornrclk.wav"
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+tunnelCount = 1
+tunnel01X0 = 3
+tunnel01Z0 = 4
+tunnel01DX = 2
+tunnel01DZ = 3
+tunnel01Edge = "wttt"  //"wwtw"  //recy
+bldEdge = "wwww"  //recy
+
+//CanDemolish = true // Used when MP is off, or MP for same team or enemy team 
+//CanAlliedCommanderDemolish = true  // Used when MP teamplay is on & controlling unit is commander 
+//CanAlliedThugDemolish = false // Used if MP FFA is on, or teamplay is on & controlling unit is thug [NM]
+//AlignsToObject = false  //not needed for this one
+//ReplacesObject = true //false  //scavs default true for geyser  //not needed for this one
+soundAmbient = "ibrecy01.wav"
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+///////////////////////////////////////////////////////////////
+[FactoryClass]
+ChromeEffect = 0  // 0/f/F = line, 1/t/T = chrome 
+ChromeTexture = "reflection3.tga"  // reflection map texture 
+AnimateChrome = 1  //0  // 0/f/F = static, 1/t/T = animated 
+BuildSparkConfig = "sparkerA"  //"sparker"  // renderer to apply at build vertices 
+LineStartColor = "255 200 0 155"  // line effect start color 
+LineFinishColor = "255 150 0 50"  // line effect finish color ...
+BeamColor = "255 150 0 0"
+LineSolidColor = "255 150 0 70" 	// LOD Line color.
+//KickAllCraft = true
+//scaleVelY = 5.0
+MultVelXZ = 1.5  //fact
+//DropoffDX = 0.0
+DropoffDZ = 19.0
+
+soundBuild = "avrecye2cox.wav"  //"ibrecy02.wav"
+soundCancel = "mnu_buzz.wav"  //"cgrowl.wav"  //"locking3.wav"
+soundFinish= "kvrecye9.wav"  //"iapc04.wav"
+selectUser1Msg = "kvrecyvd.wav"  //building 
+reloadMsg = "kvrecyv8.wav"  //construction started
+rescueMsg = "kvrecyv3.wav"  //building complete
+selectOtherMsg = "kvrecyv0cox.wav"  //***IMSPECIAL***  recycler here
+deployedMsg = "kvrecyv6.wav"  //deploying
+//diedMsg = "kbetty1.wav"
+
+//weaponConfig = "kweapon.odf" //for reference/must use .odf - Coxxon
+
+buildItem1 = "kvscav"
+buildItem2 = "kvscout"
+buildItem3 = "kvturr"
+buildItem4 = "kvtug"
+buildItem5 = "kvcons"
+buildItem6 = "kvserv"
+buildItem7 = "apservk"
+//buildItem8 = "prereserve for mp empty scout"
+//buildItem9 = "FREESLOT"
+//buildItem10 = "replaced by BuildGroup10"
+
+[BuildGroup10] 
+buildLabel = "Production Units"
+buildItem1 = "kvfact"
+buildItem2 = "kvarmo"
+
+///////////////////////////////////////////////////////////////
+[RecyclerClass]
+scrapHold = 40
+scrapDelay = 3.0 //abrecy
+//ScrapDropPoint = true  //for scavs set to drop off scrap
+//RequiresExtractor = 0 //abrecy

@@ -1,0 +1,105 @@
+//tunnel - full 128m x 128m area
+[GameObjectClass]
+baseName = "hadtunn1p"
+classLabel = "i76building"
+geometryName = "hadtunncox1p_open.fbx"
+animCount = 3
+animName1 = "open"
+animFile1 = "hadtunncox1p_open.fbx"
+animName2 = "close"
+animFile2 = "hadtunncox1p_close.fbx"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+unitName = "128 pit dias"
+heatSignature = 1.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 1.0
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+ownsTerrain = 1
+//bah AlignTerrainReplaceType = 5  //0-5  //tunnel
+AllowSeismic = 0
+
+///////// LIGHTS & EFFECTS /////////
+lightHard1 = "hp_emit_1"  //horz low over dias
+lightName1 = "omniwyl16"
+//lightHard2 = "hp_emit_2"  //high down pointing
+//lightName2 = "hltwyl"
+
+effectHard1 = "hp_emit_3"  //high horz
+effectName1 = "hadtunn1p.pulse"
+effectHard2 = "hp_emit_4"  //low horz in dias
+effectName2 = "hadtunn1p.pulse2"
+
+[pulse]
+renderBase = "draw_emit"
+emitName = "hadtunn1p.ring"
+emitDelay = 0.3
+emitVelocity = "0.0 -30.0 0.0"
+emitVariance = "0.5 0.5 0.5"
+
+[ring]
+simulateBase = "sim_smoke"
+renderBase = "draw_wave"
+textureName = "wave.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 3.0
+finishRadius = 4.0
+lifeTime = 1.5
+animateTime = 1.5
+waveAngle = 3.14159265359
+waveDepth = 2.0
+waveColorCenter = "250 200 150 20"
+waveColorEdge = "50 150 255 10"
+waveSegments = 32
+maxCount = 128
+
+[pulse2]
+renderBase = "draw_emit"
+emitName = "hadtunn1p.ring2"
+emitDelay = 0.4
+emitVelocity = "0.0 30.0 0.0"
+emitVariance = "0.5 0.5 0.5"
+
+[ring2]
+simulateBase = "sim_smoke"
+renderBase = "draw_wave"
+textureName = "wave.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 3.0
+finishRadius = 3.0
+lifeTime = 1.5
+animateTime = 1.5
+waveAngle = 3.14159265359
+waveDepth = 2.0
+waveColorCenter = "250 200 150 10"
+waveColorEdge = "50 150 255 20"
+waveSegments = 32
+maxCount = 128
+
+[BuildingClass]
+soundAmbient = "cenv01.wav"  //"denv01.wav"
+soundAmbientDist = 128.0f
+CanDemolish = false
+tunnelCount = 2
+bldEdge = wwww
+
+tunnel01X0 = 7
+tunnel01Z0 = 10
+tunnel01DX = 2
+tunnel01DZ = 6
+tunnel01Edge = "fwfw"
+
+tunnel02X0 = 6
+tunnel02Z0 = 6
+tunnel02DX = 4
+tunnel02DZ = 4
+tunnel02Edge = "wwfw"

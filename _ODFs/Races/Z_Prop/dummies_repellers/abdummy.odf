@@ -1,0 +1,17 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "abdummy"
+classLabel = "i76sign"
+geometryName = "abdummycox00.fbx"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+unitName = "Dummy Placeholder"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+canCollide = 0
+allowseismic = 0
+collisionRadius = 1.0
+canInteract = 0

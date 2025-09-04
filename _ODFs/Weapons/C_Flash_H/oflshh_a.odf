@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "oflshh_a"
+classLabel = "oflshh_c"
+
+ammoCost = 16
+lifeSpan = 200e-6
+shotSpeed = 1e6
+
+damageValue(N) = 180 // none
+damageValue(L) = 150 // light
+damageValue(H) = 120 // heavy
+
+damageValue(S) = 135 // standard
+damageValue(D) = 180 // deflection
+damageValue(A) = 90 // absorption

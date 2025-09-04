@@ -1,0 +1,70 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+geometryName = "olycyclcox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "olycyclcox00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+classLabel = "i76building"
+scrapCost = 40
+scrapValue = 40
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Cyclops"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 1.0  //bztc vehc
+canInteract = 1
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+ownsTerrain = 1  //since no terrain plate
+AllowSeismic = 0
+
+effectHard1 = "hp_emit_1"
+effectName1 = "vfxbztclight.orangestay"
+needsPower = 0
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_yvcyclcox"
+
+chunkEffect1 = "olycyclcoxchk01.fbx"  
+chunkEffect2 = "olycyclcoxchk02.fbx"
+chunkEffect3 = "olycyclcoxchk03.fbx"
+chunkEffect4 = "olycyclcoxchk04.fbx"
+chunkEffect5 = "olycyclcoxchk05.fbx"
+HasSeparateChunks = true
+numChunks = 5
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 1
+numChunks5 = 1
+
+[BuildingClass]
+soundAmbient = "iext01.wav"
+//bldEdge = "wwww"  //bldg
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+[smoke]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.03
+emitVelocity = "0.0 3.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = 5.0
+textureName =  "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "0 0 0 64"
+finishColor = "0 0 0 0"
+startRadius = .5
+finishRadius = 2
+animateTime = 5.0
+rotationRate = 2.0
+

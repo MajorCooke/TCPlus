@@ -1,0 +1,198 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "ybtrain"
+classLabel = "barracks"
+geometryName = "ybtraincox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "ybtraincox00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+collisionRadius = 10.0  //bztc bldg
+scrapCost = 70
+scrapValue = 30
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Barracks"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+ownsTerrain = 1  //1 if no baseplate faction
+//isSingle = 1
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+
+/////// REQUIREMENTS ///////////////
+requireCount = 2
+requireName1 = "ybcbun"
+requireText1 = "Build Comm Tower"
+requireName2 = "ybarmo"
+requireText2 = "Build Armory"
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "ybtrain"
+provideName2 = "VIRTUAL_CLASS_BARRACKS"
+provideName3 = "base"
+provideName4 = "xbtrain"
+
+///////// LIGHTS & EFFECTS /////////
+LightsOffEffectsMask = 65535
+lightHard1 = "hp_light_1"
+lightName1 = "omnifbl16"
+lightHard2 = "hp_light_2"
+lightName2 = "omnifbl16"
+lightHard3 = "hp_light_3"
+lightName3 = "omnifbl16"
+lightHard4 = "hp_light_4"
+lightName4 = "omnifbl16"
+lightHard5 = "hp_light_5"
+lightName5 = "omnifbl16"
+lightHard6 = "hp_light_6"
+lightName6 = "omnifbl16"
+lightHard7 = "hp_light_7"
+lightName7 = "omnifbl16"
+lightHard8 = "hp_light_8"
+lightName8 = "omnifbl16"
+lightHard9 = "hp_light_9"
+lightName9 = "omnifbl16"
+lightHard10 = "hp_light_10"
+lightName10 = "omnifbl16"
+lightHard11 = "hp_light_11"
+lightName11 = "omnifbl16"
+lightHard12 = "hp_light_12"
+lightName12 = "omnifbl16"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "ybtrain.flagfry"
+effectFlags1 = "447" //447 on  479 off
+effectHard2 = "hp_emit_2"
+effectName2 = "ybtrain.pulse"
+effectFlags2 = "447" //447 on  479 off
+effectHard3 = "hp_emit_3"
+effectName3 = "vfxbztcbldgs.ybrecypole"
+effectFlags3 = "447" //447 on  479 off
+effectHard4 = "hp_emit_4"
+effectName4 = "ybtrain.flagfry"
+effectFlags4 = "447" //447 on  479 off
+effectHard5 = "hp_emit_5"
+effectName5 = "ybtrain.pulse"
+effectFlags5 = "447" //447 on  479 off
+effectHard6 = "hp_emit_6"
+effectName6 = "vfxbztcbldgs.ybrecypole"
+effectFlags6 = "447" //447 on  479 off
+effectHard7 = "hp_emit_7"
+effectName7 = "ybtrain.flagfry"
+effectFlags7 = "447" //447 on  479 off
+effectHard8 = "hp_emit_8"
+effectName8 = "ybtrain.pulse"
+effectFlags8 = "447" //447 on  479 off
+effectHard9 = "hp_emit_9"
+effectName9 = "vfxbztcbldgs.ybrecypole"
+effectFlags9 = "447" //447 on  479 off
+//smoke1  //no dmg1
+effectHard10 = "hp_smoke_1"
+effectName10 = "dmgbldg2"
+effectMinHealth10 = 0.4
+effectMaxHealth10 = 0.6
+effectHard11 = "hp_smoke_1"
+effectName11 = "dmgbldg3"
+effectMinHealth11 = 0.2
+effectMaxHealth11 = 0.4
+effectHard12 = "hp_smoke_1"
+effectName12 = "dmgbldg4"
+effectMinHealth12 = 0.0
+effectMaxHealth12 = 0.2
+//smoke2
+effectHard13 = "hp_smoke_2"
+effectName13 = "dmgbldg1"
+effectMinHealth13 = 0.6
+effectMaxHealth13 = 0.8
+effectHard14 = "hp_smoke_2"
+effectName14 = "dmgbldg2"
+effectMinHealth14 = 0.4
+effectMaxHealth14 = 0.6
+effectHard15 = "hp_smoke_2"
+effectName15 = "dmgbldg3"
+effectMinHealth15 = 0.2
+effectMaxHealth15 = 0.4
+effectHard16 = "hp_smoke_2"
+effectName16 = "dmgbldg4"
+effectMinHealth16 = 0.0
+effectMaxHealth16 = 0.2
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_ybtraincox"
+chunkEffect1 = "ybtraincoxchk01.fbx"  
+chunkEffect2 = "ybtraincoxchk02.fbx"  
+chunkEffect3 = "ybtraincoxchk03.fbx"  
+chunkEffect4 = "ybtraincoxchk04.fbx"  
+chunkEffect5 = "ybtraincoxchk05.fbx"  
+HasSeparateChunks = true 
+numChunks = 15
+numChunks1 = 3
+numChunks2 = 3
+numChunks3 = 3
+numChunks4 = 3
+numChunks5 = 3
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+[flagfry]
+renderBase = "draw_sprite"
+textureName = "yoemblcox00_d.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 1.0
+finishRadius = 1.0
+
+[pulse]
+renderBase = "draw_emit"
+emitName = "ybtrain.ring"
+emitDelay = 0.2
+emitVelocity = "0.0 -15.0 0.0"
+emitVariance = "0.5 0.5 0.5"
+
+[ring]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_wave"
+textureName = "wave.tga"
+textureBlend = "one one modulate"
+startColor = "200 200 255 100"
+finishColor = "0 0 255 200"
+startRadius = 0.5
+finishRadius = 1.0
+animateTime = 3.0
+waveAngle = 3.14159265359
+waveDepth = 2.0
+waveColorCenter = "255 255 255 255"
+waveColorEdge = "255 255 255 255"
+waveSegments = 16  //64
+maxCount = 128  //256
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 100
+powerTap1 = "HP_TAP_1"
+powerName = "ybtwrg"
+PoweredByTaps = false  //false - trad power and nonpower addon
+AutoBuildTap1 = true  //true build tap on init creation
+//DestroyTapsWithParent = true  //true default
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "ychatter7.wav"  //"abbarre0.wav"
+//bldEdge = "wwww"  //bldg
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+///////////////////////////////////////////////////////////////
+[BarracksClass]  //trn Coxxon
+pilotHold = 500  //trn Coxxon

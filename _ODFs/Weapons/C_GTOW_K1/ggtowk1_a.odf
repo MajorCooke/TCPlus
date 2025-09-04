@@ -1,0 +1,19 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "ggtowk1_a"
+classLabel = "cannon"
+altName = "ggtowk1_c"
+ordName = "ogtowk1_a"
+wpnName = "Slvo Flsh Twr A"
+fireSound = "flash01.wav"
+wpnReticle = "gflsha"
+wpnCategory = "CANN"
+isAssault = 1
+aiRange = 200
+flashName = "ggtowk1_c.flash"
+
+[CannonClass]
+shotDelay =  2.0
+salvoCount = 15
+salvoDelay = 0.067
+shotVariance = 0.02

@@ -1,0 +1,15 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gflama_c"
+classLabel = "machinegun"
+altName = "gflama_a"
+ordName = "oflama_c"
+wpnName = "Flamethrower C"
+fireSound = "gflas00.wav"
+wpnReticle = "gminia"  //"gminigun"
+wpnCategory = "CANN"
+isAssault = 0
+aiRange = 50
+
+[CannonClass]
+shotDelay = 0.02

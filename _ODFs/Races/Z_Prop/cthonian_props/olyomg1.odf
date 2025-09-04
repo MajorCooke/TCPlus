@@ -1,0 +1,94 @@
+/////////Coxxon - BZTC////////
+[GameObjectClass]
+geometryName = "olyomg1cox00.fbx"
+classLabel = "i76building"
+animCount = 1
+animName1 = "loop"
+animFile1 = "olyomg1cox00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+scrapCost = 8
+scrapValue = 3
+maxHealth = 15000
+maxAmmo = 0
+unitName = "Control Tower"
+heatSignature = 0.8
+imageSignature = 8.0
+radarSignature = 1.0
+canDetect = 1
+canInteract = 1
+ownsTerrain = 1
+collisionRadius = 20.0  //super bldg
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+AllowSeismic = 0
+powerCost = 0
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_0"
+lightName1 = "o_yellow_nf"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "vfxbztclight.yellowblink"
+effectHard2 = "hp_emit_2"
+effectName2 = "vfxbztclight.yellowblink"
+effectHard3 = "hp_emit_3"
+effectName3 = "vfxbztclight.yellowblink"
+//effectHard4 = "hp_emit_4"
+//effectName4 = "vfxbztcbldgs.kbrecyring"  //ybsilostream"
+effectHard4 = "hp_emit_5"
+effectName4 = "vfxbztcbldgs.kbrecyring"  //ybsilostream"
+effectHard5 = "hp_emit_0"
+effectName5 = "vfxbztcbldgs.kbrecyring"  //ybsilostream"
+//smoke1
+//effectHard5 = "hp_smoke_1"
+//effectName5 = "dmgbldg1"
+//effectMinHealth5 = 0.6
+//effectMaxHealth5 = 0.8
+effectHard6 = "hp_smoke_1"
+effectName6 = "dmgbldg2"
+effectMinHealth6 = 0.4
+effectMaxHealth6 = 0.6
+effectHard7 = "hp_smoke_1"
+effectName7 = "dmgbldg3"
+effectMinHealth7 = 0.2
+effectMaxHealth7 = 0.4
+effectHard8 = "hp_smoke_1"
+effectName8 = "dmgbldg4"
+effectMinHealth8 = 0.0
+effectMaxHealth8 = 0.2
+//smoke2
+effectHard9 = "hp_smoke_2"
+effectName9 = "dmgbldg1"
+effectMinHealth9 = 0.6
+effectMaxHealth9 = 0.8
+effectHard10 = "hp_smoke_2"
+effectName10 = "dmgbldg2"
+effectMinHealth10 = 0.4
+effectMaxHealth10 = 0.6
+effectHard11 = "hp_smoke_2"
+effectName11 = "dmgbldg3"
+effectMinHealth11 = 0.2
+effectMaxHealth11 = 0.4
+effectHard12 = "hp_smoke_2"
+effectName12 = "dmgbldg4"
+effectMinHealth12 = 0.0
+effectMaxHealth12 = 0.2
+//smoke3
+effectHard13 = "hp_smoke_3"
+effectName13 = "dmgbldg1"
+effectMinHealth13 = 0.6
+effectMaxHealth13 = 0.8
+effectHard14 = "hp_smoke_3"
+effectName14 = "dmgbldg2"
+effectMinHealth14 = 0.4
+effectMaxHealth14 = 0.6
+effectHard15 = "hp_smoke_3"
+effectName15 = "dmgbldg3"
+effectMinHealth15 = 0.2
+effectMaxHealth15 = 0.4
+effectHard16 = "hp_smoke_3"
+effectName16 = "dmgbldg4"
+effectMinHealth16 = 0.0
+effectMaxHealth16 = 0.2
+
+[BuildingClass]

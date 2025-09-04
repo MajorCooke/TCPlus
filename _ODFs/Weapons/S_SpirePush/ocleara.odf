@@ -1,0 +1,41 @@
+/////////Coxxon - BZTC/////////
+//ORDNANCE clear mine
+[GameObjectClass]
+baseName = "ocleara"
+classLabel = "magnet"
+geometryName = NULL
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 50
+unitName = "Clear Area Ord"
+//effectHard1 = ""
+//effectName1 = "ocleara.field"
+canDetect = 0
+canInteract = 0
+
+[MineClass]
+lifeSpan = 3.0
+
+[MagnetMineClass]
+triggerDelay = 0.1
+fieldRadius = 10.0
+objPushCenter = 10.0  //Coxxon  //50.0
+objPushEdge = 12.0  //Coxxon  //100.0
+objDrag = 1.0  //Coxxon  //0.5
+ordPushCenter = 0.0  //Coxxon  //200.0
+ordPushEdge = 0.0  //Coxxon  //500.0
+ordDrag = 0.0  //Coxxon  //1.5
+TeamFilter = 3  //Pick craft and ordnance, and sum to specify effected: All c0/o0, Same Team c1/o16, Allies c2/o32, Enemies c3/o48, NotSameTeam c4/o64
+
+[Field]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 0 0 10"
+finishColor = "0 255 255 200"
+startRadius = 1.0
+finishRadius = 12.0
+animateTime = 0.5
+latitudeBands = 8
+longitudeSegments = 16

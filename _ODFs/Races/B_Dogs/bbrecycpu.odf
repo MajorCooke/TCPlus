@@ -1,0 +1,31 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "bbrecycpu"
+classLabel = "bbrecy
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "bbrecy"
+provideName2 = "bbrecycpu"
+provideName3 = "VIRTUAL_CLASS_RECYCLER"
+provideName4 = "VIRTUAL_CLASS_RECYCLERBUILDING"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_bbrecycox"
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+bldEdge = "wwww"  //recy
+
+/////////////////////////////////////////////////////////////
+[FactoryClass]
+buildItem6 = "bvservcpu"
+buildItem8 = "bvscout_m"
+buildEmptyItem = 8
+
+///////////////////////////////////////////////////////////////
+[RecyclerClass]

@@ -1,0 +1,58 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "obowwy_a"
+classLabel = "bullet"
+shotSound = "sonic03b.wav"
+shotGeometry = NULL
+//Coxxon  shotRadius = 1.0
+xplGround = "xsonicgnd_c"
+xplVehicle = "xsoniccar_c"
+xplBuilding = "xsoniccar_c"
+
+ammoCost = 100
+lifeSpan = 4.0 // 200m
+shotSpeed = 50.0
+
+damageValue(N) = 3000  //1500
+damageValue(L) = 3000  //1250
+damageValue(H) = 3000  //1000
+
+damageValue(S) = 3000  //1250
+damageValue(D) = 3000  //1000
+damageValue(A) = 3000  //1500
+
+renderName = "obowwy_a.render"
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "obowwy_a.Core"
+renderName2 = "obowwy_a.Flare"
+
+[Core]
+renderBase = "draw_twirl_trail"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "0 205 230 255" 
+finishColor = "0 205 250 255" 
+startRadius = 0.2  //Coxxon  //0.4
+finishRadius = 0.4
+rotationRate = 10.0
+animateTime = 0.02
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 0.005
+
+[Flare]
+renderBase = "draw_twirl_trail"
+textureName = "raindrop.tga"
+textureBlend = "one one modulate"
+startColor = "30 205 255 65" 
+finishColor = "255 255 255 0" 
+startRadius = 0.4  //Coxxon  //0.5
+finishRadius = 1.0  //Coxxon  //1.5
+animateTime = 0.7
+emitDelay = 0.01
+emitLife = 0.7
+rotationrate = 20

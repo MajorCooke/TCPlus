@@ -1,0 +1,32 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ogatls_c"
+classLabel = "bullet"
+shotGeometry = NULL //"sochancox00.fbx"  //
+xplGround = "xbulgnd"
+xplVehicle = "xbulcar"
+xplBuilding = "xbulbld"
+
+ammoCost = 1.0
+lifeSpan = 1.5  //150m Coxxon
+shotSpeed = 100.0
+
+damageValue(N) = 6.5  //130 //100
+damageValue(L) = 4.0  //100 //75
+damageValue(H) = 3.3  //66 //50
+
+damageValue(S) = 4.0  //100 //75
+damageValue(D) = 3.3  //66 //50
+damageValue(A) = 6.5  //130 //100
+
+renderName = "ogatls_c.tracer"
+
+[tracer]
+renderBase = "draw_tracer"
+textureBlend = "one one modulate"
+textureName = "aotrcrredcox00.tga"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.05
+finishRadius = 0.05
+tracerLength = 2.0

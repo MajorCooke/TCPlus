@@ -1,0 +1,52 @@
+/////////Coxxon - BZTC/////////
+// =================
+// PREDATOR MISSILE EXPLOSION
+// =================
+//mod from xtorxpl datapak
+[ExplosionClass]
+classLabel = "explosion"
+explSound = "xmv1.wav"
+
+damageRadius = 50.0
+damageValue(N) = 700  //Coxxon  //1000
+damageValue(L) = 600  //Coxxon  //1000
+damageValue(H) = 500  //Coxxon  //1000
+damageValue(S) = 600  //Coxxon  //1000
+damageValue(D) = 700  //Coxxon  //1000
+damageValue(A) = 500  //Coxxon  //1000
+
+kickRadius = 10.0  //msl
+kickOmega = 1.0  //msl
+kickVeloc = 1.0  //msl
+
+particleTypes = 2
+particleClass1 = "xmlcka_a.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+particleClass2 = "xmlcka_a.shock"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "63 255 255 255"
+finishColor = "0 0 255 0"
+startRadius = 3.0
+finishRadius = 30.0
+animateTime = 1.0
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 0.3
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "63 255 255 127"
+finishColor = "0 0 255 0"
+startRadius = 3.0
+finishRaius = 60.0
+animateTime = 0.3

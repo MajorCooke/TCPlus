@@ -1,0 +1,49 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "odwqka"
+classLabel = "seismic"
+shotSound = "gquak00.wav"
+ammoCost = 1000
+lifeSpan = 8.0  //320m
+shotSpeed = 40.0
+xplGround = NULL
+xplVehicle = NULL
+xplBuilding = NULL   //xpl_apdwhea_cox  //
+renderName = "odwqka.dust"
+
+//crank these up to get them to work - Coxxon
+//faster wave moves, higher damage needed to be useful
+damageValue(N) = 10000
+damageValue(L) = 10000
+damageValue(H) = 10000
+
+damageValue(S) = 10000
+damageValue(D) = 10000
+damageValue(A) = 10000
+
+//VehicleSearchFilter = 0 // 0 vehicles, 1 pilots, 2 vehicles+pilots+animals, 3 plants, 4 buildings
+
+[SeismicClass]
+waveRadius = 50.0
+waveHeight = 2.0  //Coxxon  //5.0
+rampUpTime = 2.0  //Coxxon  //5.0
+rampDownTime = 2.0
+sweepOmega = 3.0
+sweepVeloc = 2.0  //Coxxon  //20.0
+shakeOmega = 5.0
+shakeVeloc = 5.0
+buildingScale = 3.0
+
+[dust]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "100 70 30 255"  //100"
+finishColor = "200 180 150 0"
+startRadius = 1.0
+finishRadius = 15.0
+animateTime = 7.0  //same as "lifeSpan"
+emitDelay = 0.01  //0.02
+emitVelocity = "0.0 0.0 40.0"  //same as "shotspeed"
+emitVariance = "40.0 20.0 0.0"
+emitLife = 7.0  //same as "lifeSpan"

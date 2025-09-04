@@ -1,0 +1,50 @@
+/////////Coxxon - BZTC/////////
+// ==============
+// MINE EXPLOSION SPECIAL FOR RED BRIGADE PRECIOUS CARGO MISSION
+// ==============
+
+[ExplosionClass]
+baseName = "xproxarb02"
+classLabel = "explosion"
+
+explSound = "xmv1.wav"
+damageRadius = 40.0  //mine  //50.0
+damageValue(N) = 3000  //Coxxon  //600
+damageValue(L) = 3000  //Coxxon  //400
+damageValue(H) = 3000  //Coxxon  //200
+
+damageValue(S) = 3000  //Coxxon  //400
+damageValue(D) = 3000  //Coxxon  //600
+damageValue(A) = 3000  //Coxxon  //200
+
+particleTypes = 2
+particleClass1 = "xproxarb02.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+particleClass2 = "xproxarb02.puff"
+particleCount2 = 70
+particleVeloc2 = "90.0 90.0 90.0"
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 255"
+finishColor = "255 0 0 0"
+startRadius = 5.0
+finishRadius = 50.0
+animateTime = 1.0
+
+[Puff]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 255"
+finishColor = "255 0 0 0"
+startRadius = 10.0
+finishRadius = 1.0
+animateTime = 1.0

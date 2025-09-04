@@ -1,0 +1,24 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gcomta_c"
+classLabel = "radarlauncher"
+altName = "gcomta_a"
+wpnName = "Mini-Comet C"
+ordName = "ocomta_c"
+fireSound = "gcome00.wav"
+wpnReticle = "gcomta.0"
+wpnCategory = "ROCK"
+isAssault = 0
+needLOS = 0
+
+[LauncherClass]
+lockRange = 250.0
+shotDelay = 1.5
+lockDelay = 0.5
+coneAngle = 0.15
+lockingReticle = "gcomta.A"
+lockingSound = "lock01.wav"
+lockedReticle = "gcomta.B"
+lockedSound = "lock02.wav"
+targetCount = 3
+targetReticle = "gcomta.1"

@@ -1,0 +1,22 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gtagca_c"
+classLabel = "targeting"
+altName = "gtagca_a"
+ordName = "otagca_c"
+wpnName = "TAG Cannon C"
+fireSound = "gtagccox00.wav"
+wpnReticle = "gtagga.0"
+wpnCategory = "CANN"
+isAssault = 0
+aiRange = 110
+
+[TargetingGunClass]
+leaderName = "otagcla_c"
+leaderSound = "tmiss03b.wav"
+shotDelay = 0.2  //0.5
+firstDelay = 0.3  //0.5
+salvoDelay = 0.3  //0.2
+salvoCount = 5  //6
+lockingReticle = "gtagga.1"
+lockedReticle = "gtagga.2"

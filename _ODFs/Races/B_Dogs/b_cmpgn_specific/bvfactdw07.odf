@@ -1,0 +1,38 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "bvfactdw07"
+classLabel = "bvfact"
+unitName = "TU12 AMUF"
+unitIcon = "icon_bvfact.png"
+unitStatus = "wire_bvfact.png"
+infoName = "bvfact.inf"
+
+requireCount = 0
+
+limitClass1 = "bvfactdw07"
+limitClass1Count = 1
+limitClass1Text = "Only One Allowed"
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+
+provideName3 = "bvfactdw07"
+
+//////////////////////////////////////////////////////////
+[CraftClass]
+/////////CRASH EXPLODE INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_bvfactcox"
+
+////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+
+/////////////////////////////////////////////////////////
+[DeployableClass]
+
+/////////////////////////////////////////////////////////
+[DeployBuildingHClass]
+deployName = "bbfactdw07"
+
+////////////////////////////////////////////////////////
+[RecyclerVehicleHClass]
+scrapHold = 0

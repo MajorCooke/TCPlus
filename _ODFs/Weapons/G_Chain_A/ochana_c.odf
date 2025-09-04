@@ -1,0 +1,34 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ochana_c"
+classLabel = "bullet"
+shotGeometry = NULL
+xplGround = "xbulgnd"
+xplVehicle = "xbulcar"
+xplBuilding = "xbulbld"
+
+ammoCost = 6.25  //Coxxon  //2.5
+lifeSpan = 0.7 // 105m  135 GEC
+shotSpeed = 150.0  //Coxxon  //300.0
+
+//0.7 150.0 105m  //Coxxon
+
+damageValue(N) = 40  //48  //Coxxon  //16 // none // 320
+damageValue(L) = 35  //48  //Coxxon  //16 // light // 320
+damageValue(H) = 30  //36  //Coxxon  //12 // heavy // 240
+
+damageValue(S) = 35  //45  //Coxxon  //15 // standard // 300
+damageValue(D) = 30  //24  //Coxxon  //8 // deflection // 160
+damageValue(A) = 40  //48  //Coxxon  //16 // absorption // 320
+
+renderName = "ochana_c.tracer"
+
+[tracer]
+renderBase = "draw_tracer"
+textureBlend = "one one modulate"
+textureName = "aotrcrorgcox00.tga"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.15
+finishRadius = 0.15
+tracerLength = 6.0

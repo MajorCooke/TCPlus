@@ -1,0 +1,21 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "yoflag01"
+classLabel = "flag"
+geometryName = "yoflagcox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "yoflagcox00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+unitName = "Fury Flag"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+collisionRadius = 1.0
+
+[BuildingClass]

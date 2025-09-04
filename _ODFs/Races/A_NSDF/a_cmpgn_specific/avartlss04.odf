@@ -1,0 +1,47 @@
+/////////Coxxon - BZTC///////////
+//special for SS04 mission
+[GameObjectClass]
+baseName = "avartlss04"
+classLabel = "avartl" 
+unitIcon = "icon_avartl.png"
+unitStatus = "wire_avartl.png"
+infoName = "avartl.inf"  //or baseName, or provide name
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+requireName1 = ""
+requireText1 = ""
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+
+provideName4 = "avartlss04"
+
+//////////////////////////////////////////////////////////////////////////
+[CraftClass]
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_avartlcox"
+//chunkEffect1 = "avartlcoxchk01.fbx"  
+//chunkEffect2 = "avartlcoxchk02.fbx"
+//chunkEffect3 = "avartlcoxchk03.fbx"
+//chunkEffect4 = "avartlcoxchk04.fbx"
+//chunkEffect5 = "avartlcoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 6
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 2
+
+//////////////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+
+//////////////////////////////////////////////////////////////////////////
+[TurretTankClass]
+
+//////////////////////////////////////////////////////////////////////////
+[ArtilleryClass]
+
+//////////////////////////////////////////////////////////////////////////
+[DeployableClass]

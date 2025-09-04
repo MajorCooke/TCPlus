@@ -1,0 +1,170 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "abtrain"
+classLabel = "barracks"
+geometryName = "abtraincox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "abtraincox00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+collisionRadius = 10.0  //bztc bldg
+scrapCost = 70
+scrapValue = 30
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Barracks"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+ownsTerrain = 1  //1 if no baseplate faction
+//isSingle = 1
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+
+/////// REQUIREMENTS ///////////////
+//requireCount = 2
+//requireName1 = "abcbun"
+//requireText1 = "Build Comm Tower"
+//requireName2 = "abarmo"
+//requireText2 = "Build Armory"
+
+buildRequire = "F"
+buildSupport = "A"
+powerCost = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "abtrain"
+provideName2 = "VIRTUAL_CLASS_BARRACKS"
+provideName3 = "base"
+provideName4 = "xbtrain"
+
+///////// LIGHTS & EFFECTS /////////
+LightsOffEffectsMask = 65535
+lightHard1 = "hp_light_7"
+lightName1 = "omnicyn5"
+lightHard2 = "hp_light_8"
+lightName2 = "omnicyn5"
+lightHard3 = "hp_light_9"
+lightName3 = "omnicyn5"
+lightHard4 = "hp_light_10"
+lightName4 = "omnicyn5"
+lightHard5 = "hp_light_11"
+lightName5 = "omnicyn5"
+lightHard6 = "hp_light_12"
+lightName6 = "omnicyn5"
+lightHard7 = "hp_light_13"
+lightName7 = "omnicyn5"
+
+//smoke1
+effectHard1 = "hp_smoke_1"
+effectName1 = "dmgbldg1"
+effectMinHealth1 = 0.6
+effectMaxHealth1 = 0.8
+effectHard2 = "hp_smoke_1"
+effectName2 = "dmgbldg2"
+effectMinHealth2 = 0.4
+effectMaxHealth2 = 0.6
+effectHard3 = "hp_smoke_1"
+effectName3 = "dmgbldg3"
+effectMinHealth3 = 0.2
+effectMaxHealth3 = 0.4
+effectHard4 = "hp_smoke_1"
+effectName4 = "dmgbldg4"
+effectMinHealth4 = 0.0
+effectMaxHealth4 = 0.2
+//smoke2
+effectHard5 = "hp_smoke_2"
+effectName5 = "dmgbldg1"
+effectMinHealth5 = 0.6
+effectMaxHealth5 = 0.8
+effectHard6 = "hp_smoke_2"
+effectName6 = "dmgbldg2"
+effectMinHealth6 = 0.4
+effectMaxHealth6 = 0.6
+effectHard7 = "hp_smoke_2"
+effectName7 = "dmgbldg3"
+effectMinHealth7 = 0.2
+effectMaxHealth7 = 0.4
+effectHard8 = "hp_smoke_2"
+effectName8 = "dmgbldg4"
+effectMinHealth8 = 0.0
+effectMaxHealth8 = 0.2
+//smoke3
+effectHard9 = "hp_smoke_3"
+effectName9 = "dmgbldg1"
+effectMinHealth9 = 0.6
+effectMaxHealth9 = 0.8
+effectHard10 = "hp_smoke_3"
+effectName10 = "dmgbldg2"
+effectMinHealth10 = 0.4
+effectMaxHealth10 = 0.6
+effectHard11 = "hp_smoke_3"
+effectName11 = "dmgbldg3"
+effectMinHealth11 = 0.2
+effectMaxHealth11 = 0.4
+effectHard12 = "hp_smoke_3"
+effectName12 = "dmgbldg4"
+effectMinHealth12 = 0.0
+effectMaxHealth12 = 0.2
+//smoke4
+effectHard13 = "hp_smoke_4"
+effectName13 = "dmgbldg1"
+effectMinHealth13 = 0.6
+effectMaxHealth13 = 0.8
+effectHard14 = "hp_smoke_4"
+effectName14 = "dmgbldg2"
+effectMinHealth14 = 0.4
+effectMaxHealth14 = 0.6
+effectHard15 = "hp_smoke_4"
+effectName15 = "dmgbldg3"
+effectMinHealth15 = 0.2
+effectMaxHealth15 = 0.4
+effectHard16 = "hp_smoke_4"
+effectName16 = "dmgbldg4"
+effectMinHealth16 = 0.0
+effectMaxHealth16 = 0.2
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_abtraincox"
+
+chunkEffect1 = "abtraincoxchk01.fbx"  //cafe 1
+chunkEffect2 = "abtraincoxchk02.fbx"  //cafe 2
+chunkEffect3 = "abtraincoxchk03.fbx"  //crate
+chunkEffect4 = "abtraincoxchk04.fbx"  //barrack 1
+chunkEffect5 = "abtraincoxchk05.fbx"  //barrack 2
+HasSeparateChunks = true 
+numChunks = 10
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 2
+numChunks4 = 3
+numChunks5 = 3
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 100
+powerTap1 = "HP_TAP_1"
+powerName = "abtwrg"
+PoweredByTaps = false  //false - trad power and nonpower addon
+AutoBuildTap1 = true  //true build tap on init creation
+//DestroyTapsWithParent = true  //true default
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "abbarre0.wav"
+//bldEdge = "wwww"  //bldg
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+///////////////////////////////////////////////////////////////
+[BarracksClass]  //trn Coxxon
+pilotHold = 500  //trn Coxxon

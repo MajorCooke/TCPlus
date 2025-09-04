@@ -1,0 +1,88 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ostbva_c"
+classLabel = "bullet"
+
+shotGeometry = "aostbacox01.fbx" 
+shotSound = NULL  //"Ordin_a.wav"  //removed b/c it muted weapon sound - Coxxon  //"gatst03.wav"  //
+
+xplGround = "xstabgnd_c"
+xplVehicle = "xstbaacar"  //"xstabcar_c"
+xplBuilding = "xmslbld"
+
+ammoCost = 22  //11
+lifeSpan = 1.0 // 100m
+shotSpeed = 100.0
+
+//same damage as AT, but is salvo
+damageValue(N) = 130 // none // 260
+damageValue(L) = 120 // light // 240
+damageValue(H) = 100 // heavy // 200
+
+damageValue(S) = 120 // standard // 240
+damageValue(D) = 100 // deflection // 200
+damageValue(A) = 130 // absorption // 130
+
+renderName = "ostbva_c.render"
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "ostbva_c.smoke"
+//renderName2 = "ostbva_c.tail"
+renderName2 = "ostbva_c.core"
+renderName3 = "ostbva_c.light"
+
+///////////////////////////////////////////////////////
+[tail]  //mod from default faf misl
+renderBase = "draw_twirl_trail"
+textureName = "twin.tga"
+textureBlend = "one one modulate"
+startColor = "150 100 0 150"
+finishColor = "150 50 0 20"
+startRadius = 0.3
+finishRadius = 0.07
+animateTime = 0.3
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.6 0.6 0.6"
+emitLife = 0.3
+
+[core]
+renderBase = "draw_twirl_trail"
+textureName = "lighthalo.tga"  //stab  "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "20 80 130 155"
+finishColor = "50 50 150 0"
+startRadius = 0.4  //0.2
+finishRadius = 0.1
+animateTime = 0.15
+rotationRate = 10.0
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 0.15
+
+[Smoke]  //mod from default faf misl
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "70 80 120 50"
+finishColor = "70 70 70 0"
+startRadius = 0.3
+finishRadius = 0.7
+animateTime = 0.6
+emitDelay = 0.01  //0.005
+emitVelocity = "0.0 0.5 0.0"
+emitVariance = "0.6 0.6 0.6"
+emitLife = 0.6
+
+[light]
+renderBase = "draw_light"
+startColor = "20 80 130 200"
+finishColor = "20 80 130 200"
+startRadius = 16.0  //ord light
+finishRadius = 16.0  //ord light
+attenuateConstant = 0.0  //ord light
+attenuateQuadratic = 1.0  //ord light
+attenuateLinear = 0.0  //ord light

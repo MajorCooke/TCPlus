@@ -1,0 +1,6 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gflsha_c_gun"
+classLabel = "gflsha_c"
+altName = "gflsha_a_gun"
+wpnCategory = "GUN"

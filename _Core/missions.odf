@@ -1,0 +1,1311 @@
+/////////Coxxon - BZTC/////////
+[MissionInfo]
+countISDF = 58  //1 less w/ congrats screen
+countScion = 1  //run only through isdf
+
+//preBriefMovie = "Flyby_1.ogv"
+//successMovie = "wormhole.bik"
+//successMovie = "isdf_dn.bik"
+//successMovie = "scion_dn.bik"
+
+//PREBRIEFMOVIE works most reliably when directly placed in the stock addon folder.
+//Because workshop mod doesn't have it in the literal stock addon folder, it will not play from archive, and therefore only plays once.
+//So I might just leave them out, since the movie objects conflict with the new models anyway...
+//and it's the BZ1 intro (and TRO), while this is TOTAL COMMAND
+//successMovies replaced in this mod with in-game cutscenes
+
+//preBriefMovie = "tcssintro.ogv"  //long bz1 intro
+//successMovie = "tcssoutro.ogv"  //nsdf cmpgn ending  --redone as in-game cinematic
+//successMovie = "tcssapollo15.ogv"  //bz1 install - doesn't render correctly - size?
+//successMovie = "tcssbg.ogv"  //spining tank - doesn't render correctly - size?
+//successMovie = "tcdwintro.ogv"  //tro intro
+//successMovie = "tcdwoutro.ogv"  //duke nuke  --redone as in-game cinematic
+
+////////////////////////////////////////////////////////////
+[ISDF 1]
+missionTitle = "SS01 Red Arrival (-)"
+missionInfo = "tcss01D.des"
+missionFile = "bztcss01.bzn"
+//briefInfo = "tcss01B.des"  //THIS IS NOT USED, CONTENT MOVED TO MISSIONINFO
+launchMessage = "tcssld01.ogg"  //give player time to read background
+launchBackground = "load_quote_bates_img.tga"  //"load_quote_bates.tga"
+planetName = "LUNA"
+planetInfo = "wrldmoon.des"
+planetGeom = "wrldlunacox00.fbx"
+//see note above, file left out// preBriefMovie = "tcssintro.ogv"  //long bz1 intro 
+
+techCount = 4  //FOUR OBJECTS MAX
+techName1 = "NSDF"
+techInfo1 = "aoembl.inf"
+techGeom1 = "aoemblprop.fbx"
+techName2 = "Eagle Lander"
+techInfo2 = "avland.inf"
+techGeom2 = "avlndrcox00.fbx"
+techName3 = "Grizzly"
+techInfo3 = "avtank.inf"
+techGeom3 = "avtankcox00.fbx"
+techName4 = "Recycler"
+techInfo4 = "abrecy.inf"
+techGeom4 = "abrecyprop.fbx"
+
+//mailCount = 0   //SAMPLE SETUP - NOT USED IN THIS MOD
+//mailName1 = "text string"
+//mailInfo1 = "filename.des"
+//mailGeom1 = "filename.fbx"
+//mailWave1 = "filename.wav"
+
+////////////////////////////////////////////////////////////
+[ISDF 2]
+missionTitle = "SS02 Eagle's Nest 1 (-)"
+missionInfo = "tcss02D.des"
+missionFile = "bztcss02.bzn"
+launchMessage = "tcssld02.wav"
+launchBackground = "load_luna_base.tga"
+planetName = "LUNA"
+planetInfo = "wrldmoon.des"
+planetGeom = "wrldlunacox00.fbx"
+
+techCount = 4
+techName1 = "CCA"
+techInfo1 = "soembl.inf"
+techGeom1 = "soemblprop.fbx"
+techName2 = "NSDF Pilot"
+techInfo2 = "aspilo.inf"
+techGeom2 = "aspiloprop00.fbx"
+techName3 = "TU11 Mobile Unit Factory"
+techInfo3 = "avrecy.inf"
+techGeom3 = "avrecycox00.fbx"
+techName4 = "Scavenger"
+techInfo4 = "avscav.inf"
+techGeom4 = "avscavcox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 3]
+missionTitle = "BD01 Grab the Scientists"
+missionInfo = "tcbd01D.des"
+missionFile = "bztcbd01.bzn"
+launchBackground = "load_luna.tga"
+planetName = "LUNA"
+planetInfo = "wrldmoon.des"
+planetGeom = "wrldlunacox00.fbx"
+
+techCount = 4
+techName1 = "BDS"
+techInfo1 = "boembl.inf"
+techGeom1 = "boemblprop.fbx"
+techName2 = "BDS Pilot"
+techInfo2 = "bspilo.inf"
+techGeom2 = "bspiloprop00.fbx"
+techName3 = "Grizzly"
+techInfo3 = "bvtank.inf"
+techGeom3 = "bvtankcox00.fbx"
+techName4 = "Thunderbolt"
+techInfo4 = "bvrckt.inf"
+techGeom4 = "bvrcktcox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 4]
+missionTitle = "BD02 Preparations (-)"
+missionInfo = "tcbd02D.des"
+missionFile = "bztcbd02.bzn"
+launchBackground = "load_luna_en1.tga"
+planetName = "LUNA"
+planetInfo = "wrldmoon.des"
+planetGeom = "wrldlunacox00.fbx"
+
+techCount = 4
+techName1 = "CBB"
+techInfo1 = "moembl.inf"
+techGeom1 = "moemblprop.msh
+techName2 = "Czar"
+techInfo2 = "mvtank.inf"
+techGeom2 = "mvtankcox00.fbx"
+techName3 = "Razor-NX"
+techInfo3 = "nvscout.inf"
+techGeom3 = "nvscoutcox00.fbx"
+techName4 = "Grizzly-NX"
+techInfo4 = "nvtank.inf"
+techGeom4 = "nvtankcox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 5]
+missionTitle = "SS03 The Relic Discovered (-)"
+missionInfo = "tcss03D.des"
+missionFile = "bztcss03.bzn"
+launchMessage = "tcssld03.wav"
+launchBackground = "load_race_nsdf.tga"
+planetName = "MARS - topography scan"
+planetInfo = "wrldmars.des"
+planetGeom = "wrldmarscox00.fbx"
+
+techCount = 4
+techName1 = "TU12 Advanced Mobile Unit Factory"
+techInfo1 = "avfact.inf"
+techGeom1 = "avfactcox00.fbx"
+techName2 = "Czar"
+techInfo2 = "svtank.inf"
+techGeom2 = "svtankcox00.fbx"
+techName3 = "LVT-4B Big Betty Dropship
+techInfo3 = "avdrop.inf"
+techGeom3 = "avdropcox_fly.fbx"
+techName4 = "Badger"
+techInfo4 = "avturr.inf"
+techGeom4 = "avturrcox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 6]
+missionTitle = "SS04 An Unexpected Connection (-)"
+missionInfo = "tcss04D.des"
+missionFile = "bztcss04.bzn"
+launchMessage = "tcssld04ext.wav"  //extended version to allow player to read BPG info
+launchBackground = "load_bpg.tga"
+planetName = "MARS - topography scan"
+planetInfo = "wrldmars.des"
+planetGeom = "wrldmarscox00.fbx"
+
+techCount = 4
+techName1 = "Factory"
+techInfo1 = "abfact.inf"
+techGeom1 = "abfactprop00.fbx"
+techName2 = "Longbow"
+techInfo2 = "avartl.inf"
+techGeom2 = "avartlcox00.fbx"
+techName3 = "TU8 Supply Launch Facility"
+techInfo3 = "avarmo.inf"
+techGeom3 = "avarmocox00.fbx"
+techName4 = "Recycler"
+techInfo4 = "sbrecy.inf"
+techGeom4 = "sbrecyprop00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 7]
+missionTitle = "BD03 Exploratory"
+missionInfo = "tcbd03D.des"
+missionFile = "bztcbd03.bzn"
+launchBackground = "load_mars.tga"
+planetName = "MARS - topography scan"
+planetInfo = "wrldmars.des"
+planetGeom = "wrldmarscox00.fbx"
+
+techCount = 3
+techName1 = "Hangar"
+techInfo1 = "sbhang.inf"
+techGeom1 = "sbhangcox00.fbx"
+techName2 = "Worker"
+techInfo2 = "svscav.inf"
+techGeom2 = "svscavcox00.fbx"
+techName3 = "Chain Tower"
+techInfo3 = "mbgtow.inf"
+techGeom3 = "mbgtowcox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 8]
+missionTitle = "BD04 The Mammoth Project"
+missionInfo = "tcbd04D.des"
+missionFile = "bztcbd04.bzn"
+launchBackground = "load_quote_arkin_img.tga"  //"load_quote_arkin.tga
+planetName = "MARS - topography scan"
+planetInfo = "wrldmars.des"
+planetGeom = "wrldmarscox00.fbx"
+
+techCount = 4
+techName1 = "Mammoth"
+techInfo1 = "svstnk.inf"
+techGeom1 = "svstnkcox00.fbx"
+techName2 = "Chain Tower"
+techInfo2 = "sbgtow.inf"
+techGeom2 = "sbgtowcox00.fbx"
+techName3 = "Pak"
+techInfo3 = "svturr.inf"
+techGeom3 = "svturrcox00.fbx"
+techName4 = "Wolverine-NX"
+techInfo4 = "nvmisl.inf"
+techGeom4 = "nvmislcox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 9]
+missionTitle = "SS05 Escape from Mars"
+missionInfo = "tcss05D.des"
+missionFile = "bztcss05.bzn"
+launchMessage = "tcssld05.wav"
+launchBackground = "load_mars_after.tga"
+planetName = "MARS - topography scan"
+planetInfo = "wrldmars.des"
+planetGeom = "wrldmarscox00.fbx"
+
+techCount = 4
+techName1 = "Heaval"
+techInfo1 = "avcons.inf"
+techGeom1 = "avconscox_skel.fbx"
+techName2 = "Extractor"
+techInfo2 = "abscav.inf"
+techGeom2 = "abscavcoxprop.fbx"
+techName3 = "Razor"
+techInfo3 = "avscout.inf"
+techGeom3 = "avscoutcox00.fbx"
+techName4 = "Launchpad"
+techInfo4 = "sblpad.inf"
+techGeom4 = "sblpadcox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 10]
+missionTitle = "SS06 Behind Enemy Lines"
+missionInfo = "tcss06D.des"
+missionFile = "bztcss06.bzn"
+launchMessage = "tcssld06.wav"
+launchBackground = "load_venus.tga"
+planetName = "VENUS - topography scan"
+planetInfo = "wrldvenu.des"
+planetGeom = "wrldvenucox00.fbx"
+
+techCount = 4
+techName1 = "Comm Tower"
+techInfo1 = "sbcbun.inf"
+techGeom1 = "sbcbuncox00.fbx"
+techName2 = "Supply Hangar"
+techInfo2 = "absbay.inf"
+techGeom2 = "absbaycox00.fbx"
+techName3 = "Wolverine"
+techInfo3 = "avmisl.inf"
+techGeom3 = "avmislcox00.fbx"
+techName4 = "Lightening Power"
+techInfo4 = "sbpgen1.inf"
+techGeom4 = "sbpgencox01.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 11]
+missionTitle = "SS07 A Nasty Surprise"
+missionInfo = "tcss07D.des"
+missionFile = "bztcss07.bzn"
+launchMessage = "tcssld07.wav"
+launchBackground = "load_venus_after.tga"
+planetName = "VENUS - topography scan"
+planetInfo = "wrldvenu.des"
+planetGeom = "wrldvenucox00.fbx"
+
+techCount = 3
+techName1 = "Thunderbolt"
+techInfo1 = "avrckt.inf"
+techGeom1 = "avrcktcox00.fbx"
+techName2 = "Tracker"
+techInfo2 = "avapc.inf"
+techGeom2 = "avapccox00.fbx"
+techName3 = "Lightening Power"
+techInfo3 = "abpgen1.inf"
+techGeom3 = "abpgencox01.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 12]
+missionTitle = "RS01 New Kids on the Block (+)"
+missionInfo = "tcrs01D.des"
+missionFile = "bztcrs01.bzn"
+launchBackground = "load_gany.tga"
+planetName = "GANYMEDE"
+planetInfo = "wrldgany.des"
+planetGeom = "wrldganycox00.fbx"
+
+techCount = 4
+techName1 = "CRA"
+techInfo1 = "koembl.inf"
+techGeom1 = "koemblprop.fbx"
+techName2 = "CRA Pilot"
+techInfo2 = "kspilo.inf"
+techGeom2 = "kspiloprop00.fbx"
+techName3 = "HLV-2C Elephant Dropship"
+techInfo3 = "kvdrop.inf"
+techGeom3 = "kvdropcox_fly.fbx"
+techName4 = "KU11 Mobile Unit Factory"
+techInfo4 = "kvrecy.inf"
+techGeom4 = "kvrecycox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 13]
+missionTitle = "SS08 Wrangling the Fleeing Herd (+)"
+missionInfo = "tcss08D.des"
+missionFile = "bztcss08.bzn"
+launchMessage = "tcssld08.wav"
+launchBackground = "load_venus.tga"
+planetName = "VENUS - topography scan"
+planetInfo = "wrldvenu.des"
+planetGeom = "wrldvenucox00.fbx"
+
+techCount = 4
+techName1 = "Cannoneer"
+techInfo1 = "svartl.inf"
+techGeom1 = "svartlcox00.fbx"
+techName2 = "Sasquatch"
+techInfo2 = "avwalk.inf"
+techGeom2 = "avwalkcox_skel.fbx"
+techName3 = "Bobcat"
+techInfo3 = "avmbike.inf"
+techGeom3 = "avmbikecox00.fbx"
+techName4 = "Field Lab"
+techInfo4 = "abtcen.inf"
+techGeom4 = "abtcencox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 14]
+missionTitle = "RS02 Protection (+)"
+missionInfo = "tcrs02D.des"
+missionFile = "bztcrs02.bzn"
+launchBackground = "load_race_cra.tga"
+planetName = "GANYMEDE"
+planetInfo = "wrldgany.des"
+planetGeom = "wrldganycox00.fbx"
+
+techCount = 4
+techName1 = "Field Lab"
+techInfo1 = "kbtcen.inf"
+techGeom1 = "kbtcencox00.fbx"
+techName2 = "KU12 Advanced Mobile Unit Factory"
+techInfo2 = "kvfact.inf"
+techGeom2 = "kvfactcox00.fbx"
+techName3 = "Solar Array"
+techInfo3 = "kbpgen0.inf"
+techGeom3 = "kbpgencox00.fbx"
+techName4 = "Comm Tower"
+techInfo4 = "kbcbun.inf"
+techGeom4 = "kbcbuncox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 15]
+missionTitle = "RB01 The Golem Ambush (+)"
+missionInfo = "tcrb01D.des"
+missionFile = "bztcrb01.bzn"
+launchBackground = "load_quote_alexi_img.tga"
+launchMessage = "tcssld01.ogg"  //give player time to read background
+planetName = "VENUS - topography scan"
+planetInfo = "wrldvenu.des"
+planetGeom = "wrldvenucox00.fbx"
+
+techCount = 4
+techName1 = "Golem"
+techInfo1 = "svwalk.inf"
+techGeom1 = "svwalkcox_skel.fbx"
+techName2 = "Comm Tower"
+techInfo2 = "abcbun.inf"
+techGeom2 = "abcbuncox00.fbx"
+techName3 = "HCT-6 Big Olga Dropship
+techInfo3 = "svdrop.inf"
+techGeom3 = "svdropcox_fly.fbx"
+techName4 = "Extractor"
+techInfo4 = "sbscav.inf"
+techGeom4 = "sbscavcoxprop.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 16]
+missionTitle = "RS03 Rescue Me"
+missionInfo = "tcrs03D.des"
+missionFile = "bztcrs03.bzn"
+launchBackground = "load_tro_cra_win.tga"
+planetName = "GANYMEDE"
+planetInfo = "wrldgany.des"
+planetGeom = "wrldganycox00.fbx"
+
+techCount = 4
+techName1 = "Rabbit"
+techInfo1 = "kvserv.inf"
+techGeom1 = "kvservcox00.fbx"
+techName2 = "Archer"
+techInfo2 = "kvartl.inf"
+techGeom2 = "kvartlcox00.fbx"
+techName3 = "Yeti"
+techInfo3 = "kvtank.inf"
+techGeom3 = "kvtankcox00.fbx"
+techName4 = "KU8 Supply Launch Facility"
+techInfo4 = "kvarmo.inf"
+techGeom4 = "kvarmocox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 17]
+missionTitle = "RB02 Precious Cargo"
+missionInfo = "tcrb02D.des"
+missionFile = "bztcrb02.bzn"
+launchBackground = "load_venus_after_cca.tga"
+planetName = "VENUS - topography scan"
+planetInfo = "wrldvenu.des"
+planetGeom = "wrldvenucox00.fbx"
+
+techCount = 3
+techName1 = "Revmir"
+techInfo1 = "svapc.inf"
+techGeom1 = "svapccox00.fbx"
+techName2 = "Wolverine BDS"
+techInfo2 = "bvmisl.inf"
+techGeom2 = "bvmislcox00.fbx"
+techName3 = "High-Speed Rocket Transport"
+techInfo3 = "sbcone.inf"
+techGeom3 = "sbconecox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 18]
+missionTitle = "RS04 From Out of Nowhere"
+missionInfo = "tcrs04D.des"
+missionFile = "bztcrs04.bzn"
+launchBackground = "load_tro_cra_yeti.tga"
+planetName = "GANYMEDE"
+planetInfo = "wrldgany.des"
+planetGeom = "wrldganycox00.fbx"
+
+techCount = 3
+techName1 = "Mongoose"
+techInfo1 = "kvscout.inf"
+techGeom1 = "kvscoutcox00.fbx"
+techName2 = "Pegasus Portal"
+techInfo2 = "kbprtl.inf"
+techGeom2 = "kbprtlcox00.fbx"
+techName3 = "Supply Hangar"
+techInfo3 = "sbsbay.inf"
+techGeom3 = "sbsbaycox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 19]
+missionTitle = "BD05 The Last Stand"
+missionInfo = "tcbd05D.des"
+missionFile = "bztcbd05.bzn"
+launchBackground = "load_venus.tga"
+planetName = "VENUS - topography scan"
+planetInfo = "wrldvenu.des"
+planetGeom = "wrldvenucox00.fbx"
+
+techCount = 4
+techName1 = "Launchpad"
+techInfo1 = "ablpad.inf"
+techGeom1 = "ablpadcox00.fbx"
+techName2 = "Comm Tower"
+techInfo2 = "bbcbun.inf"
+techGeom2 = "bbcbuncox00.fbx"
+techName3 = "Factory"
+techInfo3 = "bbfact.inf"
+techGeom3 = "bbfactprop00.fbx"
+techName4 = "Lightening Power"
+techInfo4 = "bbpgen1.inf"
+techGeom4 = "bbpgencox01.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 20]
+missionTitle = "BD06 Evacuate Venus"
+missionInfo = "tcbd06D.des"
+missionFile = "bztcbd06.bzn"
+launchBackground = "load_fail_nsd.tga"
+planetName = "VENUS - topography scan"
+planetInfo = "wrldvenu.des"
+planetGeom = "wrldvenucox00.fbx"
+
+techCount = 2
+techName1 = "Stoli"
+techInfo1 = "svmbike.inf"
+techGeom1 = "svmbikecox00.fbx"
+techName2 = "Bobcat"
+techInfo2 = "bvmbike.inf"
+techGeom2 = "bvmbikecox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 21]
+missionTitle = "RS05 Dire Straits"
+missionInfo = "tcrs05D.des"
+missionFile = "bztcrs05.bzn"
+launchBackground = "load_elysium.tga"
+planetName = "ELYSIUM"
+planetInfo = "wrldelys.des"
+planetGeom = "wrldelyscox00.fbx"
+
+techCount = 3
+techName1 = "Monkey"
+techInfo1 = "kvscav.inf"
+techGeom1 = "kvscavcox00.fbx"
+techName2 = "Extractor"
+techInfo2 = "kbscav.inf"
+techGeom2 = "kbscavcoxprop.fbx"
+techName3 = "Lightening Power"
+techInfo3 = "kbpgen1.inf"
+techGeom3 = "kbpgencox01.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 22]
+missionTitle = "RS06 Out There Somewhere"
+missionInfo = "tcrs06D.des"
+missionFile = "bztcrs06.bzn"
+launchBackground = "load_tro_cra_win.tga"
+planetName = "ELYSIUM"
+planetInfo = "wrldelys.des"
+planetGeom = "wrldelyscox00.fbx"
+
+techCount = 3
+techName1 = "Recycler"
+techInfo1 = "kbrecy.inf"
+techGeom1 = "kbrecyprop00.fbx"
+techName2 = "Stab Tower"
+techInfo2 = "kbgtow.inf"
+techGeom2 = "kbgtowcox00.fbx"
+techName3 = "Flash Tower"
+techInfo3 = "kbgtow1.inf"
+techGeom3 = "kbgtowcox01.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 23]
+missionTitle = "BD07 Retrieve Relics"
+missionInfo = "tcbd07D.des"
+missionFile = "bztcbd07.bzn"
+launchBackground = "load_io.tga"
+planetName = "IO - topography scan"
+planetInfo = "wrldioio.des"
+planetGeom = "wrldioiocox00.fbx"
+
+techCount = 2
+techName1 = "Badger"
+techInfo1 = "bvturr.inf"
+techGeom1 = "bvturrcox00.fbx"
+techName2 = "LVT-4B  Big Butch Dropship"
+techInfo2 = "bvdrop.inf"
+techGeom2 = "bvdropcox_fly.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 24]
+missionTitle = "SS09 The Race is On"
+missionInfo = "tcss09D.des"
+missionFile = "bztcss09.bzn"
+launchMessage = "tcssld09.wav"
+launchBackground = "load_io.tga"
+planetName = "IO - topography scan"
+planetInfo = "wrldioio.des"
+planetGeom = "wrldioiocox00.fbx"
+
+techCount = 3
+techName1 = "SU8 Supply Launch Facility"
+techInfo1 = "svarmo.inf"
+techGeom1 = "svarmocox00.fbx"
+techName2 = "Blast Tower"
+techInfo2 = "abgtow.inf"
+techGeom2 = "abgtowcox00.fbx"
+techName3 = "Silo"
+techInfo3 = "abscup.inf"
+techGeom3 = "absilocox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 25]
+missionTitle = "RS07 Leave Home"
+missionInfo = "tcrs07D.des"
+missionFile = "bztcrs07.bzn"
+launchBackground = "load_europa.tga"
+planetName = "EUROPA"
+planetInfo = "wrldeurp.des"
+planetGeom = "wrldeurpcox00.fbx"
+
+techCount = 2
+techName1 = "CCA Pilot"
+techInfo1 = "sspilo.inf"
+techGeom1 = "sspiloprop00.fbx"
+techName2 = "Solar Array"
+techInfo2 = "sbpgen0.inf"
+techGeom2 = "sbpgencox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 26]
+missionTitle = "SS10 Bring it Home"
+missionInfo = "tcss10D.des"
+missionFile = "bztcss10.bzn"
+launchMessage = "tcssld10.wav"
+launchBackground = "load_io_after.tga"
+planetName = "IO - topography scan"
+planetInfo = "wrldioio.des"
+planetGeom = "wrldioiocox00.fbx"
+
+techCount = 4
+techName1 = "Dr. Wilhelm Arkin, CEO"
+techInfo1 = "nsarkn.inf"
+techGeom1 = "nsarknprop.fbx"
+techName2 = "Armory"
+techInfo2 = "abarmo.inf"
+techGeom2 = "abarmocox00.fbx"
+techName3 = "Tusker"
+techInfo3 = "svmisl.inf"
+techGeom3 = "svmislcox00.fbx"
+techName4 = "Hauler"
+techInfo4 = "avtug.inf"
+techGeom4 = "avtugcox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 27]
+missionTitle = "RS08 Light Up and Let Go"
+missionInfo = "tcrs08D.des"
+missionFile = "bztcrs08.bzn"
+launchBackground = "load_gany.tga"
+planetName = "GANYMEDE"
+planetInfo = "wrldgany.des"
+planetGeom = "wrldganycox00.fbx"
+
+techCount = 4
+techName1 = "Emperor"
+techInfo1 = "kvhtnk.inf"
+techGeom1 = "kvhtnkcox00.fbx"
+techName2 = "Armory"
+techInfo2 = "sbarmo.inf"
+techGeom2 = "sbarmocox00.fbx"
+techName3 = "Shield Tower"
+techInfo3 = "kbshld.inf"
+techGeom3 = "kbshldcox00.fbx"
+techName4 = "Shield Tower"
+techInfo4 = "sbshld.inf"
+techGeom4 = "sbshldcox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 28]
+missionTitle = "RB03 The Evil Battlion"
+missionInfo = "tcrb03D.des"
+missionFile = "bztcrb03.bzn"
+launchBackground = "load_race_cca.tga"
+planetName = "IO - topography scan"
+planetInfo = "wrldioio.des"
+planetGeom = "wrldioiocox00.fbx"
+
+techCount = 3
+techName1 = "Grendel"
+techInfo1 = "svrckt.inf"
+techGeom1 = "svrcktcox00.fbx"
+techName2 = "Recycler"
+techInfo2 = "bbrecy.inf"
+techGeom2 = "bbrecyprop00.fbx"
+techName3 = "Factory"
+techInfo3 = "sbfact.inf"
+techGeom3 = "sbfactprop00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 29]
+missionTitle = "DW01 Close Target Wrecky"
+missionInfo = "tcdw01D.des"
+missionFile = "bztcdw01.bzn"
+launchMessage = "tcdwld01.wav"
+launchBackground = "load_tro_bds_scav.tga"
+planetName = "GANYMEDE"
+planetInfo = "wrldgany.des"
+planetGeom = "wrldganycox00.fbx"
+//see note way above, file left out// preBriefMovie = "tcdwintro.ogv"
+
+techCount = 2
+techName1 = "BU11 Mobile Unit Factory"
+techInfo1 = "bvrecy.inf"
+techGeom1 = "bvrecycox00.fbx"
+techName2 = "Armory"
+techInfo2 = "kbarmo.inf"
+techGeom2 = "kbarmocox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 30]
+missionTitle = "DW02 Hidden Enemy"
+missionInfo = "tcdw02D.des"
+missionFile = "bztcdw02.bzn"
+launchMessage = "tcdwld02.wav"
+launchBackground = "load_tro_bds_scav_2.tga"
+planetName = "GANYMEDE"
+planetInfo = "wrldgany.des"
+planetGeom = "wrldganycox00.fbx"
+
+techCount = 2
+techName1 = "Razor"
+techInfo1 = "bvscout.inf"
+techGeom1 = "bvscoutcox00.fbx"
+techName2 = "Phoenix"
+techInfo2 = "kvrckt.inf"
+techGeom2 = "kvrcktcox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 31]
+missionTitle = "RB04 Io's Bridge"
+missionInfo = "tcrb04D.des"
+missionFile = "bztcrb04.bzn"
+launchBackground = "load_cca_red_star.tga"
+planetName = "IO - topography scan"
+planetInfo = "wrldioio.des"
+planetGeom = "wrldioiocox00.fbx"
+
+techCount = 2
+techName1 = "Tractor"
+techInfo1 = "svtug.inf"
+techGeom1 = "svtugcox00.fbx"
+techName2 = "Erector"
+techInfo2 = "svcons.inf"
+techGeom2 = "svconscox_skel.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 32]
+missionTitle = "DW03 Spilt Milk"
+missionInfo = "tcdw03D.des"
+missionFile = "bztcdw03.bzn"
+launchMessage = "tcdwld03.wav"
+launchBackground = "load_tro_bds.tga"
+planetName = "GANYMEDE"
+planetInfo = "wrldgany.des"
+planetGeom = "wrldganycox00.fbx"
+
+techCount = 2
+techName1 = "Red Devil"
+techInfo1 = "bvstnk.inf"
+techGeom1 = "bvstnkcox00.fbx"
+techName2 = "Rat Pack"
+techInfo2 = "bvapc.inf"
+techGeom2 = "bvapccox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 33]
+missionTitle = "RB05 Controlling the High Ground"
+missionInfo = "tcrb05D.des"
+missionFile = "bztcrb05.bzn"
+launchBackground = "load_win_cca.tga"
+planetName = "TITAN - topography scan"
+planetInfo = "wrldtitn.des"
+planetGeom = "wrldtitncox00.fbx"
+
+techCount = 2
+techName1 = "Longbow"
+techInfo1 = "bvartl.inf"
+techGeom1 = "bvartlcox00.fbx"
+techName2 = "Sasquatch"
+techInfo2 = "bvwalk.inf"
+techGeom2 = "bvwalkcox_skel.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 34]
+missionTitle = "DW04 Wolf In Sheep's Clothing"
+missionInfo = "tcdw04D.des"
+missionFile = "bztcdw04.bzn"
+launchMessage = "tcdwld04.wav"
+launchBackground = "load_gany.tga"
+planetName = "GANYMEDE"
+planetInfo = "wrldgany.des"
+planetGeom = "wrldganycox00.fbx"
+
+techCount = 3
+techName1 = "Supply Hangar"
+techInfo1 = "kbsbay.inf"
+techGeom1 = "kbsbaycox00.fbx"
+techName2 = "Ox"
+techInfo2 = "kvtug.inf"
+techGeom2 = "kvtugcox00.fbx"
+techName3 = "Barracks"
+techInfo3 = "kbtrain.inf"
+techGeom3 = "kbtraincox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 35]
+missionTitle = "DW05 Achilles Heel"
+missionInfo = "tcdw05D.des"
+missionFile = "bztcdw05.bzn"
+launchMessage = "tcdwld05.wav"
+launchBackground = "load_tro_cra_lose.tga"
+planetName = "GANYMEDE"
+planetInfo = "wrldgany.des"
+planetGeom = "wrldganycox00.fbx"
+
+techCount = 4
+techName1 = "Khan"
+techInfo1 = "kvmine.inf"
+techGeom1 = "kvminecox00.fbx"
+techName2 = "Hauler"
+techInfo2 = "bvtug.inf"
+techGeom2 = "bvtugcox00.fbx"
+techName3 = "Barracks"
+techInfo3 = "bbtrain.inf"
+techGeom3 = "bbtraincox00.fbx"
+techName4 = "Extractor"
+techInfo4 = "bbscav.inf"
+techGeom4 = "bbscavcoxprop.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 36]
+missionTitle = "RB06 Clear the Path"
+missionInfo = "tcrb06D.des"
+missionFile = "bztcrb06.bzn"
+launchBackground = "load_titan_after_cca.tga"
+planetName = "TITAN - topography scan"
+planetInfo = "wrldtitn.des"
+planetGeom = "wrldtitncox00.fbx"
+
+techCount = 2
+techName1 = "SU19 Mobile Unit Factory"
+techInfo1 = "svrecy.inf"
+techGeom1 = "svrecycox00.fbx"
+techName2 = "Silo"
+techInfo2 = "bbscup.inf"
+techGeom2 = "bbsilocox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 37]
+missionTitle = "DW06 Blitzkrieg"
+missionInfo = "tcdw06D.des"
+missionFile = "bztcdw06.bzn"
+launchMessage = "tcdwld06.wav"
+launchBackground = "load_tro_cra_lose.tga"
+planetName = "GANYMEDE"
+planetInfo = "wrldgany.des"
+planetGeom = "wrldganycox00.fbx"
+
+techCount = 2
+techName1 = "Scavenger"
+techInfo1 = "bvscav.inf"
+techGeom1 = "bvscavcox00.fbx"
+techName2 = "Adder"
+techInfo2 = "kvturr.inf"
+techGeom2 = "kvturrcox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 38]
+missionTitle = "DW07 Terra Incognita"
+missionInfo = "tcdw07D.des"
+missionFile = "bztcdw07.bzn"
+launchMessage = "tcdwld07.wav"
+launchBackground = "load_elysium.tga"
+planetName = "ELYSIUM"
+planetInfo = "wrldelys.des"
+planetGeom = "wrldelyscox00.fbx"
+
+techCount = 3
+techName1 = "Supply Hangar"
+techInfo1 = "bbsbay.inf"
+techGeom1 = "bbsbaycox00.fbx"
+techName2 = "Nightengale"
+techInfo2 = "bvserv.inf"
+techGeom2 = "bvservcox00.fbx"
+techName3 = "Field Lab"
+techInfo3 = "bbtcen.inf"
+techGeom3 = "bbtcencox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 39]
+missionTitle = "RB07 Reclaim Our Base"
+missionInfo = "tcrb07D.des"
+missionFile = "bztcrb07.bzn"
+launchBackground = "load_lose_cca.tga"
+planetName = "TITAN - topography scan"
+planetInfo = "wrldtitn.des"
+planetGeom = "wrldtitncox00.fbx"
+
+techCount = 3
+techName1 = "Wind Power"
+techInfo1 = "sbpgen2.inf"
+techGeom1 = "sbpgencox02.fbx"
+techName2 = "SU12 Advanced Mobile Unit Factory"
+techInfo2 = "svfact.inf"
+techGeom2 = "svfactcox00.fbx"
+techName3 = "Wind Power"
+techInfo3 = "bbpgen2.inf"
+techGeom3 = "bbpgencox02.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 40]
+missionTitle = "DW08 Hook, Line, and Sinker"
+missionInfo = "tcdw08D.des"
+missionFile = "bztcdw08.bzn"
+launchMessage = "tcdwld08.wav"
+launchBackground = "load_tro_cra_win.tga"
+planetName = "GANYMEDE"
+planetInfo = "wrldgany.des"
+planetGeom = "wrldganycox00.fbx"
+
+techCount = 2
+techName1 = "Blast Tower"
+techInfo1 = "bbgtow.inf"
+techGeom1 = "bbgtowcox00.fbx"
+techName2 = "Panda"
+techInfo2 = "kvapc.inf"
+techGeom2 = "kvapccox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 41]
+missionTitle = "DW09 Grand Theft Portal"
+missionInfo = "tcdw09D.des"
+missionFile = "bztcdw09.bzn"
+launchMessage = "tcdwld09.wav"
+launchBackground = "load_elysium.tga"
+planetName = "ELYSIUM"
+planetInfo = "wrldelys.des"
+planetGeom = "wrldelyscox00.fbx"
+
+techCount = 3
+techName1 = "Naga"
+techInfo1 = "kvmbike.inf"
+techGeom1 = "kvmbikecox00.fbx"
+techName2 = "Field HQ"
+techInfo2 = "kbhqtr.inf"
+techGeom2 = "kbhqtrcox00.fbx"
+techName3 = "Yeren"
+techInfo3 = "kvwalk.inf"
+techGeom3 = "kvwalkcox_skel.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 42]
+missionTitle = "RB08 Punishing the Black Dogs"
+missionInfo = "tcrb08D.des"
+missionFile = "bztcrb08.bzn"
+launchBackground = "load_titan_after_cca_bdog.tga"
+planetName = "TITAN - topography scan"
+planetInfo = "wrldtitn.des"
+planetGeom = "wrldtitncox00.fbx"
+
+techCount = 2
+techName1 = "Red Hammer"
+techInfo1 = "svhtnk.inf"
+techGeom1 = "svhtnkcox00.fbx"
+techName2 = "Barracks"
+techInfo2 = "sbtrain.inf"
+techGeom2 = "sbtraincox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 43]
+missionTitle = "DW10 The Enemy Within"
+missionInfo = "tcdw10D.des"
+missionFile = "bztcdw10.bzn"
+launchMessage = "tcdwld10.wav"
+launchBackground = "load_tro_bds.tga"
+planetName = "ELYSIUM"
+planetInfo = "wrldelys.des"
+planetGeom = "wrldelyscox00.fbx"
+
+techCount = 2
+techName1 = "Factory"
+techInfo1 = "kbfact.inf"
+techGeom1 = "kbfactprop00.fbx"
+techName2 = "Wind Power"
+techInfo2 = "kbpgen2.inf"
+techGeom2 = "kbpgencox02.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 44]
+missionTitle = "DW11 Stranded"
+missionInfo = "tcdw11D.des"
+missionFile = "bztcdw11.bzn"
+launchMessage = "tcdwld11.wav"
+launchBackground = "load_elysium.tga"
+planetName = "ELYSIUM"
+planetInfo = "wrldelys.des"
+planetGeom = "wrldelyscox00.fbx"
+
+techCount = 2
+techName1 = "BU8 Supply Launch Facility"
+techInfo1 = "bvarmo.inf"
+techGeom1 = "bvarmocox00.fbx"
+techName2 = "Dragon"
+techInfo2 = "kvmisl.inf"
+techGeom2 = "kvmislcox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 45] 
+missionTitle = "SS11 Flying Solo"
+missionInfo = "tcss11D.des"
+missionFile = "bztcss11.bzn"
+launchMessage = "tcssld11.wav"
+launchBackground = "load_europa.tga"
+planetName = "EUROPA"
+planetInfo = "wrldeurp.des"
+planetGeom = "wrldeurpcox00.fbx"
+
+techCount = 2
+techName1 = "Field HQ"
+techInfo1 = "sbhqtr.inf"
+techGeom1 = "sbhqtrcox00.fbx"
+techName2 = "Silo"
+techInfo2 = "sbscup.inf"
+techGeom2 = "sbsilocox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 46]
+missionTitle = "SS12 Total Destruction"
+missionInfo = "tcss12D.des"
+missionFile = "bztcss12.bzn"
+launchMessage = "tcssld12.wav"
+launchBackground = "load_europa_after.tga"
+planetName = "EUROPA"
+planetInfo = "wrldeurp.des"
+planetGeom = "wrldeurpcox00.fbx"
+
+techCount = 3
+techName1 = "Molotov"
+techInfo1 = "svmine.inf"
+techGeom1 = "svminecox00.fbx"
+techName2 = "Nightengale"
+techInfo2 = "avserv.inf"
+techGeom2 = "avservcox00.fbx"
+techName3 = "Solar Array"
+techInfo3 = "abpgen0.inf"
+techGeom3 = "abpgencox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 47]
+missionTitle = "DW12 Meanwhile, Back at the Ranch"
+missionInfo = "tcdw12D.des"
+missionFile = "bztcdw12.bzn"
+launchMessage = "tcdwld12.wav"
+launchBackground = "load_gany.tga"
+planetName = "GANYMEDE"
+planetInfo = "wrldgany.des"
+planetGeom = "wrldganycox00.fbx"
+
+techCount = 2
+techName1 = "Shield Tower"
+techInfo1 = "bbshld.inf"
+techGeom1 = "bbshldcox00.fbx"
+techName2 = "Solar Array"
+techInfo2 = "bbpgen0.inf"
+techGeom2 = "bbpgencox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 48]
+missionTitle = "DW13 Frustrate Their Knavish Tricks"
+missionInfo = "tcdw13D.des"
+missionFile = "bztcdw13.bzn"
+launchMessage = "tcdwld13.wav"
+launchBackground = "load_tro_cra_lose.tga"
+planetName = "GANYMEDE"
+planetInfo = "wrldgany.des"
+planetGeom = "wrldganycox00.fbx"
+
+techCount = 3
+techName1 = "Silo"
+techInfo1 = "kbscup.inf"
+techGeom1 = "kbsilocox00.fbx"
+techName2 = "Heaval"
+techInfo2 = "bvcons.inf"
+techGeom2 = "bvconscox_skel.fbx"
+techName3 = "Field HQ"
+techInfo3 = "bbhqtr.inf"
+techGeom3 = "bbhqtrcox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 49]
+missionTitle = "SS13 The Three Beacons"
+missionInfo = "tcss13D.des"
+missionFile = "bztcss13.bzn"
+launchMessage = "tcssld13.wav"
+launchBackground = "load_titan.tga"
+planetName = "TITAN - topography scan"
+planetInfo = "wrldtitn.des"
+planetGeom = "wrldtitncox00.fbx"
+
+techCount = 3
+techName1 = "Barracks"
+techInfo1 = "abtrain.inf"
+techGeom1 = "abtraincox00.fbx"
+techName2 = "Unabomber"
+techInfo2 = "avmine.inf"
+techGeom2 = "avminecox00.fbx"
+techName3 = "Field Lab"
+techInfo3 = "sbtcen.inf"
+techGeom3 = "sbtcencox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 50]
+missionTitle = "SS14 United We Fight, United We Die"
+missionInfo = "tcss14D.des"
+missionFile = "bztcss14.bzn"
+launchMessage = "tcssld14.wav"
+launchBackground = "load_race_fury.tga"
+planetName = "TITAN - topography scan"
+planetInfo = "wrldtitn.des"
+planetGeom = "wrldtitncox00.fbx"
+
+techCount = 4
+techName1 = "Furies Reborn"
+techInfo1 = "yoembl.inf"
+techGeom1 = "yoemblprop.fbx"
+techName2 = "Athos"
+techInfo2 = "yvrckt.inf"
+techGeom2 = "yvrcktcox00.fbx"
+techName3 = "Pallas"
+techInfo3 = "yvartl.inf"
+techGeom3 = "yvartlcox00.fbx"
+techName4 = "Damysus"
+techInfo4 = "yvscout.inf"
+techGeom4 = "yvscoutcox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 51]
+missionTitle = "BD08 The Silencers"
+missionInfo = "tcbd08D.des"
+missionFile = "bztcbd08.bzn"
+launchBackground = "load_titan.tga"
+planetName = "TITAN - topography scan"
+planetInfo = "wrldtitn.des"
+planetGeom = "wrldtitncox00.fbx"
+
+techCount = 3
+techName1 = "BD13-X Goliath"
+techInfo1 = "bvhtnk.inf"
+techGeom1 = "bvhtnkcox00.fbx"
+techName2 = "Sassquatch-NX"
+techInfo2 = "nvwalk.inf"
+techGeom2 = "nvwalkcox_skel.fbx"
+techName3 = "Longbow-NX"
+techInfo3 = "nvartl.inf"
+techGeom3 = "nvartlcox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 52]
+missionTitle = "DW14 Lifeline"
+missionInfo = "tcdw14D.des"
+missionFile = "bztcdw14.bzn"
+launchMessage = "tcdwld14.wav"
+launchBackground = "load_tro_cra_win.tga"
+planetName = "GANYMEDE"
+planetInfo = "wrldgany.des"
+planetGeom = "wrldganycox00.fbx"
+
+techCount = 2
+techName1 = "Unabomber"
+techInfo1 = "bvmine.inf"
+techGeom1 = "bvminecox00.fbx"
+techName2 = "Armory"
+techInfo2 = "bbarmo.inf"
+techGeom2 = "bbarmocox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 53]
+missionTitle = "BD09 Capture The Armory"
+missionInfo = "tcbd09D.des"
+missionFile = "bztcbd09.bzn"
+launchBackground = "load_europa.tga"
+planetName = "EUROPA"
+planetInfo = "wrldeurp.des"
+planetGeom = "wrldeurpcox00.fbx"
+
+techCount = 4
+techName1 = "Mammoth"
+techInfo1 = "mvstnk.inf"
+techGeom1 = "mvstnkcox00.fbx"
+techName2 = "Grendel"
+techInfo2 = "mvrckt.inf"
+techGeom2 = "mvrcktcox00.fbx"
+techName3 = "Thunderbolt-NX"
+techInfo3 = "nvrckt.inf"
+techGeom3 = "nvrcktcox00.fbx"
+techName4 = "Field HQ"
+techInfo4 = "nbhqtr.inf"
+techGeom4 = "nbhqtrcox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 54]
+missionTitle = "DW15 The Best Laid Plans..."
+missionInfo = "tcdw15D.des"
+missionFile = "bztcdw15.bzn"
+launchMessage = "tcdwld15.wav"
+launchBackground = "load_tro_bds.tga"
+planetName = "GANYMEDE"
+planetInfo = "wrldgany.des"
+planetGeom = "wrldganycox00.fbx"
+
+techCount = 2
+techName1 = "High-Speed Rocket Transport"
+techInfo1 = "kbcone.inf"
+techGeom1 = "kbconecox00.fbx"
+techName2 = "Launchpad"
+techInfo2 = "kblpad.inf"
+techGeom2 = "kblpadcox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 55]
+missionTitle = "SS15 Strike at the Heart"
+missionInfo = "tcss15D.des"
+missionFile = "bztcss15.bzn"
+launchMessage = "tcssld15.wav"
+launchBackground = "load_titan_after.tga"
+planetName = "TITAN - topography scan"
+planetInfo = "wrldtitn.des"
+planetGeom = "wrldtitncox00.fbx"
+
+techCount = 4
+techName1 = "Fury Pilot"
+techInfo1 = "yspilo.inf"
+techGeom1 = "yspiloprop00.fbx"
+techName2 = "Ladon"
+techInfo2 = "yvtank.inf"
+techGeom2 = "yvtankcox00.fbx"
+techName3 = "Bolt Tower"
+techInfo3 = "ybgtow.inf"
+techGeom3 = "ybgtowcox00.fbx"
+techName4 = "Field HQ"
+techInfo4 = "abhqtr.inf"
+techGeom4 = "abhqtrcox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 56]
+missionTitle = "BD10 Prepare to Evacuate"
+missionInfo = "tcbd10D.des"
+missionFile = "bztcbd10.bzn"
+launchBackground = "load_luna.tga"
+planetName = "LUNA"
+planetInfo = "wrldmoon.des"
+planetGeom = "wrldlunacox00.fbx"
+
+techCount = 4
+techName1 = "High-Speed Transport Rocket"
+techInfo1 = "abcone.inf"
+techGeom1 = "abconecox00.fbx"
+techName2 = "AOC-NX"
+techInfo2 = "nvark0.inf"
+techGeom2 = "nvarkncox00.fbx"
+techName3 = "Blast Tower"
+techInfo3 = "nbgtow.inf"
+techGeom3 = "nbgtowcox00.fbx"
+techName4 = "Mammoth"
+techInfo4 = "nvstnk.inf"
+techGeom4 = "nvstnkcox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 57]
+missionTitle = "SS16 Tapping the Core"
+missionInfo = "tcss16D.des"
+missionFile = "bztcss16.bzn"
+launchMessage = "tcssld16.wav"
+launchBackground = "load_achilles.tga"
+planetName = "ACHILLES"
+planetInfo = "wrldachl.des"
+planetGeom = "wrldachlcox00.fbx"
+
+techCount = 4
+techName1 = "Factory"
+techInfo1 = "ybfact.inf"
+techGeom1 = "ybfactprop00.fbx"
+techName2 = "Colossus"
+techInfo2 = "yvwalk.inf"
+techGeom2 = "yvwalkcox_skel.fbx"
+techName3 = "Chimera"
+techInfo3 = "yvmbike.inf"
+techGeom3 = "yvmbikecox00.fbx"
+techName4 = "Shield Tower"
+techInfo4 = "abshld.inf"
+techGeom4 = "abshldcox00.fbx"
+
+////////////////////////////////////////////////////////////
+[ISDF 58]
+missionTitle = "SS17 The Ultimate Quake"
+missionInfo = "tcss17D.des"
+missionFile = "bztcss17.bzn"
+launchMessage = "tcssld17.wav"
+launchBackground = "load_win_nsdf.tga"
+planetName = "ACHILLES dying"
+planetInfo = "wrldachl1.des"
+planetGeom = "wrldachlcox10.fbx"
+
+techCount = 4
+techName1 = "Manticore"
+techInfo1 = "yvhtnk.inf"
+techGeom1 = "yvhtnkcox00.fbx"
+techName2 = "Medusa"
+techInfo2 = "yvmisl.inf"
+techGeom2 = "yvmislcox00.fbx"
+techName3 = "Teucer"
+techInfo3 = "yvturr.inf"
+techGeom3 = "yvturrcox00.fbx"
+techName4 = "Goliath"
+techInfo4 = "avhtnk.inf"
+techGeom4 = "avhtnkcox00.fbx"
+
+///////////END SCREEN NO MISSION (Don't Count at top)//////////////////////////
+[ISDF 59]
+missionTitle = "Congratulations"
+missionInfo = "bztccredits.des"
+planetName = "Earth"
+planetInfo = "wrldeartss18.des"
+planetGeom = "wrldeartcox00.fbx"
+
+///////////////////////campaign runs through ISDF
+//[SCION 1]

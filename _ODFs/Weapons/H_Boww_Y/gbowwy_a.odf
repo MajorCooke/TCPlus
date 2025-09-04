@@ -1,0 +1,17 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gbowwy_a"
+classLabel = "cannon"
+//geometry in combat version
+ordName = "obowwy_a"
+wpnName = "BOWW A"
+fireSound = "sonic01.wav"
+wpnReticle = "gsoncs_a"
+wpnCategory = "HAND"
+isAssault = 1
+isFlying = 1
+altName = "gbowwy_c"
+aiRange = 190
+
+[CannonClass]
+shotDelay =  1.0

@@ -1,0 +1,26 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "osatca"
+classLabel = "satchel"
+geometryName = "agsatccox00.fbx"
+geometryScale = 0.4  //make it visible  Coxxon  //0.12
+scrapCost = 0
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 1
+unitName = "Satchel Charge"
+
+/////// BUILDLIMIT ///////////////
+limitClass1 = "satchel"  //satc
+limitClass1Count = 1  //satc
+limitClass1Text = "Limit Reached"   //satc
+
+/////// PROVIDES ///////////////////
+provideName1 = "satchel"  //satc
+
+[BuildingClass]
+soundAmbient = "switch01.wav"
+
+[MineClass]
+lifeSpan = 30.0  //countdown clock
+xplBlast = "xsatc"  //Coxxon  //"xsatxpl"

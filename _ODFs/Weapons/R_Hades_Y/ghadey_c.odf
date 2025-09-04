@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "ghadey_c"
+classLabel = "cannon"
+altName = "ghadey_a"
+ordName = "ohadey_c"
+wpnName = "Hades C"
+fireSound = "crckt01.wav"
+wpnReticle = "garcca_c"  //"gfafm"
+wpnCategory = "ROCK"
+isAssault = 0
+aiRange = 150  //Coxxon  //120
+
+[CannonClass]
+shotDelay = 2.0  //for shotalternate Coxxon  //1.0 // 1/sec
+shotAlternate = 1

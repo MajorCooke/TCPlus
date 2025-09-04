@@ -1,0 +1,18 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ogatls_a"
+classLabel = "bullet"
+
+ammoCost = 20.0
+lifeSpan = 1.3  //130m
+shotSpeed = 100.0 
+
+damageValue(N) = 600 // none
+damageValue(L) = 600 // light
+damageValue(H) = 600 // heavy
+
+damageValue(S) = 600 // standard
+damageValue(D) = 600 // deflection
+damageValue(A) = 600 // absorption 
+
+renderName = "ogatls_c.tracer"

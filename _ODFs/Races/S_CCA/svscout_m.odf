@@ -1,0 +1,52 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "svscout_m"
+classLabel = "svscout"
+
+scrapCost = 20
+customCost = 50
+maxHealth = 1800  //bzcc ivscout deflt
+
+unitName = "Empty sct"
+unitIcon = "icon_svscout.png"
+
+aiName = "SentryProcess"  //"ScoutFriend"
+aiName2 = "SentryProcess"  //"ScoutEnemy"
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "svscout"
+provideName2 = "svscout_m"
+provideName3 = "VIRTUAL_CLASS_SCOUT"
+provideName4 = "DefendUnit"
+
+/////// weapons ////////////////////
+weaponMask = 11111  //00011
+weaponHard1 = "HP_GUN_1"
+weaponName1 = "gminia_c"
+weaponAssault1 = 0
+recoilName1 = "recoil1"
+weaponHard2 = "HP_GUN_2"
+weaponName2 = "gminia_c"
+weaponAssault2 = 0
+recoilName2 = "recoil2"
+weaponHard3 = ""
+weaponName3 = ""
+weaponAssault3 = 0
+recoilName3 = "recoil3"
+weaponHard4 = ""
+weaponName4 = ""
+weaponAssault4 = 0
+recoilName4 = "recoil4"
+weaponHard5 = ""
+weaponName5 = ""
+weaponAssault5 = 0
+
+/////////////////////////////////////////////////////////
+[CraftClass]
+
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_svscoutcox"
+
+//////////////////////////////////////////////////////////
+[HoverCraftClass]

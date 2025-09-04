@@ -1,0 +1,18 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gstbsa_a"
+classLabel = "cannon"
+altName = "gstbsa_c"
+ordName = "ostbsa_a"
+wpnName = "Super Stabber A"
+fireSound = "spstab01.wav"
+wpnReticle = "gstbsa"
+wpnCategory = "CANN"
+isAssault = 1
+flashName = "gstbsa_c.flash"
+aiRange = 150
+
+[CannonClass]
+shotDelay = 1.75
+shotAlternate = 1
+

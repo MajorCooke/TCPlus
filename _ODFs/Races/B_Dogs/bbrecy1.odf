@@ -1,0 +1,38 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "bbrecy1"
+classLabel = "bbrecy"  //"recycler"
+
+upgradeName = "bvrecy1"
+
+isSingle = 1  //depbld  Coxxon//limitClass1 ="bbrecy1"  //depbld Coxxon
+//limitClass1Count = 1  //depbld Coxxon
+//limitClass1Text = "Only One Allowed"  //depbld Coxxon
+
+//limitClass2 = "bvrecy1"  //depbld Coxxon
+//limitClass2Count = 1  //depbld Coxxon
+//limitClass2Text = "Only One Allowed"  //depbld Coxxon
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+
+provideName5 = "bbrecy1"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_bbrecycox"
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+bldEdge = "wwww"  //recy
+
+///////////////////////////////////////////////////////////////
+[FactoryClass]
+
+buildItem5 = "bvcons1"
+
+///////////////////////////////////////////////////////////////
+[RecyclerClass]

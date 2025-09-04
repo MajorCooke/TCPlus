@@ -1,0 +1,57 @@
+[GameObjectClass]
+baseName = "elytree05"
+geometryName = "elytreecox05.fbx"
+classLabel = "plant"
+collisionRadius = 1.0
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0  //1000  //plant
+maxAmmo = 0
+unitName = "Elysium Tree 5"
+explosionName = "xplnxpl"
+canDetect = 0
+canInteract = 0
+
+/////////LIGHTS AND EFFECTS//////////////////
+//lightHard1 = "hp_light_0"
+//lightName1 = "o_yellow_nf"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "elytree05.spore"
+
+[spore]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.3
+//emitDelayVar = 0.01
+emitVelocity = "0.0 5.0 0.0"
+emitVariance = "5.0 0.0 5.0"
+emitLife =1.0
+textureName =  "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "150 70 120 200"
+finishColor = "75 35 65 0" 
+startRadius = 4.0
+finishRadius = 7.0
+animateTime = 1.0
+rotationRate = 3.0
+
+[PlantClass]
+standUp = 1
+
+typeOfDeath = 0       // 0:none, 1:explode, 2:fall, 3:burn, 4:carFall&bulletBurn
+hitRadius = 2          // collision cylinder
+deadTime = 120          // will regenerate after N seconds (-1: stay dead forever)
+growTime = 4           // it will take N seconds to grow
+
+burnTime = 20          // it will take N seconds to burn
+fallTime = 4           // it will take N seconds to fall over
+
+hitGroundName = "xplnxpl"
+hitByCarName = "xplnxpl"
+hitByBulletName = "xplnxpl"
+
+bigFlame = "treefire"
+smallFlame = "treeflame"
+
+darkRadius = 32         // 28m radius
+darkScale = .6  // 1/8 of the original intensity

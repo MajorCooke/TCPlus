@@ -1,0 +1,20 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ofafma_a"
+classLabel = "ofafma_c"
+
+ammoCost = 100
+lifeSpan = 2.0 // 200m
+shotSpeed = 100.0
+
+damageValue(N) = 150 // none
+damageValue(L) = 270 // light
+damageValue(H) = 120 // heavy
+
+damageValue(S) = 120 // standard
+damageValue(D) = 105 // deflection
+damageValue(A) = 150 // absorption
+
+[MissileClass]
+
+[ThermalMissileClass]

@@ -1,0 +1,232 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "bvrecyd3"
+classLabel = "recyclervehicleH"
+geometryName = "bvrecycox00.fbx" 
+cockpitName = "bvhtnkcox_cockpit.fbx"
+animCount = 1
+animName1 = "deploy"
+animFile1 = "bvrecycox01.fbx"
+collisionRadius = 1.0  //recy
+scrapCost = 40  //depbld  Coxxon
+scrapValue = 30
+buildTime = 5.0  //depbld  //10.0
+maxHealth = 6000  //rec
+addHealth = 3  //rec
+maxAmmo = 0
+unitName = "TU11bd muf"  //"Recycler"
+unitIcon = "icon_bvrecy.png"
+//unitStatus = "wire_bvrecy.png"
+infoName = "bvrecy.inf"
+aiName = "DeployBuildingHFriend"
+aiName2 = "DeployBuildingHEnemy"
+heatSignature = 2.0
+imageSignature = 5.0
+radarSignature = 5.0
+isAssault = 1  //bztc
+armorClass = H
+boxCollide = 1
+mass = 500000
+
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "bvrecyd3"
+provideName2 = "bvrecycpu"
+provideName3 = "VIRTUAL_CLASS_RECYCLER"
+provideName4 = "VIRTUAL_CLASS_RECYCLERVEHICLE"
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltwyl"
+lightHard2 = "hp_light_3"
+lightName2 = "hltwyl"
+lightHard3 = "hp_light_4"
+lightName3 = "hltgrn"
+
+//smoke1
+effectHard1 = "hp_smoke_1"
+effectName1 = "dmgbldg1"
+effectMinHealth1 = 0.8
+effectMaxHealth1 = 0.9
+effectHard2 = "hp_smoke_1"
+effectName2 = "dmgbldg2"
+effectMinHealth2 = 0.6
+effectMaxHealth2 = 0.8
+effectHard3 = "hp_smoke_1"
+effectName3 = "dmgbldg3"
+effectMinHealth3 = 0.4
+effectMaxHealth3 = 0.6
+effectHard4 = "hp_smoke_1"
+effectName4 = "dmgbldg4"
+effectMinHealth4 = 0.0
+effectMaxHealth4 = 0.4
+//smoke2
+effectHard5 = "hp_smoke_2"
+effectName5 = "dmgbldg1"
+effectMinHealth5 = 0.8
+effectMaxHealth5 = 0.9
+effectHard6 = "hp_smoke_2"
+effectName6 = "dmgbldg2"
+effectMinHealth6 = 0.6
+effectMaxHealth6 = 0.8
+effectHard7 = "hp_smoke_2"
+effectName7 = "dmgbldg3"
+effectMinHealth7 = 0.4
+effectMaxHealth7 = 0.6
+effectHard8 = "hp_smoke_2"
+effectName8 = "dmgbldg4"
+effectMinHealth8 = 0.0
+effectMaxHealth8 = 0.4
+//smoke3
+effectHard9 = "hp_smoke_3"
+effectName9 = "dmgbldg1"
+effectMinHealth9 = 0.8
+effectMaxHealth9 = 0.9
+effectHard10 = "hp_smoke_3"
+effectName10 = "dmgbldg2"
+effectMinHealth10 = 0.6
+effectMaxHealth10 = 0.8
+effectHard11 = "hp_smoke_3"
+effectName11 = "dmgbldg3"
+effectMinHealth11 = 0.4
+effectMaxHealth11 = 0.6
+effectHard12 = "hp_smoke_3"
+effectName12 = "dmgbldg4"
+effectMinHealth12 = 0.0
+effectMaxHealth12 = 0.4
+effectHard13 = "hp_dust_1"
+effectName13 = "vfxbztcthrst.thrustblue"
+effectMinVelocity13 = 2.0
+effectMaxVelocity13 = 500.0
+effectHard14 = "hp_dust_2"
+effectName14 = "vfxbztcthrst.thrustblue"
+effectMinVelocity14 = 2.0
+effectMaxVelocity14 = 500.0
+effectHard15 = "hp_dust_0" 
+effectName15 = "vfxbztcdusts.avrecypuff"
+effectMinVelocity15 = 0.0
+effectMaxVelocity15 = 3.0
+effectHard16 = "hp_dust_0"
+effectName16 = "vfxbztcdusts.dusttrail"
+effectMinVelocity16 = 5.0
+effectMaxVelocity16 = 500.0
+
+//no longer used anyway
+//effectHard5 = "hp_blight_1"
+//effectName5 = "vfxbztclight.redstay"
+//effectMinVelocity5 = 0.0
+//effectMaxVelocity5 = 2.0
+//effectHard6 = "hp_blight_2" 
+//effectName6 = "vfxbztclight.redstay"
+//effectMinVelocity6 = 0.0
+//effectMaxVelocity6 = 2.0
+//effectHard7 = "hp_dust_1"
+//effectName7 = "vfxbztcdusts.dusttrail"
+//effectMinVelocity7 = 5.0
+//effectMaxVelocity7 = 500.0
+//effectHard8 = "hp_dust_2"
+//effectName8 = "vfxbztcdusts.dusttrail"
+//effectMinVelocity8 = 5.0
+//effectMaxVelocity8 = 500.0
+
+//////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 400.0
+periodScan = 5.0
+velocJam = 0.0
+TeamTransferrable = false
+damageEffect1 = "dmgvhcl1"  //less stock dmg effect
+damageEffect2 = "dmgvhcl1"  //but still some sparks
+damageEffect3 = "dmgvhcl1"  //also lower visibility
+damageEffect4 = "dmgvhcl1"  //on cloaked units
+
+/////////CRASH EXPLODE INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_bvrecycox"
+
+//chunkEffect1 = "bvrecycoxchk01.fbx"  
+//chunkEffect2 = "bvrecycoxchk02.fbx"
+//chunkEffect3 = "bvrecycoxchk03.fbx"
+//chunkEffect4 = "bvrecycoxchk04.fbx"
+//chunkEffect5 = "bvrecycoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 5
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+/////////MESSAGES/////////
+selectWaitMsg = "avrecyv0.wav"  //recycler here
+selectUser1Msg = "avrecyvd.wav"  //building
+selectUser2Msg = "avrecyva.wav"  //can't do  //can't deploy at loc.
+selectGoMsg = "avrecyv1.wav"  //moving out  //"avrecyve.wav"  //in transit
+selectOtherMsg = "avrecyv0.wav"  //recycler here
+otherMsg = "avrecyvn.wav"  //scrap tanks full
+selectReadyMsg = "avrecyvg.wav"  //yes sir
+goMsg = "avrecyv1.wav"  //moving out
+goObjectMsg = "avrecyv1.wav"  //moving out
+repairMsg = "avrecyv9.wav"  //getting power
+attackMsg = "avrecyvm.wav"  //no geyser on radar
+selectFollowMsg = "avrecyv5.wav"  //set to follow
+followMsg = "avrecyv5.wav"  //set to follow
+followMeMsg = "avrecyv5.wav"  //set to follow
+reloadMsg = "avrecyv8.wav"  //construction started
+rescueMsg = "avrecyv3.wav"  //building complete
+user1Msg = "avrecyv6.wav"  //deploying
+user2Msg = "avrecyvj.wav"  //no scrap available
+holdMsg = "avrecyvg.wav"  //yes sir
+deployedMsg = "avrecyv6.wav"  //deploying  //depbld
+packedMsg = "avrecyvc.wav"  //ready to roll
+//diedMsg = "abetty1.wav"
+//ProducerClass>  blockedGeyserMsg = "avrecyvb.wav"  //clear the geyser
+//"avrecyvf.wav"  //where's the power
+//"avrecyvh.wav"  //no pilots available
+//killedMsg = ""
+
+BailSound = "bail.wav"
+CollideTerrainSound = "vnvcs1.wav"
+CollideBldgSound = "vnvcs3.wav"
+CollideOtherSound = "vvcre2.wav"  //"vvcbb3.wav"
+
+////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+setAltitude = 2.0  //depbld
+accelBrake = 20.0
+accelDragStop = 4.0
+accelDragFull = 1.0
+accelJump = 15.0
+accelThrust = 50.0
+alphaDamp = 5.0
+alphaSteer = 5.0
+alphaTrack = 20.0
+pitchPitch = 0.1
+pitchThrust = 0.05
+rollStrafe = 0.05
+rollSteer = 0.05
+velocForward = 15.0
+velocReverse = 15.0
+velocStrafe = 15.0
+omegaSpin = 2.0
+omegaTurn = 1.0
+soundThrust =  "avthrustcox01.wav"
+soundJump = "avhaule5.wav"
+
+/////////////////////////////////////////////////////////
+[DeployableClass]
+soundDeploy = "avrecycoxD0.wav"
+soundUndeploy = "avrecycoxD1.wav"  //"avrecye5.wav"
+
+/////////////////////////////////////////////////////////
+[DeployBuildingHClass]
+CanDeploy = true
+deployName = "bbrecyd3"
+timeDeploy = 5.0  //depbld
+timeUndeploy = 5.0  //depbld
+DoExtraBuildzoneCheck = false  //depbld
+
+////////////////////////////////////////////////////////
+[RecyclerVehicleHClass]
+scrapHold = 40

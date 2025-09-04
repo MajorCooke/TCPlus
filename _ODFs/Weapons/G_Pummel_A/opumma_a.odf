@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "opumma_c"
+classLabel = "opumma_c"  //"bullet"
+
+ammoCost = 3  //Coxxon  //2
+lifeSpan = 0.4  //120m  Coxxon  //0.33 // 99m
+shotSpeed = 300.0
+
+damageValue(N) = 22  //Coxxon  //16 // none
+damageValue(L) = 20  //Coxxon  //16 // light
+damageValue(H) = 18  //Coxxon  //16 // heavy
+
+damageValue(S) = 16  //Coxxon  //14 // standard
+damageValue(D) = 12  //Coxxon  //10 // deflection
+damageValue(A) = 18  //Coxxon  //16 // absorption

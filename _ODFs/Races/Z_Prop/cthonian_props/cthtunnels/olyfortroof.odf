@@ -1,0 +1,26 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "olyfortroof"
+classLabel = "i76building"
+geometryName = "olyfortroofcox00.fbx"
+collisionRadius = 1.0
+scrapCost = 8
+scrapValue = 3
+maxHealth = 0
+maxAmmo = 0
+unitName = ""  //"Cthonian fortress roof piece"
+heatSignature = 0.0  //1.0  //brg
+imageSignature = 0.0  //0.5  //brg
+radarSignature = 0.0  //1.0  //brg
+isAssault = 1  //bztc
+armorClass = H
+AllowSeismic = 0
+canDetect = 0  //brg
+canInteract = 0  //brg
+LightingType = 1
+ownsTerrain = 1
+//bah AlignTerrainReplaceType = 5  //0-5  //tunnel  //for this one
+AllowSeismic = 0
+
+[BuildingClass]//64m x 32m
+justTerrain = false  //so units travel under it

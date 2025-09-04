@@ -1,0 +1,10 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "abhqtrss13"
+classLabel = "abhqtr"
+
+maxHealth = 10000
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+provideName5 = "abhqtrss13"

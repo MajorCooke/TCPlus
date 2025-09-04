@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gblnka"
+classLabel = "blink"
+ordName = NULL
+wpnName = "Blink"
+fireSound = "blink01.wav"
+wpnReticle = "gblnka.0"
+wpnCategory = "SPEC"
+
+[BlinkDeviceClass]
+ammoBase = 200.0	// was 100
+ammoDist = 1.0	// was 10
+groundSprite = "splash.0"
+xplEnter = "xblinkin"
+xplExit = "xblinkout"

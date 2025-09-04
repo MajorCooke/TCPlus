@@ -1,0 +1,151 @@
+assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
+require('TC_Functions'); --Just a bunch of functions that don't need saving
+local AI =			require('TC_AI');
+local Goals =		require('TC_Objectives');
+local Upgrades =	require('TC_Upgrades');
+local Challenges =	require('TC_Challenges');
+local M = {};	-- FUNCTION table
+local N =		-- VARIABLE table
+{
+	-- Used for save data only. Keep it clear otherwise.
+	AI = {},
+	Goals = {},
+	Upgrades = {},
+	Challenges = {},
+	-- Core vars here
+	Countdown = 0,
+	EndStatus = 0, -- victory if > 0, fail if < 0
+	EndText = "",
+}
+
+-- Put in all hooks first
+
+function M.Save()
+	N.AI = AI.Save();
+	N.Goals = Goals.Save();
+	N.Upgrades = Upgrades.Save();
+	N.Challenges = Challenges.Save();
+	return N;
+end
+
+function M.Load(_N)
+	N = _N;
+	AI.Load(N.AI); 					_N.AI = {};
+	Goals.Load(N.Goals); 			_N.Goals = {};
+	Upgrades.Load(N.Upgrades);		_N.Upgrades = {};
+	Challenges.Load(N.Challenges);	_N.Challenges = {};
+end
+
+local function SetMissionStatus(status, time, debrief)
+	N.EndStatus = -1;
+	N.Countdown = GetTime() + time;
+	N.EndText = debrief;
+end
+
+function M.FailMission(Time, Debrief)
+	SetMissionStatus(-1, Time, Debrief);
+end
+
+-- This version writes out the 
+function M.SucceedMission(Time, Debrief)
+	SetMissionStatus(1, Time, Debrief);
+end
+
+-- Aborts victory/fail conditions
+function ClearMissionStatus()
+	SetMissionStatus(0, 0, "");
+end
+
+function M.Update()
+	if (N.EndStatus ~= 0 and N.Countdown < GetTime()) then
+		if (N.EndStatus > 0) then 
+			
+			SucceedMission(0, N.EndText);
+		else
+			FailMission(0, N.EndText); 
+		end
+		return;
+	end
+
+	AI.Update();
+end
+
+function M.InitialSetup()
+	AI.InitialSetup();
+	Goals.InitialSetup();
+	Upgrades.InitialSetup();
+end
+-- for some reason I cannot call the InitialSetup code above...
+function M.Init()
+	M.InitialSetup();
+end
+
+function M.Start()
+	AI.Start();
+	Upgrades.Start();
+	Challenges.Start();
+end
+
+function M.ObjectKilled(DeadObject, Killer)
+	AI.ObjectKilled(DeadObject, Killer);
+end
+
+function M.AddObject(h)
+	-- Disable Fury pilot ejections. 
+	if (IsCraftButNotPerson(h) and GetRace(h) == "y") then
+		SetEjectRatio(h, 0.0);
+	end
+
+	AI.AddObject(h);
+end
+
+function M.DeleteObject(h)
+	AI.DeleteObject(h);
+end
+
+
+
+function M.PreSnipe(world, shooter, victim, OrdTeam, OrdODF)
+	-- 1 prevents, 0 allows
+	local snipe = AI.PreSnipe(world, shooter, victim, OrdTeam, OrdODF);
+	if (snipe > -1) then
+		return snipe;
+	elseif (GetPlayerHandle() == victim and Upgrades.Get("bulletproof")) then
+		return 1;
+	end
+	return 0;
+end
+
+function M.PreGetIn(world, pilot, craft)
+	-- 0 prevents, 1 allows
+	-- if craft is player's previous ship and has ID lock and pilot isn't friend, 
+	-- return 0
+	return 1;
+end
+
+function M.PrePickupPowerup(world, who, item)
+	-- 0 prevents, 1 allows
+	return 1;
+end
+
+function M.PostTargetChangedCallback(craft, prev, cur)
+
+end
+
+function M.SetTeamNum(h, team)
+	AI.SetTeamNum(h, team);
+end
+
+----------------------------
+-- Custom Functions below --
+----------------------------
+
+function M.ReplaceObject(h, className)
+	return AI.ReplaceObject(h, className);
+end
+
+function M.AwardBonus(challenge, amount)
+	
+end
+
+return M;

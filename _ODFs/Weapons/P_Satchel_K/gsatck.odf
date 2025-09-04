@@ -1,0 +1,18 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gsatck"
+classLabel = "satchelpack"
+geometryName = "kgsatccox00.fbx"
+geometryScale = 0.12
+wpnName = "Satchel Charge"
+wpnIcon = "wire_gsatck%d.tga"
+fireSound = "satcfire.wav"
+wpnReticle = "gmorta"
+wpnLadder = "gmortar.L0"
+wpnCategory = "PACK"
+localAmmo = 1
+canSelect = false
+
+[SatchelPackClass]
+objectClass = "osatck"
+shotDelay = 35.0f  //Coxxon  //1.0f  //listed in odf guide, doesn't work in p185

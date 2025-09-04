@@ -1,0 +1,65 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ostbta_c"
+classLabel = "bullet"
+
+shotGeometry = "aostilcox00.fbx"
+shotSound = NULL  //"Ordin_a.wav"  //removed b/c it muted weapon sound - Coxxon  //"gatst03.wav"  //
+
+xplGround = "xstabgnd_c"
+xplVehicle = "xstbtacar"  //"xstabcar_c"
+xplBuilding = "xmslbld"
+
+ammoCost = 50
+lifeSpan = 1.0 // 160m
+shotSpeed = 160.0
+
+damageValue(N) = 700  //600  //800  //390  //130 // none // 260
+damageValue(L) = 600  //500  //700  //360  //120 // light // 240
+damageValue(H) = 500  //400  //600  //300  //100 // heavy // 200
+
+damageValue(S) = 600  //500  //700  //360  //120 // standard // 240
+damageValue(D) = 500  //400  //600  //300  //100 // deflection // 200
+damageValue(A) = 700  //600  //800  //390  //130 // absorption // 130
+
+renderName = "ostbta_c.render"
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "ostbta_c.tail"
+renderName2 = "ostbta_c.flare"
+renderName3 = "ostbta_c.light"
+
+///////////////////////////////////////////////////////
+[tail]
+renderBase = "draw_twirl_trail"
+textureName = "raindrop.tga"
+textureBlend = "one one modulate"
+startColor = "0 100 200 150"
+finishColor = "255 255 255 10"
+startRadius = 0.5
+finishRadius = 0.1
+animateTime = 0.3
+emitDelay = 0.01
+emitLife = 0.3
+rotationrate = 1.0
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.5
+finishRadius = 0.5
+
+[light]
+renderBase = "draw_light"
+startColor = "120 180 80 200"
+finishColor = "120 180 80 200"
+startRadius = 16.0  //ord light
+finishRadius = 16.0  //ord light
+attenuateConstant = 0.0  //ord light
+attenuateQuadratic = 1.0  //ord light
+attenuateLinear = 0.0  //ord light

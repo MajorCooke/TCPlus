@@ -1,0 +1,42 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "gpopg2a"
+classLabel = "radarpopper"
+
+shotGeometry = "aomortcox00.fbx"  //"ioartl00.fbx"
+shotSound = "Ordin_c.wav"
+
+xplGround = "xmslgnd"
+xplVehicle = "xmslcar"
+xplBuilding = "xmslbld"
+
+renderName = "gpopg2a.render"
+
+ammoCost = 40  //20
+lifeSpan = 1e30
+shotSpeed = 20.0
+
+damageValue(N) = 70 // none
+damageValue(L) = 60 // light
+damageValue(H) = 50 // heavy
+
+damageValue(S) = 60 // standard
+damageValue(D) = 50 // deflection
+damageValue(A) = 70 // absorption
+
+[RadarPopperClass]
+launchXpl = "xpopfir"
+launchOrd = "opopga"
+
+[Render]
+renderBase = "draw_twirl_trail"
+textureName = "particle.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 0 32"
+finishColor = "255 0 0 0"
+startRadius = 0.1
+finishRadius = 0.5
+animateTime = 0.2
+emitDelay = 0.005
+emitVariance = "3.0 3.0 3.0"
+emitLife = 0.2

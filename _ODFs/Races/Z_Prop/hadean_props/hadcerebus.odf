@@ -1,0 +1,42 @@
+/////////Coxxon - BZTC////////
+[GameObjectClass]
+classLabel = "i76building"
+geometryName = "hadcerecox00.fbx"
+scrapCost = 10
+scrapValue = 5
+maxHealth = 0
+maxAmmo = 0
+unitName = "Cerebus"
+heatSignature = 0.8
+imageSignature = 8.0
+radarSignature = 1.0
+collisionRadius = 1.0  //bztc vehc
+canDetect = 1
+canInteract = 1
+canSnipe = 0
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+//requireReplaceTerrainPhysics = 1  //bzcc
+//ownsTerrain = 1  //prop no terrain plate
+AllowSeismic = 0
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "spotorange"
+
+effectHard1 = "hp_emit_0"
+effectName1 = "vfxbztclight.yellowblink"
+//effectHard2 = "hp_emit_1"
+//effectName2 = "vfxbztclight.yellowblink"
+//effectHard3 = "hp_emit_2"
+//effectName3 = "vfxbztclight.yellowblink"
+//effectHard4 = "hp_emit_3"
+//effectName4 = "vfxbztcbldgs.ybsilostream"
+//effectHard5 = "hp_emit_4"
+//effectName5 = "vfxbztcbldgs.ybsilostream"
+//effectHard6 = "hp_emit_5"
+//effectName6 = "vfxbztcbldgs.ybsilostream"
+
+//ALSO HAS 2 OF ALL WEAPON HPS/EYEPOINT
+
+[BuildingClass]
+bldEdge = "wwww"

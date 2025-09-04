@@ -1,0 +1,30 @@
+//////////Coxxon - BZTC//////////
+[GameObjectClass]
+baseName = "bvdrop_sitclose"
+classLabel = "i76building"
+geometryName = "bvdropcox_sitclose.fbx"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 10000
+maxAmmo = 0
+unitName = "Big Butch"
+heatSignature = 0.8
+imageSignature = 8.0
+radarSignature = 1.0
+ownsTerrain = 1
+canDetect = 0
+canInteract = 0
+//canCollide = 1  //avdrop
+armorClass = H
+collisionRadius = 1.0  //avdrop
+
+[BuildingClass]
+
+//no tunnel in bzcc
+tunnelCount = 1
+bldEdge = "twww"
+tunnel01X0 = 2
+tunnel01Z0 = 1
+tunnel01DX = 4
+tunnel01DZ = 6
+tunnel01Edge = "twww"

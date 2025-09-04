@@ -1,0 +1,33 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "svrecyrb05"
+classLabel = "svrecy1"  //"recyclervehicle"
+unitName = "SU19 MUF Grozny"  //Krasnaya Zvezda"  //Red Star  //Serp i molot  //Hammer and Sickle
+unitIcon = "icon_svrecy.png"
+infoName = "svrecy.inf"
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+
+provideName5 = "svrecyrb05"
+
+/////////////////////////////////////////////////////////////////////
+[EntityClass]
+
+//////////////////////////////////////////////////////////
+[CraftClass]
+
+/////////CRASH EXPLODE INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_svrecycox"
+
+/////////////////////////////////////////////////////////
+[DeployableClass]
+
+/////////////////////////////////////////////////////////
+[DeployBuildingHClass]
+
+deployName = "sbrecyrb05"
+
+////////////////////////////////////////////////////////
+[RecyclerVehicleHClass]

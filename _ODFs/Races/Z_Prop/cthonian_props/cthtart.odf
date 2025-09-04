@@ -1,0 +1,109 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "cthtart"
+classLabel = "techcenter"  //"barracks"  //
+geometryName = "cthtartcox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "cthtartcox00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+collisionRadius = 1.0  //bztc vehc
+scrapCost = 100
+scrapValue = 50
+maxHealth = 12000
+maxAmmo = 0
+unitName = "Tartarus"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+powerCost = 0  //so it doesn't need a power source
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+requireReplaceTerrainPhysics = 1  //bzcc
+ownsTerrain = 1  //since no terrain plate
+AllowSeismic = 0
+explosionName = "x_bztc_bld"
+
+///////// LIGHTS & EFFECTS /////////
+//effectHard1 = "hp_emit_0"
+//effectName1 = "vfxbztcbldgs.lemnossmoke"  //TEMP EFFECT
+effectHard2 = "hp_emit_1"
+effectName2 = "cthtart.flare"
+effectHard3 = "hp_emit_2"
+effectName3 = "cthtart.flare"
+effectHard4 = "hp_emit_4"  //NO emit "3" hp
+effectName4 = "vfxbztcbldgs.flaghad"
+effectHard5 = "hp_emit_5"
+effectName5 = "vfxbztcbldgs.flagoly"
+effectHard6 = "emitl"
+effectName6 = "vfxbztcbldgs.ybrecypole"
+effectHard7 = "emitr"
+effectName7 = "vfxbztcbldgs.ybrecypole"
+//smoke1
+effectHard8 = "hp_smoke_1"
+effectName8 = "dmgbldg1"
+effectMinHealth8 = 0.6
+effectMaxHealth8 = 0.8
+effectHard9 = "hp_smoke_1"
+effectName9 = "dmgbldg2"
+effectMinHealth9 = 0.4
+effectMaxHealth9 = 0.6
+effectHard10 = "hp_smoke_1"
+effectName10 = "dmgbldg3"
+effectMinHealth10 = 0.2
+effectMaxHealth10 = 0.4
+effectHard11 = "hp_smoke_1"
+effectName11 = "dmgbldg4"
+effectMinHealth11 = 0.0
+effectMaxHealth11 = 0.2
+//smoke2
+effectHard12 = "hp_smoke_2"
+effectName12 = "dmgbldg1"
+effectMinHealth12 = 0.6
+effectMaxHealth12 = 0.8
+effectHard13 = "hp_smoke_2"
+effectName13 = "dmgbldg2"
+effectMinHealth13 = 0.4
+effectMaxHealth13 = 0.6
+effectHard14 = "hp_smoke_2"
+effectName14 = "dmgbldg3"
+effectMinHealth14 = 0.2
+effectMaxHealth14 = 0.4
+effectHard15 = "hp_smoke_2"
+effectName15 = "dmgbldg4"
+effectMinHealth15 = 0.0
+effectMaxHealth15 = 0.2
+
+[flare]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.01
+//emitDelayVar = 0.03
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+//emitInherit = "0.2 0.2 0.2"
+emitLife = 2.0
+textureName =  "plasma.tga"  //"flame.tga"  //"twin.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"  //"0 255 255 255"
+finishColor = "255 150 0 0"  //"0 0 255 0"
+startRadius = 2.0
+finishRadius = 1.0
+animateTime = 2.0
+rotationRate = 5.0
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "tartcox00.wav"  //"baruin1b.wav"  //"cenv01.wav"  //"cceng.wav"  //"cenv04.wav"
+
+///////// EXPLOSION AID /////////
+UseCollapse = true
+UseChunks = false
+UseExplosion = true
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+//powerTap1 = "hp_special_1"  //so it can spawn below weapon for hole fallers
+//powerName = "gflar2oly"  //"gflaroly"
+detectRange = 300

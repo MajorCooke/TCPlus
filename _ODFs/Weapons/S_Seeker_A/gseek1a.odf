@@ -1,0 +1,12 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gseek1a"
+classLabel = "dispenser"
+wpnName = "Seeker"
+fireSound = "mmine01.wav"
+wpnReticle = "gseeka"
+wpnCategory = "SPEC"
+
+[DispenserClass]
+shotDelay = 1.0
+objectClass = "gseek2a"//fd stands for fixed, dormant

@@ -1,0 +1,69 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "scrfld4o"
+classLabel = "spraybomb"
+shotGeometry = NULL
+ammoCost = 100
+lifeSpan = 1e30
+shotSpeed = 30.0  //keep low, or will really throw
+//xplGround = "xbulgnd"
+//xplVehicle = "xbulcar"
+//xplBuilding = "xbulbld"
+//damageValue(N) = 15
+//damageValue(L) = 9
+//damageValue(H) = 3
+//damageValue(S) = 9
+//damageValue(D) = 1
+//damageValue(A) = 15
+
+rendername = "scrfld4o.render"  //comment out if want scrap to randomly "appear"
+
+[SprayBombClass]
+payloadName = "npscr1"  //ODF of GameObject Class this object turns into when it stops moving.
+bounceRatio = 0.4f  //Pct. Vel. retained after bounce. // >0 to make sfx work
+soundBounce = "runningcox.wav"  //"bounce.wav"
+
+[render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "scrfld4o.smoke"
+renderName2 = "scrfld4o.tail"
+renderName3 = "scrfld4o.plasma"
+
+[smoke]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "100 100 170 255"  //"255 255 80 255"  //
+finishColor = "50 50 50 250"  //"255 0 0 0"  //
+startRadius = 3.0
+finishRadius = 0.2
+animateTime = 0.6
+emitDelay = 0.04
+emitVariance = "3.0 3.0 2.0"
+
+[tail]
+renderBase = "draw_trail"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+textureRate = 0.1
+startColor = "50 100 255 200"  //"255 150 0 200"
+finishColor = "255 100 0 120"
+startRadius = 2.0 
+finishRadius = 0.05
+segmentTime = 1.0
+
+[plasma]
+renderBase = "draw_twirl_trail"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "130 163 255 255"
+finishColor = "50 100 150 255"
+startRadius = 1.0
+finishRadius = 2.0
+rotationRate = 10.0
+animateTime = 0.02
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 3.0"
+emitLife = 0.02

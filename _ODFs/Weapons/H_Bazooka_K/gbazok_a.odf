@@ -1,0 +1,17 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gbazok_a"
+classLabel = "cannon"
+//combat version has the geometry
+ordName = "obazok_a"
+wpnName = "Bazooka A"
+fireSound = "baz01.wav"
+wpnReticle = "gstara"
+wpnCategory = "HAND"
+isAssault = 1
+isFlying = 1
+altName = "gbazok_c"
+aiRange = 190
+
+[CannonClass]
+shotDelay =  1.0

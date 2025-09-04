@@ -1,0 +1,29 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gsnipn_a"
+classLabel = "cannon"
+//geometry stored in combat version
+ordName = "osnipn_a"
+wpnName = "X10 Sniper"
+fireSound = "gsnipe00.wav"  //"snip01.wav"
+wpnReticle = "gsnipa"  //"grifle"
+wpnCategory = "HAND"
+isAssault = 1
+isFlying = 0
+altName = "gsnipn_c"
+aiRange = 299  //snipe
+localAmmo = 3  //snipe
+
+[CannonClass]
+shotDelay = 3.0  //1.0  //snipe
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 3.0
+finishRadius = 1
+animateTime = 0.1
+geomName = "g_sflash.fbx"

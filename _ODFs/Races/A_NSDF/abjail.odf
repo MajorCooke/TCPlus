@@ -1,0 +1,93 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "abjail"
+classLabel = "barracks"
+geometryName = "abjailcox00.fbx"
+collisionRadius = 10.0  //bztc bldg
+scrapCost = 70
+scrapValue = 30
+maxHealth = 5000
+maxAmmo = 0
+unitName = "JAIL"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+ownsTerrain = 1  //1 if no baseplate faction
+//isSingle = 1
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 2
+provideName1 = "abjail"
+provideName2 = "base"
+
+///////// LIGHTS & EFFECTS /////////
+LightsOffEffectsMask = 65535
+lightHard1 = "hp_light_1"
+lightName1 = "omnired5"
+lightHard2 = "hp_light_2"
+lightName2 = "omnired5"
+lightHard3 = "hp_light_3"
+lightName3 = "omnired5"
+lightHard4 = "hp_light_4"
+lightName4 = "omnired5"
+
+//smoke1
+effectHard1 = "hp_smoke_1"
+effectName1 = "dmgbldg1"
+effectMinHealth1 = 0.6
+effectMaxHealth1 = 0.8
+effectHard2 = "hp_smoke_1"
+effectName2 = "dmgbldg2"
+effectMinHealth2 = 0.4
+effectMaxHealth2 = 0.6
+effectHard3 = "hp_smoke_1"
+effectName3 = "dmgbldg3"
+effectMinHealth3 = 0.2
+effectMaxHealth3 = 0.4
+effectHard4 = "hp_smoke_1"
+effectName4 = "dmgbldg4"
+effectMinHealth4 = 0.0
+effectMaxHealth4 = 0.2
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_abjailcox"
+
+chunkEffect1 = "abtraincoxchk04.fbx"  
+chunkEffect2 = "abtraincoxchk05.fbx"  
+chunkEffect3 = ""  
+chunkEffect4 = ""  
+chunkEffect5 = ""  
+HasSeparateChunks = true 
+numChunks = 2
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 0
+numChunks4 = 0
+numChunks5 = 0
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 100
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "abbarre0.wav"
+//bldEdge = "wwww"  //bldg
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+///////////////////////////////////////////////////////////////
+[BarracksClass]  //jail Coxxon
+pilotHold = 0  //jail Coxxon

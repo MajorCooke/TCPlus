@@ -1,0 +1,113 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "olyrelic03"
+classLabel = "i76building"
+geometryName = "olyrelic03.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "olyrelic03.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+scrapCost = 100
+scrapValue = 10
+maxHealth = 6000
+addHealth = 30
+maxAmmo = 0
+unitName = "Olympian Artifact"
+heatSignature = 1.0
+imageSignature = 1.0
+radarSignature = 1.0
+canDetect = 1
+canInteract = 1
+ownsTerrain = 1
+collisionRadius = 1.0
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+AllowSeismic = 0
+powerCost = 0
+
+/////////LIGHTS AND EFFECTS/////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltwyl"
+lightHard2 = "hp_light_2"
+lightName2 = "hltwyl"
+lightHard3 = "hp_light_3"
+lightName3 = "hltblu"
+lightHard4 = "hp_light_4"
+lightName4 = "hltblu"
+lightHard5 = "hp_light_5"
+lightName5 = "hltblu"
+lightHard6 = "hp_light_6"
+lightName6 = "hltblu"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "olyrelic03.sparkle"
+effectHard2 = "hp_emit_2"
+effectName2 = "olyrelic03.sparkle"
+effectHard3 = "hp_emit_3"
+effectName3 = "olyrelic03.sparkle"
+effectHard4 = "hp_emit_4"
+effectName4 = "olyrelic03.sparkle"
+effectHard5 = "hp_emit_5"
+effectName5 = "olyrelic03.sparkle"
+effectHard6 = "hp_emit_6"
+effectName6 = "olyrelic03.sparkle"
+//smoke1
+effectHard13 = "hp_smoke_1"
+effectName13 = "dmgbldg1"
+effectMinHealth13 = 0.6
+effectMaxHealth13 = 0.8
+effectHard14 = "hp_smoke_1"
+effectName14 = "dmgbldg2"
+effectMinHealth14 = 0.4
+effectMaxHealth14 = 0.6
+effectHard15 = "hp_smoke_1"
+effectName15 = "dmgbldg3"
+effectMinHealth15 = 0.2
+effectMaxHealth15 = 0.4
+effectHard16 = "hp_smoke_1"
+effectName16 = "dmgbldg4"
+effectMinHealth16 = 0.0
+effectMaxHealth16 = 0.2
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+
+chunkEffect1 = "olyrelic03chk01.fbx"  
+chunkEffect2 = "olyrelic03chk02.fbx"  
+chunkEffect3 = "olyrelic03chk03.fbx"  
+chunkEffect4 = "olyrelic03chk04.fbx"  
+chunkEffect5 = "olyrelic03chk05.fbx"  
+HasSeparateChunks = true 
+numChunks = 7
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 2
+numChunks5 = 2
+
+[sparkle]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.06
+emitDelayVar = 0.03
+emitVelocity = "0.0 0.0 4.0"
+emitVariance = "4.0 4.0 4.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = 2.0
+textureName =  "twin.tga"  //"wasplatcox.tga"
+textureBlend = "one one modulate"  //"srcalpha invsrcalpha modulatealpha"
+startColor = "255 255 240 100"
+finishColor = "0 0 255 255"
+startRadius = 0.1
+finishRadius = 1.0
+animateTime = 2.0
+rotationRate = 10.0  //2.0
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "iabomb01.wav"  //"pow_done.wav"  //
+//bldEdge = "wwww"  //bldg
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid

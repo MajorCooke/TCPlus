@@ -1,0 +1,32 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "oflarpot1"
+classLabel = "bullet"
+shotGeometry = NULL
+shotRadius = 15.0  //Coxxon  //1.0
+xplGround = "xflmhit"
+xplVehicle = "xflmhit"
+xplBuilding = "xflmhit"
+
+ammoCost = 25
+lifeSpan = 0.5  //Coxxon  //1.0
+shotSpeed = 30.0  //Coxxon  //50.0
+
+damageValue(N) = 25
+damageValue(L) = 15
+damageValue(H) = 10  //Coxxon  //5  //Coxxon  //2
+damageValue(S) = 15  //Coxxon  //10
+damageValue(D) = 25
+damageValue(A) = 10  //Coxxon  //5  //Coxxon  //2
+
+renderName = "oflarpot1.puff"
+
+[Puff]
+renderBase = "draw_twirl"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 128"
+finishColor = "255 255 255 0"
+startRadius = 3.0  //Coxxon  //1.0
+finishRadius = 10.0  //Coxxon  //5.0
+animateTime = 0.5  //Coxxon  //1.0

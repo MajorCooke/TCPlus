@@ -1,0 +1,143 @@
+//
+// DMVehicles.odf - listing of multiplayer vehicles usable in BZ2
+//
+//
+// Tip: do not put .odf extension on cfg# = "" entries; added automatically on loading
+// 
+
+[MPVehicles]
+xsi1 = "avscoutcox00.fbx"
+cfg1 = "avscoutdm"
+Description1 = "Razor NSDF"
+
+xsi2 = "bvscoutcox00.fbx"
+cfg2 = "bvscoutdm"
+Description2 = "Razor BDS"
+
+xsi3 = "kvscoutcox00.fbx"
+cfg3 = "kvscoutdm"
+Description3 = "Mongoose CRA"
+
+xsi4 = "svscoutcox00.fbx"
+cfg4 = "svscoutdm"
+Description4 = "Flanker CCA"
+
+xsi5 = "mvscoutcox00.fbx"
+cfg5 = "mvscoutdm"
+Description5 = "Flanker CBB"
+
+xsi6 = "yvscoutcox00.fbx"
+cfg6 = "yvscoutdm"
+Description6 = "Dart Fury"
+
+///////////////////////////////////////
+xsi7 = "avmislcox00.fbx"
+cfg7 = "avmisldm"
+Description7 = "Wolverine NSDF"
+
+xsi8 = "bvmislcox00.fbx"
+cfg8 = "bvmisldm"
+Description8 = "Wolverine BDS"
+
+xsi9 = "kvmislcox00.fbx"
+cfg9 = "kvmisldm"
+Description9 = "Dragon CRA"
+
+xsi10 = "svmislcox00.fbx"
+cfg10 = "svmisldm"
+Description10 = "Tusker CCA"
+
+xsi11 = "yvmislcox00.fbx"
+cfg11 = "yvmisldm"
+Description11 = "Medusa Fury"
+
+///////////////////////////////////////
+xsi12 = "avtankcox00.fbx"
+cfg12 = "avtankdm"
+Description12 = "Grizzly NSDF"
+
+xsi13 = "bvtankcox00.fbx"
+cfg13 = "bvtankdm"
+Description13 = "Grizzly BDS"
+
+xsi14 = "kvtankcox00.fbx"
+cfg14 = "kvtankdm"
+Description14 = "Yeti CRA"
+
+xsi15 = "svtankcox00.fbx"
+cfg15 = "svtankdm"
+Description15 = "Czar CCA"
+
+xsi16 = "mvtankcox00.fbx"
+cfg16 = "mvtankdm"
+Description16 = "Czar CBB"
+
+xsi17 = "yvtankcox00.fbx"
+cfg17 = "yvtankdm"
+Description17 = "Serpent Fury"
+
+///////////////////////////////////////
+xsi18 = "avrcktcox00.fbx"
+cfg18 = "avrcktdm"
+Description18 = "Thunderbolt NSDF"
+
+xsi19 = "kvrcktcox00.fbx"
+cfg19 = "kvrcktdm"
+Description19 = "Phoenix CRA"
+
+xsi20 = "svrcktcox00.fbx"
+cfg20 = "svrcktdm"
+Description20 = "Grendel CCA"
+
+xsi21 = "yvrcktcox00.fbx"
+cfg21 = "yvrcktdm"
+Description21 = "SAV Fury"
+
+///////////////////////////////////////
+xsi22 = "bvwalkcox_skel.fbx"
+cfg22 = "bvwalkdm"
+Description22 = "Sasquatch BDS"
+
+xsi23 = "kvwalkcox_skel.fbx"
+cfg23 = "kvwalkdm"
+Description23 = "Mongo CRA"
+
+xsi24 = "svwalkcox_skel.fbx"
+cfg24 = "svwalkdm"
+Description24 = "Golem CCA"
+
+xsi25 = "yvwalkcox_skel.fbx"
+cfg25 = "yvwalkdm"
+Description25 = "Cyclops Fury"
+
+///////////////////////////////////////
+xsi26 = "bvstnkcox00.fbx"
+cfg26 = "bvstnkdm"
+Description26 = "Red Devil BDS"
+
+xsi27 = "avhtnkcox00.fbx"
+cfg27 = "avhtnkdm"
+Description27 = "Goliath NSDF"
+
+xsi28 = "kvhtnkcox00.fbx"
+cfg28 = "kvhtnkdm"
+Description28 = "Emperor CRA"
+
+xsi29 = "svhtnkcox00.fbx"
+cfg29 = "svhtnkdm"
+Description29 = "Red Hammer CCA"
+
+xsi30 = "mvstnkcox00.fbx"
+cfg30 = "mvstnkdm"
+Description30 = "Mammoth CBB"
+
+xsi31 = "yvhtnkcox00.fbx"
+cfg31 = "yvhtnkdm"
+Description31 = "Manticore Fury"
+
+xsi32 = "avlndrcox00.fbx"
+cfg32 = "avlndrdm"
+Description32 = "Eagle Lander"
+
+///////////no pilots for dm///////////////////
+/////////////////END//////////////////////

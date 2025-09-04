@@ -1,0 +1,20 @@
+[OrdnanceClass]
+classLabel = "bullet"
+shotGeometry = NULL
+//Coxxon  //shotSound = "igtow04.wav"
+xplGround = "xgtowsgnd_c"
+xplVehicle = "xgtowscar_c"
+xplBuilding = "xgtowsbld_c"
+ammoCost = -1  //gtow
+lifeSpan = 2.0  //200
+shotSpeed = 100.0
+
+damageValue(N) = 150 // none
+damageValue(L) = 120 // light
+damageValue(H) = 50 // heavy
+
+damageValue(S) = 120 // standard
+damageValue(D) = 150 // deflection
+damageValue(A) = 50 // absorption
+
+renderName = "ogtows_c.render"

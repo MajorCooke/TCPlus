@@ -1,0 +1,19 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ochana"
+classLabel = "ochana_c"  //"bullet"
+
+ammoCost = 12.5  //Coxxon  //2.5
+lifeSpan = 1.0  //Coxxon 0.5 // 150m
+shotSpeed = 150.0  //Coxxon  //300.0
+
+//1.0 150.0 150m  //Coxxon
+
+//weird, stock chan_a does less damage than stock chan_c so x4
+damageValue(N) = 55  //60  //Coxxon  //15 // none // 300
+damageValue(L) = 50  //55  //Coxxon  //13.5 // light // 270
+damageValue(H) = 45  //50  //Coxxon  //12.5 // heavy // 250
+
+damageValue(S) = 50  //55  //Coxxon  //13.5 // standard // 270
+damageValue(D) = 45  //50  //Coxxon  //10 // deflection // 200
+damageValue(A) = 55  //60  //Coxxon  //15 // absorption // 300

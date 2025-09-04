@@ -1,0 +1,82 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ohadtow_c"
+classLabel = "thermalmissile"
+shotGeometry = NULL
+shotSound = "crckt02.wav"
+renderName = "ohadtow_c.render"
+xplGround = "xfafgnd"
+xplVehicle = "xfafmacar"
+xplBuilding = "xfafmacar"
+ammoCost = -1  //gtow
+lifeSpan = 3.0  //300
+shotSpeed = 100.0
+
+damageValue(N) = 150 // none
+damageValue(L) = 100 // light
+damageValue(H) = 50 // heavy
+
+damageValue(S) = 100 // standard
+damageValue(D) = 50 // deflection
+damageValue(A) = 150 // absorption
+
+[MissileClass]
+omegaTurn = 1.0
+
+[ThermalMissileClass]
+coneAngle = 0.4
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "ohadtow_c.flare"
+renderName2 = "ohadtow_c.smoke"
+renderName3 = "ohadtow_c.flame"
+renderName4 = "ohadtow_c.light"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "155 150 55 255"
+finishColor = "255 255 0 100"
+startRadius = 1.0
+finishRadius = 1.0
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "twin.tga"
+textureBlend = "one one modulate"
+startColor = "255 150 50 100"
+finishColor = "70 70 0 0"
+startRadius = 1.0
+finishRadius = 0.1
+animateTime = 1.5
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.6 0.6 0.6"
+emitLife = 1.5
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 150 50 150"
+finishColor = "255 0 0 20"
+startRadius = 0.6
+finishRadius = 0.03
+animateTime = 0.2  //
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitLife = 0.2  //0.1
+
+[light]
+renderBase = "draw_light"
+startColor = "250 120 180 200"
+finishColor = "250 80 120 200"
+startRadius = 16.0  //ord light
+finishRadius = 16.0  //ord light
+attenuateConstant = 0.0  //ord light
+attenuateQuadratic = 1.0  //ord light
+attenuateLinear = 0.0  //ord light

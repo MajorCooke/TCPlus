@@ -1,0 +1,43 @@
+/////////Coxxon - BZTC/////////
+//test pusher mine ORDNANCE to protect gspire from CSK
+//meant only for Gun Spire use
+[GameObjectClass]
+baseName = "osprpa"
+classLabel = "magnet"
+geometryName = NULL  //"igmcur00.fbx"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 50
+unitName = "Push Field"
+//effectHard1 = "Push Field"  //make same as unit name
+//effectName1 = "osprpa.Field"
+canDetect = 1
+canInteract = 0
+
+[MineClass]
+lifeSpan = 5.5  //30.0
+
+[MagnetMineClass]
+triggerDelay = 0.1
+fieldRadius = 16.0
+objPushCenter = 50.0  //Coxxon  //-10.0
+objPushEdge = 100.0  //Coxxon  //20.0
+objDrag = 1.0  //Coxxon  //0.5
+ordPushCenter = 0.0  //Coxxon  //200.0
+ordPushEdge = 0.0  //Coxxon  //500.0
+ordDrag = 0.0  //Coxxon  //1.5
+TeamFilter = 3  //0 = target all, 1 = target team, 2 = target allies, 3 = target enemies, 4 = not same team
+//see odf, supposedly 3 is only vehicles using sum version
+
+[Field]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 0 0 10"
+finishColor = "0 255 255 30"
+startRadius = 1.0
+finishRadius = 16
+animateTime = 0.5
+latitudeBands = 8
+longitudeSegments = 16

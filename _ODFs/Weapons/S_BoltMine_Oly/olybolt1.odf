@@ -1,0 +1,14 @@
+/////////Coxxon - BZTC/////////
+//for use in campaign - no max ammo or lifespan, increased health
+[WeaponClass]
+baseName = "olybolt1"
+classLabel = "dispenser"
+wpnName = "Arc Bolt Mine"
+fireSound = "mmine01.wav"
+wpnReticle = "gbolts"
+wpnPriority = 5
+wpnCategory = "SPEC"
+
+[DispenserClass]
+shotDelay = 5.0
+objectClass = "olybolt2"

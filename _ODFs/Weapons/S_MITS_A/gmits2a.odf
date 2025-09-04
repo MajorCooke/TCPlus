@@ -1,0 +1,18 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "gmits2a"
+geometryName = "aomitscox01.fbx"  //"aomitscox00.fbx"
+classLabel = "tripmine"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 100
+unitName = "MITS"
+
+[MineClass]
+lifeSpan = 30
+
+[TripMineClass]
+triggerRadius = 30.0  //Coxxon  //10.0
+suppressRadius = 40.0  //Coxxon  //20.0
+payloadName = "omitsa"

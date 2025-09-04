@@ -1,0 +1,38 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ogrenn"
+classLabel = "grenade"
+shotGeometry = "aomortcox00.fbx"
+geometryScale = 0.05
+shotSound = "baz03.wav"
+xplGround = "xhandgnd"
+xplVehicle = "xhandcar"
+xplBuilding = "xhandcar"
+
+renderName = "ogrenn.render"
+
+ammoCost = 1
+lifeSpan = 1e30
+shotSpeed = 40.0
+
+damageValue(N) = 5000 // none  //gren
+damageValue(L) = 4000 // light  //gren
+damageValue(H) = 3000 // heavy  //gren
+
+damageValue(S) = 4000 // standard  //gren
+damageValue(D) = 3000 // deflection  //gren
+damageValue(A) = 5000 // absorption  //gren
+
+[Render]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 255 255 32"
+finishColor = "255 255 255 0"
+startRadius = 0.2
+finishRadius = 0.5
+animateTime = 1.0
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+emitLife = 1.0

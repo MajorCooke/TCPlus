@@ -1,0 +1,33 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "svfactrb04"
+classLabel = "svfact"  //"recyclervehicleH"
+unitName = "SU12 AMUF"
+unitIcon = "icon_svfact.png"
+unitStatus = "wire_svfact.png"
+infoName = "svfact.inf"
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+
+provideName3 = "svfactrb04"
+
+//////////////////////////////////////////////////////////
+[CraftClass]
+
+/////////CRASH EXPLODE INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_svfactcox"
+
+////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+
+/////////////////////////////////////////////////////////
+[DeployableClass]
+
+/////////////////////////////////////////////////////////
+[DeployBuildingHClass]
+deployName = "sbfactrb04"
+
+////////////////////////////////////////////////////////
+[RecyclerVehicleHClass]
+scrapHold = 0

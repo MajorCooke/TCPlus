@@ -1,0 +1,6 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gstbaa_a_gun"
+classLabel = "gstbaa_a"
+altName = "gstbaa_c_gun"
+wpnCategory = "GUN"

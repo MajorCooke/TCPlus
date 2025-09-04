@@ -1,0 +1,56 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "osnipy_c"
+classLabel = "beam"
+shotGeometry = NULL  //"aosnipcox00.fbx"  //
+xplGround = "xbulgnd"
+xplVehicle = "xbulcar"
+xplBuilding = "xbulbld"
+xplPerson = "xpersonbztc"  //rifle
+
+ammoCost = 2
+lifeSpan = 200e-6  //200m Coxxon  //150m
+shotSpeed = 1e6  //snipe
+
+damageValue(N) = 5  //
+damageValue(L) = 3  //
+damageValue(H) = 0  //
+
+damageValue(S) = 3  //
+damageValue(D) = 5  //
+damageValue(A) = 3  //
+
+renderName = "osnipy_c.render"
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "osnipy_c.core"
+renderName2 = "osnipy_c.bolt"
+renderName3 = "osnipy_c.bolt"
+
+[Core]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "0 255 255 0"
+startRadius = 0.1  //Coxxon  //0.5
+finishRadius = 0.01  //Coxxon  //0.3
+segmentLength = 2.0
+segmentVariance = "0.5 0.5 0.5"
+animateTime = 0.2
+textureRate = 0.01
+
+[Bolt]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 255 255"
+finishColor = "0 50 255 0"
+startRadius = 0.1  //Coxxon  //0.3
+finishRadius = 0.05  //Coxxon  //0.2
+segmentLength = 2.0
+segmentVariance = "1.0 1.0 1.0"  //"2.0 2.0 0.5"
+animateTime = 0.3
+textureRate = 0.01

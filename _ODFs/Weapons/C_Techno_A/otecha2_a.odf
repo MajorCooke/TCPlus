@@ -1,0 +1,24 @@
+/////////Coxxon - BZTC/////////
+//Yes Techno CANNON, (see Rave Gun)
+[OrdnanceClass]
+baseName = "otecha2_a"
+classLabel = "otecha_a"
+
+xplGround = "xtechit_up"
+xplVehicle = "xtechit_up"
+xplBuilding = "xtechit_up"
+
+// Upgraded variant, LUA handles damage/healing instead.
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+//damageValue(N) = 400
+//damageValue(L) = 300
+//damageValue(H) = 200
+//damageValue(S) = 300
+//damageValue(D) = 400
+//damageValue(A) = 200

@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "ggarda_a"
+classLabel = "cannon"
+altName = "ggarda_c"
+ordName = "ogarda_a"
+wpnName = "Guardian A"
+fireSound = "gspst00.wav"
+wpnReticle = "gplasa_a"
+wpnCategory = "CANN"
+isAssault = 1
+aiRange = 100
+
+[CannonClass]
+shotDelay = 0.5
+

@@ -1,0 +1,135 @@
+//////////Coxxon - BZTC//////////
+[GameObjectClass]
+baseName = "avdrop"
+classLabel = "i76building"
+geometryName = "avdropcox_open.fbx"
+animCount = 3
+animName1 = "open"
+animFile1 = "avdropcox_open.fbx"
+animName2 = "land"
+animFile2 = "avdropcox_land.fbx"
+animName3 = "takeoff"
+animFile3 = "avdropcox_takeoff.fbx"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 10000
+maxAmmo = 0
+unitName = "Big Betty"
+heatSignature = 0.8
+imageSignature = 8.0
+radarSignature = 1.0
+ownsTerrain = 1
+canDetect = 0
+canInteract = 0
+//canCollide = 1  //avdrop
+armorClass = H
+collisionRadius = 1.0  //avdrop
+
+///////// LIGHTS AND EFFECTS/////////
+//lightHard1 = "hp_light_1"
+//lightName1 = "omniwbl16"
+//lightHard2 = "hp_light_2"
+//lightName2 = "omniwbl16"
+//lightHard3 = "hp_light_3"
+//lightName3 = "omniwbl16"
+
+lightHard1 = "hp_light_6"
+lightName1 = "hltwbldshp"
+lightHard2 = "hp_light_7"
+lightName2 = "hltwbldshp"
+lightHard3 = "hp_light_8"
+lightName3 = "hltwbldshp"
+lightHard4 = "hp_light_9"
+lightName4 = "hltwbldshp"
+lightHard5 = "hp_light_10"
+lightName5 = "hltwbldshp"
+lightHard6 = "hp_light_11"
+lightName6 = "hltwbldshp"
+lightHard7 = "hp_light_12"
+lightName7 = "hltwbldshp"
+lightHard8 = "hp_light_13"
+lightName8 = "hltwbldshp"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "avdrop.thrust"
+effectHard2 = "hp_emit_2"
+effectName2 = "avdrop.thrust"
+effectHard3 = "hp_emit_3"
+effectName3 = "avdrop.thrust"
+effectHard4 = "hp_emit_4"
+effectName4 = "avdrop.thrust"
+effectHard5 = "hp_emit_5"
+effectName5 = "avdrop.thrust"
+effectHard6 = "hp_emit_6"
+effectName6 = "avdrop.thrust"
+effectHard7 = "hp_emit_7"
+effectName7 = "avdrop.jet"
+effectHard8 = "hp_emit_8"
+effectName8 = "avdrop.jet"
+effectHard9 = "hp_emit_9"
+effectName9 = "avdrop.jet"
+effectHard10 = "hp_emit_10"
+effectName10 = "avdrop.jet"
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "hp_smoke_1"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "hp_smoke_1"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "hp_smoke_1"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "hp_smoke_1"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+[thrust]
+renderBase = "draw_twirl_trail"  //"draw_sprite"
+emitDelay = 0.02
+emitDelayVar = 0.03
+emitVelocity = "0.0 0.0 -5.0"
+emitVariance = "2.0 0.0 2.0" 
+emitInherit = "0.2 0.2 0.2"
+emitLife = 0.2
+textureName = "sprtballcox00.tga"  //"lightflare.tga"  //"plasma.tga"
+textureBlend = "one one modulate"
+startColor = "255 250 200 100"
+finishColor = "255 230 130 50"
+startRadius = 4.0  //12.0
+finishRadius = 6.0  //16.0
+animateTime = 0.2
+rotationRate = 10.0
+
+[jet]
+renderBase = "draw_twirl_trail"  //"draw_sprite"
+emitDelay = 0.02
+emitDelayVar = 0.03
+emitVelocity = "0.0 0.0 -5.0"
+emitVariance = "2.0 0.0 2.0" 
+emitInherit = "0.2 0.2 0.2"
+emitLife = 0.2
+textureName = "sprtballcox00.tga"  //"lightflare.tga"  //"plasma.tga"
+textureBlend = "one one modulate"
+startColor = "100 200 255 100"
+finishColor = "0 175 240 50"
+startRadius = 2.0  //6.0
+finishRadius = 4.0  //12.0
+animateTime = 0.2
+rotationRate = 10.0
+
+[BuildingClass]
+soundAmbient = "sdrop01.wav"
+
+//no tunnel in bzcc
+tunnelCount = 1
+bldEdge = "twww"
+tunnel01X0 = 2
+tunnel01Z0 = 1
+tunnel01DX = 4
+tunnel01DZ = 6
+tunnel01Edge = "twww"

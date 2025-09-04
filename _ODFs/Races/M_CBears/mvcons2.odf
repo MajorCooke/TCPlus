@@ -1,0 +1,28 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "mvcons2"
+classLabel = "mvcons"  //"constructionrig"
+unitIcon = "icon_mvcons.png"
+unitStatus = "wire_mvcons.png"
+//infoName = "mvcons.inf"
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+
+provideName3 = "mvcons2"
+
+////////////////////////////////////////////////////////////
+[CraftClass]
+modeText19 = "Rebuild Addon"  //MODE_POWER = 19  //cons
+
+////////////////////////////////////////////////////////////
+[HoverCraftClass]
+
+////////////////////////////////////////////////////////////
+[DeployableClass]
+
+////////////////////////////////////////////////////////////
+[ConstructionRigClass]
+buildItem1 = "mbpgen2"

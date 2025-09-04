@@ -1,0 +1,70 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "obazok_c"
+classLabel = "bullet"
+
+shotGeometry = "soslvocox00.fbx"
+shotSound = "fmiss02.wav"
+
+renderName = "obazok_c.render"
+
+xplGround = "xbazgnd_c"
+xplVehicle = "xbazxpl_c"
+xplBuilding = "xbazxpl_c"
+
+ammoCost = 20
+
+lifeSpan = 2.5 // 150m
+shotSpeed = 60.0
+
+damageValue(N) = 130 //100
+damageValue(L) = 100 //75
+damageValue(H) = 66 //50
+
+damageValue(S) = 100 //75
+damageValue(D) = 66 //50
+damageValue(A) = 130 //100
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "obazok_c.flare"
+renderName2 = "obazok_c.smoke"
+renderName3 = "obazok_c.flame"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 127"
+finishColor = "255 255 255 127"
+startRadius = 1.0
+finishRadius = 1.0
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "70 70 70 31"
+finishColor = "70 70 70 0"
+startRadius = 0.2
+finishRadius = 0.5
+animateTime = 1.0
+emitDelay = 0.004
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 0.5"
+emitLife = 1.0
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 255"
+finishColor = "255 0 0 0"
+startRadius = 0.2
+finishRadius = 0.02
+animateTime = 0.1
+emitDelay = 0.002
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 0.5"
+emitLife = 0.1

@@ -1,0 +1,71 @@
+/////////Coxxon - BZTC/////////
+//modded from BZ2 ast plasma
+[OrdnanceClass]
+baseName = "ostbla_c"
+classLabel = "bullet"
+shotGeometry = "aostblcox00.fbx"  //NULL
+shotSound = "igtow04.wav"
+xplGround = "xplasgnd_c"
+xplVehicle = "xplascar_c"
+xplBuilding = "xplascar_c"  //"xplasbld_c"  //bzcc  
+
+renderName = "ostbla_c.render"
+
+ammoCost = 14
+lifeSpan = 1.3 // 150 meters
+shotSpeed = 100.0
+
+damageValue(N) = 180 // none  // 300 
+damageValue(L) = 160 // light // 240 
+damageValue(H) = 140 // heavy  // 100 
+
+damageValue(S) = 160 // standard   // 240 
+damageValue(D) = 180 // deflection // 300 
+damageValue(A) = 140 // absorption // 200 
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "ostbla_c.smoke"
+renderName2 = "ostbla_c.core"
+renderName3 = "ostbla_c.light"
+
+///////////////////////////////////////////////////////
+[Smoke]  //mod from default faf misl
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "50 60 50 50"
+finishColor = "70 70 70 0"
+startRadius = 0.3
+finishRadius = 0.7
+animateTime = 0.6
+emitDelay = 0.01
+emitVelocity = "0.0 0.5 0.0"
+emitVariance = "0.6 0.6 0.6"
+emitLife = 0.6
+
+[core]
+renderBase = "draw_twirl_trail"
+textureName = "lighthalo.tga"  //stab  "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 100 155"
+finishColor = "255 255 150 0"
+startRadius = 0.8  //0.3
+finishRadius = 0.07
+animateTime = 0.15
+rotationRate = 10.0
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 0.15
+
+[light]
+renderBase = "draw_light"
+startColor = "0 255 100 200"
+finishColor = "0 255 100 200"
+startRadius = 16.0  //ord light
+finishRadius = 16.0  //ord light
+attenuateConstant = 0.0  //ord light
+attenuateQuadratic = 1.0  //ord light
+attenuateLinear = 0.0  //ord light

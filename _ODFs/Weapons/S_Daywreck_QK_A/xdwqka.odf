@@ -1,0 +1,135 @@
+[ExplosionClass]
+classLabel = "quakeblast"
+
+//explRadius = 50.0
+
+particleTypes = 7
+particleClass1 = "xdwqka.shock"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+particleClass2 = "xdwqka.shock2"
+particleCount2 = 1
+particleVeloc2 = "0.0 0.0 0.0"
+particleClass3 = "xdwqka.shock3"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+particleClass4 = "xdwqka.light"
+particleCount4 = 1
+particleVeloc4 = "0.0 0.0 0.0"
+particleClass5 = "xdwqka.flame"
+particleCount5 = 30
+particleVeloc5 = "30.0 10.0 30.0"
+particleClass6 = "xdwqka.smoke"
+particleCount6 = 30
+particleVeloc6 = "15.0 5.0 15.0"
+particleClass7 = "xdwqka.flame"
+particleCount7 = 30
+particleVeloc7 = "15.0 5.0 15.0"
+
+explSound = "xemt1.wav"
+
+damageRadius = 200.0
+
+damageValue(N) = 15000
+damageValue(L) = 15000
+damageValue(H) = 15000
+
+damageValue(D) = 15000
+damageValue(S) = 15000
+damageValue(A) = 15000
+
+kickRadius = 100.0  //180.0
+kickOmega = 0.0
+kickVeloc = 15.0  //25.0
+
+[QuakeBlastClass]
+quakeCount = 12  //30dgr 
+quakeClass = "odwqka"
+
+//quakeCount = 0  //How many Ordnance to generate.
+//quakeClass = ""  //ODF name of the Ordnance Class to emit.
+pitchVariance = 0.0f  //Variance in the vertical trajectory of the Ordnance.
+yawVariance = 0.0f  //Variance in the horizontal trajectory of the Ordnance.
+initialPitch = 0.0f  //Initial Pitch of the Ordnance trajectory.
+initialYaw = 0.0f  //Initial Yaw of the Ordnance trajectory.
+quakeMagnitude = 5.0f  //Magnitude of the Quake event.
+quakeTime = 5.0f  //Time in seconds the Quake lasts.
+
+[Shock]
+simulateBase = "sim_null"
+lifeTime = 2.0
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "50 150 255 255"
+finishColor = "0 0 255 255"
+startRadius = 5.0
+finishRadius = 50.0
+animateTime = 2.0
+latitudeBands = 8
+longitudeSegments = 16
+
+[Shock2]
+simulateBase = "sim_null"
+lifeTime = 6.0
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 140 50 255"
+finishColor = "255 40 20 100"
+startRadius = 10.0
+finishRadius = 100.0
+animateTime = 6.0
+latitudeBands = 8
+longitudeSegments = 16
+
+[Shock3]  //orig
+simulateBase = "sim_null"
+lifeTime = 8.0
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 100 0 255"
+finishColor = "255 0 0 100"
+startRadius = 10.0
+finishRadius = 200.0
+animateTime = 8.0
+latitudeBands = 8
+longitudeSegments = 16
+
+[Light]
+simulateBase = "sim_null"
+lifeTime = 6.0
+renderBase = "draw_light"
+startColor = "255 255 163 255"
+finishColor = "255 0 0 0"
+startRadius = 128.0  //60.0
+finishRadius = 128.0  //60.0
+animateTime = 6.0
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0
+
+[Flame]
+simulateBase = "sim_smoke"
+lifeTime = 6.0
+renderBase = "draw_twirl"
+textureName = "flame2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 255"
+finishColor = "255 0 0 50"
+startRadius = 100.0  //32.0  //10.0
+finishRadius = 13.0
+animateTime = 6.0
+
+[Smoke]
+simulateBase = "sim_smoke"
+lifeTime = 8.0
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "31 31 31 63"
+finishColor = "63 63 63 0"
+startRadius = 50.0  //32.0  //10.0
+finishRadius = 200.0
+animateTime = 8.0

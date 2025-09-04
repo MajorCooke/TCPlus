@@ -1,0 +1,27 @@
+[GameObjectClass]
+classLabel = "svturr"
+
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+provideName1 = "svturr"
+provideName2 = "svturr_st"
+provideName3 = "VIRTUAL_CLASS_TURRET"
+
+////////////////////////////////////
+
+[CraftClass]
+
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_svturrcox"
+
+[HoverCraftClass]
+velocForward = 10.0
+velocReverse = 8.0
+velocStrafe = 8.0
+
+[DeployableClass]
+timeDeploy = 12.0
+timeUndeploy = 6.0
+
+[TurretTankClass]

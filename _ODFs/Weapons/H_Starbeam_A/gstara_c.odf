@@ -1,0 +1,40 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gstara_c"
+classLabel = "cannon"
+
+// external geometry
+geometryName = "agbazocox_skel.fbx"
+animCount = 4
+animName1 = "stand"
+animFile1 = "agbazocox_skel.fbx"
+animName2 = "walk"
+animFile2 = "agbazocox_skel.fbx"
+animName3 = "crouch"
+animFile3 = "agbazocox_crch.fbx"
+animName4 = "jump"
+animFile4 = "agbazocox_skel.fbx"
+
+// cockpit geometry
+cockpitName = "awbazocox_cockpit_skel.fbx"
+animCountCockpit = 4
+animNameCockpit1 = "stand"
+animFileCockpit1 = "awbazocox_cockpit_skel.fbx"
+animNameCockpit2 = "walk"
+animFileCockpit2 = "awbazocox_cockpit_walk.fbx"
+animNameCockpit3 = "crouch"
+animFileCockpit3 = "awbazocox_cockpit_crch.fbx"
+animNameCockpit4 = "jump"
+animFileCockpit4 = "awbazocox_cockpit_skel.fbx"
+
+ordName = "ostara_c"
+wpnName = "Starbeam C"  //"Rocket"
+fireSound = "cgun01.wav"  //Coxxon  //"fmiss01.wav"
+wpnReticle = "gstara"  //"gbazooka"
+wpnCategory = "HAND"
+isAssault = 0
+isFlying = 1
+altName = "gstara_a"
+
+[CannonClass]
+shotDelay = 1.0  //Coxxon  //2.0 //1.5

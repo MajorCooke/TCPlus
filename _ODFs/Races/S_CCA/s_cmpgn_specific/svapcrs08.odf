@@ -1,0 +1,28 @@
+/////////Coxxon - BZTC/////////
+//for rs03 rescue me
+[GameObjectClass]
+baseName = "svapcrs08"
+classLabel = "svapc"
+
+unitName = "Revmir apc"
+unitIcon = "icon_svapc.png"
+unitStatus = "wire_svapc.png"
+infoName = "svapc.inf"  //or baseName, or provide name
+
+/////////LIGHTS AND EFFECTS//////////////////
+
+
+//////////////////////////////////////////////////////////////////////////
+[CraftClass]
+CockpitSniperRadius = 1.5  //easier for this mission and terrain
+
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_svapccox"
+
+//////////////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+
+//////////////////////////////////////////////////////////////////////////
+[APCClass]
+
+

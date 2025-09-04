@@ -1,0 +1,223 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "bvmisl"
+classLabel = "wingman"
+geometryName = "bvmislcox00.fbx"
+cockpitName = "bvmislcox_cockpit.fbx"
+animCount = 3
+animName1 = "forward"
+animFile1 = "avmislcoxsf.fbx"
+animName2 = "neutral"
+animFile2 = "avmislcoxsn.fbx"
+animName3 = "reverse"
+animFile3 = "avmislcoxsr.fbx"
+scrapValue = 15  //Coxxon  //25
+scrapCost = 50
+customCost = 60
+buildTime = 10.0  //Coxxon  //15.0
+customTime = 15.0
+maxHealth = 2500
+addHealth = 1
+maxAmmo = 1800  //msl  //2500
+addAmmo = 1
+unitName = "Wolverine msl"
+//unitIcon = "icon_bvmisl.png"
+//unitStatus = "wire_bvmisl.png"
+//infoName = "bvmisl.inf"  //or baseName, or provide name
+aiName = "RocketTankFriend"  //lockon
+aiName2 = "RocketTankEnemy"  //lockon
+heatSignature = 1.0
+imageSignature = 2.5
+radarSignature = 0.5
+isAssault = 0
+armorClass = N
+boxCollide = 1
+//collisionRadius = 1.0  //bzcc vehc
+//collisionName = "avmislcollide.fbx"
+
+/////// REQUIREMENTS ///////////////
+//requireCount = 1
+//requireName1 = "bbcbun"  //misl
+//requireText1 = "Build Comm Tower"  //misl
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+provideName1 = "bvmisl"
+provideName2 = "VIRTUAL_CLASS_MISSILESCOUT"
+provideName3 = "DefendUnit"
+
+/////// weapons ////////////////////
+weaponMask = 01111
+weaponHard1 = "HP_ROCKET_1"
+weaponName1 = "gshdwa_c"
+recoilName1 = "recoil1"
+recoilDist1 = -1.0  //tank
+weaponAssault1 = 0
+weaponGroup1 = 0	// group number, -1 for automatic
+weaponHard2 = "HP_ROCKET_2"
+weaponName2 = "gshdwa_c"
+recoilName2 = "recoil2"
+recoilDist2 = -1.0  //tank
+weaponAssault2 = 0
+weaponGroup2 = 0
+weaponHard3 = "HP_ROCKET_3"
+weaponName3 = "ghorna_c"
+recoilName3 = "recoil3"
+recoilDist3 = -1.0  //tank
+weaponAssault3 = 0
+weaponGroup3 = 1
+weaponHard4 = "HP_ROCKET_4"
+weaponName4 = "ghorna_c"
+recoilName4 = "recoil4"
+recoilDist4 = -1.0  //tank
+weaponAssault4 = 0
+weaponGroup4 = 1
+weaponHard5 = "hp_special_1"
+weaponName5 = "gproxa"
+weaponAssault5 = 0
+weaponGroup5 = 2
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltwyl"
+LightsOnlyWhenPiloted = true
+
+effectHard1 = "hp_dust_1"
+effectName1 = "vfxbztcdusts.dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0  
+effectMinVelocity1 = 10.0
+effectMaxVelocity1 = 500.0
+effectHard2 = "hp_dust_2" 
+effectName2 = "vfxbztcdusts.dusttrail"
+effectMinAltitude2 = 0.0
+effectMaxAltitude2 = 5.0
+effectMinVelocity2 = 10.0
+effectMaxVelocity2 = 500.0
+effectHard3 = "hp_dust_0" 
+effectName3 = "vfxbztcdusts.dustpuff"
+effectMinAltitude3 = 0.0
+effectMaxAltitude3 = 3.0  //20.0  //
+effectMinVelocity3 = 0.0
+effectMaxVelocity3 = 10.0
+//effectHard4 = "hp_dust_3"  //low ctr rear
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "hp_smoke_1"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "hp_smoke_1"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "hp_smoke_1"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "hp_smoke_1"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+/////////////////////////////////////////////////////////  
+[CraftClass]
+rangeScan = 300.0
+periodScan = 5.0
+velocJam = 5.0
+engageRange = 130
+braccelFactor = 0.05
+strafeFactor = 0.1
+steerFactor = 1.0
+omegaFactor = 0.4
+velFactor = 0.2
+//avoidSpeed = 20;
+//topSpeed = 25  //Coxxon  //30;
+//RetargetOnStrafe = true  //tnk
+attackTask = "SupportProcess"  //"MortarBikeAttack"  //lockon
+subattackTask = "SupportProcess"  //"MortarBikeSubAttack"  //lockon
+subAttackClass = "ANS" //target:Air/grouNd attack:Deploy/Normal range:weaponS/eNgage 
+//attackTaskUsesGroups = false  //Coxxon
+GoToTaskHasLeader = false  //Coxxon
+canHunt = 1	// defaults to 0
+//NavIsDropped = true //drop behind - bugged, immed removes nav/camr in MP/MPI
+//NavDropSound = "gprox00.wav"  //sound if navisdropped true
+NavConfig = "apcamrb" //specify nav beacon/camera type
+AllowedControlsWhenTugged = 31  //7dflt Sumup: 1hop 2bail 4wcycle 8steer 16weapuse
+//doWeaponCanHitCheck = true  //Coxxon stop bad lockon
+//fireWhenCanHitFriends = false  //Coxxon don't waste missiles
+
+//OffensiveProcessIsTenacious = false  //Coxxon  true
+//OffensiveProcessIsTenaciousAITeam = false  //Coxxon
+//DoBlastUsesFields = true  //false  //Coxxon
+//SitAttackAllowIndependence = true  //Coxxon  false
+//SitAttackAllowCounterattack = true  //Coxxon  false
+
+damageEffect1 = "dmgvhcl1"  //less stock dmg effect
+damageEffect2 = "dmgvhcl1"  //but still some sparks
+damageEffect3 = "dmgvhcl1"  //also lower visibility
+damageEffect4 = "dmgvhcl1"  //on cloaked units
+
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_bvmislcox"
+
+//chunkEffect1 = "bvmislcoxchk01.fbx"  
+//chunkEffect2 = "bvmislcoxchk02.fbx"
+//chunkEffect3 = "bvmislcoxchk03.fbx"
+//chunkEffect4 = "bvmislcoxchk04.fbx"
+//chunkEffect5 = "bvmislcoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 5
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+/////////MESSAGES/////////
+selectWaitMsg = "avrcktvm.wav"  //wolverine here
+selectAttackMsg = "avrcktv0.wav"  //in combat
+selectGoMsg = "avrcktvh.wav"  //you got it
+selectFollowMsg = "avrcktvg.wav"  //guarding friendly
+selectOtherMsg = "avrcktvm.wav"  //wolverine here
+holdMsg = "avrcktvk.wav"  //yes sir
+goMsg = "avrcktv1.wav"  //im on my way
+goObjectMsg = "avrcktvf.wav"  //heading to nav
+attackMsg = "avrcktv2.wav"  //time to kill
+followMeMsg = "avrcktv4.wav"  //on your tail
+followMsg = "avrcktvb.wav"  //guarding
+repairMsg = "avrcktv8.wav"  //getting repairs
+reloadMsg = "avrcktv9.wav"  //guns guns guns
+rescueMsg = "avrcktvc.wav"  //sure no problem
+recycleMsg = "avrcktvd.wav"  //recycling
+user1Msg = "avrcktva.wav"  //i smell blood
+user2Msg = "avrcktvr.wav"  //i would if i could
+killedMsg = "avrcktv3.wav"  //ashes to ashes baby
+//diedMsg = "abetty3.wav"
+
+BailSound = "bail.wav"
+CollideTerrainSound = "vnvcs1.wav"
+CollideBldgSound = "vnvcs3.wav"
+CollideOtherSound = "vvcre2.wav"  //"vvcbb3.wav"
+
+//////////////////////////////////////////////////////////
+[HoverCraftClass]
+velocForward = 34.0  //msl  //36.5 // 
+velocReverse = 20.0  //msl  //12.0 // 
+velocStrafe = 18.0  //msl  //18.5 // 
+accelThrust = 19.0 // acceleration 
+accelBrake = 75.0 // braking
+accelDragStop = 6.0 // how fast it stops once hands are off controls 
+accelJump = 15.0
+setAltitude = 1.0  // how high off the ground
+alphaTrack = 21.0 //springs speed it rights itself 
+alphaDamp = 8.0 //shocks 
+pitchPitch = 0.25 // nose up 
+pitchThrust = 0.1 // nose down 
+rollStrafe = 0.09 // rolls while strafing 
+omegaSpin = 3.0 // spinning in place speed 
+omegaTurn = 3.0 // turning while moving speed 
+alphaSteer = 5.5 // how fast it responds to steering 
+rollSteer = 0.12 // rolls while steering 
+soundThrust = "avrckte0.wav"
+soundJump = "svhraze3.wav"  //use this
+THRUST_VOLUME_BASE_USER = 0.5  //turn back was too loud Coxxon

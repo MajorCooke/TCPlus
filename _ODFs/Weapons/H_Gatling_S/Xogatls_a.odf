@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ogatls_a"
+classLabel = "ogatls_c"
+
+ammoCost = 100.0  //1.0  //2.5
+lifeSpan = 4.0  //1.0  //200m Coxxon  //0.4 // 120m
+shotSpeed = 50.0  //200.0  //Coxxon  //300.0
+
+damageValue(N) = 3000  //25  //32  //Coxxon  //15 // none // 300
+damageValue(L) = 3000  //25  //32  //Coxxon  //13.5 // light // 270
+damageValue(H) = 3000  //25  //24  //Coxxon  //12.5 // heavy // 250
+
+damageValue(S) = 3000  //25  //30  //Coxxon  //13.5 // standard // 270
+damageValue(D) = 3000  //25  //16  //Coxxon  //10 // deflection // 200
+damageValue(A) = 3000  //25  //32  //Coxxon  //15 // absorption // 300

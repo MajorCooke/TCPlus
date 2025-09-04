@@ -1,0 +1,43 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gshots_c"
+classLabel = "cannon"
+
+// external geometry
+geometryName = "sgsnipcox_skel.fbx"
+animCount = 4
+animName1 = "stand"
+animFile1 = "sgsnipcox_skel.fbx"
+animName2 = "walk"
+animFile2 = "sgsnipcox_skel.fbx"
+animName3 = "crouch"
+animFile3 = "sgsnipcox_crch.fbx"
+animName4 = "jump"
+animFile4 = "ccagsnipcox_skel.fbx"
+
+// cockpit geometry
+cockpitName = "swsnipcox_cockpit_skel.fbx"
+animCountCockpit = 4
+animNameCockpit1 = "stand"
+animFileCockpit1 = "swsnipcox_cockpit_skel.fbx"
+animNameCockpit2 = "walk"
+animFileCockpit2 = "swsnipcox_cockpit_walk.fbx"
+animNameCockpit3 = "crouch"
+animFileCockpit3 = "swsnipcox_cockpit_crch.fbx"
+animNameCockpit4 = "jump"
+animFileCockpit4 = "swsnipcox_cockpit_skel.fbx"
+
+ordName = "oshots_c"
+wpnName = "Shotgun C"
+fireSound = "shotgun1.wav"
+wpnReticle = "gstara"
+wpnCategory = "HAND"
+isAssault = 0
+isFlying = 0
+altName = "gshots_a"
+
+[CannonClass]
+shotDelay = 1.0
+salvoCount = 15
+salvoDelay = 0.002
+shotVariance = 0.2

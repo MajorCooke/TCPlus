@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "ghadtow_c"
+classLabel = "cannon"
+altName = "ghadtow_a"
+ordName = "ohadtow_c"
+wpnName = "Hades Tower C"
+fireSound = "crckt01.wav"
+wpnReticle = "garcca_c"  //"gfafm"
+wpnCategory = "ROCK"
+isAssault = 0
+aiRange = 300
+
+[CannonClass]
+shotDelay = 3.0  //for alternate Coxxon  //1.0 // 1/sec
+shotAlternate = 1

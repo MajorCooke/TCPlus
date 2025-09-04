@@ -1,0 +1,36 @@
+//tunnel - full 64m x 64m area
+[GameObjectClass]
+baseName = "cthtunn1e"
+classLabel = "i76building"
+geometryName = "cthtunncox1e.fbx"
+animCount = 3
+animName1 = "open"
+animFile1 = "cthtunncox1e.fbx"
+animName2 = "close"
+animFile2 = "cthtunncox1e2.fbx"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+unitName = "entrance"
+heatSignature = 1.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 1.0  //bztc vehc
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+ownsTerrain = 1
+//bah AlignTerrainReplaceType = 5  //0-5  //tunnel
+AllowSeismic = 0
+
+[BuildingClass]
+CanDemolish = false
+tunnelCount = 1
+bldEdge = "twww"
+
+tunnel01X0 = 0
+tunnel01Z0 = 0
+tunnel01DX = 8
+tunnel01DZ = 16
+tunnel01Edge = "twfw" // Entrance

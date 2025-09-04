@@ -1,0 +1,53 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "odqata"
+classLabel = "seismic"
+shotSound = "gquak00.wav"
+ammoCost = 1000
+lifeSpan = 5.0//65m radius
+shotSpeed = 20.0  //13.0
+xplGround = NULL
+xplVehicle = NULL
+xplBuilding = NULL   //xpl_apdwhea_cox  //
+renderName = "odqata.dust"
+
+//crank these up to get them to work - Coxxon
+//faster wave moves, higher damage needed to be useful
+damageValue(N) = 0//  300
+damageValue(L) = 0//  200
+damageValue(H) = 0//  100
+
+damageValue(S) = 0//  200
+damageValue(D) = 0//  100
+damageValue(A) = 0//  300
+
+//VehicleSearchFilter = 0 // 0 vehicles, 1 pilots, 2 vehicles+pilots+animals, 3 plants, 4 buildings
+
+[SeismicClass]
+waveRadius = 50.0f  //Radius of the Wave.
+waveHeight = 1.0f  //Coxxon  //6.0f  //Height of the Wave.
+waveFrontFrequency = 0.0f  //Coxxon  //1.0f  //How much of the Wave front dips.
+rampUpTime = 2.0f    //Coxxon  //5.0f  //Time in seconds until it reaches full Height.
+rampDownTime = 2.0f  //Time in seconds it takes to reduce height back to 0.
+sweepOmega = 0.0f  //Coxxon  //100.0f  //Sweep rotational velocity to spin units as the wave moves past.
+sweepVeloc = 0.0f  //Coxxon  //50.0f  //Sweep linear velocity to push units along with the wave.
+shakeFrequency = 3.0f  //The frequency of the noise used by the shake effect.
+shakeOmega = 2.0f  ///Shake rotational velocity to spin units randomly.
+shakeVeloc = 5.0f  //Shake linear velocity to push units randomly.
+dampOmega = 5.0f    //Coxxon  //0.0f  //Rotational damping force to keep units from spinning.
+levelOmega = 5.0f    //Coxxon  //0.0f  //Rotational leveling force to keep units from flipping.
+buildingScale = 1.0f  //Multiplier applied to Damage done to Buildings.
+
+[dust]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "100 70 30 255"  //100"
+finishColor = "200 180 150 0"
+startRadius = 1.0
+finishRadius = 15.0
+animateTime = 5.0  //same as "lifeSpan"
+emitDelay = 0.01  //0.02
+emitVelocity = "0.0 0.0 40.0"  //same as "shotspeed"
+emitVariance = "40.0 20.0 0.0"
+emitLife = 5.0  //same as "lifeSpan"

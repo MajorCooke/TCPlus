@@ -1,0 +1,202 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "yvcons"
+classLabel = "constructionrig"
+geometryName = "yvconscox_skel.fbx"
+animCount = 12
+animName1 = "idle"
+animFile1 = "yvconscox_idle.fbx"
+animName2 = "idle2"
+animFile2 = "yvconscox_idle.fbx"
+animName3 = "idle3"
+animFile3 = "yvconscox_idle.fbx"
+animName4 = "sitdown"
+animFile4 = "yvconscox_turn.fbx"
+animName5 = "walk"
+animFile5 = "yvconscox_walk.fbx"
+animName6 = "turn"
+animFile6 = "yvconscox_turn.fbx"
+animName7 = "death"
+animFile7 = "yvconscox_death.fbx"
+animName8 = "death2"
+animFile8 = "yvconscox_death.fbx"
+animName9 = "death3"
+animFile9 = "yvconscox_death.fbx"
+animName10 = "cons"
+animFile10 = "yvconscox_cons.fbx"
+animName11 = "cons2"
+animFile11 = "yvconscox_cons.fbx"
+animName12 = "cons3"
+animFile12 = "yvconscox_cons.fbx"
+scrapValue = 10  //Coxxon  //20
+scrapCost = 40
+buildTime = 5.0  //Coxxon  //10.0
+maxHealth = 2000
+maxAmmo = 0
+collisionRadius = 5.0  //cons
+unitName = "Arachne rig"
+aiName = "RigFriend"
+aiName2 = "RigEnemy"
+//unitIcon = "icon_yvcons.png"
+//unitStatus = "wire_yvcons.png"
+//infoName = "yvcons.inf"
+heatSignature = 1.0
+imageSignature = 2.0
+radarSignature = 2.0
+isAssault = 1  //bztc
+armorClass = H
+boxCollide = 1
+//UseVehicleCrashOnDeath = true
+//needPilot = 1  //Coxxon
+//addPilot = 1  //Coxxon
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 2
+provideName1 = "yvcons"
+provideName2 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltred" 
+lightHard2 = "hp_light_2"
+lightName2 = "hltred" 
+lightHard3 = "hp_light_3"
+lightName3 = "hltred" 
+lightHard4 = "hp_light_4"
+lightName4 = "hltred" 
+
+effectHard1 = "hp_dust_1"
+effectName1 = "vfxbztcdusts.dustwalk"
+effectFlags1 = 2147483135  //move ON
+effectHard2 = "hp_dust_2"
+effectName2 = "vfxbztcdusts.dustwalk"
+effectFlags2 = 2147483135  //move ON
+effectHard3 = "hp_emit_0"
+effectName3 = "vfxbztcbldgs.buildsmoke1"
+effectFlags3 = 2147483631  //deployed
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "hp_smoke_1"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "hp_smoke_1"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "hp_smoke_1"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "hp_smoke_1"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+//////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 400.0
+periodScan = 5.0
+velocJam = 5.0
+TeamTransferrable = false
+braccelFactor = 0.1
+velFactor = 0.4
+steerFactor = 1.4
+omegaFactor = 0.3
+strafeFactor = 0.1
+//avoidSpeed = 5
+modeText19 = "Rebuild Addon"  //MODE_POWER = 19  //cons
+//canHunt = 1	//works as a hold command, but
+//modeText11 = "Hold"  //overridden at 6 with "power" cmd
+damageEffect1 = "dmgvhcl1"  //less stock dmg effect
+damageEffect2 = "dmgvhcl1"  //but still some sparks
+damageEffect3 = "dmgvhcl1"  //also lower visibility
+damageEffect4 = "dmgvhcl1"  //on cloaked units
+
+/////////MESSAGES/////////
+selectUser1Msg = "yvconsv1.wav"  //building
+selectUser2Msg = "yvconsv6.wav"  //unable to comply
+selectWaitMsg = "yvconsva.wav"  //construction here
+selectGoMsg = "yvconsv8.wav"  //in transit
+selectOtherMsg = "yvconsva.wav"  //construction here
+selectFollowMsg = "yvconsv3.wav"  //i will follow
+recycleMsg = "yvconsvd.wav"  //more power needed
+attackMsg = "yvconsv2.wav"  //it will be built
+goMsg = "yvconsv0.wav"  //I move
+goObjectMsg = "yvconsv0.wav"  //I move
+user1Msg = "yvconsv2.wav"  //it will be built
+user2Msg = "yvconsv7.wav"  //building complete
+followMsg = "yvconsv3.wav"  //i will follow
+followMeMsg = "yvconsv3.wav"  //i will follow
+otherMsg = "yvconsv9.wav"  //yes comrade
+holdMsg =  "yvconsv9.wav"  //yes comrade
+//diedMsg =  "rbetty1.wav"
+
+BailSound = "bail.wav"
+CollideTerrainSound = "vnvcs1.wav"
+CollideBldgSound = "vnvcs3.wav"
+CollideOtherSound = "vvcre2.wav"  //"vvcbb3.wav"
+
+//////////////////////////////////////////////////////
+[HoverCraftClass]
+velocForward = 10.0  //6.5  //Coxxon
+velocReverse = 6.0  //4.0  //Coxxon
+velocStrafe = 0.0
+accelThrust = 20.0
+accelBrake = 70.0
+accelDragStop = 2.0
+accelJump = 0.0
+setAltitude = 0.0 // how high off the ground
+alphaTrack = 20.0
+alphaDamp = 5.0
+pitchPitch = 0.0 //nose up
+pitchThrust = 0.0 //nose down
+rollStrafe = 0.0 //rolls while strafing
+omegaSpin = 3.0 //spinning in place speed
+omegaTurn = 2.0 //turning while moving speed
+alphaSteer = 2.0 //how fast it responds to steering
+rollSteer = 0.0 //rolls while steering
+accelDragFull = 0.0 //nothing
+flattenTrackNormal = 2.0f  //BZ2 value - upright on sharper slopes
+
+soundThrust = "scons01.wav"
+soundSteer = "avcnste1.wav"
+soundDeploy = "avartle0.wav"
+soundUndeploy = "avartle4.wav"
+
+//////////////////////////////////////////////////////
+[DeployableClass]
+timeDeploy = 3.0  //2.0
+timeUndeploy = 3.0  // 2.0
+soundDeploy = "avartle0.wav"
+soundUndeploy = "avartle4.wav"
+
+//////////////////////////////////////////////////////
+[ConstructionRigClass]
+buildItem1 = "ybpgen"
+buildItem2 = "ybfact"
+buildItem3 = "ybcbun"
+buildItem4 = "ybarmo"
+buildItem5 = "ybsbay"
+buildItem6 = "ybgtow"
+buildItem7 = "ybtrain"
+buildItem8 = "ybtcen"
+buildItem9 = "ybhqtr"
+buildItem10 = "ybshld"
+
+ChromeEffect = 0  // 0 = line, 1 = chrome 
+ChromeTexture = "reflection3.tga"
+AnimateChrome = 1  //0 = static, 1 = animated 
+BuildSparkConfig = "sparkerA"  //"sparker"  // renderer to apply at build vertices 
+LineStartColor = "0 0 255 155"  //"200 220 255 255"  // line effect start color 
+LineFinishColor = "0 155 255 20"  //"150 150 170 150"  // line effect finish color ...
+BeamColor = "0 155 255 70"  //"200 220 255 255"
+LineSolidColor = "0 155 255 70"  //"150 150 170 70"  // LOD Line color.
+SolidColorDistance = 150.0 
+MaxLineDistance = 250.0 
+
+soundBuild = "avrecye2cox.wav"  //"ivrecye3.wav"
+soundFinish = "avrecye9.wav"  //"ivrecye5.wav"
+soundCancel = "mnu_buzz.wav"  //"cgrowl.wav"  //"locking3.wav"

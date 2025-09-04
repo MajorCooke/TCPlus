@@ -1,0 +1,22 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ostbpa_a"
+classLabel = "ostbpa_c"
+
+ammoCost = 20  //Coxxon  //30
+lifeSpan = 2.86 // 200.6m
+shotSpeed = 70.0
+
+damageValue(N) = 210 // none // 140 + 225 +/-
+damageValue(L) = 200 // light // 133 + 125 +/-
+damageValue(H) = 190 // heavy // 126 + 75 +/-
+
+damageValue(S) = 200 // standard // 133 + 125 +/-
+damageValue(D) = 190 // deflection // 126 + 255 +/-
+damageValue(A) = 210 // absorption // 140 + 75 +/-
+
+///////////////////////////////////////////////////////
+[PulseShellClass]
+pulseDelay = 0.5  //Coxxon  //0.3
+pulsePeriod = 0.5  //Coxxon  //0.3
+xplPulse = "xpulemit_a"

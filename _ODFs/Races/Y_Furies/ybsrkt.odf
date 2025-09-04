@@ -1,0 +1,78 @@
+/////////Coxxon - BZTC/////////
+//Fury Escape Big Spaceship THRUSTER rocket
+[GameObjectClass]
+baseName = "ybsrkt"
+classLabel = "powerlung"
+geometryName = "ybsrktcox00.fbx"
+scrapCost = 100
+scrapValue = 50
+maxHealth = 12000
+addHealth = 50
+maxAmmo = 0
+unitName = "Thruster"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = L  //H
+ownsTerrain = 1  //def lung
+canInteract = 1  //def lung
+AllowSeismic = 0
+powerCost = 0
+collisionRadius = 1.0  //bztc lung
+
+///////// LIGHTS & EFFECTS /////////
+//effectHard1 = "hp_emit_1"
+//effectName1 = "ybsrkt."
+//effectHard2 = "hp_emit_2"
+//effectName2 = "ybsrkt."
+//effectHard3 = "hp_emit_3"
+//effectName3 = "ybsrkt."
+//effectHard4 = "hp_emit_3"
+//effectName4 = "ybsrkt."
+
+//smoke1
+effectHard1 = "hp_smoke_1"
+effectName1 = "dmgbldg1"
+effectMinHealth1 = 0.6
+effectMaxHealth1 = 0.8
+effectHard2 = "hp_smoke_1"
+effectName2 = "dmgbldg2"
+effectMinHealth2 = 0.4
+effectMaxHealth2 = 0.6
+effectHard3 = "hp_smoke_1"
+effectName3 = "dmgbldg3"
+effectMinHealth3 = 0.2
+effectMaxHealth3 = 0.4
+effectHard4 = "hp_smoke_1"
+effectName4 = "dmgbldg4"
+effectMinHealth4 = 0.0
+effectMaxHealth4 = 0.2
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_ybsrktcox"
+
+chunkEffect1 = "ybsrktcoxchk01.fbx"  
+chunkEffect2 = "ybsrktcoxchk02.fbx"  
+chunkEffect3 = "ybsrktcoxchk03.fbx"  
+chunkEffect4 = "ybsrktcoxchk04.fbx"  
+chunkEffect5 = "ybsrktcoxchk05.fbx"  
+HasSeparateChunks = true 
+numChunks = 1
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 1
+numChunks5 = 1
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "cenv01.wav"  //"baruin1b.wav"  //"cceng.wav"  //"cenv04.wav"  //"iext01.wav"  //"igtow01.wav"  //"igtow01b.wav"
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid

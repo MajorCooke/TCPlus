@@ -1,0 +1,35 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "sbsbayrb06"
+classLabel = "sbsbay"  //"supplydepot"
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+requireName1 = ""//"sbfact"
+requireText1 = ""//"Build Factory"
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+
+provideName5 = "sbsbayrb06"
+
+/////////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_sbsbaycox"
+
+/////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 100
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "iarm01.wav"
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg
+UseChunks = true  //bldg
+UseExplosion = true  //bldg
+
+///////////////////////////////////////////////////////////////
+[SupplyDepotClass]
+

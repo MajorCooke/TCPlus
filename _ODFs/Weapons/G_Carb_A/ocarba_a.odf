@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ocarba_a"
+classLabel = "ocarba_c"  //"bullet"
+
+ammoCost = 20  //Coxxon  //2
+lifeSpan = 0.75 //0.5 // 150m
+shotSpeed = 200.0  //300.0
+
+damageValue(N) = 75  //Coxxon  //15 // none // 300
+damageValue(L) = 60  //Coxxon  //12 // light // 240
+damageValue(H) = 50  //Coxxon  //8 // heavy // 160
+
+damageValue(S) = 60  //Coxxon  //12 // stardard // 240
+damageValue(D) = 50  //Coxxon  //8 // deflection // 160
+damageValue(A) = 75  //Coxxon  //15 // absorption // 300

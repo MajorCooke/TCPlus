@@ -1,0 +1,19 @@
+[GameObjectClass]
+baseName = "epvalt01"
+classLabel = "i76building"  //"terrain"
+geometryName = "epvaltcox01.fbx"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+unitName = "UNKNOWN"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+canDetect = 1
+canInteract = 1
+LightingType = 1  //0 default//1 terrain//2 custom
+collisionRadius = 1.0  //bztc vehc
+
+[BuildingClass]
+soundAmbient = "cenv01.wav"  //"santm01.wav"

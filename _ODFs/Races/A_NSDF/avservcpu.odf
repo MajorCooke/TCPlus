@@ -1,0 +1,24 @@
+/////////Coxxon - BZTC/////////
+//MADE INTO A HOVER SERVICE - SEE SERVICEH/SERVICEHPROCESS/SERVICETRUCKH
+[GameObjectClass]
+baseName = "avservcpu"
+classLabel = "avserv"
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+provideName3 = "avservcpu"
+
+///////////////////////////////////////////////////////////////
+[CraftClass]
+
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_avservcox"
+
+//////////////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+
+/////////////////////////////////////////////////////////////
+[ServiceTruckH]
+// Individual classification tweakers
+serviceSTs = 1
+serviceBuildings = 1

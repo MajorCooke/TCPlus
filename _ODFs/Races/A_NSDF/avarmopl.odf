@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "avarmopl"
+classLabel = "avarmo"
+
+limitClass1 = "avarmopl"
+limitClass1Count = 1
+limitClass1Text = "Only One Allowed"
+
+
+/////////////////////////////////////////////////////////
+[DeployBuildingHClass]
+deployName = "abarmopl"
+////////////////////////////////////////////////////////
+[RecyclerVehicleHClass]
+scrapHold = 0

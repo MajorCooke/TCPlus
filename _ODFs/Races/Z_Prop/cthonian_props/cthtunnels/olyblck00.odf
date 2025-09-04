@@ -1,0 +1,19 @@
+[GameObjectClass]
+baseName = "olyblck00"
+classLabel = "terrain"
+geometryName = "olyblckcox00.fbx"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+unitName = "oly wall block 0"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+canDetect = 1
+canInteract = 0
+LightingType = 0  //0 default//1 terrain//2 custom
+collisionRadius = 10.0
+AllowSeismic = 0
+
+[BuildingClass]

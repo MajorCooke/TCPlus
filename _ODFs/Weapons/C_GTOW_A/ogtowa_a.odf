@@ -1,0 +1,26 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ogtowa_a"
+classLabel = "ogtowa_c"
+ammoCost = -1  //gtow
+lifeSpan = 200e-3 // 200m
+shotSpeed = 1e3
+
+//SINGLE GUN NEEDS TO DO MORE DPS OVER STD IBGTOW PLASMA
+damageValue(N) = 580  //150 // none
+damageValue(L) = 480  //120 // light
+damageValue(H) = 250  //50 // heavy
+
+damageValue(S) = 480  //120 // standard
+damageValue(D) = 250  //150 // deflection
+damageValue(A) = 580  //100 // absorption
+
+/////LOOK AT ME/////LOOK AT ME/////LOOK AT ME/////
+// gtow race assault 200 eng  210 rng
+// 5 seconds
+// i/s/m/r 2 shot 0.5 x 10 = 1500 1200 1000
+// y       3 shot 1.0 x  5 = 1500 1200 1000
+// a/b     1 shot 1.0 x  5 = 1500 1200 1000
+// k0      1 shot 0.5 x 10 = 1200 1000 800
+// k1      1 slvo 2.0 * 5  = 1800 1600 1400
+/////////////////////////////////////////////////

@@ -1,0 +1,64 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "osanda_c"
+classLabel = "anchor"
+shotGeometry = "aosandcox00.fbx"  //"iorckt00.fbx"
+shotSound = "sandbag.wav"
+xplGround = "xbulgnd"
+xplVehicle = "xbulcar"
+xplBuilding = "xbulbld"
+
+ammoCost = 5
+lifeSpan = 2.0  //140m
+shotSpeed = 70.0
+
+damageValue(N) = 10
+damageValue(L) = 10
+damageValue(H) = 10
+damageValue(S) = 10
+damageValue(D) = 10
+damageValue(A) = 10
+
+renderName = "osanda_c.render"
+
+[LeaderRoundClass]
+stickTime = 5.0
+
+[AnchorRocketClass]
+accelDrag = 8.0
+alphaDrag = 0.5
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "osanda_c.flare"
+renderName2 = "osanda_c.trail"
+renderName3 = "osanda_c.light"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "flare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.2  //0.5  Coxxon
+finishRadius = 0.2  //0.5  Coxxon
+
+[Trail]
+renderBase = "draw_trail"
+textureBlend = "one one modulate"
+startColor = "255 255 63 127"
+finishColor = "255 0 0 0"
+startRadius = 0.1
+finishRadius = 0.0
+segmentTime = 0.5
+
+[light]
+renderBase = "draw_light"
+startColor = "180 120 80 200"
+finishColor = "180 80 20 200"
+startRadius = 16.0  //ord light
+finishRadius = 16.0  //ord light
+attenuateConstant = 0.0  //ord light
+attenuateQuadratic = 1.0  //ord light
+attenuateLinear = 0.0  //ord light

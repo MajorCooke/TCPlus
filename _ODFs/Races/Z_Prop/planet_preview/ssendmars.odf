@@ -1,0 +1,22 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+geometryName = "ssendmars.fbx"
+classLabel = "I76Building"
+collisionRadius = 0.1
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+unitName = "SS END Mars"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+explosionName = "xplss17achl"  //wrld
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+//ownsTerrain = 1  //ssend
+ignoremissinginf = 1
+
+[BuildingClass]
+bldEdge = "tttt"  //ssend

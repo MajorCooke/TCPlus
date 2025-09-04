@@ -1,0 +1,32 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "sbrecyrb08"
+classLabel = "sbrecy"  //"recycler"
+unitName = "Grozny"
+upgradeName = "svrecyrb08"
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+
+provideName5 = "sbrecyrb08"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_sbrecycox"
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg
+UseChunks = true  //bldg
+UseExplosion = true  //bldg
+
+///////////////////////////////////////////////////////////////
+[FactoryClass]
+
+///////////////////////////////////////////////////////////////
+[RecyclerClass]

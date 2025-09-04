@@ -1,0 +1,253 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "yvturr"
+classLabel = "turrettank"
+geometryName = "yvturrcox00.fbx"
+cockpitName = "yvturrcox_cockpit.fbx"
+animCount = 4
+animName1 = "deploy"
+animFile1 = "yvturrcox00.fbx"
+animName2 = "forward"
+animFile2 = "yvturrcoxsf.fbx"
+animName3 = "neutral"
+animFile3 = "yvturrcoxsn.fbx"
+animName4 = "reverse"
+animFile4 = "yvturrcoxsr.fbx"
+scrapCost = 40
+customCost = 50
+scrapValue = 10
+buildTime = 10.0
+customTime = 15.0
+maxHealth = 2500
+//addHealth = 1  //Coxxon
+maxAmmo = 3000
+addAmmo = 10  //tur  Coxxon
+unitName = "Teucer trt"
+aiName = "TurretTankFriend"
+aiName2 = "TurretTankEnemy"
+heatSignature = 0.1
+imageSignature = 1.0
+radarSignature = 0.1
+isAssault = 0
+armorClass = L
+//keep sphere boxCollide = 1
+//collisionRadius = 1.0  //bzcc vehc
+//collisionName = "avturrcollide.fbx"
+
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 3  //turr
+provideName1 = "yvturr"
+provideName2 = "VIRTUAL_CLASS_TURRET"
+provideName3 = "defender"  //turr
+
+/////// weapons ////////////////////
+//this uses only two cannons _5 _6
+//4 hp's available for most all weapon types
+//recoil1-recoil2 available
+weaponMask = 00011  //tur
+weaponHard1 = "HP_GUN_5"  //1"
+weaponName1 = "gminia_a"  //"ghmrga_a"
+recoilName1 = "recoil1"
+weaponAssault1 = 1
+weaponHard2 = "HP_GUN_6"  //2"
+weaponName2 = "gminia_a"  //"ghmrga_a"
+recoilName2 = "recoil2"
+weaponAssault2 = 1
+weaponHard3 = "HP_GUN_3"
+weaponName3 = "gminia_a"  //"ghmrga_a"
+//recoilName3 = "recoil1"
+weaponAssault3 = 1
+weaponHard4 = "HP_GUN_4"
+weaponName4 = "gminia_a"  //"ghmrga_a"
+//recoilName4 = "recoil2"
+weaponAssault4 = 1
+weaponHard5 = "HP_shield"
+weaponName5 = ""
+weaponAssault5 = 0
+
+///////////////Coxxon/////////////////////
+turretCount = 4
+turretName1 = "turret_y"
+turretName2 = "turret_x_1"
+turretName3 = "turret_x_2"
+turretName4 = "turret_x_3"
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltred"
+lightHard2 = "hp_light_2"
+lightName2 = "hltred"
+LightsOnlyWhenPiloted = true
+
+effectHard1 = "hp_dust_1"
+effectName1 = "vfxbztcdusts.dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0
+effectMinVelocity1 = 10.0
+effectMaxVelocity1 = 500.0
+effectHard2 = "hp_dust_2"
+effectName2 = "vfxbztcdusts.dusttrail"
+effectMinAltitude2 = 0.0
+effectMaxAltitude2 = 5.0
+effectMinVelocity2 = 10.0
+effectMaxVelocity2 = 500.0
+effectHard3 = "hp_emit_1"
+effectName3 = "vfxbztcthrst.furythrustsmlblu"
+effectMinVelocity3 = 3.0
+effectMaxVelocity3 = 500.0
+effectHard4 = "hp_emit_2"
+effectName4 = "vfxbztcthrst.furythrustsmlblu"
+effectMinVelocity4 = 3.0
+effectMaxVelocity4 = 500.0
+effectHard5 = "hp_emit_3"
+effectName5 = "vfxbztcthrst.furythrustsmlblu"
+effectMinVelocity5 = 3.0
+effectMaxVelocity5 = 500.0
+effectHard6 = "hp_dust_0" 
+effectName6 = "vfxbztcdusts.dustpuff"
+effectMinAltitude6 = 0.0
+effectMaxAltitude6 = 3.0
+effectMinVelocity6 = 0.0
+effectMaxVelocity6 = 5.0
+//below 1.3 works, CC broken  
+effectFlags6 = "503"  //"503" undeployed  "495" deployed
+effectHard7 = "hp_emit_1" 
+effectName7 = "yvturr.spriteball"
+//effectMinAltitude7 = 0.0
+//effectMaxAltitude7 = 5.0
+//effectMinVelocity7 = 0.0
+//effectMaxVelocity7 = 10.0
+//1.3 works, CC broken  effectFlags7 = "495"  //"503" undeployed  "495" deployed
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "hp_smoke_1"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "hp_smoke_1"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "hp_smoke_1"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "hp_smoke_1"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+[spriteball]
+renderBase = "draw_sprite"
+textureName =  "sprtballcox00.png"
+textureBlend = "one one modulate"
+startColor = "50 100 255 255"
+finishColor = "50 100 255 255"
+startRadius = 0.8
+finishRadius = 0.8
+
+////////////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 300.0
+periodScan = 3.0
+velocJam = 1.0
+engageRange = 150
+weaponPitch = 1.0
+//NavIsDropped = true //drop behind - bugged, immed removes nav/camr in MP/MPI
+//NavDropSound = "gprox00.wav"  //sound if navisdropped true
+NavConfig = "apcamry" //specify nav beacon/camera type
+AllowedControlsWhenTugged = 31  //7dflt Sumup: 1hop 2bail 4wcycle 8steer 16weapuse
+//attackTaskUsesGroups = false  //Coxxon
+GoToTaskHasLeader = false  //Coxxon
+canSnipe = 1  //UNdeployed only turr
+//RetargetOnStrafe = true  //tnk
+attackTask = "TurretAttack"
+subattackTask = "TurretDefendTask"
+subAttackClass = "ADS"  //Air/gNd  Dep/Nreg  Srng/eNg
+damageEffect1 = "dmgvhcl1"  //less stock dmg effect
+damageEffect2 = "dmgvhcl1"  //but still some sparks
+damageEffect3 = "dmgvhcl1"  //also lower visibility
+damageEffect4 = "dmgvhcl1"  //on cloaked units
+
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_yvturrcox"
+
+//chunkEffect1 = "yvturrcoxchk01.fbx"  
+//chunkEffect2 = "yvturrcoxchk02.fbx"
+//chunkEffect3 = "yvturrcoxchk03.fbx"
+//chunkEffect4 = "yvturrcoxchk04.fbx"
+//chunkEffect5 = "yvturrcoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 6
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 2
+
+/////////MESSAGES/////////
+selectGoMsg = "yvturrvj.wav"  //on my way
+selectAttackMsg = "yvturrvc.wav"  //standing ground
+selectDeployMsg = "yvturrv0.wav"  //deploying
+selectOtherMsg = "yvturrvd.wav"  //what is it
+selectFollowMsg = "yvturrv8.wav"  //lead the way
+selectWaitMsg = "yvturrve.wav"  //PAK here
+holdMsg = "yvturrv1.wav"  //yesss yess
+goMsg = "yvturrvb.wav"  //im not there yet
+goObjectMsg = "yvturrvb.wav"  //im not there yet
+followMeMsg = "yvturrv8.wav"  //lead the way
+followMsg = "yvturrvb.wav"  //im not there yet
+reloadMsg = "yvturrvg.wav"  //fine
+repairMsg = "yvturrvh.wav"  //dah
+rescueMsg = "yvturrvj.wav"  //on my way
+recycleMsg = "yvturrvf.wav"  //my pleasure
+otherMsg = "yvturrvd.wav"  //my pleasure
+attackMsg = "yvturrvf.wav"  //my pleasure
+deployedMsg = "yvturrv6.wav"  //turret deployed
+user1Msg = "yvturrvd.wav"  //what is it
+killedMsg = "" //doesn't exist "yvturrv3.wav"
+//diedMsg = "rbetty2.wav"  //defensive unit lost
+//"yvturrv9.wav"  //this is not possible
+
+BailSound = "bail.wav"
+CollideTerrainSound = "vnvcs1.wav"
+CollideBldgSound = "vnvcs3.wav"
+CollideOtherSound = "vvcre2.wav"  //"vvcbb3.wav"
+
+//////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+setAltitude = 1.0
+accelDragStop = 20.0
+alphaTrack = 20.0
+alphaDamp = 5.0
+pitchPitch = 0.1
+pitchThrust = 0.1
+rollStrafe = 0.1
+rollSteer = 0.1
+velocForward = 20.0
+velocReverse = 15.0
+velocStrafe = 15.0
+accelThrust = 50.0
+accelBrake = 50.0
+omegaSpin = 4.0
+omegaTurn = 1.5
+alphaSteer = 10.0
+accelJump = 15.0
+
+soundThrust = "ienge.wav"
+soundSteer = "yvturre8.wav"
+soundJump = "yvturre8.wav"
+
+////////////////////////////////////////////////////////////////
+[DeployableClass]
+timeDeploy = 5.0  //Coxxon  that's crazy ->//8.0
+timeUndeploy = 3.0
+heightDeploy = 0
+soundDeploy = "yvturre4.wav"
+soundUndeploy = "yvturre5.wav"
+
+///////////////////////////////////////////////////////////////
+[TurretTankClass]
+omegaTurret = 1.5  //turr  since barrel offset  //1.25
+alphaTurret = 5.0  //turr

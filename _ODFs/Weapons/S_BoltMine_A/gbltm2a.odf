@@ -1,0 +1,21 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "gbltm2a"
+geometryName = "aobltmcox00.fbx"
+classLabel = "weaponmine"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 700  //Coxxon  //1000
+maxAmmo = 300
+unitName = "Arc Bolt Mine"
+effectHard1 = "aoproxcox01"
+effectName1 = "vfxbztclight.redblink"
+weaponHard1 = "weaphard_1"
+weaponName1 = "gbltm3a"
+
+[MineClass]
+lifeSpan = 30.0
+
+[WeaponMineClass]
+searchRadius = 100.0
+heightScale = 1.7f  //2.0  //doesn't work no matter the setting, fires 2.5 above ground

@@ -1,0 +1,242 @@
+/////////Coxxon - BZTC/////////
+//MADE INTO A HOVER SERVICE - SEE SERVICEH/SERVICEHPROCESS/SERVICETRUCKH
+[GameObjectClass]
+baseName = "nvserv"
+classLabel = "serviceH"
+geometryName = "nvservcox00.fbx"
+cockpitName = "nvservcox_cockpit.fbx"
+animCount = 4
+animName1 = "deploy"
+animFile1 = "nvservcox01.fbx"
+animName2 = "forward"
+animFile2 = "nvservcoxsf.fbx"
+animName3 = "neutral"
+animFile3 = "nvservcoxsn.fbx"
+animName4 = "reverse"
+animFile4 = "nvservcoxsr.fbx"
+scrapValue = 25 //Coxxon  //20
+scrapCost = 50
+buildTime = 10.0
+maxHealth = 2500  //made like fvserv - Coxxon  //2000
+maxAmmo = 1200
+unitName = "Ammo Bot"
+aiName = "ServiceHProcess"
+aiName2 = "ServiceHProcess"
+heatSignature = 0.1
+imageSignature = 1.0
+radarSignature = 0.0
+isAssault = 0
+collisionRadius = 1.0
+armorClass = L
+//needPilot = 1
+//addPilot = 1
+//collisionName = "avservcollide.fbx"
+
+/////// OBJECT LIMIT //////////////
+LimitClass1 = "nvserv"  //serv
+LimitClass1Count = 10  //serv
+LimitClass1Text = "Build limit reached."  //serv
+
+/////// TEAM LIMIT //////////////
+teamLimitClass1 = "nvserv"  //serv
+teamLimitClass1Count = 15  //serv
+teamLimitClass1Text = "Team limit reached."  //serv
+
+/////// REQUIREMENTS ///////////////
+requireCount = 1
+requireName1 = "xbsbay"
+requireText1 = "Build Repair Hangar"
+
+/////// PROVIDES ///////////////////
+provideCount = 2
+provideName1 = "nvserv"
+provideName2 = "VIRTUAL_CLASS_SERVICETRUCK"
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltwbl"
+//lightHard2 = "hp_light_2"
+//lightName2 = "hltwbl"
+
+//don't set an altitude for tracked vehicles
+effectHard1 = "hp_dust_1"
+effectName1 = "vfxbztcdusts.dusttrail2"
+effectMinVelocity1 = 5.0
+effectMaxVelocity1 = 500.0
+effectHard2 = "hp_dust_0" 
+effectName2 = "vfxbztcdusts.dustpuff"
+effectMinVelocity2 = 0.0
+effectMaxVelocity2 = 10.0
+effectHard3 = "hp_emit_1"
+effectName3 = "avserv.redstay"
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "hp_smoke_1"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "hp_smoke_1"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "hp_smoke_1"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "hp_smoke_1"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+[greenstay]
+renderBase = "draw_sprite"
+textureName =  "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 0 255"
+finishColor = "0 255 0 255"
+startRadius = 0.5
+finishRadius = 0.5
+
+[redstay]
+renderBase = "draw_sprite"
+textureName =  "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 0 0 255"
+finishColor = "255 0 0 255"
+startRadius = 0.5
+finishRadius = 0.5
+
+///////////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 300.0
+periodScan = 5.0
+engageRange = 48  //get to work - Coxxon  //30
+braccelFactor = 0.09
+velFactor = 0.3
+steerFactor = 1.0
+omegaFactor = 0.2
+strafeFactor = 0.1
+TeamTransferrable = true
+//attackTaskUsesGroups = false  //Coxxon
+GoToTaskHasLeader = false  //Coxxon
+//ejectRatio = 0  //Coxxon
+//canRescue = 1   //Coxxon
+//canSnipe = 0  //Coxxon
+damageEffect1 = "dmgvhcl1"  //less stock dmg effect
+damageEffect2 = "dmgvhcl1"  //but still some sparks
+damageEffect3 = "dmgvhcl1"  //also lower visibility
+damageEffect4 = "dmgvhcl1"  //on cloaked units
+
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_nvservcox"
+
+//chunkEffect1 = "nvservcoxchk01.fbx"  
+//chunkEffect2 = "nvservcoxchk02.fbx"
+//chunkEffect3 = "nvservcoxchk03.fbx"
+//chunkEffect4 = "nvservcoxchk04.fbx"
+//chunkEffect5 = "nvservcoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 5
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+/////////MESSAGES/////////
+selectAttackMsg = "ivserv04.wav"
+selectGoMsg = "ivserv02.wav"
+selectFollowMsg = "ivserv03.wav"
+selectUser2Msg = "ivserv13.wav"	
+selectOtherMsg = "ivserv04.wav"
+goMsg = "ivserv02.wav"
+goObjectMsg = "ivserv11.wav"
+attackMsg = "ivserv01.wav"
+followMeMsg = "ivserv08.wav"
+followMsg = "ivserv03.wav"
+repairMsg = "ivserv09.wav"
+reloadMsg = "ivserv09.wav"
+rescueMsg = "ivserv11.wav"
+recycleMsg = "ivserv11.wav"
+holdMsg = "ivserv12.wav"
+user1Msg = "ivserv01.wav"
+otherMsg = "ivserv14.wav"
+killedMsg = ""
+//diedMsg = ""
+
+BailSound = "bail.wav"
+CollideTerrainSound = "vnvcs1.wav"
+CollideBldgSound = "vnvcs3.wav"
+CollideOtherSound = "vvcre2.wav"  //"vvcbb3.wav"
+
+//////////////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+setAltitude = 0.5
+accelDragStop = 4.0
+accelDragFull = 1.0
+alphaTrack = 10.0
+alphaDamp = 3.0
+pitchPitch = 0.3
+pitchThrust = 0.1
+rollStrafe = 0.1
+rollSteer = 0.1
+velocForward = 20.0  //25.0  //set lower since should be more maneuverable Coxxon
+velocReverse = 10.0  //15.0
+velocStrafe = 10.0  //15.0
+accelThrust = 50.0
+accelBrake = 50.0
+omegaSpin = 3.5
+omegaTurn = 1.5
+alphaSteer = 5.0
+accelJump = 0.0
+
+soundThrust = "iserv01.wav"  //"avscave3.wav"
+soundJump = "iserv02.wav"  //"avscave6.wav"
+
+/////////////////////////////////////////////////////////////
+[ServiceTruckH]
+supplyRange = 20.0  //serv
+supplyRadius = 15.0  //serv
+supplyRate = 40.0  //serv
+supplySound = "abhange2.wav"  // "mnu_empt.wav"
+supplyEffect = "nvserv.supply"
+supplyHard = "hp_special_1"
+
+// Individual classification tweakers
+serviceSTs = 1  //serv  //0
+serviceCraft = 1  //serv
+serviceBuildings = 1  //serv  //0
+servicePilots = 0  //serv
+serviceOther = 0  //serv
+
+objPush = 0.0 // Used while servicing. Factor based on distance from truck to target
+objDrag = 0.0 // Used while servicing. Factor based on target's velocity
+
+[Supply]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "nvserv.halo"
+renderName2 = "nvserv.bolt"
+
+[Halo]
+renderBase = "draw_twirl"
+textureName =  "particle.tga"
+textureBlend = "one one modulate"
+startColor = "0 180 240 127"
+finishColor = "0 0 255 0"
+startRadius = 5.0
+finishRadius = 1.0
+animateTime = 0.3
+
+[Bolt]
+renderBase = "draw_bolt"
+textureName =  "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "0 180 240 63"
+finishColor = "0 0 255 0"
+startRadius = 1.0
+finishRadius = 0.3
+segmentLength = 2.0
+segmentVariance = "0.5 0.5 0.5"
+animateTime = 0.3
+textureRate = 0.05
+textureSpeed = -0.5

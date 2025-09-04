@@ -1,0 +1,31 @@
+/////////Coxxon - BZTC/////////
+
+[GameObjectClass]
+baseName = "avfactss08"
+classLabel = "avfact"  //"recyclervehicle"
+unitIcon = "icon_avfact.png"
+unitStatus = "wire_avfact.png"
+infoName = "avfact.inf"  //or baseName, or provide name
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+
+provideName3 = "avfactss08"
+
+//////////////////////////////////////////////////////////
+[CraftClass]
+/////////CRASH EXPLODE INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_avfactcox"
+
+////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+
+/////////////////////////////////////////////////////////
+[DeployableClass]
+
+/////////////////////////////////////////////////////////
+[DeployBuildingHClass]
+deployName = "abfactss08"
+
+////////////////////////////////////////////////////////
+[RecyclerVehicleHClass]

@@ -1,0 +1,56 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ostara_c"
+classLabel = "beam"
+
+shotGeometry = NULL
+xplGround = "xflagnd"
+xplVehicle = "xflacar"
+xplBuilding = "xflabld"
+
+renderName = "ostara_c.render"
+
+ammoCost = 10    //Coxxon  //20
+lifeSpan = 150e-6 // 150m
+shotSpeed = 1e6
+
+damageValue(N) = 50  //65  //Coxxon  //130  //100
+damageValue(L) = 40  //50  //Coxxon  //100 //75
+damageValue(H) = 30  //33  //Coxxon  //66 //50
+
+damageValue(S) = 40  //50  //Coxxon  //100 //75
+damageValue(D) = 50  //33  //Coxxon  //66 //50
+damageValue(A) = 30  //65 //Coxxon  //130 //100
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "ostara_c.core"
+renderName2 = "ostara_c.fringe"
+
+[Core]
+renderBase = "draw_bolt"
+textureName = NULL
+textureBlend = "one one modulate"
+startColor = "50 100 255 255"  //Coxxon //"255 255 255 255"
+finishColor = "255 255 0 0"
+startRadius = 0.05  //Coxxon  //0.1
+finishRadius = 0.1  //Coxxon  //0.05
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.2
+textureRate = 0.01
+
+[Fringe]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 0 255"
+finishColor = "255 0 0 0"
+startRadius = 0.2
+finishRadius = 1.0
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.3
+textureRate = 0.02
+textureSpeed = -5.0

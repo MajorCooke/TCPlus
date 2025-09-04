@@ -1,0 +1,36 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "osanda_a"
+classLabel = "anchor"
+shotGeometry = "aosandcox00.fbx"
+shotSound = "sandbag.wav"
+xplGround = "xbulgnd"
+xplVehicle = "xbulcar"
+xplBuilding = "xbulbld"
+
+ammoCost = 5
+lifeSpan = 3.0  //210m
+shotSpeed = 70.0
+
+damageValue(N) = 10
+damageValue(L) = 10
+damageValue(H) = 10
+damageValue(S) = 10
+damageValue(D) = 10
+damageValue(A) = 10
+
+renderName = "osanda_c.render"
+
+[LeaderRoundClass]
+stickTime = 8.0
+
+[AnchorRocketClass]
+accelDrag = 10.0  //8.0
+alphaDrag = 1.0  //0.5
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "osanda_c.flare"
+renderName2 = "osanda_c.trail"
+renderName3 = "osanda_c.light"

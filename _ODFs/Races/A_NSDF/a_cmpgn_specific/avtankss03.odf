@@ -1,0 +1,26 @@
+/////////Coxxon - BZTC/////////
+//SPECIAL VERSION FOR MISSION SS03
+[GameObjectClass]
+baseName = "avtankss03"
+classLabel = "avtank"  //"wingman"
+unitIcon = "icon_avtank.png"
+//unitStatus = "wire_avtank.png"
+infoName = "avtank.inf"  //or baseName, or provide name
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "avtank"
+provideName2 = "VIRTUAL_CLASS_TANK"
+provideName3 = "DefendUnit"
+provideName4 = "avtankss03"
+
+//////////////////////////////////////////////////////////////////////////
+[CraftClass]
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_avtankcox"
+
+//////////////////////////////////////////////////////////////////////////
+[HoverCraftClass]

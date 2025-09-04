@@ -1,0 +1,37 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "svconsrb06"
+classLabel = "svcons1"  //"constructionrig"
+unitIcon = "icon_svcons.png"
+unitStatus = "wire_svcons.png"
+//infoName = "svcons.inf"
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+
+provideName3 = "svconsrb06"
+
+////////////////////////////////////////////////////////////
+[CraftClass]
+modeText19 = "Rebuild Addon"  //MODE_POWER = 19  //cons
+
+////////////////////////////////////////////////////////////
+[HoverCraftClass]
+
+////////////////////////////////////////////////////////////
+[DeployableClass]
+
+////////////////////////////////////////////////////////////
+[ConstructionRigClass]
+buildItem1 = "sbpgen2"
+buildItem2 = ""
+buildItem3 = "sbcbun"
+buildItem4 = "sbarmo"
+buildItem5 = "sbsbayrb06"
+buildItem6 = "sbgtow"
+buildItem7 = "sbtrain"
+buildItem8 = "sbtcen"
+buildItem9 = ""//"sbhqtr"
+buildItem10 = ""//"sbshld"

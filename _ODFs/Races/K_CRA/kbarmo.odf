@@ -1,0 +1,258 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "kbarmo"
+classLabel = "armory"
+geometryName = "kbarmocox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "kbarmocox01.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = 1
+collisionRadius = 10.0  //bztc bldg
+scrapCost = 60
+scrapValue = 20
+buildTime = 5.0  //depbld  //10.0
+maxHealth = 5000
+//addHealth = 10  //armo  Coxxon
+maxAmmo = 0
+unitName = "Armory"
+infoName = "kbarmo.inf"
+aiName = "ArmoryProcess"
+aiName2 = "ArmoryProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+powerCost = 0
+ownsTerrain = 1  //1 if no baseplate faction
+//buildSupport = "A"  //def recy
+buildRequire = "N"  //"F"//def recy
+allowMDMCollisionDetonation = 1  //Coxxon
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+upgradeName = "kvarmod2"
+
+isSingle = 1  //depbld  Coxxon//limitClass1 = "kbarmo"  //depbld Coxxon
+//limitClass1Count = 1  //depbld Coxxon
+//limitClass1Text = "Only One Allowed"  //depbld Coxxon
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "kbarmo"
+provideName2 = "VIRTUAL_CLASS_ARMORY"
+provideName3 = "base"
+provideName4 = "xbarmo"
+
+///////// LIGHTS & EFFECTS /////////
+//smoke1
+effectHard1 = "hp_smoke_1"
+effectName1 = "dmgbldg1"
+effectMinHealth1 = 0.6
+effectMaxHealth1 = 0.8
+effectHard2 = "hp_smoke_1"
+effectName2 = "dmgbldg2"
+effectMinHealth2 = 0.4
+effectMaxHealth2 = 0.6
+effectHard3 = "hp_smoke_1"
+effectName3 = "dmgbldg3"
+effectMinHealth3 = 0.2
+effectMaxHealth3 = 0.4
+effectHard4 = "hp_smoke_1"
+effectName4 = "dmgbldg4"
+effectMinHealth4 = 0.0
+effectMaxHealth4 = 0.2
+//smoke2
+effectHard5 = "hp_smoke_2"
+effectName5 = "dmgbldg1"
+effectMinHealth5 = 0.6
+effectMaxHealth5 = 0.8
+effectHard6 = "hp_smoke_2"
+effectName6 = "dmgbldg2"
+effectMinHealth6 = 0.4
+effectMaxHealth6 = 0.6
+effectHard7 = "hp_smoke_2"
+effectName7 = "dmgbldg3"
+effectMinHealth7 = 0.2
+effectMaxHealth7 = 0.4
+effectHard8 = "hp_smoke_2"
+effectName8 = "dmgbldg4"
+effectMinHealth8 = 0.0
+effectMaxHealth8 = 0.2
+//smoke3
+effectHard9 = "hp_smoke_3"
+effectName9 = "dmgbldg1"
+effectMinHealth9 = 0.6
+effectMaxHealth9 = 0.8
+effectHard10 = "hp_smoke_3"
+effectName10 = "dmgbldg2"
+effectMinHealth10 = 0.4
+effectMaxHealth10 = 0.6
+effectHard11 = "hp_smoke_3"
+effectName11 = "dmgbldg3"
+effectMinHealth11 = 0.2
+effectMaxHealth11 = 0.4
+effectHard12 = "hp_smoke_3"
+effectName12 = "dmgbldg4"
+effectMinHealth12 = 0.0
+effectMaxHealth12 = 0.2
+
+effectHard13 = "hp_emit_5"
+effectName13 = "vfxbztcbldgs.scavsmoke"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_kbarmocox"
+
+chunkEffect1 = "kvarmocoxchk01.fbx"  
+chunkEffect2 = "kvarmocoxchk02.fbx"  
+chunkEffect3 = "kvarmocoxchk03.fbx"  
+chunkEffect4 = "kvarmocoxchk04.fbx"  
+chunkEffect5 = "kvarmocoxchk05.fbx"  
+HasSeparateChunks = true 
+numChunks = 5
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 1
+numChunks5 = 1
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+//////////////////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "iarm01.wav"
+//bldEdge = "wwww"  //bldg
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+///////////////////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 100
+SoundSelect= "kvslfvcox01.wav"  //click + armory SPECIAL
+SoundDeselect = "cornrclk.wav"
+
+///////////////////////////////////////////////////////////////////////////
+[ArmoryClass]
+//ambient sounds only hear in close proximity
+soundBuild= "kvslfvf.wav"  //building supplies
+soundCancel = "mnu_buzz.wav"  //"cgrowl.wav"  //"locking3.wav"
+soundFinish= "kvslfvcox02.wav"  //supplies deployed SPECIAL
+
+buildItem9 = "apdwrka"  //daywrecker  //tcen
+buildItem10 = "apservap"  //service pod - race specific suffix, armo version
+
+[ArmoryGroup1]
+buildLabel = "Guns"
+buildItem1 = "apminia"  //minigun  //armo
+buildItem2 = "apchana"  //chain gun  //armo
+buildItem3 = "apspita"  //Spitfire  //armo
+buildItem4 = "appumma"  //Pummel  //sbay
+buildItem5 = "aplasea"  //CF laser  //tcen
+//buildItem6 = "apcarba"  //Carbine  //armo  //cra
+//buildItem7 = "aphmrga"  //Homer  //armo  //fury
+//buildItem9 = "apionga"  //Ion  //fact
+//buildItem6 = "apempla"  //EMP  //cbun
+//buildItem7 = "apgausa"  //Guass  //sbay
+//buildItem1 = "apravea"  //Rave Gun  //tcen  //too OP, diff from Techno
+
+[ArmoryGroup2]
+buildLabel = "Cannons"
+buildItem1 = "apstbla"  //Plasma Stab  //sbay  //CRA specific
+buildItem2 = "apstbsa"  //Super Stab  //cbun
+buildItem3 = "apstbta"  //Stilleto Stab  //factg
+buildItem4 = "apstbpa"  //Pulse Stab  //sbay
+buildItem5 = "apstbva"	//Salvo Stab  //fact
+buildItem6 = "apstbra"  //Rapid Stab  //hqtr
+buildItem7 = "aptagca"  //Tag Cannon  //tcen  //diff from rocket (Gun)
+buildItem8 = "apflsha"  //Flash  //tcen
+buildItem9 = "apblsta"  //Blast  //tcen
+buildItem10 = "apmagga"  //Magg  //shld
+
+[ArmoryGroup3]
+buildLabel = "Cannons (Guns)"
+buildItem1 = "apstbla_gun"  //Plasma Stab  //fact
+buildItem2 = "apstbsa_gun"  //Super Stab  //cbun
+buildItem3 = "apstbta_gun"  //Stilleto Stab  //fact
+buildItem4 = "apstbva_gun"	//Salvo Stab  //fact
+buildItem5 = "apstbpa_gun"  //Pulse Stab  //sbay
+buildItem6 = "apstbra_gun"  //Rapid Stab  //hqtr
+buildItem7 = "aptagca_gun"  //Tag Cannon  //tcen  //diff from rocket (Gun)
+buildItem8 = "apflsha_gun"  //Flash  //tcen
+buildItem9 = "apblsta_gun"  //Blast  //tcen
+buildItem10 = "apmagga_gun"  //Magg  //shld
+
+//buildItem1 = "aparcca"  //ARC  //cbun
+//buildItem2 = "apbolta"  //Bolt  //cbun  //Fury
+//buildItem3 = "apflama"  //flamer  //train
+//buildItem4 = "apgarda"  //Guardian  //train
+//buildItem5 = "appblla"  //Plasma  //fact
+//buildItem6 = "apquila"  //Quill  //sbay
+//buildItem7 = "apsonca"  //Sonic  //cbun
+//buildItem8 = "aptecha"  //Techno Cannon  //tcen  //too OP, diff from Rave
+
+[ArmoryGroup4]
+buildLabel = "Rockets"
+buildItem1 = "aprktba"  //Rocket Bomb  //armo
+buildItem2 = "apsanda"  //Sand Bag  //armo
+buildItem3 = "apfafma"  //FAF  //fact
+buildItem4 = "aphorna"  //Hornet  //fact
+buildItem5 = "apshdwa"  //Shadow Salvo  //sbay
+buildItem6 = "aptagga"  //TAG rockets  //tcen  //diff from cannon
+buildItem7 = "apcomta"  //Comet  //tcen
+buildItem8 = "apstnga"  //Stinger Swarm  //tcen
+buildItem9 = "apmlcka"	//Multilock Pred  //hqtr
+//buildItem10 = "apwaspa"  //Wasp  //tcen
+//buildItem10 = "aphadey"  //Hades  //fact  //FURY SPECIFIC
+
+[ArmoryGroup5]
+buildLabel = "Mortars"
+buildItem1 = "apmorta"  //standard mortar  //armo
+buildItem2 = "apmdmga"  //man-det mortar  //armo
+buildItem3 = "apresna"  //resin mortar  //sbay
+buildItem4 = "apacida"  //acid mortar  //sbay
+buildItem5 = "apsplna"  //splinter  //train
+buildItem6 = "appopga"  //popgun  //tcen
+buildItem7 = "aphwtza"  //howitzer  //tcen
+//buildItem8 = "apartla"  //artillery  //shld  //old style - OP in this mod
+
+[ArmoryGroup6]
+buildLabel = "Mines"
+buildItem1 = "apflara"  //Solar Flare  //armo
+buildItem2 = "apmcura"  //M-Curtain  //armo
+buildItem3 = "apmitsa"  //MITS mine  //armo
+buildItem4 = "approxa"  //Prox Mine  //armo
+buildItem5 = "apfntna"  //Fountain  //hqtr  //rebalanced for BZTC
+//buildItem6 = "apjaxxa"  //Jaxx  //armo
+//buildItem7 = "apseeka"  //Seeker  //sbay
+//buildItem8 = "apbltma"  //bolt mine  //hqtr  //FURY SPECIFIC
+//buildItem9 = "apdbmba"  //Da Bomb  //shld  //OP for regular use
+
+[ArmoryGroup7]
+buildLabel = "Specials"
+buildItem1 = "apredfa"  //red field  //armo
+buildItem2 = "apphana"  //phantom vir  //armo
+buildItem3 = "apsitea"  //SITE camera  //armo
+buildItem4 = "apimgma"  //Imager  //armo
+buildItem5 = "apstata"  //Static field  //armo
+buildItem6 = "apthmpa"  //Thumper  //armo
+buildItem7 = "apforca"  //force shield  //hqtr
+//buildItem8 = "apblnka"  //blink  //shld
+//buildItem9 = "apswala"  //shield wall  //armo  //NEEDS WORK DON'T USE
+//buildItem10 = "apcamra"  //Camera Pod race specific //no need to have in armo
+
+[ArmoryGroup8]  //race specific suffix
+buildLabel = "Pilot"
+buildItem1 = "apsnipk"  //sniper rifle  //armo
+buildItem2 = "apjetpk"  //jetpack  //armo
+buildItem3 = "apbazok"  //soldier weapon  //train
+buildItem4 = "apgrenk"  //grenade launcher  //train
+buildItem5 = "apshotk"  //shotgun  //tcen  //3rd party BZ2 1.3
+buildItem6 = "aphovpk"  //hoverpack  //tcen  //3rd party BZ2 1.3
+buildItem7 = "apsatck"  //satchel charge  //hqtr  //rebalanced for BZTC
+buildItem8 = "aprktpk"  //AT-rocket pack  //shld

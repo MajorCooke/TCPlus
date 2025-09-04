@@ -1,0 +1,56 @@
+/////////Coxxon - BZTC/////////
+//shorter range for mp maps
+[OrdnanceClass]
+baseName = "ogtowcth"
+classLabel = "beam"
+shotGeometry = NULL
+ammoCost = -1  //gtow
+lifeSpan = 0.21  //210m
+shotSpeed = 1000
+
+xplGround = "xboltgnd"
+xplVehicle = "xboltcar"
+xplBuilding = "xboltbld"
+
+damageValue(N) = 800  //1000
+damageValue(L) = 600  //800
+damageValue(H) = 400  //600
+damageValue(S) = 600  //800  // standard
+damageValue(D) = 800  //1000  // deflection
+damageValue(A) = 400  //600  // absorption
+
+renderName = "ogtowcth.render"
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "ogtowcth2.core"
+renderName2 = "ogtowcth2.bolt"
+renderName3 = "ogtowcth2.bolt"
+renderName4 = "ogtowcth2.bolt"
+
+[Core]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "0 255 255 0"
+startRadius = 0.5
+finishRadius = 0.3
+segmentLength = 2.0
+segmentVariance = "0.5 0.5 0.5"
+animateTime = 0.2
+textureRate = 0.01
+
+[Bolt]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.3
+finishRadius = 0.2
+segmentLength = 2.0
+segmentVariance = "2.0 2.0 0.5"
+animateTime = 0.3
+textureRate = 0.01

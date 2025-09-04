@@ -1,0 +1,33 @@
+/////////Coxxon - BZTC////////
+[GameObjectClass]
+classLabel = "i76building"
+geometryName = "hadpropcox01.fbx"
+scrapCost = 10
+scrapValue = 5
+maxHealth = 0
+maxAmmo = 0
+unitName = "Hadean Structure A"
+//infoName = "hadgtow.inf"
+ignoremissinginf = 1
+heatSignature = 0.8
+imageSignature = 8.0
+radarSignature = 1.0
+collisionRadius = 10.0  //bztc bldg
+canDetect = 1
+canInteract = 0
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+requireReplaceTerrainPhysics = 1  //bzcc
+ownsTerrain = 1  //since no terrain plate had
+powercost = 0
+allowseismic = 0
+
+/////////LIGHTS AND EFFECTS//////////////////
+//effectHard1 = "hp_emit_1"
+//effectName1 = "vfxbztclight.orangestay"
+
+/////////CRASH INTO COMPONENT PARTS/////////
+explosionName = "x_bztc_bld"
+
+[BuildingClass]
+bldEdge = "wwww"
+soundAmbient = "sgtow01.wav"

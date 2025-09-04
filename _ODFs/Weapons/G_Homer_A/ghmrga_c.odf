@@ -1,0 +1,42 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "ghmrga_c"
+classLabel = "machinegun"
+altName = "ghmrga_a"
+ordName = "ohmrga_c"
+wpnName = "Homing Bullets C"
+fireSound = "gfpulscox00.wav"  //"gmini00.wav"  //"gmini01.wav"
+wpnReticle = "gminia"  //"gminigun"
+wpnCategory = "GUN"
+isAssault = 0
+flashName = "ghmrga_c.ball"  //"ghmrga_c.flash"  //
+aiRange = 105
+
+[CannonClass]
+shotDelay = 0.3  //Coxxon  //0.1
+shotVariance = 0.01
+shotAlternate = 1  //Coxxon
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "0 127 255 255"
+finishColor = "0 0 255 255"
+startRadius = 2.0
+finishRadius = 0.75
+animateTime = 0.1
+geomName = "g_sflash.fbx"
+
+[Ball]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "80 155 200 255"
+finishColor = "0 0 255 0"
+startRadius = 0.5
+finishRadius = 0.2
+animateTime = 0.3  //0.1
+latitudeBands = 8
+longitudeSegments = 16
+emitVelocity = "0.0 0.0 5.0"

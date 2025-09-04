@@ -1,0 +1,70 @@
+/////////Coxxon - BZTC/////////
+//special for catapult
+[OrdnanceClass]
+baseName = "oartla2"
+classLabel = "grenade"
+
+shotGeometry = "aoartlcox00.fbx"
+shotSound = "crckt02.wav"
+
+xplGround = "xartlgrnda"
+xplVehicle = "xartlcara"
+xplBuilding = "xartlcara"
+
+renderName = "oartla2.render"
+
+ammoCost = 10
+lifeSpan = 1e30
+shotSpeed = 112.0  //Coxxon  //67.0 // 356 m
+
+damageValue(N) = 270 // none
+damageValue(L) = 260 // light
+damageValue(H) = 250 // heavy
+
+damageValue(S) = 260 // standard
+damageValue(D) = 250 // deflection
+damageValue(A) = 270 // absorption
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3  //Coxxon  //2
+renderName1 = "oartla.flare"
+renderName2 = "oartla.sparkle"
+renderName3 = "oartla.smoke"  //Coxxon
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 200 0 255"  //Coxxon  //"255 255 255 255"
+startRadius = 0.5
+finishRadius = 0.5
+
+[Sparkle]
+renderBase = "draw_twirl_trail"
+textureName = "plasma.tga" // flame
+textureblend = "one one modulate"
+startColor = "255 255 0 255"  //"255 255 100 255"
+finishColor = "255 100 0 255"  //Coxxon  //"0 200 255 255"
+startRadius = 0.2
+finishRadius = 0.05
+animateTime = 1.0
+emitDelay = 0.005
+emitVariance = "3.0 3.0 3.0"
+emitLife = 2.0
+
+[Smoke]  //pulled from Remodeled AT Stabber shell
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "100 100 130 100"  //Coxxon  //"150 150 200 64"
+finishColor = "70 70 70 0"
+startRadius = 0.3
+finishRadius = 0.7
+animateTime = 2.0  //1.5
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 3.0"  //Coxxon  //"0.6 0.6 0.6"
+emitLife = 2.0  //1.5
+

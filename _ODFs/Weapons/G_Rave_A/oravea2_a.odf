@@ -1,0 +1,23 @@
+/////////Coxxon - BZTC/////////
+ //Yes, GUN, Tech Cannon is CANN version
+[OrdnanceClass]
+baseName = "oravea2_a"
+classLabel = "oravea_a"
+
+xplGround = "xtechit_up"
+xplVehicle = "xtechit_up"
+xplBuilding = "xtechit_up"
+
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+//damageValue(N) = 200
+//damageValue(L) = 150
+//damageValue(H) = 100
+//damageValue(S) = 150
+//damageValue(D) = 200
+//damageValue(A) = 100

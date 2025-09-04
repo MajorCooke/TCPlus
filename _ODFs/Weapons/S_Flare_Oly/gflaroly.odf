@@ -1,0 +1,20 @@
+/////////Coxxon - BZTC/////////
+//to be used in holes or chasm to autokill players/AI that fall in
+[GameObjectClass]
+geometryName = "spawn01.fbx"
+classLabel = "objectspawn"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+unitName = "Object Spawn"
+
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+collisionRadius = 0.0
+
+[ObjectSpawnClass]
+spawnName = "gflar2oly"
+spawnDelay = 30.0
+spawnSound = NULL  //"spawn.wav"

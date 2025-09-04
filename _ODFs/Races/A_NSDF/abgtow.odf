@@ -1,0 +1,134 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "abgtow"
+classLabel = "turret"
+geometryName = "abgtowcox00.fbx"
+cockpitName = "abgtowcox_cockpit.fbx"
+scrapCost = 50
+scrapValue = 10
+maxHealth = 5000  //cost x 100  Coxxon
+maxAmmo = 10000 // 0 is *not* treated as infinite ammo!
+unitName = "Blast Tower"
+unitIcon = "icon_abgtow.png"
+aiName = "GunTowerFriend"
+aiName2 = "GunTowerEnemy"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+collisionRadius = 1.0  //gtow some gap
+canCollide = 0  //gtow correct for this class
+collisionName = "abgtowcollide.fbx"  //gtow  so not so big
+armorClass = H
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+requireReplaceTerrainPhysics = 1  //bzcc
+ownsTerrain = 1  //1 if no baseplate faction
+//boxCollide = 1  //gtow
+buildSupport = "A"
+buildRequire = "F"
+CanAcceptPowerups = 0  //weird, ibgtow/fbspir don't need this
+
+//CanSelect = 1  //create icon
+//CanInteract = 1 //bztc
+/////// REQUIREMENTS ///////////////
+//requireCount = 1
+//requireName1 = "abcbun"
+//requireText1 = "Build Comm Tower"
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "abgtow"
+provideName2 = "VIRTUAL_CLASS_GUNTOWER"
+provideName3 = "defender"
+provideName4 = "xbgtow"
+
+/////// WEAPONS ////////////////////
+weaponMask = 00011
+weaponHard1 = "hp_cannon_1"
+recoilName1 = "recoil1"
+weaponName1 = "ggtowa_a"
+weaponAssault1 = 0
+
+/////// LIGHTS and EFFECTS /////////
+LightsOffEffectsMask = 65535
+lightHard1 = "hp_light_1"
+lightName1 = "hltwbl"
+
+//effectHard1 = "hp_emit_1"
+//effectName1 = "vfxbztclight.blueblink"
+//effectFlags1 = "447" //447 on  479 off
+//smoke1
+effectHard1 = "hp_smoke_1"
+effectName1 = "dmgbldg1"
+effectMinHealth1 = 0.6
+effectMaxHealth1 = 0.8
+effectHard2 = "hp_smoke_1"
+effectName2 = "dmgbldg2"
+effectMinHealth2 = 0.4
+effectMaxHealth2 = 0.6
+effectHard3 = "hp_smoke_1"
+effectName3 = "dmgbldg3"
+effectMinHealth3 = 0.2
+effectMaxHealth3 = 0.4
+effectHard4 = "hp_smoke_1"
+effectName4 = "dmgbldg4"
+effectMinHealth4 = 0.0
+effectMaxHealth4 = 0.2
+
+/////// TURRETS ////////////////////
+turretCount = 2
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "abtowee0.wav"  //only works in fbspir
+bldEdge = "wwww"  //gtow
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+///////////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 250
+periodScan = 0.0
+velocJam = 0.0
+weaponPitch = 1.5
+steerFactor = 0.5
+engageRange = 200
+CanBailout = 0  //gtow  //seems useless w/out cmd menu, but is in ibgtow and fbspir
+CanUserBailout = 0  //gtow  //avoid accidental self-destruct, but not in 180 ibgtow and fbspir
+//Coxxon - stupid that a tall gun tower/spire wouldn't be attacking a apc/bomber/archer
+//RetargetOnStrafe = true  //tnk
+attackTask = "TurretAttack"
+subattackTask = "TurretDefendTask"
+//subAttackClass = "ANS"
+//prefer effect damageEffect1 = "dmgbldg1"
+//prefer effect damageEffect2 = "dmgbldg2"
+//prefer effect damageEffect3 = "dmgbldg3"
+//prefer effect damageEffect4 = "dmgbldg4"
+soundThrust = "abtowee0.wav"  //"igtow01.wav"  //ambient
+
+///////// CRASH INTO COMPONENT PARTS /////////
+//xplcrash = "xpl_crash_abgtowcox"  //gtows are vehicles
+
+explosionName = "x_bztc_bld"  
+chunkEffect1 = "abgtowcoxchk01.fbx"  
+chunkEffect2 = "abgtowcoxchk02.fbx"  
+chunkEffect3 = "abgtowcoxchk03.fbx"  
+chunkEffect4 = "abgtowcoxchk04.fbx"  
+chunkEffect5 = "abgtowcoxchk05.fbx"  
+HasSeparateChunks = true 
+numChunks = 5
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 1
+numChunks5 = 1
+
+///////////////////////////////////////////////////////////////
+[TurretCraftClass]
+omegaTurret = 2.0
+detectRange = 210

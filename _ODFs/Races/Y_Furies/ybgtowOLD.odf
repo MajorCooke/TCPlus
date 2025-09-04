@@ -1,0 +1,101 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "ybgtow"
+classLabel = "barracks"  //"turret"
+geometryName = "ybgtowcox00.fbx"
+cockpitName = "ybgtowcox_cockpit.fbx"
+scrapCost = 50
+scrapValue = 15  //10
+maxHealth = 5000  //cost x 100  Coxxon
+maxAmmo = 10000 // 0 is *not* treated as infinite ammo!
+unitName = "Bolt Tower"
+unitIcon = "icon_ybgtow.png"
+//aiName = "GunTowerFriend"
+//aiName2 = "GunTowerEnemy"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+collisionRadius = 1.0  //gtow some gap
+canCollide = 0  //gtow correct for this class
+collisionName = "ybgtowcollide.fbx"  //gtow  so not so big
+armorClass = H
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+requireReplaceTerrainPhysics = 1  //bzcc
+ownsTerrain = 1  //1 if no baseplate faction
+boxCollide = 1
+buildSupport = "A"
+buildRequire = "F"
+CanAcceptPowerups = 0
+isSingle = 0
+
+/////// REQUIREMENTS ///////////////
+requireCount = 1
+requireName1 = "ybcbun"
+requireText1 = "Build Comm Tower"
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "ybgtow"
+provideName2 = "VIRTUAL_CLASS_GUNTOWER"
+provideName3 = "defender"
+provideName4 = "xbgtow"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+//explosionName = "xpl_crash_ybgtowcox"  //gtow/spire "turret" class different
+xplcrash = "x_bztc_bld"  //"xpl_crash_ybtwrgcox"
+
+chunkEffect1 = "ybgtowcoxchk01.fbx"
+chunkEffect2 = "ybgtowcoxchk02.fbx"  
+chunkEffect3 = "ybgtowcoxchk03.fbx"  
+chunkEffect4 = "ybgtowcoxchk04.fbx"  
+chunkEffect5 = "ybgtowcoxchk05.fbx"  
+HasSeparateChunks = true 
+numChunks = 5
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 1
+numChunks5 = 1
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "abtowee0.wav"  //"igtow01.wav"
+
+///////// EXPLOSION AID /////////
+//UseCollapse = false
+//UseChunks = true
+//UseExplosion = true
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+PoweredByTaps = false  //false - trad power and nonpower addon
+//DestroyTapsWithParent = true  //true default
+powerTap1 = "HP_TAP_1"
+powerName1 = "ybgball"
+AutoBuildTap1 = 1
+powerTap2 = "HP_TAP_2"
+powerName2 = "ybgball"
+AutoBuildTap2 = 1
+powerTap3 = "HP_TAP_3"
+powerName3 = "ybgball"
+AutoBuildTap3 = 1
+powerTap4 = "HP_TAP_4"
+powerName4 = "ybgball"
+AutoBuildTap4 = 1
+
+///////////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 250
+periodScan = 0.0
+velocJam = 0.0
+weaponPitch = 1.5
+steerFactor = 0.5
+//engageRange = 200
+CanBailout = 0  //gtow
+CanUserBailout = 0  //gtow
+
+///////////////////////////////////////////////////////////////
+//[TurretCraftClass]
+//omegaTurret = 3.0  //2.0
+//detectRange = 210

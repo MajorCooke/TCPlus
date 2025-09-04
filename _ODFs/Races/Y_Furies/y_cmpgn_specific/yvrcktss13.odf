@@ -1,0 +1,15 @@
+////////Coxxon - BZTC////////
+[GameObjectClass]
+baseName = "yvrcktss13"
+classLabel = "yvrckt"  //"sav"
+unitName = "UFO delta"
+//unitIcon = "icon_yvrckt.png"
+//unitStatus = "wire_yvrckt.png"
+infoName = "unknown13.inf"  //"yvrckt.inf"
+
+//////////////////////////////////////////////////////////////////////////
+[CraftClass]
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_yvrcktcox"
+
+CanAIEject = 0

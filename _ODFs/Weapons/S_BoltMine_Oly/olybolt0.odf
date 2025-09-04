@@ -1,0 +1,98 @@
+/////////Coxxon - BZTC/////////
+//(tiny) gun tower version of the arc bolt mine
+[GameObjectClass]
+baseName = "abgtow"
+classLabel = "turret"
+geometryName = "aobltmcox00.fbx"
+scrapCost = 50
+scrapValue = 50
+maxHealth = 2000  //? 1500
+//addHealth = 5
+maxAmmo = 10000 // 0 is *not* treated as infinite ammo!
+unitName = "Arc Bolt Mine"
+unitIcon = "icon_abgtow.png"
+unitInfo = "olybolt1"
+aiName = "GunTowerFriend"
+aiName2 = "GunTowerEnemy"
+heatSignature = 0.5
+imageSignature = 0.5
+radarSignature = 0.5
+isAssault = 1  //bztc
+collisionRadius = 1.0
+canCollide = 0  //gtow correct for this class
+collisionName = "olyboltcollide.fbx"  //gtow  so not so big
+armorClass = N
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+requireReplaceTerrainPhysics = 1  //bzcc
+ownsTerrain = 1  //1 if no baseplate faction
+buildSupport = "A"
+buildRequire = "F"
+CanAcceptPowerups = 0  //weird, ibgtow/fbspir don't need this
+
+//CanSelect = 1  //create icon
+//CanInteract = 1 //bztc
+//CanDetect = 1
+
+/////// WEAPONS ////////////////////
+weaponMask = 00001
+weaponHard1 = "hp_cannon_1"
+weaponName1 = "golybolt0"  //redid weapon//decent alt>>//"ggtowy_a"
+weaponAssault1 = 0
+
+/////// LIGHTS and EFFECTS /////////
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "aobltmcox00"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "aobltmcox00"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "aobltmcox00"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "aobltmcox00"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+/////// TURRETS ////////////////////
+turretCount = 2
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "abtowee0.wav"  //only works in fbspir
+bldEdge = "wwww"  //gtow
+
+///////// EXPLOSION AID /////////
+UseCollapse = true
+UseChunks = false
+UseExplosion = true
+
+///////////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 200
+periodScan = 1.0
+velocJam = 0.0
+weaponPitch = 1.0
+//steerFactor = 0.5
+engageRange = 100
+CanBailout = 0  //gtow  //seems useless w/out cmd menu, but is in ibgtow and fbspir
+CanUserBailout = 0  //gtow  //avoid accidental self-destruct, but not in 180 ibgtow and fbspir
+//Coxxon - stupid that a tall gun tower/spire wouldn't be attacking a apc/bomber/archer
+//attackTask = "TurretAttack"
+//subAttackTask = "TurretDefendTask"
+//subAttackClass = "ANS"
+soundThrust = "abtowee0.wav"  //"igtow01.wav"  //ambient
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"  
+
+///////////////////////////////////////////////////////////////
+[TurretCraftClass]
+omegaTurret = 2.0
+detectRange = 210

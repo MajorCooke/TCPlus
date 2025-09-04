@@ -1,0 +1,236 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "ybfact"
+classLabel = "factory"
+geometryName = "ybfactcox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "ybfactcox01.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = 1
+scrapCost = 55
+scrapValue = 15
+maxHealth = 6000
+//addHealth = 10  //fact  Coxxon
+maxAmmo = 0
+unitName = "Factory"
+aiName = "BuildingProcess"
+aiName2 = "BuildingProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+collisionRadius = 10.0  //lrg bldg
+powerCost = 0
+ownsTerrain = 1  //1 if no baseplate faction
+//buildSupport = "A"  //def recy
+buildRequire = "N"  //"F"//def recy
+allowMDMCollisionDetonation = 1  //Coxxon
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+//SO CAN BE NEUTRAL AND FRIENDLY HEAVAL WON'T TRY TO UPGRADE upgradeName = "yvfact"
+
+///////// REQUIREMENTS /////////
+requireCount = 0
+
+///////// PROVIDES /////////
+provideCount = 4
+provideName1 = "ybfact"
+provideName2 = "VIRTUAL_CLASS_FACTORY"
+provideName3 = "xbfact"
+provideName4 = "ybfactss16"
+
+/////////  LIGHTS AND EFFECTS  /////////
+lightHard1 = "hp_light_5"
+lightName1 = "hltred"
+lightHard2 = "hp_light_6"
+lightName2 = "hltred"
+lightHard3 = "hp_light_7"
+lightName3 = "hltred"
+lightHard4 = "hp_light_8"
+lightName4 = "hltred"
+lightHard5 = "hp_light_9"
+lightName5 = "hltwbl"
+lightHard6 = "hp_light_10" //vehicle build area
+lightName6 = "omnired8"
+lightHard7 = "hp_light_13" //interior
+lightName7 = "omnifbl5"
+
+//smoke1
+effectHard1 = "hp_smoke_1"
+effectName1 = "dmgbldg1"
+effectMinHealth1 = 0.8
+effectMaxHealth1 = 0.9
+effectHard2 = "hp_smoke_1"
+effectName2 = "dmgbldg2"
+effectMinHealth2 = 0.6
+effectMaxHealth2 = 0.8
+effectHard3 = "hp_smoke_1"
+effectName3 = "dmgbldg3"
+effectMinHealth3 = 0.4
+effectMaxHealth3 = 0.6
+effectHard4 = "hp_smoke_1"
+effectName4 = "dmgbldg4"
+effectMinHealth4 = 0.0
+effectMaxHealth4 = 0.4
+//smoke2
+effectHard5 = "hp_smoke_2"
+effectName5 = "dmgbldg1"
+effectMinHealth5 = 0.8
+effectMaxHealth5 = 0.9
+effectHard6 = "hp_smoke_2"
+effectName6 = "dmgbldg2"
+effectMinHealth6 = 0.6
+effectMaxHealth6 = 0.8
+effectHard7 = "hp_smoke_2"
+effectName7 = "dmgbldg3"
+effectMinHealth7 = 0.4
+effectMaxHealth7 = 0.6
+effectHard8 = "hp_smoke_2"
+effectName8 = "dmgbldg4"
+effectMinHealth8 = 0.0
+effectMaxHealth8 = 0.4
+//smoke3
+effectHard9 = "hp_smoke_3"
+effectName9 = "dmgbldg1"
+effectMinHealth9 = 0.8
+effectMaxHealth9 = 0.9
+effectHard10 = "hp_smoke_3"
+effectName10 = "dmgbldg2"
+effectMinHealth10 = 0.6
+effectMaxHealth10 = 0.8
+effectHard11 = "hp_smoke_3"
+effectName11 = "dmgbldg3"
+effectMinHealth11 = 0.4
+effectMaxHealth11 = 0.6
+effectHard12 = "hp_smoke_3"
+effectName12 = "dmgbldg4"
+effectMinHealth12 = 0.0
+effectMaxHealth12 = 0.4
+
+effectHard13 = "hp_emit_7" //center projector
+effectName13 = "vfxbztcbldgs.kbrecyring"
+//effectHard2 = "hp_emit_9"
+//effectName2 = "ybfact.firesteam"
+//effectHard3 = "hp_emit_10"
+//effectName3 = "ybfact.firesteam"
+//effectHard4 = "hp_emit_11"
+//effectName4 = "ybfact.firesteam"
+//effectHard5 = "hp_emit_12"
+//effectName5 = "ybfact.firesteam"
+//effectHard6 = "hp_emit_13"
+//effectName6 = "ybfact.firesteam"
+//effectHard7 = "hp_emit_14"
+//effectName7 = "ybfact.firesteam"
+effectHard14 = "hp_light_10"  //at unit build point
+effectName14 = "vfxbztcbldgs.ybrecybeam"
+//NO HP_EMIT_15
+//effectHard13 = "hp_emit_16"  //under mouth
+//effectName13 = NULL  //"fxbztccox1.firesteam"
+//effectHard14 = "hp_emit_3"  //projector
+//effectName14 = NULL  //"vfxbztcbldgs.kbrecyring"
+//effectHard15 = "hp_emit_4"  //projector
+//effectName15 = NULL  //"vfxbztcbldgs.kbrecyring"
+//effectHard16 = "hp_emit_5" //at projector
+//effectName16 = NULL  //"vfxbztcbldgs.kbrecyring"
+//effectHard17 = "hp_emit_6" //at projector
+//effectName17 = NULL  //"vfxbztcbldgs.kbrecyring"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_ybfactcox"
+
+chunkEffect1 = "yvfactcoxchk01.fbx"  
+chunkEffect2 = "yvfactcoxchk02.fbx"
+chunkEffect3 = "yvfactcoxchk03.fbx"
+chunkEffect4 = "yvfactcoxchk04.fbx"
+chunkEffect5 = "yvfactcoxchk05.fbx"
+//6 avail
+HasSeparateChunks = true
+numChunks = 5
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 1
+numChunks5 = 1
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+[firesteam]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.02  //0.01
+emitDelayVar = 0.03
+emitVelocity = "0.0 0.0 3.0"
+emitVariance = "1.0 0.0 1.0" 
+emitInherit = "0.2 0.2 0.2"
+emitLife = 0.25  //0.5  //
+textureName =  "fire.tga"  //"plasma.tga"  //
+textureBlend = "one one modulate"
+startColor = "255 150 30 100"
+finishColor = "255 0 0 255"
+startRadius = 1.0
+finishRadius = 0.01
+animateTime = 0.25  //0.5  //
+rotationRate = 3.0
+
+/////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 100
+SoundSelect = "yvmufv0b.wav"  //click + unit factory here
+SoundDeselect = "cornrclk.wav"
+
+/////////////////////////////////////////////
+[BuildingClass]
+tunnelCount = 1
+tunnel01X0 = 3
+tunnel01Z0 = 6
+tunnel01DX = 2
+tunnel01DZ = 2
+tunnel01Edge = "wttt"
+
+soundAmbient = "cenv01.wav"  //"ibfact00.wav"
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+/////////////////////////////////////////////
+[FactoryClass]
+ChromeEffect = 0  // 0 = line and puff, 1 = chrome only
+ChromeTexture = "reflection3.tga"  // reflection map texture 
+AnimateChrome = 1  // 0 = static, 1 = animated 
+BuildSparkConfig = "sparkerY"  // renderer to apply at build vertices 
+LineStartColor = "0 0 255 155"  // line effect start color 
+LineFinishColor = "0 155 255 20"  // line effect finish color ...
+BeamColor = "0 155 255 70"
+lineSolidColor = "0 150 255 70"  // LOD Line color.
+KickAllCraft = true  //looks better than just drop
+//scaleVelY = 5.0
+MultVelXZ = 1.3
+//DropoffDX = 0.0
+DropoffDZ = 12.0
+
+reloadMsg = "yvmufv1.wav"  //building underway
+rescueMsg = "yvmufv2.wav"  //unit complete
+deployedMsg = "yvmufvf.wav"  //unit factory online
+selectWaitMsg = "yvrecy04.wav"
+selectUser1Msg = "yvrecy01.wav"
+selectUser2Msg = "yvrecy02.wav"
+
+soundBuild = "avrecye2cox.wav"  //"ibrecy02.wav"
+soundCancel = "mnu_buzz.wav"  //"cgrowl.wav"  //"locking3.wav"
+soundFinish = "avrecye9.wav"  //"iapc04.wav"
+
+//weaponConfig = "yweapon.odf" for reference/must use .odf - Coxxon
+
+buildItem1 = "yvmbike"
+buildItem2 = "yvmisl"
+buildItem3 = "yvtank"
+buildItem4 = "yvrckt"
+buildItem5 = "yvartl"
+buildItem6 = "yvwalk"
+buildItem7 = "yvapc"
+buildItem8 = "yvhtnk"  //manticore
+buildItem9 = "yvmine"
+//buildItem10 = ""

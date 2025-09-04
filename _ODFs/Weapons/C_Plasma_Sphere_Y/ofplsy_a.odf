@@ -1,0 +1,75 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ofplsy_a"
+classLabel = "bullet"
+shotGeometry = NULL  //"yoartlcox00.fbx"
+shotSound = "crckt02.wav"
+renderName = "ofplsy_c.render"
+ammoCost = 50  //40
+lifeSpan = 2.3  //Coxxon  //230m
+shotSpeed = 100.0  //Coxxon
+
+xplGround = "xfplsygrnd"
+xplVehicle = "xfplsycar"
+xplBuilding = "xfplsycar"
+
+damageValue(N) = 700 // none
+damageValue(L) = 500 // light
+damageValue(H) = 300 // heavy
+
+damageValue(S) = 500 // standard
+damageValue(D) = 700 // deflection
+damageValue(A) = 200 // absorption
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "ofplsy_a.smoke"
+renderName2 = "ofplsy_a.trail"
+renderName3 = "ofplsy_a.core"
+renderName4 = "ofplsy_a.light"
+
+[Core]
+renderBase = "draw_sprite"
+textureName = "yosphrcox00_e.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "255 255 255 255"
+startRadius = 1.5
+
+[trail]
+renderBase = "draw_twirl_trail"
+textureName = "lighthalo.tga"  //"plasma.tga" // flame
+textureblend = "one one modulate"
+startColor = "50 150 255 255"
+finishColor = "0 100 255 10"
+startRadius = 4.0
+finishRadius = 0.05
+animateTime = 1.0
+emitDelay = 0.01
+emitVariance = "3.0 3.0 3.0"
+emitLife = 2.0
+
+[Smoke]  //pulled from Remodeled AT Stabber shell
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "50 100 130 50"
+finishColor = "70 70 70 0"
+startRadius = 2.0
+finishRadius = 3.0
+animateTime = 2.0
+emitDelay = 0.02
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 3.0"
+emitLife = 2.0
+
+[light]
+renderBase = "draw_light"
+startColor = "20 80 180 200"
+finishColor = "20 80 180 200"
+startRadius = 24.0  //ord light
+finishRadius = 24.0  //ord light
+attenuateConstant = 0.0  //ord light
+attenuateQuadratic = 1.0  //ord light
+attenuateLinear = 0.0  //ord light
+lensflare = 0

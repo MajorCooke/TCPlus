@@ -1,0 +1,29 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gchana_c"
+classLabel = "machinegun"
+altName = "gchana_a"
+ordName = "ochana_c"
+wpnName = "Chain Gun C"
+fireSound = "gmsov00.wav"  //"gchain01.wav"
+wpnReticle = "gchana"
+wpnCategory = "GUN"
+isAssault = 0
+flashName = "gchana_c.flash"
+aiRange = 100
+
+[CannonClass]
+shotDelay = 0.3  //Coxxon  //0.1
+shotVariance = 0.025
+shotAlternate = 1  //Coxxon
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "255 127 0 255"
+finishColor = "255 127 0 0"
+startRadius = 2.0
+finishRadius = 0.75
+animateTime = 0.1
+geomName = "g_sflash.fbx"

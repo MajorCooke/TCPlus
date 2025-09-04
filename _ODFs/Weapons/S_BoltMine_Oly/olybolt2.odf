@@ -1,0 +1,21 @@
+/////////Coxxon - BZTC/////////
+//for use in campaign - no max ammo or lifespan, increased health
+[GameObjectClass]
+baseName = "olybolt2"
+geometryName = "aobltmcox00.fbx"
+classLabel = "weaponmine"
+scrapCost = 0
+scrapValue = 60  //make it worth it
+maxHealth = 2000
+//maxAmmo = 300
+unitName = "Arc Bolt Mine"
+weaponHard1 = "weaphard_1"
+weaponName1 = "olybolt3"
+
+[MineClass]
+//lifeSpan = 30
+TeamFilter = 0  //0 = target all, 1 = target team, 2 = target allies, 3 = target enemies, 4 = not same team
+
+[WeaponMineClass]
+searchRadius = 100.0
+heightScale = 0.0f  //1.7f  //2.0  //doesn't work no matter the setting, fires ~2.5 above ground

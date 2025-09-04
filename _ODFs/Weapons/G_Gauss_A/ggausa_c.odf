@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "ggausa_c"
+classLabel = "cannon"
+altName = "ggausa_a"
+ordName = "ogausa_c"
+wpnName = "Gauss C"
+fireSound = "gauss_c.wav"
+wpnReticle = "gblsta"
+wpnCategory = "GUN"
+isAssault = 0
+aiRange = 120
+
+[CannonClass]
+shotDelay = 0.5
+shotAlternate = 1

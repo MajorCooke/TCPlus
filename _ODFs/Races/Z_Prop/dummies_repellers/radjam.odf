@@ -1,0 +1,40 @@
+/////////Coxxon - BZTC/////////
+//short-range invisible jammer, to simulate radar and minimap interference when inside a closed dropship
+//usually called and/or removed by a script, but could be permanent on a map
+[GameObjectClass]
+baseName = "radjam"
+classLabel = "jammer"
+geometryName = "dummycox00.fbx"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+unitName = "indoor jammer"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+isAssault = 0
+canInteract = 0
+armorClass = H
+ignoreMissingInf = 1
+AllowSeismic = 0
+powerCost = 0
+
+
+/////// REQUIREMENTS ///////////////
+
+/////// PROVIDES ///////////////////
+provideCount = 1
+provideName1 = "radjam"
+
+////////////////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = ""
+
+////////////////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 1
+
+////////////////////////////////////////////////////////////////////////
+[JammerTowerClass]
+jammerRange = 32.0   //cover inside of a dropship

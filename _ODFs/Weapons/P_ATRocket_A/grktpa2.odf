@@ -1,0 +1,28 @@
+/////////Coxxon - BZTC/////////
+//ONLY FOR BD03 MISSION - NOT MP BALANCED
+[WeaponClass]
+baseName = "grktpa2"
+classLabel = "thermallauncher"
+geometryName = "aggrencox00.fbx"
+ordName = "orktpa2"
+wpnName = "AT-Rocket Mk2"
+wpnIcon = "wire_grktp%d.tga"
+fireSound = "gmasg00.wav"
+wpnReticle = "ghorna.0"
+wpnCategory = "PACK"
+localAmmo = 4  //rktp  //wireframe for 6
+canSelect = false  //rktp
+isAssault = 0
+aiRange = 350.0  //150.0
+
+[LauncherClass]
+lockRange = 350.0
+shotDelay = 1.0
+lockDelay = 0.5
+coneAngle = 0.05  //0.15  //Coxxon
+lockingReticle = "ghorna.A"  //"ghornet.A"
+lockingSound = "locking3.wav"  //"lock01.wav"
+lockedReticle = "ghorna.B"  //"ghornet.B"
+lockedSound = "locked3.wav"  //"lock02.wav"
+targetCount = 3
+targetReticle = "ghorna.1"  //"ghornet.1"

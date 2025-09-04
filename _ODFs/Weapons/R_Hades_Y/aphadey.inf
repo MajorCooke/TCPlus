@@ -1,0 +1,5 @@
+HADES missile
+Combat provides a standard heat-seeking, fire-and-forget missile, while assault provides a more powerful version.
+
+C 120m  Amo L  FRate H  Damg (E/I)L
+A 400m  Amo H  FRate L  Damg (E/I)H (AA)

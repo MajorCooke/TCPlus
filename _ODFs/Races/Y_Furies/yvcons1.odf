@@ -1,0 +1,56 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "yvcons1"
+classLabel = "yvcons"  //"constructionrig"
+unitIcon = "icon_yvcons.png"
+unitStatus = "wire_yvcons.png"
+//infoName = "yvcons.inf"
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+
+provideName3 = "yvcons1"
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltred" 
+lightHard2 = "hp_light_2"
+lightName2 = "hltred" 
+lightHard3 = "hp_light_3"
+lightName3 = "hltred" 
+lightHard4 = "hp_light_4"
+lightName4 = "hltred" 
+
+effectHard1 = "hp_dust_1"
+effectName1 = "vfxbztcdusts.dustwalk"
+effectMinVelocity1 = 2.0
+effectMaxVelocity1 = 500.0
+effectFlags1 = "503"  //"503" undeployed  "495" deployed
+effectHard2 = "hp_dust_2" 
+effectName2 = "vfxbztcdusts.dustwalk"
+effectMinVelocity2 = 2.0
+effectMaxVelocity2 = 500.0
+effectFlags2 = "503"  //"503" undeployed  "495" deployed
+effectHard3 = "hp_emit_0"
+effectName3 = "vfxbztcbldgs.buildsmoke1"
+effectFlags3 = "495"  //deployed
+
+//////////////////////////////////////////////////////
+[CraftClass]
+modeText19 = "Rebuild Addon"  //MODE_POWER = 19  //cons
+
+//////////////////////////////////////////////////////
+[HoverCraftClass]
+
+//////////////////////////////////////////////////////
+[DeployableClass]
+timeDeploy = 3.0  //2.0
+timeUndeploy = 3.0  // 2.0
+soundDeploy = "avartle0.wav"
+soundUndeploy = "avartle4.wav"
+
+//////////////////////////////////////////////////////
+[ConstructionRigClass]
+buildItem1 = "ybpgen1"

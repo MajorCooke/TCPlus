@@ -1,0 +1,53 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "ghwtza"
+classLabel = "mortar"
+ordName = "ohwtza"
+wpnName = "Howitzer"
+fireSound = "gartlcox00.wav"  //"ghart00.wav"
+flashName = "ghwtza.render"
+wpnReticle = "gartla"
+wpnLadder = "gmortar.L0"  //have reticle and in sprite table stb, but will not show as ladder"gmortar.L0"
+wpnPriority = 6
+wpnCategory = "MORT"
+//isAssault = 1
+aiRange = 500  //artl  //350
+//needLOS = false
+//AllowAimHigh = true
+
+[CannonClass]
+shotDelay = 5.0  //Coxxon four, 1/2 power shots  //2.5
+shotAlternate = 1  //Coxxon all hp fire w/in sD time
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "ggtowk_c.smoke"
+renderName2 = "ggtowk_c.flash"
+
+[flash]
+renderBase = "draw_twirl_trail"
+textureName = "lighthalo.tga"  //"plasma.tga"
+textureBlend = "one one modulate"  //k tga
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.5
+finishRadius = 1.5
+animateTime = 0.1
+emitLife = 0.1
+emitVelocity = "0.0 0.0 6.0"
+emitVariance = "0.6 0.6 0.6"
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "50 150 200 255"
+finishColor = "70 70 70 10"
+startRadius = 1.0
+finishRadius = 3.0
+animateTime = 0.5
+emitLife = 0.5
+emitDelay = 0.03
+emitVelocity = "0.0 0.0 12.0"
+emitVariance = "0.6 0.6 0.6"

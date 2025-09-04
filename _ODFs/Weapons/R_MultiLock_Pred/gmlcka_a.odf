@@ -1,0 +1,15 @@
+[WeaponClass]
+baseName = "gmlcka_a"
+classLabel = "dispenser"
+altName = "gmlcka_c"
+ordName = NULL		// <-- this is important!
+wpnName = "Predator A"
+fireSound = "gwasp00.wav"
+wpnReticle = "gmlcka_a"
+wpnCategory = "ROCK"
+aiRange = 300
+isAssault = 1
+
+[DispenserClass]
+shotDelay = 3.0  //Coxxon  //5.0
+objectClass = "omlcka_a"

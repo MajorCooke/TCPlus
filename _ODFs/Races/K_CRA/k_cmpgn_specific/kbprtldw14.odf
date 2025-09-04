@@ -1,0 +1,133 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "kbprtldw14"
+classLabel = "teleportal"  //"supplydepot"  //"barracks"  //will use taps  //"i76building"  //won't use taps
+geometryName = "kbprtlcox02.fbx"
+scrapCost = 300
+scrapValue = 100
+buildTime = 480.0
+maxHealth = 15000
+unitName = "Portal construction"
+heatSignature = 2.0
+imageSignature = 2.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+ownsTerrain = 1  //prtl
+collisionRadius = 10.0  //bztc bldg
+powerCost = 0
+AllowSeismic = 0
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+isSingle = 0
+
+//smoke1
+effectHard1 = "hp_smoke_1"
+effectName1 = "dmgbldg1"
+effectMinHealth1 = 0.8
+effectMaxHealth1 = 0.9
+effectHard2 = "hp_smoke_1"
+effectName2 = "dmgbldg2"
+effectMinHealth2 = 0.6
+effectMaxHealth2 = 0.8
+effectHard3 = "hp_smoke_1"
+effectName3 = "dmgbldg3"
+effectMinHealth3 = 0.4
+effectMaxHealth3 = 0.6
+effectHard4 = "hp_smoke_1"
+effectName4 = "dmgbldg4"
+effectMinHealth4 = 0.0
+effectMaxHealth4 = 0.4
+//smoke2
+effectHard5 = "hp_smoke_2"
+effectName5 = "dmgbldg1"
+effectMinHealth5 = 0.8
+effectMaxHealth5 = 0.9
+effectHard6 = "hp_smoke_2"
+effectName6 = "dmgbldg2"
+effectMinHealth6 = 0.6
+effectMaxHealth6 = 0.8
+effectHard7 = "hp_smoke_2"
+effectName7 = "dmgbldg3"
+effectMinHealth7 = 0.4
+effectMaxHealth7 = 0.6
+effectHard8 = "hp_smoke_2"
+effectName8 = "dmgbldg4"
+effectMinHealth8 = 0.0
+effectMaxHealth8 = 0.4
+//smoke3
+effectHard9 = "hp_smoke_3"
+effectName9 = "dmgbldg1"
+effectMinHealth9 = 0.8
+effectMaxHealth9 = 0.9
+effectHard10 = "hp_smoke_3"
+effectName10 = "dmgbldg2"
+effectMinHealth10 = 0.6
+effectMaxHealth10 = 0.8
+effectHard11 = "hp_smoke_3"
+effectName11 = "dmgbldg3"
+effectMinHealth11 = 0.4
+effectMaxHealth11 = 0.6
+effectHard12 = "hp_smoke_3"
+effectName12 = "dmgbldg4"
+effectMinHealth12 = 0.0
+effectMaxHealth12 = 0.4
+//smoke4
+effectHard13 = "hp_smoke_4"
+effectName13 = "dmgbldg1"
+effectMinHealth13 = 0.8
+effectMaxHealth13 = 0.9
+effectHard14 = "hp_smoke_4"
+effectName14 = "dmgbldg2"
+effectMinHealth14 = 0.6
+effectMaxHealth14 = 0.8
+effectHard15 = "hp_smoke_4"
+effectName15 = "dmgbldg3"
+effectMinHealth15 = 0.4
+effectMaxHealth15 = 0.6
+effectHard16 = "hp_smoke_4"
+effectName16 = "dmgbldg4"
+effectMinHealth16 = 0.0
+effectMaxHealth16 = 0.4
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_kbprtlcox"
+
+chunkEffect1 = "kbprtlcoxchk01.fbx"  
+chunkEffect2 = "kbprtlcoxchk02.fbx"  
+chunkEffect3 = "kbprtlcoxchk03.fbx"  
+chunkEffect4 = "kbprtlcoxchk04.fbx"  
+chunkEffect5 = "kbprtlcoxchk05.fbx"  
+HasSeparateChunks = true 
+numChunks = 5
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 1
+numChunks5 = 1
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+///////////////////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "portal03.wav"  //"portal02.wav" has squish thump sound
+bldEdge = "twww"
+tunnelCount = 1
+tunnel01X0 = 2.5  //3
+tunnel01Z0 = 2.0
+tunnel01Dx = 3.0  //2
+tunnel01Dz = 3.0  //closer
+tunnel01Edge = "twww"
+
+//tunnelClusterSize = 4.0f
+easyTunnels = true  //true assumes object fits tunnel, ignoring size
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+///////////////////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 100
+powerCost = 0

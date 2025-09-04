@@ -1,0 +1,156 @@
+/////////Coxxon - BZTC/////////
+//pyramid with taps for turrets
+[GameObjectClass]
+baseName = "olybldg00"
+classLabel = "barracks"
+geometryName = "olybldgcox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "olybldgcox00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+scrapCost = 200
+scrapValue = 50
+maxHealth = 30000
+addHealth = 50
+unitName = "Cth Pyramid A"
+heatSignature = 1.0
+imageSignature = 2.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+AllowSeismic = 0
+UseCollisionMeshForPathing = 1  //olypyra
+buildSupport = "A"
+buildRequire = "F"
+powerCost = 0
+collisionRadius = 32.0  //olypyra
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 1
+provideName1 = "olybldg00"
+provideName2 = "VIRTUAL_CLASS_GUNTOWER"
+provideName3 = "defender"
+provideName4 = "xbgtow"
+
+/////// LIGHTS and EFFECTS /////////
+lightHard1 = "hp_light_1"
+lightName1 = "omniwyl8"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "olybldg00.pulse"
+effectHard2 = "hp_emit_2"
+effectName2 = "olybldg00.pulse"
+effectHard3 = "hp_emit_3"
+effectName3 = "olybldg00.pulse"
+effectHard4 = "hp_emit_4"
+effectName4 = "olybldg00.pulse"
+
+//smoke1
+effectHard5 = "hp_smoke_1"
+effectName5 = "dmgbldg2"
+effectMinHealth5 = 0.4
+effectMaxHealth5 = 0.6
+effectHard6 = "hp_smoke_1"
+effectName6 = "dmgbldg3"
+effectMinHealth6 = 0.2
+effectMaxHealth6 = 0.4
+effectHard7 = "hp_smoke_1"
+effectName7 = "dmgbldg4"
+effectMinHealth7 = 0.0
+effectMaxHealth7 = 0.2
+//smoke2
+effectHard8 = "hp_smoke_2"
+effectName8 = "dmgbldg2"
+effectMinHealth8 = 0.4
+effectMaxHealth8 = 0.6
+effectHard9 = "hp_smoke_2"
+effectName9 = "dmgbldg3"
+effectMinHealth9 = 0.2
+effectMaxHealth9 = 0.4
+effectHard10 = "hp_smoke_2"
+effectName10 = "dmgbldg4"
+effectMinHealth10 = 0.0
+effectMaxHealth10 = 0.2
+//smoke3
+effectHard11 = "hp_smoke_3"
+effectName11 = "dmgbldg2"
+effectMinHealth11 = 0.4
+effectMaxHealth11 = 0.6
+effectHard12 = "hp_smoke_3"
+effectName12 = "dmgbldg3"
+effectMinHealth12 = 0.2
+effectMaxHealth12 = 0.4
+effectHard13 = "hp_smoke_3"
+effectName13 = "dmgbldg4"
+effectMinHealth13 = 0.0
+effectMaxHealth13 = 0.2
+//smoke4
+effectHard14 = "hp_smoke_4"
+effectName14 = "dmgbldg2"
+effectMinHealth14 = 0.4
+effectMaxHealth14 = 0.6
+effectHard15 = "hp_smoke_4"
+effectName15 = "dmgbldg3"
+effectMinHealth15 = 0.2
+effectMaxHealth15 = 0.4
+effectHard16 = "hp_smoke_4"
+effectName16 = "dmgbldg4"
+effectMinHealth16 = 0.0
+effectMaxHealth16 = 0.2
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName =  "x_bztc_bld"
+
+[pulse]
+renderBase = "draw_emit"
+emitName = "olybldg00.ring"
+emitDelay = 0.2
+emitVelocity = "0.0 10.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+
+[ring]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_wave"
+textureName = "wave.tga"
+textureBlend = "one one modulate"
+startColor = "255 230 155 200"
+finishColor = "0 0 255 20"
+startRadius = 1.0
+finishRadius = 0.5
+animateTime = 3.0
+waveAngle = 3.14159265359
+waveDepth = 2.0
+waveColorCenter = "255 255 255 255"
+waveColorEdge = "255 255 255 255"
+waveSegments = 24
+maxCount = 16
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 400
+powerTap1 = "hp_tap_1"
+powerTap2 = "hp_tap_2"
+powerTap3 = "hp_tap_3"
+powerTap4 = "hp_tap_4"
+powerName = "olybldgt0"
+PoweredByTaps = false 
+//AutoBuildTap1 = true
+//AutoBuildTap2 = true
+//AutoBuildTap3 = true
+//AutoBuildTap4 = true
+DestroyTapsWithParent = true  //true default
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+bldEdge = "wwww"
+soundAmbient = "denv01.wav"
+
+///////////////////////////////////////////////////////////////
+[BarracksClass]
+pilotHold = 0

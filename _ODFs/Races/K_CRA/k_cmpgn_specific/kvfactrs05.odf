@@ -1,0 +1,35 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "kvfactrs05"
+classLabel = "kvfact"  //"recyclervehicleH"
+unitIcon = "icon_kvfact.png"
+unitStatus = "wire_kvfact.png"
+infoName = "kvfact.inf" 
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+
+provideName3 = "kvfactrs05"
+
+//////////////////////////////////////////////////////////
+[CraftClass]
+
+/////////CRASH EXPLODE INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_kvfactcox"
+
+////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+
+/////////////////////////////////////////////////////////
+[DeployableClass]
+
+/////////////////////////////////////////////////////////
+[DeployBuildingHClass]
+CanDeploy = true
+deployName = "kbfactrs05"
+timeDeploy = 5.0  //depbld
+timeUndeploy = 5.0  //depbld
+
+////////////////////////////////////////////////////////
+[RecyclerVehicleHClass]
+scrapHold = 0

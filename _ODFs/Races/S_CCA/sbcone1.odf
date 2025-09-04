@@ -1,0 +1,57 @@
+/////////Coxxon - BZTC/////////
+//non-animated CCA rocketship prop
+[GameObjectClass]
+baseName = "sbcone1"
+classLabel = "powerlung"  //"i76building"  //
+geometryName = "sbconecox01.fbx"
+scrapCost = 200  //lpad
+scrapValue = 100
+buildTime = 480.0  //lpad
+maxHealth = 10000
+maxAmmo = 0
+unitName = "CCA Rocketship"
+infoName = "sbcone.inf"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+isAssault = 0
+armorClass = H
+ownsTerrain = 1
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+AllowSeismic = 0
+collisionRadius = 1.0  //bztc lung
+
+//smoke1
+effectHard9 = "hp_smoke_1"
+effectName9 = "dmgbldg1"
+effectMinHealth9 = 0.6
+effectMaxHealth9 = 0.8
+effectHard10 = "hp_smoke_1"
+effectName10 = "dmgbldg2"
+effectMinHealth10 = 0.4
+effectMaxHealth10 = 0.6
+effectHard11 = "hp_smoke_1"
+effectName11 = "dmgbldg3"
+effectMinHealth11 = 0.2
+effectMaxHealth11 = 0.4
+effectHard12 = "hp_smoke_1"
+effectName12 = "dmgbldg4"
+effectMinHealth12 = 0.0
+effectMaxHealth12 = 0.2
+//smoke2
+effectHard13 = "hp_smoke_2"
+effectName13 = "dmgbldg1"
+effectMinHealth13 = 0.6
+effectMaxHealth13 = 0.8
+effectHard14 = "hp_smoke_2"
+effectName14 = "dmgbldg2"
+effectMinHealth14 = 0.4
+effectMaxHealth14 = 0.6
+effectHard15 = "hp_smoke_2"
+effectName15 = "dmgbldg3"
+effectMinHealth15 = 0.2
+effectMaxHealth15 = 0.4
+effectHard16 = "hp_smoke_2"
+effectName16 = "dmgbldg4"
+effectMinHealth16 = 0.0
+effectMaxHealth16 = 0.2

@@ -1,0 +1,31 @@
+/////////Coxxon - BZTC/////////
+//for use in campaign - no max ammo or lifespan, increased health
+[WeaponClass]
+baseName = "olybolt3"
+classLabel = "cannon"
+ordName = "olybolto"
+wpnName = "Arc Bolt Mine"
+fireSound = "bltm01.wav"
+wpnReticle = "gbolta"
+wpnCategory = "CANN"
+flashName = "olybolt3.flash"
+aiRange = 100
+//VehicleSearchFilter = 2 // 0 vehicles, 1 pilots, 2 vehicles+pilots+animals, 3 plants, 4 buildings
+
+[CannonClass]
+shotDelay = 0.1
+shotVariance = 0.2  //keep at least 0.2 so can hit low targets
+
+[Flash]
+simulateBase = "sim_null"
+lifeTime = 2.0
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "100 50 255 255"
+finishColor = "0 0 255 100"
+startRadius = 1.0
+finishRadius = 20.0
+animateTime = 2.0
+latitudeBands = 8
+longitudeSegments = 16

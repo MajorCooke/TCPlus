@@ -1,0 +1,125 @@
+/////////Coxxon - BZTC/////////
+//lemnos factory for unexpected connection mission
+//BUILDING TO GO ON TOP OF olylemnosa.odf
+//THE MODEL GEOMETRY CONTAINS ALL hp AND TURRETS FOR A GUN TOWER VERSION
+[GameObjectClass]
+baseName = "olylemnosb"
+classLabel = "i76building"
+geometryName = "olylemncox0b.fbx"
+scrapCost = 100
+scrapValue = 50
+maxHealth = 15000
+addHealth = 5
+maxAmmo = 0
+unitName = "Lemnos"
+heatSignature = 1.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+collisionRadius = 20.0  //super bldg
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+AllowSeismic = 0
+powerCost = 0
+ownsTerrain = 1 //since no baseplate
+canInteract = true
+canDetect = true
+canSelect = true
+
+///////// LIGHTS & EFFECTS /////////
+//smoke1
+effectHard1 = "hp_smoke_1"
+effectName1 = "dmgbldg1"
+effectMinHealth1 = 0.6
+effectMaxHealth1 = 0.8
+effectHard2 = "hp_smoke_1"
+effectName2 = "dmgbldg2"
+effectMinHealth2 = 0.4
+effectMaxHealth2 = 0.6
+effectHard3 = "hp_smoke_1"
+effectName3 = "dmgbldg3"
+effectMinHealth3 = 0.2
+effectMaxHealth3 = 0.4
+effectHard4 = "hp_smoke_1"
+effectName4 = "dmgbldg4"
+effectMinHealth4 = 0.0
+effectMaxHealth4 = 0.2
+//smoke2
+effectHard5 = "hp_smoke_2"
+effectName5 = "dmgbldg1"
+effectMinHealth5 = 0.6
+effectMaxHealth5 = 0.8
+effectHard6 = "hp_smoke_2"
+effectName6 = "dmgbldg2"
+effectMinHealth6 = 0.4
+effectMaxHealth6 = 0.6
+effectHard7 = "hp_smoke_2"
+effectName7 = "dmgbldg3"
+effectMinHealth7 = 0.2
+effectMaxHealth7 = 0.4
+effectHard8 = "hp_smoke_2"
+effectName8 = "dmgbldg4"
+effectMinHealth8 = 0.0
+effectMaxHealth8 = 0.2
+//smoke3
+effectHard9 = "hp_smoke_3"
+effectName9 = "dmgbldg1"
+effectMinHealth9 = 0.6
+effectMaxHealth9 = 0.8
+effectHard10 = "hp_smoke_3"
+effectName10 = "dmgbldg2"
+effectMinHealth10 = 0.4
+effectMaxHealth10 = 0.6
+effectHard11 = "hp_smoke_3"
+effectName11 = "dmgbldg3"
+effectMinHealth11 = 0.2
+effectMaxHealth11 = 0.4
+effectHard12 = "hp_smoke_3"
+effectName12 = "dmgbldg4"
+effectMinHealth12 = 0.0
+effectMaxHealth12 = 0.2
+//smoke4
+effectHard13 = "hp_smoke_4"
+effectName13 = "dmgbldg1"
+effectMinHealth13 = 0.6
+effectMaxHealth13 = 0.8
+effectHard14 = "hp_smoke_4"
+effectName14 = "dmgbldg2"
+effectMinHealth14 = 0.4
+effectMaxHealth14 = 0.6
+effectHard15 = "hp_smoke_4"
+effectName15 = "dmgbldg3"
+effectMinHealth15 = 0.2
+effectMaxHealth15 = 0.4
+effectHard16 = "hp_smoke_4"
+effectName16 = "dmgbldg4"
+effectMinHealth16 = 0.0
+effectMaxHealth16 = 0.2
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "x_bztc_bld"  //"xpl_crash_olylemncox"
+
+chunkEffect1 = "olylemncoxchk01.fbx"  
+chunkEffect2 = "olylemncoxchk02.fbx"  
+chunkEffect3 = "olylemncoxchk03.fbx"  
+chunkEffect4 = "olylemncoxchk06.fbx"  
+chunkEffect5 = "olylemncoxchk07.fbx"  
+//1-8 avail
+HasSeparateChunks = true 
+numChunks = 6
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 1
+numChunks5 = 2
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "cenv01.wav"  //"baruin1b.wav"  //"cceng.wav"  //"cenv04.wav"
+CanDemolish = false
+
+///////// EXPLOSION AID /////////
+UseCollapse = false
+UseChunks = true
+UseExplosion = true

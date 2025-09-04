@@ -1,0 +1,44 @@
+/////////Coxxon - BZTC////////
+[GameObjectClass]
+classLabel = "i76building"
+geometryName = "hadgtowcoxp1.fbx"
+scrapCost = 10
+scrapValue = 5
+maxHealth = 0
+maxAmmo = 0
+unitName = "Flash Tower"
+infoName = "hadgtow.inf"
+heatSignature = 0.8
+imageSignature = 8.0
+radarSignature = 1.0
+collisionRadius = 1.0  //gtow some gap  //bztc vehc
+canDetect = 1
+canInteract = 1
+canSnipe = 0
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+requireReplaceTerrainPhysics = 1  //bzcc
+ownsTerrain = 1  //since no terrain plate had
+
+/////////LIGHTS AND EFFECTS//////////////////
+//effectHard1 = "hp_emit_1"
+//effectName1 = "vfxbztclight.orangestay"
+
+/////////CRASH INTO COMPONENT PARTS/////////
+explosionName = "x_bztc_bld"
+//xplcrash = "x_bztc_bld"  //"xpl_crash_hadgtowcox"
+chunkEffect1 = "hadgtowcoxchk01.fbx"  
+chunkEffect2 = "hadgtowcoxchk02.fbx"
+chunkEffect3 = "hadgtowcoxchk03.fbx"
+chunkEffect4 = "hadgtowcoxchk04.fbx"
+chunkEffect5 = "hadgtowcoxchk05.fbx"
+HasSeparateChunks = true
+numChunks = 7
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 2
+numChunks5 = 2
+
+[BuildingClass]
+bldEdge = "wwww"
+//soundAmbient = "sgtow01.wav"

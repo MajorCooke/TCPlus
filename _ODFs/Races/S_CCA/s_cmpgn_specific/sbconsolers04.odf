@@ -1,0 +1,20 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "sbconsolers04"
+classLabel = "i76building"
+geometryName = "sbconsolecox00.fbx"
+scrapCost = 100
+scrapValue = 30
+maxHealth = 5000
+addHealth = 10
+maxAmmo = 0
+unitName = "Compression Silo Warehouse Database"
+heatSignature = 1.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 0
+armorClass = N
+collisionRadius = 3.0
+ownsTerrain = 1
+
+[BuildingClass]

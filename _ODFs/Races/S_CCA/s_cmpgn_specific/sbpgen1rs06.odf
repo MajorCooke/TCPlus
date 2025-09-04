@@ -1,0 +1,17 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "sbpgen1rs06"
+classLabel = "sbpgen1"
+
+unitName = "Adv Ltng Power"
+
+powerCost = -6  //number of buildings to power
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+
+provideName4 = "sbpgen1rs06"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_sbpgencox01"

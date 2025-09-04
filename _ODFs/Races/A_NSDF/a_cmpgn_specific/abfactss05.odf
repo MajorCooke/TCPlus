@@ -1,0 +1,25 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "abfactss05"
+classLabel = "abfact"
+infoName = "abfact.inf"
+upgradeName = "avfactss05"
+isSingle = 1  //depbld  Coxxon
+
+provideCount = 4
+
+provideName4 = "abfactss05"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_abfactcox"
+
+/////////////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+
+/////////////////////////////////////////////////////////////////////
+[BuildingClass]
+
+/////////////////////////////////////////////////////////////////////
+[FactoryClass]
+buildItem5 = "avartlss04"

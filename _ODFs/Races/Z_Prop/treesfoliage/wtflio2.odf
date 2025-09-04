@@ -1,0 +1,86 @@
+//waterfall ach
+[GameObjectClass]
+geometryName = "wtfliocox02.fbx"
+classLabel = "computer"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+unitName = "wtflio2"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+AllowUndergroundSpawn = true
+hitType = "G"
+canInteract = 0
+
+///////// LIGHTS & EFFECTS /////////
+effectHard1 = "hp_emit_1"
+effectName1 = "wtflio.bottommist"
+effectHard2 = "hp_emit_2"
+effectName2 = "wtflio.bottommist"
+effectHard3 = "hp_emit_3"
+effectName3 = "wtflio.bottommist"
+effectHard4 = "hp_emit_4"
+effectName4 = "wtflio.bottommist"
+effectHard5 = "hp_emit_5"
+effectName5 = "wtflio.bottommist"
+//effectHard6 = "hp_emit_6"
+//effectName6 = "wtflio.topspray"
+//effectHard7 = "hp_emit_7"
+//effectName7 = "wtflio.topspray"
+//effectHard8 = "hp_emit_8"
+//effectName8 = "wtflio.topspray"
+//effectHard9 = "hp_emit_9"
+//effectName9 = "wtflio.topspray"
+//effectHard10 = "hp_emit_10"
+//effectName10 = "wtflio.topspray"
+//effectHard11 = "hp_emit_11"
+//effectName11 = "wtflio.topspray"
+//effectHard12 = "hp_emit_12"
+//effectName12 = "wtflio.topspray"
+//effectHard13 = "hp_emit_13"
+//effectName13 = "wtflio.topspray"
+//effectHard14 = "hp_emit_14"
+//effectName14 = "wtflio.topspray"
+//effectHard15 = "hp_emit_15"
+//effectName15 = "wtflio.topspray"
+//effectHard16 = "hp_emit_16"
+//effectName16 = "wtflio.topspray"
+
+[bottommist]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "200 100 50 150"
+finishColor = "176 76 10 0"
+startRadius = 16.0
+finishRadius = 32.0
+animateTime = 1.0
+emitDelay = 0.1
+emitVelocity = "0.0 3.0 0.5"
+emitVariance = "20.0 1.0 20.0"
+BottomInteractsWithTerrain = true
+
+[topspray]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "150 130 70 150"
+finishColor = "100 100 100 0"
+startRadius = 5.0
+finishRadius = 10.0
+animateTime = 1.0
+emitDelay = 0.1
+emitVelocity = "0.0 1.0 2.0"
+emitVariance = "6.0 1.0 6.0"
+BottomInteractsWithTerrain = true
+
+[ComputerClass]
+ShieldVel = 0.5
+ShieldAmp = 0.05  //waviness
+Shield = "waterfall"  //name of model piece: waterfall__2
+
+[BuildingClass]
+SoundAmbient = "erain01cox.wav"  //modified for full-dynamic range and higher internal volume
+SoundAmbientDist = 2.0

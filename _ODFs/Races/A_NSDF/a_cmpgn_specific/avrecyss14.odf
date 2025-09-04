@@ -1,0 +1,33 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "avrecyss14"
+classLabel = "avrecy"  //"recyclervehicle"
+unitName = "muf Texas"
+unitIcon = "icon_avrecy.png"
+unitStatus = "wire_avrecy.png"
+infoName = "avrecy.inf"
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+
+provideName5 = "avrecyss14"
+
+//////////////////////////////////////////////////////////
+[CraftClass]
+
+/////////CRASH EXPLODE INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_avrecycox"
+
+////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+
+/////////////////////////////////////////////////////////
+[DeployableClass]
+
+/////////////////////////////////////////////////////////
+[DeployBuildingHClass]
+deployName = "abrecyss14"
+
+////////////////////////////////////////////////////////
+[RecyclerVehicleHClass]

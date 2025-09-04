@@ -1,0 +1,14 @@
+/////////Coxxon - BZTC/////////
+//SPECIAL FOR SS13
+[GameObjectClass]
+baseName = "yvmislss13"
+classLabel = "yvmisl"
+unitName = "UFO charlie"
+infoName = "unknown13.inf"  //SPECIAL
+
+//////////////////////////////////////////////////////////////////////////
+[CraftClass]
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_yvmislcox"
+
+CanAIEject = 0

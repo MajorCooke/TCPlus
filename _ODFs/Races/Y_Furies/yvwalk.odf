@@ -1,0 +1,216 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "yvwalk"
+classLabel = "iv_walker"
+cockpitName = "yvwalkcox_cockpit.fbx"
+geometryName = "yvwalkcox_skel.fbx"
+animCount = 8
+animName1 = "idle"
+animFile1 = "yvwalkcox_idle.fbx"
+animName2 = "sitdown"
+animFile2 = "yvwalkcox_sitdown.fbx"
+animName3 = "walk"
+animFile3 = "yvwalkcox_walk.fbx"
+animName4 = "turn"
+animFile4 = "yvwalkcox_turn.fbx"
+animName5 = "death"
+animFile5 = "yvwalkcox_death.fbx"
+animName6 = "death2"
+animFile6 = "yvwalkcox_death2.fbx"
+animName7 = "death3"
+animFile7 = "yvwalkcox_death3.fbx"
+animName8 = "run"
+animFile8 = "yvwalkcox_run.fbx"
+scrapValue = 30  //walk
+scrapCost = 100  //walk
+customCost = 105  //walk
+buildTime = 15.0  //walk  //20.0
+customTime = 20.0  //walk
+maxHealth = 8000  //walk
+addHealth = 10  //walk  Coxxon
+maxAmmo = 6000  //walk
+addAmmo = 20  //walk
+unitName = "Colossus wlk"
+aiName = "GechProcess"  //walk
+aiName2 = "GechProcess"  //walk
+heatSignature = 2.0  //avwalk  //0.1
+imageSignature = 5.0
+radarSignature = 5.0
+collisionRadius = 1.0  //walk
+isAssault = 1  //bztc
+armorClass = H
+boxCollide = 1
+
+/////// REQUIREMENTS ///////////////
+requireCount = 1
+requireName1 = "ybtcen"
+requireText1 = "Build Field Lab"
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "yvwalk"
+provideName2 = "VIRTUAL_CLASS_WALKER"
+provideName3 = "assault"
+provideName4 = "DefendUnit"
+
+/////// weapons ////////////////////
+weaponMask = 11111
+weaponHard1 = "HP_CANNON_1"
+recoilName1 = "recoil1"
+weaponName1 = "gbolta_a"
+weaponAssault1 = 1
+weaponHard2 = "HP_CANNON_2"
+recoilName2 = "recoil2"
+weaponName2 = "gbolta_a"
+weaponAssault2 = 1
+weaponHard3 = "HP_rocket_1"
+//recoilName3 = "recoil1"
+weaponName3 = ""
+weaponAssault3 = 1
+weaponHard4 = "HP_rocket_2"
+//recoilName4 = "recoil2"
+weaponName4 = ""
+weaponAssault4 = 1
+weaponHard5 = "HP_mortar_1"
+//recoilName5 = NULL  //wlk
+weaponName5 = ""
+weaponAssault5 = 1
+
+////////LIGHTS AND EFFECTS///////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltcyn"
+lightHard2 = "hp_light_2"
+lightName2 = "hltcyn"
+LightsOnlyWhenPiloted = true
+
+effectHard1 = "hp_dust_1"
+effectName1 = "vfxbztcdusts.walkerdust1"
+effectMinVelocity1 = 2.0
+effectMaxVelocity1 = 500.0
+effectHard2 = "hp_dust_2" 
+effectName2 = "vfxbztcdusts.walkerdust1"
+effectMinVelocity2 = 2.0
+effectMaxVelocity2 = 500.0
+effectHard3 = "hp_dust_0"
+effectName3 = "vfxbztcdusts.walkerdust1"
+effectMinVelocity3 = 2.0
+effectMaxVelocity3 = 500.0
+//effectHard4 = "hp_emit_1"
+//effectName4 = "yvwalk.spriteball"
+//effectHard5 = "hp_emit_2" 
+//effectName5 = "yvwalk.spriteball"
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "hp_smoke_1"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "hp_smoke_1"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "hp_smoke_1"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "hp_smoke_1"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+[spriteball]
+renderBase = "draw_sprite"
+textureName = "sprtballcox00.tga"
+textureBlend = "one one modulate"
+startColor = "0 50 255 255"
+finishColor = "0 255 255 10"
+startRadius = 1.6
+finishRadius = 1.6
+
+//////////////////////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 200.0  //walk
+periodScan = 5.0
+velocJam = 0.0
+engageRange = 150
+LookAtPitchFactor = 1.0  //mantis #1080 (1372 still in BZCC)
+//RetargetOnStrafe = true  //tnk
+attackTask = "GechAttack"  //"AssaultTankAttack"  //walk
+subattackTask = "SupportSubAttack"  //walk
+subAttackClass = "ANS" //target:Air/grouNd attack:Deploy/Normal range:weaponS/eNgage 
+//attackTaskUsesGroups = false  //Coxxon
+GoToTaskHasLeader = false  //Coxxon
+//canhunt = 1  //doesn't seem to work for walkers
+//NavIsDropped = true //drop behind - bugged, immed removes nav/camr in MP/MPI
+//NavDropSound = "gprox00.wav"  //sound if navisdropped true
+NavConfig = "apcamry" //specify nav beacon/camera type
+AllowedControlsWhenTugged = 31  //7dflt Sumup: 1hop 2bail 4wcycle 8steer 16weapuse
+
+//OffensiveProcessIsTenacious = false  //Coxxon  true
+//OffensiveProcessIsTenaciousAITeam = false  //Coxxon
+//DoBlastUsesFields = true  //false  //Coxxon
+//SitAttackAllowIndependence = true  //Coxxon  false
+//SitAttackAllowCounterattack = true  //Coxxon  false
+
+//topSpeed = 50
+//avoidSpeed = 15
+damageEffect1 = "dmgvhcl1"  //less stock dmg effect
+damageEffect2 = "dmgvhcl1"  //but still some sparks
+damageEffect3 = "dmgvhcl1"  //also lower visibility
+damageEffect4 = "dmgvhcl1"  //on cloaked units
+
+/////////MESSAGES/////////
+selectAttackMsg = "yvwalkvd.wav"  //crushing enemy
+selectWaitMsg = "yvwalkvk.wav"  //golem  //"yvwalkvf.wav"  //who's next
+selectFollowMsg = "yvwalkvh.wav"  //protecting
+selectGoMsg = "yvwalkvk.wav"  //cyclops
+selectOtherMsg = "yvwalkvj.wav"  //yes sir
+goMsg = "yvwalkv0.wav"  //moving
+goObjectMsg = "yvwalkvg.wav"  //on my way
+attackMsg = "yvwalkv2.wav"  //i will crush them
+followMsg = "yvwalkv7.wav"  //defending
+followMeMsg = "yvwalkv3.wav"  //i will follow
+repairMsg = "yvwalkv4.wav"  //repairing
+reloadMsg = "yvwalkv5.wav"  //reloading
+rescueMsg = "yvwalkv8.wav"  //dah
+recycleMsg = "yvwalkv9.wav"  //got it
+otherMsg = "yvwalkvf.wav"  //who's next  //"yvwalkvk.wav"  //cyclops
+killedMsg = "yvwalkvm.wav"  //another is crushed
+holdMsg = "yvwalkvj.wav"  //yes sir
+user1Msg = "yvwalkv6.wav"  //patrolling the area
+//diedMsg = "sbetty3.wav"
+//"yvwalkve.wav"  //neyt
+
+//////////////////////////////////////////////////////////////////////////
+// Angles are in degress
+[WalkerClass]
+headYawRate	= 100.0 
+minHeadYaw = -45.0
+maxHeadYaw =  45.0
+minHeadPitch = -45.0
+maxHeadPitch = 45.0
+alphaDamp = 5.0
+omegaTurn = 60.0  //walk  //40.0
+omegaTurnAttenuation = 0.5f
+alphaSteer = 0.1
+velocJump = 20.0  //colossus
+alphaTrack = 20.0
+pitchPitch = 0.0
+pitchThrust = 0.0
+accelThrust = 24.0  //walk  //8.0
+FRICTION_COEF = 0.5  //walk  //0.35f  //not list in stock odfs
+velocForward = 50.0  //colossus  //15.0  //walk
+velocStrafe = 10.0  //walk 
+velocReverse = 15.0  //colossus
+velocWalkFactor = 0.41  //fvwalker bzcc
+attackSpeed = 50  //fvwalker bzcc
+headpiece = "head"
+leftfootpiece = "hp_footl"
+rightfootpiece = "hp_footr"
+flattenTrackNormal = 2.0f  //BZ2 value - upright on sharper slopes
+//GroundInteractHeight = 0.2f  //Height tolerance from Ground to be considered not Airborne.  //walk
+
+stepSound  = "fwstep01.wav"  //"svwalke0.wav"  //step easy
+engineSound	= "srecy01.wav"  //"iatank01.wav"
+soundJump  = "avwalke2.wav"  //"svwalke2.wav"  //jump
+landSound  = "svwalke3.wav"  //step bass
+splashSound = "splash.wav"

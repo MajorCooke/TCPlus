@@ -1,0 +1,12 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "ksuser1"
+classLabel = "kspilo"
+addAmmo = 10
+
+weaponName1 = "gsnpxk_c"
+weaponName2 = ""
+weaponName3 = ""
+
+[PersonClass]
+

@@ -1,0 +1,56 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "oflshh_c"
+classLabel = "beam"
+
+shotGeometry = NULL
+xplGround = "xflagnd"
+xplVehicle = "xflshacar"  //"xflacar"
+xplBuilding = "xflabld"
+
+renderName = "oflshh_c.render"
+
+ammoCost = 5
+lifeSpan = 100e-6 // 100m
+shotSpeed = 1e6
+
+damageValue(N) = 100 // none
+damageValue(L) = 75 // light
+damageValue(H) = 50 // heavy
+
+damageValue(S) = 75 // standard
+damageValue(D) = 100 // deflection
+damageValue(A) = 50 // absorption
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "oflshh_c.core"
+renderName2 = "oflshh_c.fringe"
+
+[Core]
+renderBase = "draw_bolt"
+textureName = NULL
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 0 0 10"
+startRadius = 0.5  //1.0
+finishRadius = 1.0  //0.5
+segmentLength = 10.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.2
+textureRate = 0.01
+
+[Fringe]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 0 255"
+finishColor = "255 150 0 10"
+startRadius = 1.0  //2.0
+finishRadius = 2.0  //1.0
+segmentLength = 10.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.3
+textureRate = 0.02
+textureSpeed = -5.0

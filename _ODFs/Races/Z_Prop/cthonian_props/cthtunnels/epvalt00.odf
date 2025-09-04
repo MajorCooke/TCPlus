@@ -1,0 +1,21 @@
+[GameObjectClass]
+baseName = "epvalt00"
+classLabel = "i76building"  //"terrain"
+geometryName = "epvaltcox00.fbx"
+animCount = 1
+animName1 = "landslide"
+animFile1 = "epvaltcox00.fbx"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+unitName = "epvalt00"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+canDetect = 0
+canInteract = 0
+LightingType = 1  //0 default//1 terrain//2 custom
+collisionRadius = 1.0  //bztc vehc
+
+[BuildingClass]

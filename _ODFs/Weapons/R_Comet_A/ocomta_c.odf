@@ -1,0 +1,82 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ocomta_c"
+classLabel = "radarmissile"
+shotGeometry = "aocomtcox00.fbx"  //"iocmet00.fbx"
+xplGround = "xmslgnd"
+xplVehicle = "xcomtacar"  //"xmslcar"
+xplBuilding = "xmslbld"
+
+lifeSpan = 10.0  //750m Coxxon  //5.0
+shotSpeed = 75.0
+ammoCost = 100
+
+damageValue(N) = 500 // none
+damageValue(L) = 400 // light
+damageValue(H) = 300 // heavy
+
+damageValue(S) = 400 // standard
+damageValue(D) = 300 // deflection
+damageValue(A) = 500 // absorption
+
+shotSound = "hrckt02.wav"
+renderName = "ocomta_c.render"
+
+[MissileClass]
+omegaTurn = 5.0  //Coxxon  //1.0
+alphaSteer = 5.0  //Coxxon
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "ocomta_c.smoke"
+renderName2 = "ocomta_c.flame"
+renderName3 = "ocomta_c.flare"
+renderName4 = "ocomta_c.light"
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "102 102 102 15"
+finishColor = "153 153 153 0"
+startRadius = 0.75
+finishRadius = 2.5
+animateTime = 1.5
+emitDelay = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 2.0"
+emitLife = 1.5
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 63"
+finishColor = "255 0 0 0"
+startRadius = 0.3  //0.5
+finishRadius = 0.1
+animateTime = 0.1
+emitDelay = 0.002
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 2.0"
+emitLife = 0.1
+
+[flare]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.2  //1.0
+finishRadius = 0.2  //1.0
+
+[light]
+renderBase = "draw_light"
+startColor = "180 120 80 200"
+finishColor = "180 80 20 200"
+startRadius = 16.0  //ord light
+finishRadius = 16.0  //ord light
+attenuateConstant = 0.0  //ord light
+attenuateQuadratic = 1.0  //ord light
+attenuateLinear = 0.0  //ord light

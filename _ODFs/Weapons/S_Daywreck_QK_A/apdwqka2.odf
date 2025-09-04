@@ -1,0 +1,15 @@
+[GameObjectClass]
+//USES INVISIBLE GEOMETRY
+baseName = "apdwqka2"
+classLabel = "daywrecker"
+geometryName = "dummycox00.fbx"
+scrapCost = 20
+scrapValue = 0
+maxHealth = 300
+maxAmmo = 0
+unitName = "Daywrecker Quakenuke"
+aiName = "PowerUpProcess"
+buildTime = 0.5  //armo pod
+
+[DayWreckerClass]
+xplBlast = "xdwqka"

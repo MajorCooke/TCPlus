@@ -1,0 +1,44 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "aprepa"
+classLabel = "repairkit"
+geometryName = "aprepacox10.fbx"  //"aprepa00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "aprepacox10.fbx"  //"aprepa00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+scrapCost = 1
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 0
+unitName = "Repair"
+aiName = "PowerUpProcess"
+buildTime = 5.0  //recy pod
+
+/////////LIGHTS and EFFECTS/////////
+lightHard1 = "hp_light_1"
+lightName1 = "omnigren-ap"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "aprepa.green"
+effectMinAltitude1 = 0.1  //pod
+effectMaxAltitude1 = 10.0  //pod
+effectHard2 = "hp_emit_2"
+effectName2 = "vfxbztcthrst.sprteggblue"
+effectMinAltitude2 = 4.0  //pod
+effectMaxAltitude2 = 500.0  //pod
+
+[green]
+renderBase = "draw_sprite"
+textureName = "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 100 255"
+startRadius = 2.0
+
+[PowerUpClass]
+soundPickup = "repair.wav"  //"pickup01.wav"
+soundReject = "reject.wav"
+
+[HealthPowerupClass]
+healthUp = 1000

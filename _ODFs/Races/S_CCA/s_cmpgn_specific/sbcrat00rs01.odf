@@ -1,0 +1,41 @@
+//sbrat00rs01 for rs01
+[GameObjectClass]
+baseName = "sbcrat00rs01"
+classLabel = "artifact"
+geometryName = "sbcratcox00.fbx"
+scrapCost = 8
+scrapValue = 3
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Supplies"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+collisionRadius = 1.0  //bztc vehc
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+isAssault = 0
+//ownsTerrain = 1  //crate
+canCollide = 1  //crate
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+
+//smoke1
+effectHard1 = "hp_smoke_1"
+effectName1 = "dmgbldg1"
+effectMinHealth1 = 0.8
+effectMaxHealth1 = 0.9
+effectHard2 = "hp_smoke_1"
+effectName2 = "dmgbldg2"
+effectMinHealth2 = 0.6
+effectMaxHealth2 = 0.8
+effectHard3 = "hp_smoke_1"
+effectName3 = "dmgbldg3"
+effectMinHealth3 = 0.4
+effectMaxHealth3 = 0.6
+effectHard4 = "hp_smoke_1"
+effectName4 = "dmgbldg4"
+effectMinHealth4 = 0.0
+effectMaxHealth4 = 0.4
+
+[BuildingClass]

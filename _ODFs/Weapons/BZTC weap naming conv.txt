@@ -1,0 +1,60 @@
+Battlezone Total Command WEAPON PART NAMING CONVENTIONS
+----------------------------------
+FOLDER NAMING CONVENTION
+Category+Combat Name+Opt Assault Name+Race (all seperated by 1 space)
+
+Prefix Type:
+C cannon    G gun    H hand    M mortar    N neutral    P pack    R rocket    S special/mine
+
+Suffix Race:
+A -American (NSDF)    B -Black Dogs    K -Chinese Red Army    R -Crimson Bears     S - Soviet Cosmo Communist Army     Y -Fury
+
+ex - "R FAF Hornet a" - rocket/combatname/optional_assault_name/American_race
+----------------------------------
+POWERUP / WEAPON /ORDNANCE NAMING CONVENTION
+
+Prefix Type:
+ap - powerup
+g - weapon
+o - ordnance
+sp - powerup spawn point
+
+Suffix:
+lowercase version of the above race letters
+
+prefix/name/optionalcountnumber/suffix/attacktype
+1-2 letters / 4 letters / 1 number / 1 letter / _a or _c
+----------------------------------
+4 EXAMPLES
+Powerup:
+apstbaa_c (ap  stba a _c)
+ap - powerup
+stba - weapon name (Stabber Anti-Tank)
+a - race (American)
+_c - combat version
+
+Weapon:
+gminis_a (g  mini  s _a)
+g - gun (weapon)
+mini - weapon name (Minigun)
+s - race (Soviet/CCA)
+_a - assault version
+
+Ordnance:
+osnipb_c (o  snip  b  _c)
+o - ordnance (the bullet)
+snip - ordnance name (Sniper Rifle)
+b - race (Black Dogs)
+_c - combat version
+
+Spawn Powerup:
+spflary (sp flar y)
+sp - spawn powerup
+flar - solar flare
+y - race (Fury)
+--------------------------------------
+TRACER ROUND geometry - THIS ISN'T USED BUT GEOM. MAY STILL BE IN MOD
+- 24 versions are available
+- Eight colors (blue, orange, red, yellow, pink, green, cyan, purple)
+- Three sizes (00 - hand, 01 - minigun, 02 chaingun)
+- Mesh naming convention example: "trcrblucox02.fbx" - this is a blue tracer geometry of the chaingun size

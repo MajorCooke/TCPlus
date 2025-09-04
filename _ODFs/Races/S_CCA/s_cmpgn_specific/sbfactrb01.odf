@@ -1,0 +1,26 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "sbfactrb01"
+classLabel = "sbfact"  //"factory"
+geometryName = "sbfactcox00.fbx"
+
+upgradeName = "svfactrb01"
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+
+provideName4 = "sbfactrb01"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_sbfact"
+
+/////////////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+
+/////////////////////////////////////////////////////////////////////
+[BuildingClass]
+
+/////////////////////////////////////////////////////////////////////
+[FactoryClass]
+

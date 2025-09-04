@@ -1,0 +1,18 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gshdwa_a"
+classLabel = "cannon"
+altName = "gshdwa_c"
+ordName = "oshdwa_a"
+wpnName = "Cluster Rockets A"  //"Salvo Rockets"
+fireSound = "gpopp00.wav"
+wpnReticle = "gsalva"
+wpnCategory = "ROCK"
+aiRange = 125
+isAssault = 1
+
+[CannonClass]
+shotDelay = 2.0
+salvoCount = 5  //less than BZII since meant for dual use  //10
+salvoDelay = 0.1
+shotVariance = 0.07

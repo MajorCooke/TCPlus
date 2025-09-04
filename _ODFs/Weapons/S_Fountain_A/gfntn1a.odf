@@ -1,0 +1,22 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "gfntn1a"
+geometryName = "aoflarcox01.fbx"
+classLabel = "flare"
+scrapCost = 30
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 1500  //"ammocost"  Coxxon  //100
+unitName = "Fountain!"
+heatSignature = 100.0
+explosionName = "xbmbxpl"
+
+[MineClass]
+lifeSpan = 10.0
+
+[FlareMineClass]
+payloadName = "gfntn2a"
+fireSound = "gflas00.wav"
+triggerDelay = 1.0
+shotDelay = 0.1
+shotVariance = 1.0

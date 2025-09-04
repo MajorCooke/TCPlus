@@ -1,0 +1,30 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "kvconsrs01"
+classLabel = "kvcons0"  //"constructionrig"
+
+unitName = "Rat rig"
+unitIcon = "icon_kvcons.png"
+unitStatus = "wire_kvcons.png"
+infoName = "kvcons.inf"
+
+/////// PROVIDES ///////////////////
+provideCount = 2
+provideName1 = "kvconsrs01"
+provideName2 = "VIRTUAL_CLASS_CONSTRUCTIONRIG"
+
+////////////////////////////////////////////////////////////
+[CraftClass]
+
+////////////////////////////////////////////////////////////
+[HoverCraftClass]
+
+////////////////////////////////////////////////////////////
+[DeployableClass]
+
+////////////////////////////////////////////////////////////
+[ConstructionRigClass]
+buildItem1 = "kbpgen0"
+buildItem2 = "kbfactrs01"
+buildItem9 = ""  //"kbhqtr"
+buildItem10 = ""  //"kbshld"

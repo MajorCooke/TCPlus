@@ -1,0 +1,65 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "opblla_a"
+classLabel = "bullet"
+
+shotGeometry = NULL
+shotRadius = 1.0
+xplGround = "xpbllacar_a"  //"xsplashit_a"
+xplVehicle = "xpbllacar_a"  //"xsplashit_a"
+xplBuilding = "xpbllacar_a"  //"xsplashit_a"
+
+renderName = "opblla_a.render"
+
+ammoCost = 2.25
+lifeSpan = 1.0  //50m  Coxxon  //0.8 // 40m
+shotSpeed = 50.0
+
+damageValue(N) = 12 // none // 300
+damageValue(L) = 8 // light // 200
+damageValue(H) = 6 // heavy // 100
+
+damageValue(S) = 8 // standard // 300
+damageValue(D) = 12 // deflection // 500
+damageValue(A) = 6 // assault // 100
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "opblla_a.puff"
+renderName2 = "opblla_a.stream"
+renderName3 = "opblla_a.light"
+
+[Puff]
+renderBase = "draw_twirl"
+textureName = "plasma.tga" //flame2
+textureBlend = "one one modulate"
+startColor = "50 50 0 160"
+finishColor = "255 0 0 0"
+startRadius = 0.2  //Coxxon//0.01
+finishRadius = 4.0
+animateTime = 1.0
+
+[stream]  //Coxxon
+renderBase = "draw_twirl_trail"
+textureName = "plasma.tga"  //"smoke.tga"
+textureBlend = "one one modulate"  //"srcalpha invsrcalpha modulatealpha"
+startColor = "255 255 80 255"
+finishColor = "255 0 0 0"
+startRadius = 0.7
+finishRadius = 0.0
+animateTime = 0.3  //Coxxon  //0.5
+emitDelay = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 2.0"
+emitLife = 0.3  //Coxxon  //0.5
+
+[light]
+renderBase = "draw_light"
+startColor = "20 80 180 200"
+finishColor = "20 80 180 200"
+startRadius = 16.0  //ord light
+finishRadius = 16.0  //ord light
+attenuateConstant = 0.0  //ord light
+attenuateQuadratic = 1.0  //ord light
+attenuateLinear = 0.0  //ord light

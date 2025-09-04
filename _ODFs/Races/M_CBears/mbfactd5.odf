@@ -1,0 +1,197 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "mbfactd5"
+classLabel = "factory"
+geometryName = "mbfactcox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "mbfactcox01.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = 1
+scrapCost = 55
+scrapValue = 15
+maxHealth = 6000
+//addHealth = 10  //fact  Coxxon
+maxAmmo = 0
+unitName = "Factory"
+infoName = "mbfact.inf"
+aiName = "BuildingProcess"
+aiName2 = "BuildingProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+collisionRadius = 10.0  //lrg bldg
+powerCost = 0
+ownsTerrain = 1  //1 if no baseplate faction
+//buildSupport = "A"  //def recy
+buildRequire = "N"  //"F"//def recy
+allowMDMCollisionDetonation = 1  //Coxxon
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+//upgradeName = "mvfactd6"
+
+isSingle = 1  //depbld  Coxxon//limitClass1 = "mbfactd5"
+//limitClass1Count = 1  //depbld Coxxon
+//limitClass1Text = "Only One Allowed"  //depbld Coxxon
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+provideName1 = "mbfactd5"
+provideName2 = "VIRTUAL_CLASS_FACTORY"
+provideName3 = "xbfact"
+
+/////////LIGHTS AND EFFECTS/////////
+//lightHard1 = "hp_light_3"
+//lightName1 = "hltwrd"
+//lightHard2 = "hp_light_4"
+//lightName2 = "hltwrd"
+//lightHard3 = "hp_light_5"
+//lightName3 = "hltwrd"
+//lightHard4 = "hp_light_6"
+//lightName4 = "hltwrd"
+lightHard5 = "hp_light_7"
+lightName5 = "hltwyl"  //"hltwrd"
+lightHard6 = "hp_light_8" //vehicle build area
+lightName6 = "omnired8"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "vfxbztclight.redblink"
+effectHard2 = "hp_emit_1"
+effectName2 = "vfxbztclight.yellowblink"
+//effectHard3 = "hp_emit_1"
+//effectName3 = NULL  //"vfxbztcbldgs.kbrecyring"
+effectHard3 = "hp_light_3"  //projector
+effectName3 = "vfxbztcbldgs.projectorcca"
+effectHard4 = "hp_light_4"  //projector
+effectName4 = "vfxbztcbldgs.projectorcca"
+effectHard5 = "hp_light_5"  //projector
+effectName5 = "vfxbztcbldgs.projectorcca"
+effectHard6 = "hp_light_6"  //projector
+effectName6 = "vfxbztcbldgs.projectorcca"
+//effectHard8 = "hp_smoke_1"
+//effectName8 = "vfxbztcbldgs.smokestack"
+//smoke1
+effectHard7 = "hp_smoke_1"
+effectName7 = "dmgbldg1"
+effectMinHealth7 = 0.6
+effectMaxHealth7 = 0.8
+effectHard8 = "hp_smoke_1"
+effectName8 = "dmgbldg2"
+effectMinHealth8 = 0.4
+effectMaxHealth8 = 0.6
+effectHard9 = "hp_smoke_1"
+effectName9 = "dmgbldg3"
+effectMinHealth9 = 0.2
+effectMaxHealth9 = 0.4
+effectHard10 = "hp_smoke_1"
+effectName10 = "dmgbldg4"
+effectMinHealth10 = 0.0
+effectMaxHealth10 = 0.2
+//smoke2  //no dmg1
+effectHard11 = "hp_smoke_2"
+effectName11 = "dmgbldg2"
+effectMinHealth11 = 0.4
+effectMaxHealth11 = 0.6
+effectHard12 = "hp_smoke_2"
+effectName12 = "dmgbldg3"
+effectMinHealth12 = 0.2
+effectMaxHealth12 = 0.4
+effectHard13 = "hp_smoke_2"
+effectName13 = "dmgbldg4"
+effectMinHealth13 = 0.0
+effectMaxHealth13 = 0.2
+//smoke3  //no dmg1
+effectHard14 = "hp_smoke_3"
+effectName14 = "dmgbldg2"
+effectMinHealth14 = 0.4
+effectMaxHealth14 = 0.6
+effectHard15 = "hp_smoke_3"
+effectName15 = "dmgbldg3"
+effectMinHealth15 = 0.2
+effectMaxHealth15 = 0.4
+effectHard16 = "hp_smoke_3"
+effectName16 = "dmgbldg4"
+effectMinHealth16 = 0.0
+effectMaxHealth16 = 0.2
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_mbfactcox"
+
+chunkEffect1 = "mvfactcoxchk01.fbx"  
+chunkEffect2 = "mvfactcoxchk02.fbx"  
+chunkEffect3 = "mvfactcoxchk03.fbx"  
+chunkEffect4 = "mvfactcoxchk04.fbx"  
+chunkEffect5 = "mvfactcoxchk05.fbx"  
+HasSeparateChunks = true 
+numChunks = 7
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 2
+numChunks4 = 1
+numChunks5 = 2
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+/////////////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 100
+SoundSelect = "svmufv0b.wav"  //click + unit factory
+SoundDeselect = "cornrclk.wav"
+
+/////////////////////////////////////////////////////////////////////
+[BuildingClass]
+tunnelCount = 1
+tunnel01X0 = 3
+tunnel01Z0 = 5
+tunnel01DX = 2
+tunnel01DZ = 2
+tunnel01Edge = "wwtw"
+//bldEdge = "wwww"  //bldg
+
+soundAmbient = "ibfact00.wav" 
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+/////////////////////////////////////////////////////////////////////
+[FactoryClass]
+ChromeEffect = 0  // 0/f/F = line, 1/t/T = chrome 
+ChromeTexture = "reflection3.tga"  // reflection map texture 
+AnimateChrome = 1  //0  // 0/f/F = static, 1/t/T = animated 
+BuildSparkConfig = "sparkerA"  //"sparker"  // renderer to apply at build vertices 
+LineStartColor = "255 0 0 255"  // line effect start color 
+LineFinishColor = "150 0 0 20"  // line effect finish color ...
+BeamColor = "255 0 0 255"
+lineSolidColor = "255 0 0 70" 	// LOD Line color.
+KickAllCraft = true  //sbfact try to stop vehc getting stuck inside
+//scaleVelY = 5.0  //fact kick
+MultVelXZ = 2.0  //fact kick
+//DropoffDX = 0.0
+DropoffDZ = 16.0  //sbfact
+
+soundBuild = "avrecye2cox.wav"  //"ibrecy02.wav"
+soundCancel = "mnu_buzz.wav"  //"cgrowl.wav"  //"locking3.wav"
+soundFinish = "avrecye9.wav"  //"iapc04.wav"
+reloadMsg = "svmufv1.wav"  //constructing
+rescueMsg = "svmufv2.wav"  //unit complete
+deployedMsg = "svmufvb.wav"  //awaiting orders
+
+//weaponConfig = "mweapon.odf" //for reference/must use .odf - Coxxon
+
+buildItem1 = "mvmbike"
+buildItem2 = "mvmisl"
+buildItem3 = "mvtank"
+buildItem4 = "mvrckt"
+buildItem5 = "mvartl"
+buildItem6 = "mvwalk"
+buildItem7 = "mvapc"
+buildItem8 = "mvstnk"  //mammoth
+buildItem9 = "mvmine"
+//buildItem10 = ""

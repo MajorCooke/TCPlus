@@ -1,0 +1,36 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "mbpyln"
+classLabel = "i76sign"
+geometryName = "mbpylncox00.fbx"
+collisionRadius = 1.0  //bztc vehc
+scrapCost = 0
+scrapValue = 0
+maxHealth = 2000  //pyln
+addHealth = 2000
+canCollide = 0  //pyln
+serviceTruckAutoHeal = 0
+maxAmmo = 0
+unitName = "Light Pylon"
+heatSignature = 0.0  //pyln  //0.2
+imageSignature = 0.0  //pyln  //0.02
+radarSignature = 0.0  //pyln  //0.01
+canDetect = 0
+canInteract = 0
+//ownsTerrain = 1  //pyln
+//canCollide = 1  //pyln
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+
+lightHard1 = "hp_light_1"
+lightName1 = "omniwrd16"
+effectHard1 = "hp_emit_1"
+effectName1 = "mbpyln.lighting"
+
+[BuildingClass]
+
+[lighting]
+renderBase = "draw_sprite"
+textureName =  "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "255 220 0 100"
+startRadius = 1.0

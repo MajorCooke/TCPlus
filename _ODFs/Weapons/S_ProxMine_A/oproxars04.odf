@@ -1,0 +1,29 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "oproxars04"
+classLabel = "proximity"  //"tripmine"  //
+geometryName = "aoproxcox01.fbx"  //"aoproxcox00.fbx"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 200
+unitName = "Prox Mine"
+//VehicleSearchFilter = 0 // 0 vehicles, 1 pilots, 2 vehicles+pilots+animals, 3 plants, 4 buildings
+
+//so won't show on radar
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+
+effectHard1 = "aoproxcox01"  //the model used as the hp
+effectName1 = "oproxa.lighting"  //"vfxbztclight.redstrobe"  //redblink"  //proxmine
+
+[MineClass]
+lifeSpan = -1  //Coxxon
+xplBlast = "xproxars04"  //"xminxpl"
+detonateExpire = true  //mine
+
+[ProximityMineClass]  //[TripMineClass]
+triggerRadius = 50.0f  //20.0f
+suppressRadius = 60.0f  //40.0f
+//trig only  TeamFilter = 3  //0 all, 1 team, 2 ally, 3 enemy

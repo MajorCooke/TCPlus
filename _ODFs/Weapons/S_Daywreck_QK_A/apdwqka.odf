@@ -1,0 +1,19 @@
+[GameObjectClass]
+baseName = "apdwqka"
+classLabel = "daywrecker"
+geometryName = "aowrckcox00.fbx"  //Coxxon
+animCount = 1
+animName1 = "loop"
+animFile1 = "aowrckcox00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+scrapCost = 20
+scrapValue = 0
+maxHealth = 300
+maxAmmo = 0
+unitName = "Daywrecker Quakenuke"
+aiName = "PowerUpProcess"
+buildTime = 0.5  //armo pod
+
+[DayWreckerClass]
+xplBlast = "xdwqka"

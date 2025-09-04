@@ -1,0 +1,24 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gshdwa_c"
+classLabel = "imagelauncher"
+altName = "gshdwa_a"
+ordName = "oshdwa_c"
+wpnName = "IL Shadower C"
+fireSound = "gsand00.wav"
+wpnReticle = "gshdwa.0"
+wpnCategory = "ROCK"
+isAssault = 0
+aiRange = 125.0  //Coxxon  //200
+
+[LauncherClass]
+lockRange = 125.0  //coxoxn  //200.0  // was 170 GEC
+shotDelay = 1.0
+lockDelay = 1.5
+coneAngle = 0.1  //Coxxon  //0.05
+lockingReticle = "gshdwa.A"
+lockingSound = "lock01.wav"
+lockedReticle = "gshdwa.B"
+lockedSound = "lock02.wav"
+targetCount = 3
+targetReticle = "gshdwa.1"

@@ -1,0 +1,40 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "oboompot"
+classLabel = "proximity"
+geometryName = "flarpotcox01.fbx"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 200
+unitName = "boom explosion"
+ignoreMissingInf = 1
+//VehicleSearchFilter = 0 // 0 vehicles, 1 pilots, 2 vehicles+pilots+animals, 3 plants, 4 buildings
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+canCollide = 0
+canInteract = 0
+canDetect = 0
+allowseismic = 0
+LeaveExplodeScorch = true
+
+//effectHard1 = "flarpotcox01"  //the model used as the hp
+//effectName1 = "oboompot.lighting"
+
+[MineClass]
+lifeSpan = 0.2  //Coxxon
+xplBlast = "x_bztc_bld"  //m med 
+detonateExpire = true 
+
+[ProximityMineClass]
+triggerRadius = 32.0f  //20.0f
+suppressRadius = 36.0f  //40.0f
+//trig only  TeamFilter = 3  //0 all, 1 team, 2 ally, 3 enemy
+
+[lighting]
+renderBase = "draw_sprite"
+textureName =  "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "255 50 0 255"
+startRadius = 1.0

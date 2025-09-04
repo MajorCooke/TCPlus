@@ -1,0 +1,38 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "kbrecyrs08b"
+classLabel = "kbrecy"  //"recycler"
+
+upgradeName = "kvrecyrs08b"
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+
+provideName5 = "kbrecyrs08b"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_kbrecycox"
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+
+///////// EXPLOSION AID /////////
+UseCollapse = false
+UseChunks = true
+UseExplosion = true
+
+///////////////////////////////////////////////////////////////
+[FactoryClass]
+buildItem5 = "kvconsrs08b"
+
+[BuildGroup10] 
+buildLabel = "Production Units"
+buildItem1 = "kvfactrs08b"
+buildItem2 = "kvarmo"
+
+///////////////////////////////////////////////////////////////
+[RecyclerClass]

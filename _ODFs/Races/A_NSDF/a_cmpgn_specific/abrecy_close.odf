@@ -1,0 +1,132 @@
+/////////Coxxon - BZTC/////////
+//used as a scripted prop
+[GameObjectClass]
+baseName = "abrecy_close"
+classLabel = "recycler"  //ibrecy uses recycler while ibfact uses factory
+geometryName = "abrecycox02.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "abrecycox03.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = 0
+scrapCost = 40  //depbld  Coxxon
+scrapValue = 10
+buildTime = 5.0  //depbld  //10.0 
+maxHealth = 30000
+maxAmmo = 0
+unitName = "Recycler"
+infoName = "abrecy.inf"
+aiName = "BuildingProcess"
+aiName2 = "BuildingProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+allowMDMCollisionDetonation = 1
+ownsTerrain = 1  //1 if no baseplate faction
+//AlignToTerrain = true
+//AlignTerrainReplaceType = 0  //0-5 see changelog
+//buildSupport = "F"  //"X" //can't build next to
+//buildRequire = "F"
+collisionRadius = 10.0  //bztc bldg
+armorClass = H
+powerCost = 0  //need for scrap dropoff
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+upgradeName = "avrecy"
+isSingle = 1  //depbld  Coxxon
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "abrecy"
+provideName2 = "abrecycpu"
+provideName3 = "VIRTUAL_CLASS_RECYCLER"
+provideName4 = "VIRTUAL_CLASS_RECYCLERBUILDING"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_abrecycox"
+
+chunkEffect1 = "abrecycoxchk01.fbx"  
+chunkEffect2 = "abrecycoxchk02.fbx"  
+chunkEffect3 = "abrecycoxchk03.fbx"  
+chunkEffect4 = "abrecycoxchk04.fbx"  
+chunkEffect5 = "abrecycoxchk05.fbx"  
+HasSeparateChunks = true 
+numChunks = 5
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 1
+numChunks5 = 1
+UseChunks = true
+UseExplosion = true
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+//CategoryTypeOverride = 1  //which number key  Coxxon
+//CanSelect = 1  //using smart reticle
+//CanBasepanelSelect = true
+//panelIcon = "icon_base_recy.png"  //yes it works Coxxon
+//powerTap1 = "hp_powerup"
+//powerName1 = ""
+detectRange = 100
+SoundSelect = "cfigclk.wav"
+SoundDeselect = "cornrclk.wav"
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+tunnelCount = 1
+tunnel01X0 = 3
+tunnel01Z0 = 2
+tunnel01DX = 2
+tunnel01DZ = 5
+tunnel01Edge = "wttt"
+
+soundAmbient = "ibrecy01.wav"
+
+///////// EXPLOSION AID /////////
+UseCollapse = false
+UseChunks = true
+UseExplosion = true
+
+/////////////////////////////////////////////////////////////
+[FactoryClass]
+ChromeEffect = 0  // 0 = line, 1 = chrome 
+ChromeTexture = "reflection3.tga"  // reflection map texture 
+AnimateChrome = 1  //0 = static, 1 = animated 
+BuildSparkConfig = "sparkerA"  //"sparker"  // renderer to apply at build vertices 
+LineStartColor = "0 255 0 55"  // line effect start color 
+LineFinishColor = "50 150 0 20"  // line effect finish color ...
+BeamColor = "0 200 50 255"  //Coxxon  //"0 127 255 31"
+lineSolidColor = "0 255 0 70" 	// LOD Line color.
+
+soundBuild = "avrecye2cox.wav"  //"ibrecy02.wav"
+soundCancel = "mnu_buzz.wav"  //"cgrowl.wav"  //"locking3.wav"
+soundFinish = "avrecye9.wav"  //"iapc04.wav"
+selectUser1Msg = "avrecyvd.wav"  //building 
+reloadMsg = "avrecyv8.wav"  //construction started
+rescueMsg = "avrecyv3.wav"  //building complete
+selectOtherMsg = "avrecyv0.wav"  //recycler here
+deployedMsg = "avrecyv6.wav"  //deploying
+//diedMsg = "abetty1.wav"
+
+buildItem1 = "avscav"
+buildItem2 = "avscout"
+buildItem3 = "avturr"
+buildItem4 = "avtug"
+buildItem5 = "avcons"
+buildItem6 = "avserv"
+buildItem7 = "apserva"
+//buildItem8 = "prereserve for mp empty scout"
+//buildItem9 = "FREESLOT"  //"avstnk"  //nsdf red devil
+//buildItem10 = "replaced by BuildGroup10"
+
+[BuildGroup10] 
+buildLabel = "Production Units"
+buildItem1 = "avfact"
+buildItem2 = "avarmo"
+
+///////////////////////////////////////////////////////////////
+[RecyclerClass]
+scrapHold = 40
+scrapDelay = 3.0 //abrecy

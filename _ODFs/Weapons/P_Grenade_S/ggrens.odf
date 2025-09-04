@@ -1,0 +1,17 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "ggrens"
+classLabel = "mortar"
+geometryName = "sggrencox00.fbx"
+ordName = "ogrens"
+wpnName = "Grenade"
+wpnIcon = "wire_ggrens%d.tga"
+fireSound = "mort01.wav"
+wpnReticle = "gmorta"  //"gmortar"
+wpnLadder = "gmortar.L0"
+wpnCategory = "PACK"
+localAmmo = 3
+canSelect = false
+
+[CannonClass]
+shotDelay = 2.0

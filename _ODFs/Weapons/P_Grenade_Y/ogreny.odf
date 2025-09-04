@@ -1,0 +1,73 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ogreny"
+classLabel = "grenade"
+shotGeometry = NULL  //"aomortcox00.fbx"
+geometryScale = 0.05
+shotSound = "baz03.wav"
+xplGround = "xhandgnd"
+xplVehicle = "xhandcar"
+xplBuilding = "xhandcar"
+
+renderName = "ogreny.render"
+
+ammoCost = 1
+lifeSpan = 1e30
+shotSpeed = 40.0
+
+damageValue(N) = 5000 // none  //gren
+damageValue(L) = 4000 // light  //gren
+damageValue(H) = 3000 // heavy  //gren
+
+damageValue(S) = 4000 // standard  //gren
+damageValue(D) = 3000 // deflection  //gren
+damageValue(A) = 5000 // absorption  //gren
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "ogreny.Core"
+renderName2 = "ogreny.Smoke"
+
+[Core]
+renderBase = "draw_twirl_trail"
+textureName = "plasma.tga"
+textureBlend = "one one modulate"
+startColor = "0 205 230 255" 
+finishColor = "0 205 250 255" 
+startRadius = 0.2  //Coxxon  //0.4
+finishRadius = 0.4
+rotationRate = 10.0
+animateTime = 0.02
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 0.005
+
+[Flare]
+renderBase = "draw_twirl_trail"
+textureName = "raindrop.tga"
+textureBlend = "one one modulate"
+startColor = "30 205 255 65" 
+finishColor = "255 255 255 0" 
+startRadius = 0.4  //Coxxon  //0.5
+finishRadius = 1.0  //Coxxon  //1.5
+animateTime = 0.7
+emitDelay = 0.01
+emitLife = 0.7
+rotationrate = 20
+
+[Smoke]  //orig grenade RENDER
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "10 100 200 40"  //"255 255 255 32"
+finishColor = "255 255 255 0"
+startRadius = 0.1  //Coxxon  //0.2
+finishRadius = 0.5
+animateTime = 1.0
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+emitLife = 1.0
+

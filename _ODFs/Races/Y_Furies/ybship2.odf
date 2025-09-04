@@ -1,0 +1,86 @@
+/////////Coxxon - BZTC/////////
+//Fury Escape Big Spaceship
+[GameObjectClass]
+baseName = "ybship"
+classLabel = "i76building"
+geometryName = "ybshipcox02.fbx"
+animCount = 1
+animName1 = "launch"
+animFile1 = "ybshipcox02.fbx"
+scrapCost = 200
+scrapValue = 50
+maxHealth = 30000
+addHealth = 200
+maxAmmo = 0
+unitName = "Fury Transport"
+heatSignature = 0.8
+imageSignature = 8.0
+radarSignature = 1.0
+ownsTerrain = 1
+canDetect = 0
+canInteract = 0
+canCollide = 0  //dropship  BZCC
+armorClass = H
+collisionRadius = 32.0  //bztc 32 bldg
+
+///////// LIGHTS & EFFECTS /////////
+effectHard1 = "hp_emit_1"
+effectName1 = "abcone.render"
+effectHard2 = "hp_emit_2"
+effectName2 = "abcone.render"
+effectHard3 = "hp_emit_3"
+effectName3 = "abcone.render"
+effectHard4 = "hp_emit_4"
+effectName4 = "abcone.render"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_ybshipcox"
+
+[render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "abcone.smoketrail"
+renderName2 = "abcone.flare"
+
+[flare]
+renderBase = "draw_sprite"
+textureName = "sprtballcox00.tga"  //"lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "50 150 255 255"
+finishColor = "50 150 255 255"
+startRadius = 15.0
+finishRadius = 15.0
+
+[smoketrail]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.07
+emitDelayVar = 0.03
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = 15.0
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "100 100 150 255"
+finishColor = "150 200 255 0"
+startRadius = 5.0
+finishRadius = 15.0
+animateTime = 15.0
+rotationRate = 4.0
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+tunnelCount = 1
+tunnel01X0 = 0
+tunnel01Z0 = 0
+tunnel01Dx = 8
+tunnel01Dz = 12
+tunnel01Edge = "wwww"
+soundAmbient = "cenv01.wav"  //"baruin1b.wav"  //"cceng.wav"  //"cenv04.wav"  //"iext01.wav"  
+//bldEdge = "wwww"  //bldg
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid

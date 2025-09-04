@@ -1,0 +1,69 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "opopga"
+classLabel = "bullet"
+
+shotGeometry = "aomortcox00.fbx"
+shotSound = "Ordin_c.wav"
+
+xplGround = "xpopgnd"
+xplVehicle = "xpopcar"
+xplBuilding = "xpopcar"
+
+renderName = "opopga.render"
+
+ammoCost = 30
+lifeSpan = 4.0 // 200m
+shotSpeed = 50.0
+
+damageValue(N) = 250 // none // 350 = 250
+damageValue(L) = 220 // light // 300 = 200
+damageValue(H) = 200 // heavy // 220 = 150
+
+damageValue(S) = 220 // standard // 300 = 200
+damageValue(D) = 180 // deflection // 305 = 203.3
+damageValue(A) = 250 // absortion // 275 = 183.3
+
+///////////////////////////////////////
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "opopga.flare"
+renderName2 = "opopga.smoke"
+renderName3 = "opopga.trail"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "flare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 200"  //Coxxon  //127"
+finishColor = "255 255 255 200"  //Coxxon  //127"
+startRadius = 1.0  //2.0  Coxxon
+finishRadius = 1.0  //2.0  Coxxon
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "164 164 164 80"
+finishColor = "180 180 180 0"
+startRadius = 0.5
+finishRadius = 2.0
+animateTime = 2.0
+emitDelay = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+emitLife = 2.0
+
+[Trail]
+renderBase = "draw_twirl_trail"
+textureName = "plasma.tga"  //"particle.tga"
+textureBlend = "one one modulate"
+startColor = "255 150 0 200"  //"255 250 210 250"  //Coxxon change
+finishColor = "255 255 255 10"   //"150 130 100 30"  //Coxxon change
+startRadius = 0.8  //0.3
+finishRadius = 0.1  //1.0
+animateTime = 0.6  //0.3
+emitDelay = 0.01  //0.004  //0.002
+emitVariance = "3.0 3.0 3.0"
+emitLife = 0.6  //0.3

@@ -1,0 +1,53 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ogtowk1_c"
+classLabel = "beam"
+shotGeometry = NULL
+xplGround = "xgtowk1gnd_c"
+xplVehicle = "xgtowk1car_c"
+xplBuilding = "xgtowk1bld_c"
+renderName = "ogtowk1_c.render"
+ammoCost = -1  //gtow
+lifeSpan = 170e-6 // 100m
+shotSpeed = 1e6
+
+damageValue(N) = 40  //50  //120  //100 // none
+damageValue(L) = 30  //40  //100  //75 // light
+damageValue(H) = 20  //30  //80  //50 // heavy
+
+damageValue(S) = 30  //40  //100  //75 // standard
+damageValue(D) = 40  //50  //120  //100 // deflection
+damageValue(A) = 20  //30  //80  //50 // absorption
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "ogtowk1_c.core"
+renderName2 = "ogtowk1_c.fringe"
+
+[Core]
+renderBase = "draw_bolt"
+textureName = NULL
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 0 0 10"
+startRadius = 0.5  //1.0
+finishRadius = 1.0  //0.5
+segmentLength = 10.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.2
+textureRate = 0.01
+
+[Fringe]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 0 255"
+finishColor = "255 150 0 10"
+startRadius = 1.0  //2.0
+finishRadius = 2.0  //1.0
+segmentLength = 10.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.3
+textureRate = 0.02
+textureSpeed = -5.0

@@ -1,0 +1,34 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ominia_c"
+classLabel = "bullet"
+shotGeometry = NULL  //"aominicox00.fbx"  //
+xplGround = "xbulgnd"
+xplVehicle = "xbulcar"
+xplBuilding = "xbulbld"
+
+ammoCost = 4  //Coxxon  //1.25
+lifeSpan = 0.7  //Coxxon  //0.35 // 105m
+shotSpeed = 150.0  //Coxxon  //300.0
+
+//0.7  150.0  105m  //Coxxon
+
+damageValue(N) = 33  //Coxxon  //11 // none // 200
+damageValue(L) = 24  //Coxxon  //8 // light // 160
+damageValue(H) = 15  //Coxxon  //5 // heavy // 100
+
+damageValue(S) = 24  //Coxxon  //8 // standard // 160
+damageValue(D) = 15  //Coxxon  //5 // deflection // 100
+damageValue(A) = 30  //Coxxon  //10 // absorption // 200
+
+renderName = "ominia_c.tracer"
+
+[tracer]
+renderBase = "draw_tracer"
+textureBlend = "one one modulate"
+textureName = "aotrcrblucox00.tga"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.1
+finishRadius = 0.1
+tracerLength = 4.0

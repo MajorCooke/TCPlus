@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ostbsa_a"
+classLabel = "ostbsa_c"
+
+ammoCost = 34  //Coxxon  //15
+lifeSpan = 2.0 // 150m
+shotSpeed = 75.0
+
+damageValue(N) = 600 // none // 400
+damageValue(L) = 562.5 // light // 375
+damageValue(H) = 525 // heavy // 350
+
+damageValue(S) = 562.5 // standard // 375
+damageValue(D) = 500 // deflection // 333
+damageValue(A) = 600 // absorption // 400

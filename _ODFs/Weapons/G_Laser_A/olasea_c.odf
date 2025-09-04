@@ -1,0 +1,78 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "olasea_c"
+classLabel = "beam"
+shotGeometry = NULL
+xplGround = "xlasegnd"
+xplVehicle = "xlasecar"
+xplBuilding = "xlasebld"
+renderName = "olasea_c.render"
+ammoCost = 20
+lifeSpan = 120e-6 // 120m
+shotSpeed = 1e6
+
+damageValue(N) = 250 // none
+damageValue(L) = 150 // light
+damageValue(H) = 50 // heavy
+
+damageValue(S) = 150 // standard
+damageValue(D) = 250 // deflection 
+damageValue(A) = 50 // absorbtion
+
+[Render]  //changed to bzcc
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "olasea_c.HotCore"
+renderName2 = "olasea_c.EnergyFringe"
+
+[HotCore]
+renderBase = "draw_bolt"
+textureBlend = "one one modulate"
+textureName = "blastenergy.tga"
+textureRate = 0.5
+startColor = "255 200 190 255"  //Coxxon  //"190 190 255 255"
+finishColor = "50 50 50 0"
+startRadius = 0.1
+finishRadius = 0.02
+segmentTime = 0.15
+textureSpeed = -32.0
+
+[EnergyFringe]
+renderBase = "draw_trail"
+textureBlend = "one one modulate"
+textureName = "blastenergy.tga"
+textureRate = 0.5
+startColor = "255 30 10 40"  //Coxxon  //"30 10 255 40"
+finishColor = "255 20 50 0"  //Coxxon  //"50 20 255 0"
+startRadius = 0.15
+finishRadius = 0.04
+segmentTime = 0.3
+textureSpeed = -16.0
+
+//changed to red laser Coxxon
+//1.3 version
+[Core]
+renderBase = "draw_bolt"
+textureName = NULL //"trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 200 200 255"
+finishColor = "255 0 200 255"
+startRadius = 0.01
+finishRadius = 0.01
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.65
+textureRate = 0.01
+
+[Tail]
+renderBase = "draw_bolt"
+textureName = NULL // "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 0 0 255"
+finishColor = "100 80 50 0"
+startRadius = 0.005
+finishRadius = 0.2
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.5
+textureRate = 0.01

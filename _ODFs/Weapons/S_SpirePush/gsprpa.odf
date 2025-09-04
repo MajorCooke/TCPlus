@@ -1,0 +1,13 @@
+/////////Coxxon - BZTC/////////
+//pusher mine to protect gspire from CSK
+[WeaponClass]
+baseName = "gsprpa"
+classLabel = "dispenser"
+wpnName = "Spire Push"
+fireSound = NULL
+wpnReticle = "gmcurmin"
+wpnCategory = "SPEC"
+
+[DispenserClass]
+shotDelay = 6.0
+objectClass = "osprpa"

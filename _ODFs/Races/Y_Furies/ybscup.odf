@@ -1,0 +1,155 @@
+/////////Coxxon - BZTC/////////
+////UPGRADED extractor////
+[GameObjectClass]
+baseName = "ybscup"
+classLabel = "extractor"
+geometryName = "ybsilocox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "ybsilocox00.fbx"
+scrapCost = 60
+scrapValue = 20
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Silo"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 10.0  //bztc bldg
+isAssault = 1  //bztc
+canInteract = 1 // for missile lock
+armorClass = H
+ownsTerrain = 1  //1 if no baseplate faction
+//buildSupport = "A"  //abscav
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+//TerrainBlendRadius = 0  //abscav
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "xpl_crash_ybsilocox"
+
+//chunkEffect1 = "ybsilocoxchk01.fbx"  
+//chunkEffect2 = "ybsilocoxchk02.fbx"  
+//chunkEffect3 = "ybsilocoxchk03.fbx"  
+//chunkEffect4 = "ybsilocoxchk04.fbx"  
+//chunkEffect5 = "ybsilocoxchk05.fbx"  
+//6-8 avail ramp
+//HasSeparateChunks = true 
+//numChunks = 8
+//numChunks1 = 3
+//numChunks2 = 2
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+provideName1 = "ybscup"
+provideName2 = "VIRTUAL_CLASS_EXTRACTOR"
+provideName3 = "VIRTUAL_CLASS_EXTRACTOR_U"
+provideName4 = "VIRTUAL_CLASS_STORAGE"
+provideName5 = "extract"
+
+/////////LIGHTS AND EFFECTS/////////
+lightHard1 = "hp_light_1"
+lightName1 = "omnifbl16"
+
+//smoke1
+effectHard1 = "hp_smoke_1"
+effectName1 = "dmgbldg1"
+effectMinHealth1 = 0.6
+effectMaxHealth1 = 0.8
+effectHard2 = "hp_smoke_1"
+effectName2 = "dmgbldg2"
+effectMinHealth2 = 0.4
+effectMaxHealth2 = 0.6
+effectHard3 = "hp_smoke_1"
+effectName3 = "dmgbldg3"
+effectMinHealth3 = 0.2
+effectMaxHealth3 = 0.4
+effectHard4 = "hp_smoke_1"
+effectName4 = "dmgbldg4"
+effectMinHealth4 = 0.0
+effectMaxHealth4 = 0.2
+//smoke2
+effectHard5 = "hp_smoke_2"
+effectName5 = "dmgbldg1"
+effectMinHealth5 = 0.6
+effectMaxHealth5 = 0.8
+effectHard6 = "hp_smoke_2"
+effectName6 = "dmgbldg2"
+effectMinHealth6 = 0.4
+effectMaxHealth6 = 0.6
+effectHard7 = "hp_smoke_2"
+effectName7 = "dmgbldg3"
+effectMinHealth7 = 0.2
+effectMaxHealth7 = 0.4
+effectHard8 = "hp_smoke_2"
+effectName8 = "dmgbldg4"
+effectMinHealth8 = 0.0
+effectMaxHealth8 = 0.2
+//smoke3
+effectHard9 = "hp_smoke_3"
+effectName9 = "dmgbldg1"
+effectMinHealth9 = 0.6
+effectMaxHealth9 = 0.8
+effectHard10 = "hp_smoke_3"
+effectName10 = "dmgbldg2"
+effectMinHealth10 = 0.4
+effectMaxHealth10 = 0.6
+effectHard11 = "hp_smoke_3"
+effectName11 = "dmgbldg3"
+effectMinHealth11 = 0.2
+effectMaxHealth11 = 0.4
+effectHard12 = "hp_smoke_3"
+effectName12 = "dmgbldg4"
+effectMinHealth12 = 0.0
+effectMaxHealth12 = 0.2
+
+effectHard13 = "hp_emit_1"
+effectName13 = "ybscup.pulse"  //"vfxbztcbldgs.ybsilostream"
+effectHard14 = "hp_emit_2"
+effectName14 = "vfxbztcthrst.jetblue"
+effectHard15 = "hp_emit_3"
+effectName15 = "vfxbztclight.redblink"
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "absiloe0.wav"
+bldEdge = "wwww"  //scav
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = false  //for deployed scavs  //true
+UseExplosion = true  //bldg aid
+
+////////////////////////////////////////////////////////////////
+[ExtractorClass]
+initDelay = 1.0  //abscav 12.0
+scrapDelay = 0.5  //scav
+scrapHold = 20
+detectRange = 100
+
+[pulse]
+renderBase = "draw_emit"
+emitName = "ybtrain.ring"
+emitDelay = 0.2
+emitVelocity = "0.0 5.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+
+[ring]
+simulateBase = "sim_smoke"
+lifeTime = 3.0
+renderBase = "draw_wave"
+textureName = "wave.tga"
+textureBlend = "one one modulate"
+startColor = "50 150 255 200"
+finishColor = "50 150 255 50"
+startRadius = 0.1
+finishRadius = 0.7
+animateTime = 3.0
+waveAngle = 3.14159265359
+waveDepth = 2.0
+waveColorCenter = "255 255 255 255"
+waveColorEdge = "255 255 255 255"
+waveSegments = 16  //64
+maxCount = 128  //256

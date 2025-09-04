@@ -1,0 +1,15 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gsonca_c"
+classLabel = "cannon"
+ordName = "osonca_c"
+altName = "gsonca_a"
+wpnName = "Sonic Blast C"
+fireSound = "sonic01.wav"
+wpnReticle = "gsoncs_c"
+wpnCategory = "CANN"
+aiRange = 160
+
+[CannonClass]
+shotDelay = 1.0 // 1/sec
+shotAlternate = 1

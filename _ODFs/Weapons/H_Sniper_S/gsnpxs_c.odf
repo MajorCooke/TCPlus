@@ -1,0 +1,8 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gsnpxs_c"
+classLabel = "gsnips_c"
+
+altName = NULL
+
+[CannonClass]

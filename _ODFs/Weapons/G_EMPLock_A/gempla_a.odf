@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gempla_a"
+classLabel = "machinegun"
+altName = "gempla_c"
+ordName = "oempla_a"
+wpnName = "EMP Stream"
+fireSound = "mag01.wav"
+wpnReticle = "glocka"
+wpnCategory = "GUN"
+isAssault = 1
+aiRange = 50
+
+[CannonClass]
+shotDelay = 0.1
+shotVariance = 0.075

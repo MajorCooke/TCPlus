@@ -1,0 +1,22 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "yssold"
+classLabel = "yspilo"
+
+scrapValue = 0
+maxHealth = 250
+maxAmmo = 100
+addAmmo = 10
+unitName = "Soldier"
+aiName = "SoldierProcess"
+
+weaponName1 = "gbowwy_c"
+weaponName2 = "gbowwy_a"
+
+MaxChromeDistance = 80
+
+///////// LIGHTS AND EFFECTS /////////
+
+
+[CraftClass]
+DoBlastUsesFields = false

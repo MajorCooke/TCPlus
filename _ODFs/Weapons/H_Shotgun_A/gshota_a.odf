@@ -1,0 +1,18 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+classLabel = "cannon"
+//combat version has geometry
+ordName = "oshota_a"
+wpnName = "Assault Rifle A"
+fireSound = "mgun01.wav"
+wpnReticle = "gstara"
+wpnCategory = "HAND"
+isAssault = 1
+isFlying = 0
+altName = "gshota_c"
+
+[CannonClass]
+shotDelay = 0.1
+salvoCount = 1
+salvoDelay = 0.0
+shotVariance = 0.05

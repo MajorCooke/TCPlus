@@ -1,0 +1,13 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gfntn0a"
+classLabel = "dispenser"
+wpnName = "Fountain!"
+fireSound = "gflar00.wav"
+wpnReticle = "gflara"
+wpnPriority = 1
+wpnCategory = "SPEC"
+
+[DispenserClass]
+shotDelay = 15.0  //Coxxon  //2.0
+objectClass = "gfntn1a"

@@ -1,0 +1,20 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "nssold"
+classLabel = "nspilo"
+scrapValue = 0
+maxHealth = 250
+maxAmmo = 100
+addAmmo = 10
+unitName = "Soldier"
+unitIcon = "icon_nssold.png"
+aiName = "SoldierProcess"
+MaxChromeDistance = 80
+weaponName1 = "gstarn_c"  //Coxxon  //"igbzka_c"
+weaponName2 = "gstarn_a"  //Coxxon  //"igbzka_a"
+
+//CanSelect = 1  //create icon
+//CanInteract = 1 //bztc
+
+[CraftClass]
+DoBlastUsesFields = false

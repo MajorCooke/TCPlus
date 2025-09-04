@@ -1,0 +1,28 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+geometryName = "wrldsatucox00.fbx"
+classLabel = "i76Building"
+collisionRadius = 0.1
+scrapCost = 0
+scrapValue = 0
+maxHealth = 1000  //wrld
+maxAmmo = 0
+unitName = "Saturn"
+heatSignature = 0.1
+imageSignature = 0.0
+radarSignature = 0.2
+explosionName = "xplss17achl"  //wrld
+canDetect = 0
+canInteract = 1
+canSnipe = 0
+ownsTerrain = 1
+canCollide = 1  //Coxxon
+ignoremissinginf = 1
+
+[BuildingClass]
+bldEdge = "wwww"
+
+///////// EXPLOSION AID /////////
+UseCollapse = false
+UseChunks = false  //wrld
+UseExplosion = true

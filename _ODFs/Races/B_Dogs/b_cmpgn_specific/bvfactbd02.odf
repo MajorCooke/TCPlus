@@ -1,0 +1,35 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "bvfactbd02"
+classLabel = "bvfact"
+unitIcon = "icon_bvfact.png"
+unitStatus = "wire_bvfact.png"
+infoName = "bvfact.inf"
+
+limitClass1 = "bvfactbd02"
+limitClass1Count = 1
+limitClass1Text = "Only One Allowed"
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+
+provideName3 = "bvfactbd02"
+
+//////////////////////////////////////////////////////////
+[CraftClass]
+
+/////////CRASH EXPLODE INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_bvfactcox"
+
+////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+
+/////////////////////////////////////////////////////////
+[DeployableClass]
+
+/////////////////////////////////////////////////////////
+[DeployBuildingHClass]
+deployName = "bbfactbd02"
+
+////////////////////////////////////////////////////////
+[RecyclerVehicleHClass]

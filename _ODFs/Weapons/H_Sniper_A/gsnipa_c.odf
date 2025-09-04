@@ -1,0 +1,55 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gsnipa_c"
+classLabel = "machinegun"
+
+// external geometry
+geometryName = "agsnipcox_skel.fbx"
+
+animCount = 4
+animName1 = "stand"
+animFile1 = "agsnipcox_skel.fbx"
+animName2 = "walk"
+animFile2 = "agsnipcox_skel.fbx"
+animName3 = "crouch"
+animFile3 = "agsnipcox_crch.fbx"
+animName4 = "jump"
+animFile4 = "agsnipcox_skel.fbx"
+
+// cockpit geometry
+cockpitName = "awsnipcox_cockpit_skel.fbx"
+animCountCockpit = 4
+animNameCockpit1 = "stand"
+animFileCockpit1 = "awsnipcox_cockpit_skel.fbx"
+animNameCockpit2 = "walk"
+animFileCockpit2 = "awsnipcox_cockpit_walk.fbx"
+animNameCockpit3 = "crouch"
+animFileCockpit3 = "awsnipcox_cockpit_crch.fbx"
+animNameCockpit4 = "jump"
+animFileCockpit4 = "awsnipcox_cockpit_skel.fbx"
+
+ordName = "osnipa_c"
+wpnName = "N14 Carbine"
+fireSound = "ghand00.wav"
+wpnReticle = "gsnipa"  //"grifle"
+wpnCategory = "HAND"
+isAssault = 0
+isFlying = 0
+altName = "gsnipa_a"
+flashName = "gsnipa_c.flash"
+aiRange = 120  //rifle  199
+
+[CannonClass]
+shotDelay = 0.2  //Coxxon  //0.1
+shotVariance = 0.01
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "0 0 255 255"
+finishColor = "255 255 255 255"
+startRadius = 3.0
+finishRadius = 1
+animateTime = 0.1
+geomName = "g_sflash.fbx"

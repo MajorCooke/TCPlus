@@ -1,0 +1,18 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ospita_a"
+classLabel = "ospita_c"  //"bullet"
+
+ammoCost = 1  //Coxxon  //2
+lifeSpan = 1.0  //Coxxon 0.5 // 150m
+shotSpeed = 150.0  //Coxxon  //300.0
+
+//1.0 150.0 150m  //Coxxon
+
+damageValue(N) = 7.5  //Coxxon  //15 // none // 300
+damageValue(L) = 6  //Coxxon  //12 // light // 240
+damageValue(H) = 4  //Coxxon  //8 // heavy // 160
+
+damageValue(S) = 6  //Coxxon  //12 // stardard // 240
+damageValue(D) = 4  //Coxxon  //8 // deflection // 160
+damageValue(A) = 7.5  //Coxxon  //15 // absorption // 300

@@ -1,0 +1,94 @@
+/////////Coxxon - BZTC/////////
+//Fury Escape Big Spaceship
+[GameObjectClass]
+baseName = "ybship"
+classLabel = "techcenter"  //MUST BE CLASS THAT USES TAPS - NOT i76building
+geometryName = "ybshipcox00.fbx"
+//animCount = 1
+//animName1 = "loop"
+//animFile1 = "ybshipcox00.fbx"
+//RunAnimation = "loop"
+//RunAnimIsLooped = true
+scrapCost = 200
+scrapValue = 50
+maxHealth = 30000
+addHealth = 200
+maxAmmo = 0
+unitName = "Fury Transport"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+collisionRadius = 32.0  //bztc 32 bldg
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+AllowSeismic = 0
+powerCost = 0
+
+///////// LIGHTS & EFFECTS /////////
+//effectHard1 = "hp_emit_1"
+//effectName1 = "ybship."
+//effectHard2 = "hp_emit_2"
+//effectName2 = "ybship."
+//effectHard3 = "hp_emit_3"
+//effectName3 = "ybship."
+//effectHard4 = "hp_emit_3"
+//effectName4 = "ybship."
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_ybshipcox"
+
+chunkEffect1 = "ybshipcoxchk01.fbx"  
+chunkEffect2 = "ybshipcoxchk02.fbx"  
+chunkEffect3 = "ybshipcoxchk03.fbx"  
+chunkEffect4 = "ybshipcoxchk04.fbx"  
+chunkEffect5 = "ybshipcoxchk05.fbx"  
+HasSeparateChunks = true 
+numChunks = 14
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 4
+numChunks4 = 4
+numChunks5 = 4
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+//tunnelCount = 1
+//tunnel01X0 = 0
+//tunnel01Z0 = 0
+//tunnel01Dx = 8
+//tunnel01Dz = 12
+//tunnel01Edge = "wwww"
+soundAmbient = "cenv01.wav"  //"baruin1b.wav"  //"cceng.wav"  //"cenv04.wav"  //"iext01.wav"  
+//bldEdge = "wwww"  //bldg
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+powerTap1 = "hp_tap_1"
+powerName1 = "ybsrkt"
+powerTap2 = "hp_tap_2"
+powerName2 = "ybsrkt"
+powerTap3 = "hp_tap_3"
+powerName3 = "ybsrkt"
+powerTap4 = "hp_tap_4"
+powerName4 = "ybsrkt"
+powerTap5 = "hp_tap_5"  //neck for script
+powerName5 = "dummy00"
+powerTap6 = "hp_tap_6"  //top cone for script
+powerName6 = "dummy01"
+PoweredByTaps = 0
+AutoBuildTap1 = 1
+AutoBuildTap2 = 1
+AutoBuildTap3 = 1
+AutoBuildTap4 = 1
+AutoBuildTap5 = 1
+DestroyTapsWithParent = 1
+detectRange = 300

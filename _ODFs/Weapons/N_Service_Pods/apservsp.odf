@@ -1,0 +1,6 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "apservsp"
+classLabel = "apservs"
+
+buildTime = 0.5  //armo pod

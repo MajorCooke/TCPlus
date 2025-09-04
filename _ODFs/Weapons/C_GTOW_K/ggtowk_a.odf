@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "ggtowk_a"
+classLabel = "cannon"
+altName = "ggtowk_c"
+ordName = "ogtowk_a"
+wpnName = "Stabber Tower A"
+fireSound = "gatst00.wav"  //"gmagg02.wav"
+wpnReticle = "gstbaa"  //"gatstab"
+wpnCategory = "CANN"
+isAssault = 1
+flashName = "ggtowk_c.render"
+aiRange = 200
+
+[CannonClass]
+shotDelay = 0.5

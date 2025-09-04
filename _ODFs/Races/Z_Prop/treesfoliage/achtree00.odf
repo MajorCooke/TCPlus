@@ -1,0 +1,63 @@
+
+/////////Coxxon - BZTC////////
+[GameObjectClass]
+geometryName = "achtreecox00.fbx"
+classLabel = "i76building"
+animCount = 1
+animName1 = "loop"
+animFile1 = "achtreecox00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+scrapCost = 8
+scrapValue = 3
+maxHealth = 0  //1000
+maxAmmo = 0
+unitName = "Oxygen Stalk"
+collisionRadius = 1.0  //bztc vehc
+ownsTerrain = 1  //no baseplate
+canDetect = 0
+canInteract = 0
+
+/////////LIGHTS AND EFFECTS//////////////////
+effectHard1 = "hp_emit_0"
+effectName1 = "achtree00.in"
+effectHard2 = "hp_emit_1"
+effectName2 = "achtree00.out"
+effectHard3 = "hp_emit_2"
+effectName3 = "achtree00.out"
+effectHard4 = "hp_emit_3"
+effectName4 = "achtree00.out"
+effectHard5 = "hp_emit_4"
+effectName5 = "achtree00.out"
+
+[in]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.1
+//emitDelayVar = 0.01
+emitVelocity = "0.0 -5.0 0.0"
+emitVariance = "1.0 0.0 1.0"
+emitLife = 1.0
+textureName =  "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "230 220 200 10"
+finishColor = "160 140 120 255"
+startRadius = 3.0
+finishRadius = 1.0
+animateTime = 1.0
+rotationRate = 5.0
+
+[out]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.1
+//emitDelayVar = 0.01
+emitVelocity = "0.0 0.0 5.0"
+emitVariance = "1.0 0.0 1.0"
+emitLife = 0.5
+textureName =  "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "50 150 255 250"
+finishColor = "150 200 255 0"
+startRadius = 0.2
+finishRadius = 2.0
+animateTime = 0.5
+rotationRate = 5.0

@@ -1,0 +1,15 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ogtowk1_a"
+classLabel = "ogtowk1_c"
+ammoCost = -1  //gtow
+lifeSpan = 200e-6
+shotSpeed = 1e6
+
+damageValue(N) = 50  //52  //60  //200  //180 // none
+damageValue(L) = 40  //42  //53  //180  //150 // light
+damageValue(H) = 30  //32  //47  //160  //120 // heavy
+
+damageValue(S) = 40  //42  //53  //180  //135 // standard
+damageValue(D) = 50  //52  //60  //200  //180 // deflection
+damageValue(A) = 30  //32  //47  //160  //90 // absorption

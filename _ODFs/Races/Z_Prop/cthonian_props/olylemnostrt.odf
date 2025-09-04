@@ -1,0 +1,146 @@
+/////////Coxxon - BZTC/////////
+//Lemnos factory - is a guntower in disguise for chasm kill, could add weapons in an odf variant
+[GameObjectClass]
+baseName = "olylemnos"
+classLabel = "turret"
+mrmFactor = 0
+geometryName = "olylemncox00.fbx"
+//cockpitName = ""
+animCount = 1
+animName1 = "loop"
+animFile1 = "olylemncox00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+scrapCost = 100
+scrapValue = 50
+powerCost = 0
+maxHealth = 15000
+addHealth = 5
+maxAmmo = 10000
+addAmmo = 30
+unitName = "Lemnos"
+aiName = "GunTowerFriend"
+aiName2 = "GunTowerEnemy"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+buildSupport = "A"
+buildRequire = "F"
+requireReplaceTerrainPhysics = 1  //bzcc
+ownsTerrain = 1  //prop no terrain plate
+collisionRadius = 20.0  //super bldg
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+AllowSeismic = 0
+powerCost = 0
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+provideName1 = "olylemnos"
+provideName2 = "VIRTUAL_CLASS_GUNTOWER"
+provideName3 = "defender"
+
+///// WEAPON ///////////////////////
+//2 gun,cannon,rocket hp available
+weaponMask = 11111
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = "gflsha_a"
+recoilName1 = "recoil1"
+//weaponAssault1 = 0
+//weaponGroup1 = 0
+weaponHard2 = "HP_CANNON_2"
+weaponName2 = "gflsha_a"
+recoilName2 = "recoil1"
+//weaponAssault2 = 0
+//weaponGroup2 = 0
+//weaponHard3 = "hp_special_1"
+//weaponName3 = "glemn1" //special to kill things that fall in hole
+
+/////// TURRETS ///////////////////
+turretCount = 2
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+
+///////// LIGHTS & EFFECTS /////////
+effectHard1 = "hp_emit_1"
+effectName1 = NULL  //"vfxbztcbldgs.lemnossmoke"
+effectHard2 = "hp_emit_2"
+effectName2 = "vfxbztcbldgs.lemnossmoke"
+effectHard3 = "hp_emit_3"
+effectName3 = "vfxbztcbldgs.lemnossmoke"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "x_bztc_bld"  //"xpl_crash_olylemncox"
+
+chunkEffect1 = "olylemncoxchk01.fbx"  
+chunkEffect2 = "olylemncoxchk02.fbx"  
+chunkEffect3 = "olylemncoxchk03.fbx"  
+chunkEffect4 = "olylemncoxchk06.fbx"  
+chunkEffect5 = "olylemncoxchk07.fbx"  
+//1-8 avail
+HasSeparateChunks = true 
+numChunks = 6
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 1
+numChunks5 = 2
+
+/////////////////////////////////////////////////////////////////////
+[EntityClass]
+AllowHQShadows = false
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "cenv01.wav"  //"baruin1b.wav"  //"cceng.wav"  //"cenv04.wav"  //"iext01.wav"  //"igtow01.wav"  //"igtow01b.wav"
+
+tunnelCount = 2  //3
+//vert
+tunnel01X0 = 1
+tunnel01Z0 = 1
+tunnel01DX = 2
+tunnel01DZ = 14
+tunnel01Edge = "twtt"  //"tftt"
+//vert
+tunnel02X0 = 13
+tunnel02Z0 = 1
+tunnel02DX = 2
+tunnel02DZ = 14
+tunnel02Edge = "tttw"  //"tttf"
+//horz
+//tunnel03X0 = 1
+//tunnel03Z0 = 11
+//tunnel03DX = 14
+//tunnel03DZ = 4
+//tunnel03Edge = "wftf"
+
+///////// EXPLOSION AID /////////
+UseCollapse = false
+UseChunks = true
+UseExplosion = true
+
+/////////////////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 300.0
+periodScan = 0.0
+velocJam = 0.0
+weaponPitch = 2.0
+steerFactor = 2.0
+engageRange = 300
+
+//RetargetOnStrafe = true  //tnk
+attackTask = "TurretAttack"
+subattackTask = "TurretDefendTask"
+subAttackClass = "ANS"
+
+/////////////////////////////////////////////////////////////////////
+[TurretCraftClass]
+powerTap1 = "hp_special_1"
+powerName = "gflaroly"  //"olybolt2"  //"glemn1"  //THIS IS A SELF-SPAWN MINE THAT KILLS THINGS THAT FALL IN HOLE
+detectRange = 300
+omegaTurret = 3.0  //2.0

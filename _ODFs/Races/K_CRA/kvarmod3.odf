@@ -1,0 +1,241 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "kvarmod3"
+classLabel = "recyclervehicleH"
+geometryName = "kvarmocox00.fbx"
+cockpitName = "kvtugcox_cockpit.fbx"
+animCount = 1
+animName1 = "deploy"
+animFile1 = "kvarmocox01.fbx"
+collisionRadius = 1.0  //bztc vehc
+scrapCost = 40
+scrapValue = 10
+buildTime = 5.0  //depbld  //10.0
+maxHealth = 6000
+addHealth = 2  //Coxxon
+maxAmmo = 0
+unitName = "KU8 slf"
+unitIcon = "icon_kvarmo.png"
+//unitStatus = "wire_kvarmo.png"
+infoName = "kvarmo.inf"
+aiName = "DeployBuildingHFriend"
+aiName2 = "DeployBuildingHEnemy"
+heatSignature = 2.0
+imageSignature = 5.0
+radarSignature = 5.0
+isAssault = 1  //bztc
+armorClass = H
+boxCollide = 1
+mass = 500000
+//Tuggable = 0
+
+requireCount = 0
+
+limitClass1 = "kvarmod3"
+limitClass1Count = 1
+limitClass1Text = "Only One Allowed"
+
+/////// PROVIDES ///////////////////
+provideCount = 2
+provideName1 = "kvarmod3"
+provideName2 = "kvarmocpu"
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltwyl"
+lightHard2 = "hp_light_2"
+lightName2 = "hltwyl"   
+
+//smoke1
+effectHard1 = "hp_smoke_1"
+effectName1 = "dmgbldg1"
+effectMinHealth1 = 0.8
+effectMaxHealth1 = 0.9
+effectHard2 = "hp_smoke_1"
+effectName2 = "dmgbldg2"
+effectMinHealth2 = 0.6
+effectMaxHealth2 = 0.8
+effectHard3 = "hp_smoke_1"
+effectName3 = "dmgbldg3"
+effectMinHealth3 = 0.4
+effectMaxHealth3 = 0.6
+effectHard4 = "hp_smoke_1"
+effectName4 = "dmgbldg4"
+effectMinHealth4 = 0.0
+effectMaxHealth4 = 0.4
+//smoke2
+effectHard5 = "hp_smoke_2"
+effectName5 = "dmgbldg1"
+effectMinHealth5 = 0.8
+effectMaxHealth5 = 0.9
+effectHard6 = "hp_smoke_2"
+effectName6 = "dmgbldg2"
+effectMinHealth6 = 0.6
+effectMaxHealth6 = 0.8
+effectHard7 = "hp_smoke_2"
+effectName7 = "dmgbldg3"
+effectMinHealth7 = 0.4
+effectMaxHealth7 = 0.6
+effectHard8 = "hp_smoke_2"
+effectName8 = "dmgbldg4"
+effectMinHealth8 = 0.0
+effectMaxHealth8 = 0.4
+//smoke3
+effectHard9 = "hp_smoke_3"
+effectName9 = "dmgbldg1"
+effectMinHealth9 = 0.8
+effectMaxHealth9 = 0.9
+effectHard10 = "hp_smoke_3"
+effectName10 = "dmgbldg2"
+effectMinHealth10 = 0.6
+effectMaxHealth10 = 0.8
+effectHard11 = "hp_smoke_3"
+effectName11 = "dmgbldg3"
+effectMinHealth11 = 0.4
+effectMaxHealth11 = 0.6
+effectHard12 = "hp_smoke_3"
+effectName12 = "dmgbldg4"
+effectMinHealth12 = 0.0
+effectMaxHealth12 = 0.4
+
+//effectHard1 = "hp_emit_1"
+//effectName1 = "vfxbztcthrst.thrustyellow"
+//effectMinVelocity1 = 2.0
+//effectMaxVelocity1 = 500.0
+//effectHard2 = "hp_emit_2"
+//effectName2 = "vfxbztcthrst.thrustyellow"
+//effectMinVelocity2 = 2.0
+//effectMaxVelocity2 = 500.0
+//effectHard3 = "hp_emit_3"
+//effectName3 = "vfxbztcthrst.thrustyellow"
+//effectMinVelocity3 = 2.0
+//effectMaxVelocity3 = 500.0
+//effectHard4 = "hp_emit_4"
+//effectName4 = "vfxbztcthrst.thrustblue"
+//effectMinVelocity4 = 2.0
+//effectMaxVelocity4 = 500.0
+effectHard13 = "hp_dust_1"
+effectName13 = "vfxbztcdusts.dusttrail"
+effectMinVelocity13 = 5.0
+effectMaxVelocity13 = 500.0
+effectHard14 = "hp_dust_2"
+effectName14 = "vfxbztcdusts.dusttrail"
+effectMinVelocity14 = 5.0
+effectMaxVelocity14 = 500.0
+effectHard15 = "hp_dust_3"
+effectName15 = "vfxbztcdusts.dusttrail"
+effectMinVelocity15 = 5.0
+effectMaxVelocity15 = 500.0
+effectHard16 = "hp_dust_0" 
+effectName16 = "vfxbztcdusts.avrecypuff"
+effectMinVelocity16 = 0.0
+effectMaxVelocity16 = 3.0
+//effectHard9 = "hp_dust_0"
+//effectName9 = "vfxbztcdusts.dusttrail"
+//effectMinVelocity9 = 5.0
+//effectMaxVelocity9 = 500.0
+
+//////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 400.0
+periodScan = 5.0
+velocJam = 0.0
+TeamTransferrable = false
+//CanRecycle = true   //Coxxon
+damageEffect1 = "dmgvhcl1"  //less stock dmg effect
+damageEffect2 = "dmgvhcl1"  //but still some sparks
+damageEffect3 = "dmgvhcl1"  //also lower visibility
+damageEffect4 = "dmgvhcl1"  //on cloaked units
+
+/////////CRASH EXPLODE INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_kvarmocox"
+
+//chunkEffect1 = "kvarmocoxchk01.fbx"  
+//chunkEffect2 = "kvarmocoxchk02.fbx"  
+//chunkEffect3 = "kvarmocoxchk03.fbx"  
+//chunkEffect4 = "kvarmocoxchk04.fbx"  
+//chunkEffect5 = "kvarmocoxchk05.fbx"  
+//HasSeparateChunks = true 
+//numChunks = 5
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+/////////MESSAGES/////////
+attackMsg = "kvslfvd.wav"  //no geys on radar
+followMeMsg = "kvslfv8.wav"  //in your rearview mirror
+followMsg = "kvslfv8.wav"  //in your rearview mirror
+goMsg = "kvslfv7.wav"  //heading out
+goObjectMsg = "kvslfve.wav"  //in transit
+holdMsg = "kvslfvg.wav"  //yes sir
+otherMsg = "kvslfvg.wav"  //yes sir
+selectFollowMsg = "kvslfv8.wav"  //in your rearview mirror
+selectGoMsg = "kvslfve.wav"  //in transit
+selectOtherMsg = "kvslfv0.wav"  //armory
+selectUser1Msg = "kvslfvp.wav"  //ready to build
+selectUser2Msg = "kvslfvo.wav"  //show me the power
+selectWaitMsg = "kvslfv0.wav"  //armory  //BASIC SELECT UNIT
+User1Msg = "kvslfvg.wav"  //yes sir //TELL TO DEPLOY
+User2Msg = "kvslfvk.wav"  //bombdeployed
+repairMsg = "kvslfvh.wav"  //heading to geyser
+recycleMsg = "kvslfvg.wav"  //yes sir
+selectAttackMsg = "kvslfvf.wav"  //building supplies
+killedMsg = "kvslfv2.wav"  //repair deploy
+reloadMsg = "kvslfvn.wav"  //ammo deployed
+rescueMsg = "kvslfv3.wav"  //weapon deployed
+deployedMsg = "kvslfvp.wav"  //ready to build
+packedMsg = "kvslfvc.wav"  //ready to move
+//"cvslfv1.wav"  //--------- (nsdf- right away)
+//"cvslfv4.wav"  //camera deployed
+//"cvslfv9.wav"  //---------
+//"cvslfvj.wav"  //---------
+//blockedGeyserMsg = "kvslfvb.wav"  //clear the geyser
+//diedMsg = "kbetty1.wav"  //unit lost
+//"cvslfvcox02.wav"  //supplies deployed SPECIAL
+//"cvslfvcox01.wav"  //click + armory SPECIAL
+
+BailSound = "bail.wav"
+CollideTerrainSound = "vnvcs1.wav"
+CollideBldgSound = "vnvcs3.wav"
+CollideOtherSound = "vvcre2.wav"  //"vvcbb3.wav"
+
+////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+setAltitude = 2.0  //depbld
+accelBrake = 20.0
+accelDragStop = 4.0
+accelDragFull = 1.0
+accelJump = 15.0
+accelThrust = 50.0
+alphaDamp = 5.0
+alphaSteer = 5.0
+alphaTrack = 20.0
+pitchPitch = 0.1
+pitchThrust = 0.05
+rollStrafe = 0.05
+rollSteer = 0.05
+velocForward = 15.0
+velocReverse = 15.0
+velocStrafe = 15.0
+omegaSpin = 2.0
+omegaTurn = 1.0
+soundThrust =  "avthrustcox01.wav"
+soundJump = "avhaule5.wav"
+
+/////////////////////////////////////////////////////////
+[DeployableClass]
+soundDeploy = "avrecycoxD0.wav"
+soundUndeploy = "avrecycoxD1.wav"  //"avrecye5.wav"
+
+/////////////////////////////////////////////////////////
+[DeployBuildingHClass]
+CanDeploy = true
+deployName = "kbarmod3"
+timeDeploy = 5.0  //depbld
+timeUndeploy = 5.0  //depbld
+
+////////////////////////////////////////////////////////
+[RecyclerVehicleHClass]
+scrapHold = 0

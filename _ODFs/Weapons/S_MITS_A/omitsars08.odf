@@ -1,0 +1,80 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "omitsars08"
+geometryName = "aomitscox01.fbx"  //"aomitscox00.fbx"
+classLabel = "magnet"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 99999  //RS08  //1000  //Coxxon  //150
+addHealth = 2000  //RS08  //Coxxon
+maxAmmo = 0
+unitName = "MITS"
+
+effectHard1 = "MITS"
+effectName1 = "omitsars08.flare"  //field" 
+//can use both as seperate effects
+
+[MineClass]
+lifeSpan = 36000.0  //RS08  //15.0
+
+[MagnetMineClass]
+triggerDelay = 0.0
+fieldRadius = 28.0  //RS08  //20.0
+
+objPushCenter = -30.0
+objPushEdge = -3.0
+objDragCenter = 4.0
+objDragEdge = 0.4
+
+ordPushCenter = -300.0
+ordPushEdge = -30.0
+ordDragCenter = 10.0
+ordDragEdge = 1.0
+
+//from bz1 magpulla
+//triggerDelay = 2.0
+//fieldRadius = 20.0
+//objPushCenter = -100.0
+//objPushEdge = -50.0
+//objDrag = 10.0
+//ordPushCenter = -30.0
+//ordPushEdge = -5.0
+//ordDrag = 0.0
+
+TeamFilter = 51  //Pick craft and ordnance, and sum to specify effected: All c0/o0, Same Team c1/o16, Allies c2/o32, Enemies c3/o48, NotSameTeam c4/o64
+
+[Field]  //bzcc
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "0 0 255 0"
+finishColor = "0 0 255 31"
+startRadius = 1.0
+finishRadius = 20.0
+animateTime = 0.2
+latitudeBands = 8
+longitudeSegments = 16
+
+[origField]
+renderBase = "draw_sphere"
+textureName = "hexfieldcox00_e.tga"  //Coxxon  NSDF
+textureBlend = "srcalpha invsrcalpha modulatealpha"  //Coxxon  "one one modulate"
+startColor = "255 255 255 0"  //Coxxon //"0 0 255 0"
+finishColor = "0 0 255 50"  //Coxxon  //"0 0 255 31"
+startRadius = 1.0
+finishRadius = 20.0
+animateTime = 0.2
+latitudeBands = 16  //Coxxon //8
+longitudeSegments = 16
+
+[Flare]
+renderBase = "draw_twirl_trail"
+textureName = "raindrop.tga"
+textureBlend = "one one modulate"
+startColor = "0 0 255 255"
+finishColor = "0 150 200 0"
+startRadius = 25.0
+finishRadius = 1.0
+animateTime = 0.7
+emitDelay = 0.1
+emitLife = 0.7

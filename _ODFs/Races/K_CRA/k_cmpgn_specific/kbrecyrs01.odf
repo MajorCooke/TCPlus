@@ -1,0 +1,43 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "kbrecyrs01"
+classLabel = "kbrecy"  //"recycler"
+
+upgradeName = "kvrecyrs01"
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+
+provideName5 = "kbrecyrs01"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_kbrecycox"
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+
+///////////////////////////////////////////////////////////////
+[FactoryClass]
+
+buildItem1 = "kvscav"
+buildItem2 = "kvscoutnc"
+buildItem3 = "kvturr"
+buildItem4 = "kvtug"
+buildItem5 = "kvconsrs01"
+buildItem6 = "kvserv"
+buildItem7 = "apservk"
+//buildItem8 = "prereserve for mp empty scout"
+//buildItem9 = "FREESLOT"
+//buildItem10 = "replaced by BuildGroup10"
+
+[BuildGroup10] 
+buildLabel = "Production Units"
+buildItem1 = "kvfactrs01"
+buildItem2 = "kvarmors01"
+
+///////////////////////////////////////////////////////////////
+[RecyclerClass]

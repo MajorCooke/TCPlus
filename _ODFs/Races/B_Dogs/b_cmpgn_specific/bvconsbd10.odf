@@ -1,0 +1,43 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "bvconsbd10"
+classLabel = "bvcons"  //"constructionrig"
+unitIcon = "icon_bvcons.png"
+unitStatus = "wire_bvcons.png"
+infoName = "bvcons.inf"
+scrapCost = 10
+buildTime = 3.0
+maxHealth = 4000 // Make it stronger
+addHealth = 1
+unitName = "Launch Pad Constructor"
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+
+provideName3 = "bvconsbd10"
+
+////////////////////////////////////////////////////////////
+[CraftClass]
+modeText19 = "Rebuild Addon"  //MODE_POWER = 19  //cons
+
+////////////////////////////////////////////////////////////
+[HoverCraftClass]
+
+////////////////////////////////////////////////////////////
+[DeployableClass]
+
+////////////////////////////////////////////////////////////
+[ConstructionRigClass]
+buildItem1 = "ablpadbd10"
+buildItem2 = ""
+buildItem3 = ""
+buildItem4 = ""
+buildItem5 = ""
+buildItem6 = ""
+buildItem7 = ""
+buildItem8 = ""
+buildItem9 = ""
+buildItem10 = ""

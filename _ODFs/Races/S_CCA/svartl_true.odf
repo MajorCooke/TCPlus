@@ -1,0 +1,227 @@
+/////////Coxxon - BZTC////////////////////
+//true artillery
+[GameObjectClass]
+baseName = "svartl"
+classLabel = "artillery"  //flying  //"howitzer" can't target  //"turrettank"  //for bz1 style  //
+geometryName = "svartlcox00.fbx"
+cockpitName = "svartlcox_cockpit.fbx"
+animCountCockpit = 1
+animNameCockpit1 = "deploy"
+animFileCockpit1 = "svartlcox_cockpit.fbx"
+animCount = 4
+animName1 = "deploy"
+animFile1 = "svartlcox00.fbx"
+animName2 = "forward"
+animFile2 = "svartlcoxsf.fbx"
+animName3 = "neutral"
+animFile3 = "svartlcoxsn.fbx"
+animName4 = "reverse"
+animFile4 = "svartlcoxsr.fbx"
+scrapValue = 20
+scrapCost = 65
+customCost = 70
+buildTime = 15.0  //Coxxon  //20.0
+customTime = 20.0
+maxHealth = 2500  //Coxxon  //1400  //artl
+maxAmmo = 3000  //artl
+unitName = "Cannoneer hwz"
+aiName = "AttachOffensive"
+aiName2 = "AttachOffensive"
+heatSignature = 10.0
+imageSignature = 0.1
+radarSignature = 0.0
+isAssault = 1  //bztc
+armorClass = L  //artl
+//boxCollide = 1  //artl
+canInteract = 1  //Coxxon
+isStealth = 1  //since not true turret
+collisionRadius = 3.0  //artl
+
+/////// OBJECT LIMIT //////////////
+//LimitClass1 = "svartl"  //artl
+//LimitClass1Count = 5  //artl
+//LimitClass1Text = "Build limit reached."  //artl
+
+/////// REQUIREMENTS ///////////////
+//requireCount = 1
+//requireName1 = "sbsbay"
+//requireText1 = "Build Supply Hangar"
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+provideName1 = "svartl"
+provideName2 = "VIRTUAL_CLASS_TURRET"  //artl
+provideName3 = "AntiAir"
+provideName4 = "flier"  //for aip that wants them
+provideName5 = "assault"
+
+/////// WEAPONS ////////////////////
+weaponHard1 = "HP_MORTAR_1"
+weaponName1 = "ghwtza"
+recoilName1 = "recoil1"
+weaponAssault1 = 0
+weaponHard2 = "HP_MORTAR_2"
+weaponName2 = "ghwtza"
+recoilName2 = "recoil2"
+weaponAssault2 = 0
+weaponHard3 = "HP_MORTAR_3"
+weaponName3 = "ghwtza"
+recoilName3 = "recoil3"
+weaponAssault3 = 0
+weaponHard4 = "HP_MORTAR_4"
+weaponName4 = "ghwtza"
+recoilName4 = "recoil4"
+weaponAssault4 = 0
+
+/////// TURRETS ////////////////////
+turretCount = 2
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+
+/////// LIGHTS AND EFFECTS /////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltwyl"
+LightsOnlyWhenPiloted = true
+
+effectHard1 = "hp_dust_1"
+effectName1 = "vfxbztcdusts.dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0
+effectMinVelocity1 = 10.0
+effectMaxVelocity1 = 500.0
+effectHard2 = "hp_dust_2"
+effectName2 = "vfxbztcdusts.dusttrail"
+effectMinAltitude2 = 0.0
+effectMaxAltitude2 = 5.0
+effectMinVelocity2 = 10.0
+effectMaxVelocity2 = 500.0
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "hp_smoke_1"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "hp_smoke_1"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "hp_smoke_1"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "hp_smoke_1"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+//////////////////////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 400.0  //artl
+periodScan = 5.0
+velocJam = 0.0
+engageRange = 350.0  //artl
+weaponPitch = 1.5  // this is a hack until the artil model becomes more like a turret
+braccelFactor = 0.05f
+strafeFactor = 0.1f
+steerFactor = 1.0
+omegaFactor = 0.1f
+velFactor = 0.2f
+canSnipe = 1  //UNdeployed only artl
+//NavIsDropped = true //drop behind - bugged, immed removes nav/camr in MP/MPI
+//NavDropSound = "gprox00.wav"  //sound if navisdropped true
+NavConfig = "apcamrs" //specify nav beacon/camera type
+PathingType = 0 // -1 auto, 0 hvr, 1 walk, 2 pilot, 3 tread, 4 fly
+AvoidType = -1 // -1 auto, 0 None, 1 force, 2 plan
+damageEffect1 = "dmgvhcl1"  //less stock dmg effect
+damageEffect2 = "dmgvhcl1"  //but still some sparks
+damageEffect3 = "dmgvhcl1"  //also lower visibility
+damageEffect4 = "dmgvhcl1"  //on cloaked units
+
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_svartlcox"
+//chunkEffect1 = "svartlcoxchk01.fbx"  
+//chunkEffect2 = "svartlcoxchk02.fbx"
+//chunkEffect3 = "svartlcoxchk03.fbx"
+//chunkEffect4 = "svartlcoxchk04.fbx"
+//chunkEffect5 = "svartlcoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 5
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+/////////MESSAGES/////////
+selectFollowMsg = "svartlv9.wav"  //grouped
+holdMsg = "svartlvn.wav"  //yes comrade
+goMsg = "svartlvh.wav"  //im moving
+followMsg = "svartlv9.wav"  //grouped
+followMeMsg = "svartlvc.wav"  //what's next
+repairMsg = "svartlv4.wav"  //heading in
+reloadMsg = "svartlv5.wav"  //getting ammo
+rescueMsg = "svartlv7.wav"  //ya
+recycleMsg = "svartlv8.wav"  //heading back
+attackMsg = "svartlvk.wav"  //firing on target
+otherMsg = "svartlve.wav"  //out of range
+user1Msg = "svartlv3.wav"  //will do
+selectWaitMsg = "svartlvm.wav"  //artillery here
+selectGoMsg = "svartlv0.wav"  //moving out
+selectDeployingMsg = "svartlvj.wav"  //deploying
+selectAttackMsg = "svartlvb.wav"  //incoming
+selectOtherMsg = "svartlvn.wav"  //yes comrade
+deployedMsg = "svartlvg.wav"  //i am in position
+packedMsg = "svartlvf.wav"  //ready to move
+killedMsg = "svartlvp.wav"  //enemy eliminated
+//diedMsg = ""  //"rbetty2.wav"
+//"svartlvd.wav"  //negative
+
+BailSound = "bail.wav"
+CollideTerrainSound = "vnvcs1.wav"
+CollideBldgSound = "vnvcs3.wav"
+CollideOtherSound = "vvcre2.wav"
+
+attackTask = "ArtlAttack"
+subattackTask = "ArtlSubAttack"
+subAttackClass = "ADS"  //artl
+//1 target: A Air/N Ground +2 attack: D Deploy/N Normal +3 range: S Weapon/N eNgage  
+//attackTaskUsesGroups = false  //Coxxon
+GoToTaskHasLeader = false  //Coxxon
+
+//////////////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+setAltitude = 1.0
+accelDragStop = 4.0
+accelDragFull = 1.0
+alphaTrack = 20.0
+alphaDamp = 5.0
+pitchPitch = 0.4
+pitchThrust = 0.1
+rollStrafe = 0.1
+rollSteer = 0.1
+velocForward = 15.0
+velocReverse = 15.0
+velocStrafe = 15.0
+accelThrust = 50.0
+accelBrake = 75.0
+omegaSpin = 3.5
+omegaTurn = 1.5
+alphaSteer = 5.0
+accelJump = 15.0
+
+soundThrust = "avartle1.wav"
+soundSteer = "avartle6.wav"
+soundJump = "engrev.wav"
+
+//////////////////////////////////////////////////////////////////////////
+[ArtilleryClass]
+omegaTurret = 2.0
+heightDeploy = 2.0
+HovercraftPhysicsWhenUndeployed = true
+
+//////////////////////////////////////////////////////////////////////////
+[DeployableClass]
+timeDeploy = 5.0
+timeUndeploy = 5.0  //Coxxon  //7.5
+//heightDeploy = 1.8
+soundDeploy = "avartle0.wav"
+soundUndeploy = "avartle4.wav"

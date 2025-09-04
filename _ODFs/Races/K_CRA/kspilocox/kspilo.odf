@@ -1,0 +1,181 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "kspilo"
+classLabel = "person"
+geometryName = "kspilocox_rifle_skel.fbx"
+
+animCount = 15
+
+// empty-handed animations
+animName1 = "stand"
+animFile1 = "kspilocox_rifle_skel.fbx"
+animName2 = "walk"
+animFile2 = "kspilocox_rifle_run.fbx"
+animName3 = "crouch"
+animFile3 = "kspilocox_rifle_crouch.fbx"
+animName4 = "jump"
+animFile4 = "kspilocox_rifle_jump.fbx"
+
+// combat mode animations
+animName5 = "standC"
+animFile5 = "kspilocox_rifle_skel.fbx"
+animName6 = "walkC"
+animFile6 = "kspilocox_rifle_run.fbx"
+animName7 = "crouchC"
+animFile7 = "kspilocox_rifle_crouch.fbx"
+animName8 = "jumpC"
+animFile8 = "kspilocox_rifle_jump.fbx"
+
+// assault mode animations
+animName9 = "standA"
+animFile9 = "kspilocox_bazoo_skel.fbx"
+animName10 = "walkA"
+animFile10 = "kspilocox_bazoo_run.fbx"
+animName11 = "crouchA"
+animFile11 = "kspilocox_bazoo_crouch.fbx"
+animName12 = "jumpA"
+animFile12 = "kspilocox_bazoo_jump.fbx"
+
+// Death animations
+animName13 = "DeathA"
+animFile13 = "kspilocox_rifle_dead.fbx"
+animName14 = "DeathC"
+animFile14 = "kspilocox_bazoo_dead.fbx"
+
+//Speaking
+animName15 = "speak"
+animFile15 = "kspilocox_rifle_talk.fbx"
+
+scrapCost = 0
+scrapValue = 5
+pilotCost = 1
+maxHealth = 100
+maxAmmo = 100
+addAmmo = 5
+unitName = "Pilot"
+unitIcon = "icon_kspilo.png"
+aiName = "PersonFriend"
+aiName2 = "PersonEnemy"
+heatSignature = 0.2
+imageSignature = 0.2
+radarSignature = 0.1
+
+///////// WEAPONS /////////
+weaponMask = 00001
+weaponHard1 = "HP_HAND_1"
+visualHard1 = "HP_DOCK_H"
+weaponAssault1 = 0
+weaponName1 = "gsnipk_c"
+
+weaponHard2 = "HP_HAND_1"
+visualHard2 = "HP_DOCK_H"
+weaponAssault2 = 1
+weaponName2 = "gsnipk_a"
+
+weaponHard3 = "HP_PACK_1"
+visualHard3 = "HP_DOCK_P"
+weaponAssault3 = 0
+weaponName3 = "gjetpk"
+
+/////////TURRETS/////////
+turretCount = 1  //pilo
+turretName1 = "torso"  //don't put __h  //pilo
+
+//////////////////////////////////////////////////////////////////////////
+[CraftClass]
+braccelFactor = 0.5
+velFactor = 0.1
+strafeFactor = 0.5
+steerFactor = 1.5
+omegaFactor = 0.2
+//avoidSpeed = 3.0
+//topSpeed = 5.0
+PersonRetreatRecycleDist = 46.0  //25.0
+//weaponPitch = 3.0  //pilo  //only one turret
+MaxWeaponPitch = 2.0  //pilo
+MinWeaponPitch = 3.0  //pilo
+NavConfig = "apcamrk" //specify nav beacon/camera type
+rangeScan = 300.0  //pilo
+periodScan = 5.0  //pilo
+velocJam = 5.0  //pilo
+//engageRange = 120  //pilo
+//OffensiveProcessIsTenacious = 0  //pilo
+//OffensiveProcessIsTenaciousAITeam = 0  //pilo
+//OffensiveProcessIsDistractable = 1  //pilo
+//OffensiveProcessIsDistractableAITeam = 1  //pilo
+
+CollideTerrainSound = "vnvcs1.wav"
+CollideBldgSound = "vnvcs3.wav"
+CollideOtherSound = "vvcre2.wav"  //"vvcbb3.wav"
+
+//////////////////////////////////////////////////////////////////////////
+[PersonClass]
+flattenTrackNormal = 2.0f  //BZ2 value - upright on sharper slopes
+
+// crawling mode
+alphaDampCrawl    = 5.0
+alphaTrackCrawl   = 10.0
+pitchPitchCrawl   = 0.0
+pitchThrustCrawl  = 0.0
+rollStrafeCrawl   = 0.0
+velocForwardCrawl = 0.0
+velocReverseCrawl = 0.0
+velocStrafeCrawl  = 0.0
+accelThrustCrawl  = 20.0
+omegaSpinCrawl    = 0.5
+omegaTurnCrawl    = 0.5
+alphaSteerCrawl   = 5.0
+velocJumpCrawl    = 0.0
+
+// running mode
+alphaDampRun     = 8.0
+alphaTrackRun    = 15.0
+pitchPitchRun    = 0.0
+pitchThrustRun   = 0.0
+rollStrafeRun    = 0.0
+velocForwardRun  = 5.0
+velocReverseRun  = 3.0
+velocStrafeRun   = 2.0
+accelThrustRun   = 20.0
+omegaSpinRun     = 3.0
+omegaTurnRun     = 2.0
+alphaSteerRun    = 15.0
+velocJumpRun     = 5.0
+
+// flying mode
+alphaDampFly      = 2.0
+alphaTrackFly     = 5.0
+pitchPitchFly     = 0.35
+pitchThrustFly    = 0.15
+rollStrafeFly     = 0.15
+velocForwardFly   = 15.0
+velocReverseFly   = 10.0
+velocStrafeFly    = 10.0
+accelThrustFly    = 5.0
+omegaSpinFly      = 2.0
+omegaTurnFly      = 1.5
+alphaSteerFly     = 2.0
+velocJumpFly      = 0.0
+
+// sound effects
+//BZ1 specific
+painSound1 = "pain1.wav";
+painSound2 = "pain2.wav";
+painSound3 = "pain3.wav";
+painSound4 = "pain4.wav";
+painSound5 = "pain5.wav";
+painSound6 = "pain6.wav";
+burnSound1 = "lburn1.wav";
+burnSound2 = "lburn2.wav";
+dieSound1  = "death1.wav";
+dieSound2  = "death2.wav";
+dieSound3  = "death3.wav";
+dieSound4  = "death4.wav";
+dieSound5  = "death5.wav";
+crushSound = "squish.wav";
+soundJump  = "jump.wav";
+landSound  = "land.wav";
+stepSound  = "runningbz1.wav"
+
+// animation rate
+animRate = 11.0  //aspilo  //10.0

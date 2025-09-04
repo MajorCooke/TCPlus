@@ -1,0 +1,17 @@
+/////////Coxxon - BZTC/////////
+//deathmatch ordnance
+[OrdnanceClass]
+baseName = "ocarba_c"
+classLabel = "ocarbad_c"  //"bullet"
+
+ammoCost = 6.25  //Coxxon  //1.25
+lifeSpan = 0.9  //0.6 // 180m
+shotSpeed = 200.0  //300.0
+
+damageValue(N) = 55  //Coxxon  //11 // none // 200
+damageValue(L) = 40  //Coxxon  //8 // light // 160
+damageValue(H) = 25  //Coxxon  //5 // heavy // 100
+
+damageValue(S) = 40  //Coxxon  //8 // standard // 160
+damageValue(D) = 25  //Coxxon  //5 // deflection // 100
+damageValue(A) = 50  //Coxxon  //10 // absorption // 200

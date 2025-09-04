@@ -1,0 +1,41 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gbowwy_c"
+classLabel = "cannon"
+
+// external geometry
+geometryName = "ygbowwcox_skel.fbx"
+animCount = 4
+animName1 = "stand"
+animFile1 = "ygbowwcox_skel.fbx"
+animName2 = "walk"
+animFile2 = "ygbowwcox_skel.fbx"
+animName3 = "crouch"
+animFile3 = "ygbowwcox_crch.fbx"
+animName4 = "jump"
+animFile4 = "ygbowwcox_skel.fbx"
+
+// cockpit geometry
+cockpitName = "ywbowwcox_cockpit_skel.fbx"
+animCountCockpit = 4
+animNameCockpit1 = "stand"
+animFileCockpit1 = "ywbowwcox_cockpit_skel.fbx"
+animNameCockpit2 = "walk"
+animFileCockpit2 = "ywbowwcox_cockpit_walk.fbx"
+animNameCockpit3 = "crouch"
+animFileCockpit3 = "ywbowwcox_cockpit_crch.fbx"
+animNameCockpit4 = "jump"
+animFileCockpit4 = "ywbowwcox_cockpit_skel.fbx"
+
+ordName = "obowwy_c"
+wpnName = "BOWW C"
+fireSound = "sonic01.wav"
+wpnReticle = "gsoncs_c"
+//aiRange = 120
+wpnCategory = "HAND"
+isAssault = 0
+isFlying = 1
+altName = "gbowwy_a"
+
+[CannonClass]
+shotDelay = 2.0  //1.5

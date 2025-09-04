@@ -1,0 +1,53 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "apdwata"
+classLabel = "daywrecker"
+geometryName = "aowrckcox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "aowrckcox00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+scrapCost = 80  //Coxxon  //20
+scrapValue = 0
+maxHealth = 500
+maxAmmo = 0
+unitName = "Day Wrecker AT"
+aiName = "PowerUpProcess"
+buildTime = 0.5  //armo pod
+ClearBuildZone = 0
+
+/////// BUILDLIMIT ///////////////
+limitClass1 = "xdaywrecker"
+limitClass1Count = 1
+limitClass1Text = "Limit Reached" 
+
+/////// REQUIREMENTS ///////////////
+requireCount = 1
+requireName1 = "xbtrain"
+requireText1 = "Build Barracks"
+
+/////// PROVIDES ///////////////////
+provideCount = 2
+provideName1 = "apdwata"
+provideName2 = "xdaywrecker"
+
+[PowerUpClass]
+//Available, not necessarily this object
+//alphaDamp = 2.0f;
+//alphaTrack = 5.0f;
+//pitchThrust = 0.5f;
+//rollStrafe = 0.5f;
+//omegaSpin = 2.0f;
+//omegaTurn = 1.5f;
+//alphaSteer = 2.0f;
+velocForward = 40.0f  //25.0  //15.0f;
+//velocReverse = 10.0f;
+//velocStrafe = 10.0f;
+//accelThrust = 10.0f;
+
+SlowFall = false
+FallSpeed = 12.0f
+
+[DayWreckerClass]
+xplBlast = "xpl_apdwata_cox"  //lower direct damage, higher AOE than stock "xbmbxpl"

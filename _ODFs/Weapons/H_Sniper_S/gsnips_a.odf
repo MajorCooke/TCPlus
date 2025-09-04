@@ -1,0 +1,29 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gsnips_a"
+classLabel = "cannon"
+//geometry stored in combat version
+ordName = "osnips_a"
+wpnName = "AK-57 Sniper"
+fireSound = "gsnipe00.wav"  //"snip01.wav"
+wpnReticle = "gsnipa"  //"grifle"
+wpnCategory = "HAND"
+isAssault = 1
+isFlying = 0
+altName = "gsnips_c"
+aiRange = 299  //snipe
+localAmmo = 3  //snipe
+
+[CannonClass]
+shotDelay = 3.0  //1.0  //snipe
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 3.0
+finishRadius = 1
+animateTime = 0.1
+geomName = "g_sflash.fbx"

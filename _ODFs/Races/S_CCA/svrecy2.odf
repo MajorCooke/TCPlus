@@ -1,0 +1,34 @@
+/////////Coxxon - BZTC/////////
+
+[GameObjectClass]
+baseName = "svrecy2"
+classLabel = "svrecy"  //"recyclervehicle"
+unitIcon = "icon_svrecy.png"
+unitStatus = "wire_svrecy.png"
+//infoName = "svrecy.inf"
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+provideName1 = "svrecy"
+provideName2 = "svrecycpu"
+provideName3 = "VIRTUAL_CLASS_RECYCLER"
+provideName4 = "VIRTUAL_CLASS_RECYCLERVEHICLE"
+provideName5 = "svrecy2"
+
+/////////////////////////////////////////////////////////////////////
+[EntityClass]
+
+//////////////////////////////////////////////////////////
+[CraftClass]
+
+/////////CRASH EXPLODE INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_svrecycox"
+
+/////////////////////////////////////////////////////////
+[DeployBuildingHClass]
+
+deployName = "sbrecy2"
+
+////////////////////////////////////////////////////////
+[RecyclerVehicleHClass]

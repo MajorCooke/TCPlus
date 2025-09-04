@@ -1,0 +1,19 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gmdmga"
+classLabel = "detonator"
+ordName = "omdmga"
+wpnName = "MDM Mortar"
+fireSound = "mdmort01.wav"
+flashName = "ghwtza.render"
+wpnReticle = "gmdmga.0"
+wpnLadder = "gmortar.L0"  //have reticle and in sprite table stb, but will not show as ladder
+wpnPriority = 1
+wpnCategory = "MORT"
+aiRange = 175
+
+[CannonClass]
+shotDelay = 2.0
+
+[RemoteDetonatorClass]
+armedReticle = "gmdmga.1"

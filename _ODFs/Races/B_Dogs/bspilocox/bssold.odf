@@ -1,0 +1,19 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "bssold"
+classLabel = "bspilo"
+
+scrapValue = 0
+maxHealth = 250
+maxAmmo = 100
+addAmmo = 10
+unitName = "Soldier"
+aiName = "SoldierProcess"
+
+weaponName1 = "gstara_c"  //Coxxon  //"igbzka_c"
+weaponName2 = "gstara_a"  //Coxxon  //"igbzka_a"
+
+MaxChromeDistance = 80
+
+[CraftClass]
+DoBlastUsesFields = false

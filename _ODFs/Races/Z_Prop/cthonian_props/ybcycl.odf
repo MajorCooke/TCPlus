@@ -1,0 +1,108 @@
+/////////Coxxon - BZTC/////////
+//deployed Cthonian Olympian Armada Cyclops scavenger
+////BASE extractor////
+[GameObjectClass]
+baseName = "ybscav"
+classLabel = "extractor"
+geometryName = "olybcyclcox00.fbx"
+animCount = 2
+animName1 = "deploy"
+animFile1 = "olybcyclcox01.fbx"
+animName2 = "loop"
+animFile2 = "olybcyclcox00.fbx"
+scrapCost = 20
+scrapValue = 20
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Extractor"
+infoName = "olycyclops.inf"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 3.0
+isAssault = 1  //bztc
+canInteract = 1 // for missile lock
+armorClass = H
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+requireReplaceTerrainPhysics = 1  //bzcc
+ownsTerrain = 1  //prop no terrain plate
+upgradeName = "ybcycp"
+AllowSeismic = 0
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "xpl_crash_yvcyclcox"
+
+//chunkEffect1 = "ybscavcoxchk01.fbx"  
+//chunkEffect2 = "ybsilocoxchk06.fbx"  
+//chunkEffect3 = "ybsilocoxchk07.fbx"  
+//chunkEffect4 = "ybsilocoxchk08.fbx"  
+//chunkEffect5 = "ybscavcoxchk05.fbx"  
+//HasSeparateChunks = true 
+//numChunks = 5
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+provideName1 = "ybcycl"
+provideName2 = "VIRTUAL_CLASS_EXTRACTOR"
+provideName3 = "VIRTUAL_CLASS_STORAGE"
+provideName4 = "extract"
+provideName5 = "xbscav"
+
+///////// LIGHTS AND EFFECTS /////////
+effectHard1 = "hp_emit_1"
+effectName1 = "vfxbztcbldgs.kbrecyring"
+effectHard2 = "hp_emit_2"  //center 10"
+effectName2 = "ybscav.steam"
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "hp_smoke_1"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "hp_smoke_1"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "hp_smoke_1"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "hp_smoke_1"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+[steam]
+renderBase = "draw_twirl_trail"
+textureName =  "flame.tga"
+textureBlend = "one one modulate"
+startColor = "50 100 255 150"
+finishColor = "0 50 100 20"
+startRadius = 5.5
+finishRadius = 8.0
+animateTime = 1.0
+emitDelay = 0.1
+emitVelocity = "0.5 10.0 0.5"
+emitVariance = "10.0 1.0 10.0"
+emitLife = 1.0
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "iext01.wav"
+//bldEdge = "wwww"  //bldg
+
+///////// EXPLOSION AID /////////
+UseCollapse = false
+UseChunks = false  //for deployed scavs  //true
+UseExplosion = true
+
+///////////////////////////////////////////////////////////////
+[ExtractorClass]
+initDelay = 12.0
+scrapDelay = 0.5  //1.0
+scrapHold = 40  //olyscav  //20
+detectRange = 100

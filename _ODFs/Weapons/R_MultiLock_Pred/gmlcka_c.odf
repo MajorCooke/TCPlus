@@ -1,0 +1,27 @@
+[WeaponClass]
+baseName = "gmlcka_c"
+classLabel = "multilauncher"
+altName = "gmlcka_a"
+ordName = "omlcka_c"
+wpnName = "Multi Lock C"
+fireSound = "gsand00.wav"
+wpnReticle = "gmulta_c.0"
+wpnCategory = "ROCK"
+isAssault = 0
+aiRange = 170
+
+[LauncherClass]
+lockRange = 170.0
+shotDelay = 0.5  //Coxxon  //1.0
+lockDelay = 1.0  //Coxxon  //2.0
+coneAngle = 0.1  //Coxxon  //0.05
+lockingReticle = "gshada.A"
+lockingSound = "lock01.wav"
+lockedReticle = "gshada.B"
+lockedSound = "lock02.wav"
+targetCount = 5  //How many stages the targetReticle uses. //3
+targetReticle = "gmulta_c.1"
+
+[MultiLauncherClass]
+targetCount = 5  //How many Locks it can make.
+loseAngle = 0.3  //Coxxon  //0.2

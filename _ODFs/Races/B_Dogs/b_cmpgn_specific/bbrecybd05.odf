@@ -1,0 +1,33 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "bbrecybd05"
+classLabel = "bbrecy"
+upgradeName = "bvrecybd05"
+
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+
+provideName5 = "bbrecybd05"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_bbrecycox"
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+
+///////// EXPLOSION AID /////////
+UseCollapse = false
+UseChunks = true
+UseExplosion = true
+
+///////////////////////////////////////////////////////////////
+[FactoryClass]
+buildItem5 = "bvconsbd05"
+
+///////////////////////////////////////////////////////////////
+[RecyclerClass]

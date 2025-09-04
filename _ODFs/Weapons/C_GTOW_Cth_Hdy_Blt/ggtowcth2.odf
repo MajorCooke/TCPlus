@@ -1,0 +1,28 @@
+/////////Coxxon - BZTC/////////
+//shorter range for mp maps
+[WeaponClass]
+baseName = "ggtowcth2"
+classLabel = "cannon"
+ordName = "ogtowcth"
+wpnName = "Cthonian Bolt"
+fireSound = "gbolt00.wav"
+wpnReticle = "garcca_c"
+wpnCategory = "CANN"
+isAssault = 0
+aiRange = 200
+flashName = "ggtowcth2.flash"
+
+[CannonClass]
+shotDelay = 1.0
+
+[Flash]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 250 20 127"
+finishColor = "0 200 255 35"
+startRadius = 0.5  //3.0
+finishRadius = 3.0  //0.5
+animateTime = 0.1
+latitudeBands = 8
+longitudeSegments = 16

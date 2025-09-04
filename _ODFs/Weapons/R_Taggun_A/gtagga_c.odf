@@ -1,0 +1,22 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gtagga_c"
+classLabel = "targeting"
+altName = "gtagga_a"
+ordName = "otagga_c"
+wpnName = "TAGG C"
+fireSound = "tmiss03.wav"
+wpnReticle = "gtagga.0"
+wpnCategory = "ROCK"
+isAssault = 0
+aiRange = 175
+
+[TargetingGunClass]
+leaderName = "otagla_c"
+leaderSound = "tmiss03b.wav"
+shotDelay = 0.5
+firstDelay = 0.5
+salvoDelay = 0.2
+salvoCount = 6
+lockingReticle = "gtagga.1"
+lockedReticle = "gtagga.2"

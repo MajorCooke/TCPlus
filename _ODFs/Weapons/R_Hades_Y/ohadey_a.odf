@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ohadey_a"
+classLabel = "ohadey_c"  //"thermalmissile"
+
+ammoCost = 50  //100
+lifeSpan = 3.5 // 350m
+shotSpeed = 100.0
+
+damageValue(N) = 150 // none
+damageValue(L) = 135 // light
+damageValue(H) = 120 // heavy
+
+damageValue(S) = 120 // standard
+damageValue(D) = 105 // deflection
+damageValue(A) = 150 // absorption

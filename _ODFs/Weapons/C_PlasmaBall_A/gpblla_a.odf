@@ -1,0 +1,15 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gpblla_a"
+classLabel = "machinegun"
+altName = "gpblla_c"
+ordName = "opblla_a"
+wpnName = "Plasma Stream A"
+fireSound = "gflas00.wav"
+wpnReticle = "gplasa_a"
+wpnCategory = "CANN"
+isAssault = 1
+aiRange = 50  //Coxxon  //40
+
+[CannonClass]
+shotDelay = 0.02 // 50/sec

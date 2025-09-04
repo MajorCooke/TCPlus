@@ -1,0 +1,21 @@
+/////////Coxxon - BZTC/////////
+//was stock faf assault - modified
+[OrdnanceClass]
+baseName = "ohorna_a"
+classLabel = "ohorna_c"
+
+ammoCost = 80  //Coxxon  //125
+lifeSpan = 3.5  //210m  //Coxxon //6.67 // 400.2m
+shotSpeed = 60.0
+
+damageValue(N) = 500  //600  //Coxxon  //900 // none
+damageValue(L) = 450  //550  //Coxxon  //800 // light
+damageValue(H) = 400  //500  //Coxxon  //700 // heavy
+
+damageValue(S) = 450   //550 //Coxxon  //800 // standard
+damageValue(D) = 400  //500 //Coxxon  //700 // deflection
+damageValue(A) = 500  //600 //Coxxon  //900 // absorption
+
+[MissileClass]
+
+[ThermalMissileClass]

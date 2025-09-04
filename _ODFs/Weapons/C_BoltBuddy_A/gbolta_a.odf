@@ -1,0 +1,17 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gbolta_a"
+classLabel = "cannon"
+altName = "gbolta_c"
+ordName = "obolta_a"
+wpnName = "Bolt Buddy 2K A"
+fireSound = "gbolt00.wav"
+wpnReticle = "gbolta"  //"garcca_a"
+wpnCategory = "CANN"
+isAssault = 1
+aiRange = 200
+flashName = "gbolta_c.smoke"
+
+[CannonClass]
+shotDelay = 3.0  //Coxxon  //2.0
+shotAlternate = 1  //Coxxon

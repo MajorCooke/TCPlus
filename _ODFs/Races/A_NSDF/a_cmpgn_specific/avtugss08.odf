@@ -1,0 +1,37 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "avtugss08"
+classLabel = "avtug"
+unitName = "Hauler tug"
+unitIcon = "icon_avtug.tga"
+unitStatus = "wire_avtug.tga"
+infoName = "avtug.inf"  //or baseName, or provide name
+
+/////// OBJECT LIMIT //////////////
+LimitClass1 = "avtugss08"
+LimitClass1Count = 1
+LimitClass1Text = "Build limit reached."
+
+//////////////////////////////////////////////////////////////////
+[CraftClass]
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_avtugcox"
+
+//chunkEffect1 = "avtugcoxchk01.fbx"  
+//chunkEffect2 = "avtugcoxchk02.fbx"
+//chunkEffect3 = "avtugcoxchk03.fbx"
+//chunkEffect4 = "avtugcoxchk04.fbx"
+//chunkEffect5 = "avtugcoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 5  TOTAL CHUNKS USED
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+
+////////////////////////////////////////////////////////////////
+[TugClass]

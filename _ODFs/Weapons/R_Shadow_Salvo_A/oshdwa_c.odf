@@ -1,0 +1,82 @@
+/////////Coxxon - BZTC/////////
+//Shaodower missile
+[OrdnanceClass]
+baseName = "oshdwa_c"
+classLabel = "imagemissile"
+shotGeometry = "aoshadcox00.fbx"
+shotSound = "smort03.wav"
+
+xplGround = "xshdwgnd"
+xplVehicle = "xshdwacar"  //"xshdwcar"
+xplBuilding = "xshdwbld"
+renderName = "oshdwa_c.render"
+
+ammoCost = 25
+lifeSpan = 2.2  //220m  //Coxxon  //8.0 // 800m
+shotSpeed = 100.0
+
+damageValue(N) = 200 // none
+damageValue(L) = 180 // light
+damageValue(H) = 140 // heavy
+
+damageValue(S) = 180 // standard
+damageValue(D) = 140 // deflection
+damageValue(A) = 200 // absorption
+
+[MissileClass]
+omegaTurn = 3.0  //Coxxon  //1.5
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "oshdwa_c.flare"
+renderName2 = "oshdwa_c.smoke"
+renderName3 = "oshdwa_c.flame"
+renderName4 = "oshdwa_c.light"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.2 //2.0  Coxxon
+finishRadius = 0.2  //2.0  Coxxon
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "70 70 70 60"  //Coxxon  //31"
+finishColor = "70 70 70 0"
+startRadius = 0.5
+finishRadius = 2.0
+animateTime = 1.0
+emitDelay = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 2.0"
+emitLife = 1.0
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 255"
+finishColor = "255 0 0 30"  //Coxxon  //0"
+startRadius = 0.2
+finishRadius = 0.05
+animateTime = 0.1
+emitDelay = 0.002
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 2.0"
+emitLife = 0.1
+
+[light]
+renderBase = "draw_light"
+startColor = "180 120 80 200"
+finishColor = "180 80 20 200"
+startRadius = 16.0  //ord light
+finishRadius = 16.0  //ord light
+attenuateConstant = 0.0  //ord light
+attenuateQuadratic = 1.0  //ord light
+attenuateLinear = 0.0  //ord light

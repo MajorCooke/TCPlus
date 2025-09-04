@@ -1,0 +1,100 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "avbiometalroid"
+classLabel = "wingman"
+geometryName = "biometalroid.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "biometalroid.fbx"
+runAnimation = "loop"
+runAnimIsLooped = true
+scrapValue = 15
+scrapCost = 40
+customCost = 50
+buildTime = 5.0
+customTime = 15.0
+maxHealth = 0
+maxAmmo = 10
+unitName = "Bio-metal Asteroid"
+aiName = "ScoutFriend"
+aiName2 = "ScoutEnemy"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+isAssault = 0
+armorClass = N
+boxCollide = 1
+collisionRadius = 1.0
+canCollide = 0
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 1
+provideName1 = "avbiometalroid"
+
+/////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 450.0
+periodScan = 5.0
+velocJam = 10.0
+engageRange = 130
+braccelFactor = 0.05
+velFactor = 0.2
+steerFactor = 1.0
+omegaFactor = 0.5
+strafeFactor = 0.2
+//topSpeed = 30  //sct
+//avoidSpeed = 20  //sct
+
+
+/////////MESSAGES/////////
+selectWaitMsg = "avfighvj.wav"  //razor here
+selectAttackMsg = "avfighv2.wav"  //let me at'em
+selectFollowMsg = "avfighv7.wav"  //protecting
+selectGoMsg = "avfighv0.wav"  //engaging thrusters
+selectOtherMsg = "avfighvj.wav"  //razor here
+goMsg = "avfighvg.wav"  //heading to nav
+attackMsg = "avfighvd.wav"  //fighting enemy
+followMeMsg = "avfighv3.wav"  //follow the leader
+followMsg = "avfighv3.wav"  //follow the leader
+repairMsg = "avfighv4.wav"  //yes sir
+reloadMsg = "avfighv5.wav"  //get ammo
+rescueMsg = "avfighv8.wav"  //on my way
+recycleMsg = "avfighv9.wav"  //recycling
+otherMsg = "avfighvh.wav"  //yes sir
+holdMsg = "avfighvf.wav"  //standing by
+user1Msg = "avfighv6.wav"  //with pleasure
+killedMsg = "avfighvm.wav"  //attack successful
+//diedMsg = ""  //"abetty3.wav"
+//"avfighve.wav"  //you don't pay me enuf
+//"avfighvk.wav"  //scouting terrain
+BailSound = "bail.wav"
+CollideTerrainSound = "vnvcs1.wav"
+CollideBldgSound = "vnvcs3.wav"
+CollideOtherSound = "vvcre2.wav"  //"vvcbb3.wav"
+
+//////////////////////////////////////////////////////////
+[HoverCraftClass]
+velocForward = 17.0 // 
+velocReverse = 1.0 // 
+velocStrafe = 4.0 // 
+accelThrust = 50.0 // acceleration 
+accelDragStop = 2.0 // how fast it stops once hands are off controls 
+accelJump = 18.0
+aiAccelDrag = 10.0
+setAltitude = 1.0  //how high off the ground
+alphaTrack = 40.0  //21.0 //springs speed it rights itself 
+alphaDamp = 8.0 //shocks 
+pitchPitch = 0.0 // nose up 
+pitchThrust = 0.0 // nose down 
+rollStrafe = 0.0 // rolls while strafing 
+omegaSpin = 12.0 // spinning in place speed 
+omegaTurn = 12.0 // turning while moving speed 
+alphasteer = 5.5 // how fast it responds to steering 
+rollSteer = 0.0 // rolls while steering 
+soundThrust = "silence.wav"
+soundTurbo = "silence.wav"
+animSteer = "steer"
+THRUST_VOLUME_BASE_USER = 0.1  //turn back was too loud Coxxon

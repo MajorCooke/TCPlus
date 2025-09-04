@@ -1,0 +1,12 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "oflama_a"
+classLabel = "oflama_c"
+
+damageValue(N) = 30  //Coxxon  //25 // none
+damageValue(L) = 20  //Coxxon  //10 // light
+damageValue(H) = 10  //Coxxon  //5 // heavy
+
+damageValue(S) = 20  //Coxxon  //10 // stasis
+damageValue(D) = 30  //Coxxon  //15 // deflection
+damageValue(A) = 10  //Coxxon  //5 // absorb

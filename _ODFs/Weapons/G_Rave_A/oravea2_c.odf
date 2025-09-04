@@ -1,0 +1,24 @@
+/////////Coxxon - BZTC/////////
+ //Yes, GUN, Tech Cannon is CANN version
+[OrdnanceClass]
+baseName = "oravea2_c"
+classLabel = "oravea_c"
+
+xplGround = "xtechit_up"
+xplVehicle = "xtechit_up"
+xplBuilding = "xtechit_up"
+
+// LUA handles damaging/healing instead
+damageValue(N) = 0
+damageValue(L) = 0
+damageValue(H) = 0
+damageValue(S) = 0
+damageValue(D) = 0
+damageValue(A) = 0
+
+//damageValue(N) = 100  //all half of techno cannon  Coxxon
+//damageValue(L) = 75
+//damageValue(H) = 50
+//damageValue(S) = 75
+//damageValue(D) = 100
+//damageValue(A) = 50

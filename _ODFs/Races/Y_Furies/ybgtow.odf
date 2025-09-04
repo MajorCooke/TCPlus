@@ -1,0 +1,172 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "ybgtow"
+classLabel = "turret"
+geometryName = "ybgtowcox00.fbx"
+cockpitName = "ybgtowcox_cockpit.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "ybgtowcox00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = 1
+scrapCost = 50
+scrapValue = 15  //10
+maxHealth = 5000  //cost x 100  Coxxon
+maxAmmo = 10000 // 0 is *not* treated as infinite ammo!
+unitName = "Bolt Tower"
+unitIcon = "icon_ybgtow.png"
+aiName = "GunTowerFriend"
+aiName2 = "GunTowerEnemy"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+collisionRadius = 1.0  //gtow some gap
+canCollide = 0  //gtow correct for this class
+collisionName = "ybgtowcollide.fbx"  //gtow  so not so big
+armorClass = H
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+requireReplaceTerrainPhysics = 1  //bzcc
+ownsTerrain = 1  //1 if no baseplate faction
+//boxCollide = 1  //gtow
+buildSupport = "A"
+buildRequire = "F"
+CanAcceptPowerups = 0  //weird, ibgtow/fbspir don't need this
+//CanSelect = 1  //create icon
+//CanInteract = 1 //bztc
+
+/////// REQUIREMENTS ///////////////
+requireCount = 1
+requireName1 = "ybcbun"
+requireText1 = "Build Comm Tower"
+
+/////// OBJECT LIMIT //////////////
+//xgtow LimitClass1 = "ybgtow"  //xbgtow
+//xgtow LimitClass1Count = 20  //xbgtow
+//xgtow LimitClass1Text = "Build limit reached."  //xbgtow
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "ybgtow"
+provideName2 = "VIRTUAL_CLASS_GUNTOWER"
+provideName3 = "defender"
+provideName4 = "xbgtow"
+
+/////// weapons ////////////////////
+weaponMask = 11111
+weaponHard1 = "hp_cannon_1"
+weaponName1 = "ggtowy_a"
+recoilName1 = "recoil1"
+weaponAssault1 = 0
+weaponHard2 = "hp_cannon_2"
+weaponName2 = "ggtowy_a"
+recoilName2 = "recoil2"
+weaponAssault2 = 0
+weaponHard3 = "hp_cannon_3"
+weaponName3 = "ggtowy_a"
+recoilName3 = "recoil3"
+weaponAssault3 = 0
+
+///////// LIGHTS & EFFECTS /////////
+LightsOffEffectsMask = 65535
+lightHard1 = "hp_light_1"
+lightName1 = "hltwrd"
+lightHard2 = "hp_light_2"
+lightName2 = "hltwrd"
+lightHard3 = "hp_light_3"
+lightName3 = "hltwrd"
+lightHard4 = "hp_light_4"
+lightName4 = "omnicyn16"
+
+//smoke1
+effectHard1 = "hp_smoke_1"
+effectName1 = "dmgbldg1"
+effectMinHealth1 = 0.6
+effectMaxHealth1 = 0.8
+effectHard2 = "hp_smoke_1"
+effectName2 = "dmgbldg2"
+effectMinHealth2 = 0.4
+effectMaxHealth2 = 0.6
+effectHard3 = "hp_smoke_1"
+effectName3 = "dmgbldg3"
+effectMinHealth3 = 0.2
+effectMaxHealth3 = 0.4
+effectHard4 = "hp_smoke_1"
+effectName4 = "dmgbldg4"
+effectMinHealth4 = 0.0
+effectMaxHealth4 = 0.2
+
+effectHard5 = "hp_emit_1"
+effectName5 = "ybgtow.emitter"
+//don't use //effectFlags1 = "447"  //447 on  479 off
+
+/////// TURRETS ////////////////////
+turretCount = 2
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+
+[emitter]
+renderBase = "draw_twirl_trail"
+textureName =  "twin.tga"  //"flame.tga"
+textureBlend = "one one modulate"
+startColor = "0 0 255 200"
+finishColor = "50 150 255 50"
+startRadius = 4.0
+finishRadius = 0.5
+animateTime = 3.0
+emitDelay = 0.05
+emitVelocity = "0.0 5.0 0.0"
+emitVariance = "2.0 0.0 2.0"
+emitLife = 3.0
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "sgtow01.wav"  //only works in fbspir
+bldEdge = "wwww"  //gtow
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+///////////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 250
+periodScan = 0.0
+velocJam = 0.0
+weaponPitch = 1.5
+steerFactor = 0.5
+engageRange = 200
+CanBailout = 0  //gtow  //seems useless w/out cmd menu, but is in ibgtow and fbspir
+CanUserBailout = 0  //gtow  //avoid accidental self-destruct, but not in 180 ibgtow and fbspir
+//Coxxon - stupid that a tall gun tower/spire wouldn't be attacking a apc/bomber/archer
+//RetargetOnStrafe = true  //tnk
+attackTask = "TurretAttack"
+subattackTask = "TurretDefendTask"
+//subAttackClass = "ANS"
+//prefer effect damageEffect1 = "dmgbldg1"
+//prefer effect damageEffect2 = "dmgbldg2"
+//prefer effect damageEffect3 = "dmgbldg3"
+//prefer effect damageEffect4 = "dmgbldg4"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+//xplcrash = "xpl_crash_ybgtowcox"
+
+explosionName = "x_bztc_bld"  //gtow/spire "turret" class different
+chunkEffect1 = "ybgtowcoxchk01.fbx"
+chunkEffect2 = "ybgtowcoxchk02.fbx"  
+chunkEffect3 = "ybgtowcoxchk03.fbx"  
+chunkEffect4 = "ybgtowcoxchk04.fbx"  
+chunkEffect5 = "ybgtowcoxchk05.fbx"  
+HasSeparateChunks = true 
+numChunks = 10
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 3
+numChunks5 = 4
+
+///////////////////////////////////////////////////////////////
+[TurretCraftClass]
+omegaTurret = 2.0
+detectRange = 210

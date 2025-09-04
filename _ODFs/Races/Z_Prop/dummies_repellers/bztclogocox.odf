@@ -1,0 +1,40 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "bztclogocox"
+classLabel = "i76building"
+geometryName = "bztclogocox00.fbx"
+scrapCost = 30
+scrapValue = 5
+maxHealth = 3000
+maxAmmo = 0
+unitName = "BZTC LOGO"
+ignoremissinginf = 1
+heatSignature = 1.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 10.0
+isAssault = 1  //bztc
+armorClass = H
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+requireReplaceTerrainPhysics = 1  //bzcc
+ownsTerrain = 1  //since no terrain plate had
+canInteract = 0
+canDetect = 0
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 2
+provideName1 = "bztclogocox"
+provideName2 = "VIRTUAL_CLASS_POWERPLANT"
+
+/////////LIGHTS AND EFFECTS//////////////////
+//REMOVED TO MAKE IT LOOK INACTIVE
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+

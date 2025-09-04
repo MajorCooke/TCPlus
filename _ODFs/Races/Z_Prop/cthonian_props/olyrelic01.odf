@@ -1,0 +1,52 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "olyrelic01"
+classLabel = "artifact"
+geometryName = "olyreliccox01.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "olyreliccox01.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+scrapCost = 1
+scrapValue = 0
+maxHealth = 6000
+addHealth = 30
+maxAmmo = 0
+unitName = "Relic"
+aiName = "PowerUpProcess"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+canCollide = 1
+
+/////////LIGHTS AND EFFECTS/////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltwyl"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "vfxbztclight.whitestay"
+effectHard2 = "hp_emit_1"
+effectName2 = "olyrelic01.sparkle"
+
+[sparkle]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.06
+emitDelayVar = 0.03
+emitVelocity = "0.0 0.0 4.0"
+emitVariance = "4.0 4.0 4.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = 2.0
+textureName =  "twin.tga"  //"wasplatcox.tga"
+textureBlend = "one one modulate"  //"srcalpha invsrcalpha modulatealpha"
+startColor = "255 255 240 100"
+finishColor = "0 0 255 255"
+startRadius = 0.1
+finishRadius = 1.0
+animateTime = 2.0
+rotationRate = 10.0  //2.0
+
+[CameraPodClass]
+omegaSpin = 0.0
+rangeScan = 0.0
+periodScan = 0.0

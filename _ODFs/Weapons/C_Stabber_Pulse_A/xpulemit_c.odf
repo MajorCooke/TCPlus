@@ -1,0 +1,67 @@
+// ========================
+// PULSE STABBER PULSE EMIT
+// ========================
+
+[ExplosionClass]
+classLabel = "explosion"
+explSound = "gtagg00.wav"
+//FriendlyFireDamage = false  //Coxxon - DOESN'T WORK
+
+kickRadius = 10.0  //car
+kickOmega = 3.0  //car3
+kickVeloc = 3.0  //car3
+
+damageRadius = 25.0  //had to adjust ord_c file for this  //15.0
+damageValue(N) = 200  //Coxxon  //150
+damageValue(L) = 150  //Coxxon  //100
+damageValue(H) = 100  //Coxxon  //50
+damageValue(S) = 120  //Coxxon  //90
+damageValue(D) = 200  //Coxxon  //150
+damageValue(A) = 100  //Coxxon  //50
+
+particleTypes = 2
+//particleClass1 = "xpulemit_c.shock"
+
+particleClass1 = "xpulemit_c.flame"
+particleCount1 = 2
+particleVeloc1 = "0.0 10.0 0.0"
+
+particleClass2 = "xpulemit_c.puff"
+particleCount2 = 3
+particleVeloc2 = "9.0 9.0 0.0"
+
+//[Shock] not in orig was a sphere though
+
+[Flame]
+simulateBase = "sim_smoke"
+lifeTime = 0.1
+renderBase = "draw_emit"
+emitName = "xpulemit_c.flameemit"
+emitDelay = 0.05  //Coxxon  //0.1
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+
+[flameemit]
+simulateBase = "sim_smoke"
+lifeTime = 0.2
+renderBase = "draw_twirl"
+textureName = "wasplat.tga"  //"fire.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 150"  //255"
+finishColor = "255 0 117 20"  //255"
+startRadius = 0.1
+finishRadius = 1.5
+animateTime = 0.2
+rotationRate = 10.0
+
+[Puff]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "70 40 70 80"
+finishColor = "20 20 20 0"
+startRadius = 0.3
+finishRadius = 2.5
+animateTime = 1.0

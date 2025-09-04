@@ -1,0 +1,187 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "yvscav"
+classLabel = "scavengerH"
+geometryName = "yvscavcox00.fbx"
+cockpitName = "yvscavcox_cockpit.fbx"
+animCount = 4
+animName1 = "forward"
+animFile1 = "yvscavcoxsf.fbx"
+animName2 = "neutral"
+animFile2 = "yvscavcoxsn.fbx"
+animName3 = "reverse"
+animFile3 = "yvscavcoxsr.fbx"
+animName4 = "grabit"
+animFile4 = "yvscavcox01.fbx"
+scrapValue = 20
+scrapCost = 20
+buildTime = 5.0  //Coxxon  //10.0
+customTime = 10.0  //Coxxon
+maxHealth = 3000
+maxAmmo = 0
+unitName = "Gatherer scv"
+//unitIcon = "icon_yvscav.tga"
+//unitStatus = "wire_yvscav.tga"
+//infoName = "yvscav.inf"
+aiName = "ScavHProcess"
+aiName2 = "ScavHProcess"
+heatSignature = 5.0
+imageSignature = 3.0
+radarSignature = 2.0
+isAssault = 1  //bztc
+armorClass = H
+boxCollide = 1
+collisionRadius = 5.0  //bztc scav
+canSnipe = 1  //scav
+//UseVehicleCrashOnDeath = true
+//explosionName = "xpl_crash_yvscavcox"
+//collisionName = "yvscavcollide.fbx"
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 2
+provideName1 = "yvscav"
+provideName2 = "VIRTUAL_CLASS_SCAVENGER"
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltred" 
+LightsOnlyWhenPiloted = true
+
+effectHard1 = "hp_emit_1"
+effectName1 = "vfxbztcthrst.furythrustsmlblu"  //"vfxbztcthrst.thrustblue"
+effectMinVelocity1 = 5.0
+effectMaxVelocity1 = 500.0
+//effectHard2 = ""  //"hp_emit_1"  //"hp_dust_0"
+//effectName2 = "vfxbztcdusts.dusttrail2"
+//effectMinVelocity2 = 5.0
+//effectMaxVelocity2 = 500.0
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "hp_smoke_1"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "hp_smoke_1"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "hp_smoke_1"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "hp_smoke_1"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+//////////////////////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 200.0
+periodScan = 0.0
+velocJam = 0.0
+braccelFactor = 0.1
+velFactor =	0.3
+steerFactor = 1.0
+omegaFactor = 0.3
+TeamTransferrable = true
+//attackTaskUsesGroups = false  //Coxxon
+GoToTaskHasLeader = false  //Coxxon
+//NavIsDropped = true //drop behind - bugged, immed removes nav/camr in MP/MPI
+//NavDropSound = "gprox00.wav"  //sound if navisdropped true
+NavConfig = "apcamry" //specify nav beacon/camera type
+AllowedControlsWhenTugged = 31  //7dflt Sumup: 1hop 2bail 4wcycle 8steer 16weapuse
+damageEffect1 = "dmgvhcl1"  //less stock dmg effect
+damageEffect2 = "dmgvhcl1"  //but still some sparks
+damageEffect3 = "dmgvhcl1"  //also lower visibility
+damageEffect4 = "dmgvhcl1"  //on cloaked units
+
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_yvscavcox"
+
+//xplChunk = "x_bztc_car"
+//chunkEffect1 = "yvscavcoxchk01.fbx"  
+//chunkEffect2 = "yvscavcoxchk02.fbx"
+//chunkEffect3 = "yvscavcoxchk03.fbx"
+//chunkEffect4 = "yvscavcoxchk04.fbx"
+//chunkEffect5 = "yvscavcoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 5
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+/////////MESSAGES/////////
+followMeMsg = "yvscav6.wav"
+followMsg = "yvscav6.wav"
+goMsg = "yvscavj.wav"  //yes sir
+goObjectMsg = "yvscavk.wav"  //hauling scrap
+holdMsg = "yvscavj.wav"  //yes sir
+otherMsg = "yvscavd.wav"
+recycleMsg = "yvscavc.wav"
+repairMsg = "yvscava.wav"
+rescueMsg = "yvscavb.wav"
+selectDropoffMsg = "yvscavm.wav"
+selectFollowMsg = "yvscav6.wav"
+selectGoMsg = "yvscavn.wav"
+selectOtherMsg = "yvscav0.wav"
+selectPickupMsg = "yvscavk.wav"  //hauling scrap
+selectWaitMsg = "yvscav0.wav"
+stopMsg = "yvscavj.wav"  //yes sir
+user1Msg = "yvscavd.wav"  //gotcha
+user2Msg = "yvscav0.wav"  //scavenger here
+//diedMsg = "rbetty4.wav"
+//"yvslfvh.wav"  //geyser in sight sir
+BailSound = "bail.wav"
+CollideTerrainSound = "vnvcs1.wav"
+CollideBldgSound = "vnvcs3.wav"
+CollideOtherSound = "vvcre2.wav"  //"vvcbb3.wav"
+
+//////////////////////////////////////////////////////////////////////////
+[DeployableClass]
+timeDeploy = 5.0
+timeUndeploy = 5.0
+//NONE OF THE FOLLOWING WORK IN BZCC <=185 - HSDAA and HD do in bz2 1372
+//HoverScavDeployAtAltitude = false  //scav  //replaced by DepAtAlt:  
+//DeployAtAltitude = false
+//SinkOnDeploy = true
+//heightDeploy = 0.001f
+soundDeploy = "srecy02.wav"  //"avturre4.wav"
+soundUndeploy = "trundepl.wav"  //"avturre5.wav"
+
+//////////////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+setAltitude = 1.3  //nsd scv add .3
+accelDragStop = 4.0
+accelDragFull = 1.0
+alphaTrack = 10.0
+alphaDamp = 3.0
+pitchPitch = 0.3
+pitchThrust = 0.1
+rollStrafe = 0.1
+rollSteer = 0.1
+velocForward = 15.0
+velocReverse = 15.0
+velocStrafe = 15.0
+accelThrust = 50.0
+accelBrake = 50.0
+omegaSpin = 3.5
+omegaTurn = 1.5
+alphaSteer = 5.0
+accelJump = 15.0  //scav
+
+soundThrust = "sscav01.wav"  //"avscave3.wav"
+soundJump = "yvscave6.wav"  //"sscav01.wav"
+
+//////////////////////////////////////////////////////////////////////////
+[ScavengerHClass]
+animPickup = "grabit"  //animName# when picking up scrap
+animPickupCycle = 1 // 0 = loop, 1 = 2way
+soundPickup = "suck.wav"
+scrapHold = 20
+deployClass = "ybscav"
+deployOffset = 16.0  //<saftest 6.0  //scav
+lockScrap = true  //true scav don't go for same piece

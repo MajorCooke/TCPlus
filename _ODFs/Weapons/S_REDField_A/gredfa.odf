@@ -1,0 +1,15 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gredfa"
+classLabel = "radardamper"
+ordName = NULL
+wpnName = "RED Field"
+fireSound = "gredf00.wav"
+wpnReticle = "gredfa.0"
+wpnPriority = 0
+wpnCategory = "SPEC"
+
+[SpecialItemClass]
+activeSound = "gredf01.wav"
+expireSound = "gredf02.wav"
+ammoCost = 40  //Coxxon  //20

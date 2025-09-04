@@ -1,0 +1,17 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ostbva_a"
+classLabel = "ostbva_c"
+
+ammoCost = 30  //15
+lifeSpan = 1.5 // 150m
+shotSpeed = 100.0
+
+//same damage as AT, but is salvo
+damageValue(N) = 150 // none // 300
+damageValue(L) = 137.5 // light // 275
+damageValue(H) = 125 // heavy // 250
+
+damageValue(S) = 137.5 // standard // 275
+damageValue(D) = 125 // deflection // 250
+damageValue(A) = 150 // absorption // 300

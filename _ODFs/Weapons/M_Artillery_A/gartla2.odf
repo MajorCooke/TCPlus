@@ -1,0 +1,19 @@
+/////////Coxxon - BZTC/////////
+//special for catapult
+[WeaponClass]
+baseName = "gartla2"
+classLabel = "mortar"
+ordName = "oartla2"
+wpnName = "Artillery"
+fireSound = "ghart00.wav"
+wpnReticle = "gartla"
+wpnLadder = "gmortar.L0"
+wpnCategory = "MORT"
+//isAssault = 1
+aiRange = 600
+//needLOS = false
+//AllowAimHigh = true
+flashName = "gartla.render"
+
+[CannonClass]
+shotDelay = 2.5

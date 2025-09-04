@@ -1,0 +1,30 @@
+//tunnel - full 64m x 64m area
+[GameObjectClass]
+baseName = "cthtunn1r"
+classLabel = "i76building"
+geometryName = "cthtunncox1r.fbx"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+unitName = "ramp"
+heatSignature = 1.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 1.0  //bztc vehc
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+ownsTerrain = 1
+//bah AlignTerrainReplaceType = 5  //0-5  //tunnel
+AllowSeismic = 0
+
+[BuildingClass]
+CanDemolish = false
+tunnelCount = 1
+
+tunnel01X0 = 0
+tunnel01Z0 = 0
+tunnel01DX = 8
+tunnel01DZ = 16
+tunnel01Edge = "fwfw"

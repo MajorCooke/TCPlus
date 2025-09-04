@@ -1,0 +1,27 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "bbfactbd10"
+classLabel = "bbfact"
+unitIcon = "icon_bvfact.png"
+unitStatus = "wire_bvfact.png"
+infoName = "bvfact.inf"
+upgradeName = "bvfactbd10"
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+
+provideName4 = "bbfactbd10"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_bbfactcox"
+
+/////////////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+
+/////////////////////////////////////////////////////////////////////
+[BuildingClass]
+
+/////////////////////////////////////////////////////////////////////
+[FactoryClass]
+

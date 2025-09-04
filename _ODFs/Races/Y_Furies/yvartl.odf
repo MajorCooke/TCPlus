@@ -1,0 +1,246 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "yvartl"
+classLabel = "assaulthover"  //"wingman"
+geometryName = "yvartlcox00.fbx"
+cockpitName= "yvartlcox_cockpit.fbx"
+scrapValue = 15
+scrapCost = 65
+customCost = 85
+buildTime = 15.0
+customTime = 20.0
+maxHealth = 4500
+addhealth = 9.0
+maxAmmo = 3000
+addAmmo = 5
+unitName = "Pallas sat"  //"SAT atk"
+//unitIcon = "icon_yvartl.png"
+//unitStatus = "wire_yvartl.png"
+//infoName = "yvartl.inf"  //or baseName, or provide name
+aiName = "AssaultTankProcess"  //only one that works
+aiName2 = "AssaultTankProcess"  //only one that works
+heatSignature = 0.5
+imageSignature = 5.0
+radarSignature = 5.0
+isAssault = 1  //bztc
+armorClass = H
+boxCollide = 1
+//collisionRadius = 1.0  //bzcc vehc
+//collisionName = "yvartlcollide.fbx"
+
+turretCount = 2
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+
+/////// OBJECT LIMIT //////////////
+LimitClass1 = "yvartl"  //artl
+LimitClass1Count = 5  //artl
+LimitClass1Text = "Build limit reached."  //artl
+
+TeamLimitClass1 = "yvrckt"
+TeamLimitClass1Count = 12
+TeamLimitClass1Text = "Teams limit reached."
+
+/////// REQUIREMENTS ///////////////
+requireCount = 1
+requireName1 = "ybsbay"
+requireText1 = "Build Supply Hangar"
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+provideName1 = "yvartl"
+provideName2 = "VIRTUAL_CLASS_ASSAULTTANK"
+provideName3 = "assault"
+provideName4 = "DefendUnit"
+provideName5 = "flier"  //for aip that wants them
+
+/////// WEAPONS ////////////////////
+weaponMask = 01111
+weaponHard1 = "HP_CANNON_1"
+weaponName1 = "gfplsy_a"  //"gbolta_a"
+recoilName1 = "recoil1"
+weaponAssault1 = 1
+weaponHard2 = "HP_GUN_1"
+weaponName2 = ""
+weaponAssault2 = 1
+weaponHard3 = "HP_GUN_2"
+weaponName3 = ""
+weaponAssault3 = 1
+weaponHard4 = "HP_ROCKET_1"
+weaponName4 = "gwaspa"
+weaponAssault4 = 1
+weaponHard5 = "hp_shield"
+weaponName5 = ""
+weaponAssault5 = 0
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltred"
+lightHard2 = "hp_light_2"
+lightName2 = "hltred"
+lightHard3 = "hp_light_3"
+lightName3 = "hltred"
+lightHard4 = "hp_light_4"
+lightName4 = "hltred"
+LightsOnlyWhenPiloted = true
+
+effectHard1 = "hp_emit_1"
+effectName1 = "vfxbztcdusts.dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 500.0
+effectMinVelocity1 = 10.0
+effectMaxVelocity1 = 500.0
+effectHard2 = "hp_emit_1"
+effectName2 = "yvartl.exhaust"
+effectMinAltitude2 = 0.0
+effectMaxAltitude2 = 500.0
+effectMinVelocity2 = 10.0
+effectMaxVelocity2 = 500.0
+effectHard3 = "hp_dust_0" 
+effectName3 = "vfxbztcdusts.dustpuff"
+effectMinAltitude3 = 0.0
+effectMaxAltitude3 = 20.0
+effectMinVelocity3 = 0.0
+effectMaxVelocity3 = 10.0
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "hp_smoke_1"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "hp_smoke_1"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "hp_smoke_1"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "hp_smoke_1"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+[exhaust]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.01
+emitDelayVar = 0.03
+emitVelocity = "0.0 0.0 10.0"
+emitVariance = "3.0 3.0 0.0" 
+emitInherit = "0.2 0.2 0.2"
+emitLife = 1.0
+textureName =  "twin.tga"
+textureBlend = "one one modulate"
+startColor = "0 100 255 255"
+finishColor = "0 255 255 0"
+startRadius = 3.0
+finishRadius = 0.1
+animateTime = 1.0
+rotationRate = 0.5
+
+//////////////////////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 300.0
+periodScan = 5.0
+velocJam = 5.0
+engageRange = 260
+//RetargetOnStrafe = true  //tnk
+attackTask = "AssaultTankAttack"  //"MortarBikeAttack"  //
+subattackTask = "SupportSubAttack"  //"MortarBikeSubAttack"  //
+subAttackClass = "ANS"  //Air/GrouNd   Deploy/Normal   weaponS/eNgage  
+//attackTaskUsesGroups = false  //Coxxon
+GoToTaskHasLeader = false  //Coxxon
+canHunt = 1	// defaults to 0
+//NavIsDropped = true //drop behind - bugged, immed removes nav/camr in MP/MPI
+//NavDropSound = "gprox00.wav"  //sound if navisdropped true
+NavConfig = "apcamry" //specify nav beacon/camera type
+//AllowedControlsWhenTugged = 7  //7default Sum to enable: 1-hop out  2-bailout  4-weapon cycling  8-steering 16-weapon use
+braccelFactor = 0.01
+strafeFactor = 0.1
+velFactor = 0.4
+steerFactor = 1.2
+omegaFactor = 0.2
+//avoidSpeed = 10;
+//topSpeed = 15;
+damageEffect1 = "dmgvhcl1"  //less stock dmg effect
+damageEffect2 = "dmgvhcl1"  //but still some sparks
+damageEffect3 = "dmgvhcl1"  //also lower visibility
+damageEffect4 = "dmgvhcl1"  //on cloaked units
+
+/////////CRASH INTO COMPONENT PARTS/////////
+//XplSnipe - ODF ship sniped. XplChunk - ODF ship killed. XplCrash - ODF "crash mesh" blows.
+//explosionName = "xpl_crash_yvartlcox"
+//xplChunk = "xpl_crash_yvartlcox"
+xplcrash = "xpl_crash_yvartlcox"  //USE THIS FOR MOST CRAFT
+
+//chunkEffect1 = "yvartlcoxchk01.fbx"  
+//chunkEffect2 = "yvartlcoxchk02.fbx"
+//chunkEffect3 = "yvartlcoxchk03.fbx"
+//chunkEffect4 = "yvartlcoxchk04.fbx"
+//chunkEffect5 = "yvartlcoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 5
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+/////////MESSAGES/////////
+selectFollowMsg = "yvartlv9.wav"  //grouped
+holdMsg = "yvartlvn.wav"  //yes comrade
+goMsg = "yvartlvh.wav"  //im moving
+followMsg = "yvartlv9.wav"  //grouped
+followMeMsg = "yvartlvc.wav"  //what's next
+repairMsg = "yvartlv4.wav"  //heading in
+reloadMsg = "yvartlv5.wav"  //getting ammo
+rescueMsg = "yvartlv7.wav"  //ya
+recycleMsg = "yvartlv8.wav"  //heading back
+attackMsg = "yvartlvk.wav"  //firing on target
+otherMsg = "yvartlve.wav"  //out of range
+user1Msg = "yvartlv3.wav"  //will do
+selectWaitMsg = "yvartlvm.wav"  //artillery here
+selectGoMsg = "yvartlv0.wav"  //moving out
+selectDeployingMsg = "yvartlvj.wav"  //deploying
+selectAttackMsg = "yvartlvb.wav"  //incoming
+selectOtherMsg = "yvartlvn.wav"  //yes comrade
+deployedMsg = "yvartlvg.wav"  //i am in position
+packedMsg = "yvartlvf.wav"  //ready to move
+killedMsg = "yvartlvp.wav"  //enemy eliminated
+//diedMsg = ""  //"rbetty2.wav"
+//"yvartlvd.wav"  //negative
+
+BailSound = "bail.wav"
+CollideTerrainSound = "vnvcs1.wav"
+CollideBldgSound = "vnvcs3.wav"
+CollideOtherSound = "vvcre2.wav"  //"vvcbb3.wav"
+
+//////////////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+//10ms = 22.37mph  29.055ms = 65mph
+velocForward = 15.0
+velocReverse = 15.0
+velocStrafe = 15.0
+accelThrust = 25.0 //acceleration 
+accelDragStop = 6.0 //how fast it stops once hands are off controls 
+accelJump = 20.0  //big craft
+setAltitude = 1.0  // how high off the ground
+alphaTrack = 21.0 //springs speed it rights itself 
+alphaDamp = 8.0 //shocks 
+pitchPitch = 0.1  //0.25 //nose up 
+pitchThrust = 0.05  //0.1 //nose down 
+rollStrafe = 0.08 //rolls while strafing 
+omegaSpin = 2.0  //6.0 //spinning in place speed 
+omegaTurn = 2.0  //2.3 //turning while moving speed 
+alphaSteer = 3.0  //7.0 //how fast it responds to steering 
+rollSteer = 0.08 //rolls while steering 
+soundThrust = "yvltnke0.wav"
+soundJump = "yvturbocox02.wav"
+THRUST_VOLUME_BASE_USER = 0.5  //turn back was too loud Coxxon
+
+//////////////////////////////////////////////////////////////////////////
+[AssaultHoverClass]
+yawRate = 3.0  //Coxxon  //4.0
+yawAlpha = 7.0  //Coxxon  //10.0
+pitchMin = -0.3  //Coxxon  //-0.1 
+pitchMax = 0.8  //Coxxon  //0.5
+//laserName1 = "recoil1"

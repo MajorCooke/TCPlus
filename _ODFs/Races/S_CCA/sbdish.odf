@@ -1,0 +1,193 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "sbdish"
+classLabel = "commbunker"
+geometryName = "sbdishcox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "sbdishcox00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+collisionRadius = 10.0  //bztc bldg
+scrapCost = 120
+scrapValue = 60
+maxHealth = 30000
+maxAmmo = 0
+unitName = "Deep-Space Transmitter"
+aiName = "CommTowerProcess"
+aiName2 = "CommTowerProcess"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+ownsTerrain = 1  //1 if no baseplate faction
+isSingle = 1  //cbun
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+requireReplaceTerrainPhysics = 1  //bzcc  //cbun
+CategoryTypeOverride = 4  //cbun  //14 //TEAM_SLOT_COMMTOWER
+buildRequire = "F"  //cbun
+buildSupport = "B"  //cbun
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0  //cbun
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "sbdish"
+provideName2 = "VIRTUAL_CLASS_COMMBUNKER"
+provideName3 = "base"
+provideName4 = "sbcbun"
+
+///////// LIGHTS & EFFECTS /////////
+LightsOffEffectsMask = 65535
+//lightHard1 = "hp_light_1"
+//lightName1 = "omniwyl16"
+//lightHard2 = "hp_light_2"
+//lightName2 = "omniwyl16"
+lightHard1 = "hp_light_3"
+lightName1 = "omniwcy16"
+lightHard2 = "hp_light_4"
+lightName2 = "omniwcy16"
+lightHard3 = "hp_light_5"
+lightName3 = "omniwcy16"
+lightHard4 = "hp_light_6"
+lightName4 = "omniwcy16"
+lightHard5 = "hp_light_7"
+lightName5 = "omnired8"
+
+//smoke1
+effectHard1 = "hp_smoke_1"
+effectName1 = "dmgbldg1"
+effectMinHealth1 = 0.6
+effectMaxHealth1 = 0.8
+effectHard2 = "hp_smoke_1"
+effectName2 = "dmgbldg2"
+effectMinHealth2 = 0.4
+effectMaxHealth2 = 0.6
+effectHard3 = "hp_smoke_1"
+effectName3 = "dmgbldg3"
+effectMinHealth3 = 0.2
+effectMaxHealth3 = 0.4
+effectHard4 = "hp_smoke_1"
+effectName4 = "dmgbldg4"
+effectMinHealth4 = 0.0
+effectMaxHealth4 = 0.2
+//smoke2
+effectHard5 = "hp_smoke_2"
+effectName5 = "dmgbldg1"
+effectMinHealth5 = 0.6
+effectMaxHealth5 = 0.8
+effectHard6 = "hp_smoke_2"
+effectName6 = "dmgbldg2"
+effectMinHealth6 = 0.4
+effectMaxHealth6 = 0.6
+effectHard7 = "hp_smoke_2"
+effectName7 = "dmgbldg3"
+effectMinHealth7 = 0.2
+effectMaxHealth7 = 0.4
+effectHard8 = "hp_smoke_2"
+effectName8 = "dmgbldg4"
+effectMinHealth8 = 0.0
+effectMaxHealth8 = 0.2
+//smoke3
+effectHard9 = "hp_smoke_3"
+effectName9 = "dmgbldg2"
+effectMinHealth9 = 0.4
+effectMaxHealth9 = 0.6
+effectHard10 = "hp_smoke_3"
+effectName10 = "dmgbldg3"
+effectMinHealth10 = 0.2
+effectMaxHealth10 = 0.4
+effectHard11 = "hp_smoke_3"
+effectName11 = "dmgbldg4"
+effectMinHealth11 = 0.0
+effectMaxHealth11 = 0.2
+//smoke4
+effectHard12 = "hp_smoke_4"
+effectName12 = "dmgbldg2"
+effectMinHealth12 = 0.4
+effectMaxHealth12 = 0.6
+effectHard13 = "hp_smoke_4"
+effectName13 = "dmgbldg3"
+effectMinHealth13 = 0.2
+effectMaxHealth13 = 0.4
+effectHard14 = "hp_smoke_4"
+effectName14 = "dmgbldg4"
+effectMinHealth14 = 0.0
+effectMaxHealth14 = 0.2
+
+effectHard15 = "hp_emit_1"
+effectName15 = "sbdish.redsmall"
+effectFlags15 = "447" //447 on  479 off
+effectHard16 = "hp_emit_2"
+effectName16 = "sbdish.redbig"
+effectFlags16 = "447" //447 on  479 off
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_sbdishcox"
+
+chunkEffect1 = "sbdishcoxchk01.fbx"  
+chunkEffect2 = "sbdishcoxchk02.fbx"  
+chunkEffect3 = "sbdishcoxchk03.fbx"  
+chunkEffect4 = "sbdishcoxchk04.fbx"  
+chunkEffect5 = "sbdishcoxchk05.fbx"  
+HasSeparateChunks = true 
+numChunks = 8
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 1
+numChunks5 = 4
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+[redsmall]
+renderBase = "draw_sprite"
+textureName =  "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "255 0 0 200"
+startRadius = 5.0
+
+[redbig]
+renderBase = "draw_sprite"
+textureName =  "lighthalo.tga"
+textureBlend = "one one modulate"
+startColor = "255 0 0 150"
+startRadius = 10.0
+
+////////////////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "sbcomme0.wav"
+//bldEdge = "wwww"  //bldg
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+////////////////////////////////////////////////////////////////////////
+[CommBunkerClass]
+rangeScan = 2000  //dish
+periodScan = 0.0
+MinViewDist = 50.0  //cbun
+viewDist = 200.0  //cbun
+MaxViewDist = 300.0  //cbun
+
+//viewZoom = 1.5  //cbun
+//minZoom = 0.25  //cbun  //1.0
+//maxZoom = 3.0  //cbun
+//viewPitch = 1.0  //cbun
+//minPitch = 0.4  //cbun  //0.75
+//maxPitch = 1.5  //cbun
+//nearPlane = 1  //cbun
+//farPlane = 1000  //cbun
+disableFog = 0  //cbun
+
+////////////////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 1000  //dish
+CanBasepanelSelect = true  //cbun
+PanelIcon = "icon_base_cbun.png"  //cbun
+ShowIcon = true  //cbun

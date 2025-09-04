@@ -1,0 +1,17 @@
+/////////Coxxon - BZTC/////////
+//Yes Techno CANNON, Rave Gun is GUN version
+[WeaponClass]
+baseName = "gtecha_a"
+classLabel = "machinegun"
+ordName = "otecha_a"
+altName = "gtecha_c"
+wpnName = "Techno Cannon! A"
+fireSound = "grave00.wav"
+wpnReticle = "gblnka.1"
+wpnCategory = "CANN"
+isAssault = 1
+aiRange = 180
+
+[CannonClass]
+shotDelay = 0.6
+shotAlternate = 1

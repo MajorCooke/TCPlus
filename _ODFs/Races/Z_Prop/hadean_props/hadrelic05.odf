@@ -1,0 +1,23 @@
+/////////Coxxon - BZTC////////
+[GameObjectClass]
+baseName = "hadrelic05"
+classLabel = "artifact"
+geometryName = "yvrcktcoxchk02.fbx"
+scrapCost = 10
+scrapValue = 5
+maxHealth = 6000
+addHealth = 10
+maxAmmo = 0
+unitName = "Fury Relic 5"
+aiName = "PowerUpProcess"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+canCollide = 1
+
+[CameraPodClass]
+omegaSpin = 0.0
+rangeScan = 0.0
+periodScan = 0.0
+
+[BuildingClass]

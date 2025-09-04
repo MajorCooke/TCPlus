@@ -1,0 +1,72 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ostbsa_c"
+classLabel = "bullet"
+shotGeometry = "aostbscox01.fbx"  //"aostbscox00.fbx"
+shotSound = "gmagg06.wav"  //bz1  //"Ordin_b.wav"
+renderName = "ostbsa_c.render"
+xplGround = "xsupergnd"
+xplVehicle = "xstbsacar"  //"xsupercar"
+xplBuilding = "xsupercar"  //bzcc  //"xsuperbld"  //bz13
+ammoCost = 16.5
+lifeSpan = 1.6 // 120m
+shotSpeed = 75.0
+
+damageValue(N) = 220 // none // 366
+damageValue(L) = 200 // light // 333
+damageValue(H) = 180 // heavy // 300
+
+damageValue(S) = 200 // standard // 333
+damageValue(D) = 150 // deflection // 250
+damageValue(A) = 220 // absorption // 366
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "ostbsa_c.smoke"
+renderName2 = "ostbsa_c.core"
+renderName3 = "ostbsa_c.light"
+
+///////////////////////////////////////////////////////
+[Smoke]  //mod from default faf misl
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "170 80 0 50"
+finishColor = "70 70 70 0"
+startRadius = 0.3
+finishRadius = 0.7
+animateTime = 0.6
+emitDelay = 0.01
+emitVelocity = "0.0 0.5 0.0"
+emitVariance = "0.6 0.6 0.6"
+emitLife = 0.6
+
+[core]
+renderBase = "draw_twirl_trail"
+//textureName = "lighthalo.tga"  //stab  "plasma.tga"
+//textureBlend = "one one modulate"
+//textureName = "smoke.tga"
+//textureBlend = "srcalpha invsrcalpha modulatealpha"
+textureName = "fire.tga"
+textureBlend = "one one modulate"
+startColor = "250 60 20 255"
+finishColor = "250 100 50 0"
+startRadius = 0.5  //0.8
+finishRadius = 0.1  //0.07
+animateTime = 0.15
+rotationRate = 10.0
+emitDelay = 0.003
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 0.15
+
+[light]
+renderBase = "draw_light"
+startColor = "250 60 20 200"
+finishColor = "250 60 20 200"
+startRadius = 16.0  //ord light
+finishRadius = 16.0  //ord light
+attenuateConstant = 0.0  //ord light
+attenuateQuadratic = 1.0  //ord light
+attenuateLinear = 0.0  //ord light

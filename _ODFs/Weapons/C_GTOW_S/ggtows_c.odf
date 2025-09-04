@@ -1,0 +1,39 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "ggtows_a"
+ordName = "ogtows_c"
+wpnName = "Chain Cannon C"
+fireSound = "gmsov00.wav"  //"gchain01.wav"  //"igtow03.wav"
+wpnReticle = "gplasa_c"
+wpnCategory = "CANN"
+isAssault = 0
+flashName = "ggtows_c.flash"
+aiRange = 150
+
+[CannonClass]
+shotDelay = 0.5
+shotAlternate = 1
+
+[xxxFlash]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "255 155 55 255"
+finishColor = "255 100 0 255"
+startRadius = 10.0
+finishRadius = 5.0
+animateTime = 0.1
+geomName = "g_sflash.fbx"
+
+[flash]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 155 80 255"
+finishColor = "155 55 0 255"
+startRadius = 1.0
+finishRadius = 3.0
+animateTime = 2.0
+latitudeBands = 8
+longitudeSegments = 16
+lifeTime = 2.0

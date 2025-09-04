@@ -1,0 +1,27 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "avwalkss08"
+classLabel = "avwalk"  //"iv_walker"
+unitIcon = "icon_avwalk.png"
+unitStatus = "wire_avwalk.png"
+infoName = "avwalk.inf"  //or baseName, or provide name
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+provideName5 = "avwalkss08"
+
+/////// OBJECT LIMIT //////////////
+LimitClass1 = "avwalkss08"
+LimitClass1Count = 6
+LimitClass1Text = "Limit reached."
+
+/////// weapons ////////////////////
+
+////////LIGHTS AND EFFECTS///////////
+
+//////////////////////////////////////////////////////////////////////////
+[CraftClass]
+
+//////////////////////////////////////////////////////////////////////////
+// Angles are in degress
+[WalkerClass]

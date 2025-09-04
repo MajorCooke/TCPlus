@@ -1,0 +1,228 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "avmine"
+classLabel = "minelayer"
+geometryName = "avminecox00.fbx"
+cockpitName= "avminecox_cockpit.fbx"
+animCount = 4
+animName1 = "loop"
+animFile1 = "avminecox00.fbx"
+runAnimation = "loop"
+runAnimIsLooped = true
+animName2 = "forward"
+animFile2 = "avminecoxsf.fbx"
+animName3 = "neutral"
+animFile3 = "avminecoxsn.fbx"
+animName4 = "reverse"
+animFile4 = "avminecoxsr.fbx"
+scrapValue = 15
+scrapCost = 35
+customCost = 45
+buildTime = 10.0
+customTime = 15.0
+maxHealth = 3000
+addHealth = 1
+maxAmmo = 6750  //9000  //mine
+//addAmmo = 5  //mine
+unitName = "Unabomber min"
+//unitIcon = "icon_avmine.png"
+//unitStatus = "wire_avmine.png"
+//infoName = "avmine.inf"  //or baseName, or provide name
+aiName = "MineLayerFriend"
+aiName2 = "MineLayerEnemy"
+heatSignature = 1.0
+imageSignature = 2.0
+radarSignature = 0.1
+isAssault = 0
+armorClass = N
+boxCollide = 1
+//CockpitSniperRadius = 1.0  //stock sniper shell has 0.5 default
+//Tuggable = -1 // -1=default 0=never 1=always
+//collisionRadius = 1.0  //bzcc vehc
+//collisionName = "avminecollide.fbx"
+
+/////// REQUIREMENTS ///////////////
+//requireCount = 1
+//requireName1 = "abcbun"
+//requireText1 = "Build Comm Tower"
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+provideName1 = "avmine"
+provideName2 = "VIRTUAL_CLASS_TANK"
+provideName3 = "DefendUnit"
+
+/////// OBJECT LIMIT //////////////
+//LimitClass1 = "avmine"
+//LimitClass1Count = 4
+//LimitClass1Text = "Player limit reached."
+
+//TeamLimitClass1 = "avmine"
+//TeamLimitClass1Count = 8
+//TeamLimitClass1Text = "Team limit reached."
+
+/////// WEAPONS ////////////////////
+weaponMask = 11111
+weaponHard1 = "hp_special_1"
+weaponName1 = "gproxa"
+weaponAssault1 = 0
+//weaponGroup1 = 0
+//weaponHard2 = "hp_mortar_1"
+//weaponName2 = ""
+//weaponAssault2 = 0
+//weaponGroup2 = 0
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltwyl"
+LightsOnlyWhenPiloted = true
+
+effectHard1 = "hp_dust_1"
+effectName1 = "vfxbztcdusts.dusttrail"
+effectMinAltitude1 = 0.0
+effectMaxAltitude1 = 5.0
+effectMinVelocity1 = 10.0
+effectMaxVelocity1 = 500.0
+effectHard2 = "hp_dust_2"
+effectName2 = "vfxbztcdusts.dusttrail"
+effectMinAltitude2 = 0.0
+effectMaxAltitude2 = 5.0
+effectMinVelocity2 = 10.0
+effectMaxVelocity2 = 500.0
+effectHard3 = "hp_dust_0" 
+effectName3 = "vfxbztcdusts.dustpuff"
+effectMinAltitude3 = 0.0
+effectMaxAltitude3 = 3.0
+effectMinVelocity3 = 0.0
+effectMaxVelocity3 = 10.0
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "hp_smoke_1"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "hp_smoke_1"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "hp_smoke_1"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "hp_smoke_1"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+//////////////////////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 250.0
+periodScan = 5.0
+velocJam = 5.0
+engageRange = 90
+//mine  //RetargetOnStrafe = true  //tnk
+//mine  attackTask = "MortarBikeAttack"  //"AssaultTankAttack"
+//mine  subattackTask = "MortarBikeSubAttack"  //"SupportSubAttack"
+//mine  subAttackClass = "ANS" //target:Air/grouNd attack:Deploy/Normal range:weaponS/eNgage 
+GoToTaskHasLeader = false  //Coxxon
+canHunt = 0	// defaults to 0
+//NavIsDropped = true //drop behind - bugged, immed removes nav/camr in MP/MPI
+//NavDropSound = "gprox00.wav"  //sound if navisdropped true
+NavConfig = "apcamra" //specify nav beacon/camera type
+AllowedControlsWhenTugged = 31  //7dflt Sumup: 1hop 2bail 4wcycle 8steer 16weapuse
+braccelFactor = 0.03
+velFactor = 0.2
+steerFactor = 1.5
+omegaFactor = 0.2
+strafeFactor = 0.2
+//avoidSpeed = 20.0  //20;
+//topSpeed = 20.0  //30;
+damageEffect1 = "dmgvhcl1"  //less stock dmg effect
+damageEffect2 = "dmgvhcl1"  //but still some sparks
+damageEffect3 = "dmgvhcl1"  //also lower visibility
+damageEffect4 = "dmgvhcl1"  //on cloaked units
+
+/////////CRASH INTO COMPONENT PARTS/////////
+//XplSnipe - Explosion ODF used for when a ship is sniped. 
+//XplChunk - Explosion ODF used for the chunks when a ship is killed. 
+//XplCrash - Explosion ODF used for when the ship's "crashing mesh" blows.
+//run on each veh/bld for xsi to msh - 5 at a time - can sub other units
+//explosionName = "xpl_crash_avminecox"
+//xplChunk = "xpl_crash_avminecox"
+xplcrash = "xpl_crash_avminecox"  //USE THIS FOR MOST CRAFT
+
+//chunkEffect1 = "avminecoxchk01.fbx"  
+//chunkEffect2 = "avminecoxchk02.fbx"
+//chunkEffect3 = "avminecoxchk03.fbx"
+//chunkEffect4 = "avminecoxchk04.fbx"
+//chunkEffect5 = "avminecoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 5
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+
+/////////MESSAGES/////////
+selectWaitMsg = "avminev9.wav"  //ready to mine
+selectUser1Msg = "avminevc.wav"  //dropping mines
+selectGoMsg = "avmineve.wav"  //in transit
+selectOtherMsg = "avminevg.wav"  //minelayer here
+selectUser2Msg = "avminevd.wav"  //out of ammo
+user1Msg = "avminev0.wav"  //placing mines
+user2Msg = "avminevb.wav"  //the mines are hot
+selectFollowMsg = "avminevf.wav"  //yes sir
+followMsg = "avmineve.wav"  //in transit
+followMeMsg = "avminev2.wav"  //show me the way
+repairMsg = "avminev3.wav"  //repairing
+reloadMsg = "avminev4.wav"  //stocking up
+rescueMsg = "avminev5.wav"  //im coming
+recycleMsg = "avminev6.wav"  //recycling
+otherMsg = "avminevf.wav"  //yes sir
+selectAttackMsg = "avminev0.wav"  //placing mines
+goMsg = "avmineve.wav"  //in transit
+goObjectMsg = "avmineve.wav"  //in transit
+attackMsg = "avminevf.wav"  //yes sir
+holdMsg = "avminevf.wav"  //yes sir
+killedMsg = "avminevb.wav"  //the mines are hot
+//"avmineva.wav"  //I cant do that
+//diedMsg = "abetty2.wav"  //deffensive unit lost
+
+BailSound = "bail.wav"
+CollideTerrainSound = "vnvcs1.wav"
+CollideBldgSound = "vnvcs3.wav"
+CollideOtherSound = "vvcre2.wav"  //"vvcbb3.wav"
+
+//////////////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+//10ms = 22.37mph  29.055ms = 65mph
+velocForward = 15.0
+velocReverse = 15.0 // 
+velocStrafe = 15.0 // 
+accelThrust = 25.0  //mine  //50.0 //acceleration 
+accelDragStop = 6.0 //how fast it stops once hands are off controls 
+accelJump = 15.0 // 
+setAltitude = 0.5 // how high off the ground
+alphaTrack = 21.0 //springs speed it rights itself 
+alphaDamp = 8.0 //shocks 
+pitchPitch = 0.25 //nose up 
+pitchThrust = 0.1 //nose down 
+rollStrafe = 0.08 //rolls while strafing 
+omegaSpin = 6.0 //spinning in place speed 
+omegaTurn = 2.3 //turning while moving speed 
+alphaSteer = 7.0 //how fast it responds to steering 
+rollSteer = 0.08 //rolls while steering 
+soundThrust = "avminee0.wav"
+soundJump = "avminee3.wav"
+THRUST_VOLUME_BASE_USER = 0.5  //turn back was too loud Coxxon
+
+///////////////////////////////////////////////////////////////////////
+[MineLayerClass] 
+mineCount = 30  //place all  //15 // # of mines to drop (if out of ammo, will still go thru the motions) 
+radius = 8.0 //10.0  // Initial radius from current location to first mine's dropoff 
+radiusInc = 8.0  //10.0 // Amount radius grows by each drop 
+angleInc = 90.0 // Initial angle increment per drop (in DEGREES) 
+angleDec = 4.0 // Amount angle increment decreases by each drop (in DEGREES) 
+timeout = 10.0 // Timeout secs getting to next drop point. If exceed, drop at cur loc, work on next mine
+//ringPattern = false  //true uses BZ1/98R's pattern of rings. Default is a spiral pattern.

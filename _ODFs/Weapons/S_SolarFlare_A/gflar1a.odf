@@ -1,0 +1,13 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gflar1a"
+classLabel = "dispenser"
+wpnName = "Solar Flare"
+fireSound = "mmine01.wav"
+wpnReticle = "gflara"
+wpnPriority = 1
+wpnCategory = "SPEC"
+
+[DispenserClass]
+shotDelay = 2.0
+objectClass = "gflar2a"

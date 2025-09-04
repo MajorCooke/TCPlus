@@ -1,0 +1,30 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "ysuser"
+classLabel = "yspilo"
+
+maxHealth = 250
+
+///////// WEAPONS /////////
+weaponMask = 00001
+weaponHard1 = "HP_HAND_1"
+visualHard1 = "HP_DOCK_H"
+weaponAssault1 = 0
+weaponName1 = "gsnipy_c"
+
+weaponHard2 = "HP_HAND_1"
+visualHard2 = "HP_DOCK_H"
+weaponAssault2 = 1
+weaponName2 = "gsnipy_a"
+
+weaponHard3 = "HP_PACK_1"
+visualHard3 = "HP_DOCK_P"
+weaponAssault3 = 0
+weaponName3 = "gjetpy"
+
+///////////////////////////////////////////
+[CraftClass]
+
+
+///////////////////////////////////////////////////////////
+[PersonClass]

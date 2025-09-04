@@ -1,0 +1,56 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ostarn_a"
+classLabel = "beam"
+
+shotGeometry = NULL
+xplGround = "xflagnd"
+xplVehicle = "xflacar"
+xplBuilding = "xflabld"
+
+renderName = "ostarn_a.render"
+
+ammoCost = 100  //16
+lifeSpan = 200e-6  //200m
+shotSpeed = 1e6
+
+damageValue(N) = 3000  //2000
+damageValue(L) = 3000  //1500
+damageValue(H) = 3000  //1000
+
+damageValue(S) = 3000  //1500
+damageValue(D) = 3000  //2000
+damageValue(A) = 3000  //1000
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "ostarn_a.core"
+renderName2 = "ostarn_a.fringe"
+
+[Core]
+renderBase = "draw_bolt"
+textureName = NULL
+textureBlend = "one one modulate"
+startColor = "50 100 255 255"  //Coxxon //"255 255 255 255"
+finishColor = "255 0 0 0"
+startRadius = 0.05  //0.1  //Coxxon  //0.15
+finishRadius = 0.1  //0.05  //Coxxon  //0.075
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.2
+textureRate = 0.01
+
+[Fringe]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 0 255"
+finishColor = "255 0 0 0"
+startRadius = 0.3
+finishRadius = 1.5
+segmentLength = 5.0
+segmentVariance = "0.0 0.0 0.0"
+animateTime = 0.3
+textureRate = 0.02
+textureSpeed = -5.0

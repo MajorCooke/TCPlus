@@ -1,0 +1,46 @@
+//sbrat00rs07 for rs07
+[GameObjectClass]
+baseName = "sbcrat00rs07"
+classLabel = "artifact"
+geometryName = "sbcratcox00.fbx"
+scrapCost = 8
+scrapValue = 3
+maxHealth = 80
+addHealth = 10  //so hopefully only snipe kills
+maxAmmo = 0
+unitName = "Explosive Supplies"
+heatSignature = 0.5
+imageSignature = 0.5
+radarSignature = 0.5
+collisionRadius = 1.0  //bztc vehc
+canDetect = 1
+canInteract = 1
+canSnipe = 1
+isAssault = 0
+//ownsTerrain = 1  //crate
+canCollide = 1  //crate
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+
+//smoke1
+effectHard1 = "hp_smoke_1"
+effectName1 = "dmgbldg1"
+effectMinHealth1 = 0.8
+effectMaxHealth1 = 0.9
+effectHard2 = "hp_smoke_1"
+effectName2 = "dmgbldg2"
+effectMinHealth2 = 0.6
+effectMaxHealth2 = 0.8
+effectHard3 = "hp_smoke_1"
+effectName3 = "dmgbldg3"
+effectMinHealth3 = 0.4
+effectMaxHealth3 = 0.6
+effectHard4 = "hp_smoke_1"
+effectName4 = "dmgbldg4"
+effectMinHealth4 = 0.0
+effectMaxHealth4 = 0.4
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "xpl_craters07"  //"xbmbxpl"  //daywreck doesn't always work for some reason
+
+[BuildingClass]
+UseExplosion = true  //bldg

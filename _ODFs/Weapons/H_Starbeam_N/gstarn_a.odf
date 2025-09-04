@@ -1,0 +1,17 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gstarn_a"
+classLabel = "cannon"
+//combat version has geometry
+ordName = "ostarn_a"
+wpnName = "Starblast A"
+fireSound = "cgun01.wav"  //Coxxon  //"baz01.wav"
+wpnReticle = "gflsha"  //"agstar"  //"gbazooka"
+wpnCategory = "HAND"
+isAssault = 1
+isFlying = 1
+altName = "gstara_c"
+aiRange = 190
+
+[CannonClass]
+shotDelay =  1.0

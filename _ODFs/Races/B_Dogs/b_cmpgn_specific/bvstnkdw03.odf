@@ -1,0 +1,39 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "bvstnkdw03"
+classLabel = "bvstnk", "wingman"
+unitName = "Red Devil lav"
+unitIcon = "icon_bvstnk.png"
+unitStatus = "wire_bvstnk.png"
+infoName = "bvstnk.inf"  //or baseName, or provide name
+
+/////// BUILDLIMIT ///////////////
+//limitClass1 ="bvstnk"  //stnk Coxxon
+//limitClass1Count = 10  //stnk Coxxon
+//limitClass1Text = "Limit Reached"  //stnk Coxxon
+
+/////// REQUIREMENTS ///////////////
+//requireCount = 0
+//requireName1 = ""  //"bbhqtr"
+//requireText1 = ""  //"Build Field HQ"
+
+//////////////////////////////////////////////////////////////////////////
+[CraftClass]
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_bvstnkcox"  //use for vehicles
+
+//chunkEffect1 = "bvstnkcoxchk01.fbx"  
+//chunkEffect2 = "bvstnkcoxchk02.fbx"
+//chunkEffect3 = "bvstnkcoxchk03.fbx"
+//chunkEffect4 = "bvstnkcoxchk04.fbx"
+//chunkEffect5 = "bvstnkcoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 5
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+//////////////////////////////////////////////////////////////////////////
+[HoverCraftClass]

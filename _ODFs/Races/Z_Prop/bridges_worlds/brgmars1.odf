@@ -1,0 +1,34 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+geometryName = "brgmars1.fbx"
+classLabel = "i76building"
+collisionRadius = 1.0
+scrapCost = 8
+scrapValue = 3
+maxHealth = 0
+unitName = ""  //"Bridge L"
+heatSignature = 0.0  //1.0  //brg
+imageSignature = 0.0  //0.5  //brg
+radarSignature = 0.0  //1.0  //brg
+isAssault = 1  //bztc
+armorClass = H
+AllowSeismic =  false
+canDetect = 0  //brg
+canInteract = 0  //brg
+LightingType = 1
+
+[BuildingClass]
+tunnelCount = 1  //2  //32m x 32m
+bldEdge = "wwww"
+
+tunnel01X0 = 1
+tunnel01Z0 = 0
+tunnel01DX = 2
+tunnel01DZ = 4
+tunnel01Edge = "fwfw"
+
+//tunnel02X0 = 0
+//tunnel02Z0 = 1
+//tunnel02DX = 4
+//tunnel02DZ = 2
+//tunnel02Edge = "wtwt"

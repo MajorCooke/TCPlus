@@ -1,0 +1,12 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gimgm1a"
+classLabel = "dispenser"
+wpnName = "Image Mine"
+fireSound = "mmine01.wav"
+wpnReticle = "gmitsa"
+wpnCategory = "SPEC"
+
+[DispenserClass]
+shotDelay = 2.0
+objectClass = "gimgm2a"

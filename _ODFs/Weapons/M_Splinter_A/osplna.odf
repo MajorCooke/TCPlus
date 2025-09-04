@@ -1,0 +1,32 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "osplna"
+classLabel = "bullet"
+shotGeometry = NULL
+xplGround = "xchaingnd_c"  //"xbulgnd"
+xplVehicle = "xchaincar_c"  //"xbulcar"
+xplBuilding = "xchainbld_c"  //"xbulbld"
+
+ammoCost = 1
+lifeSpan = 0.5
+shotSpeed = 200.0
+
+damageValue(N) = 45  //Coxxon  //15
+damageValue(L) = 27  //Coxxon  //9
+damageValue(H) = 9  //Coxxon  //3
+
+damageValue(S) = 27  //Coxxon  //9
+damageValue(D) = 3  //Coxxon  //1
+damageValue(A) = 45  //Coxxon  //15
+
+renderName = "osplna.render"
+
+[Render]  //simplified and looks more like bz1  Coxxon
+renderBase = "draw_tracer"
+textureBlend = "one one modulate"
+textureName = "spark2.tga"
+startColor = "50 200 255 255"
+finishColor = "200 200 255 10"
+startRadius = 0.4
+finishRadius = 0.2
+tracerLength = 10.0

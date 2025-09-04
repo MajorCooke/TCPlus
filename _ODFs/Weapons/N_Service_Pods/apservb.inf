@@ -1,0 +1,5 @@
+SERVICE POD
+Replenishes up to 1500 units of a vehicle's ammo and health.
+
+COST: 2
+BUILDER: SLF or Recycler

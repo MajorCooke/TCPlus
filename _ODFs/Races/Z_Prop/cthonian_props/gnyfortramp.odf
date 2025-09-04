@@ -1,0 +1,41 @@
+/////////Coxxon - BZTC/////////
+//ramp to fort - keep as building since savegame won't reload changed terrain (from a stamp)
+[GameObjectClass]
+baseName = "gnyfortramp"
+classLabel = "i76building"  //"terrain"
+geometryName = "gnyfortramp.fbx"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+unitName = "Maintenance Access Ramp"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+canDetect = 0
+canInteract = 0
+LightingType = 1  //0 default//1 terrain//2 custom
+AllowSeismic = 0
+//ownsTerrain = 1
+collisionRadius = 1.0  //i76 building
+
+[BuildingClass]
+tunnelCount = 3
+//long ramp up
+tunnel01X0 = 2
+tunnel01Z0 = 1
+tunnel01DX = 8
+tunnel01DZ = 23
+tunnel01Edge = "twfw"
+//corner turn
+tunnel02X0 = 2
+tunnel02Z0 = 24
+tunnel02DX = 8
+tunnel02DZ = 8
+tunnel02Edge = "ffww"
+//east section
+tunnel03X0 = 10
+tunnel03Z0 = 24
+tunnel03DX = 7
+tunnel03DZ = 8
+tunnel03Edge = "wtwf"

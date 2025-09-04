@@ -1,0 +1,6 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "apammop"
+classLabel = "apammo"
+
+buildTime = 0.5  //armo pod

@@ -1,0 +1,23 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "yvpegars06b"
+classLabel = "yvpega"
+unitIcon = "icon_yvpega.png"
+
+canSnipe = 0
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName4 = "yvpegars06b"
+
+
+/////////////////////////////////////////////////////////
+[CraftClass]
+CanAIEject = 0
+canRescue = 0
+
+//////////////////////////////////////////////////////////
+[HoverCraftClass]

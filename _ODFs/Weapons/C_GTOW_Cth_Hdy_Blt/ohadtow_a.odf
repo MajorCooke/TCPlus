@@ -1,0 +1,19 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ohadtow_a"
+classLabel = "ohadtow_c"  //"thermalmissile"
+ammoCost = -1  //gtow
+lifeSpan = 4.0 // 400m
+shotSpeed = 100.0
+
+damageValue(N) = 300 // none
+damageValue(L) = 250 // light
+damageValue(H) = 200 // heavy
+
+damageValue(S) = 250 // standard
+damageValue(D) = 200 // deflection
+damageValue(A) = 300 // absorption
+
+[MissileClass]
+
+[ThermalMissileClass]

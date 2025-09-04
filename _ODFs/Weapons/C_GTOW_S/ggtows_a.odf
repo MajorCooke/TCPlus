@@ -1,0 +1,16 @@
+[WeaponClass]
+classLabel = "cannon"
+altName = "ggtows_c"
+ordName = "ogtows_a"
+wpnName = "Chain Cannon A"
+fireSound = "gmsov00.wav"  //"gchain01.wav"  //"igtow03.wav"
+wpnReticle = "gplasa_a"  //"gplasma"
+wpnCategory = "CANN"
+isAssault = 1
+flashName = "ggtows_c.flash"
+aiRange = 200
+
+[CannonClass]
+shotDelay = 0.5
+shotAlternate = 1
+

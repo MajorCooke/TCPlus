@@ -1,0 +1,45 @@
+/////////Coxxon - BZTC/////////
+//acts as a placeable shield bubble
+//friendly vehicles and projectiles pass through without being effected
+//enemy vehicles and projectiles are deflected away
+[GameObjectClass]
+baseName = "omcura"
+geometryName = "aomcurcox01.fbx"  //"aomcurcox00.fbx"
+classLabel = "magnet"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 150
+maxAmmo = 50
+ammoCost = 100
+unitName = "M-Curtain"
+effectHard1 = "M-Curtain"
+effectName1 = "omcura.field"
+
+[MineClass]
+lifeSpan = 20.0  //lower for balance since more effective Coxxon  //30.0
+
+[MagnetMineClass]
+triggerDelay = 0.1  //Coxxon  //1.0
+fieldRadius = 20.0
+objPushCenter = 50  //Coxxon  //-10.0
+objPushEdge = 30.0  //25.0
+objDragCenter = 0.2
+objDragEdge = 0.5
+ordPushCenter = 250.0  //Coxxon  //100.0
+ordPushEdge = 250.0
+ordDragCenter = 10.0  //Coxxon  //2.0
+ordDragEdge = 25.0  //Coxxon  //5.0
+
+TeamFilter = 51  //Pick craft and ordnance, and sum to specify effected: All c0/o0, Same Team c1/o16, Allies c2/o32, Enemies c3/o48, NotSameTeam c4/o64
+
+[Field]
+renderBase = "draw_sphere"
+textureName = "hexfieldcox00_e.tga"  //Coxxon  //"vsmoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"  //Coxxon  "one one modulate"
+startColor = "255 255 255 255"  //Coxxon  //"0 255 0 0"
+finishColor = "100 255 0 255"  //Coxxon  //"0 255 0 15"
+startRadius = 1.0
+finishRadius = 20.0
+animateTime = 1.0
+latitudeBands = 8
+longitudeSegments = 16

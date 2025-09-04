@@ -1,0 +1,19 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "kssold"
+classLabel = "kspilo"
+
+scrapValue = 0
+maxHealth = 250
+maxAmmo = 100
+addAmmo = 10
+unitName = "Soldier"
+aiName = "SoldierProcess"
+
+weaponName1 = "gbazok_c"
+weaponName2 = "gbazok_a"
+
+MaxChromeDistance = 80
+
+[CraftClass]
+DoBlastUsesFields = false

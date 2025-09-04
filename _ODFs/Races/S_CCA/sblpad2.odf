@@ -1,0 +1,174 @@
+/////////Coxxon - BZTC/////////
+//cca lpad WITH rocket (LUNG)
+[GameObjectClass]
+baseName = "sblpad2"
+classLabel = "teleportal"  //to use taps  //"bomberbay"  //
+geometryName = "sblpadcox00.fbx"
+animCount = 1
+animName1 = "elevator"
+animFile1 = "sblpadcox00.fbx"
+RunAnimation = "elevator"
+RunAnimIsLooped = true
+buildTime = 480.0  //lpad
+scrapCost = 200  //lpad
+scrapValue = 100
+maxHealth = 15000  //lpad
+maxAmmo = 0
+unitName = "Launch Pad"
+infoName = "sblpad.inf"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+collisionRadius = 32.0  //bztc 32 bldg
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+AllowSeismic = 0
+powerCost = 0  //lpad
+isSingle = 1  //lpad
+buildRequire = "F"  //lpad
+buildSupport = "B"  //lpad
+
+/////// REQUIREMENTS ///////////////
+//requireCount = 1
+//requireName1 = "sbtcen"
+//requireText1 = "Build Field Lab"
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+provideName1 = "sblpad"
+provideName2 = "VIRTUAL_CLASS_BOMBERBAY"
+provideName3 = "base"
+
+///////// LIGHTS & EFFECTS /////////
+lightHard1 = "hp_light_1"
+lightName1 = "omnired5"
+lightHard2 = "hp_light_2"
+lightName2 = "omniorg5"
+
+//effectHard1 = "hp_emit_1"
+//effectName1 = "vfxbztclight.greenblink"
+//effectFlags1 = "447" //447 on  479 off
+//effectHard2 = "hp_emit_2"
+//effectName2 = "vfxbztclight.redblink"
+//effectFlags2 = "447" //447 on  479 off
+//effectHard3 = "hp_emit_3"
+//effectName3 = "vfxbztclight.redblink"
+//effectFlags3 = "447" //447 on  479 off
+//effectHard4 = "hp_emit_4"
+//effectName4 = "vfxbztclight.greenblink"
+//effectFlags4 = "447" //447 on  479 off
+//effectName5 = "vfxbztclight.greenblink"
+//effectFlags5 = "447" //447 on  479 off
+//smoke1
+effectHard1 = "hp_smoke_1"
+effectName1 = "dmgbldg1"
+effectMinHealth1 = 0.6
+effectMaxHealth1 = 0.8
+effectHard2 = "hp_smoke_1"
+effectName2 = "dmgbldg2"
+effectMinHealth2 = 0.4
+effectMaxHealth2 = 0.6
+effectHard3 = "hp_smoke_1"
+effectName3 = "dmgbldg3"
+effectMinHealth3 = 0.2
+effectMaxHealth3 = 0.4
+effectHard4 = "hp_smoke_1"
+effectName4 = "dmgbldg4"
+effectMinHealth4 = 0.0
+effectMaxHealth4 = 0.2
+//smoke2
+effectHard5 = "hp_smoke_2"
+effectName5 = "dmgbldg1"
+effectMinHealth5 = 0.6
+effectMaxHealth5 = 0.8
+effectHard6 = "hp_smoke_2"
+effectName6 = "dmgbldg2"
+effectMinHealth6 = 0.4
+effectMaxHealth6 = 0.6
+effectHard7 = "hp_smoke_2"
+effectName7 = "dmgbldg3"
+effectMinHealth7 = 0.2
+effectMaxHealth7 = 0.4
+effectHard8 = "hp_smoke_2"
+effectName8 = "dmgbldg4"
+effectMinHealth8 = 0.0
+effectMaxHealth8 = 0.2
+//smoke3
+effectHard9 = "hp_smoke_3"
+effectName9 = "dmgbldg1"
+effectMinHealth9 = 0.6
+effectMaxHealth9 = 0.8
+effectHard10 = "hp_smoke_3"
+effectName10 = "dmgbldg2"
+effectMinHealth10 = 0.4
+effectMaxHealth10 = 0.6
+effectHard11 = "hp_smoke_3"
+effectName11 = "dmgbldg3"
+effectMinHealth11 = 0.2
+effectMaxHealth11 = 0.4
+effectHard12 = "hp_smoke_3"
+effectName12 = "dmgbldg4"
+effectMinHealth12 = 0.0
+effectMaxHealth12 = 0.2
+//smoke4
+effectHard13 = "hp_smoke_4"
+effectName13 = "dmgbldg1"
+effectMinHealth13 = 0.6
+effectMaxHealth13 = 0.8
+effectHard14 = "hp_smoke_4"
+effectName14 = "dmgbldg2"
+effectMinHealth14 = 0.4
+effectMaxHealth14 = 0.6
+effectHard15 = "hp_smoke_4"
+effectName15 = "dmgbldg3"
+effectMinHealth15 = 0.2
+effectMaxHealth15 = 0.4
+effectHard16 = "hp_smoke_4"
+effectName16 = "dmgbldg4"
+effectMinHealth16 = 0.0
+effectMaxHealth16 = 0.2
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_sblpadcox"
+
+chunkEffect1 = "sblpadcoxchk01.fbx"  
+chunkEffect2 = "sblpadcoxchk02.fbx"  
+chunkEffect3 = "sblpadcoxchk03.fbx"  
+chunkEffect4 = "sblpadcoxchk04.fbx"  
+chunkEffect5 = "sblpadcoxchk05.fbx"  
+HasSeparateChunks = true 
+numChunks = 5
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 1
+numChunks5 = 1
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+///////////////////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "sblpade0.wav"
+//bldEdge = "wwww"  //bldg
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+///////////////////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 100
+powerTap1 = "HP_TAP_1"
+powerName = "sbcone1"  //build svcone here
+AutoBuildTap1 = true  //true build tap on init creation
+powerTap2 = "HP_TAP_2"
+powerName2 = "dummy00"  //have camera look here
+AutoBuildTap2 = true  true build tap on init creation
+PoweredByTaps = false  //false - trad power and nonpower addon
+DestroyTapsWithParent = true  //true default
+
+//[BomberBayClass]
+//bomberType = ""

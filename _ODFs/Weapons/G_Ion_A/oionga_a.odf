@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "oionga_a"
+classLabel = "oionga_c"  //"bullet"
+
+ammoCost = 3
+lifeSpan = 0.75 // 150m
+shotSpeed = 200.0
+
+damageValue(N) = 50 // none
+damageValue(L) = 30 // light
+damageValue(H) = 10 // heavy
+
+damageValue(S) = 30 // standard
+damageValue(D) = 50 // deflection
+damageValue(A) = 10 // absorption

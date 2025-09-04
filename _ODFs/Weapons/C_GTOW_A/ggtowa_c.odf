@@ -1,0 +1,29 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "ggtowa_c"
+classLabel = "cannon"
+altName = "ggtowa_a"
+ordName = "ogtowa_c"
+wpnName = "Blast Tower C"
+fireSound = "gblas00.wav"  //"blast01.wav"
+wpnReticle = "gbls2a"  //"gblsta"
+wpnCategory = "CANN"
+isAssault = 0
+aiRange = 150
+flashName = "ggtowa_c.flash"
+
+[CannonClass]
+shotDelay = 1.0
+
+[flash]
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "255 155 80 255"
+finishColor = "155 55 0 255"
+startRadius = 1.0
+finishRadius = 3.0
+animateTime = 2.0
+latitudeBands = 8
+longitudeSegments = 16
+lifeTime = 2.0

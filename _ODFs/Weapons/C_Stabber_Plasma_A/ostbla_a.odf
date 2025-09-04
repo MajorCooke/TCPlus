@@ -1,0 +1,20 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ostbla_a"
+classLabel = "ostbla_c"
+
+xplGround = "xstblcar_a"
+xplVehicle = "xstblcar_a"
+xplBuilding = "xstblcar_a"
+
+ammoCost = 40
+lifeSpan = 3.25 // 260 meters
+shotSpeed = 80.0
+
+damageValue(N) = 1400  //Coxxon  ////700 // none // 350
+damageValue(L) = 1000  //Coxxon  //500 // light // 250
+damageValue(H) = 600  //Coxxon  //300 // heavy // 150
+
+damageValue(S) = 1000  //Coxxon  //500 // standard // 250
+damageValue(D) = 1400  //Coxxon  //700 // deflection // 350
+damageValue(A) = 400  //Coxxon  //200 // absorption // 100

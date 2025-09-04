@@ -1,0 +1,19 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gstbva_a"
+classLabel = "cannon"
+altName = "gstbva_c"
+ordName = "ostbva_a"
+wpnName = "Salvo-Stabber A"
+fireSound = "gatst00.wav"  //"gmagg02.wav"
+wpnReticle = "gstara"
+wpnCategory = "CANN"
+isAssault = 1
+flashName = "gstbva_c.flash"  //"gstbva_a.smoke"  //
+aiRange = 150
+
+[CannonClass]
+shotDelay = 2.5  //3.0  //Coxxon  //0.5
+salvoCount = 8
+salvoDelay = 0.1
+shotVariance = 0.07

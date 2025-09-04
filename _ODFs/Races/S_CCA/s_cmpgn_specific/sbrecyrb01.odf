@@ -1,0 +1,47 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "sbrecyrb01"
+classLabel = "sbrecy"  //"recycler"
+unitName = "Valinov"
+upgradeName = "svrecyrb01"
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+
+provideName5 = "sbrecyrb01"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_sbrecycox"
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg
+UseChunks = true  //bldg
+UseExplosion = true  //bldg
+
+///////////////////////////////////////////////////////////////
+[FactoryClass]
+buildItem1 = "svscav"
+buildItem2 = "svscout"
+buildItem3 = "svturr"
+buildItem4 = "svtug"
+buildItem5 = "svconsrb01"
+buildItem6 = "svserv"
+buildItem7 = "apservs"
+//buildItem8 = "prereserve for mp empty scout"
+//buildItem9 = "FREESLOT"
+//buildItem10 = "replaced by BuildGroup10"
+
+[BuildGroup10] 
+buildLabel = "Production Units"
+buildItem1 = "svfactrb01"
+buildItem2 = "svarmorb01"
+
+///////////////////////////////////////////////////////////////
+[RecyclerClass]

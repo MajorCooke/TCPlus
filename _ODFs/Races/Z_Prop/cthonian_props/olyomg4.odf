@@ -1,0 +1,24 @@
+/////////Coxxon - BZTC////////
+//this uses the olympian mcurtain model
+[GameObjectClass]
+geometryName = "olymcurcox0b.fbx"
+classLabel = "i76building"
+scrapCost = 8
+scrapValue = 3
+maxHealth = 10000
+maxAmmo = 0
+unitName = "M-Curtain Pylon"
+heatSignature = 0.8
+imageSignature = 8.0
+radarSignature = 1.0
+canDetect = 1
+canInteract = 1
+ownsTerrain = 1
+//canCollide = 1
+//boxCollide = 1
+collisionRadius = 1.0  //bztc vehc
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+AllowSeismic = 0
+powerCost = 0
+
+[BuildingClass]

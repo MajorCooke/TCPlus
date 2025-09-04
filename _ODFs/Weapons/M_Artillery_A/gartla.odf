@@ -1,0 +1,52 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gartla"
+classLabel = "mortar"
+ordName = "oartla"
+wpnName = "Artillery"
+fireSound = "ghart00.wav"
+flashName = "gartla.render"
+//flashName = "ghwtza.render"
+wpnReticle = "gartla"
+wpnLadder = "gmortar.L0"  //have reticle and in sprite table stb, but will not show as ladder
+wpnCategory = "MORT"
+//isAssault = 1
+aiRange = 350
+//needLOS = false
+//AllowAimHigh = true
+
+[CannonClass]
+shotDelay = 2.5
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 2
+renderName1 = "ggtowk_c.smoke"
+renderName2 = "ggtowk_c.flash"
+
+[flash]
+renderBase = "draw_twirl_trail"
+textureName = "lighthalo.tga"  //"plasma.tga"
+textureBlend = "one one modulate"  //k tga
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.5
+finishRadius = 2.0
+animateTime = 0.2
+emitLife = 0.2
+emitVelocity = "0.0 0.0 3.0"
+emitVariance = "0.6 0.6 0.6"
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "50 150 200 255"
+finishColor = "70 70 70 10"
+startRadius = 1.0
+finishRadius = 3.0
+animateTime = 0.5
+emitLife = 0.5
+emitDelay = 0.03
+emitVelocity = "0.0 0.0 12.0"
+emitVariance = "0.6 0.6 0.6"

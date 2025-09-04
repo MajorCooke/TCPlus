@@ -1,0 +1,29 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "svscoutss01"
+classLabel = "svscout"
+unitName = "Alpha Contact"
+unitIcon = "icon_svscout.png"
+unitStatus = "wire_svscout.png"
+infoName = "svscoutss01.inf"
+
+/////////////////////////////////////////////////////////
+[CraftClass]
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_svscoutcox"
+
+//chunkEffect1 = "svscoutcoxchk01.fbx"  
+//chunkEffect2 = "svscoutcoxchk02.fbx"
+//chunkEffect3 = "svscoutcoxchk03.fbx"
+//chunkEffect4 = "svscoutcoxchk04.fbx"
+//chunkEffect5 = "svscoutcoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 5
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+//////////////////////////////////////////////////////////
+[HoverCraftClass]

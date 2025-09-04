@@ -1,0 +1,34 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "abrecyss14"
+classLabel = "abrecy"
+unitName = "Texas"
+upgradeName = "avrecyss14"
+InfoName = "abrecy.inf"
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+
+provideName5 = "abrecyss14"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_abrecycox"
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+
+///////////////////////////////////////////////////////////////
+[FactoryClass]
+buildItem5 = "avconsss14"
+
+[BuildGroup10] 
+buildLabel = "Production Units"
+buildItem1 = "avfactss14"
+//buildItem2 = "avarmo"
+
+///////////////////////////////////////////////////////////////
+[RecyclerClass]

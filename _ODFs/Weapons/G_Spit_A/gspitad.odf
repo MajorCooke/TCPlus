@@ -1,0 +1,30 @@
+/////////Coxxon - BZTC/////////
+//deathmatch version of weapon
+[WeaponClass]
+baseName = "gspitad"
+classLabel = "machinegun"
+altName = "gspita_a"
+ordName = "ospitad"
+wpnName = "Spitfire DM"
+fireSound = "gmini00.wav"  //"gmini01.wav"
+wpnReticle = "giongs"
+wpnCategory = "GUN"
+isAssault = 0
+flashName = "gspitad.flash"
+aiRange = 155
+
+[CannonClass]
+shotDelay = 0.1
+shotVariance = 0.05  //Coxxon  //0.01
+shotAlternate = 1  //Coxxon
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "0 127 255 255"
+finishColor = "0 0 255 255"
+startRadius = 2.0
+finishRadius = 0.75
+animateTime = 0.1
+geomName = "g_sflash.fbx"

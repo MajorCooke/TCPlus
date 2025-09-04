@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gstbla_a"
+classLabel = "cannon"
+altName = "gstbla_c"
+ordName = "ostbla_a"
+wpnName = "Plasma Stabber A"
+fireSound = "igtow03.wav"
+wpnReticle = "gplasa"
+wpnCategory = "CANN"
+isAssault = 1
+flashName = "gstbla_c.flash"
+aiRange = 260
+
+[CannonClass]
+shotDelay = 2.0  //Coxxon  //2.0 // 1/2sec

@@ -1,0 +1,73 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ogarda_c"
+classLabel = "bullet"
+
+shotGeometry = NULL
+shotRadius = 0.5
+
+xplGround = "xmslgnd"
+xplVehicle = "xstbaacar"  //"xmslcar"
+xplBuilding = "xmslbld"
+
+renderName = "ogarda_c.render"
+
+shotSound = "Ordin_a.wav"
+
+ammoCost = 2  //Coxxon since _a def is 3  //10
+lifeSpan = 1.0 // 100m
+shotSpeed = 100.0
+
+damageValue(N) = 100 // none
+damageValue(L) = 50 // light
+damageValue(H) = 8 // heavy
+
+damageValue(S) = 50 // standard
+damageValue(D) = 100 // deflection
+damageValue(A) = 8 // absorbption
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "ogarda_c.smoke"
+renderName2 = "ogarda_c.flame"
+renderName3 = "ogarda_c.Light"
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "127 64 0 64"
+finishColor = "255 200 200 0"
+startRadius = 0.1
+finishRadius = 1
+animateTime = 0.1
+rotationRate = 2.0
+emitDelay = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitLife = 0.1
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 127 0 255"
+finishColor = "255 0 0 255"
+startRadius = 0.1
+finishRadius = 0.01
+animateTime = 0.05
+rotationRate = 10.0
+emitDelay = 0.001
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitLife = 0.05
+
+[Light]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 1.0
+finishRadius = 1.0

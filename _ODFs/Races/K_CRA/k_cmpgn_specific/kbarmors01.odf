@@ -1,0 +1,23 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "kbarmors01"
+classLabel = "kbarmo"  //"armory"
+upgradeName = "kvarmors01"
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+
+provideName5 = "kbarmors01"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_kbarmocox"
+
+///////////////////////////////////////////////////////////////////////////
+[ArmoryClass]
+//ambient sounds only hear in close proximity
+
+buildItem9 = "apdwrkk"  //special for rs01

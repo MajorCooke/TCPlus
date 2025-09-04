@@ -1,0 +1,34 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "kvarmors01"
+classLabel = "kvarmo"  //"recyclervehicleH"
+
+requireCount = 0
+
+unitIcon = "icon_kvarmo.png"
+infoName = "kvarmo.inf"  //or baseName, or provide name
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+
+provideName3 = "kvarmors01"
+
+//////////////////////////////////////////////////////////
+[CraftClass]
+
+////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+
+/////////////////////////////////////////////////////////
+[DeployableClass]
+
+/////////////////////////////////////////////////////////
+[DeployBuildingHClass]
+CanDeploy = true
+deployName = "kbarmors01"
+timeDeploy = 5.0  //depbld
+timeUndeploy = 5.0  //depbld
+
+////////////////////////////////////////////////////////
+[RecyclerVehicleHClass]
+scrapHold = 0

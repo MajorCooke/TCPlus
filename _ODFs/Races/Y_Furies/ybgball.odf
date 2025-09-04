@@ -1,0 +1,95 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "ybgball"
+classLabel = "turret"
+geometryName = "ybgballcox00.fbx"
+cockpitName = "yvturrcox_cockpit.fbx"
+scrapCost = 80
+customCost = 100
+scrapValue = 10
+buildTime = 5.0
+customTime = 10.0
+maxHealth = 2500
+maxAmmo = 10000 // 0 is *not* treated as infinite ammo!
+addAmmo = 10
+//unitName = "Bolt Tower"
+aiName = "GunTowerFriend"
+aiName2 = "GunTowerEnemy"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+isAssault = 0
+armorClass = H
+boxCollide = 1
+CanAcceptPowerups = 0
+powerCost = 0
+//hide so focus is on main tower
+canInteract = 0
+canDetect = 0
+CanSelect = 0
+ignoreMissingInf = 1
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 1
+provideName1 = "ybgball"
+
+/////// weapons ////////////////////
+weaponMask = 11111
+weaponHard1 = "HP_cannon_1"
+weaponName1 = "ggtowy_a"
+recoilName1 = "recoil1"
+weaponAssault1 = 1
+//weaponHard2 = "HP_GUN_1"
+//weaponName2 = "ghmrga_a"
+//recoilName2 = "recoil1"
+//weaponAssault2 = 1
+//weaponHard3 = "HP_rocket_1"
+//weaponName3 = ""
+//recoilName3 = "recoil1"
+//weaponAssault3 = 1
+//weaponHard4 = "HP_mortar_1"
+//weaponName4 = ""
+//recoilName4 = "recoil1"
+//weaponAssault4 = 1
+
+///////////////Coxxon/////////////////////
+turretCount = 2
+turretName1 = "turret_y"
+turretName2 = "turret_x"
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltcyn"
+
+///////////////////////////////////////////////////////////////
+//[BuildingClass]
+//soundAmbient = "abtowee0.wav"  //"igtow01.wav"
+
+/////////// EXPLOSION AID /////////
+//UseCollapse = false
+UseChunks = true
+UseExplosion = true
+
+///////////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 300.0
+periodScan = 3.0
+velocJam = 1.0
+engageRange = 210
+weaponPitch = 1.5
+CanBailout = 0  //gtow
+CanUserBailout = 0  //gtow
+//RetargetOnStrafe = true  //tnk
+attackTask = "TurretAttack"
+subattackTask = "TurretDefendTask"
+subAttackClass = "ANS"
+
+///////////////////////////////////////////////////////////////
+[TurretCraftClass]
+omegaTurret = 2.0
+//alphaTurret = 5.0
+detectRange = 210

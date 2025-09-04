@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "ggtowa_a"
+classLabel = "cannon"
+altName = "ggtowa_c"
+ordName = "ogtowa_a"
+wpnName = "Blast Tower A"
+fireSound = "gblas00.wav"  //"blast01.wav"
+wpnReticle = "gbls2a"  //"gblsta"
+wpnCategory = "CANN"
+isAssault = 1
+aiRange = 200
+flashName = "ggtowa_c.flash"
+
+[CannonClass]
+shotDelay = 1.0

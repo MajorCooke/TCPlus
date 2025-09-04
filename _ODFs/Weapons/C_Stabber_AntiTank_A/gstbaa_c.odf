@@ -1,0 +1,67 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gstbaa_c"
+classLabel = "cannon"
+altName = "gstbaa_a"
+ordName = "ostbaa_c"
+wpnName = "AT-Stabber C"
+fireSound = "gatst00.wav"  //"gmagg02.wav"
+flashName = "gstbaa_c.smoke"  //stab all
+wpnReticle = "gstbaa"
+wpnCategory = "CANN"
+isAssault = 0
+aiRange = 100
+
+[CannonClass]
+shotDelay = 0.5 // bz2/cc  //0.3 bz/98r
+shotAlternate = 1  //at stab
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "sflash.tga"  //stab all  //"vsmoke.tga"
+textureBlend = "one one modulate"
+finishColor = "255 100 0 255"  //stab all
+startColor = "255 0 0 255"  //stab all
+startRadius = 1.0  //stab all
+finishRadius = 10.0  //stab all
+animateTime = 0.1
+geomName = "g_sflash.fbx"
+
+[halo]  //diff from others
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "150 150 150 100"
+finishColor = "50 150 255 255"  //stab all
+startRadius = 0.1  //stab all
+finishRadius = 0.5  //stab all
+animateTime = 0.1
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 0.5"
+emitVariance = "0.0 0.0 0.0"
+emitLife = 0.1
+
+[xhalo]  //meh
+renderBase = "draw_geom"
+textureName = "flame.tga"  //stab all
+textureBlend = "one one modulate"
+startColor = "50 150 255 255"  //stab all
+finishColor = "150 150 150 255"  //stab all
+startRadius = 5.0  //stab all
+finishRadius = 1.0  //stab all
+animateTime = 0.2  //stab all
+geomName = "g_shalo.fbx"
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "50 80 150 100"  //"50 100 200 100"
+finishColor = "70 70 70 0"
+startRadius = 0.2
+finishRadius = 1.0
+animateTime = 0.2
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 3.0"
+emitVariance = "0.6 0.6 0.6"
+emitLife = 0.2

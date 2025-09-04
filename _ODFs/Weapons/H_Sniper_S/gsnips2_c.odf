@@ -1,0 +1,55 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gsnips2_c"
+classLabel = "machinegun"
+
+// external geometry
+geometryName = "sgsnipcox_skel.fbx"
+
+animCount = 4
+animName1 = "stand"
+animFile1 = "sgsnipcox_skel.fbx"
+animName2 = "walk"
+animFile2 = "sgsnipcox_skel.fbx"
+animName3 = "crouch"
+animFile3 = "sgsnipcox_crch.fbx"
+animName4 = "jump"
+animFile4 = "sgsnipcox_skel.fbx"
+
+// cockpit geometry
+cockpitName = "swsnipcox_cockpit_skel.fbx"
+animCountCockpit = 4
+animNameCockpit1 = "stand"
+animFileCockpit1 = "swsnipcox_cockpit_skel.fbx"
+animNameCockpit2 = "walk"
+animFileCockpit2 = "swsnipcox_cockpit_walk.fbx"
+animNameCockpit3 = "crouch"
+animFileCockpit3 = "swsnipcox_cockpit_crch.fbx"
+animNameCockpit4 = "jump"
+animFileCockpit4 = "swsnipcox_cockpit_skel.fbx"
+
+ordName = "osnipk_c"
+wpnName = "AK59 Adv Carbine C"
+fireSound = "ghand00.wav"  //"h45ch.wav"  //"gdumm00.wav"  //
+wpnReticle = "gsnipa"  //"grifle"
+wpnCategory = "HAND"
+isAssault = 0
+isFlying = 0
+altName = "gsnips2_a"
+flashName = "gsnips2_c.flash"
+aiRange = 120  //rifle  199
+
+[CannonClass]
+shotDelay = 0.1
+shotVariance = 0.01
+
+[Flash]
+renderBase = "draw_geom"
+textureName = "sflash.tga"
+textureBlend = "one one modulate"
+startColor = "200 150 5 255"
+finishColor = "255 255 255 255"
+startRadius = 3.0
+finishRadius = 1
+animateTime = 0.1
+geomName = "g_sflash.fbx"

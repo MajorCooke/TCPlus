@@ -1,0 +1,67 @@
+/////////Coxxon - BZTC/////////
+//lemnos factory for unexpected connection mission
+//"a" - FOUNDATION with fire pit, and artillery will fire near
+[GameObjectClass]
+baseName = "olylemnosa"
+classLabel = "computer"  //yup, computer
+geometryName = "olylemncox0a.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "olylemncox0a.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+maxHealth = 0
+addHealth = 5
+maxAmmo = 0
+unitName = "Lemnos"
+heatSignature = 1.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+collisionRadius = 20.0  //super bldg
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+AllowSeismic = 0
+powerCost = 0
+
+///////// LIGHTS & EFFECTS /////////
+effectHard1 = "hp_emit_1"
+effectName1 = NULL  //"vfxbztcbldgs.lemnossmoke"  //under the bridge
+effectHard2 = "hp_emit_2"
+effectName2 = "vfxbztcbldgs.lemnossmoke"
+effectHard3 = "hp_emit_3"
+effectName3 = "vfxbztcbldgs.lemnossmoke"
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+tunnelCount = 3
+//vert L
+tunnel01X0 = 1
+tunnel01Z0 = 1
+tunnel01DX = 2
+tunnel01DZ = 14
+tunnel01Edge = "twtt"
+//vert R
+tunnel02X0 = 13
+tunnel02Z0 = 1
+tunnel02DX = 2
+tunnel02DZ = 14
+tunnel02Edge = "tttw"
+//horz F
+tunnel03X0 = 1
+tunnel03Z0 = 1
+tunnel03DX = 14
+tunnel03DZ = 2
+tunnel03Edge = "tttt"
+
+///////////////////////////////////////////////////////////////
+//[PoweredBuildingClass]
+//powerTap1 = "hp_special_1"  //so it can spawn below weapon for hole fallers
+//powerName = "gflar2oly"  //"gflaroly"
+//detectRange = 100
+
+[ComputerClass]
+harpoint1 = "hp_special_1"
+//harpoint2 = "hp_tap_1"
+NozzleOdf = "gflar2oly"  //special weapon to kill chasm fallers
+//beamname = "olylemnosb"  //the building part

@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "otagga_a"
+classLabel = "otagga_c"  //"missile"
+
+ammoCost = 15  //Coxxon  //10
+lifeSpan = 8.34 // 500.4m
+shotSpeed = 60.0
+
+damageValue(N) = 120  //Coxxon  //90  //60 // none
+damageValue(L) = 110  //Coxxon  //80  //50 // light
+damageValue(H) = 100  //Coxxon  //70  //40 // heavy
+
+damageValue(S) = 110  //Coxxon  //80  //50 // standard
+damageValue(D) = 100  //Coxxon  //70  //40 // deflection
+damageValue(A) = 120  //Coxxon  //90  //60 // absorption

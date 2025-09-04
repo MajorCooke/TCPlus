@@ -1,0 +1,12 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gmits1ars08"
+classLabel = "dispenser"
+wpnName = "MITS Mine"
+fireSound = "mmine01.wav"
+wpnReticle = "gmitsa"
+wpnCategory = "SPEC"
+
+[DispenserClass]
+shotDelay = 2.0
+objectClass = "gmits2ars08"

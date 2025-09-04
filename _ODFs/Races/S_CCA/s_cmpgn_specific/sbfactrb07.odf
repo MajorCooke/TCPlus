@@ -1,0 +1,36 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "sbfactrb05"
+classLabel = "sbfact"  //"factory"
+geometryName = "sbfactcox00.fbx"
+
+upgradeName = "svfactrb05"
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+
+provideName4 = "sbfactrb07"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_sbfact"
+
+/////////////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+
+/////////////////////////////////////////////////////////////////////
+[BuildingClass]
+
+/////////////////////////////////////////////////////////////////////
+[FactoryClass]
+
+buildItem1 = "svmbike"
+buildItem2 = "svmisl"
+buildItem3 = "svtank"
+buildItem4 = "svrckt"
+buildItem5 = "svartl"
+buildItem6 = "svwalk"
+buildItem7 = "svapc"
+buildItem8 = "svhtnk"  //cca sav
+buildItem9 = "svmine"
+buildItem10 = "svscout"  //special this mission

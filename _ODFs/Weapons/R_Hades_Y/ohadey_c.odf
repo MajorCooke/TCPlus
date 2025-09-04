@@ -1,0 +1,92 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ohadey_c"
+classLabel = "thermalmissile"
+
+shotGeometry = NULL  //"yohadecox00.fbx"
+shotSound = "crckt02.wav"
+
+renderName = "ohadey_c.render"
+
+xplGround = "xfafgnd"
+xplVehicle = "xfafmacar"  //"xfafmsl"
+xplBuilding = "xfafmsl"
+
+ammoCost = 35  //Coxxon  //50
+lifeSpan = 2.0  //200 Coxxon  //1.2 // 120m
+shotSpeed = 100.0
+
+damageValue(N) = 100  //Coxxon  //50 // none
+damageValue(L) = 90  //Coxxon  //45 // light
+damageValue(H) = 80  //Coxxon  //40 // heavy
+
+damageValue(S) = 90  //Coxxon  //40 // standard
+damageValue(D) = 80  //Coxxon  //35 // deflection
+damageValue(A) = 100  //Coxxon  //50 // absorption
+
+[MissileClass]
+omegaTurn = 1.0
+
+[ThermalMissileClass]
+coneAngle = 0.4
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 5
+renderName1 = "ohadey_c.smoke"
+renderName2 = "ohadey_c.flame"
+renderName3 = "ohadey_c.flare"
+renderName4 = "ohadey_c.core"
+renderName5 = "ohadey_c.light"
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "twin.tga"
+textureBlend = "one one modulate"
+startColor =   "50 150 255 100"
+finishColor = "0 70 70 0"
+startRadius = 1.0
+finishRadius = 0.1
+animateTime = 1.5
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "0.6 0.6 0.6"
+emitLife = 1.5
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "50 150 255 255"
+finishColor = "255 0 0 20"
+startRadius = 0.6
+finishRadius = 0.03
+animateTime = 0.2
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitLife = 0.2
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "55 150 255 255"
+startRadius = 1.0
+
+[Core]
+renderBase = "draw_sprite"
+textureName = "yosphrcox00_e.tga"  //color tga
+textureBlend = "srcalpha invsrcalpha modulatealpha"  //"one one modulate"
+startColor = "255 255 255 255"
+startRadius = 0.5
+
+[light]
+renderBase = "draw_light"
+startColor = "200 120 180 200"
+finishColor = "200 80 120 200"
+startRadius = 16.0  //ord light
+finishRadius = 16.0  //ord light
+attenuateConstant = 0.0  //ord light
+attenuateQuadratic = 1.0  //ord light
+attenuateLinear = 0.0  //ord light

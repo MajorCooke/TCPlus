@@ -1,0 +1,19 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gsatc0s"
+classLabel = "satchelpack"
+geometryName = "agsatccox00.fbx"
+geometryScale = 0.12
+wpnName = "Satchel 0s"
+wpnIcon = "wire_gsatca%d.tga"
+fireSound = NULL  //Coxxon  //"satcfire.wav"  //vocal "det in 30"
+wpnReticle = "gmorta"
+wpnLadder = "gmortar.L0"
+wpnCategory = "PACK"
+localAmmo = 1
+canSelect = false
+ignoreMissingInf = true  //Coxxon
+
+[SatchelPackClass]
+objectClass = "osatc0s"
+shotDelay = 0.1  //instant boom  //15.0

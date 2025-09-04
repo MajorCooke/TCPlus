@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gfplsy_a"
+classLabel = "cannon"
+altName = "gfplsy_c"
+ordName = "ofplsy_a"
+wpnName = "Plasma Sphere A"
+fireSound = "igtow03.wav"
+wpnReticle = "ggasma"
+wpnCategory = "CANN"
+isAssault = 1
+flashName = "gstbaa_c.smoke"  //stab all
+aiRange = 230  //Coxxon  //260
+
+[CannonClass]
+shotDelay = 2.0 // 1/2sec

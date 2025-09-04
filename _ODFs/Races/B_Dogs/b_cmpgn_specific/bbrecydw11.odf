@@ -1,0 +1,29 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "bbrecydw11"
+classLabel = "bbrecy"  //"recycler"  //ibrecy uses recycler while ibfact uses factory
+
+infoName = "bbrecy.inf"
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+
+provideName5 = "bbrecydw11"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_bbrecycox"
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+
+///////////////////////////////////////////////////////////////
+[FactoryClass]
+
+buildItem5 = "bvconsdw11"
+
+///////////////////////////////////////////////////////////////
+[RecyclerClass]

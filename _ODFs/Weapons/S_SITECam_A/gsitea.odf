@@ -1,0 +1,15 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = gsitea
+classLabel = "terrainexpose"
+ordName = NULL
+wpnName = "SITE Camera"
+fireSound = "gsite00.wav"
+wpnReticle = "gsitea.0"
+wpnPriority = 0
+wpnCategory = "SPEC"
+
+[SpecialItemClass]
+activeSound = 
+expireSound = "gsite02.wav"
+ammoCost = 40  //Coxxon  //10

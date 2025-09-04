@@ -1,0 +1,74 @@
+// ===================
+// MISSILE VEHICLE HIT
+// ===================
+
+[ExplosionClass]
+classLabel = "explosion"
+explSound = "xsv2.wav"
+
+damageRadius = 10.0
+damageValue(N) = 100 // none
+damageValue(L) = 50 // light
+damageValue(H) = 10 // heavy
+damageValue(S) = 50 // standard
+damageValue(D) = 100 // deflection
+damageValue(A) = 10 // absorbtion
+
+kickRadius = 10.0  //msl
+kickOmega = 2.0  //msl
+kickVeloc = 2.0  //msl
+
+particleTypes = 3
+particleClass1 = "xhornacar.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+particleInherit1 = "0.5 0.5 0.5"
+
+particleClass2 = "xhornacar.puff"
+particleCount2 = 20
+particleVeloc2 = "15.0 15.0 15.0"
+particlePosVar2 = "2.0 2.0 2.0"
+particleInherit2 = "0.5 0.5 0.5"
+
+particleClass3 = "xhornacar.light"
+particleCount3 = 1
+particleVeloc3 = "0.0 0.0 0.0"
+particleInherit3 = "0.5 0.5 0.5"
+
+[Core]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 255"
+finishColor = "255 0 0 0"
+startRadius = 1.0
+finishRadius = 10.0
+animateTime = 1.0
+
+[Puff]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 255"
+finishColor = "255 0 0 0"
+startRadius = 1.0
+finishRadius = 0.1
+animateTime = 1.0
+
+[Light]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_light"
+startColor = "255 255 63 765"
+finishColor = "255 0 0 0"
+startRadius = 20.0
+finishRadius = 20.0
+animateTime = 1.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 15.0
+lensFlare = 0

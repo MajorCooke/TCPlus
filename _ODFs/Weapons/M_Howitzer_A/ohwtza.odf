@@ -1,0 +1,71 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ohwtza"
+classLabel = "grenade"  //"mortar_c"
+
+shotGeometry = "aoartlcox00.fbx"
+shotSound = NULL  //"crckt02.wav"
+
+xplGround = "xhwtzgrnda"
+xplVehicle = "xhwtzcara"
+xplBuilding = "xhwtzcara"
+
+ammoCost = 5  //Coxxon  //10
+lifeSpan = 1e30
+shotSpeed = 113.0//*5.31=600m //86.0  //*5.31=456.66  //94.0//*5.31=500m  //Coxxon  //67.0 // 356 m
+//IsArcing = true  //true AI will aim higher.
+
+damageValue(N) = 135  // none
+damageValue(L) = 130 // light
+damageValue(H) = 125 // heavy
+
+damageValue(S) = 130 // standard
+damageValue(D) = 125 // deflection
+damageValue(A) = 135 // absorption
+
+renderName = "ohwtza.render"
+
+[Render]
+renderBase = "draw_multi"
+//renderCount = 3
+//renderName1 = "ohwtza.smoke"
+//renderName2 = "ohwtza.flare"
+//renderName3 = "ohwtza.sparkle"
+
+renderCount = 2
+renderName1 = "ohwtza.flare"
+renderName2 = "ohwtza.sparkle"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+startRadius = 2.0
+
+[Sparkle]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"  //"lighthalo.tga"
+textureblend = "srcalpha invsrcalpha modulatealpha"  //"one one modulate"
+startColor = "255 255 255 255"  //"150 200 255 255"  //
+finishColor = "30 70 100 20"  //"255 150 0 255"
+startRadius = 0.6
+finishRadius = 1.0  //0.1
+animateTime = 1.5
+emitDelay = 0.007  //0.005
+emitVariance = "1.0 1.0 1.0"  //"3.0 3.0 3.0"
+emitLife = 1.5
+
+[Smoke]  //pulled from Remodeled AT Stabber shell
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"  //"lighthalo.tga"  //
+textureBlend = "srcalpha invsrcalpha modulatealpha"  //"one one modulate"  //
+startColor = "100 100 130 200"
+finishColor = "50 70 90 20"
+startRadius = 0.3
+finishRadius = 0.7
+animateTime = 2.0
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 3.0"
+emitLife = 2.0

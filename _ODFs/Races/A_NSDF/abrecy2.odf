@@ -1,0 +1,41 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "abrecy2"
+classLabel = "abrecy"  //"recycler"
+
+upgradeName = "avrecy2"
+
+isSingle = 1  //depbld  Coxxon//limitClass1 ="abrecy2"
+//limitClass1Count = 1  //depbld Coxxon
+//limitClass1Text = "Only One Allowed"  //depbld Coxxon
+
+//limitClass2 = "avrecy2"
+//limitClass2Count = 1  //depbld Coxxon
+//limitClass2Text = "Only One Allowed"  //depbld Coxxon
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+provideName1 = "abrecy"
+provideName2 = "abrecycpu"
+provideName3 = "VIRTUAL_CLASS_RECYCLER"
+provideName4 = "VIRTUAL_CLASS_RECYCLERBUILDING"
+provideName5 = "abrecy2"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_abrecycox"
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+
+
+///////////////////////////////////////////////////////////////
+[FactoryClass]
+
+buildItem5 = "avcons2"
+
+///////////////////////////////////////////////////////////////
+[RecyclerClass]

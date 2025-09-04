@@ -1,0 +1,49 @@
+/////////Coxxon - BZTC/////////
+// ==============
+// MINE EXPLOSION
+// ==============
+
+[ExplosionClass]
+classLabel = "explosion"
+
+explSound = "xmv1.wav"
+damageRadius = 40.0  //mine  //50.0
+damageValue(N) = 1000  //Coxxon  //600
+damageValue(L) = 800  //Coxxon  //400
+damageValue(H) = 600  //Coxxon  //200
+
+damageValue(S) = 800  //Coxxon  //400
+damageValue(D) = 1000  //Coxxon  //600
+damageValue(A) = 600  //Coxxon  //200
+
+particleTypes = 2
+particleClass1 = "xproxa.core"
+particleCount1 = 1
+particleVeloc1 = "0.0 0.0 0.0"
+particleClass2 = "xproxa.puff"
+particleCount2 = 70
+particleVeloc2 = "90.0 90.0 90.0"
+
+[Core]
+simulateBase = "sim_null"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 255"
+finishColor = "255 0 0 0"
+startRadius = 5.0
+finishRadius = 50.0
+animateTime = 1.0
+
+[Puff]
+simulateBase = "sim_smoke"
+lifeTime = 1.0
+renderBase = "draw_twirl"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 255"
+finishColor = "255 0 0 0"
+startRadius = 10.0
+finishRadius = 1.0
+animateTime = 1.0

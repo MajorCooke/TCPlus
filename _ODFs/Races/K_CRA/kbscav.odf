@@ -1,0 +1,138 @@
+/////////Coxxon - BZTC/////////
+////BASE extractor////
+[GameObjectClass]
+baseName = "kbscav"
+classLabel = "extractor"
+geometryName = "kbscavcox00.fbx"
+animCount = 2
+animName1 = "deploy"
+animFile1 = "kbscavcox01.fbx"
+animName2 = "loop"
+animFile2 = "kbscavcox00.fbx"
+scrapCost = 20
+scrapValue = 20
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Extractor"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 10.0  //bztc bldg
+isAssault = 1  //bztc
+armorClass = H
+ownsTerrain = 1  //1 if no baseplate faction  //scav
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+upgradeName = "kbscup"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "xpl_crash_kbscavcox"
+
+//chunkEffect1 = "kvscavcoxchk06.fbx"  
+//chunkEffect2 = "kvscavcoxchk07.fbx"  
+//chunkEffect3 = "kvscavcoxchk08.fbx"  
+//chunkEffect4 = "kvscavcoxchk09.fbx"  
+//chunkEffect5 = "kvscavcoxchk05.fbx"  
+//HasSeparateChunks = true 
+//numChunks = 5
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "kbscav"
+provideName2 = "VIRTUAL_CLASS_EXTRACTOR"
+provideName3 = "VIRTUAL_CLASS_STORAGE"
+provideName4 = "extract"
+
+///////// LIGHTS AND EFFECTS /////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltwyl" 
+
+effectHard1 = "hp_emit_0"
+effectName1 = "kbscav.steam"
+effectHard2 = "hp_emit_1"
+effectName2 = "vfxbztclight.yellowblink"
+effectHard3 = "hp_emit_2"
+effectName3 = "vfxbztclight.blueblink"
+effectHard4 = "hp_emit_3"
+effectName4 = "vfxbztcbldgs.scavsmoke"
+effectHard5 = "hp_dust_0"
+effectName5 = "vfxbztcdusts.dustpuff"
+effectHard6 = "hp_dust_1"
+effectName6 = "vfxbztcdusts.dusttrail2"
+effectHard7 = "hp_dust_2"
+effectName7 = "vfxbztcdusts.dusttrail2"
+
+//smoke1
+effectHard8 = "hp_smoke_1"
+effectName8 = "dmgbldg2"
+effectMinHealth8 = 0.4
+effectMaxHealth8 = 0.6
+effectHard9 = "hp_smoke_1"
+effectName9 = "dmgbldg3"
+effectMinHealth9 = 0.2
+effectMaxHealth9 = 0.4
+effectHard10 = "hp_smoke_1"
+effectName10 = "dmgbldg4"
+effectMinHealth10 = 0.0
+effectMaxHealth10 = 0.2
+//smoke2
+effectHard11 = "hp_smoke_2"
+effectName11 = "dmgbldg2"
+effectMinHealth11 = 0.4
+effectMaxHealth11 = 0.6
+effectHard12 = "hp_smoke_2"
+effectName12 = "dmgbldg3"
+effectMinHealth12 = 0.2
+effectMaxHealth12 = 0.4
+effectHard13 = "hp_smoke_2"
+effectName13 = "dmgbldg4"
+effectMinHealth13 = 0.0
+effectMaxHealth13 = 0.2
+//smoke3
+effectHard14 = "hp_smoke_3"
+effectName14 = "dmgbldg2"
+effectMinHealth14 = 0.4
+effectMaxHealth14 = 0.6
+effectHard15 = "hp_smoke_3"
+effectName15 = "dmgbldg3"
+effectMinHealth15 = 0.2
+effectMaxHealth15 = 0.4
+effectHard16 = "hp_smoke_3"
+effectName16 = "dmgbldg4"
+effectMinHealth16 = 0.0
+effectMaxHealth16 = 0.2
+
+[steam]
+renderBase = "draw_twirl_trail"
+textureName =  "flame.tga"
+textureBlend = "one one modulate"
+startColor = "250 150 50 150"  //300"  //"153 153 200 150"
+finishColor = "150 50 50 20"  //"76 76 76 0"
+startRadius = 5.5
+finishRadius = 8.0
+animateTime = 1.0
+emitDelay = 0.1
+emitVelocity = "0.5 10.0 0.5"
+emitVariance = "10.0 1.0 10.0"
+emitLife = 1.0
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "iext01.wav"
+bldEdge = "wwww"  //scav
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = false  //for deployed scavs  //true
+UseExplosion = true  //bldg aid
+
+///////////////////////////////////////////////////////////////
+[ExtractorClass]
+initDelay = 1.0  //abscav 12.0
+scrapDelay = 1.0  //scav
+scrapHold = 20
+detectRange = 100

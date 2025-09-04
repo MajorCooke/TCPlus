@@ -1,0 +1,27 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+classLabel = "yvrecy"
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+provideName1 = "yvrecy"
+provideName2 = "yvrecycpu"
+provideName3 = "yvrecy_mb"
+provideName4 = "VIRTUAL_CLASS_RECYCLER"
+provideName5 = "VIRTUAL_CLASS_RECYCLERVEHICLE"
+
+////////////////////////////////////
+
+[CraftClass]
+
+/////////CRASH EXPLODE INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_yvrecycox"
+
+[HoverCraftClass]
+
+[DeployableClass]
+
+[DeployBuildingHClass]
+deployName = "ybrecy_mb"
+
+[RecyclerVehicleHClass]

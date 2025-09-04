@@ -1,0 +1,171 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "mbtcen"
+classLabel = "techcenter"
+geometryName = "mbtcencox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "mbtcencox00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+scrapCost = 80
+scrapValue = 30
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Field Lab"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 10.0  //bztc bldg
+isAssault = 1  //bztc
+isSingle = 1
+armorClass = H
+ownsTerrain = 1  //1 if no baseplate faction
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+
+buildRequire = "F"
+buildSupport = "A"
+powerCost = 0
+
+/////// REQUIREMENTS ///////////////
+//requireCount = 2
+//requireName1 = "mbarmo"
+//requireText1 = "Build Armory"
+//requireName2 = "mbsbay"
+//requireText2 = "Build Supply Hangar"
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "mbtcen"
+provideName2 = "VIRTUAL_CLASS_TECHCENTER"
+provideName3 = "base"
+provideName4 = "xbtcen"
+
+///////// LIGHTS & EFFECTS /////////
+LightsOffEffectsMask = 65535
+lightHard1 = "hp_light_1"
+lightName1 = "omnired8"
+lightHard2 = "hp_light_2"
+lightName2 = "omnired8"
+lightHard3 = "hp_light_3"
+lightName3 = "omnired8"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "mbtcen.brainpower"
+effectFlags1 = "447" 447 on  479 off
+effectHard2 = "hp_emit_2"
+effectName2 = "mbtcen.brainpower"
+effectFlags2 = "447" 447 on  479 off
+effectHard3 = "hp_emit_3"
+effectName3 = "mbtcen.brainpower"
+effectFlags3 = "447" 447 on  479 off
+effectHard4 = "hp_emit_4"
+effectName4 = "mbtcen.brainpower"
+effectFlags4 = "447" 447 on  479 off
+//smoke1
+effectHard5 = "hp_smoke_1"
+effectName5 = "dmgbldg1"
+effectMinHealth5 = 0.6
+effectMaxHealth5 = 0.8
+effectHard6 = "hp_smoke_1"
+effectName6 = "dmgbldg2"
+effectMinHealth6 = 0.4
+effectMaxHealth6 = 0.6
+effectHard7 = "hp_smoke_1"
+effectName7 = "dmgbldg3"
+effectMinHealth7 = 0.2
+effectMaxHealth7 = 0.4
+effectHard8 = "hp_smoke_1"
+effectName8 = "dmgbldg4"
+effectMinHealth8 = 0.0
+effectMaxHealth8 = 0.2
+//smoke2
+effectHard9 = "hp_smoke_2"
+effectName9 = "dmgbldg1"
+effectMinHealth9 = 0.6
+effectMaxHealth9 = 0.8
+effectHard10 = "hp_smoke_2"
+effectName10 = "dmgbldg2"
+effectMinHealth10 = 0.4
+effectMaxHealth10 = 0.6
+effectHard11 = "hp_smoke_2"
+effectName11 = "dmgbldg3"
+effectMinHealth11 = 0.2
+effectMaxHealth11 = 0.4
+effectHard12 = "hp_smoke_2"
+effectName12 = "dmgbldg4"
+effectMinHealth12 = 0.0
+effectMaxHealth12 = 0.2
+//smoke3
+effectHard13 = "hp_smoke_3"
+effectName13 = "dmgbldg1"
+effectMinHealth13 = 0.6
+effectMaxHealth13 = 0.8
+effectHard14 = "hp_smoke_3"
+effectName14 = "dmgbldg2"
+effectMinHealth14 = 0.4
+effectMaxHealth14 = 0.6
+effectHard15 = "hp_smoke_3"
+effectName15 = "dmgbldg3"
+effectMinHealth15 = 0.2
+effectMaxHealth15 = 0.4
+effectHard16 = "hp_smoke_3"
+effectName16 = "dmgbldg4"
+effectMinHealth16 = 0.0
+effectMaxHealth16 = 0.2
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_mbtcencox"
+chunkEffect1 = "mbtcencoxchk01.fbx"  
+chunkEffect2 = "mbtcencoxchk02.fbx"  
+chunkEffect3 = "mbtcencoxchk03.fbx"  
+chunkEffect4 = "mbtcencoxchk04.fbx"  
+chunkEffect5 = "mbtcencoxchk05.fbx"  
+HasSeparateChunks = true 
+numChunks = 5
+numChunks1 = 1
+numChunks2 = 1
+numChunks3 = 1
+numChunks4 = 1
+numChunks5 = 1
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+[brainpower]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.1
+emitDelayVar = 0.03
+emitVelocity = "0.0 0.0 5.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = 0.3
+textureName = "twin.tga"  //"smoke.tga"
+textureBlend = "one one modulate"  //"srcalpha invsrcalpha modulatealpha"
+startColor = "200 100 100 30"
+finishColor = "200 180 180 10"
+startRadius = 0.5
+finishRadius = 2.0
+animateTime = 0.3
+rotationRate = 0.25
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "iabomb01.wav"  //"pow_done.wav"  //
+//bldEdge = "wwww"  //bldg
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 100
+
+//powerTap1 = "HP_TAP_1"
+//powerName = "mbnstg"
+//detectRange = 100
+//PoweredByTaps = false  //false - trad power and nonpower addon
+//AutoBuildTap1 = true  //true build tap on init creation
+//DestroyTapsWithParent = true  //true default

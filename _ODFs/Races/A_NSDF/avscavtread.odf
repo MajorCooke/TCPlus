@@ -1,0 +1,205 @@
+[GameObjectClass]
+baseName = "avscav"
+classLabel = "scavenger"
+geometryName = "avscavcox00.fbx"
+cockpitName = "avscavcox_cockpit.fbx"
+animCount = 1
+animName1 = "suckit"
+animFile1 = "avscavcox01.fbx"
+scrapValue = 10
+scrapCost = 20
+buildTime = 5.0  //Coxxon  //10.0
+maxHealth = 3000
+maxAmmo = 0
+unitName = "Scavenger scv"  //scav
+//unitIcon = "icon_avscav.tga"
+//unitStatus = "wire_avscav.tga"
+//infoName = "avscav.inf"
+aiName = "ScavProcess"
+aiName2 = "ScavProcess"
+heatSignature = 5.0
+imageSignature = 3.0
+radarSignature = 2.0
+isAssault = 1  //bztc
+armorClass = H
+boxCollide = 1
+canSnipe = 1  //scav
+UseVehicleCrashOnDeath = true
+explosionName = "xpl_crash_avscavcox"
+//collisionRadius = 1.0  //bzcc vehc
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 2
+provideName1 = "ivscav"
+provideName2 = "VIRTUAL_CLASS_SCAVENGER"
+
+/////////LIGHTS AND EFFECTS//////////////////
+lightHard1 = "hp_light_1"
+lightName1 = "hltwyl" 
+lightHard2 = "hp_light_2"
+lightName2 = "hltwyl" 
+LightsOnlyWhenPiloted = true
+
+//don't set an altitude for tracked vehicles
+effectHard1 = "hp_dust_1"
+effectName1 = "vfxbztcdusts.dusttrail2"
+effectMinVelocity1 = 5.0
+effectMaxVelocity1 = 500.0
+effectHard2 = "hp_dust_2"
+effectName2 = "vfxbztcdusts.dusttrail2"
+effectMinVelocity2 = 5.0
+effectMaxVelocity2 = 500.0
+effectHard3 = "hp_dust_0" 
+effectName3 = "vfxbztcdusts.dustpuff"
+effectMinVelocity3 = 0.0
+effectMaxVelocity3 = 10.0
+effectHard4 = "hp_emit_1"
+effectName4 = "vfxbztclight.bluestay"
+effectHard5 = "hp_emit_2"
+effectName5 = "vfxbztcbldgs.scavsmoke"
+effectHard6 = "hp_emit_3"
+effectName6 = "vfxbztcthrst.sprteggblue"  //jetblue"  //thrusttinyblu"  //thrustbluesml"
+effectMinVelocity6 = 5.0
+effectMaxVelocity6 = 500.0
+effectHard7 = "hp_emit_4"
+effectName7 = "vfxbztcthrst.sprteggblue"  //jetblue"  //thrusttinyblu"  //thrustbluesml"
+effectMinVelocity7 = 5.0
+effectMaxVelocity7 = 500.0
+effectHard8 = "hp_emit_5"
+effectName8 = "vfxbztcthrst.thrustyellow"
+effectMinVelocity8 = 5.0
+effectMaxVelocity8 = 500.0
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "hp_smoke_1"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "hp_smoke_1"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "hp_smoke_1"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "hp_smoke_1"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+//////////////////////////////////////////////////////////////////////////
+[CraftClass]
+rangeScan = 200.0
+periodScan = 0.0
+velocJam = 0.0
+braccelFactor = 0.1
+velFactor =	0.3
+strafeFactor = 0.1
+steerFactor = 1.0
+omegaFactor = 1.0
+TeamTransferrable = true
+//attackTaskUsesGroups = false  //Coxxon
+GoToTaskHasLeader = false  //Coxxon
+//NavIsDropped = true //drop behind - bugged, immed removes nav/camr in MP/MPI
+//NavDropSound = "gprox00.wav"  //sound if navisdropped true
+NavConfig = "apcamra" //specify nav beacon/camera type
+AllowedControlsWhenTugged = 31  //7dflt Sumup: 1hop 2bail 4wcycle 8steer 16weapuse
+damageEffect1 = "dmgvhcl1"  //less stock dmg effect
+damageEffect2 = "dmgvhcl1"  //but still some sparks
+damageEffect3 = "dmgvhcl1"  //also lower visibility
+damageEffect4 = "dmgvhcl1"  //on cloaked units
+
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_avscavcox"
+
+//xplchunk = "xpl_crash_avscavcox"
+//chunkEffect1 = "avscavcoxchk01.fbx"  
+//chunkEffect2 = "avscavcoxchk02.fbx"
+//chunkEffect3 = "avscavcoxchk03.fbx"
+//chunkEffect4 = "avscavcoxchk04.fbx"
+//chunkEffect5 = "avscavcoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 7
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 2
+//numChunks5 = 2
+
+/////////MESSAGES/////////
+followMeMsg = "avscav6.wav"  //following
+followMsg = "avscav6.wav"  //following
+goMsg = "avscavj.wav"  //yes sir
+goObjectMsg = "avscavk.wav"  //getting scrap
+holdMsg = "avscav7.wav"  //standing ground
+otherMsg = "avscavd.wav"  //gotcha
+recycleMsg = "avscavc.wav"  //recycling
+repairMsg = "avscava.wav"  //getting repair
+rescueMsg = "avscavb.wav"  //on my way
+selectDropoffMsg = "avscavm.wav"  //dropping scrap
+selectFollowMsg = "avscav6.wav"  //following
+selectGoMsg = "avscavn.wav"  //in transit
+selectOtherMsg = "avscav0.wav"  //scavenger here
+selectPickupMsg = "avscavk.wav"  //getting scrap
+selectWaitMsg = "avscav0.wav"  //scavenger here
+stopMsg = "avscav7.wav"  //standing ground
+user1Msg = "avscavd.wav"  //gotcha
+user2Msg = "avscav0.wav"  //scavenger here
+selectUser2Msg = "avscavf.wav"  //cant do
+//"avscavl.wav"  //loading scrap
+//"avscavh.wav"  //no scrap on radar
+//"avscavi.wav"  //no scrap storage
+//diedMsg = "abetty4.wav" 
+BailSound = "bail.wav"
+CollideTerrainSound = "vnvcs1.wav"
+CollideBldgSound = "vnvcs3.wav"
+CollideOtherSound = "vvcre2.wav"  //"vvcbb3.wav"
+
+//////////////////////////////////////////////////////////////////////////
+[TrackedVehicleClass]
+velocForward = 15.0
+velocReverse = 10.0
+accelThrust = 5.0
+omegaSpin = 1.0
+omegaTurn = 0.5
+alphaSteer = 2.0
+TREAD_STATIC_FRICTION = 1.5
+
+engineSound	= "avscave3.wav"
+treadSound = "avscave6.wav"
+
+//soundThrust = "avscave3.wav"
+//soundTurbo = "avscave6.wav"
+//soundJump = "avscave6.wav"
+
+//////////////////////////////////////////////////////////////////////////
+[TrackedDeployableClass]
+timeDeploy = 5.0
+timeUndeploy = 5.0
+soundDeploy = "avturre4.wav"
+soundUndeploy = "avturre5.wav"
+
+//////////////////////////////////////////////////////////////////////////
+[ScavengerClass]
+animPickup = "suckit"  //animName# when picking up scrap
+animPickupCycle = 1 // 0 = loop, 1 = 2way
+soundPickup = "suck.wav"
+scrapHold = 20
+deployClass = "abscav"
+deployOffset = 6.0  //scav
+lockScrap = true  //true scav don't go for same piece
+//AddScrapHoldToTotal = false // true: show up on scrap bar
+//ScrapDelay = 0.0 // like recycler/extractor 
+//InitScrapDelay = 0.0  // like recycler/extractor
+//IsFearless = false // if false, will run to nearest friendly building when attacked.
+//doDrop = false  //false for instant scrap receive
+//DropDist = 8.0
+//doDropRecycler = true // If true, this scav will consider dropping scrap off at team's recycler
+//doDropExtractor = true // If true, this scav will consider dropping scrap off at extractor
+//doDropSilo = true  // If true, this scav will consider dropping scrap off at silo
+//DeathScrapDropRatio = 1.0 // 0 = drop no current scrap on death, 1.0 = drop 100% scrap
+//enablePoolGoTo = false // Reticule line to pool for deploying if true. Defaults to false if deployClass isn't valid and this odf entry isn't present
+//CanScavenge = true // false: can't scavenge, only deploy

@@ -1,0 +1,14 @@
+/////////Coxxon - BZTC/////////
+//SPECIAL FOR SS13
+[GameObjectClass]
+baseName = "yvmbike13"
+classLabel = "yvmbike"
+unitName = "UFO beta"
+infoName = "unknown13.inf"  //SPECIAL
+
+//////////////////////////////////////////////////////////////////////////
+[CraftClass]
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_yvmbikecox"
+
+CanAIEject = 0

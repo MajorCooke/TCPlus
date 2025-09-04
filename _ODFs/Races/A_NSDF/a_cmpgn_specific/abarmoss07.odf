@@ -1,0 +1,32 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "abarmoss07"
+classLabel = "abarmo"
+
+upgradeName = "avarmoss07"
+
+isSingle = 1  //depbld  Coxxon//limitClass1 ="abarmoss07"  //depbld Coxxon
+//limitClass1Count = 1  //depbld Coxxon
+//limitClass1Text = "Only One Allowed"  //depbld Coxxon
+
+//limitClass2 = "avarmoss07"  //depbld Coxxon
+//limitClass2Count = 1  //depbld Coxxon
+//limitClass2Text = "Only One Allowed"  //depbld Coxxon
+
+/////// PROVIDES ///////////////////
+provideCount = 5
+
+provideName5 = "abarmoss07"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_abarmocox"
+
+//////////////////////////////////////////////////////////////////////////
+[BuildingClass]
+
+///////////////////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+
+///////////////////////////////////////////////////////////////////////////
+[ArmoryClass]

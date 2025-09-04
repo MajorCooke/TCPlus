@@ -1,0 +1,5 @@
+MAGNETIC CURTAIN mine
+When deployed, creates a temporary dome shield that repels all enemy vehicles and most enemy projectiles.
+20 sec lifespan
+40 sec cooloff
+C 20m  Amo H  FRate L  Damg -

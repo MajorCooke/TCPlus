@@ -1,0 +1,20 @@
+//BZTC - "SOUNDCUBE" THAT IS EASIER TO SEE IN THE EDITOR
+[GameObjectClass]
+classLabel = "I76Sign"
+geometryName = "sfxcubejungle2.fbx"
+unitName = "SFX jungle2"
+scrapCost = 1
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+canCollide = 0
+canDetect = 0
+canInteract = 0
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+collisionRadius = 0.0
+
+[BuildingClass]
+SoundAmbient = "mire.wav"
+SoundAmbientDist = 0.7

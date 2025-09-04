@@ -1,0 +1,86 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "omdmga"
+classLabel = "bouncebomb"
+
+shotGeometry = "aomortcox00.fbx"  //"ioartl00.fbx"
+shotSound = "crckt02.wav"
+
+xplGround = "xgasxpl"
+xplVehicle = "xgasxpl"
+xplBuilding = "xgasxpl"
+xplExpire = "xgasxpl"
+
+renderName = "omdmga.render"
+
+ammoCost = 60
+lifeSpan = 300
+shotSpeed = 60.0  //245m rng from grizzly
+
+damageValue(N) = 600
+damageValue(L) = 500
+damageValue(H) = 400
+
+damageValue(S) = 500
+damageValue(D) = 400
+damageValue(A) = 600
+
+[BounceBombClass]
+bounceRatio = 0.5
+bounceSound = "mdmort03.wav"
+bounceBuilding = 1
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "ofafma_c.flare"
+renderName2 = "ofafma_c.smoke"
+renderName3 = "ofafma_c.flame"
+renderName4 = "ofafma_c.light"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.5
+finishRadius = 0.5
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "164 164 164 80"
+finishColor = "180 180 180 0"
+startRadius = 0.5
+finishRadius = 2.0
+animateTime = 3.0
+emitDelay = 0.01
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "1.0 1.0 1.0"
+emitLife = 3.0
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 255"
+finishColor = "255 100 0 30"
+startRadius = 0.3
+finishRadius = 0.03
+animateTime = 0.1
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitLife = 0.1
+
+[light]
+renderBase = "draw_light"
+startColor = "180 120 80 200"
+finishColor = "180 80 20 200"
+startRadius = 16.0  //ord light
+finishRadius = 16.0  //ord light
+attenuateConstant = 0.0  //ord light
+attenuateQuadratic = 1.0  //ord light
+attenuateLinear = 0.0  //ord light

@@ -1,0 +1,8 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "bvarmopl"
+classLabel = "bvarmo"
+
+/////////////////////////////////////////////////////////
+[DeployBuildingHClass]
+deployName = "bbarmopl"

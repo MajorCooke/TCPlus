@@ -1,0 +1,53 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "bvscoutdw03"
+classLabel = "bvscout"  //"wingman"
+
+unitName = "Razor sct"
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName4 = "bvscoutdw03"
+
+/////// weapons ////////////////////
+weaponMask = 11111  //00011
+weaponHard1 = "HP_GUN_1"
+weaponName1 = "gminia_c"
+weaponAssault1 = 0
+recoilName1 = "recoil1"
+weaponHard2 = "HP_GUN_2"
+weaponName2 = "gminia_c"
+weaponAssault2 = 0
+recoilName2 = "recoil2"
+weaponHard3 = "HP_ROCKET_1"
+weaponName3 = "gshdwa_c"
+weaponAssault3 = 0
+recoilName3 = "recoil3"
+weaponHard4 = "HP_ROCKET_2"
+weaponName4 = "gshdwa_c"
+weaponAssault4 = 0
+recoilName4 = "recoil4"
+weaponHard5 = "HP_SPECIAL_1"
+weaponName5 = ""
+weaponAssault5 = 0
+
+/////////////////////////////////////////////////////////
+[CraftClass]
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_bvscoutcox"
+
+//chunkEffect1 = "bvscoutcoxchk01.fbx"  
+//chunkEffect2 = "bvscoutcoxchk02.fbx"
+//chunkEffect3 = "bvscoutcoxchk03.fbx"
+//chunkEffect4 = "bvscoutcoxchk04.fbx"
+//chunkEffect5 = "bvscoutcoxchk05.fbx"
+//HasSeparateChunks = true
+//numChunks = 5
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 1
+//numChunks4 = 1
+//numChunks5 = 1
+
+//////////////////////////////////////////////////////////
+[HoverCraftClass]

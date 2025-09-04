@@ -1,0 +1,22 @@
+[GameObjectClass]
+baseName = "kspiloprop"
+classLabel = "i76building"
+geometryName = "kspiloprop00.fbx"
+scrapCost = 8
+scrapValue = 3
+maxHealth = 5000
+maxAmmo = 0
+unitName = "tech screen prop"
+unitInfo = "kspilo.inf"
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+canDetect = 0
+canInteract = 0
+canSnipe = 0
+isAssault = 0
+ownsTerrain = 1
+canCollide = 1
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+
+[BuildingClass]

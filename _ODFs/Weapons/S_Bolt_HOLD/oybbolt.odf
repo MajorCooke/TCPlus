@@ -1,0 +1,36 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "obltma"
+classLabel =  "bullet" //"beam"
+
+shotGeometry = NULL
+xplGround = "xboltgnd"
+xplVehicle = "xlgtcar"
+xplBuilding = "xlgtbld"
+
+renderName = "obltma.render"
+
+ammoCost = 0
+lifeSpan = 210e-6 // 210m
+shotSpeed = 1e6
+
+damageValue(N) = 200 // none
+damageValue(L) = 100 // light
+damageValue(H) = 50 // heavy
+
+damageValue(S) = 100 // standard
+damageValue(D) = 200 // deflection
+damageValue(A) = 50 // absorption
+
+[Render]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 255 255"
+finishColor = "150 0 200 50"  //Coxxon  //"0 0 255 0"
+startRadius = 1.0  //Coxxon  //0.3
+finishRadius = 0.1  //Coxxon  //0.01
+segmentLength = 4.0  //Coxxon  //7.0 
+segmentVariance = "2.0 2.0 0.5"
+animateTime = 0.8 // 0.2
+textureRate = 0.01

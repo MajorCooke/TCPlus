@@ -1,0 +1,23 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "ohmrga_a"
+classLabel = "ohmrga_c"  //"thermalmissile"
+
+ammoCost = 15.0  //Coxxon  //3.0  //2.0
+lifeSpan = 1.0  //Coxxon 0.5 // 150m
+shotSpeed = 150.0  //Coxxon  //300.0
+
+//1.0  150.0  150m  //Coxxon
+
+//lil less since homer and energy
+damageValue(N) = 40  //45  //Coxxon  //15 // none
+damageValue(L) = 32  //36  //Coxxon  //12 // light
+damageValue(H) = 22  //24  //Coxxon  //8 // heavy
+
+damageValue(S) = 32  //45  //Coxxon  //12
+damageValue(D) = 40  //45  //Coxxon  //15
+damageValue(A) = 22  //24  //Coxxon  //8
+
+[MissileClass]
+
+[ThermalMissileClass]

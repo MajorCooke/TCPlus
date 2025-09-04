@@ -1,0 +1,12 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gswala"
+classLabel = "dispenser"
+wpnName = "Shield Wall"
+fireSound = "gredf00.wav"  //"mmine01.wav"
+wpnReticle = "gnavba"  //"gmcura"
+wpnCategory = "SPEC"
+
+[DispenserClass]
+shotDelay = 10.0  //20.0
+objectClass = "oswala"

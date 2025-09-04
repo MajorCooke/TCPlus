@@ -1,0 +1,16 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "poolachl"
+classLabel = "poolbztc"  //"deposit"
+geometryName = "poolachlcox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "poolachlcox00.fbx"
+RunAnimation = "loop"
+RunAnimIsLooped = true
+
+////////////////////////////////////////////////////////////////////////
+[BuildingClass]
+
+////////////////////////////////////////////////////////////////////////
+[DepositClass]

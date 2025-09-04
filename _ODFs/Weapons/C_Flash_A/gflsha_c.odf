@@ -1,0 +1,29 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gflsha_c"
+classLabel = "machinegun"
+altName = "gflsha_a"
+ordName = "oflsha_c"
+wpnName = "Flash Beam C"
+fireSound = "flash01.wav"
+wpnReticle = "gflsha"
+wpnCategory = "CANN"
+isAssault = 0
+aiRange = 100
+flashName = "gflsha_c.flash"
+
+[CannonClass]
+shotDelay = 0.03  //Coxxon  //0.1
+
+[Flash]
+simulateBase = "sim_null"
+lifeTime = 0.2
+renderBase = "draw_light"
+startColor = "255 255 0 300"
+finishColor = "255 0 0 300"
+startRadius = 10.0
+finishRadius = 10.0
+animateTime = 0.2
+attenuateConstant = 0.0
+attenuateLinear = 1.0
+attenuateQuadratic = 0.0

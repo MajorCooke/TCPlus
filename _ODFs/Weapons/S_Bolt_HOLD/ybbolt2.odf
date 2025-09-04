@@ -1,0 +1,31 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "ybbolt2"
+classLabel = "cannon" // "machinegun"
+ordName = "oybbolt"
+wpnName = "Bolt Blast"
+fireSound = "bltm01.wav"
+wpnReticle = "gbolta" /. "octagon"
+wpnCategory = "CANN"
+flashName = "gblt2a.flash"
+aiRange = 100
+
+[CannonClass]
+shotDelay = 1.0  //Coxxon  //2.0
+salvoCount = 3.0  //Coxxon  //1.0
+salvoDelay = 0.07
+shotVariance = 0.0
+
+[Flash]
+simulateBase = "sim_null"
+lifeTime = 5.0
+renderBase = "draw_sphere"
+textureName = "vsmoke.tga"
+textureBlend = "one one modulate"
+startColor = "0 255 255 255"
+finishColor = "0 0 255 0"
+startRadius = 0.5
+finishRadius = 50.0
+animateTime = 5.0
+latitudeBands = 8
+longitudeSegments = 16

@@ -1,0 +1,99 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "mbpgen1"
+classLabel = "powerplant"
+geometryName = "mbpgencox01.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "mbpgencox01.fbx"
+scrapCost = 30
+scrapValue = 5
+maxHealth = 3000
+maxAmmo = 0
+unitName = "Ltng Power"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 10.0  //bztc bldg
+isAssault = 1  //bztc
+armorClass = H
+ownsTerrain = 1  //1 if no baseplate faction
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+
+buildRequire = "F"
+buildSupport = "A"
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 4
+provideName1 = "mbpgen"
+provideName2 = "VIRTUAL_CLASS_POWERPLANT"
+provideName3 = "mbpgen1"
+provideName4 = "xbpgen"
+
+/////// LIGHTS & EFFECTS /////
+effectHard1 = "hp_emit_1"
+effectName1 = "sbpgen1.pad"
+effectHard2 = "hp_emit_2"
+effectName2 = "sbpgen1.pad"
+effectHard3 = "hp_emit_3"
+effectName3 = "sbpgen1.pad"
+effectHard4 = "hp_emit_4"
+effectName4 = "sbpgen1.pad"
+effectHard5 = "hp_emit_5"
+effectName5 = "sbpgen1.rod1"
+effectHard6 = "hp_emit_0"
+effectName6 = "sbpgen1.top"
+//smoke1
+effectHard9 = "hp_smoke_1"
+effectName9 = "dmgbldg1"
+effectMinHealth9 = 0.6
+effectMaxHealth9 = 0.8
+effectHard10 = "hp_smoke_1"
+effectName10 = "dmgbldg2"
+effectMinHealth10 = 0.4
+effectMaxHealth10 = 0.6
+effectHard11 = "hp_smoke_1"
+effectName11 = "dmgbldg3"
+effectMinHealth11 = 0.2
+effectMaxHealth11 = 0.4
+effectHard12 = "hp_smoke_1"
+effectName12 = "dmgbldg4"
+effectMinHealth12 = 0.0
+effectMaxHealth12 = 0.2
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_mbpgencox01"
+
+chunkEffect1 = "sbpgencox01chk01.fbx"  
+chunkEffect2 = "sbpgencox01chk02.fbx"  
+chunkEffect3 = "sbpgencox01chk03.fbx"  
+chunkEffect4 = "sbpgencox01chk04.fbx"  
+chunkEffect5 = "sbpgencox01chk05.fbx"  
+HasSeparateChunks = true 
+numChunks = 9
+numChunks1 = 1
+numChunks2 = 2
+numChunks3 = 1
+numChunks4 = 1
+numChunks5 = 4
+//UseChunks = true  //bldg crash
+//UseExplosion = true  //bldg crash
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "ablplane0bztc.wav"  //low volume  //lightening
+SoundAmbientDist = 0.4  //pgen
+//bldEdge = "wwww"  //bldg
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+///////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 50

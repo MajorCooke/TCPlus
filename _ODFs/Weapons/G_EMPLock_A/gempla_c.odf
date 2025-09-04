@@ -1,0 +1,15 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gempla_c"
+classLabel = "cannon"
+altName = "gempla_a"
+ordName = "oempla_c"
+wpnName = "EMP Lockdown"
+fireSound = "glock01.wav"
+wpnReticle = "glocka"
+wpnCategory = "GUN"
+isAssault = 0
+aiRange = 100
+
+[CannonClass]
+shotDelay =  2.0

@@ -1,0 +1,86 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "orktpk"
+classLabel = "thermalmissile"
+
+shotGeometry = "aoslvocox00.fbx"  //"aohorncox00.fbx"
+shotSound = "crckt02.wav"
+
+renderName = "orktpk.render"
+
+xplGround = "xheatgnd"
+xplVehicle = "xheatcar"
+xplBuilding = "xheatbld"
+
+ammoCost = 1
+lifeSpan = 4.0  //200m  //Coxxon 2.5 // 125m
+shotSpeed = 50.0
+
+damageValue(N) = 3500  //4525 // none
+damageValue(L) = 2500  //3525 // light
+damageValue(H) = 1000  //2525 // heavy
+
+damageValue(S) = 2500  //3525 // standard
+damageValue(D) = 800  //2525 // deflection
+damageValue(A) = 3500  //4525 // absorption
+
+[MissileClass]
+omegaTurn = 2.5  //Coxxon suck it  //1.0
+
+[ThermalMissileClass]
+coneAngle = 0.2
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "orktpk.flare"
+renderName2 = "orktpk.smoke"
+renderName3 = "orktpk.flame"
+renderName4 = "orktpk.light"
+
+[Flare]
+renderBase = "draw_sprite"
+textureName = "lightflare.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 255 255 255"
+startRadius = 0.1  //1.0 Coxxon
+finishRadius = 0.05  //0.5 Coxxon
+
+[Smoke]
+renderBase = "draw_twirl_trail"
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "70 70 70 31"
+finishColor = "70 70 70 0"
+startRadius = 0.2
+finishRadius = 1.0
+animateTime = 2.0
+emitDelay = 0.02
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 2.0"
+emitLife = 2.0
+
+[Flame]
+renderBase = "draw_twirl_trail"
+textureName = "flame.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 63 255"
+finishColor = "255 0 0 0"
+startRadius = 0.4
+finishRadius = 0.1
+animateTime = 0.2
+emitDelay = 0.005
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "3.0 3.0 2.0"
+emitLife = 0.2
+
+[light]
+renderBase = "draw_light"
+startColor = "180 120 80 200"
+finishColor = "180 80 20 200"
+startRadius = 5.0  //ord light
+finishRadius = 5.0  //ord light
+attenuateConstant = 0.0  //ord light
+attenuateQuadratic = 1.0  //ord light
+attenuateLinear = 0.0  //ord light

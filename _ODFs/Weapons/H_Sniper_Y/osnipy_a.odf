@@ -1,0 +1,62 @@
+/////////Coxxon - BZTC/////////
+[OrdnanceClass]
+baseName = "osnipy_a"
+classLabel = "snipershell"
+
+shotGeometry = NULL
+
+xplGround = "xbulgnd"
+xplVehicle = "xbulcar"
+xplBuilding = "xbulbld"
+xplPerson = "xpersonbztc"  //rifle
+
+ammoCost = 1  //snipe  //100
+lifeSpan = 300e-6  // 300m   //snipe  
+shotSpeed = 1e6  //snipe
+
+damageValue(N) = 200  //snipe  //100
+damageValue(L) = 50  //snipe
+damageValue(H) = 0  //snipe
+
+damageValue(S) = 50  //snipe
+damageValue(D) = 0  //snipe
+damageValue(A) = 200  //snipe  //100
+
+renderName = "osnipy_a.render"
+
+[Render]
+renderBase = "draw_multi"
+renderCount = 3
+renderName1 = "osnipy_a.core"
+renderName2 = "osnipy_a.bolt"
+renderName3 = "osnipy_a.bolt"
+
+[Core]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 255 255"
+finishColor = "255 10 0 0"
+startRadius = 0.2  //Coxxon  //0.5
+finishRadius = 0.05  //Coxxon  //0.3
+segmentLength = 2.0
+segmentVariance = "0.5 0.5 0.5"
+animateTime = 0.2
+textureRate = 0.01
+
+[Bolt]
+renderBase = "draw_bolt"
+textureName = "trail2.tga"
+textureBlend = "one one modulate"
+startColor = "255 0 55 255"
+finishColor = "255 100 0 0"
+startRadius = 0.2  //Coxxon  //0.3
+finishRadius = 0.1  //Coxxon  //0.2
+segmentLength = 2.0
+segmentVariance = "2.0 2.0 0.5"
+animateTime = 0.3
+textureRate = 0.01
+
+[SniperShellClass]
+killRadius = 0.5
+killLength = 15.0

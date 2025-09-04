@@ -1,0 +1,49 @@
+CHANGELOG from Total Command --> Total Command+
+
+Total Command+ is effectively akin to New Game+, which unlocks all stock units and weapons from the start. 
+
+--- ADDITIONS ---
+* Added 3 new maps to Single Player. 
+
+After Achilles' destruction, all humans returned to Earth to begin rebuilding their coalitions as one, but unfortunately, they've discovered a number of Furies had joined them... While their forces are small, the governments of the world aren't taking any chances and are scrambling to prepare their defenses with the aid of the NSDF, CCA and CRA. As their numbers are few, they are currently avoiding the main lands, but they're obviously building up their forces.
+
+The Black Dogs, Crimson Bears and Chinese Green Dragon Battalions have been called to obliterate the remaining Furies.
+
+* Added an upgrade system that carries over to other maps. 
+	* Ancient Scrap is gathered by completing special challenges that will be difficult to obtain but are worthwhile to enhancing your units, weapons and tactics.
+	* Only by succeeding a mission will ancient scrap become available for spending.
+		- The first mission will automatically fail upon loading, instructing you to reboot the game. This is necessary in order to set up and save information on upgrades acquired.
+		- Multiplayer support was sacrificed in order to make this work. If you seek multiplayer, go play on Total Command instead.
+		
+* Ordering units to "follow" a Day Wrecker will make them attack it instead, allowing commanders to leave the base more often.
+
+
+
+--- GENERAL CHANGES ---
+* Almost all powerups, vehicles and weapons are unlocked from the very start. 
+* Removed all combat/utility/defense unit build limits. Howitzers, howitzers everywhere!
+* Furies no longer eject pilots. Removed fury pilot from tactical data on Achilles last Titan mission.
+* Units ordered to "follow" Day Wreckers will now attack them instead, reducing player's need to babysit the base.
+
+--- MISSION SPECIFIC ---
+
+RS06 Out There Somewhere
+* Soviets now replace AT Stabbers with Plasma Stabbers from here on out due to capturing the Chinese factory.
+* Fake allies can now be destroyed prematurely. However, this will turn them hostile sooner, make sure you're ready for them!
+
+
+RB08 Punishing the Black Dogs
+* Black Dog Recycler is invulnerable to all damage except Fury bolt buddy weapons.
+* Players are no longer ejected from the Fury SAV when Romeski joins the fight.
+* All rebelling Furies will now target Romeski, and a minimum of five will be present. 
++ Bonus Scrap: Punish Romeski for his incompetence and glory robbing at the right moment.
+
+DW09 Grand Theft Portal
+* NSDF forces now have Plasma Stabbers replacing AT Stabbers after deconstructing the stolen Yeti Tank. Plasma Stabbers are superior to AT Stabbers in every way.
+
+
+
+SS14 United We Fight, United We Die
+* Brightened the map
+* Soviet forces now have Plasma Stabbers replacing AT Stabbers since allying with NSDF.
+* Fury Assault Tanks now arrive at a closer distance to the pools so gun towers can target them, but more of them arrive at once.

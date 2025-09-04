@@ -1,0 +1,38 @@
+/////////Coxxon - BZTC/////////
+
+[GameObjectClass]
+baseName = "avarmoss09"
+classLabel = "avarmo"  //"recyclervehicle"
+
+unitName = "TU8 slf"
+unitIcon = "icon_avarmo.png"
+unitStatus = "wire_avarmo.png"
+infoName = "avarmo.inf"
+
+limitClass1 = "avarmoss09"
+limitClass1Count = 1
+limitClass1Text = "Only One Allowed"
+
+/////// PROVIDES ///////////////////
+provideCount = 3
+
+provideName3 = "avarmoss09"
+
+//////////////////////////////////////////////////////////
+[CraftClass]
+/////////CRASH EXPLODE INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_avarmocox"
+
+////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+
+/////////////////////////////////////////////////////////
+[DeployableClass]
+
+/////////////////////////////////////////////////////////
+[DeployBuildingHClass]
+deployName = "abarmoss09"
+
+////////////////////////////////////////////////////////
+[RecyclerVehicleHClass]
+scrapHold = 0

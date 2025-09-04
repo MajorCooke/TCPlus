@@ -1,0 +1,17 @@
+/////////Coxxon - BZTC/////////
+[WeaponClass]
+baseName = "gstbas_a"
+classLabel = "cannon"
+altName = "gstbas_c"
+ordName = "ostbas_a"
+wpnName = "AT-Stabber A"
+fireSound = "gatst00.wav"  //"gmagg02.wav"
+wpnReticle = "gstbaa"  //"gatstab"
+wpnCategory = "CANN"
+isAssault = 1
+flashName = "gstbas_c.flash"  //"gstbas_a.smoke"  //
+aiRange = 170  //Coxxon  //150
+
+[CannonClass]
+shotDelay = 0.5 // bz2/cc  //0.3 bz/98r
+shotAlternate = 1  //at stab

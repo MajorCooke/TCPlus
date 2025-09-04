@@ -1,0 +1,51 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "hadcbun"
+classLabel = "i76building"
+geometryName = "hadcbuncox00.fbx"
+collisionRadius = 10.0  //bztc bldg
+scrapCost = 50
+scrapValue = 20
+maxHealth = 5000
+maxAmmo = 0
+unitName = "Comm Bunker"
+infoName = "hadcbun.inf"
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+isAssault = 1  //bztc
+armorClass = H
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+requireReplaceTerrainPhysics = 1  //bzcc
+ownsTerrain = 1  //since no terrain plate had
+
+/////// REQUIREMENTS ///////////////
+requireCount = 1
+requireName1 = "ibpgen"
+requireText1 = "Build Power"
+
+/////// PROVIDES ///////////////////
+provideCount = 1
+provideName1 = "hadcbunprop"
+
+///////// LIGHTS & EFFECTS /////////
+
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "x_bztc_bld"
+//xplcrash = "xpl_crash_hadcbuncox"
+
+////////////////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "abhqcpe0.wav"  //"icomm01.wav"
+
+///////// EXPLOSION AID /////////
+UseCollapse = false  //bldg aid
+UseChunks = true  //bldg aid
+UseExplosion = true  //bldg aid
+
+////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////
+[PoweredBuildingClass]
+detectRange = 300

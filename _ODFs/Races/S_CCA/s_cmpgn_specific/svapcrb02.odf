@@ -1,0 +1,27 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "svapcrb02"
+classLabel = "svapc"
+
+unitName = "Revmir apc"
+unitIcon = "icon_svapc.png"
+unitStatus = "wire_svapc.png"
+infoName = "svapc.inf"  //or baseName, or provide name
+
+//////////////////////////////////////////////////////////////////////////
+[CraftClass]
+CanAIEject = 0  //would fail mission
+CanBailout = 0  //""
+canRescue = 0  //""
+canSnipe = false  //""
+
+/////////CRASH INTO COMPONENT PARTS/////////
+xplcrash = "xpl_crash_svapccox"
+
+//////////////////////////////////////////////////////////////////////////
+[HoverCraftClass]
+
+//////////////////////////////////////////////////////////////////////////
+[APCClass]
+
+

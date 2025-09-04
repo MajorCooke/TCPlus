@@ -1,0 +1,20 @@
+/////////Coxxon - BZTC/////////
+[GameObjectClass]
+baseName = "gmits2ars08"
+geometryName = "aomitscox01.fbx"  //"aomitscox00.fbx"
+classLabel = "tripmine"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 99999  //RS08  150
+addHealth = 1000  //RS08
+maxAmmo = 99999  //RS08  //100
+addAmmo = 1000  //RS08
+unitName = "MITS"
+
+[MineClass]
+lifeSpan = 36000  //RS08 30
+
+[TripMineClass]
+triggerRadius = 100.0  //10.0
+suppressRadius = 120.0  //20.0
+payloadName = "omitsars08"

@@ -1,0 +1,133 @@
+/////////Coxxon - BZTC/////////
+//undying, flaremine to simulate exploding lava or volcano
+[GameObjectClass]
+baseName = "lavaspout"
+classLabel = "flare"
+geometryName = "lavaspoutcox00.fbx"  //kinda optional, but should have something
+scrapCost = 0
+scrapValue = 0
+maxHealth = -1
+maxAmmo = 3000
+addAmmo = 100
+unitName = "Lava spout"
+
+heatSignature = 5.0
+imageSignature = 1.0
+radarSignature = 1.0
+canCollide = 0
+canInteract = 0
+canDetect = 0
+allowseismic = 0 
+LeaveExplodeScorch = true
+
+effectHard1 = "mainbody"  //must have sep root object //optional effect
+effectName1 = "lavaspout.render"
+
+[MineClass]
+lifeSpan = -1
+
+[FlareMineClass]
+payloadName = "lavaspurt"
+fireSound = "smine01.wav"
+triggerDelay = 0.0
+shotDelay = 2.0
+shotVariance = 2.0
+damageRadius = 50.0
+damageValue(N) = 100
+damageValue(L) = 90
+damageValue(H) = 80
+damageValue(S) = 100
+damageValue(D) = 90
+damageValue(A) = 80
+kickRadius = 10.0
+kickVeloc = 10.0
+kickOmega = 2.0
+
+[render]
+renderBase = "draw_multi"
+renderCount = 4
+renderName1 = "lavaspout.smoke"
+renderName2 = "lavaspout.outglow"
+renderName3 = "lavaspout.inglow"
+renderName4 = "lavaspout.firefirefire"
+
+[smoke]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.03
+emitVelocity = "0.0 5.0 0.0"
+emitVariance = "2.0 2.0 2.0"
+emitInherit = "0.2 0.2 0.2"
+emitLife = 15.0
+textureName = "smoke.tga"
+textureBlend = "srcalpha invsrcalpha modulatealpha"
+startColor = "100 100 100 50"
+finishColor = "100 100 100 0"
+startRadius = 8.0
+finishRadius = 20.0
+animateTime = 15.0
+rotationRate = 0.25
+
+[outglow]
+renderBase = "draw_twirl_trail"
+textureName = "ring.tga"
+textureBlend = "one one modulate"
+startColor = "250 100 50 255"
+finishColor = "255 50 0 120"
+startRadius = 16.0
+finishRadius = 32.0
+animateTime = 0.5
+rotationRate = 5.0
+emitDelay = 0.05
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "10.0 10.0 10.0"
+emitLife = 0.5
+BottomInteractsWithTerrain = false  //t or f don't seem to make any notable difference
+
+[inglow]
+renderBase = "draw_twirl_trail"
+textureName = "lighthalo.tga"  //"plasma.tga"
+textureBlend = "one one modulate"
+startColor = "250 200 150 255"
+finishColor = "255 250 50 120"
+startRadius = 16.0
+finishRadius = 32.0
+animateTime = 0.5
+rotationRate = 5.0
+emitDelay = 0.05
+emitVelocity = "0.0 0.0 0.0"
+emitVariance = "10.0 10.0 10.0"
+emitLife = 0.5
+BottomInteractsWithTerrain = false  //t or f don't seem to make any notable difference
+
+[firefirefire]
+renderBase = "draw_twirl_trail"
+emitDelay = 0.05
+emitDelayVar = 0.03
+emitVelocity = "0.0 15.0 0.0"
+emitVariance = "5.0 5.0 5.0"
+emitInherit = "1.0 1.0 1.0"
+emitPosVariance = "1.5 1.5 1.5"
+emitLife = 5.0
+textureName = "fire.tga"
+textureBlend = "one one modulate"
+startColor = "255 255 200 128"
+finishColor = "255 0 0 0"
+startRadius = 20.0
+finishRadius = 5.0
+animateTime = 5.0
+rotationRate = 10.0
+
+[aperlight]
+renderBase = "draw_light"
+startColor = "200 100 55 255"
+finishColor = "250 50 0 180"  //"250 150 55 255"
+startRadius = 32.0
+finishRadius = 64.0
+animateTime = 1.0
+attenuateConstant = 1.0
+attenuateLinear = 0.0
+attenuateQuadratic = 64.0
+lensFlare = 0
+emitDelay = 0.1
+emitLife = 0.5

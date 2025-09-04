@@ -1,0 +1,75 @@
+//////////Coxxon - BZTC//////////
+[GameObjectClass]
+baseName = "mvdrop_shake.shake"
+classLabel = "i76building"
+geometryName = "mvdropcox_shake.fbx"
+animCount = 1
+animName1 = "shake"
+animFile1 = "mvdropcox_shake.fbx"
+scrapCost = 0
+scrapValue = 0
+maxHealth = 10000
+maxAmmo = 0
+unitName = "Big Olga"
+heatSignature = 0.8
+imageSignature = 8.0
+radarSignature = 1.0
+ownsTerrain = 0
+canDetect = 0
+canInteract = 0
+canCollide = 0  //dropship  BZCC
+armorClass = H
+
+///////// LIGHTS & EFFECTS /////////
+//lightHard1 = "hp_light_1"
+//lightName1 = "omniwyl16"
+//lightHard2 = "hp_light_2"
+//lightName2 = "omniwyl16"
+//lightHard3 = "hp_light_3"
+//lightName3 = "omniwyl16"
+
+lightHard1 = "hp_light_4"
+lightName1 = "hltwyl"
+lightHard2 = "hp_light_5"
+lightName2 = "hltwyl"
+lightHard3 = "hp_light_6"
+lightName3 = "hltwyl"
+lightHard4 = "hp_light_7"
+lightName4 = "hltwyl"
+lightHard5 = "hp_light_8"
+lightName5 = "hltwyl"
+lightHard6 = "hp_light_9"
+lightName6 = "hltwyl"
+lightHard7 = "hp_light_10"
+lightName7 = "hltwyl"
+lightHard8 = "hp_light_11"
+lightName8 = "hltwyl"
+
+effectHard1 = "hp_emit_1"
+effectName1 = "mvdrop.thrust"
+effectHard2 = "hp_emit_2"
+effectName2 = "mvdrop.thrust"
+effectHard3 = "hp_emit_3"
+effectName3 = "mvdrop.thrust"
+effectHard4 = "hp_emit_4"
+effectName4 = "mvdrop.thrust"
+//smoke1  //wider effect rng than stock  //vhcl
+effectHard13 = "hp_smoke_1"  //vhcl
+effectName13 = "dmgvhcl1"  //vhcl
+effectMinHealth13 = 0.5  //vhcl
+effectMaxHealth13 = 0.7  //vhcl
+effectHard14 = "hp_smoke_1"  //vhcl
+effectName14 = "dmgvhcl2"  //vhcl
+effectMinHealth14 = 0.3  //vhcl
+effectMaxHealth14 = 0.5  //vhcl
+effectHard15 = "hp_smoke_1"  //vhcl
+effectName15 = "dmgvhcl3"  //vhcl
+effectMinHealth15 = 0.1  //vhcl
+effectMaxHealth15 = 0.3  //vhcl
+effectHard16 = "hp_smoke_1"  //vhcl
+effectName16 = "dmgvhcl4"  //vhcl
+effectMinHealth16 = 0.0  //vhcl
+effectMaxHealth16 = 0.1  //vhcl
+
+[BuildingClass]
+soundAmbient = "sdrop01.wav"
