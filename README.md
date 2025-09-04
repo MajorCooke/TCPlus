@@ -5,6 +5,8 @@ Alpha Development (not ready for testing)
 An addon for [Battlezone: Combat Commander](https://store.steampowered.com/app/624970/Battlezone_Combat_Commander/)'s [Total Command](https://steamcommunity.com/sharedfiles/filedetails/?id=2344006579) mod that brings with it a plethora of changes, fixes and additions.
 
 **NOTE:** It's highly recommended you beat Total Command before attempting this mod since it requires mastery of various aspects.
+
+**This mod is Single Player only.**
 _____
 # New Missions
 Not all of the Furies went to Achilles. The detatche that attacked Commander Shaw on the moon was destroyed, but the Furies held some back in reserve and shadowed their transport using a similar cloaking field to the Chinese tanks, though theirs is temporary. The transport broke off upon entering Earth's atmosphere and landed on a small island close to the south pole, coalescing drawing in furies from around the solar system.
