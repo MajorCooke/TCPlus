@@ -23,12 +23,21 @@ function M.Start()
 		PrintConsoleMessage(N.Path.." loaded.");
 		N.InfoStart = file;
 		N.Info = N.InfoStart;
-		--[[
+		
 		for line in string.gmatch(N.Info, "([^\n]+)") do
 			table.insert(N.Lines, line);
 		end
+
+		-- Split <challengeName>:<earned> up and create IFace int vars.
+		--[[
 		for i, line in ipairs(N.Lines) do
-			
+			local col = string.find(line, ":");
+			if (col) then
+				local snum = string.sub(line, col+1);
+				local vname = "script."..string.sub(line, 0, col);
+				local vint = tonumber(snum);
+
+			end
 		end
 		]]
 	end
