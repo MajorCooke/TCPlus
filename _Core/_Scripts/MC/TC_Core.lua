@@ -13,9 +13,6 @@ local N =		-- VARIABLE table
 	Upgrades = {},
 	Challenges = {},
 	-- Core vars here
-	EndTimer = 0,
-	EndStatus = 0, -- victory if > 0, fail if < 0
-	EndText = "",
 }
 
 -- Put in all hooks first
@@ -36,37 +33,17 @@ function M.Load(_N)
 	Challenges.Load(N.Challenges);	_N.Challenges = {};
 end
 
-local function SetMissionStatus(status, time, debrief)
-	N.EndStatus = status;
-	N.EndTimer = GetTime() + time;
-	N.EndText = debrief;
-end
-
 function M.FailMission(Time, Debrief)
-	SetMissionStatus(-1, Time, Debrief);
+	FailMission(Time, Debrief);
 end
 
 -- This version writes out the 
 function M.SucceedMission(Time, Debrief)
-	SetMissionStatus(1, Time, Debrief);
-end
-
--- Aborts victory/fail conditions
-function ClearMissionStatus()
-	SetMissionStatus(0, 0, "");
+	Challenges.WriteInfo(); -- Success, save the challenges out with their new values.
+	SucceedMission(Time, Debrief);
 end
 
 function M.Update()
-	if (N.EndStatus ~= 0 and N.EndTimer <= GetTime()) then
-		if (N.EndStatus > 0) then 
-			Challenges.WriteInfo(); -- Success, save the challenges out with their new values.
-			SucceedMission(0, N.EndText);
-		else
-			FailMission(0, N.EndText); -- You win NOTHING. You LOSE. GOOD DAY SIR! - Wonka pimpslap
-		end
-		return;
-	end
-
 	AI.Update();
 end
 
