@@ -231,8 +231,13 @@ function Update()
 	x.player = GetPlayerHandle() --EVERY PASS SO IF PLAYER CHANGES VEHICLES
 	x.skillsetting = IFace_GetInteger("options.play.difficulty")
 	TCC.Update();
+	
 	--START THE MISSION BASICS
 	if x.spine == 0 then
+		-- [MC] Make the portal neutral so idiots dont attack it, and make it indestructible.
+		TCC.SetTeamNum(x.eprt, 0); 
+		SetMaxHealth(x.eprt, 0);
+		SetCurHealth(x.eprt, 0);
 		x.audio1 = AudioMessage("tcdw0601.wav") --Must control portal. Wait for diversion then assault.
 		SetAsUser(x.mytank, 1)
 		RemoveObject(x.player)

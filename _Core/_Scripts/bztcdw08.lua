@@ -199,6 +199,10 @@ function Update()
 	
 	--FIRST AUDIO
 	if x.spine == 1 and x.waittime < GetTime() then
+		-- [MC] Make the portal neutral so idiots dont attack it, and make it indestructible.
+		TCC.SetTeamNum(x.eprt, 0); 
+		SetMaxHealth(x.eprt, 0);
+		SetCurHealth(x.eprt, 0);
 		SetAsUser(x.mytank, 1)
 		RemoveObject(x.player)
 		x.player = GetPlayerHandle()
