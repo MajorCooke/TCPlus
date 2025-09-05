@@ -3,9 +3,6 @@ Upgrades
 
 Handles gathering and setting up of upgrades and objectives.
 
-Currently, challenges are stored in <steamname>_upgrades.txt like such:
-|||<mission number>
-|<string challengeName>:<int rewardAmount>:<bool earned>
 ]]--
 
 local M = {};	-- FUNCTION table (don't save)
@@ -29,7 +26,7 @@ function M.Start()
 	N.Path = pname.."_upgrades.txt";
 	local file = LoadFile(N.Path);
 	if (file == nil) then
-		WriteToFile(N.Path, ".", false);
+		WriteToFile(N.Path, "", false);
 		FailMission(0, "reboot.txt");
 	else
 		PrintConsoleMessage(N.Path.." loaded.");

@@ -13,7 +13,7 @@ local N =		-- VARIABLE table
 	Upgrades = {},
 	Challenges = {},
 	-- Core vars here
-	Countdown = 0,
+	EndTimer = 0,
 	EndStatus = 0, -- victory if > 0, fail if < 0
 	EndText = "",
 }
@@ -37,8 +37,8 @@ function M.Load(_N)
 end
 
 local function SetMissionStatus(status, time, debrief)
-	N.EndStatus = -1;
-	N.Countdown = GetTime() + time;
+	N.EndStatus = status;
+	N.EndTimer = GetTime() + time;
 	N.EndText = debrief;
 end
 
@@ -57,12 +57,12 @@ function ClearMissionStatus()
 end
 
 function M.Update()
-	if (N.EndStatus ~= 0 and N.Countdown < GetTime()) then
+	if (N.EndStatus ~= 0 and N.EndTimer <= GetTime()) then
 		if (N.EndStatus > 0) then 
-			
+			Challenges.WriteInfo(); -- Success, save the challenges out with their new values.
 			SucceedMission(0, N.EndText);
 		else
-			FailMission(0, N.EndText); 
+			FailMission(0, N.EndText); -- You win NOTHING. You LOSE. GOOD DAY SIR! - Wonka pimpslap
 		end
 		return;
 	end
@@ -74,9 +74,10 @@ function M.InitialSetup()
 	AI.InitialSetup();
 	Goals.InitialSetup();
 	Upgrades.InitialSetup();
+	Challenges.InitialSetup();
 end
--- for some reason I cannot call the InitialSetup code above...
-function M.Init()
+
+function M.Init() 
 	M.InitialSetup();
 end
 
@@ -144,8 +145,12 @@ function M.ReplaceObject(h, className)
 	return AI.ReplaceObject(h, className);
 end
 
-function M.AwardBonus(challenge, amount)
-	
+function M.GetBonusGoal(challenge)
+	return Challenges.GetBonusGoal(challenge);
+end
+
+function M.SetBonusGoal(challenge, amount)
+	Challenges.SetBonusGoal(challenge, amount);	
 end
 
 return M;
