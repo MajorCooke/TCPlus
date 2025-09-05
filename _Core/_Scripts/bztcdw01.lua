@@ -508,7 +508,7 @@ function Update()
 	
 	--SUCCEED MISSION
 	if x.spine == 24 and IsAudioMessageDone(x.audio1) then
-		SucceedMission(GetTime() + 1.0, "tcdw01w.des")
+		TCC.SucceedMission(GetTime() + 1.0, "tcdw01w.des")
 		x.spine = 666
 	end
 	----------END MAIN SPINE ----------
@@ -539,7 +539,7 @@ function Update()
 			AudioMessage("tcdw0105.wav") --5.6 FAIL - lost recy
 			ClearObjectives()
 			AddObjective("tcdw0106.txt", "RED")
-			FailMission(GetTime() + 7.0, "tcdw01f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 7.0, "tcdw01f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -559,7 +559,7 @@ function Update()
 			ClearObjectives()
 			AddObjective("tcdw0101.txt", "RED")
 			AddObjective("\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 11.0, "tcdw01f2.des")
+			TCC.FailMission(GetTime() + 11.0, "tcdw01f2.des")
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -579,7 +579,7 @@ function Update()
 			ClearObjectives()
 			AddObjective("tcdw0103.txt", "RED")
 			AddObjective("\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 11.0, "tcdw01f3.des")
+			TCC.FailMission(GetTime() + 11.0, "tcdw01f3.des")
 			x.spine = 666
 			x.MCAcheck = true
 		end 

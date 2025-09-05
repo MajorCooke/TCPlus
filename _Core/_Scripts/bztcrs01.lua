@@ -142,6 +142,7 @@ end
 
 
 function Start()
+	TCC.SetBonusGoal("scrapused");
 	TCC.Start();
 end
 
@@ -241,7 +242,7 @@ function Update()
 		for index = 1, 60 do --init sniper spawn
 			x.epilospawn[index] = 0
 		end
-		SetTeamNum(x.fdrp, 0) --so root doesn't show on radar
+		TCC.SetTeamNum(x.fdrp, 0) --so root doesn't show on radar
 		StartEarthQuake(10.0)
 		--script error--x.spawnrange = IFace_ConsoleCmd("sky.visibilityrange") + 50
 		--causes crash--x.spawnrange = IFace_GetInteger("sky.visibilityRange") + 50	
@@ -518,22 +519,22 @@ function Update()
 			x.ekillfrcytime = 99999.9 --stop frcy attacks
 			x.eatkstate = 2 --SEND IN DIVERSION ATTACK
 			for index = 1, 10 do --switch some 5 to 7
-				SetTeamNum(x.egun[index], 7)
+				TCC.SetTeamNum(x.egun[index], 7)
 			end
-			SetTeamNum(x.ercy, 7)
-			SetTeamNum(x.efac, 7)
-			SetTeamNum(x.earm, 7)
-			SetTeamNum(x.etrn, 7)
-			SetTeamNum(x.etec, 7)
-			SetTeamNum(x.ehng, 7)
-      SetTeamNum(x.ebay, 7)
-			SetTeamNum(x.escv[5], 7)
+			TCC.SetTeamNum(x.ercy, 7)
+			TCC.SetTeamNum(x.efac, 7)
+			TCC.SetTeamNum(x.earm, 7)
+			TCC.SetTeamNum(x.etrn, 7)
+			TCC.SetTeamNum(x.etec, 7)
+			TCC.SetTeamNum(x.ehng, 7)
+      TCC.SetTeamNum(x.ebay, 7)
+			TCC.SetTeamNum(x.escv[5], 7)
 			for index = 1, 4 do
-				SetTeamNum(x.etur[index], 7)
-				SetTeamNum(x.epat[index], 7)
+				TCC.SetTeamNum(x.etur[index], 7)
+				TCC.SetTeamNum(x.epat[index], 7)
 			end
 			for index = 1, 8 do
-				SetTeamNum(x.epwr[index], 7)
+				TCC.SetTeamNum(x.epwr[index], 7)
 			end
 			x.failescort = 4 --don't worry about escorts
 			x.spine = x.spine + 1
@@ -604,7 +605,7 @@ function Update()
 	if x.spine == 27 and x.waittime < GetTime() then
     CameraFinish()
     IFace_SetInteger("options.graphics.defaultfov", x.userfov)
-		SucceedMission(GetTime(), "tcrs01w.des") --winner winner winner
+		TCC.SucceedMission(GetTime(), "tcrs01w.des") --winner winner winner
 		x.spine = x.spine + 1
 	end
 	----------END MAIN SPINE ----------
@@ -852,7 +853,7 @@ function Update()
 			AudioMessage("tcrs0111.wav") --FAIL - generic for all instances.
 			ClearObjectives()
 			AddObjective("tcrs0110.txt", "RED") --You did not recover the CCA tug. MISSION FAILED!
-			FailMission(GetTime() + 10.0, "tcrs01f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 10.0, "tcrs01f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -862,7 +863,7 @@ function Update()
 			AudioMessage("tcrs0111.wav") --FAIL - generic for all instances.
 			ClearObjectives()
 			AddObjective("tcrs0111.txt", "RED") --You destroyed the CCA tug. MISSION FAILED!
-			FailMission(GetTime() + 10.0, "tcrs01f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 10.0, "tcrs01f2.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -875,7 +876,7 @@ function Update()
 			x.spine = 666
 		elseif x.failescort == 3 and IsAudioMessageDone(x.audio6) then
 			AddObjective("tcrs0112.txt", "RED") --Without the Flanker escorts, your deception was discovered. MISSION FAILED!
-			FailMission(GetTime() + 5.0, "tcrs01f3.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 5.0, "tcrs01f3.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 		end
 		
@@ -884,7 +885,7 @@ function Update()
 			AudioMessage("alertpulse.wav")
 			ClearObjectives()
 			AddObjective("tcrs0112.txt", "RED") --Without the Flanker escorts, your deception was discovered. MISSION FAILED!
-			FailMission(GetTime() + 5.0, "tcrs01f3.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 5.0, "tcrs01f3.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 		end
 		
@@ -893,7 +894,7 @@ function Update()
 			AudioMessage("tcrs0111.wav") --FAIL - generic for all instances.
 			ClearObjectives()
 			AddObjective("tcrs0113.txt", "RED") --You lost your Recycler.	MISSION FAILED!
-			FailMission(GetTime() + 10.0, "tcrs01f4.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 10.0, "tcrs01f4.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -903,7 +904,7 @@ function Update()
 			x.notsafe = true --caught in blast
 			AudioMessage("xemt2.wav")
 			SetColorFade(20.0, 0.1, "WHITE")
-			FailMission(GetTime() + 1.0, "tcrs01f5.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 1.0, "tcrs01f5.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -916,7 +917,7 @@ function Update()
 			AudioMessage("tcrs0111.wav") --FAIL - generic for all instances.
 			ClearObjectives()
 			AddObjective("tcrs0114.txt", "RED") --You were not authorized to destroy other CCA facilities.	MISSION FAILED!
-			FailMission(GetTime() + 10.0, "tcrs01f6.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 10.0, "tcrs01f6.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -926,7 +927,7 @@ function Update()
 			AudioMessage("tcrs0111.wav") --FAIL - generic for all instances.
 			ClearObjectives()
 			AddObjective("tcrs0115.txt", "RED") --You failed to destroy the CCA comm tower before leaving their base.	MISSION FAILED!
-			FailMission(GetTime() + 10.0, "tcrs01f7.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 10.0, "tcrs01f7.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -939,7 +940,7 @@ function Update()
 			AddObjective("tcrs0116.txt", "RED") --You dropped the nuke. RUN!!!!
 			AudioMessage("xemt2.wav")
 			SetColorFade(20.0, 0.25, "WHITE")
-			FailMission(GetTime() + 3.0, "tcrs01f8.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 3.0, "tcrs01f8.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -948,7 +949,7 @@ function Update()
 		if not x.notsafe and x.loosenukes >= 1 and (not IsAlive(x.cargo[2]) or not IsAlive(x.cargo[3])) then
 			ClearObjectives()
 			AddObjective("tcrs0117.txt", "RED") --Critical mission asset destroyed.	MISSION FAILED!
-			FailMission(GetTime() + 3.0, "tcrs01f9.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 3.0, "tcrs01f9.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -958,7 +959,7 @@ function Update()
 			AudioMessage("alertpulse.wav")
 			ClearObjectives()
 			AddObjective("tcrs0118.txt", "RED") --CCA knows you're here. Base on full alert.	MISSION FAILED!
-			FailMission(GetTime() + 3.0, "tcrs01f10.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 3.0, "tcrs01f10.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -970,7 +971,7 @@ function ObjectSniped(p, k) --NEEDED IF PLAYER SNIPED WHILE IN VEHICLE
 		ClearObjectives()
 		AddObjective("tcrs0817.txt", "RED")
 		AudioMessage("alertpulse.wav")
-		FailMission(GetTime() + 3.0, "tcrs08f10.des") --LOSER LOSER LOSER
+		TCC.FailMission(GetTime() + 3.0, "tcrs08f10.des") --LOSER LOSER LOSER
 		MCAcheck = true
 		x.spine = 666
 	end

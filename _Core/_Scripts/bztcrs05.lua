@@ -470,7 +470,7 @@ function Update()
 	
 	--SUCCEED MSSION	
 	if x.spine == 19 and IsAudioMessageDone(x.audio1) then
-		SucceedMission(GetTime(), "tcrs05w.des") --winner winner winner
+		TCC.SucceedMission(GetTime(), "tcrs05w.des") --winner winner winner
 		x.spine = x.spine + 1
 	end
 	----------END MAIN SPINE ----------
@@ -523,7 +523,7 @@ function Update()
 			x.wrecknotify = 1
 		end
 		if x.wrecknotify == 1 then
-      SetTeamNum(x.wreckbomb, 5)
+      TCC.SetTeamNum(x.wreckbomb, 5)
 			SetObjectiveOn(x.wreckbomb)
 			AudioMessage("alertpulse.wav")
 			x.wrecknotify = 0
@@ -836,7 +836,7 @@ function Update()
 			AddObjective("tcrs0501.txt", "RED")
 			AddObjective("	")
 			AddObjective("tcrs0506.txt", "RED")
-			FailMission(GetTime() + 6.0, "tcrs05f1.des") --loser loser loser
+			TCC.FailMission(GetTime() + 6.0, "tcrs05f1.des") --loser loser loser
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -847,7 +847,7 @@ function Update()
 			AddObjective("tcrs0503.txt", "RED")
 			AddObjective("	")
 			AddObjective("tcrs0506.txt", "RED")
-			FailMission(GetTime() + 6.0, "tcrs05f2.des") --loser loser loser
+			TCC.FailMission(GetTime() + 6.0, "tcrs05f2.des") --loser loser loser
 			Attack(x.etnk[1], x.player)
 			Attack(x.etnk[2], x.player)
 			x.spine = 666
@@ -860,7 +860,7 @@ function Update()
 			AddObjective("tcrs0503.txt", "RED")
 			AddObjective("	")
 			AddObjective("tcrs0506.txt", "RED")
-			FailMission(GetTime() + 6.0, "tcrs05f3.des") --loser loser loser
+			TCC.FailMission(GetTime() + 6.0, "tcrs05f3.des") --loser loser loser
 			SetObjectiveOff(x.etug)
 			x.spine = 666
 			x.MCAcheck = true
@@ -870,7 +870,7 @@ function Update()
 			AudioMessage("tcrs0510.wav") --coxxon, Major edit out - FAIL You have failed the Repub, your dishonor knows no bounds
 			ClearObjectives()
 			AddObjective("tcrs0507.txt", "RED")
-			FailMission(GetTime() + 8.0, "tcrs05f4.des") --loser loser loser
+			TCC.FailMission(GetTime() + 8.0, "tcrs05f4.des") --loser loser loser
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -879,7 +879,7 @@ function Update()
 			AudioMessage("tcrs0509.wav") --FAIL you are imbecile coxxon edit
 			ClearObjectives()
 			AddObjective("tcrs0508.txt", "RED")
-			FailMission(GetTime() + 6.0, "tcrs05f5.des") --loser loser loser
+			TCC.FailMission(GetTime() + 6.0, "tcrs05f5.des") --loser loser loser
 			x.spine = 666
 			x.MCAcheck = true
 		end 

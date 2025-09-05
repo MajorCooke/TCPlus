@@ -209,11 +209,11 @@ function Update()
 		x.pos = GetTransform(x.frcy)
 		RemoveObject(x.frcy)
 		x.frcy = BuildObject("bbrecydw03", 1, x.pos)
-		SetTeamNum(x.fgrp[5], 1)
+		TCC.SetTeamNum(x.fgrp[5], 1)
 		SetGroup(x.fgrp[5], 0)
-		SetTeamNum(x.fgrp[6], 1)
+		TCC.SetTeamNum(x.fgrp[6], 1)
 		SetGroup(x.fgrp[6], 1)
-		SetTeamNum(x.fgrp[7], 1)
+		TCC.SetTeamNum(x.fgrp[7], 1)
 		SetGroup(x.fgrp[7], 2)
 		if x.skillsetting == x.easy then
 			x.waittime = GetTime() + 150.0
@@ -314,7 +314,7 @@ function Update()
 	
 	--SUCCEED MISSION
 	if x.spine == 8 and IsAudioMessageDone(x.audio1) then
-		SucceedMission(GetTime(), "tcdw03w.des")
+		TCC.SucceedMission(GetTime(), "tcdw03w.des")
 		x.spine = 666
 	end
 	----------END MAIN SPINE ----------
@@ -475,7 +475,7 @@ function Update()
 			x.failstate = 10
 		elseif x.failstate == 10 and IsAudioMessageDone(x.audio6) then
 			x.MCAcheck = true
-			FailMission(GetTime() + 1.0, "tcdw03f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 1.0, "tcdw03f1.des") --LOSER LOSER LOSER
 		end
 		
 		if x.failstate == 2 and not IsAlive(x.fapc) then --lost APC
@@ -488,7 +488,7 @@ function Update()
 			x.failstate = 20
 		elseif x.failstate == 20 and IsAudioMessageDone(x.audio6) then
 			x.MCAcheck = true
-			FailMission(GetTime() + 1.0, "tcdw03f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 1.0, "tcdw03f2.des") --LOSER LOSER LOSER
 		end
 	end
 end

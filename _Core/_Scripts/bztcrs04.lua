@@ -638,7 +638,7 @@ function Update()
 	
 	--SUCCEED MSSION	
 	if x.spine == 24 and CameraPath("pcam3", 1000, 3500, x.fprtdummy) then
-		SucceedMission(GetTime(), "tcrs04w.des") --winner winner winner
+		TCC.SucceedMission(GetTime(), "tcrs04w.des") --winner winner winner
 		x.spine = x.spine + 1
 	end
 	----------END MAIN SPINE ----------
@@ -930,7 +930,7 @@ function Update()
 			x.failstate = 1
 			x.spine = 666
 		elseif x.failstate == 1 and IsAudioMessageDone(x.audio6) then
-			FailMission(GetTime(), "tcrs04f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime(), "tcrs04f1.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 		end
 		
@@ -945,7 +945,7 @@ function Update()
 			x.waittime = GetTime() + 3.0
 			x.failstate = 3
 		elseif x.failstate == 3 and x.waittime < GetTime() and IsAudioMessageDone(x.audio6) then
-			FailMission(GetTime(), "tcrs04f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime(), "tcrs04f2.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 		end
 		
@@ -954,7 +954,7 @@ function Update()
 			AddObjective("tcrs04012.txt", "RED")
 			x.MCAcheck = true
 			x.spine = 666
-			FailMission(GetTime() + 10.0, "tcrs04f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 10.0, "tcrs04f1.des") --LOSER LOSER LOSER
 		end
 		
 		if not IsAlive(x.fprt) and x.failstate < 2 then --so failstate doesn't interfere
@@ -964,7 +964,7 @@ function Update()
 			AddObjective("Portal destroyed.\n\nMISSION FAILED!", "RED")
 			x.MCAcheck = true
 			x.spine = 666
-			FailMission(GetTime() + 10.0, "tcrs04f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 10.0, "tcrs04f1.des") --LOSER LOSER LOSER
 		end
 	end
 end

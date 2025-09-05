@@ -249,7 +249,7 @@ function Update()
 	if x.spine == 8 and x.waittime < GetTime() then
 		AudioMessage("tcss1005.wav") --7 Arkin, what's with the accent. He's stealing trans. He's a mole.
 		x.waittime = GetTime() + 8.0
-		SetTeamNum(x.ftug[3], 5)
+		TCC.SetTeamNum(x.ftug[3], 5)
 		x.spine = x.spine + 1
 	end
 
@@ -321,7 +321,7 @@ function Update()
 	if x.spine == 16 and x.waittime < GetTime() then
 		AudioMessage("tcss1010.wav") --4 Corb - 2nd lpad up. Go there.
 		x.fpad2 = BuildObject("ablpad2", 1, x.pos)
-		SetTeamNum(x.fpad2, 1)
+		TCC.SetTeamNum(x.fpad2, 1)
 		SetObjectiveName(x.fpad2, "Launch Pad B")
 		SetObjectiveOn(x.fpad2)
 		x.waittime = GetTime() + 3.0
@@ -349,7 +349,7 @@ function Update()
 		AudioMessage("tcss1013.wav") --10 SUCCEED - Losing Arkin a setback but a win.
 		ClearObjectives()
 		AddObjective("tcss1004.txt", "GREEN")
-		SucceedMission(GetTime() + 12.0, "tcss10w1.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 12.0, "tcss10w1.des") --WINNER WINNER WINNER
 		x.spine = x.spine + 1
 	end
 	----------END MAIN SPINE ----------
@@ -524,7 +524,7 @@ function Update()
 		if not IsAlive(x.ftug[1]) or not IsAlive(x.ftug[2]) or (not x.relic3gone and not IsAlive(x.ftug[3])) then --x.ftug[ destroyed
 			AudioMessage("tcss1011.wav") --2 FAIL - Buz - One of the transports is destroyed
 			AudioMessage("tcss1012.wav") --8 FAIL - GenC - Convoy disaster
-			FailMission(GetTime() + 20.0, "tcss10f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 20.0, "tcss10f1.des") --LOSER LOSER LOSER
 			ClearObjectives()
 			AddObjective("tcss1005.txt", "RED")
 			x.spine = 666
@@ -534,7 +534,7 @@ function Update()
 		if not IsAlive(x.relic1) or not IsAlive(x.relic2) or (not x.relic3gone and not IsAlive(x.relic3)) then --x.relic destroyed
 			AudioMessage("tcss0903.wav") --5 FAIL - x.relic destroyed
 			AudioMessage("tcss1012.wav") --8 FAIL - GenC - Convoy disaster
-			FailMission(GetTime() + 20.0, "tcss10f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 20.0, "tcss10f1.des") --LOSER LOSER LOSER
 			ClearObjectives()
 			AddObjective("tcss1005.txt", "RED")
 			x.spine = 666

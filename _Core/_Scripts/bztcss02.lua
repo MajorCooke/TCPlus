@@ -221,7 +221,7 @@ function Update()
 		SetAsUser(x.mytank, 1)
 		RemoveObject(x.player)
 		x.player = GetPlayerHandle()
-		SetTeamNum(x.player, 1)--JUST IN CASE
+		TCC.SetTeamNum(x.player, 1)--JUST IN CASE
 		for index = 1, 10 do
 			x.eturinit = BuildObject("svturr", 5, ("eptur%d"):format(index))
 			SetEjectRatio(x.eturinit, 0)
@@ -446,7 +446,7 @@ function Update()
 	if x.spine == 10 and not x.allymet then
 		if GetDistance(x.player, "fpmeet") < 64 then
 			for index = 1, x.fallylength do
-				SetTeamNum(x.fally[index], 1)
+				TCC.SetTeamNum(x.fally[index], 1)
 				SetGroup(x.fally[index], 9)
 			end
 			x.allymet = true
@@ -462,7 +462,7 @@ function Update()
 			x.spine = x.spine + 1
 		end
 		if x.allytime < GetTime() then
-			FailMission(GetTime() + 3.0, "tcss02f3.des") --LOSER LOSER LOSER - reinforcement
+			TCC.FailMission(GetTime() + 3.0, "tcss02f3.des") --LOSER LOSER LOSER - reinforcement
 			ClearObjectives()
 			AddObjective("tcss0203.txt", "RED") --Failed to meet reinforcements. MISSION FAILEDnot
 			x.allymet = true
@@ -651,7 +651,7 @@ function Update()
 			if x.casualty > 1 then
         Damage(x.fcne, (GetMaxHealth(x.fcne) + 10))
 				AudioMessage("tcss0204.wav") --Lost transport FAIL
-				FailMission(GetTime() + 11.0, "tcss02f4.des") --LOSER LOSER LOSER - transport
+				TCC.FailMission(GetTime() + 11.0, "tcss02f4.des") --LOSER LOSER LOSER - transport
 				ClearObjectives()
 				AddObjective("tcss0204.txt", "RED") --Transport was destroyed. MISSION FAILEDnot
 				x.LoopTransportSafe = true
@@ -677,7 +677,7 @@ function Update()
 		
 		if not x.playeratlpad and x.playeratlpadtime < GetTime() and GetDistance(x.player, "fptrnsafe") > 64 then
 			--NO audio message for this one.
-			FailMission(GetTime() + 3.0, "tcss02f5.des") --LOSER LOSER LOSER - Launch Pad late
+			TCC.FailMission(GetTime() + 3.0, "tcss02f5.des") --LOSER LOSER LOSER - Launch Pad late
 			ClearObjectives()
 			AddObjective("tcss0205.txt", "RED") --Didn't get to Launch Pad in time. MISSION FAILEDnot
 			x.playeratlpad = true
@@ -762,12 +762,12 @@ function Update()
 	end
 	----------END MAIN SPINE----------
   
-  --STOP ENDING CINERACTIVE and SUCCEEDMISSION
+  --STOP ENDING CINERACTIVE and TCC.SucceedMission
 	if x.cine1playerstop and (CameraCancelled() or x.cine1length < GetTime()) then
     x.cine1playerstop = false --turn off entire cineractive loop
     CameraFinish()
     IFace_SetInteger("options.graphics.defaultfov", x.userfov)
-    SucceedMission(GetTime(), "tcss02w.des") --WINNER WINNER WINNER
+    TCC.SucceedMission(GetTime(), "tcss02w.des") --WINNER WINNER WINNER
 	end
 	
 	--REMOVE OBJECTS
@@ -835,7 +835,7 @@ function Update()
 	if not x.MCAcheck then
 		if x.montanasent and not IsAlive(x.frcy) then --Check Recycler
 			AudioMessage("failrecygencol.wav") --6s Gen Col Generic Recycler lost.
-			FailMission(GetTime() + 10.0, "tcss02f0.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 10.0, "tcss02f0.des") --LOSER LOSER LOSER
 			ClearObjectives()
 			AddObjective("Montana destroyed.\n\nMISSION FAILED!", "RED") --Your Recycler was destroyed. MISSION FAILED
 			x.MCAcheck = true
@@ -843,7 +843,7 @@ function Update()
 
 		if not IsAlive(x.ftwr) then --Check Command Tower
 			AudioMessage("tcss0202.wav") --Lost cmd tower FAIL
-			FailMission(GetTime() + 7.0, "tcss02f1.des") --LOSER LOSER LOSER - command tower
+			TCC.FailMission(GetTime() + 7.0, "tcss02f1.des") --LOSER LOSER LOSER - command tower
 			ClearObjectives()
 			AddObjective("tcss0201.txt", "RED") --Command Tower was destroyed. MISSION FAILED
 			AddObjective("\n\nMISSION FAILED!", "RED")
@@ -858,7 +858,7 @@ function Update()
 			end
 			if x.casualty > 1 then
 				AudioMessage("tcss0203.wav") --Lost solar array FAIL
-				FailMission(GetTime() + 7.0, "tcss02f2.des") --LOSER LOSER LOSER - solar array
+				TCC.FailMission(GetTime() + 7.0, "tcss02f2.des") --LOSER LOSER LOSER - solar array
 				ClearObjectives()
 				AddObjective("tcss0201.txt", "RED") --Solar Array lost
 				AddObjective("\n\nMISSION FAILED!", "RED")
@@ -869,7 +869,7 @@ function Update()
 		
 		if x.gotcone and (not IsAlive(x.fpad) or not IsAlive(x.fcne) or not IsAlive(x.fbnk)) then --destroyed lpad or rocket or comm tower
 			AudioMessage("alertpusle.wav")
-			FailMission(GetTime() + 4.0, "tcss02f2.des") --LOSER LOSER LOSER - solar array
+			TCC.FailMission(GetTime() + 4.0, "tcss02f2.des") --LOSER LOSER LOSER - solar array
 			ClearObjectives()
 			AddObjective("You failed to protect that MCA.\n\nMISSION FAILED!", "RED")
 			x.MCAcheck = true

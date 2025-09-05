@@ -329,7 +329,7 @@ function Update()
 		if GetDistance(x.player, "fnav5") < 100 or GetDistance(x.player, x.ftnk[1]) < 100 then
 			AudioMessage("tcss1403.wav") --My comrades await your orders soviet
 			for index = 1, 3 do
-				SetTeamNum(x.ftnk[index], 1)
+				TCC.SetTeamNum(x.ftnk[index], 1)
 				SetGroup(x.ftnk[index], 0)
 			end
 			if IsAlive(x.fnav) then
@@ -390,7 +390,7 @@ function Update()
 	if x.allymeet ~= 0 and GetDistance(x.player, ("fnav%d"):format(x.allycase)) < 100 then
 		for index = 1, 4 do
 			if IsAlive(x.ftnk[index]) then
-				SetTeamNum(x.ftnk[index], 1)
+				TCC.SetTeamNum(x.ftnk[index], 1)
 				SetGroup(x.ftnk[index], 9)
 			end
 		end
@@ -511,7 +511,7 @@ function Update()
 		AudioMessage("tcss1410.wav") --SUCCEED -	Take battle back at thex.
 		ClearObjectives()
 		AddObjective("tcss1417.txt", "GREEN") --
-		SucceedMission(GetTime() + 7.0, "tcss14w1.des")
+		TCC.SucceedMission(GetTime() + 7.0, "tcss14w1.des")
 		x.MCAcheck = true
 		x.wintime = 99999.9
 		x.winner = false
@@ -758,7 +758,7 @@ function Update()
 		AudioMessage("tcss1409.wav") --FAIL - Recy Texas lost 
 		ClearObjectives()
 		AddObjective("tcss1415.txt", "RED") --Texas lost mission failed
-		FailMission(GetTime() + 12.0, "tcss14f2.des") --LOSER LOSER LOSER
+		TCC.FailMission(GetTime() + 12.0, "tcss14f2.des") --LOSER LOSER LOSER
 		x.spine = 666
 		x.MCAcheck = true
 	end

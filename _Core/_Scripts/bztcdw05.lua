@@ -245,10 +245,10 @@ function Update()
 			x.poolobject[index] = BuildObject("apcamrb", 5, "fpnav", index)
 		end
 		for index = 11, 24 do
-			SetTeamNum(x.egun[index], 6)
+			TCC.SetTeamNum(x.egun[index], 6)
 		end
 		for index = 9, 12 do
-			SetTeamNum(x.epwr[index], 6)
+			TCC.SetTeamNum(x.epwr[index], 6)
 		end
 		x.eturlength = 16
 		LookAt(x.mytank, x.frcy, 0)
@@ -271,7 +271,7 @@ function Update()
 		SetAsUser(x.fgrp[7], 1)
 		RemoveObject(x.player)
 		x.player = GetPlayerHandle()
-		SetTeamNum(x.player, 1)--JUST IN CASE
+		TCC.SetTeamNum(x.player, 1)--JUST IN CASE
 		StartSoundEffect("emdotcox.wav")
 		ClearObjectives()
 		AddObjective("tcdw0501.txt")
@@ -385,7 +385,7 @@ function Update()
 	if x.spine == 6 and x.victory then
     CameraFinish()
     IFace_SetInteger("options.graphics.defaultfov", x.userfov)
-		SucceedMission(GetTime(), "tcdw05w.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime(), "tcdw05w.des") --WINNER WINNER WINNER
 		x.spine = 666
 	end
 	----------END MAIN SPINE ----------
@@ -915,7 +915,7 @@ function Update()
 			AudioMessage("tcdw0507.wav") --FAIL - Mission was crucial (why lost?)
 			ClearObjectives()
 			AddObjective("Recycler destroyed.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 7.0, "tcdw05f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 7.0, "tcdw05f1.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 		end
 		
@@ -924,7 +924,7 @@ function Update()
 			ClearObjectives()
 			AddObjective("tcdw0502.txt", "RED")
 			AddObjective("\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 7.0, "tcdw05f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 7.0, "tcdw05f2.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 		end
 	end

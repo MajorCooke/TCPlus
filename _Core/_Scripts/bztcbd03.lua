@@ -349,7 +349,7 @@ function Update()
 		end
 		x.finaltime = 99999.9
 		x.finalrun = false
-		SucceedMission(GetTime() + 5.0, "tcbd03w.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 5.0, "tcbd03w.des") --WINNER WINNER WINNER
 		x.spine = 666
 		x.MCAcheck = true
 	end
@@ -435,7 +435,7 @@ function Update()
 			AudioMessage("alertpulse.wav")
 			ClearObjectives()
 			AddObjective("Mammoth destroyed.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 4.0, "tcbd03f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 4.0, "tcbd03f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -444,7 +444,7 @@ function Update()
 			AudioMessage("alertpulse.wav")
 			ClearObjectives()
 			AddObjective("Time's up. Launch window closed.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 4.0, "tcbd03f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 4.0, "tcbd03f2.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -453,7 +453,7 @@ function Update()
 			AudioMessage("alertpulse.wav")
 			ClearObjectives()
 			AddObjective("Tractor tug destroyed. It was needed to get to the Mammoth.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 4.0, "tcbd03f3.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 4.0, "tcbd03f3.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -462,7 +462,7 @@ function Update()
 			AudioMessage("alertpulse.wav")
 			ClearObjectives()
 			AddObjective("Hangar destroyed.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 4.0, "tcbd03f4.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 4.0, "tcbd03f4.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end

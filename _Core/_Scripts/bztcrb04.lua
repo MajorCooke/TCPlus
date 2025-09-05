@@ -285,7 +285,7 @@ function Update()
 	
 	--WINNER WINNER WINNER
 	if x.spine == 6 and IsAudioMessageDone(x.audio1) then
-		SucceedMission(GetTime(), "tcrb04w1.des")
+		TCC.SucceedMission(GetTime(), "tcrb04w1.des")
 		x.spine = x.spine + 1
 	end
 	----------END MAIN SPINE ----------
@@ -413,7 +413,7 @@ function Update()
 	for index = 1, x.ftugtotal do --same as total num of relics
 		if IsAlive(x.frel[index]) and not IsAlive(x.ftug[index]) and GetTug(x.frel[index]) and GetTeamNum(GetTug(x.frel[index])) == 1 and x.ftugstate[index] ~= 2 then
 			x.ftug[index] = GetTug(x.frel[index])
-			SetTeamNum(x.ftug[index], 4) --switch from player's to ally team
+			TCC.SetTeamNum(x.ftug[index], 4) --switch from player's to ally team
 			SetObjectiveName(x.ftug[index], ("Transport %d"):format(index))
 			--SetObjectiveOn(x.ftug[index])
 			Goto(x.ftug[index], "fphome", 1) --go to point, not by route
@@ -471,7 +471,7 @@ function Update()
 			AudioMessage("tcrb0113.wav") --FAIL - B2 need more competent officer
 			ClearObjectives()
 			AddObjective("tcrb0114.txt", "RED") --The Valinov has been destroyed.	MISSION FAILED!
-			FailMission(GetTime() + 20.0, "tcrb01f02.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 20.0, "tcrb01f02.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -494,7 +494,7 @@ function Update()
 			else
 				AddObjective("tcrb0406.txt", "RED") --too many destroyed and captured
 			end
-			FailMission(GetTime() + 10.0, "tcrb04f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 10.0, "tcrb04f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end

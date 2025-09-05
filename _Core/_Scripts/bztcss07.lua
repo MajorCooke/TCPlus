@@ -578,7 +578,7 @@ function Update()
 			end
 			if index > 0 then
 				SetObjectiveName(x.freestuff[index], "Catapult art")
-				SetTeamNum(x.freestuff[index], 1)
+				TCC.SetTeamNum(x.freestuff[index], 1)
 				SetGroup(x.freestuff[index], 9)
 				SetSkill(x.freestuff[index], x.skillsetting)
 				x.freestuffstate[index] = 1
@@ -987,7 +987,7 @@ function Update()
 	if not x.MCAcheck then
 		if not IsAlive(x.frcy) then
 			AudioMessage("tcss0723.wav") --FAIL - Utah lost.
-			FailMission(GetTime() + 10.0, "tcss07f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 10.0, "tcss07f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -1017,7 +1017,7 @@ function Update()
 			AddObjective("tcss0704.txt", "GREEN")
 			AudioMessage("tcss0718.wav") --SUCCEED - Well done, standby, CCA escape. We airlift U to them.
 			AudioMessage("tcss0726.wav") --Corb - On it sir. Grz1, will relay coord to you now.
-			SucceedMission(GetTime() + 24.0, "tcss07w1.des") --WINNER WINNER WINNER
+			TCC.SucceedMission(GetTime() + 24.0, "tcss07w1.des") --WINNER WINNER WINNER
 			x.spine = 666
 			x.MCAcheck = true
 		end

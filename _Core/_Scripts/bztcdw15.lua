@@ -366,7 +366,7 @@ function Update()
     CameraFinish()
     IFace_SetInteger("options.graphics.defaultfov", x.userfov)
 		IFace_ConsoleCmd(("options.audio.music %d"):format(x.cnslcmdvalue)) --return player "music volume" to previous setting
-		SucceedMission(GetTime() + 1.0, "tcdw15w.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 1.0, "tcdw15w.des") --WINNER WINNER WINNER
 		x.spine = 666
 	end
 	----------END MAIN SPINE ----------
@@ -522,7 +522,7 @@ function Update()
 			ClearObjectives()
 			AddObjective("tcdw1501.txt", "RED")
 			AddObjective("\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 8.0, "tcdw15f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 8.0, "tcdw15f1.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 		end
 		
@@ -530,7 +530,7 @@ function Update()
 		if x.failstate == 0 and x.boomstate == 1 and x.boomtime < GetTime() then
 			SetColorFade(20.0, 0.1, "WHITE")
 			AudioMessage("xemt2.wav")
-			FailMission(GetTime() + 2.0, "tcdw15f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 2.0, "tcdw15f2.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -539,7 +539,7 @@ function Update()
 		if x.failstate == 0 and x.boomstate == 0 and x.gotcone and (not IsAlive(x.epad) or not IsAlive(x.ecne)) then
 			SetColorFade(20.0, 0.1, "WHITE")
 			AudioMessage("xemt2.wav")
-			FailMission(GetTime() + 2.0, "tcdw15f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 2.0, "tcdw15f2.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end

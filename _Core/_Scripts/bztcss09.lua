@@ -540,7 +540,7 @@ function Update()
 		ClearObjectives()
 		AddObjective("tcss0904.txt", "CYAN")
 		AddObjective("\n\nMISSION COMPLETE!", "GREEN")
-		SucceedMission(GetTime() + 10.0, "tcss09w1.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 10.0, "tcss09w1.des") --WINNER WINNER WINNER
 		x.spine = x.spine + 1
 	end
 	----------END MAIN SPINE ----------
@@ -564,7 +564,7 @@ function Update()
 	
 	--TURN RELIC ON FIRST TIME
 	if not x.relicfound and (GetDistance(x.relic, x.player) < 150 or (IsAlive(x.etug) and GetDistance(x.relic, x.etug) < 150)) then
-		SetTeamNum(x.relic, 4)
+		TCC.SetTeamNum(x.relic, 4)
 		SetObjectiveOn(x.relic)
 		x.relicfound = true
 	end
@@ -702,7 +702,7 @@ function Update()
 			x.wrecknotify = 1
 		end
 		if x.wrecknotify == 1 then
-      SetTeamNum(x.wreckbomb, 5)
+      TCC.SetTeamNum(x.wreckbomb, 5)
 			SetObjectiveOn(x.wreckbomb)
 			AudioMessage("alertpulse.wav")
 			x.wrecknotify = 0
@@ -1090,7 +1090,7 @@ function Update()
 	if not x.MCAcheck then
 		if GetDistance(x.relic, "eppad") < 64 then --CCA got relic
 			AudioMessage("tcss0902.wav") --9 FAIL - CCA has relic
-			FailMission(GetTime() + 10.0, "tcss09f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 10.0, "tcss09f1.des") --LOSER LOSER LOSER
 			ClearObjectives()
 			AddObjective("tcss0905.txt", "RED") --CCA captured relic. Mission FAILED.
 			x.spine = 666
@@ -1099,7 +1099,7 @@ function Update()
 
 		if not IsAlive(x.relic) then --fury relic destroyed
 			AudioMessage("tcss0903.wav") --5 FAIL - relic destroyed
-			FailMission(GetTime() + 7.0, "tcss09f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 7.0, "tcss09f2.des") --LOSER LOSER LOSER
 			ClearObjectives()
 			AddObjective("tcss0906.txt", "RED") --CCA captured relic. Mission FAILED.
 			x.spine = 666
@@ -1110,7 +1110,7 @@ function Update()
 			AudioMessage("tcss0904.wav") --8 FAIL - Wyom lost
 			ClearObjectives()
 			AddObjective("tcss0907.txt", "RED") --CCA captured relic. Mission FAILED.
-			FailMission(GetTime() + 10.0, "tcss09f3.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 10.0, "tcss09f3.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end

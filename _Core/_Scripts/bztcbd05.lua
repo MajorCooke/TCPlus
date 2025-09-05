@@ -225,7 +225,7 @@ function Update()
 		RemoveObject(x.etrn)
 		x.etrn = BuildObject("mbtrain",	5, x.pos)
 		for index = 1, 3 do
-			SetTeamNum(x.freestuff[index], 5)
+			TCC.SetTeamNum(x.freestuff[index], 5)
 		end
 		x.spine = x.spine + 1	
 	end
@@ -360,7 +360,7 @@ function Update()
 		AddObjective("	")
 		AddObjective("\n\nMISSION COMPLETE!", "GREEN")
 		x.frcystate = 1
-		SucceedMission(GetTime() + 11.0, "tcbd05w.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 11.0, "tcbd05w.des") --WINNER WINNER WINNER
 		x.spine = 666
 		x.MCAcheck = true
 	end
@@ -383,7 +383,7 @@ function Update()
 	if x.freestufffound < 3 then
 		for index = 1, 3 do
 			if x.freefoundstate[index] == 0 and IsAlive(x.freestuff[index]) and GetDistance(x.freestuff[index], GetNearestEnemy(x.freestuff[index], 1, 0, 450)) < 444 then
-				SetTeamNum(x.freestuff[index], 0)
+				TCC.SetTeamNum(x.freestuff[index], 0)
 				StartSoundEffect("emspin.wav") --world zoom 6s plus long silence keep as sfx
 				SetObjectiveName(x.freestuff[index], "ID Artifact")
 				SetObjectiveOn(x.freestuff[index])
@@ -405,7 +405,7 @@ function Update()
 		if index > 0 then
 			SetObjectiveOff(x.freestuff[index])
 			SetObjectiveName(x.freestuff[index], "Catapult art")
-			SetTeamNum(x.freestuff[index], 1)
+			TCC.SetTeamNum(x.freestuff[index], 1)
 			SetGroup(x.freestuff[index], 9)
 			SetSkill(x.freestuff[index], 2)
 			x.freestuffstate[index] = 1
@@ -592,7 +592,7 @@ function Update()
 			ClearObjectives()
 			AddObjective("tcbd0501.txt", "RED")
 			AddObjective("\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 4.0, "tcbd05f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 4.0, "tcbd05f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end

@@ -317,7 +317,7 @@ function Update()
 		AudioMessage("tcrb0303.wav") --SUCCEED - Gen impress with my performance
 		ClearObjectives()
 		AddObjective("tcrb0302.txt", "GREEN")
-		SucceedMission(GetTime() + 11.0, "tcrb03w1.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 11.0, "tcrb03w1.des") --WINNER WINNER WINNER
 		x.spine = x.spine + 1
 		x.MCAcheck = true
 	end
@@ -440,7 +440,7 @@ function Update()
 			AudioMessage("tcrb0304.wav") --FAIL - Bdogs destroy the 6th btln 
 			ClearObjectives()
 			AddObjective("tcrb0304.txt", "RED")
-			FailMission(GetTime() + 10.0, "tcrb03f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 10.0, "tcrb03f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -452,14 +452,14 @@ function Update()
 			AudioMessage("tcrb0306.wav") --FAIL - you are coward
 			ClearObjectives()
 			AddObjective("tcrb0303.txt", "RED")
-			FailMission(GetTime() + 14.0, "tcrb03f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 14.0, "tcrb03f2.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
     
     if not IsAlive(x.fdrp[1]) or not IsAlive(x.fdrp[2]) then
       AddObjective("TRAITOR", "RED")
-      FailMission(GetTime() + 4.0, "tcrb03f2.des") --LOSER LOSER LOSER
+      TCC.FailMission(GetTime() + 4.0, "tcrb03f2.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end

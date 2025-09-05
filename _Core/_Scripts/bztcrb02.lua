@@ -340,7 +340,7 @@ function Update()
 	
 	--SUCCEED MISSION
 	if x.spine == 6 and IsAudioMessageDone(x.audio1) then
-		SucceedMission(GetTime() + 1.0, "tcrb02w1.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 1.0, "tcrb02w1.des") --WINNER WINNER WINNER
 		x.spine = x.spine + 1
 	end
 	----------END MAIN SPINE ----------
@@ -627,7 +627,7 @@ function Update()
 					AddObjective(("tcrb020%d.txt"):format(index), "RED")
 				end
 			end 
-			FailMission(GetTime() + 10.0, "tcrb02f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 10.0, "tcrb02f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -636,7 +636,7 @@ function Update()
 			AudioMessage("alertpulse.wav")
 			ClearObjectives()
 			AddObjective("You were not authorized to destroy that.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 3.0, "tcrb02f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 3.0, "tcrb02f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -645,7 +645,7 @@ function Update()
 			AudioMessage("alertpulse.wav")
 			ClearObjectives()
 			AddObjective("Failed to stay with transports.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 3.0, "tcrb02f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 3.0, "tcrb02f2.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end

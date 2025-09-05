@@ -181,12 +181,12 @@ function Update()
 		SetObjectiveName(x.fnav[1], "Black Dogs Base")
 		SetObjectiveOn(x.fnav[1])
 		for index = 1, 2 do
-			SetTeamNum(x.fapc[index], 1)
+			TCC.SetTeamNum(x.fapc[index], 1)
 			SetGroup(x.fapc[index], 5)
 			Defend(x.fapc[index], 0)
 		end
 		for index = 13, 16 do
-			SetTeamNum(x.fgrp[index], 1)
+			TCC.SetTeamNum(x.fgrp[index], 1)
 			SetGroup(x.fgrp[index], 4)
 			Follow(x.fgrp[index], x.fapc[1], 0)
 		end
@@ -361,7 +361,7 @@ function Update()
 		ClearObjectives()
 		AddObjective("tcbd0602.txt", "GREEN")
 		AddObjective("\n\nMISSION COMPLETE!", "GREEN")
-		SucceedMission(GetTime() + 10.0, "tcbd06w.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 10.0, "tcbd06w.des") --WINNER WINNER WINNER
 		x.spine = 666
 		x.MCAcheck = true
 	end
@@ -403,7 +403,7 @@ function Update()
 			AudioMessage("alertpulse.wav")
 			ClearObjectives()
 			AddObjective("An APC has been lost.\n\nCBB reinforcements incoming.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 5.0, "tcbd06f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 5.0, "tcbd06f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -412,7 +412,7 @@ function Update()
 			AudioMessage("alertpulse.wav")
 			ClearObjectives()
 			AddObjective("Defector killed.\n\nCBB reinforcements incoming.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 5.0, "tcbd06f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 5.0, "tcbd06f2.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end

@@ -442,7 +442,7 @@ function Update()
 	if x.spine == 12 and x.waittime < GetTime() then --IsAudioMessageDone(x.audio1) then
 		for index = 1, 4 do
 			AddPilotByHandle(x.egrd[index])
-			SetTeamNum(x.egrd[index], 5)
+			TCC.SetTeamNum(x.egrd[index], 5)
 			SetSkill(x.egrd[index], x.skillsetting)
 		end
 		SetAnimation(x.evlt, "close", 1)
@@ -497,7 +497,7 @@ function Update()
 	if x.spine == 16 and x.waittime < GetTime() then --IsAudioMessageDone(x.audio1) then
 		for index = 5, 8 do
 			AddPilotByHandle(x.egrd[index])
-			SetTeamNum(x.egrd[index], 5)
+			TCC.SetTeamNum(x.egrd[index], 5)
 			SetSkill(x.egrd[index], x.skillsetting)
 		end
 		SetAnimation(x.door[10], "close", 1)
@@ -781,7 +781,7 @@ function Update()
 	
 	--NO REALLY, I MEAN IT THIS TIME, YOU WIN
 	if x.spine == 37 and IsAudioMessageDone(x.audio1) then
-		SucceedMission(GetTime() + 1.0, "tcbd09w.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 1.0, "tcbd09w.des") --WINNER WINNER WINNER
 		x.MCAcheck = true
 		x.spine = x.spine + 1
 	end
@@ -813,7 +813,7 @@ function Update()
 			AudioMessage("alertpulse.wav")
 			ClearObjectives()
 			AddObjective("You were not authorized to destroy that.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 4.0, "tcbd09f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 4.0, "tcbd09f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -822,7 +822,7 @@ function Update()
 			AudioMessage("alertpulse.wav")
 			ClearObjectives()
 			AddObjective("AIP has secured the Armory.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 4.0, "tcbd09f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 4.0, "tcbd09f2.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -832,7 +832,7 @@ function Update()
 			HideCockpitTimer()
 			SetColorFade(20.0, 0.1, "WHITE")
 			AudioMessage("xemt2.wav")
-			FailMission(GetTime() + 2.0, "tcbd09f3.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 2.0, "tcbd09f3.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -849,7 +849,7 @@ function Update()
 				AudioMessage("alertpulse.wav")
 				ClearObjectives()
 				AddObjective("Too many wingman lost to continue.\n\nMISSION FAILED!", "RED")
-				FailMission(GetTime() + 4.0, "tcbd09f4.des") --LOSER LOSER LOSER
+				TCC.FailMission(GetTime() + 4.0, "tcbd09f4.des") --LOSER LOSER LOSER
 				x.spine = 666
 				x.MCAcheck = true
 			end

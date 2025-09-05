@@ -208,7 +208,7 @@ function Update()
 	if x.spine == 4 and IsAlive(x.player) and IsOdf(x.player, "kvtank") then
 		x.playerstate = 2
 		for index = 1, 4 do --return snipability
-			SetTeamNum(x.epat[index], 5)
+			TCC.SetTeamNum(x.epat[index], 5)
 			SetCanSnipe(x.epat[index], 1)
 		end
 		SetObjectiveOff(x.epat[5])
@@ -285,7 +285,7 @@ function Update()
 		AddObjective("SAVE", "DKGREY")
 		SetObjectiveOff(x.fnav[3])
 		SetObjectiveOn(x.eprt)
-		SetTeamNum(x.eprt, 4)
+		TCC.SetTeamNum(x.eprt, 4)
 		x.spine = x.spine + 1
 	end
 	
@@ -405,7 +405,7 @@ function Update()
 
 	--MISSION SUCCESS
 	if x.spine == 16 and x.waittime < GetTime() then
-		SucceedMission(GetTime(), "tcdw09w.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime(), "tcdw09w.des") --WINNER WINNER WINNER
 		x.spine = 666
 	end
 	----------END MAIN SPINE ----------
@@ -422,7 +422,7 @@ function Update()
 			if IsAlive(x.epat[index]) and GetWhoShotMe(x.epat[index]) == x.player then
 				for index2 = 1, 4 do
 					if IsAlive(x.epat[index2]) and GetTeamNum(x.epat[index2]) == 0 then
-						SetTeamNum(x.epat[index2], 5)
+						TCC.SetTeamNum(x.epat[index2], 5)
 					end
 					Attack(x.epat[index2], x.player)
 				end
@@ -508,7 +508,7 @@ function Update()
 		--player is pilot at wrong time or apc destroyed too soon
 		if x.failstate == 0 and ((IsOdf(x.player, "bspilo") and (x.playerstate == 0 or x.playerstate == 2)) or (x.playerstate < 3 and not IsAround(x.mytank))) then
 			for index = 1, 4 do
-				SetTeamNum(x.epat[index], 5)
+				TCC.SetTeamNum(x.epat[index], 5)
 				Attack(x.epat[index], x.player)
 			end
 			ClearObjectives()
@@ -535,7 +535,7 @@ function Update()
 		if x.failstate == 1 then --FAIL MISSION
 			AudioMessage("tcdw0909.wav") --8s FAIL - wrld of hurt- modified from a dw06
 			AddObjective("\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 8.0, "tcdw09f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 8.0, "tcdw09f1.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 			x.spine = 666
 		end

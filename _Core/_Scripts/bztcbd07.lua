@@ -423,8 +423,8 @@ function Update()
 		AddObjective("tcbd0704.txt")
 		x.etugallow = false --stop tug stuff / used by freestuff too
 		x.ftugstate = true --even ftug can die
-		SetTeamNum(x.relic[1], 1)
-		SetTeamNum(x.relic[2], 1)
+		TCC.SetTeamNum(x.relic[1], 1)
+		TCC.SetTeamNum(x.relic[2], 1)
 		x.easn[1] = BuildObject("nvscout", 5, "eptnk", 1)
 		x.easn[2] = BuildObject("nvtank", 5, "eptnk", 2)
 		x.easn[3] = BuildObject("svmisl", 5, "eptnk", 3)
@@ -471,7 +471,7 @@ function Update()
 			AudioMessage("tcbd0708.wav") --ADDED --Good job securing those relics. Dropship is enroute.
 			ClearObjectives()
 			AddObjective("tcbd0704.txt", "GREEN")
-			SucceedMission(GetTime() + 7.0, "tcbd07w.des") --WINNER WINNER WINNER
+			TCC.SucceedMission(GetTime() + 7.0, "tcbd07w.des") --WINNER WINNER WINNER
 			x.spine = x.spine + 1
 		end
 		x.casualty = 0
@@ -510,7 +510,7 @@ function Update()
 		SetObjectiveOn(x.fnav[6])
 		x.freestate = x.freestate + 1
 	elseif x.freestate == 2 and IsInfo("yvpegars06a") then
-		SetTeamNum(x.freestuff, 1)
+		TCC.SetTeamNum(x.freestuff, 1)
 		SetGroup(x.freestuff, 9)
 		Defend(x.freestuff, 0) --give player control
 		RemoveObject(x.fnav[6])
@@ -561,7 +561,7 @@ function Update()
 	if x.relicfoundboth < 2 then
 		for index = 1, 2 do
 			if not x.relicfound[index] and IsAlive(x.relic[index]) and ((IsAlive(x.player) and GetDistance(x.relic[index], x.player) < 100) or (IsAlive(x.etug[index]) and GetDistance(x.relic[index], x.etug[index]) < 50)) then
-				SetTeamNum(x.relic[index], 4)
+				TCC.SetTeamNum(x.relic[index], 4)
 				SetObjectiveOn(x.relic[index])
 				x.relicfound[index] = true
 				x.relicfoundboth = x.relicfoundboth + 1
@@ -683,7 +683,7 @@ function Update()
 			AudioMessage("tcbd0705.wav") --ADDED –allowed the tug to be destroyed. Retreat to the dropzone.
 			ClearObjectives()
 			AddObjective("You lost your only Hauler.\n\nMISSION FAILED!", "RED") --"tcbd0701.txt", "RED") --CCA captured relic. Mission FAILED.
-			FailMission(GetTime() + 11.0, "tcbd07f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 11.0, "tcbd07f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -692,7 +692,7 @@ function Update()
 			AudioMessage("tcbd0707.wav") --ADDED --allowed a relic to be destroyed. Retreat!
 			ClearObjectives()
 			AddObjective("A relic was destroyed.\n\nMISSION FAILED!", "RED") --("tcbd0704.txt", "RED")
-			FailMission(GetTime() + 7.0, "tcbd07f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 7.0, "tcbd07f2.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -701,7 +701,7 @@ function Update()
 			AudioMessage("tcbd0706.wav") --ADDED --CCA has captured the relics and will soon have reinforcements. Retreat.
 			ClearObjectives()
 			AddObjective("The CCA captured the relics.\n\nMISSION FAILED!", "RED") --("tcbd0701.txt", "RED") --CCA captured relic. Mission FAILED.
-			FailMission(GetTime() + 10.0, "tcbd07f3.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 10.0, "tcbd07f3.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -710,7 +710,7 @@ function Update()
 			AudioMessage("alertpulse.wav") 
 			ClearObjectives()
 			AddObjective("Failed to investigate distress beacon in a timely manner.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 5.0, "tcbd07f4.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 5.0, "tcbd07f4.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end

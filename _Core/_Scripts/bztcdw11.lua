@@ -369,7 +369,7 @@ function Update()
 	if x.spine == 6 and IsAlive(x.frcy) and x.waittime < GetTime() then
 		x.fapcstate = 3
 		AudioMessage("tcdw1102.wav") --APC - I'm in LT. now let’s get out of here.
-		SetTeamNum(x.frcy, 1)
+		TCC.SetTeamNum(x.frcy, 1)
 		SetPerceivedTeam(x.frcy, 1) --make double sure they hate frcy
 		Goto(x.frcy, "prcyrun")
 		Follow(x.fapc, x.frcy, 0)
@@ -391,7 +391,7 @@ function Update()
 		SetGroup(x.frcy, 7) --Defend(x.frcy, 0) --acts as a deploy command on a recy
 		Stop(x.frcy, 0)
 		for index = 1, 2 do
-			SetTeamNum(x.fsct[index], 1)
+			TCC.SetTeamNum(x.fsct[index], 1)
 			SetGroup(x.fsct[index], 3)
 			Defend(x.fsct[index], 0)
 		end
@@ -520,7 +520,7 @@ function Update()
 	if x.spine == 17 and IsAudioMessageDone(x.audio1) and IsAlive(x.player) then
     CameraFinish()
     IFace_SetInteger("options.graphics.defaultfov", x.userfov)
-		SucceedMission(GetTime() + 1.0, "tcdw11w.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 1.0, "tcdw11w.des") --WINNER WINNER WINNER
 		x.spine = 666
 	end
 	----------END MAIN SPINE ----------
@@ -838,7 +838,7 @@ function Update()
 			elseif x.fapchealth == 3 and not IsAlive(x.fapc) then
 				ClearObjectives()
 				AddObjective("APC Destroyed.\n\nMISSION FAILED!", "RED")
-				FailMission(GetTime() + 4.0, "tcdw11f1.des") --LOSER LOSER LOSER
+				TCC.FailMission(GetTime() + 4.0, "tcdw11f1.des") --LOSER LOSER LOSER
 				x.MCAcheck = true
 				x.spine = 666
 			end
@@ -849,7 +849,7 @@ function Update()
 			AudioMessage("tcdw1106.wav") --RECY - need help - lost
 			ClearObjectives()
 			AddObjective("Recycler destroyed.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 7.0, "tcdw11f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 7.0, "tcdw11f2.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 			x.spine = 666
 		end
@@ -859,7 +859,7 @@ function Update()
 			AudioMessage("alertpulse.wav")
 			ClearObjectives()
 			AddObjective("Engineer killed.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 5.0, "tcdw11f3.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 5.0, "tcdw11f3.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 			x.spine = 666
 		end
@@ -872,7 +872,7 @@ function Update()
 			SetColorFade(15.0, 0.25, "WHITE")
 			ClearObjectives()
 			AddObjective("Recycler caught in blast.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 4.0, "tcdw11f4.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 4.0, "tcdw11f4.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -882,7 +882,7 @@ function Update()
 			AudioMessage("alertpulse.wav")
 			ClearObjectives()
 			AudioMessage("Pegasus Portal destroyed.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 4.0, "tcdw11f5.des")
+			TCC.FailMission(GetTime() + 4.0, "tcdw11f5.des")
 			x.spine = 666
 			x.MCAcheck = true
 		end

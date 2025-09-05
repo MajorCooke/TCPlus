@@ -312,7 +312,7 @@ function Update()
 		SetAsUser(x.mytank, 1)
 		RemoveObject(x.player)
 		x.player = GetPlayerHandle()
-		SetTeamNum(x.player, 1)--JUST IN CASE
+		TCC.SetTeamNum(x.player, 1)--JUST IN CASE
 		x.spine = 100
 	end
 	if x.spine == 100 and (IsInsideArea("mitsarea1", x.player) or IsInsideArea("mitsarea2", x.player)) then
@@ -1074,7 +1074,7 @@ function Update()
 	if x.spine == 37 and x.waittime < GetTime() then
     CameraFinish()
     IFace_SetInteger("options.graphics.defaultfov", x.userfov)
-		SucceedMission(GetTime(), "tcrs08w.des") --winner winner winner
+		TCC.SucceedMission(GetTime(), "tcrs08w.des") --winner winner winner
 		x.spine = x.spine + 1
 	end
 	----------END MAIN SPINE ----------
@@ -1234,7 +1234,7 @@ function Update()
 			x.wrecknotify = 1
 		end
 		if x.wrecknotify == 1 then
-      SetTeamNum(x.wreckbomb, 5)
+      TCC.SetTeamNum(x.wreckbomb, 5)
 			SetObjectiveOn(x.wreckbomb)
 			AudioMessage("alertpulse.wav")
 			x.wrecknotify = 0
@@ -1709,7 +1709,7 @@ function Update()
 				end
 				AddObjective("	")
 				AddObjective("tcrs0816.txt", "RED")
-				FailMission(GetTime() + 10.0, ("tcrs08f%d.des"):format(x.failstate))
+				TCC.FailMission(GetTime() + 10.0, ("tcrs08f%d.des"):format(x.failstate))
 				x.MCAcheck = true
 				x.spine = 666
 			end
@@ -1718,7 +1718,7 @@ function Update()
 			if x.eapcstate == 9 and x.waittime < GetTime() then
 				SetColorFade(6.0, 1.0, "WHITE")
 				AudioMessage("xcar.wav") --("xlands.wav")
-				FailMission(GetTime() + 2.0, ("tcrs08f7.des"):format(x.failstate))
+				TCC.FailMission(GetTime() + 2.0, ("tcrs08f7.des"):format(x.failstate))
 				x.MCAcheck = true
 				x.spine = 666
 			end
@@ -1747,7 +1747,7 @@ function Update()
 			AddObjective("tcrs0811.txt", "RED")
 			AddObjective("	")
 			AddObjective("tcrs0816.txt", "RED")
-			FailMission(GetTime() + 7.0, "tcrs08f8.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 7.0, "tcrs08f8.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 			x.spine = 666
 		end
@@ -1756,7 +1756,7 @@ function Update()
 		if x.etimerstate == 2 and x.waittime < GetTime() and (IsInsideArea("fortressarea", x.player) or IsInsideArea("fortressarea", x.frcy)) then
 			SetColorFade(6.0, 1.0, "WHITE")
 			AudioMessage("xcar.wav") --("xlands.wav")
-			FailMission(GetTime() + 2.0, "tcrs08f7.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 2.0, "tcrs08f7.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 			x.spine = 666 
 		end
@@ -1768,7 +1768,7 @@ function Update()
 			AddObjective("tcrs0815.txt", "RED")
 			AddObjective("	")
 			AddObjective("tcrs0816.txt", "RED")
-			FailMission(GetTime() + 7.0, "tcrs08f9.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 7.0, "tcrs08f9.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 			x.spine = 666
 		end
@@ -1781,7 +1781,7 @@ function ObjectSniped(p, k) --NEEDED IF PLAYER SNIPED WHILE IN VEHICLE
 		ClearObjectives()
 		AddObjective("tcrs0817.txt", "RED")
 		AudioMessage("alertpulse.wav")
-		FailMission(GetTime() + 3.0, "tcrs08f10.des") --LOSER LOSER LOSER
+		TCC.FailMission(GetTime() + 3.0, "tcrs08f10.des") --LOSER LOSER LOSER
 		MCAcheck = true
 		x.spine = 666
 	end

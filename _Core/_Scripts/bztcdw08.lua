@@ -322,7 +322,7 @@ function Update()
 	if x.spine == 9 and x.eapcstate < 5 and (not IsAliveAndPilot(x.eapc) or (IsAlive(x.player) and IsOdf(x.player, "kvapc"))) then
 		x.eapcstate = 6 --stop eapc stuff
 		x.waittime = 99999.9 --extra stop
-		SetTeamNum(x.eapc, 1) --make target
+		TCC.SetTeamNum(x.eapc, 1) --make target
 		StopCockpitTimer()
 		HideCockpitTimer()
 		ClearObjectives()
@@ -357,7 +357,7 @@ function Update()
 	
 	--MISSION SUCCESS
 	if x.spine == 11 and IsAudioMessageDone(x.audio1) then
-		SucceedMission(GetTime() + 1.0, "tcdw08w.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 1.0, "tcdw08w.des") --WINNER WINNER WINNER
 		x.spine = 666
 	end
 	----------END MAIN SPINE ----------
@@ -564,7 +564,7 @@ function Update()
 			AudioMessage("tcdw0806.wav") --FAIL - wasting resources -lost Recy(?)
 			ClearObjectives()
 			AddObjective("CRA APC and Engineering Team ESCAPED.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 10.0, "tcdw08f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 10.0, "tcdw08f1.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 			x.spine = 666
 		end
@@ -577,7 +577,7 @@ function Update()
 			else
 				AddObjective("CRA APC and Engineering Team killed.\n\nMISSION FAILED!", "RED")
 			end
-			FailMission(GetTime() + 14.0, "tcdw08f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 14.0, "tcdw08f2.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 			x.spine = 666
 		end
@@ -588,7 +588,7 @@ function Update()
 			AudioMessage("alertpulse.wav")
 			ClearObjectives()
 			AddObjective("You were too slow to enter the portal and were detected by the CRA who closed the exit on Elysium.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 4.0, "tcdw08f6.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 4.0, "tcdw08f6.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 			x.spine = 666
 		end
@@ -597,7 +597,7 @@ function Update()
 			AudioMessage("tcdw0805.wav") --FAIL - lost/killed APC - RTB IO
 			ClearObjectives()
 			AddObjective("CRA APC and Engineering Team killed.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 14.0, "tcdw08f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 14.0, "tcdw08f2.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 			x.spine = 666
 		end
@@ -606,7 +606,7 @@ function Update()
 			AudioMessage("tcdw0806.wav") --FAIL - wasting resources -lost Recy(?)
 			ClearObjectives()
 			AddObjective("Recycler destroyed.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 10.0, "tcdw08f3.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 10.0, "tcdw08f3.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 			x.spine = 666
 		end
@@ -615,7 +615,7 @@ function Update()
 			AudioMessage("tcdw0806.wav") --FAIL - wasting resources -lost Recy(?)
 			ClearObjectives()
 			AddObjective("Pegasus Portal destroyed.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 10.0, "tcdw08f4.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 10.0, "tcdw08f4.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 			x.spine = 666
 		end
@@ -625,7 +625,7 @@ function Update()
 			AudioMessage("tcdw0806.wav") --FAIL - wasting resources -lost Recy(?)
 			ClearObjectives()
 			AddObjective("-APC notified CRA that it's held by a tug.\n-CRA side of the portal has been blocked.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 10.0, "tcdw08f5.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 10.0, "tcdw08f5.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 			x.spine = 666
 		end	

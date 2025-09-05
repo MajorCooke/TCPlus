@@ -332,7 +332,7 @@ function Update()
 		ClearObjectives()
 		AddObjective("tcbd0404.txt", "GREEN")
 		AddObjective("\n\nMISSION COMPLETE!", "GREEN")
-		SucceedMission(GetTime() + 6.0, "tcbd04w.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 6.0, "tcbd04w.des") --WINNER WINNER WINNER
 		x.MCAcheck = true
 		x.spine = 666
 	end
@@ -416,7 +416,7 @@ function Update()
 			ClearObjectives()
 			AddObjective("tcbd0403.txt", "RED")
 			AddObjective("\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 4.0, "tcbd04f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 4.0, "tcbd04f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end

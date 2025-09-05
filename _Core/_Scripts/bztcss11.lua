@@ -384,7 +384,7 @@ function Update()
 	--Send final CCA warning b4 attack
 	if x.spine == 17 and IsAudioMessageDone(x.audio1) then
 		x.audio1 = AudioMessage("tcss1111.wav") --All units, Omega 1 not respond. Enage and destroy
-		SetTeamNum(x.player, 1)
+		TCC.SetTeamNum(x.player, 1)
 		x.spine = x.spine + 1
 	end
 
@@ -405,7 +405,7 @@ function Update()
 		AudioMessage("tcss1116.wav") --SUCCEED - Well done Cmd. Reinforce in motion Cmd.
 		ClearObjectives()
 		AddObjective("tcss1105.txt", "GREEN")
-		SucceedMission(GetTime() + 6.0, "tcss11w1.des")
+		TCC.SucceedMission(GetTime() + 6.0, "tcss11w1.des")
 		x.spine = x.spine + 1
 	end
 	----------END MAIN SPINE ----------
@@ -823,7 +823,7 @@ function Update()
       CameraFinish()
       IFace_SetInteger("options.graphics.defaultfov", x.userfov)
 			x.player = GetPlayerHandle() --re-get x.player so...
-			SetTeamNum(x.player, 1) --...turrets and gtow...
+			TCC.SetTeamNum(x.player, 1) --...turrets and gtow...
 			SetPerceivedTeam(x.player, 1) --... will attack too
 			x.easnsend = true
 		end
@@ -941,7 +941,7 @@ function Update()
 			ClearObjectives()
 			AddObjective("tcss1109.txt", "RED")
 			AudioMessage("tcss1113.wav") --FAIL - tank - Your cover is blown. Your tank is out in open.
-			FailMission(GetTime() + 4.0, "tcss11f2.des")
+			TCC.FailMission(GetTime() + 4.0, "tcss11f2.des")
 			x.MCAcheck = true
 		end
 
@@ -952,7 +952,7 @@ function Update()
 		or not IsAlive(x.esil4) or not IsAlive(x.esil5) or not IsAlive(x.esil6) then
 			ClearObjectives()
 			AddObjective("tcss1110.txt", "RED")
-			FailMission(GetTime() + 3.0, "tcss11f3.des")
+			TCC.FailMission(GetTime() + 3.0, "tcss11f3.des")
 			x.MCAcheck = true
 		end
 
@@ -961,7 +961,7 @@ function Update()
 			ClearObjectives()
 			AddObjective("tcss1111.txt", "RED")
 			AudioMessage("tcss1115.wav") --FAIL - Time up message lost
-			FailMission(GetTime() + 6.0, "tcss11f1.des")
+			TCC.FailMission(GetTime() + 6.0, "tcss11f1.des")
 			x.MCAcheck = true
 		end
 	end

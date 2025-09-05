@@ -237,7 +237,7 @@ function Update()
 		SetAsUser(x.mytank, 1)
 		RemoveObject(x.player)
 		x.player = GetPlayerHandle()
-		SetTeamNum(x.player, 1)--JUST IN CASE
+		TCC.SetTeamNum(x.player, 1)--JUST IN CASE
 		for index = 1, 3 do
 			x.pos = GetTransform(x.epwr[index])
 			RemoveObject(x.epwr[index])
@@ -544,7 +544,7 @@ function Update()
 	
 	--SUCCEED MISSION
 	if x.spine == 14 and IsAudioMessageDone(x.audio1) then
-		SucceedMission(GetTime() + 0.5, "tcdw06w.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 0.5, "tcdw06w.des") --WINNER WINNER WINNER
 		x.spine = 666
 	end
 	----------END MAIN SPINE ----------
@@ -906,7 +906,7 @@ function Update()
 			AddObjective("	")
 			AddObjective("tcdw0604.txt", "RED")
 			AddObjective("\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 10.0, "tcdw06f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 10.0, "tcdw06f1.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 			x.spine = 666
 		end
@@ -916,7 +916,7 @@ function Update()
 			ClearObjectives()
 			AddObjective("tcdw0603.txt", "RED")
 			AddObjective("\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 13.0, "tcdw06f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 13.0, "tcdw06f2.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 			x.spine = 666
 		end
@@ -925,7 +925,7 @@ function Update()
 			AudioMessage("tcdw0607.wav") --FAIL – 13 Lt. pull back. Ah Jesus, RTB. Wrld of hurt LT.
 			ClearObjectives()
 			AddObjective("Recycler destroyed.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 13.0, "tcdw06f3.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 13.0, "tcdw06f3.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 			x.spine = 666
 		end
@@ -948,7 +948,7 @@ function Update()
 				AudioMessage("tcdw0606.wav") --FAIL – 10 Lost portal control -time fail
 				ClearObjectives()
 				AddObjective("tcdw0609.txt", "RED")
-				FailMission(GetTime() + 10.0, "tcdw06f4.des") --LOSER LOSER LOSER
+				TCC.FailMission(GetTime() + 10.0, "tcdw06f4.des") --LOSER LOSER LOSER
 				x.MCAcheck = true
 				x.spine = 666
 			end 

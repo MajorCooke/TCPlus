@@ -588,7 +588,7 @@ function Update()
 	
 	--SUCCEED MISSION
 	if x.spine == 15 and IsAudioMessageDone(x.audio1) then
-		SucceedMission(GetTime(), "tcrs06w.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime(), "tcrs06w.des") --WINNER WINNER WINNER
 		x.spine = 666
 	end
 	----------END MAIN SPINE ----------
@@ -650,7 +650,7 @@ function Update()
 		if x.freevalue > 0 then
 			SetObjectiveOff(x.freestuff[x.freevalue])
 			SetObjectiveName(x.freestuff[x.freevalue], GetODFString(x.freestuff[x.freevalue], "GameObjectClass", "unitName"))
-			SetTeamNum(x.freestuff[x.freevalue], 1)
+			TCC.SetTeamNum(x.freestuff[x.freevalue], 1)
 			if x.freevalue ~= 7 then
 				SetGroup(x.freestuff[x.freevalue], 6)
 				StartSoundEffect("pow_done.wav") --decent short
@@ -700,7 +700,7 @@ function Update()
 			x.wrecknotify = 1
 		end
 		if x.wrecknotify == 1 then
-      SetTeamNum(x.wreckbomb, 5)
+      TCC.SetTeamNum(x.wreckbomb, 5)
 			SetObjectiveOn(x.wreckbomb)
 			AudioMessage("alertpulse.wav")
 			x.wrecknotify = 0
@@ -1230,7 +1230,7 @@ function Update()
 			AudioMessage("tcrs0206.wav") --FAIL You have failed the Repub, MAJOR, your dishonor knows no bounds
 			ClearObjectives()
 			AddObjective("tcrs0606.txt", "RED")
-			FailMission(GetTime() + 10.0, "tcrs06f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 10.0, "tcrs06f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end

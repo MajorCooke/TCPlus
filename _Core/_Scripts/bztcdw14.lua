@@ -334,7 +334,7 @@ function Update()
 		SetAsUser(x.mytank, 1)
 		RemoveObject(x.player)
 		x.player = GetPlayerHandle()
-		SetTeamNum(x.player, 1)--JUST IN CASE
+		TCC.SetTeamNum(x.player, 1)--JUST IN CASE
 		x.camstate = 0
     CameraFinish()
     IFace_SetInteger("options.graphics.defaultfov", x.userfov)
@@ -454,7 +454,7 @@ function Update()
 		ClearObjectives()
 		AddObjective("tcdw1403.txt", "GREEN")
 		AddObjective("\n\nMISSION COMPLETE", "GREEN")
-		SucceedMission(GetTime() + 8.0, "tcdw14w.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 8.0, "tcdw14w.des") --WINNER WINNER WINNER
 		x.MCAcheck = true
 		x.spine = 888
 	end
@@ -520,7 +520,7 @@ function Update()
 			x.wrecknotify = 1
 		end
 		if x.wrecknotify == 1 then
-      SetTeamNum(x.wreckbomb, 5)
+      TCC.SetTeamNum(x.wreckbomb, 5)
 			SetObjectiveOn(x.wreckbomb)
 			AudioMessage("alertpulse.wav")
 			x.wrecknotify = 0
@@ -1181,7 +1181,7 @@ function Update()
 			AudioMessage("tcdw1407.wav") --FAIL - the apc got through
 			ClearObjectives()
 			AddObjective("CRA APC got through.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 11.0, "tcdw14f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 11.0, "tcdw14f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -1190,7 +1190,7 @@ function Update()
 			AudioMessage("tcdw1408.wav") --FAIL - lost recy -generic against CRA
 			ClearObjectives()
 			AddObjective("Recycler destroyed.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 11.0, "tcdw14f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 11.0, "tcdw14f2.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end

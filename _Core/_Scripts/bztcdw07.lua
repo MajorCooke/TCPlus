@@ -256,7 +256,7 @@ function Update()
 		SetAsUser(x.mytank, 1)
 		RemoveObject(x.player)
 		x.player = GetPlayerHandle()
-		SetTeamNum(x.player, 1)--JUST IN CASE
+		TCC.SetTeamNum(x.player, 1)--JUST IN CASE
 		SetObjectiveName(x.frcy, "Outpost 1")
 		x.fnav[1] = BuildObject("apcamrb", 1, "fpnav1")
 		SetObjectiveName(x.fnav[1], "Repair")
@@ -392,7 +392,7 @@ function Update()
 		ClearObjectives()
 		AddObjective("tcdw0704.txt", "GREEN")
 		AddObjective("\n\nMISSION COMPLETE", "GREEN")
-		SucceedMission(GetTime() + 8.0, "tcdw07w.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 8.0, "tcdw07w.des") --WINNER WINNER WINNER
 		x.MCAcheck = true
 		x.spine = 666
 	end
@@ -519,7 +519,7 @@ function Update()
 			x.wrecknotify = 1
 		end
 		if x.wrecknotify == 1 then
-      SetTeamNum(x.wreckbomb, 5)
+      TCC.SetTeamNum(x.wreckbomb, 5)
 			SetObjectiveOn(x.wreckbomb)
 			AudioMessage("alertpulse.wav")
 			x.wrecknotify = 0
@@ -1137,7 +1137,7 @@ function Update()
 		end
 		
 		if x.spine == 666 and IsAudioMessageDone(x.audio6) then
-			FailMission(GetTime(), "tcdw07f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime(), "tcdw07f1.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 		end
 	end

@@ -263,7 +263,7 @@ function Update()
 		SetAsUser(x.mytank, 1)
 		RemoveObject(x.player)
 		x.player = GetPlayerHandle()
-		SetTeamNum(x.player, 1)--JUST IN CASE
+		TCC.SetTeamNum(x.player, 1)--JUST IN CASE
 		x.pos = GetTransform(x.epad)
 		RemoveObject(x.epad)
 		x.epad = BuildObject("sblpad2", 5, x.pos)
@@ -562,7 +562,7 @@ function Update()
 	--SUCCEED MISSION
 	if x.spine == 20 and x.waittime < GetTime() then
 		x.MCAcheck = true
-		SucceedMission(GetTime() + 7.0, "tcss05w1.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 7.0, "tcss05w1.des") --WINNER WINNER WINNER
 		AudioMessage("tcss0549.wav") --SUCCESS - Good job cmd. Transport in route
 		ClearObjectives()
 		AddObjective("tcss0509.txt", "GREEN")
@@ -636,7 +636,7 @@ function Update()
 			AudioMessage("tcss0535.wav") --Grz1, this cmd Simmns, I arrggghhhhhh
 			AudioMessage("tcss0546.wav") --Gen, 5th wiped out. Grz1 has failed to recon Lpad
 			AudioMessage("tcss0551.wav") --fail - All personel. Prep evac, except you Griz 1
-			FailMission(GetTime() + 21.0, "tcss05f4.des") --LOSER LOSER LOSER - getto and id launchpad
+			TCC.FailMission(GetTime() + 21.0, "tcss05f4.des") --LOSER LOSER LOSER - getto and id launchpad
 			ClearObjectives()
 			AddObjective("tcss0510.txt", "RED")
 			x.spine = 666
@@ -864,7 +864,7 @@ function Update()
 	if not x.MCAcheck then
 		if not IsAlive(x.frcy) then
 			AudioMessage("tcss0553.wav") --fail - Wyoming lost
-			FailMission(GetTime() + 6.0, "tcss05f5.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 6.0, "tcss05f5.des") --LOSER LOSER LOSER
 			ClearObjectives()
 			AddObjective("failrecycox.txt", "RED") --Your Recycler was destroyed. MISSION FAILED
 			x.spine = 666
@@ -872,7 +872,7 @@ function Update()
 		end
 		
 		if not x.epadclear and not IsAlive(x.epad) then --don't blow up the launchpad (before IDing) ya knucklehead
-			FailMission(GetTime() + 6.0, "tcss05f7.des")
+			TCC.FailMission(GetTime() + 6.0, "tcss05f7.des")
 			ClearObjectives()
 			AddObjective("failordr.txt", "RED")
 			x.spine = 666
@@ -880,7 +880,7 @@ function Update()
 		end
 		
 		if not x.ecnedone and x.gotcone and not IsAlive(x.ecne) then --don't blow up CCA rocket
-			FailMission(GetTime() + 6.0, "tcss05f7.des")
+			TCC.FailMission(GetTime() + 6.0, "tcss05f7.des")
 			ClearObjectives()
 			AddObjective("failordr.txt", "RED")
 			x.spine = 666
@@ -889,13 +889,13 @@ function Update()
 		
 		if x.order1time < GetTime() then --follow orders soldiernot 
 			if x.failstate[1] then
-				FailMission(GetTime() + 10.0, "tcss05f1.des") --LOSER LOSER LOSER - goto heph
+				TCC.FailMission(GetTime() + 10.0, "tcss05f1.des") --LOSER LOSER LOSER - goto heph
 			elseif x.failstate[2] then
-				FailMission(GetTime() + 10.0, "tcss05f2.des") --LOSER LOSER LOSER - id heph
+				TCC.FailMission(GetTime() + 10.0, "tcss05f2.des") --LOSER LOSER LOSER - id heph
 			elseif x.failstate[3] then
-				FailMission(GetTime() + 10.0, "tcss05f3.des") --LOSER LOSER LOSER - goto omega
+				TCC.FailMission(GetTime() + 10.0, "tcss05f3.des") --LOSER LOSER LOSER - goto omega
 			elseif x.failstate[4] then
-				FailMission(GetTime() + 10.0, "tcss05f6.des") --LOSER LOSER LOSER - id omega
+				TCC.FailMission(GetTime() + 10.0, "tcss05f6.des") --LOSER LOSER LOSER - id omega
 			end
 			AudioMessage("tcss0594.wav") --failure to perfrom simple order, relieved of cmd
 			ClearObjectives()

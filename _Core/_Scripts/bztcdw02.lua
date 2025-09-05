@@ -453,7 +453,7 @@ function Update()
 		else
 			SetEjectRatio(x.player, 0.0)
 			Damage(x.player, 10000)
-			FailMission(GetTime() + 2.0, "tcdw02f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 2.0, "tcdw02f2.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -461,7 +461,7 @@ function Update()
 	
 	--SUCCEED MISSION
 	if x.spine == 26 and x.waittime < GetTime() then
-		SucceedMission(GetTime() + 4.0, "tcdw02w.des")
+		TCC.SucceedMission(GetTime() + 4.0, "tcdw02w.des")
 		x.spine = 666
 	end
 	----------END MAIN SPINE ----------
@@ -543,7 +543,7 @@ function Update()
 			x.failstate = 10
 		elseif x.failstate == 10 and IsAudioMessageDone(x.audio6) then
 			x.MCAcheck = true
-			FailMission(GetTime() + 1.0, "tcdw02f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 1.0, "tcdw02f1.des") --LOSER LOSER LOSER
 		end
 	end
 end

@@ -384,7 +384,7 @@ function Update()
 	
 	--SUCCEED MISSION
 	if x.spine == 4 and IsAudioMessageDone(x.audio7) then
-		SucceedMission(GetTime(), "tcrb07w1.des") --winner winner winner
+		TCC.SucceedMission(GetTime(), "tcrb07w1.des") --winner winner winner
 		x.spine = x.spine + 1
 	end
 	----------END MAIN SPINE ----------
@@ -724,7 +724,7 @@ function Update()
 		x.crownstate = x.crownstate + 1
 	elseif x.crownstate == 4 then
 		x.audio1 = AudioMessage("tcrb0707.wav") --Have reactivated power to depot. Some men are coming out.
-		--below b/c sometimes SetTeamNum doesn't fully work
+		--below b/c sometimes TCC.SetTeamNum doesn't fully work
 		x.pos = GetTransform(x.fcrown)
 		RemoveObject(x.fcrown)
 		x.fcrown = BuildObject("sbhang", 1, x.pos)
@@ -1280,15 +1280,15 @@ function Update()
 	--FAIL THE MISSION
 	if not x.getiton then
 		if x.playfail[1] and IsAudioMessageDone(x.audio6) then 
-			FailMission(GetTime(), "tcrb07f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime(), "tcrb07f1.des") --LOSER LOSER LOSER
 			x.getiton = true
 		end
 		if x.playfail[2] and IsAudioMessageDone(x.audio6) then
-			FailMission(GetTime(), "tcrb07f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime(), "tcrb07f2.des") --LOSER LOSER LOSER
 			x.getiton = true
 		end
 		if x.playfail[3] and IsAudioMessageDone(x.audio6) then
-			FailMission(GetTime(), "tcrb07f3.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime(), "tcrb07f3.des") --LOSER LOSER LOSER
 			x.getiton = true
 		end
 	end

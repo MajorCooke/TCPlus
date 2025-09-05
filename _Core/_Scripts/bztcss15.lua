@@ -406,7 +406,7 @@ function Update()
 	
 	--end the victory tour - succeed mission
 	if x.spine == 6 and IsAudioMessageDone(x.audio2) then
-		SucceedMission(GetTime() + 1.0, "tcss15w1.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 1.0, "tcss15w1.des") --WINNER WINNER WINNER
 		x.spine = x.spine + 1
 	end
 	----------END MAIN SPINE ----------
@@ -635,7 +635,7 @@ function Update()
 			x.wrecknotify = 1
 		end
 		if x.wrecknotify == 1 then
-      SetTeamNum(x.wreckbomb, 5)
+      TCC.SetTeamNum(x.wreckbomb, 5)
 			SetObjectiveOn(x.wreckbomb)
 			AudioMessage("alertpulse.wav")
 			x.wrecknotify = 0
@@ -1000,7 +1000,7 @@ function Update()
 			AudioMessage("tcss1512.wav") --FAIL - Recy Texas lost 
 			ClearObjectives()
 			AddObjective("tcss1503.txt", "RED") --Texas lost mission failed
-			FailMission(GetTime() + 12.0, "tcss15f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 12.0, "tcss15f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end

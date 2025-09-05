@@ -424,7 +424,7 @@ function Update()
 		ClearObjectives()
 		AddObjective("tcdw1302.txt", "GREEN")
 		AddObjective("\n\nMISSION COMPLETE", "GREEN")
-		SucceedMission(GetTime() + 10.0, "tcdw13w.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 10.0, "tcdw13w.des") --WINNER WINNER WINNER
 		x.MCAcheck = true
 		x.spine = x.spine + 1
 	end
@@ -602,7 +602,7 @@ function Update()
 			x.wrecknotify = 1
 		end
 		if x.wrecknotify == 1 then
-      SetTeamNum(x.wreckbomb, 5)
+      TCC.SetTeamNum(x.wreckbomb, 5)
 			SetObjectiveOn(x.wreckbomb)
 			AudioMessage("alertpulse.wav")
 			x.wrecknotify = 0
@@ -944,7 +944,7 @@ function Update()
 			AudioMessage("tcdw1305.wav") --FAIL - they started new portal. Retreat, will nuke from orbit
 			ClearObjectives()
 			AddObjective("You're too late, the CRA has started a new portal.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 15.0, "tcdw13f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 15.0, "tcdw13f1.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 			x.spine = 666
 		end
@@ -954,7 +954,7 @@ function Update()
 			AudioMessage("tcdw1304.wav") --FAIL - lost recy (100 million lost)
 			ClearObjectives()
 			AddObjective("Recycler destroyed.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 17.0, "tcdw13f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 17.0, "tcdw13f2.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 			x.spine = 666
 		end
@@ -966,7 +966,7 @@ function Update()
 					AudioMessage("tcdw1306.wav") --FAIL - lost a silo
 					ClearObjectives()
 					AddObjective("A silo was destroyed before being captured.\n\nMISSION FAILED!", "RED")
-					FailMission(GetTime() + 15.0, "tcdw13f3.des")
+					TCC.FailMission(GetTime() + 15.0, "tcdw13f3.des")
 					x.spine = 666
 					x.MCAcheck = true
 					break
@@ -979,7 +979,7 @@ function Update()
 			AudioMessage("tcdw1307.wav") --FAIL - attack CRA base before silo
 			ClearObjectives()
 			AddObjective("Too close to CRA base too soon.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 12.0, "tcdw13f4.des")
+			TCC.FailMission(GetTime() + 12.0, "tcdw13f4.des")
 			x.spine = 666
 			x.MCAcheck = true
 		end

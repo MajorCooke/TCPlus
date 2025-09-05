@@ -533,9 +533,9 @@ function Update()
     CameraFinish()
     IFace_SetInteger("options.graphics.defaultfov", x.userfov)
     if not IsAlive(x.edom) and not IsAlive(x.efac[1]) and not IsAlive(x.efac[2]) and not IsAlive(x.efac[3]) and not IsAlive(x.efac[4]) then
-      SucceedMission(GetTime(), "tcbd10w2.des") --ARKIN DEAD ALT ENDING
+      TCC.SucceedMission(GetTime(), "tcbd10w2.des") --ARKIN DEAD ALT ENDING
     else
-      SucceedMission(GetTime(), "tcbd10w.des") --WINNER WINNER WINNER
+      TCC.SucceedMission(GetTime(), "tcbd10w.des") --WINNER WINNER WINNER
     end
 		x.spine = x.spine + 1
 	end
@@ -1206,7 +1206,7 @@ function Update()
 			x.spine = 666
 			x.failstate = 1
 		elseif x.failstate == 1 and IsAudioMessageDone(x.audio6) then
-			FailMission(GetTime() + 1.0, "tcbd10f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 1.0, "tcbd10f1.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 		end
 
@@ -1223,7 +1223,7 @@ function Update()
 			x.spine = 666
 			x.failstate = 2
 		elseif x.failstate == 2 and IsAudioMessageDone(x.audio6) then
-			FailMission(GetTime() + 1.0, "tcbd10f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 1.0, "tcbd10f2.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 		end
 
@@ -1234,7 +1234,7 @@ function Update()
 			x.spine = 666
 			x.failstate = 3
 		elseif x.failstate == 3 and IsAudioMessageDone(x.audio6) then
-			FailMission(GetTime() + 1.0, "tcbd10f3.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 1.0, "tcbd10f3.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 		end
 	end--]]

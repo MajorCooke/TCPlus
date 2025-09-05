@@ -197,7 +197,7 @@ function Update()
 		SetAsUser(x.mytank, 1)
 		RemoveObject(x.player)
 		x.player = GetPlayerHandle()
-		SetTeamNum(x.player, 1)--JUST IN CASE
+		TCC.SetTeamNum(x.player, 1)--JUST IN CASE
 		for index = 1, 3 do
 			x.escv[index] = BuildObject("kvscav", 5, "epscav", index)
 			--Player is always "7"	SetObjectiveName(x.escv[index], ("Monkey %d"):format(index))
@@ -352,7 +352,7 @@ function Update()
 	
 	--SUCCEED MISSION
 	if x.spine == 16 and IsAudioMessageDone(x.audio1) then
-		SucceedMission(GetTime(), "tcdw04w.des")
+		TCC.SucceedMission(GetTime(), "tcdw04w.des")
 		x.spine = 666
 	end
 	----------END MAIN SPINE ----------
@@ -433,7 +433,7 @@ function Update()
 	elseif x.pursuitstate == 3 and x.pursuittime < GetTime() then
 		x.player = GetPlayerHandle() --to be safe
 		SetPerceivedTeam(x.player, 1) --kill'em
-		SetTeamNum(x.ftug, 1) --kill'em for sure
+		TCC.SetTeamNum(x.ftug, 1) --kill'em for sure
 		if IsAlive(x.eatk[7]) then
 			Attack(x.eatk[7], x.ftug)
 		end
@@ -473,7 +473,7 @@ function Update()
 			x.audio6 = AudioMessage("tcdw0409.wav") --FAIL? - Careful LT. There aren't many of those (tug/relic LOST?)
 			ClearObjectives()
 			AddObjective("Only snipe and commandeer one scavenger.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 6.0, "tcdw04f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 6.0, "tcdw04f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -482,7 +482,7 @@ function Update()
 			x.audio6 = AudioMessage("tcdw0409.wav") --FAIL? - Careful LT. There aren't many of those (tug/relic LOST?)
 			ClearObjectives()
 			AddObjective("You allowed a Cthonian artifact to be destroyed.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 6.0, "tcdw04f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 6.0, "tcdw04f2.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -491,7 +491,7 @@ function Update()
 			x.audio6 = AudioMessage("tcdw0409.wav") --FAIL? - Careful LT. There aren't many of those (tug/relic LOST?)
 			ClearObjectives()
 			AddObjective("That tug was required to complete the mission.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 6.0, "tcdw04f3.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 6.0, "tcdw04f3.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -507,7 +507,7 @@ function Update()
 		
 		if x.failstate[4] == 2 and IsAudioMessageDone(x.audio6) then
 			x.MCAcheck = true
-			FailMission(GetTime(), "tcdw04f4.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime(), "tcdw04f4.des") --LOSER LOSER LOSER
 		end
 		
 		if x.failstate[5] == 1 and not IsInsideArea("safespace", x.player) then
@@ -516,7 +516,7 @@ function Update()
 			AddObjective("You have been caught trying to escape.\n\nMISSION FAILED!", "RED")
 			x.spine = 666
 			x.MCAcheck = true
-			FailMission(GetTime() + 4.0, "tcdw04f5.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 4.0, "tcdw04f5.des") --LOSER LOSER LOSER
 		end
 		
 		if x.failstate[6] == 1 and x.waittime < GetTime()then
@@ -530,7 +530,7 @@ function Update()
 		
 		if x.failstate[6] == 2 and IsAudioMessageDone(x.audio6) then
 			x.MCAcheck = true
-			FailMission(GetTime(), "tcdw04f6.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime(), "tcdw04f6.des") --LOSER LOSER LOSER
 		end
 		
 		if (x.failstate[7] == 1 and IsOdf(x.player, "bspilo") and IsInsideArea("pbasearea", x.player)) 
@@ -540,7 +540,7 @@ function Update()
 			AddObjective("You have been caught infiltrating the base.\n\nMISSION FAILED!", "RED")
 			x.spine = 666
 			x.MCAcheck = true
-			FailMission(GetTime() + 4.0, "tcdw04f7.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 4.0, "tcdw04f7.des") --LOSER LOSER LOSER
 		end
 		
 		if x.failstate[8] == 1 and not IsInsideArea("pbasearea", x.player) then
@@ -549,7 +549,7 @@ function Update()
 			AddObjective("You have been caught trying to escape.\n\nMISSION FAILED!", "RED")
 			x.spine = 666
 			x.MCAcheck = true
-			FailMission(GetTime() + 4.0, "tcdw04f5.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 4.0, "tcdw04f5.des") --LOSER LOSER LOSER
 		end
 	end
 end

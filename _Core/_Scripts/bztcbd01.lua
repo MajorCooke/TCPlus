@@ -76,6 +76,10 @@ function InitialSetup()
 	TCC.InitialSetup();
 end
 
+function PostRun()
+	TCC.PostRun();
+end
+
 function Save()
 
 	return
@@ -345,7 +349,7 @@ function Update()
 	
 	--MISSION SUCCESS --CCA DEAD, AIP DEAD
 	if x.spine == 8 and not IsAlive(x.ehqr) and not IsAlive(x.etrn) and not IsAlive(x.etrn2) then
-		SetTeamNum(x.etec, 1)
+		TCC.SetTeamNum(x.etec, 1)
 		for index = 1, 4 do
 			if not IsAlive(x.eatk[index]) then
 				x.casualty = x.casualty + 1
@@ -358,7 +362,7 @@ function Update()
 			AddObjective("tcbd0104.txt", "GREEN")
 			AddObjective("\n\nMISSION COMPLETE!", "GREEN")
 			RemoveObject(x.fnav[4])
-			SucceedMission(GetTime() + 11.0, "tcbd01w.des") --WINNER WINNER WINNER
+			TCC.SucceedMission(GetTime() + 11.0, "tcbd01w.des") --WINNER WINNER WINNER
 			x.spine = 666
 		end
 	end
@@ -405,7 +409,7 @@ function Update()
 			ClearObjectives()
 			AddObjective("tcbd0101.txt", "RED")
 			AddObjective("\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 4.0, "tcbd01f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 4.0, "tcbd01f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -414,7 +418,7 @@ function Update()
 			ClearObjectives()
 			AddObjective("tcbd0104.txt", "RED")
 			AddObjective("\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 4.0, "tcbd01f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 4.0, "tcbd01f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end

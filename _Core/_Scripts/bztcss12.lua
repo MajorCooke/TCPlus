@@ -473,7 +473,7 @@ function Update()
 		x.slidestate = x.slidestate + 1
 	elseif x.slidestate == 4 and x.waittime < GetTime() then
 		SetObjectiveOff(x.epvalt)
-		SetTeamNum(x.epvalt, 0)
+		TCC.SetTeamNum(x.epvalt, 0)
 		ClearObjectives()
 		AddObjective("tcss1200.txt")
 		if x.fpkgstate == 2 then
@@ -876,7 +876,7 @@ function Update()
 			x.wrecknotify = 1
 		end
 		if x.wrecknotify == 1 then
-      SetTeamNum(x.wreckbomb, 5)
+      TCC.SetTeamNum(x.wreckbomb, 5)
 			SetObjectiveOn(x.wreckbomb)
 			AudioMessage("alertpulse.wav")
 			x.wrecknotify = 0
@@ -950,7 +950,7 @@ function Update()
 			AudioMessage("tcss1204.wav") --FAIL - Recy Texas lost
 			ClearObjectives()
 			AddObjective("tcss1201.txt", "RED") --Texas lost mission failed
-			FailMission(GetTime() + 7.0, "tcss12f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 7.0, "tcss12f1.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 		end
 		
@@ -967,7 +967,7 @@ function Update()
 			AudioMessage("tcss0549.wav") --SUCCESS - Good job cmd. Transport in route
 			ClearObjectives()
 			AddObjective("tcss1202.txt", "GREEN") --CCA Recycler and factory destroyed.
-			SucceedMission(GetTime() + 7.0, "tcss12w1.des") --WINNER WINNER WINNER
+			TCC.SucceedMission(GetTime() + 7.0, "tcss12w1.des") --WINNER WINNER WINNER
 			x.MCAcheck = true
 		end
 	end--]]

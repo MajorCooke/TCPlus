@@ -265,7 +265,7 @@ function Update()
 	
 	--SUCCEED MISSION
 	if x.spine == 4 and IsAudioMessageDone(x.audio1) then
-		SucceedMission(GetTime(), "tcrb06w1.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime(), "tcrb06w1.des") --WINNER WINNER WINNER
 		x.spine = x.spine + 1
 	end
 	----------END MAIN SPINE ----------
@@ -524,7 +524,7 @@ function Update()
 		x.MCAcheck = true
 		x.ewlkstate = 200 --KEEP, 200 IS A FAIL STATE
 	elseif x.ewlkstate == 200 and IsAudioMessageDone(x.audio1) then
-		FailMission(GetTime(), "tcrb06f2.des") --LOSER LOSER LOSER
+		TCC.FailMission(GetTime(), "tcrb06f2.des") --LOSER LOSER LOSER
 		x.ewlkstate = x.ewlkstate + 1
 	end
 	
@@ -599,7 +599,7 @@ function Update()
 			x.spine = 666
 			x.playfail = true
 		elseif x.playfail and IsAudioMessageDone(x.audio6) then
-			FailMission(GetTime(), "tcrb06f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime(), "tcrb06f1.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 		end
 	end

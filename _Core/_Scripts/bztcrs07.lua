@@ -203,7 +203,7 @@ function Update()
 		SetAsUser(x.mytank, 1)
 		RemoveObject(x.player)
 		x.player = GetPlayerHandle()
-		SetTeamNum(x.player, 1)--JUST IN CASE
+		TCC.SetTeamNum(x.player, 1)--JUST IN CASE
 		for index = 1, 30 do
 			x.randompick = math.floor(GetRandomFloat(1.0,16.0)) --single 0-n inclusive, or double n1-nx inclusive
 		end
@@ -362,7 +362,7 @@ function Update()
 		ClearObjectives()
 		AddObjective("tcrs0707.txt", "GREEN")
 		SetCurHealth(x.player, 10000)
-		SucceedMission(GetTime() + 5.0, "tcrs07w.des") --winner winner winner
+		TCC.SucceedMission(GetTime() + 5.0, "tcrs07w.des") --winner winner winner
 		x.MCAcheck = true
 		x.spine = x.spine + 1
 	end
@@ -505,7 +505,7 @@ function Update()
 			AudioMessage("tcrs0707.wav") --FAIL - Russians now have tech.
 			ClearObjectives()
 			AddObjective("tcrs0709.txt", "RED")
-			FailMission(GetTime() + 13.0, "tcrs07f1.des")
+			TCC.FailMission(GetTime() + 13.0, "tcrs07f1.des")
 			x.MCAcheck = true
 			x.spine = 666
 		end
@@ -515,7 +515,7 @@ function Update()
 			AddObjective("You were not authorized to destroy that.", "RED")
 			AddObjective(" ")
 			AddObjective("MISSION FAILED!", "RED")
-			FailMission(GetTime() + 3.0, "tcrs07f1.des")
+			TCC.FailMission(GetTime() + 3.0, "tcrs07f1.des")
 			x.MCAcheck = true
 			x.spine = 666
 		end
@@ -528,7 +528,7 @@ function ObjectSniped(p, k) --SO PLAYER KNOWS THEY WERE SNIPED FER SUR
 		ClearObjectives()
 		AddObjective("tcrs0817.txt", "RED")
 		AudioMessage("alertpulse.wav")
-		FailMission(GetTime() + 3.0, "tcrs07f2.des") --LOSER LOSER LOSER
+		TCC.FailMission(GetTime() + 3.0, "tcrs07f2.des") --LOSER LOSER LOSER
 		MCAcheck = true
 		x.spine = 666
 	end

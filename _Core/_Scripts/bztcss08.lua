@@ -127,10 +127,10 @@ function InitialSetup()
 	for index = 1, 3 do
 		x.pool[index] = GetHandle(("pool%d"):format(index))
 		x.ftur[index] = GetHandle(("ftur%d"):format(index))
-		SetTeamNum(x.ftur[index], 2)
+		TCC.SetTeamNum(x.ftur[index], 2)
 		SetSkill(x.ftur[index], x.skillsetting)
 		x.fscv[index] = GetHandle(("fscv%d"):format(index))
-		SetTeamNum(x.fscv[index], 2)
+		TCC.SetTeamNum(x.fscv[index], 2)
 	end
 	Ally(1, 2) --main friend units
 	Ally(1, 4)
@@ -423,7 +423,7 @@ function Update()
 		AudioMessage("tcss0809.wav") --SUCCEED - GenC - will have scientists find out more on Furies.
 		ClearObjectives()
 		AddObjective("tcss0806.txt", "GREEN")
-		SucceedMission(GetTime() + 14.0, "tcss08w1.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 14.0, "tcss08w1.des") --WINNER WINNER WINNER
 		x.MCAcheck = true
 		x.spine = x.spine + 1
 	end
@@ -461,20 +461,20 @@ function Update()
       CameraFinish()
       IFace_SetInteger("options.graphics.defaultfov", x.userfov)
 			x.camstop2 = false
-			SetTeamNum(x.farm, 1)
+			TCC.SetTeamNum(x.farm, 1)
 			SetGroup(x.farm, 0)
-			SetTeamNum(x.ffac, 1)
+			TCC.SetTeamNum(x.ffac, 1)
 			SetGroup(x.ffac, 1)
-			SetTeamNum(x.fcon1, 1)
+			TCC.SetTeamNum(x.fcon1, 1)
 			SetGroup(x.fcon1, 8)
-			SetTeamNum(x.fcon2, 1)
+			TCC.SetTeamNum(x.fcon2, 1)
 			SetGroup(x.fcon2, 9)
 			for index = 1, 3 do
-				SetTeamNum(x.ftur[index], 1)
+				TCC.SetTeamNum(x.ftur[index], 1)
 				SetGroup(x.ftur[index], 5)
 			end
 			for index = 1, x.fscvlength do
-				SetTeamNum(x.fscv[index], 1)
+				TCC.SetTeamNum(x.fscv[index], 1)
 				SetGroup(x.fscv[index], 7)
 			end
       SetObjectiveName(x.charon, "UNKNOWN")
@@ -807,7 +807,7 @@ function Update()
 	--CHECK STATUS OF MISSION-CRITICAL ASSETS (MCA)
 	if not x.MCAcheck then		
 		if not x.allartdead and not IsAround(x.mytank) then --lost tank b4 artl killed
-			FailMission(GetTime() + 4.0, "tcss08f5.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 4.0, "tcss08f5.des") --LOSER LOSER LOSER
 			ClearObjectives()
 			AddObjective("tcss0813.txt", "RED") --MCA fail
 			x.spine = 666
@@ -816,7 +816,7 @@ function Update()
 		
 		if not x.charonid and x.order1time < GetTime() then --failed to follow orders
 			AudioMessage("tcss0394.wav") --9 FAIL – time up for follow order orig bz1 0694 copy of ss0594
-			FailMission(GetTime() + 11.0, "failordr.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 11.0, "failordr.des") --LOSER LOSER LOSER
 			ClearObjectives()
 			AddObjective("failordr.txt", "RED")
 			x.spine = 666
@@ -825,7 +825,7 @@ function Update()
 		
 		if x.relicexists and not IsAlive(x.relic) then --relic destroyed
 			AudioMessage("tcss0806.wav") --FAIL - Flight log x.relic destroyed.
-			FailMission(GetTime() + 7.0, "tcss08f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 7.0, "tcss08f1.des") --LOSER LOSER LOSER
 			ClearObjectives()
 			AddObjective("tcss0308.txt", "RED") --The object has been destroyed. Mission FAILED.
 			x.spine = 666
@@ -834,7 +834,7 @@ function Update()
 		
 		if IsAlive(x.relic) and GetDistance(x.relic, x.epad) < 64 then --CCA got relic
 			AudioMessage("tcss0807.wav") --FAIL - CCA escaped to lpad
-			FailMission(GetTime() + 7.0, "tcss08f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 7.0, "tcss08f2.des") --LOSER LOSER LOSER
 			ClearObjectives()
 			AddObjective("tcss0309.txt", "RED") --CCA captured relic. Mission FAILED.
 			x.spine = 666
@@ -843,7 +843,7 @@ function Update()
 		
 		if x.fally and not IsAlive(x.ffac) then --Factory destroyed
 			AudioMessage("tcss0811.wav") --FAIL - AMUF lost
-			FailMission(GetTime() + 6.0, "tcss08f3.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 6.0, "tcss08f3.des") --LOSER LOSER LOSER
 			ClearObjectives()
 			AddObjective("tcss0807.txt", "RED") --Your Factory was destroyed. MISSION FAILEDnot 
 			x.spine = 666
@@ -867,7 +867,7 @@ function Update()
 			end
 			
 			if not x.relicexists and x.fscvalive < 3 then
-				FailMission(GetTime() + 4.0, "tcss08f4.des") --LOSER LOSER LOSER
+				TCC.FailMission(GetTime() + 4.0, "tcss08f4.des") --LOSER LOSER LOSER
 				ClearObjectives()
 				AddObjective("tcss0808.txt", "RED") --You lost too many scavengers to be able to continue.
 				x.spine = 666
@@ -875,7 +875,7 @@ function Update()
 			end
 			
 			if x.relicexists and not x.ftugalive and x.fscvalive < 2 then
-				FailMission(GetTime() + 4.0, "tcss08f5.des") --LOSER LOSER LOSER
+				TCC.FailMission(GetTime() + 4.0, "tcss08f5.des") --LOSER LOSER LOSER
 				ClearObjectives()
 				AddObjective("tcss0809.txt", "RED") --MCA fail
 				x.spine = 666
@@ -883,7 +883,7 @@ function Update()
 			end
 			
 			if not x.allartdead and not IsAlive(x.fcon1) and not IsAlive(x.fcon2) then
-				FailMission(GetTime() + 4.0, "tcss08f5.des") --LOSER LOSER LOSER
+				TCC.FailMission(GetTime() + 4.0, "tcss08f5.des") --LOSER LOSER LOSER
 				ClearObjectives()
 				AddObjective("tcss0810.txt", "RED") --No tug to be able to continue.
 				x.spine = 666
@@ -893,7 +893,7 @@ function Update()
 		
 		if not IsAlive(x.epad) and not IsAlive(x.ftugtarget) then --CCA launch pad destroyed
 			AudioMessage("tcss0818.wav") --FAIL - LPad destroyed
-			FailMission(GetTime() + 12.0, "tcss08f6.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 12.0, "tcss08f6.des") --LOSER LOSER LOSER
 			ClearObjectives()
 			AddObjective("tcss0811.txt", "RED") --You destroyed the CCA launch pad. MISSION FAILED 
 			x.spine = 666

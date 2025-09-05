@@ -430,9 +430,9 @@ function Update()
 		x.player = GetPlayerHandle()
 		
 		if IsCraftButNotPerson(x.player) and GetDistance(x.player, x.fdrp[1]) > 60 then
-			SetTeamNum(x.frcy, 1)
-			SetTeamNum(x.ffac, 1)
-			SetTeamNum(x.farm, 1)
+			TCC.SetTeamNum(x.frcy, 1)
+			TCC.SetTeamNum(x.ffac, 1)
+			TCC.SetTeamNum(x.farm, 1)
 			x.spine = x.spine + 1
 		end
 	end
@@ -548,7 +548,7 @@ function Update()
 		x.fpilo[3] = BuildObject("sspilo", 5, "ppilo42")
 		x.collinsTime1 = 99999.9
 		x.collinsTime2 = 99999.9
-		SetTeamNum(x.fescort, 4)
+		TCC.SetTeamNum(x.fescort, 4)
 		Goto(x.fescort, x.etrn, 1)
 		x.spine = x.spine + 1
 	end
@@ -593,7 +593,7 @@ function Update()
 		AddObjective("tcss1306.txt", "GREEN")
 		AddObjective("	")
 		AddObjective("tcss1310.txt", "GREEN")
-		SucceedMission(GetTime() + 10.0, "tcss13w1.des")
+		TCC.SucceedMission(GetTime() + 10.0, "tcss13w1.des")
 		x.spine = x.spine + 1
 	end
 	---------END MAIN SPINE ----------
@@ -1198,7 +1198,7 @@ function Update()
 			AudioMessage("tcss1314.wav") --FAIL - Recy Texas lost 
 			ClearObjectives()
 			AddObjective("tcss1309.txt", "RED") --Texas lost mission failed
-			FailMission(GetTime() + 6.0, "tcss13f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 6.0, "tcss13f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -1207,7 +1207,7 @@ function Update()
 			AudioMessage("tcss1313.wav") --FAIL - APC IS LOST WITH MEN ON BOARD
 			ClearObjectives()
 			AddObjective("tcss1308.txt", "RED")
-			FailMission(GetTime() + 10.0, "tcss13f4.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 10.0, "tcss13f4.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -1223,7 +1223,7 @@ function Update()
 				AudioMessage("tcss1321.wav") --FAIL - lost the men at beacon
 				ClearObjectives()
 				AddObjective("tcss1307.txt", "RED")
-				FailMission(GetTime() + 13.0, "tcss13f2.des") --LOSER LOSER LOSER
+				TCC.FailMission(GetTime() + 13.0, "tcss13f2.des") --LOSER LOSER LOSER
 				x.spine = 666
 				x.MCAcheck = true
 			end
@@ -1233,7 +1233,7 @@ function Update()
 			AudioMessage("tcss1321.wav") --FAIL - lost the men at beacon
 			ClearObjectives()
 			AddObjective("tcss1307.txt", "RED")
-			FailMission(GetTime() + 13.0, "tcss13f3.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 13.0, "tcss13f3.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end

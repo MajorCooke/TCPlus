@@ -327,7 +327,7 @@ function Update()
 	if x.spine == 9 and IsAudioMessageDone(x.audio1) then
 		AudioMessage("tcss0407.wav") --5 Griz 1, x.eldrig of the 6th platoon. We 10 minutes out.
 		x.eldtime = GetTime() + 600.0
-		SetTeamNum(x.lemnos, 1) --so enemy ai will attack it		
+		TCC.SetTeamNum(x.lemnos, 1) --so enemy ai will attack it		
 		x.eturtime = 99999.9 --TURN OFF
 		x.epattime = 99999.9 --TURN OFF
 		x.epooltime = 99999.9 --TURN OFF
@@ -385,7 +385,7 @@ function Update()
 	--SET THE MISSION TO SUCCESS AND END
 	if x.spine == 13 and IsAlive(x.eldridge) and (GetDistance(x.eldridge, "eplem") < 300 or x.eldtime < GetTime()) then
     x.eldtime = 99999.9
-		SucceedMission(GetTime() + 8.0, "tcss04w1.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 8.0, "tcss04w1.des") --WINNER WINNER WINNER
 		AudioMessage("tcss0411.wav") --3 P1 SUCCEED - Cmd x.eldrige here. Sixth at your cmd.
 		AudioMessage("tcss0412.wav") --3 P2 SUCCEED - Good Work. Fact secure
 		ClearObjectives()
@@ -928,7 +928,7 @@ function Update()
 	if not x.MCAcheck then
 		if not IsAlive(x.frcy) then
 			AudioMessage("tcss0413.wav") --7 FAIL - Recyler lost eldridge specific
-			FailMission(GetTime() + 9.0, "tcss04f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 9.0, "tcss04f1.des") --LOSER LOSER LOSER
 			ClearObjectives()
 			AddObjective("failrecycox.txt", "RED") --Your Recycler was destroyed. MISSION FAILEDnot 
 			x.spine = 666
@@ -937,7 +937,7 @@ function Update()
 		
 		if not IsAlive(x.lemnos) then --Check Lemnos factory
 			AudioMessage("tcss0414.wav") --7 FAIL - All units fall back
-			FailMission(GetTime() + 9.0, "tcss04f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 9.0, "tcss04f2.des") --LOSER LOSER LOSER
 			ClearObjectives()
 			AddObjective("tcss0408.txt", "RED")
 			x.spine = 666
@@ -946,7 +946,7 @@ function Update()
 		
 		if x.order1time < GetTime() then --follow orders soldier
 			AudioMessage("tcss0394.wav") --9 FAIL - time up for follow order orig bz1 0694 copy of ss0594
-			FailMission(GetTime() + 11.0, "tcss04f3.des") --"failordr.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 11.0, "tcss04f3.des") --"failordr.des") --LOSER LOSER LOSER
 			ClearObjectives()
 			AddObjective("failordr.txt", "RED")
 			x.spine = 666
@@ -955,7 +955,7 @@ function Update()
 		
 		if x.eldridgebuilt and not IsAlive(x.eldridge) then --just in case
 			AudioMessage("failrecygencol.wav") --7 FAIL - Recyler lost x.eldridge specific
-			FailMission(GetTime() + 9.0, "failmcabcox.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 9.0, "failmcabcox.des") --LOSER LOSER LOSER
 			ClearObjectives()
 			AddObjective("failmcabcox.txt", "RED") --lost a mission critical asset
 			x.spine = 666

@@ -309,7 +309,7 @@ function Update()
 		AddHealth(x.fscv2, 10000)
 		SetObjectiveOff(x.fscv2)
 		AudioMessage("tcss0106.wav") --Vech of soviet orign bypase outpost 3 on to EN1
-		SucceedMission(GetTime() + 12.0, "tcss01w.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 12.0, "tcss01w.des") --WINNER WINNER WINNER
 		ClearObjectives()
 		AddObjective("tcss0103.txt", "GREEN")
 		AddObjective("	")
@@ -437,7 +437,7 @@ function Update()
 	if not x.MCAcheck then
 		if (not IsAlive(x.fscv1) and x.gotfscv1 and not x.fscv1safe) or (x.fscv2mca and not IsAlive(x.fscv2))then --lose a scav?
 			AudioMessage("tcss0107.wav") --FAIL - scav lost
-			FailMission(GetTime() + 8.0, "tcss01f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 8.0, "tcss01f1.des") --LOSER LOSER LOSER
 			ClearObjectives()
 			AddObjective("tcss0105.txt", "RED")
 			x.MCAcheck = true
@@ -445,14 +445,14 @@ function Update()
 		
 		if not IsAlive(x.frcy) then --frcy lost
 			AudioMessage("failrecygencowav") --6s Gen Col Generic Recycler lost.
-			FailMission(GetTime() + 7.0, "tcss01f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 7.0, "tcss01f2.des") --LOSER LOSER LOSER
 			ClearObjectives()
 			AddObjective("tcss0106.txt", "RED") --Your Recycler was destroyed. MISSION FAILEDnot
 			x.MCAcheck = true
 		end
 		
 		if not IsAlive(x.fbay) or not IsAlive(x.fcom) or not IsAlive(x.ftec) then --MCA lost --DON'T BLOW UP YOUR OWN BASE (FOR SCRAP)
-			FailMission(GetTime() + 4.0, "tcss01f3.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 4.0, "tcss01f3.des") --LOSER LOSER LOSER
 			ClearObjectives()
 			AddObjective("tcss0107.txt", "RED") --You lost a mission-critical asset. MISSION FAILED
 			x.MCAcheck = true
@@ -464,7 +464,7 @@ function Update()
 		end
 		
 		if not x.gotfscv1 and x.waitfail < GetTime() then
-			FailMission(GetTime() + 4.0, "tcss01f4.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 4.0, "tcss01f4.des") --LOSER LOSER LOSER
 			ClearObjectives()
 			AddObjective("tcss0108.txt", "RED")
 			x.MCAcheck = true

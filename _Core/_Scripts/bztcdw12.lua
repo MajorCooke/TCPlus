@@ -429,7 +429,7 @@ function Update()
 		ClearObjectives()
 		AddObjective("tcdw1202.txt", "GREEN")
 		AddObjective("\n\nMISSION COMPLETE", "GREEN")
-		SucceedMission(GetTime() + 8.0, "tcdw12w.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 8.0, "tcdw12w.des") --WINNER WINNER WINNER
 		x.MCAcheck = true
 		x.spine = x.spine + 1
 	end
@@ -1063,7 +1063,7 @@ function Update()
 			AudioMessage("tcdw1204.wav") --FAIL - Cmdr stranded out there
 			ClearObjectives()
 			AddObjective("Pegasus Portal destroyed.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 18.0, "tcdw12f1.des")
+			TCC.FailMission(GetTime() + 18.0, "tcdw12f1.des")
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -1073,7 +1073,7 @@ function Update()
 			AudioMessage("tcdw1106.wav") --RECY - need help - lost --REUSE FROM DW12
 			ClearObjectives()
 			AddObjective("Recycler destroyed.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 5.0, "tcdw12f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 5.0, "tcdw12f2.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 			x.spine = 666
 		end

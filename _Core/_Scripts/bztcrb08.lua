@@ -637,9 +637,9 @@ function Update()
     CameraFinish()
     IFace_SetInteger("options.graphics.defaultfov", x.userfov)
 		if x.playwin == 1 then
-			SucceedMission(GetTime(), "tcrb08w1.des") --winner winner winner
+			TCC.SucceedMission(GetTime(), "tcrb08w1.des") --winner winner winner
 		else
-			SucceedMission(GetTime(), "tcrb08w2.des") --winner winner winner
+			TCC.SucceedMission(GetTime(), "tcrb08w2.des") --winner winner winner
 		end
 		x.spine = x.spine + 1
 	end
@@ -710,7 +710,7 @@ function Update()
 				SetSkill(x.sav[index], x.skillsetting)
 			end
 			if IsAlive(x.sav[index]) and GetTeamNum(x.sav[index]) == 1 then
-				SetTeamNum(x.sav[index], 3)
+				TCC.SetTeamNum(x.sav[index], 3)
 			end
 			SetObjectiveName(x.sav[index], ("CCA Fury %d"):format(index))
 		end
@@ -981,7 +981,7 @@ function Update()
 			x.wrecknotify = 1
 		end
 		if x.wrecknotify == 1 then
-      SetTeamNum(x.wreckbomb, 5)
+      TCC.SetTeamNum(x.wreckbomb, 5)
 			SetObjectiveOn(x.wreckbomb)
 			AudioMessage("alertpulse.wav")
 			x.wrecknotify = 0
@@ -1310,7 +1310,7 @@ function Update()
 			x.spine = 666
 			x.playfail[1] = 1
 		elseif x.playfail[1] == 1 and IsAudioMessageDone(x.audio6) then
-			FailMission(GetTime(), "tcrb08f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime(), "tcrb08f1.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 		end
 		
@@ -1321,7 +1321,7 @@ function Update()
 			x.spine = 666
 			x.playfail[2] = 2
 		elseif x.playfail[2] == 2 and IsAudioMessageDone(x.audio6) then
-			FailMission(GetTime(), "tcrb08f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime(), "tcrb08f2.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 		end
 		
@@ -1332,7 +1332,7 @@ function Update()
 			x.spine = 666
 			x.playfail[3] = 2
 		elseif x.playfail[3] == 2 and IsAudioMessageDone(x.audio6) then
-			FailMission(GetTime(), "tcrb08f3.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime(), "tcrb08f3.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 		end
 		
@@ -1342,7 +1342,7 @@ function Update()
 			AudioMessage("tcrb0111.wav") --FAIL – A2 You failed 
 			ClearObjectives()
 			AddObjective("tcrb0811.txt", "RED")
-			FailMission(GetTime() + 20.0, "tcrb08f4.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 20.0, "tcrb08f4.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -1351,7 +1351,7 @@ function Update()
       ClearObjectives()
 			AddObjective("You robbed Romeski of his glory!", "RED")
       AddObjective("Heavily damage but do not destroy the Recycler.", "RED")
-      FailMission(GetTime() + 5.0, "tcrb08f3.des") --LOSER LOSER LOSER
+      TCC.FailMission(GetTime() + 5.0, "tcrb08f3.des") --LOSER LOSER LOSER
       x.spine = 666
 			x.MCAcheck = true
     end

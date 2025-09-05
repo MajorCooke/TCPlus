@@ -206,7 +206,7 @@ function Update()
 				
 				if x.fartonline[index] == 1 and x.fartready[index] == 0 and not HasPilot(x.fart[index]) then
 					AddPilotByHandle(x.fart[index])
-					SetTeamNum(x.fart[index], 4)
+					TCC.SetTeamNum(x.fart[index], 4)
 					SetSkill(x.fart[index], x.skillsetting)
 					SetObjectiveOff(x.fart[index])
 					SetObjectiveName(x.fart[index], ("Archer %d"):format(index))
@@ -350,7 +350,7 @@ function Update()
 		end
 		SetObjectiveName(x.fnav[1], "Return Fu")
 		SetObjectiveOn(x.fnav[1])
-		SetTeamNum(x.eapc[x.fupick], 1)
+		TCC.SetTeamNum(x.eapc[x.fupick], 1)
 		if x.fupick == 1 then
 			x.easntime = GetTime() + 6.0 --8.0
 		elseif x.fupick == 2 then
@@ -387,7 +387,7 @@ function Update()
 	
 	--SUCCEED MSSION	
 	if x.spine == 8 and IsAround(x.eapc[x.fupick]) and IsAudioMessageDone(x.audio1) then
-		SucceedMission(GetTime() + 2.0, "tcrs03w.des") --winner winner winner
+		TCC.SucceedMission(GetTime() + 2.0, "tcrs03w.des") --winner winner winner
 		x.spine = x.spine + 1
 	end
 	----------END MAIN SPINE ----------
@@ -540,7 +540,7 @@ function Update()
 			x.audio6 = AudioMessage("tcrs0307.wav") --FAIL – fail to fix artillery
 			ClearObjectives()
 			AddObjective("tcrs0308.txt", "RED")
-			FailMission(GetTime() + 15.0, "tcrs03f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 15.0, "tcrs03f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -549,7 +549,7 @@ function Update()
 			x.audio6 = AudioMessage("tcrs0308.wav") --FAIL - gen fu apc killed
 			ClearObjectives()
 			AddObjective("tcrs0309.txt", "RED")
-			FailMission(GetTime() + 12.0, "tcrs03f2.des") --LOSER LOSER LOSER --orig f2 content swapped with f3 content
+			TCC.FailMission(GetTime() + 12.0, "tcrs03f2.des") --LOSER LOSER LOSER --orig f2 content swapped with f3 content
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -558,7 +558,7 @@ function Update()
 			x.audio6 = AudioMessage("tcrs0309.wav") --FAIL – fu apc escaped
 			ClearObjectives()
 			AddObjective("tcrs0310.txt", "RED")
-			FailMission(GetTime() + 7.0, "tcrs03f3.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 7.0, "tcrs03f3.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -567,7 +567,7 @@ function Update()
 			x.audio6 = AudioMessage("tcrs0309.wav") --FAIL –-fu apc retreated back to CCA base
 			ClearObjectives()
 			AddObjective("tcrs0311.txt", "RED")
-			FailMission(GetTime() + 7.0, "tcrs03f4.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 7.0, "tcrs03f4.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end

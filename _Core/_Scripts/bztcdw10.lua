@@ -324,7 +324,7 @@ function Update()
 	if x.spine == 6 and x.waittime < GetTime() then
 		ClearObjectives() --for camera
 		Goto(x.frcy, "prcyrun")
-		SetTeamNum(x.etnk[1], 5)
+		TCC.SetTeamNum(x.etnk[1], 5)
 		Attack(x.etnk[1], x.frcy)
 		x.camstate = 1
     x.userfov = IFace_GetInteger("options.graphics.defaultfov")
@@ -346,8 +346,8 @@ function Update()
 	if x.spine == 8 and GetDistance(x.frcy, "prcyrun") < 30 then
 		Stop(x.frcy)
 		Stop(x.etnk[1])
-		SetTeamNum(x.etnk[1], 0)
-		SetTeamNum(x.frcy, 0)
+		TCC.SetTeamNum(x.etnk[1], 0)
+		TCC.SetTeamNum(x.frcy, 0)
 		x.waittime = GetTime() + 2.0
 		x.camstate = 3
 		x.spine = x.spine + 1
@@ -381,7 +381,7 @@ function Update()
 	if x.spine == 12 and IsAudioMessageDone(x.audio1) then
     CameraFinish()
     IFace_SetInteger("options.graphics.defaultfov", x.userfov)
-		SucceedMission(GetTime() + 1.0, "tcdw10w.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 1.0, "tcdw10w.des") --WINNER WINNER WINNER
 		x.spine = 666
 	end
 	----------END MAIN SPINE ----------
@@ -541,7 +541,7 @@ function Update()
 		end--]]
 		
 		if x.failstate == 1 and IsAudioMessageDone(x.audio6) then
-			FailMission(GetTime(), "tcdw10f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime(), "tcdw10f1.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 			x.spine = 666
 		end

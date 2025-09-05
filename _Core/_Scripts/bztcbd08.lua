@@ -335,7 +335,7 @@ function Update()
 		AudioMessage("tcbd0807.wav") --ADDED --Mission Complete. Board for takeoff.
 		ClearObjectives()
 		AddObjective("Meet Pvt. Grigg at the Extraction Beacon.\n\nMISSION COMPLETE.", "GREEN")
-		SucceedMission(GetTime() + 7.0, "tcbd08w.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 7.0, "tcbd08w.des") --WINNER WINNER WINNER
 		x.MCAcheck = true
 		x.spine = x.spine + 1
 	end
@@ -447,7 +447,7 @@ function Update()
 			AudioMessage("alertpulse.wav") 
 			ClearObjectives()
 			AddObjective("You were not authorized to destroy that structure.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 5.0, "tcbd08f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 5.0, "tcbd08f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -459,7 +459,7 @@ function Update()
 			AudioMessage("alertpulse.wav") 
 			ClearObjectives()
 			AddObjective("No power for Transmitter.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 5.0, "tcbd08f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 5.0, "tcbd08f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -469,7 +469,7 @@ function Update()
 			AudioMessage("alertpulse.wav") 
 			ClearObjectives()
 			AddObjective("You're out of time.\nAIP reinforcements have arrived.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 5.0, "tcbd08f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 5.0, "tcbd08f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end

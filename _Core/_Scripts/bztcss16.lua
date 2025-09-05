@@ -397,8 +397,8 @@ function Update()
 	if x.spine == 5 then
 		x.player = GetPlayerHandle()
 		if IsCraftButNotPerson(x.player) and GetDistance(x.player, x.fdrp[1]) > 60 then
-			SetTeamNum(x.frcy, 1)
-			SetTeamNum(x.ffac, 1)
+			TCC.SetTeamNum(x.frcy, 1)
+			TCC.SetTeamNum(x.ffac, 1)
 			local tn = GetTeamNum(x.frcy);
 			SetScrap(tn, GetMaxScrap(tn));
 			x.waittime = GetTime() + 2.0
@@ -607,7 +607,7 @@ function Update()
 		AudioMessage("tcss1609.wav") --6+ SUCCESS - Good job. You've achieved the impossible.
 		ClearObjectives()
 		AddObjective("tcss1603.txt", "GREEN") --Geotherm destroyed
-		SucceedMission(GetTime() + 10.0, "tcss16w1.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 10.0, "tcss16w1.des") --WINNER WINNER WINNER
 		x.spine = x.spine + 1
 	end
 	----------END MAIN SPINE ----------
@@ -1210,7 +1210,7 @@ function Update()
 			AudioMessage("tcss1604.wav") --FAIL - Recy Texas lost 
 			ClearObjectives()
 			AddObjective("tcss1604.txt", "RED") --Texas lost mission failed
-			FailMission(GetTime() + 12.0, "tcss16f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 12.0, "tcss16f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end

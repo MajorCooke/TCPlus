@@ -302,7 +302,7 @@ function Update()
 		x.easnstate = 2 --stop assassin set 1
 		--RemoveObject(x.escort[1])
 		SetCurHealth(x.escort[1], GetMaxHealth(x.escort[1]))
-		SetTeamNum(x.escort[1], 1)
+		TCC.SetTeamNum(x.escort[1], 1)
 		Stop(x.escort[1], 0)
 		SetGroup(x.escort[1], 9)
 		SetObjectiveOff(x.escort[1])
@@ -349,7 +349,7 @@ function Update()
 	
 	--SUCCEED MSSION	
 	if x.spine == 8 and IsAudioMessageDone(x.audio1) then
-		SucceedMission(GetTime(), "tcrs02w.des") --winner winner winner
+		TCC.SucceedMission(GetTime(), "tcrs02w.des") --winner winner winner
 		x.spine = x.spine + 1
 	end
 	----------END MAIN SPINE ----------
@@ -794,13 +794,13 @@ function Update()
 	
 	--LET AUDIO6 PLAY BEFORE ENDING
 	if x.failtype == 1 and IsAudioMessageDone(x.audio6) then
-		FailMission(GetTime(), "tcrs02f1.des") --LOSER LOSER LOSER
+		TCC.FailMission(GetTime(), "tcrs02f1.des") --LOSER LOSER LOSER
 	elseif x.failtype == 2 and IsAudioMessageDone(x.audio6) then
-		FailMission(GetTime(), "tcrs02f2.des") --LOSER LOSER LOSER
+		TCC.FailMission(GetTime(), "tcrs02f2.des") --LOSER LOSER LOSER
 	elseif x.failtype == 3 and IsAudioMessageDone(x.audio6) then
-		FailMission(GetTime(), "tcrs02f3.des") --LOSER LOSER LOSER
+		TCC.FailMission(GetTime(), "tcrs02f3.des") --LOSER LOSER LOSER
 	elseif x.failtype == 4 and IsAudioMessageDone(x.audio6) then	
-		FailMission(GetTime(), "tcrs02f4.des") --LOSER LOSER LOSER
+		TCC.FailMission(GetTime(), "tcrs02f4.des") --LOSER LOSER LOSER
 	end
 end
 --[[END OF SCRIPT]]

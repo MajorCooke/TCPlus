@@ -372,7 +372,7 @@ function Update()
 		x.player = GetPlayerHandle()
 		if IsCraftButNotPerson(x.player) and GetDistance(x.player, x.fdrp[1]) > 60 then
 			for index = 1, 2 do
-				SetTeamNum(x.fgrp[index], 1) --give player control of tanks
+				TCC.SetTeamNum(x.fgrp[index], 1) --give player control of tanks
 			end
 			x.spine = x.spine + 1
 		end
@@ -419,10 +419,10 @@ function Update()
 			for index = 1, 4 do
 				Stop(x.fgrp[index], 0) --0 gives player control
 			end
-      SetTeamNum(x.farm, 1)
-      SetTeamNum(x.fgrp[3], 1)
+      TCC.SetTeamNum(x.farm, 1)
+      TCC.SetTeamNum(x.fgrp[3], 1)
 			SetGroup(x.fgrp[3], 5)
-      SetTeamNum(x.fgrp[4], 1)
+      TCC.SetTeamNum(x.fgrp[4], 1)
 			SetGroup(x.fgrp[4], 5)
       x.spine = x.spine + 1
 		end
@@ -444,7 +444,7 @@ function Update()
 			x.calltime = GetTime()
 			x.call_state = 2
 			for index = 1, 3 do
-				SetTeamNum(x.fally[index], 1)
+				TCC.SetTeamNum(x.fally[index], 1)
 				SetGroup(x.fally[index], 0)
 			end
 			SetObjectiveOff(x.fnav)
@@ -630,7 +630,7 @@ function Update()
 	if x.spine == 22 and not IsAlive(x.ercy) and not IsAlive(x.efac) then
 		x.calltime = GetTime() + 2.0
 		x.call_state = 10
-		SucceedMission(GetTime() + 10.0, "tcss06w1.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 10.0, "tcss06w1.des") --WINNER WINNER WINNER
 		x.spine = 666
 		x.MCAcheck = true
 	end
@@ -1231,7 +1231,7 @@ function Update()
 		if x.frcygiven and not IsAlive(x.frcy) then --lost recycler
 			x.calltime = GetTime() + 2.0
 			x.call_state = 9
-			FailMission(GetTime() + 10.0, "tcss06f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 10.0, "tcss06f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -1239,7 +1239,7 @@ function Update()
 		if not x.dontkillmebro and not IsAlive(x.farm) then 
       ClearObjectives()
       AddObjective("Keep SLF/armory alive until Eldridge has been met.\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 5.0, "tcss06f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 5.0, "tcss06f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -1250,7 +1250,7 @@ function Update()
     SetObjectiveName(x.fgrp[10], "Razor 1 Pilot")
     SetObjectiveOn(x.fgrp[10])
     SetSkill(x.fgrp[10], x.skillsetting+1)
-    SetTeamNum(x.fgrp[10], 1)
+    TCC.SetTeamNum(x.fgrp[10], 1)
     x.waittime = GetTime() + 3.0  --4.0 kinda long
     x.casualty = x.casualty + 1
   elseif x.casualty == 1 and IsAlive(x.fgrp[10]) and IsAlive(x.ecom) and x.waittime < GetTime() then  --kick the tires and light the fires

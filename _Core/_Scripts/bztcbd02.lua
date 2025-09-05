@@ -268,7 +268,7 @@ function Update()
 	--MISSION SUCCESS
 	if x.spine == 8 and x.waittime < GetTime() then
 		AddObjective("\n\nEnemy forces defeated.\n\nMISSION COMPLETE!", "GREEN")
-		SucceedMission(GetTime() + 8.0, "tcbd02w.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 8.0, "tcbd02w.des") --WINNER WINNER WINNER
 		x.spine = 666
 	end
 	----------END MAIN SPINE ----------
@@ -493,7 +493,7 @@ function Update()
 			AudioMessage("alertpulse.wav")
 			ClearObjectives()
 			AddObjective("Recycler destroyed.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 4.0, "tcbd02f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 4.0, "tcbd02f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -502,7 +502,7 @@ function Update()
 			AudioMessage("alertpulse.wav")
 			ClearObjectives()
 			AddObjective("Failed to follow objectives in assigned order.\n\nMISSION FAILED!", "RED")
-			FailMission(GetTime() + 6.0, "tcbd02f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 6.0, "tcbd02f2.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end

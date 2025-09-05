@@ -527,7 +527,7 @@ function Update()
 		ClearObjectives()
 		AddObjective("tcrb0112.txt", "GREEN") --American base destroyed.	MISSION COMPLETE!
 		x.efacdead = true
-		SucceedMission(GetTime() + 20.0, "tcrb01w1.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 20.0, "tcrb01w1.des") --WINNER WINNER WINNER
 		x.spine = 666
 		x.MCAcheck = true
 	end
@@ -1052,7 +1052,7 @@ function Update()
 			AudioMessage("tcrb0111.wav") --FAIL – A2 You failed 
 			ClearObjectives()
 			AddObjective("tcrb0113.txt", "RED") --The Colorado has escaped.	MISSION FAILED!
-			FailMission(GetTime() + 20.0, "tcrb01f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 20.0, "tcrb01f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -1062,7 +1062,7 @@ function Update()
 			AudioMessage("tcrb0113.wav") --FAIL - B2 need more competent officer
 			ClearObjectives()
 			AddObjective("tcrb0114.txt", "RED") --The Valinov has been destroyed.	MISSION FAILED!
-			FailMission(GetTime() + 20.0, "tcrb01f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 20.0, "tcrb01f2.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end

@@ -196,7 +196,7 @@ function Update()
 		SetAsUser(x.mytank, 1)
 		RemoveObject(x.player)
 		x.player = GetPlayerHandle()
-		SetTeamNum(x.player, 1)--JUST IN CASE
+		TCC.SetTeamNum(x.player, 1)--JUST IN CASE
 		x.pos = GetTransform(x.fgrp[1])
 		RemoveObject(x.fgrp[1])
 		x.fgrp[1] = BuildObject("svscout", 1, x.pos)
@@ -369,7 +369,7 @@ function Update()
 		AudioMessage("tcrb0508.wav") --SUCCEED - pos on Titan assured
 		ClearObjectives()
 		AddObjective("tcrb0504.txt", "GREEN")
-		SucceedMission(GetTime() + 12.0, "tcrb05w1.des") --WINNER WINNER WINNER
+		TCC.SucceedMission(GetTime() + 12.0, "tcrb05w1.des") --WINNER WINNER WINNER
 		x.spine = 666
 		x.MCAcheck = true
 	end	
@@ -757,7 +757,7 @@ function Update()
 		end
 		
 		if x.playfail and IsAudioMessageDone(x.audio1) then
-			FailMission(GetTime(), "tcrb05f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime(), "tcrb05f1.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 		end
 	end

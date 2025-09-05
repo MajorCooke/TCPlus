@@ -379,7 +379,7 @@ function Update()
 	
 	--HAS PLAYER REACHED THE FURY SHIP FIRST TIME
 	if x.spine == 2 and GetDistance(x.player, x.eship) < 350 and x.timeescape > GetTime() then
-		SetTeamNum(x.eship, 0) --can see in sat view, but ai won't attack directly
+		TCC.SetTeamNum(x.eship, 0) --can see in sat view, but ai won't attack directly
 		AudioMessage("tcss1716.wav") --Alright Grz1, take out all 4 thrusters on that transport.
 		ClearObjectives()
 		AddObjective("tcss1701.txt", "GREEN")
@@ -490,7 +490,7 @@ function Update()
 	if x.spine == 8 and x.waittime < GetTime() then
     CameraFinish()
     IFace_SetInteger("options.graphics.defaultfov", x.userfov)
-		SucceedMission(GetTime(), "tcss17w1.des") --WINNER WINNER WINNER (No more than 1s for player music volume reset safety)
+		TCC.SucceedMission(GetTime(), "tcss17w1.des") --WINNER WINNER WINNER (No more than 1s for player music volume reset safety)
 		x.spine = x.spine + 1
 	end
 	----------END MAIN SPINE ----------
@@ -1079,7 +1079,7 @@ function Update()
 			AudioMessage("tcss1718.wav") --FAIL - Recy Texas lost.
 			ClearObjectives()
 			AddObjective("tcss1704.txt", "RED") --Texas lost mission failed
-			FailMission(GetTime() + 5.0, "tcss17f3.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 5.0, "tcss17f3.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -1095,7 +1095,7 @@ function Update()
 			AudioMessage("tcss1706.wav") --FAIL - Fury escaped.
 			ClearObjectives()
 			AddObjective("tcss1705.txt", "RED")
-			FailMission(GetTime() + 6.0, "tcss17f1.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 6.0, "tcss17f1.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -1104,7 +1104,7 @@ function Update()
 			AudioMessage("tcss1707.wav") --FAIL - Left behind.
 			ClearObjectives()
 			AddObjective("tcss1706.txt", "RED")
-			FailMission(GetTime() + 6.0, "tcss17f2.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 6.0, "tcss17f2.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -1114,7 +1114,7 @@ function Update()
 			HideCockpitTimer()
 			SetColorFade(15.0, 0.5, "RED")
 			AudioMessage("xemt2.wav")
-			FailMission(GetTime() + 2.0, "tcss17f4.des") --LOSER LOSER LOSER
+			TCC.FailMission(GetTime() + 2.0, "tcss17f4.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
