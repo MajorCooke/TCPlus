@@ -651,7 +651,7 @@ techGeom4 = "sbshldcox00.fbx"
 
 ////////////////////////////////////////////////////////////
 [ISDF 28]
-missionTitle = "RB03 The Evil Battlion"
+missionTitle = "RB03 The Evil Battalion"
 missionInfo = "tcrb03D.des"
 missionFile = "bztcrb03.bzn"
 launchBackground = "load_race_cca.tga"

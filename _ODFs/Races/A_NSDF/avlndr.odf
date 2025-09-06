@@ -27,9 +27,9 @@ armorClass = L
 boxCollide = 1
 
 /////// REQUIREMENTS ///////////////
-requireCount = 1
-requireName1 = "abtech"
-requireText1 = "Build Research Facility"
+//requireCount = 1
+//requireName1 = "abtech"
+//requireText1 = "Build Research Facility"
 
 /////// PROVIDES ///////////////////
 provideCount = 3

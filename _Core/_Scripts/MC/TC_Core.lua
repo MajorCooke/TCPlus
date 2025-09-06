@@ -37,13 +37,16 @@ function M.FailMission(Time, Debrief)
 	FailMission(Time, Debrief);
 end
 
--- This version writes out the 
-function M.SucceedMission(Time, Debrief)
+-- This version writes out the information.
+function M.SucceedMission(Time, Debrief, Amount)
+	Amount = Amount or 1;
+	Challenges.Win(Amount);
 	Challenges.WriteInfo(); -- Success, save the challenges out with their new values.
 	SucceedMission(Time, Debrief);
 end
 
 function M.Update()
+	HandleDebug();
 	AI.Update();
 end
 
@@ -128,6 +131,58 @@ end
 
 function M.SetBonusGoal(challenge, amount)
 	Challenges.SetBonusGoal(challenge, amount);	
+end
+
+--[[
+local script_edit_fixtunnel = CalcCRC("script.edit.fixtunnel");
+IFace_CreateCommand("script.edit.fixtunnel");
+IFace_ConsoleCmd("bind p script.edit.fixtunnel");
+function ProcessCommand ( crc )
+    if crc == script_edit_fixtunnel then
+        local player = GetPlayerGameObject(1);
+        local bld = player:InBuilding();
+        if isgameobject(bld) then
+            local front = Normalize(player:GetFront());
+            local pos = bld:GetPosition();
+            local x = math.abs(front.x);
+            local z = math.abs(front.z);
+            print(x .. "," .. z);
+            if x > z then
+                pos.x = math.floor(pos.x + 0.5) + (1 * math.ceil(front.x/math.abs(front.x)));
+            else
+                pos.z = math.floor(pos.z + 0.5) + (1 * math.ceil(front.z/math.abs(front.z)));
+            end           
+            bld:SetPosition(pos);
+        end
+    end
+end
+]]
+
+local function GetIFInt(name)
+	if (not name) then return nil; end;
+	name = "script"..name;
+	local ret = IFace_GetInteger(name);
+	if (not ret) then 
+		IFace_CreateInteger(name, 0); 
+		ret = IFace_GetInteger(name);
+	end
+	return ret;
+end
+
+local debugSetup = false;
+function HandleDebug()
+	if (not debugSetup) then
+		debugSetup = true;
+		IFace_CreateInteger("script.togglecheats", 0);
+	end
+	
+	local v1 = IFace_GetInteger("script.togglecheats");
+	if (v1 and v1 > 0) then
+		IFace_ConsoleCmd("script.togglecheats 0", false);
+		IFace_ConsoleCmd("game.cheat bztnt", false);
+		IFace_ConsoleCmd("game.cheat bzbody", false);
+		IFace_ConsoleCmd("game.cheat bzradar", false);
+	end
 end
 
 return M;

@@ -8,13 +8,13 @@ animName1 = "loop"
 animFile1 = "sbrecycox01.fbx"
 RunAnimation = "loop"
 RunAnimIsLooped = 1
-scrapCost = 40  //depbld  Coxxon
+scrapCost = 0  //depbld  Coxxon
 scrapValue = 10
 buildTime = 5.0  //depbld  //10.0 
 maxHealth = 11000  //12000  //rcy
 addHealth = 1  //rcy  Coxxon
 maxAmmo = 0
-unitName = "Recycler"
+unitName = "Recycler CCA"
 //infoName = "sbrecy.inf"
 aiName = "BuildingProcess"
 aiName2 = "BuildingProcess"
@@ -30,7 +30,7 @@ powerCost = 0  //rcy stock
 AllowUndergroundSpawn = 1  //rcy stock
 UseCollisionMeshForPathing = 1  //rcy stock
 //allowMDMCollisionDetonation = 1
-upgradeName = "svrecyd2"
+upgradeName = "svrecy"
 
 /////// PROVIDES ///////////////////
 provideCount = 4

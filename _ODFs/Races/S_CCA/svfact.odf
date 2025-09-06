@@ -19,7 +19,7 @@ buildTime = 5.0  //depbld  //10.0
 maxHealth = 5000  //Coxxon  //6000
 addHealth = 2  //Coxxon
 maxAmmo = 0
-unitName = "SU12 AMUF"
+unitName = "Factory CCA"
 //unitIcon = "icon_svfact.png"
 //unitStatus = "wire_svfact.png"
 //infoName = "svfact.inf"
@@ -38,7 +38,7 @@ requireCount = 0
 
 limitClass1 = "svfact"
 limitClass1Count = 1
-limitClass1Text = "Only One Allowed"
+limitClass1Text = "Limit Reached"
 
 /////// PROVIDES ///////////////////
 provideCount = 2

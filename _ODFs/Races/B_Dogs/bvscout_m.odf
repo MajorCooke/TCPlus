@@ -7,7 +7,7 @@ scrapCost = 20
 customCost = 50
 maxHealth = 1800  //bzcc ivscout deflt
 
-unitName = "Empty sct"
+unitName = "Empty Scout"
 unitIcon = "icon_bvscout.png"
 
 aiName = "SentryProcess"  //"ScoutFriend"

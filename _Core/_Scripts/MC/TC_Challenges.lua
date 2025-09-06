@@ -117,6 +117,10 @@ function M.GetBonusGoal(goal)
 	return IFace_GetInteger(FormatBonusGoal(goal));
 end
 
+function M.Win(Amount)
+	M.SetBonusGoal("victory", Amount, false, true);
+end
+
 -- Sets the bonus goal variable to the specified amount. Takes the RAW name without preformatting!
 -- By default it uses whatever is higher, set force to true to bypass this rule.
 function M.SetBonusGoal(goal, amount, force, prefix)

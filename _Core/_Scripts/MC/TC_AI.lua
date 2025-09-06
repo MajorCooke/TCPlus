@@ -88,7 +88,7 @@ function M.ReplaceObject(h, className)
 end
 
 function M.ObjectKilled(Dead, Killer)
-
+	
 end
 
 function M.PreSnipe(world, shooter, victim, OrdTeam, OrdODF)
@@ -240,6 +240,12 @@ local function RemoveHandle(h, arr)
 			table.remove(arr, i);
 			return;
 		end
+	end
+end
+
+local function Removehandle(h, team)
+	if (h and team) then
+		
 	end
 end
 
