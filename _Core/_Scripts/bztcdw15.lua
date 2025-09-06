@@ -101,7 +101,7 @@ function DeleteObject(h)
 end
 
 function ObjectKilled(DeadObjectHandle, KillersHandle)
-	TCC.ObjectKilled(DeadObjectHandle, KillersHandle);
+	return TCC.ObjectKilled(DeadObjectHandle, KillersHandle);
 end
 
 function PreSnipe(world, shooter, victim, OrdTeam, OrdODF)

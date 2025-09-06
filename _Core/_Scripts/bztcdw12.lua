@@ -156,7 +156,7 @@ end
 function AddObject(h)
 	--SPECIAL THIS MISSION USE PORTAL INSTEAD OF SHIELD 
 	if (not IsAlive(x.farm) or x.farm == nil) and IsOdf(h, "bvarmo:1") or IsOdf(h, "bbarmo") then
-		x.farm = RepObject(h,TCC.MissionNumber());
+		x.farm = RepObject(h);
 		h = x.farm;
 	elseif (not IsAlive(x.ffac) or x.ffac == nil) and IsOdf(h, "bvfact:1") or IsOdf(h, "bbfact") then
 		x.ffac = h
@@ -210,7 +210,7 @@ function DeleteObject(h)
 end
 
 function ObjectKilled(DeadObjectHandle, KillersHandle)
-	TCC.ObjectKilled(DeadObjectHandle, KillersHandle);
+	return TCC.ObjectKilled(DeadObjectHandle, KillersHandle);
 end
 
 function PreSnipe(world, shooter, victim, OrdTeam, OrdODF)
