@@ -68,7 +68,7 @@ function M.Start()
 end
 
 function M.ObjectKilled(DeadObject, Killer)
-	AI.ObjectKilled(DeadObject, Killer);
+	return AI.ObjectKilled(DeadObject, Killer);
 end
 
 function M.AddObject(h)
@@ -175,7 +175,7 @@ function HandleDebug()
 		debugSetup = true;
 		IFace_CreateInteger("script.togglecheats", 0);
 	end
-	
+
 	local v1 = IFace_GetInteger("script.togglecheats");
 	if (v1 and v1 > 0) then
 		IFace_ConsoleCmd("script.togglecheats 0", false);

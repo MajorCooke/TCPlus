@@ -87,8 +87,13 @@ function M.ReplaceObject(h, className)
 	return M.ReplaceEnt(h, className);
 end
 
-function M.ObjectKilled(Dead, Killer)
-	
+function M.ObjectKilled(DeadObject, Killer)
+	--0: EJECTKILLRETCODES_DOEJECTPILOT
+	--1: EJECTKILLRETCODES_DORESPAWNSAFEST
+	--2: EJECTKILLRETCODES_DLLHANDLED
+	--3: EJECTKILLRETCODES_DOGAMEOVER
+	-- Currently string variants don't work.
+	return 0;
 end
 
 function M.PreSnipe(world, shooter, victim, OrdTeam, OrdODF)
@@ -222,7 +227,8 @@ local function GetCategory(h)
 end
 
 local function InsertHandle(h, arr)
-	table.insert(arr, h);
+	arr[h] = h; -- LUA seriously defies logic...
+--	table.insert(arr, h);
 	--[[
 	if (FindEnt(h, arr) < 0) then
 		table.insert(arr, h);
@@ -233,20 +239,20 @@ local function InsertHandle(h, arr)
 end
 
 local function RemoveHandle(h, arr)
-	if (h == nil) then return; end;
+	
+	if (h and arr) then
+		arr[h] = nil;
+	end
 
+	--[[
+	if (h == nil) then return; end;
 	for _, i in pairs(arr) do
 		if arr[i] == h then
 			table.remove(arr, i);
 			return;
 		end
 	end
-end
-
-local function Removehandle(h, team)
-	if (h and team) then
-		
-	end
+	]]
 end
 
 function M.AddEnt(h)
@@ -255,7 +261,8 @@ function M.AddEnt(h)
 		team.player = h;
 	else
 		local arr = GetCategory(h);
-		if (arr) then InsertHandle(h, arr);	end
+	--	if (arr) then InsertHandle(h, arr);	end
+		if (arr) then arr[h] = h; end;
 	end
 end
 
@@ -275,7 +282,8 @@ function M.RemoveEnt(h)
 		team.player = nil;
 	else
 		local arr = GetCategory(h);
-		if (arr) then RemoveHandle(h, arr);	end
+	--	if (arr) then RemoveHandle(h, arr);	end
+		if (arr) then arr[h] = nil; end;
 	end
 end
 
@@ -290,9 +298,10 @@ end
 
 local function CleanObjects(array)
 	local com = {};
-	for _, i in pairs(array) do
-		if (array[i]) then
-			table.insert(com, array[i]);
+	for k, v in pairs(array) do
+		if (array[v]) then
+	--		table.insert(com, array[v]);
+			com[k] = v;
 		end
 	end
 	return com;

@@ -78,10 +78,10 @@ function RepObject(h)
 			rep = TCC.ReplaceObject(h, "abarmopl");
 		elseif (IsType(h, "bbarmo")) then 
 			rep = TCC.ReplaceObject(h, "bbarmopl");
-		elseif (IsType(h, "avarmo")) then
-			rep = TCC.ReplaceObject(h, "avarmopl");
-		elseif (IsType(h, "bvarmo")) then
-			rep = TCC.ReplaceObject(h, "bvarmopl");
+	--	elseif (IsType(h, "avarmo")) then
+	--		rep = TCC.ReplaceObject(h, "avarmopl");
+	--	elseif (IsType(h, "bvarmo")) then
+	--		rep = TCC.ReplaceObject(h, "bvarmopl");
 		elseif (MisnNum == 58) then
 			if (IsType(h, "abfact")) then
 				rep = TCC.ReplaceObject(h, "abfactss17");
