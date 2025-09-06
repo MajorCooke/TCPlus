@@ -121,9 +121,10 @@ function Load(a, b, c, coreData)
 end
 function AddObject(h)
 	--get player base buildings for later attack
-	if (not IsAlive(x.farm) or x.farm == nil) and IsOdf(h, "bvarmo:1") or IsOdf(h, "bbarmo") then
-		x.farm = RepObject(h,TCC.MissionNumber())
-	elseif (not IsAlive(x.ffac) or x.ffac == nil) and IsOdf(h, "bvfact:1") or IsOdf(h, "bbfact") then
+	if (not IsAlive(x.farm) or x.farm == nil) and IsOdf(h, "bbarmo") then
+		x.farm = RepObject(h);
+		h = x.farm;
+	elseif (not IsAlive(x.ffac) or x.ffac == nil) and IsOdf(h, "bbfact") then
 		x.ffac = h
 	elseif (not IsAlive(x.fsld) or x.fsld == nil) and IsOdf(h, "bbshld") then
 		x.fsld = h
@@ -162,6 +163,10 @@ function AddObject(h)
 		x.dummypos2 = GetTransform(h)
 		x.gotdummy2 = true
 	end
+
+	if (x.spine > 5 and GetRace(h) ~= "b") then
+		SetEjectRatio(h, 0.0); --[MC] annoying pilots
+	end
 	TCC.AddObject(h);
 end
 
@@ -170,7 +175,7 @@ function DeleteObject(h)
 end
 
 function ObjectKilled(DeadObjectHandle, KillersHandle)
-	TCC.ObjectKilled(DeadObjectHandle, KillersHandle);
+	return TCC.ObjectKilled(DeadObjectHandle, KillersHandle);
 end
 
 function PreSnipe(world, shooter, victim, OrdTeam, OrdODF)
@@ -336,8 +341,10 @@ function Update()
 	end
 	
 	--IT'S A TRAP! (with Adm. Ackbar voice)
+	-- [MC] Not anymore. Try challenging the player through *better* means next time.
 	if x.spine == 4 and x.waittime < GetTime() then
 		x.epilotlength = 4 --removed diff sizing
+		--[[
 		for index = 1, x.epilotlength do
 			x.epilot[index] = BuildObject("kspilo", 5, "eppil", index)
 			SetSkill(x.epilot[index], 3)
@@ -345,12 +352,15 @@ function Update()
 		end
 		AudioMessage("alertpulse.wav")
 		AddObjective("\n\nProtect the Engineer!", "YELLOW")
+		]]
 		x.spine = x.spine + 1
 	end
 	
 	--RECY HAS PILOT - SWITCH CRA PILOT TO SOLDIER
+	-- [MC] No.
 	if x.spine == 5 and IsAlive(x.frcy) and IsAround(x.fpilot) and GetDistance(x.fpilot, x.frcy) < 15 then
 		RemoveObject(x.fpilot)
+		--[[
 		for index = 1, x.epilotlength do --they won't kill it, but it'll look neat
 			if IsAlive(x.epilot[index]) then
 				x.pos = GetTransform(x.epilot[index])
@@ -360,6 +370,7 @@ function Update()
 				Attack(x.epilot[index], x.frcy)
 			end
 		end
+		]]
 		x.fapcstate = 2
 		x.waittime = GetTime() + 6.0
 		x.spine = x.spine + 1
