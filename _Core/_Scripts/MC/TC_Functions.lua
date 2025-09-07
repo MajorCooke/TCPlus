@@ -12,67 +12,54 @@ If you borrow this code, please keep this comment intact. Thank you!
 local CLStore = {};
 
 function IsType(h, className)
+	return IsOdf(h, className);
+	--[[
 	local s = ""..GetODF(h);
 	local c = className..".odf";
 	if (s == c) then 
---		PrintConsoleMessage(className.." matches!");
 		return true;
 	else return IsChildOf(h, className); end;
+	]]
 end
 
 -- Iterates through an ODF series in order to find if it inherits from a certain ODF.
--- Be careful not to call this function too many times in a single instance since it can result in a C Stack Overflow!
+--[[
 function IsChildOf(h, className)
 	if (h == nil) then return false; end
 	
-	-- Convert "<name>.odf" to "<name>:<className>"
-	--[[
-	local odf = ""..GetODF(h);
---	PrintConsoleMessage("Checking "..odf.." is child of "..className);
-	local check = string.gsub(odf, ".odf", ":"..className);
-
-	-- If it's already checked, return the value.
-	--
-	for k,v in pairs(CLStore) do
-		if (check == k) then
-			local s = "false";
-			if (v) then s = "true"; end;
-		--	PrintConsoleMessage(check.." found. "..s);
-			return v;
-		end
-	end
-	]]
---	PrintConsoleMessage(check.." not found, creating entry.");
-	
-	-- Otherwise, do the manual check and record it.
 	local block = "GameObjectClass";
 	local key  = "classlabel";
+	PrintConsoleMessage(GetCfg(h).."-->");
 	local cur, found = GetODFString(h, block, key);
-
+	local limit = 40;
 	local res = false;
 	
-	while (found) do
-		if (cur == className) then res = true; break;	end
+	while (limit > 0 and found and cur) do
+		PrintConsoleMessage(cur.."-->");
+		if (cur == className) then 
+			res = true; break;	
+		end
 		cur, found = GetODFString(cur..".odf", block, key);
+		limit = limit - 1;
+		
 	end
-	--[[
-	table.insert(CLStore, check);
-	local s = "";
-	if (res) then s = "true";
-	else s = "false"; end;
---	PrintConsoleMessage(check.." is "..s);
-	return res;
-	]]
-end
+	if (cur) then PrintConsoleMessage("--> "..cur);
+	else PrintConsoleMessage("--> nothing."); end;
+	
+	if (limit < 1) then PrintConsoleMessage("WARNING! Limit reached!"); end;
 
+	return res;
+end
+]]
 -- Performs map-specific replacements for certain things.
 ---@param h Handle Object to attempt replacing with
 function RepObject(h)
 	local rep = h;
 	-- [MC] Global replacements are here
 	-- [MC] Mission specific replacements begin here
+--	PrintConsoleMessage("RepObject called.");
 	if ((IsAlive(h) or IsBuilding(h)) and MisnNum > 42) then
-
+--		PrintConsoleMessage("Attempting to replace "..GetODF(h).."...");
 		if (IsType(h, "abarmo")) then
 	--	if (IsODF(h, "abarmo")) then
 			rep = TCC.ReplaceObject(h, "abarmopl");
@@ -85,8 +72,6 @@ function RepObject(h)
 		elseif (MisnNum == 58) then
 			if (IsType(h, "abfact")) then
 				rep = TCC.ReplaceObject(h, "abfactss17");
-		--	elseif (IsOdf(h, "avfact")) then
-		--		rep = ReplaceObject(h, "avfactss17");
 			end
 		end
 	end
@@ -131,3 +116,9 @@ end
 -- [MC] Wrapper function because I keep forgetting the capitalization and it's annoying.
 function IsODF(h, ODF)	return IsOdf(h, ODF);	end
 function GetODF(h)		return GetOdf(h);		end
+
+function AudioMessageVol(FileName, vol)
+	local id = AudioMessage(FileName);
+	if (id) then SetVolume(id, vol, true); end;
+	return id;
+end
