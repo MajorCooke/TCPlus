@@ -27,7 +27,7 @@ function M.InitialSetup()
 			utility = {},		-- tugs & scavs
 			buildings = {},
 			production = {},	-- production units (recy, fact, armory, NOT constructors!)
-			pilots = {}, -- 
+			pilots = {},
 			player = nil,
 		}
 	end
@@ -35,7 +35,7 @@ function M.InitialSetup()
 end
 
 function M.Start()
-
+	
 end
 
 function M.Load(_N)
@@ -53,20 +53,19 @@ function M.Update()
 	for i = 1, MaxTeams do 
 		N.Team.player = GetPlayerHandle(i);
 	end
-
+	--[[
 	if (GetTime() > N.CleanTimer) then
 		CleanTeams();
 	end
-
+	]]
 	if (not IsEmpty(N.Bombs)) then
 		M.HandleBombTargets();
 	else
 		N.Bombs = {};
 	end
 
+
 end
-
-
 
 function M.AddObject(h)
 	if (IsAround(h)) then
@@ -80,7 +79,7 @@ function M.AddObject(h)
 end
 
 function M.DeleteObject(h)
-	
+	M.RemoveEnt(h);
 end
 
 function M.ReplaceObject(h, className)
@@ -124,20 +123,6 @@ function M.HandleBombTargets()
 			end
 		end
 	end
-end
-
-
-local function IsEntValid(h)
-	return (IsAround(h) and (IsPlayer(h) or IsCraftOrPerson(h) or IsBuilding(h)));
-end
-
-local function FindEnt(h, arr)
-	if (h and arr) then
-		for _, i in pairs(arr) do
-			if (h == arr[i]) then return i; end;
-		end
-	end
-	return -1;
 end
 
 function IsEmpty(arr)
@@ -227,32 +212,13 @@ local function GetCategory(h)
 end
 
 local function InsertHandle(h, arr)
+	if (arr == nil) then return; end;
 	arr[h] = h; -- LUA seriously defies logic...
---	table.insert(arr, h);
-	--[[
-	if (FindEnt(h, arr) < 0) then
-		table.insert(arr, h);
-		return true;
-	end
-	return false;
-	]]
 end
 
 local function RemoveHandle(h, arr)
-	
-	if (h and arr) then
-		arr[h] = nil;
-	end
-
-	--[[
-	if (h == nil) then return; end;
-	for _, i in pairs(arr) do
-		if arr[i] == h then
-			table.remove(arr, i);
-			return;
-		end
-	end
-	]]
+	if (arr == nil) then return; end;
+	arr[h] = nil;
 end
 
 function M.AddEnt(h)
@@ -261,19 +227,11 @@ function M.AddEnt(h)
 		team.player = h;
 	else
 		local arr = GetCategory(h);
-	--	if (arr) then InsertHandle(h, arr);	end
-		if (arr) then arr[h] = h; end;
+		if (arr) then 
+		--	arr[h] = h; 
+			InsertHandle(h, arr);
+		end
 	end
-end
-
-function M.ReplaceEnt(h, className)
-	if (h) then 
-		local num = GetTeamNum(h);
-		M.RemoveEnt(h);
-		h = ReplaceObject(h, className);
-		M.AddEnt(h);
-	end
-	return h;
 end
 
 function M.RemoveEnt(h)
@@ -282,9 +240,19 @@ function M.RemoveEnt(h)
 		team.player = nil;
 	else
 		local arr = GetCategory(h);
-	--	if (arr) then RemoveHandle(h, arr);	end
-		if (arr) then arr[h] = nil; end;
+		if (arr) then 
+			RemoveHandle(h, arr);
+		end
 	end
+end
+
+function M.ReplaceEnt(h, className)
+	if (h) then 
+		M.RemoveEnt(h);
+		h = ReplaceObject(h, className);
+		M.AddEnt(h);
+	end
+	return h;
 end
 
 -- Changes the team number of the ent.
@@ -295,13 +263,13 @@ function M.SetTeamNum(h, num)
 	M.AddEnt(h);
 end
 
-
+--[[
 local function CleanObjects(array)
 	local com = {};
 	for k, v in pairs(array) do
 		if (array[v]) then
-	--		table.insert(com, array[v]);
-			com[k] = v;
+			table.insert(com, array[v]);
+	--		com[k] = v;
 		end
 	end
 	return com;
@@ -316,13 +284,13 @@ local function CleanTeamArrays(team)
 end
 
 -- Helper functions.
-function CleanTeams()
+function M.CleanTeams()
 	N.CleanTimer = GetTime() + N.CleanIntervals;
 	for i = 0, MaxTeams do
 		CleanTeamArrays(N.Team[i]);
 	end
 end
-
+]]
 -------------------------------------------------------------------
 -- Custom Explosions
 -- Calculates the damage falloff.
@@ -372,11 +340,11 @@ function M.Explode(owner, proj, damage, radius, fullrad, dmgself, teams, type)
 	local radsq = radius * radius;
 	local fullsq = fullrad * fullrad;
 	local dmger = proj or owner;
-
+	PrintConsoleMessage("Boom Called");
 	for _, i in pairs(N.Team) do
 		local skip = false;
 		-- Found a team to exclude so don't touch them.
-		for _, j in ipairs(teams) do
+		for j, _ in ipairs(teams) do
 			if (teams[j] == i) then skip = true; break; end;
 		end
 
@@ -407,8 +375,5 @@ function M.Explode(owner, proj, damage, radius, fullrad, dmgself, teams, type)
 
 	return damage;
 end
-
-
-
 
 return M;

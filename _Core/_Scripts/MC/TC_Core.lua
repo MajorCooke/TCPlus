@@ -1,18 +1,21 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
+--require('TC_Constants');
 require('TC_Functions'); --Just a bunch of functions that don't need saving
+require('TC_Math');
 local AI =			require('TC_AI');
-local Goals =		require('TC_Objectives');
+local Goals =		require('TC_Goals');
 local Upgrades =	require('TC_Upgrades');
 local Challenges =	require('TC_Challenges');
 local M = {};	-- FUNCTION table
 local N =		-- VARIABLE table
 {
-	-- Used for save data only. Keep it clear otherwise.
+	-- Used for save data only.
 	AI = {},
 	Goals = {},
 	Upgrades = {},
 	Challenges = {},
 	-- Core vars here
+	debugSetup = false,
 }
 
 -- Put in all hooks first
@@ -27,10 +30,10 @@ end
 
 function M.Load(_N)
 	N = _N;
-	AI.Load(N.AI); 					_N.AI = {};
-	Goals.Load(N.Goals); 			_N.Goals = {};
-	Upgrades.Load(N.Upgrades);		_N.Upgrades = {};
-	Challenges.Load(N.Challenges);	_N.Challenges = {};
+	AI.Load(N.AI);
+	Goals.Load(N.Goals);
+	Upgrades.Load(N.Upgrades);
+	Challenges.Load(N.Challenges);
 end
 
 function M.FailMission(Time, Debrief)
@@ -46,7 +49,7 @@ function M.SucceedMission(Time, Debrief, Amount)
 end
 
 function M.Update()
-	HandleDebug();
+	M.HandleDebug();
 	AI.Update();
 end
 
@@ -76,7 +79,6 @@ function M.AddObject(h)
 	if (IsCraftButNotPerson(h) and GetRace(h) == "y") then
 		SetEjectRatio(h, 0.0);
 	end
-
 	AI.AddObject(h);
 end
 
@@ -169,20 +171,32 @@ local function GetIFInt(name)
 	return ret;
 end
 
-local debugSetup = false;
-function HandleDebug()
-	if (not debugSetup) then
-		debugSetup = true;
-		IFace_CreateInteger("script.togglecheats", 0);
+function M.HandleDebug()
+	
+	if (not N.debugSetup) then
+		N.debugSetup = true;
+		IFace_CreateInteger("script.cheats", 0);
+		IFace_CreateInteger("script.rave", 0);
 	end
 
-	local v1 = IFace_GetInteger("script.togglecheats");
+	local v1 = IFace_GetInteger("script.cheats");
 	if (v1 and v1 > 0) then
-		IFace_ConsoleCmd("script.togglecheats 0", false);
+		IFace_ConsoleCmd("script.cheats 0", false);
 		IFace_ConsoleCmd("game.cheat bztnt", false);
 		IFace_ConsoleCmd("game.cheat bzbody", false);
 		IFace_ConsoleCmd("game.cheat bzradar", false);
 	end
+
+	local v2 = IFace_GetInteger("script.rave");
+	if (v2 and v2 > 0) then
+		IFace_SetInteger("script.rave", "0");
+		local plr = GetPlayerHandle();
+		if (IsAround(plr)) then
+			GiveWeapon(plr, "gtecha_c");
+			GiveWeapon(plr, "gravea_c");
+		end
+	end
+	
 end
 
 return M;

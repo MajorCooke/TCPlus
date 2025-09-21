@@ -11,71 +11,65 @@ If you borrow this code, please keep this comment intact. Thank you!
 -- Every time a game is loaded, this should absolutely be empty.
 local CLStore = {};
 
+-- Code by Nielk1, modified by me.
+--- Is the object a the given classname or odf
+--- @param h Handle|string Object or odf (no .odf extension)
+--- @param className string  name or odf (no .odf extension)
 function IsType(h, className)
-	return IsOdf(h, className);
-	--[[
-	local s = ""..GetODF(h);
-	local c = className..".odf";
-	if (s == c) then 
+    if (h == nil or className == nil) then return false; end;
+    className = className:lower();
+	local name = GetOdf(h):lower():gsub("%.odf$", "");
+
+	if name == className then
 		return true;
-	else return IsChildOf(h, className); end;
-	]]
-end
-
--- Iterates through an ODF series in order to find if it inherits from a certain ODF.
---[[
-function IsChildOf(h, className)
-	if (h == nil) then return false; end
-	
-	local block = "GameObjectClass";
-	local key  = "classlabel";
-	PrintConsoleMessage(GetCfg(h).."-->");
-	local cur, found = GetODFString(h, block, key);
-	local limit = 40;
-	local res = false;
-	
-	while (limit > 0 and found and cur) do
-		PrintConsoleMessage(cur.."-->");
-		if (cur == className) then 
-			res = true; break;	
-		end
-		cur, found = GetODFString(cur..".odf", block, key);
-		limit = limit - 1;
-		
 	end
-	if (cur) then PrintConsoleMessage("--> "..cur);
-	else PrintConsoleMessage("--> nothing."); end;
-	
-	if (limit < 1) then PrintConsoleMessage("WARNING! Limit reached!"); end;
+    
+    -- by this point h contains the ODF in lowercase with no .odf
+	local check = name..":"..className;
+    local r = CLStore[check];
+    if r then return r end;
 
-	return res;
+    local candidate = name;
+    local found = true;
+    while (found) do
+        candidate, found = GetODFString(candidate..'.odf', "GameObjectClass", "classlabel");
+        if (not found or not candidate) then 
+			CLStore[check] = false;
+			return false;
+		end -- failed to read ODF value or read as nil
+        candidate = candidate:lower();
+        if (candidate == className) then
+            CLStore[check] = true;
+            return true;
+        end
+    end
+	CLStore[check] = false;
+    return false;
 end
-]]
+
+local SkipReplace = false;
 -- Performs map-specific replacements for certain things.
 ---@param h Handle Object to attempt replacing with
 function RepObject(h)
+	if (SkipReplace) then
+		SkipReplace = false;
+		return h;
+	end
 	local rep = h;
 	-- [MC] Global replacements are here
 	-- [MC] Mission specific replacements begin here
---	PrintConsoleMessage("RepObject called.");
-	if ((IsAlive(h) or IsBuilding(h)) and MisnNum > 42) then
---		PrintConsoleMessage("Attempting to replace "..GetODF(h).."...");
-		if (IsType(h, "abarmo")) then
-	--	if (IsODF(h, "abarmo")) then
+	if (h and (IsAlive(h) or IsBuilding(h)) and MisnNum > 42) then
+		if (IsType(h, "abarmo")) then		SkipReplace = true;
 			rep = TCC.ReplaceObject(h, "abarmopl");
-		elseif (IsType(h, "bbarmo")) then 
+		elseif (IsType(h, "bbarmo")) then 	SkipReplace = true;
 			rep = TCC.ReplaceObject(h, "bbarmopl");
-	--	elseif (IsType(h, "avarmo")) then
-	--		rep = TCC.ReplaceObject(h, "avarmopl");
-	--	elseif (IsType(h, "bvarmo")) then
-	--		rep = TCC.ReplaceObject(h, "bvarmopl");
-		elseif (MisnNum == 58) then
-			if (IsType(h, "abfact")) then
+		elseif (MisnNum >= 58) then
+			if (IsType(h, "abfact")) then 	SkipReplace = true;
 				rep = TCC.ReplaceObject(h, "abfactss17");
 			end
 		end
 	end
-	return rep or h;
+	return rep;
 end
 
 -- Replaces a handle's weapon 'wepName' with 'wepRep' if possible.
