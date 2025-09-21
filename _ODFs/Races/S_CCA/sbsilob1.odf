@@ -1,0 +1,142 @@
+/////////Coxxon - BZTC/////////
+// [MC] Buildable and upgradable silo (use Rebuild Addon to upgrade)
+[GameObjectClass]
+baseName = "sbsilob1"
+classLabel = "powered"
+infoName = "xbsilob.inf"
+unitName = "Storage Silo CCA"
+upgradeName = ""
+mrmFactor = 0
+geometryName = "sbsilocox00.fbx"
+animCount = 1
+animName1 = "loop"
+animFile1 = "sbsilocox00.fbx"
+scrapCost = 40
+scrapValue = 25
+maxHealth = 8000
+maxAmmo = 0
+heatSignature = 2.0
+imageSignature = 1.0
+radarSignature = 1.0
+collisionRadius = 10.0  //bztc bldg
+isAssault = 1  //bztc
+canInteract = 1 // for missile lock
+armorClass = H
+ownsTerrain = 1  //1 if no baseplate faction
+AllowUndergroundSpawn = 1  //from pb137# to ensure ground preplacement
+AllowMDMCollisionDetonation = 1  //Coxxon
+buildRequire = "F"
+buildSupport = "A"
+powerCost = 0  //silo 
+IsSingle = 1
+
+/////// REQUIREMENTS ///////////////
+requireCount = 0
+
+/////// PROVIDES ///////////////////
+provideCount = 2
+provideName1 = "sbsilob1"
+provideName2 = "VIRTUAL_CLASS_SILO_BUILD"
+
+///////// CRASH INTO COMPONENT PARTS /////////
+explosionName = "xpl_crash_sbsilocox"
+
+//explosionName = "x_bztc_bld"
+//xplChunk = "xpl_crash_sbsilocox"
+//chunkEffect1 = "sbsilocoxchk01.fbx"  
+//chunkEffect2 = "sbsilocoxchk02.fbx"  
+//chunkEffect3 = "sbsilocoxchk03.fbx"  
+//chunkEffect4 = "sbsilocoxchk04.fbx"  
+//chunkEffect5 = "sbsilocoxchk05.fbx"  
+//HasSeparateChunks = true 
+//numChunks = 6
+//numChunks1 = 1
+//numChunks2 = 1
+//numChunks3 = 2
+//numChunks4 = 1
+//numChunks5 = 1
+
+/////////LIGHTS AND EFFECTS/////////
+effectHard1 = "hp_emit_1"
+effectName1 = "vfxbztcbldgs.scavsmoke"
+effectHard2 = "hp_emit_2"
+effectName2 = "vfxbztcbldgs.scavsmoke"
+effectHard3 = "hp_emit_3"
+effectName3 = "vfxbztclight.redblink"
+effectHard4 = "hp_emit_4"
+effectName4 = "vfxbztclight.greenblink"
+effectHard5 = "hp_emit_5"
+effectName5 = "vfxbztclight.greenblink"
+effectHard6 = "hp_emit_6"
+effectName6 = "vfxbztclight.redblink"
+//smoke1
+effectHard7 = "hp_smoke_1"
+effectName7 = "dmgbldg1"
+effectMinHealth7 = 0.6
+effectMaxHealth7 = 0.8
+effectHard8 = "hp_smoke_1"
+effectName8 = "dmgbldg2"
+effectMinHealth8 = 0.4
+effectMaxHealth8 = 0.6
+effectHard9 = "hp_smoke_1"
+effectName9 = "dmgbldg3"
+effectMinHealth9 = 0.2
+effectMaxHealth9 = 0.4
+effectHard10 = "hp_smoke_1"
+effectName10 = "dmgbldg4"
+effectMinHealth10 = 0.0
+effectMaxHealth10 = 0.2
+//smoke2  //no dmg1
+effectHard11 = "hp_smoke_2"
+effectName11 = "dmgbldg2"
+effectMinHealth11 = 0.4
+effectMaxHealth11 = 0.6
+effectHard12 = "hp_smoke_2"
+effectName12 = "dmgbldg3"
+effectMinHealth12 = 0.2
+effectMaxHealth12 = 0.4
+effectHard13 = "hp_smoke_2"
+effectName13 = "dmgbldg4"
+effectMinHealth13 = 0.0
+effectMaxHealth13 = 0.2
+//smoke3  //no dmg1
+effectHard14 = "hp_smoke_3"
+effectName14 = "dmgbldg2"
+effectMinHealth14 = 0.4
+effectMaxHealth14 = 0.6
+effectHard15 = "hp_smoke_3"
+effectName15 = "dmgbldg3"
+effectMinHealth15 = 0.2
+effectMaxHealth15 = 0.4
+effectHard16 = "hp_smoke_3"
+effectName16 = "dmgbldg4"
+effectMinHealth16 = 0.0
+effectMaxHealth16 = 0.2
+
+///////////////////////////////////////////////////////////////
+[BuildingClass]
+soundAmbient = "absiloe0.wav"
+//bldEdge = "wwww"  //bldg
+
+///////// EXPLOSION AID /////////
+UseCollapse = false
+UseChunks = false  //for deployed scavs  //true
+UseExplosion = true
+
+[PoweredBuildingClass]
+DestroyTapsWithParent = true
+powerTap1 = "hp_com"
+powerName1 = "silotap10"
+AutoBuildTap1 = true
+powerTap2 = "hp_com"
+powerName2 = "silotap20"
+AutoBuildTap2 = false
+powerTap3 = "hp_com"
+powerName3 = "silotap30"
+AutoBuildTap3 = false
+powerTap4 = "hp_com"
+powerName4 = "silotap40"
+AutoBuildTap4 = false
+
+poweredByTaps = false
+detectRange = 210

@@ -176,15 +176,19 @@ soundUndeploy = "avartle4.wav"
 ////////////////////////////////////////////////////////////
 [ConstructionRigClass]
 buildItem1 = "sbpgen"
-buildItem2 = "sbfact"
-buildItem3 = "sbcbun"
-buildItem4 = "sbarmo"
-buildItem5 = "sbsbay"
-buildItem6 = "sbgtow"
-buildItem7 = "sbtrain"
-buildItem8 = "sbtcen"
-buildItem9 = "sbhqtr"
-buildItem10 = "sbshld"
+buildItem2 = "sbcbun"
+buildItem3 = "sbsbay"
+buildItem4 = "sbgtow"
+buildItem5 = "sbsilob1"
+buildItem6 = "sbtrain"
+buildItem7 = "sbtcen"
+buildItem8 = "sbhqtr"
+buildItem9 = "sbshld"
+
+[BuildGroup10]
+buildLabel = "Production Units"
+buildItem1 = "sbfact"
+buildItem2 = "sbarmo"
 
 ChromeEffect = 0  // 0 = line, 1 = chrome 
 ChromeTexture = "reflection3.tga"

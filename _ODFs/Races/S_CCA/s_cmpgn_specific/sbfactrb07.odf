@@ -4,7 +4,7 @@ baseName = "sbfactrb05"
 classLabel = "sbfact"  //"factory"
 geometryName = "sbfactcox00.fbx"
 
-upgradeName = "svfactrb05"
+upgradeName = "svfactrb07"
 
 /////// PROVIDES ///////////////////
 provideCount = 4

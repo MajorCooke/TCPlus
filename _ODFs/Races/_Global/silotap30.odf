@@ -1,0 +1,35 @@
+[GameObjectClass]
+baseName = "silotap30"
+classLabel = "silo"
+geometryName = ""
+collisionRadius = 20.0
+scrapCost = 60
+scrapValue = 0
+maxHealth = 0
+maxAmmo = 0
+unitName = "+10 Silo Storage"
+leaveExplodeScorch = false
+heatSignature = 0.0
+imageSignature = 0.0
+radarSignature = 0.0
+scanTeamLimit = 3
+canBeIdleVictim = false
+ignoreMissingInf = true
+canCollide = false
+canInteract = true
+canDetect = true
+canDemolish = false
+noShadow = true
+canSelect = false
+allowSeismic = false
+powerCost = 0
+
+provideCount = 0
+
+[SiloClass]
+scrapHold = 10
+initDelay = 1.0
+scrapDelay = 3.0
+ScrapDropPoint = true
+RunParallel = false
+RequiresExtractor = true

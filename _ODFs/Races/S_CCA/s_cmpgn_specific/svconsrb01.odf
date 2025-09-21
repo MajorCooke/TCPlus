@@ -10,29 +10,7 @@ requireCount = 0
 
 /////// PROVIDES ///////////////////
 provideCount = 3
-
 provideName3 = "svconsrb01"
-
-
 ////////////////////////////////////////////////////////////
 [CraftClass]
 modeText19 = "Rebuild Addon"  //MODE_POWER = 19  //cons
-
-////////////////////////////////////////////////////////////
-[HoverCraftClass]
-
-////////////////////////////////////////////////////////////
-[DeployableClass]
-
-////////////////////////////////////////////////////////////
-[ConstructionRigClass]
-buildItem1 = "sbpgen1"
-buildItem2 = "sbfactrb01"
-buildItem3 = "sbcbun"
-buildItem4 = "sbarmorb01"
-buildItem5 = "sbsbay"
-buildItem6 = "sbgtow"
-buildItem7 = "sbtrain"
-buildItem8 = "sbtcen"
-buildItem9 = ""//"sbhqtr"
-buildItem10 = ""//"sbshld"

@@ -182,15 +182,19 @@ soundUndeploy = "avartle4.wav"
 ////////////////////////////////////////////////////////////
 [ConstructionRigClass]
 buildItem1 = "kbpgen"
-buildItem2 = "kbfact"
-buildItem3 = "kbcbun"
-buildItem4 = "kbarmo"
-buildItem5 = "kbsbay"
-buildItem6 = "kbgtow"  //also have kbgtow1 flash tower
-buildItem7 = "kbtrain"
-buildItem8 = "kbtcen"
-buildItem9 = "kbhqtr"
-buildItem10 = "kbshld"
+buildItem2 = "kbcbun"
+buildItem3 = "kbsbay"
+buildItem4 = "kbgtow"
+buildItem5 = "kbsilob1"
+buildItem6 = "kbtrain"
+buildItem7 = "kbtcen"
+buildItem8 = "kbhqtr"
+buildItem9 = "kbshld"
+
+[BuildGroup10]
+buildLabel = "Production Units"
+buildItem1 = "kbfact"
+buildItem2 = "kbarmo"
 
 ChromeEffect = 0  // 0 = line, 1 = chrome 
 ChromeTexture = "reflection3.tga"

@@ -26,5 +26,6 @@ modeText19 = "Rebuild Addon"  //MODE_POWER = 19  //cons
 ////////////////////////////////////////////////////////////
 [ConstructionRigClass]
 buildItem1 = "kbpgen2"
-buildItem2 = "kbfactrs06"
-buildItem10 = ""
+
+[BuildGroup10]
+buildItem1 = "kbfactrs06"
