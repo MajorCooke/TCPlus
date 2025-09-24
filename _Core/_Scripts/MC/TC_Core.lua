@@ -7,33 +7,37 @@ local Goals =		require('TC_Goals');
 local Upgrades =	require('TC_Upgrades');
 local Challenges =	require('TC_Challenges');
 local M = {};	-- FUNCTION table
-local N =		-- VARIABLE table
-{
-	-- Used for save data only.
-	AI = {},
-	Goals = {},
-	Upgrades = {},
-	Challenges = {},
-	-- Core vars here
-	debugSetup = false,
-}
 
 -- Put in all hooks first
 
 function M.Save()
+	local N = 
+	{
+	--	AI = AI.Save(),
+		Goals = Goals.Save(),
+		Upgrades = Upgrades.Save(),
+		Challenges = Challenges.Save(),
+	}
+	--[[
 	N.AI = AI.Save();
 	N.Goals = Goals.Save();
 	N.Upgrades = Upgrades.Save();
 	N.Challenges = Challenges.Save();
+	]]
 	return N;
 end
 
 function M.Load(_N)
-	N = _N;
-	AI.Load(N.AI);
-	Goals.Load(N.Goals);
-	Upgrades.Load(N.Upgrades);
-	Challenges.Load(N.Challenges);
+	print("Loading AI...");
+--	AI.Load(_N.AI);
+	AI.Load();
+	print("Loading Goals...");
+	Goals.Load(_N.Goals);
+	print("Loading Upgrades...");
+	Upgrades.Load(_N.Upgrades);
+	print("Loading Challenges...");
+	Challenges.Load(_N.Challenges);
+	print("Loading complete.");
 end
 
 function M.FailMission(Time, Debrief)
@@ -170,11 +174,11 @@ local function GetIFInt(name)
 	end
 	return ret;
 end
-
+local debugSetup = false;
 function M.HandleDebug()
 	
-	if (not N.debugSetup) then
-		N.debugSetup = true;
+	if (not debugSetup) then
+		debugSetup = true;
 		IFace_CreateInteger("script.cheats", 0);
 		IFace_CreateInteger("script.rave", 0);
 	end

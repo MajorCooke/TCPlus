@@ -11,8 +11,6 @@ local MaxTeams = 16;
 local M = {};	-- FUNCTION table (dont save)
 local N =		-- VARIABLE table (save)
 {
-	CleanTimer = 0.0,
-	CleanIntervals = 10.0, --every ten seconds
 	Team = {},
 	Bombs = {}, -- Daywreckers
 }
@@ -31,37 +29,42 @@ function M.InitialSetup()
 			player = nil,
 		}
 	end
-	N.CleanTimer = 10.0;
 end
 
 function M.Start()
 	
 end
 
-function M.Load(_N)
-	N = _N;
+local LoadGame = false;
+--function M.Load(_N)
+function M.Load()
+	M.InitialSetup();
+	LoadGame = true;
+--	N = _N;
 end
-
+--[[
 function M.Save()
 	return N;
 end
-
-
+]]
 
 function M.Update()
+	if (LoadGame) then
+		LoadGame = false;
+		local objs = GetAllGameObjectHandles();
+
+		for i = 1, #objs do
+			M.AddObject(objs[i]);
+		end
+	end
+
 	-- Always keep this up to date.
 	for i = 1, MaxTeams do 
 		N.Team.player = GetPlayerHandle(i);
 	end
-	--[[
-	if (GetTime() > N.CleanTimer) then
-		CleanTeams();
-	end
-	]]
+	
 	if (not IsEmpty(N.Bombs)) then
 		M.HandleBombTargets();
-	else
-		N.Bombs = {};
 	end
 
 
@@ -262,35 +265,6 @@ function M.SetTeamNum(h, num)
 	SetTeamNum(h, num);
 	M.AddEnt(h);
 end
-
---[[
-local function CleanObjects(array)
-	local com = {};
-	for k, v in pairs(array) do
-		if (array[v]) then
-			table.insert(com, array[v]);
-	--		com[k] = v;
-		end
-	end
-	return com;
-end
-
-local function CleanTeamArrays(team)
-	for k,v in pairs(team) do
-		if (type(v) == "table" and #v > 0) then
-			team[k] = CleanObjects(v);
-		end
-	end
-end
-
--- Helper functions.
-function M.CleanTeams()
-	N.CleanTimer = GetTime() + N.CleanIntervals;
-	for i = 0, MaxTeams do
-		CleanTeamArrays(N.Team[i]);
-	end
-end
-]]
 -------------------------------------------------------------------
 -- Custom Explosions
 -- Calculates the damage falloff.
