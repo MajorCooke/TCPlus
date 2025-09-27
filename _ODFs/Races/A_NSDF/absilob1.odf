@@ -1,8 +1,5 @@
 /////////Coxxon - BZTC/////////
-// [MC] Buildable and upgradable silo.
-// This is actually just a placeholder building which LUA adds an actual upgradeable silo.
-// The reason this exists is so I don't have to make four different variants for each race.
-// It's under (Re)Build Addon
+// [MC] Buildable and upgradable silo (use Rebuild Addon to upgrade)
 [GameObjectClass]
 baseName = "absilob1"
 classLabel = "powered" // NOT silo!
