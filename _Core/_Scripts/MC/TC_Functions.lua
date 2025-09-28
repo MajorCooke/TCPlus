@@ -50,10 +50,11 @@ end
 local SkipReplace = false;
 -- Performs map-specific replacements for certain things.
 ---@param h Handle Object to attempt replacing with
+---@return Handle, boolean
 function RepObject(h)
 	if (SkipReplace) then
 		SkipReplace = false;
-		return h;
+		return h, false;
 	end
 	local rep = h;
 	-- [MC] Global replacements are here
@@ -69,7 +70,7 @@ function RepObject(h)
 			end
 		end
 	end
-	return rep;
+	return rep, (rep ~= h);
 end
 
 -- Replaces a handle's weapon 'wepName' with 'wepRep' if possible.

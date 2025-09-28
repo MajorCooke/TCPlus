@@ -9,15 +9,18 @@ If you borrow this code, please keep this comment intact. Thank you!
 -- Primary storage
 local MaxTeams = 16;
 local M = {};	-- FUNCTION table (dont save)
-local N =		-- VARIABLE table (save)
+local Bombs =	
 {
-	Team = {},
-	Bombs = {}, -- Daywreckers
 }
+
+local Teams =
+{
+
+};
 
 function M.InitialSetup()
 	for i = 0, MaxTeams do --yes, including team 0.
-		N.Team[i] = 
+		Teams[i] = 
 		{
 			units = {},			-- misc
 			offensive = {},		-- offensive
@@ -60,10 +63,10 @@ function M.Update()
 
 	-- Always keep this up to date.
 	for i = 1, MaxTeams do 
-		N.Team.player = GetPlayerHandle(i);
+		Teams.player = GetPlayerHandle(i);
 	end
 	
-	if (not IsEmpty(N.Bombs)) then
+	if (not IsEmpty(Bombs)) then
 		M.HandleBombTargets();
 	end
 
@@ -73,8 +76,9 @@ end
 function M.AddObject(h)
 	if (IsAround(h)) then
 		if (GetClassLabel(h) == "CLASS_DAYWRECKER") then
-			PrintConsoleMessage("Day wrecker registered.");
-			table.insert(N.Bombs,h);
+			print("Day wrecker registered.");
+		--	table.insert(Bombs,h);
+			Bombs[h] = h;
 		else
 			M.AddEnt(h);
 		end
@@ -111,20 +115,24 @@ Custom Functions
 ---------------------------------------------------------------------------]]
 
 function M.HandleBombTargets()
-	for _, i in pairs(N.Teams) do
-		local units = N.Teams[i].offensive;
-
-		for _, j in pairs(units) do
-			local h = units[j];
-
-			if (IsAlive(h)) then
-				local who = GetCurrentWho(h);
-				if (who and GetCurrentCommand(h) == 5 and --CMD_FOLLOW
-					IsOdf(who, "apdwrka")) then
-					Attack(h, who, 0);
+	local count = 0;
+	for i, team in ipairs(Teams) do
+		if (team) then
+			for j, h in ipairs(team.offensive) do
+				
+				if (h and IsAround(h) and IsAlive(h)) then
+					local who = GetCurrentWho(h);
+					if (who and GetCurrentCommand(h) == 5 and --CMD_FOLLOW
+						IsOdf(who, "apdwrka")) then
+							count = count + 1;
+							Attack(h, who, 0);
+					end
 				end
 			end
 		end
+	end
+	if (count > 0) then
+		print("Reordering %d units to attack daywrecker.", count);
 	end
 end
 
@@ -201,7 +209,7 @@ local function GetCategory(h)
 	local type = CheckEntType(h);
 	if (type <= 0) then return nil; end;
 
-	local team = N.Team[GetTeamNum(h)];
+	local team = Teams[GetTeamNum(h)];
 		if (type == TCC_OFFENSIVE) then 	return team.offensive;
 	elseif (type == TCC_DEFENSIVE) then		return team.defensive;
 	elseif (type == TCC_UTILITY) then 		return team.utility;
@@ -209,28 +217,33 @@ local function GetCategory(h)
 	elseif (type == TCC_OTHER) then			return team.units; -- gun towers, other things
 	elseif (type == TCC_PILOT) then			return team.pilots;
 	elseif (type == TCC_BUILDING) then		return team.buildings;
-	else return nil;
 	end
-	
+	return nil;
 end
 
 local function InsertHandle(h, arr)
 	if (arr == nil) then return; end;
-	arr[h] = h; -- LUA seriously defies logic...
+	if (h and arr) then
+		arr[h] = h; -- LUA seriously defies logic...
+	end
 end
 
 local function RemoveHandle(h, arr)
+	--[[
 	if (arr == nil) then return; end;
-	arr[h] = nil;
+	if (h and arr) then
+		arr[h] = nil;
+	end
+	]]
 end
 
 function M.AddEnt(h)
 	if (IsPlayer(h)) then
-		local team = N.Team[GetTeamNum(h)];
+		local team = Teams[GetTeamNum(h)];
 		team.player = h;
 	else
 		local arr = GetCategory(h);
-		if (arr) then 
+		if (arr ~= nil) then 
 		--	arr[h] = h; 
 			InsertHandle(h, arr);
 		end
@@ -239,11 +252,11 @@ end
 
 function M.RemoveEnt(h)
 	if (IsPlayer(h)) then
-		local team = N.Team[GetTeamNum(h)];
+		local team = Teams[GetTeamNum(h)];
 		team.player = nil;
 	else
 		local arr = GetCategory(h);
-		if (arr) then 
+		if (arr ~= nil) then 
 			RemoveHandle(h, arr);
 		end
 	end
@@ -315,7 +328,7 @@ function M.Explode(owner, proj, damage, radius, fullrad, dmgself, teams, type)
 	local fullsq = fullrad * fullrad;
 	local dmger = proj or owner;
 	PrintConsoleMessage("Boom Called");
-	for _, i in pairs(N.Team) do
+	for _, i in pairs(Teams) do
 		local skip = false;
 		-- Found a team to exclude so don't touch them.
 		for j, _ in ipairs(teams) do
@@ -324,9 +337,9 @@ function M.Explode(owner, proj, damage, radius, fullrad, dmgself, teams, type)
 
 		-- Team not excluded, start iterating through all arrays.
 		if (not skip) then
-			local team = N.Team[i];
+			local team = Teams[i];
 
-			-- N.Teams[i] --> Grab each table...
+			-- Teams[i] --> Grab each table...
 			for k,v in pairs(team) do
 				if (type(v) == "table" and #v > 0) then
 					local tab = team[k];
