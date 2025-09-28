@@ -17,8 +17,6 @@ local x = {
 	audio1 = nil, 
 	audio6 = nil, 
 	fnav = {}, 
-	failslow = 0, 
-	failtime = 99999.9, 
 	bombtime = 99999.9, 
 	camstate = 0, 
   camfov = 60,  --185 default
@@ -72,6 +70,7 @@ local x = {
 	ekillfrcymeet = 0, 
 	ekillfrcythereyet = false, 
 	ekillfrcythereyet2 = false,
+	daywrecker = false,
 	LAST = true
 }
 --Paths: fnav1-2, epilo1-40, pbomb, prelic, petug1-4, fpgrp1-2, fally1-6, fpmeet, pgate, fpsafe90, fpsafe180, epeast, epwest, pcam1, fparm, fprcy, fppwr1, fphqr, pool1-2, eprcy, epfac, eparm, epcom, epbay, eptrn, eptec, eppwr1-8, epgun1-12, eptur1-4, ppatrol1-6, theline, theline2, ccabase (no longer used, but did work of insidearea)
@@ -158,10 +157,16 @@ function Load(a, c, coreData)
 end
 
 function AddObject(h)
+	if (GetClassLabel(h) == "CLASS_DAYWRECKER") then
+		x.daywrecker = true;
+	end
 	TCC.AddObject(h);
 end
 
 function DeleteObject(h)
+	if (GetClassLabel(h) == "CLASS_DAYWRECKER") then
+		x.daywrecker = false;
+	end
 	TCC.DeleteObject(h);
 end
 
@@ -264,7 +269,7 @@ function Update()
 		UpdateEarthQuake(10.0) --MAKE SMALLER AGAIN
 		ClearObjectives()
 		AddObjective("tcrs0100.txt", "ALLYBLUE")
-		AddObjective("Caution: \n-Movement restricted by special equipment.\n-Limited time before CCA realizes your presence.", "YELLOW")
+		AddObjective("Caution: \n-Movement restricted by special equipment.", "YELLOW")
 		UpdateEarthQuake(5.0)
 		x.fnav = BuildObject("apcamrk", 1, "fnav1")
 		SetObjectiveName(x.fnav, "Dropzone")
@@ -283,10 +288,7 @@ function Update()
 			SetObjectiveName(x.ehng, "Research Hangar")
 			SetObjectiveOn(x.ehng)
 			AddObjective(" ")
-			AddObjective("tcrs0101.txt")  
-			x.failtime = GetTime() + 901.0
-			StartCockpitTimer(900, 600, 120)
-			x.failslow = 1
+			AddObjective("tcrs0101.txt")
 			x.waittime = GetTime() + 1.0
 			x.spine = x.spine + 1
 		end
@@ -313,8 +315,6 @@ function Update()
 	if x.spine == 6 and IsAlive(x.player) and IsAlive(x.ehng) and GetDistance(x.player, x.ehng) < 300 then 
 		StopCockpitTimer() 
 		HideCockpitTimer()
-		x.failtime = 99999.9
-		x.failslow = 0
     ClearObjectives()
 		AddObjective("tcrs0101.txt")
     AddObjective("Do not destroy any buildings.", "YELLOW")
@@ -420,8 +420,10 @@ function Update()
 		AddObjective(" ")
 		AddObjective("tcrs0104.txt", "GREEN")
 		x.etug = BuildObject("svtug", 5, "petug1")
-		x.cargo[1] = BuildObject("sbcrat00rs01", 0, "petug2")
-		Pickup(x.etug, x.cargo[1])
+		-- [MC] Newp. Make it easier because having to reload a bunch of times just to get it right is fucking annoying.
+		-- Also I made tugs faster so definitely don't do this anymore.
+	--	x.cargo[1] = BuildObject("sbcrat00rs01", 0, "petug2")
+	--	Pickup(x.etug, x.cargo[1])
 		x.etugstate = 2
 		for index = 1, 60 do --kill epilot if any left
 			Damage(x.epilo[index], 200)
@@ -430,7 +432,7 @@ function Update()
 	end
 	
 	--ETUG HAS CARGO, SEND OFF, BUILD ESCORT, NOTE TO PLAYER
-	if x.spine == 15 and x.etug == GetTug(x.cargo[1]) then	
+	if x.spine == 15 --[[and x.etug == GetTug(x.cargo[1])]] then
 		Retreat(x.etug, x.ercy)
 		x.eatk[1] = BuildObject("svscout", 5, "petug3")
 		SetSkill(x.eatk[1], x.skillsetting)
@@ -848,6 +850,9 @@ function Update()
 	
 	--CHECK STATUS OF MCA ----------------------------------
 	if not x.MCAcheck then	 --whooboy, thar's lots-o-ways to screw this one up
+		--[MC] Removed the following: 
+		--*loose nuke
+		--*timer
 		--CCA tug escaped
 		if x.etugstate == 2 and IsAlive(x.etug) and GetDistance(x.etug, "pgate") < 100 then
 			AudioMessage("tcrs0111.wav") --FAIL - generic for all instances.
@@ -858,7 +863,7 @@ function Update()
 			x.MCAcheck = true
 		end
 		
-		--CCA tug destoyed before snipe
+		--CCA tug destroyed before snipe
 		if x.etugstate >= 2 and not IsAround(x.etug) then --IsAround so player can snipe
 			AudioMessage("tcrs0111.wav") --FAIL - generic for all instances.
 			ClearObjectives()
@@ -923,24 +928,12 @@ function Update()
 		end
 		
 		--didn't destroy cca comm tower
-		if x.ecomstate == 1 and IsAlive(x.ecom) and IsAlive(x.player) and GetDistance(x.player, x.ecom) > 1600 then 
+		-- [MC] You can now leave as soon as the daywrecker is ordered. 
+		if (x.ecomstate == 1 and IsAlive(x.ecom) and IsAlive(x.player) and GetDistance(x.player, x.ecom) > 1600 and not x.daywrecker) then 
 			AudioMessage("tcrs0111.wav") --FAIL - generic for all instances.
 			ClearObjectives()
 			AddObjective("tcrs0115.txt", "RED") --You failed to destroy the CCA comm tower before leaving their base.	MISSION FAILED!
 			TCC.FailMission(GetTime() + 10.0, "tcrs01f7.des") --LOSER LOSER LOSER
-			x.spine = 666
-			x.MCAcheck = true
-		end
-		
-		--loose nuke in wrong place
-		if (x.loosenukes == 1 and ((IsAlive(x.cargo[2]) and not GetTug(x.cargo[2]) and GetDistance(x.cargo[2], x.ehng) > 64) or not IsAlive(x.cargo[2]))) 
-		or (x.loosenukes == 2 and x.player == GetTug(x.cargo[2])) then
-			--AudioMessage("alertpulse.wav")
-			ClearObjectives()
-			AddObjective("tcrs0116.txt", "RED") --You dropped the nuke. RUN!!!!
-			AudioMessage("xemt2.wav")
-			SetColorFade(20.0, 0.25, "WHITE")
-			TCC.FailMission(GetTime() + 3.0, "tcrs01f8.des") --LOSER LOSER LOSER
 			x.spine = 666
 			x.MCAcheck = true
 		end
@@ -953,19 +946,10 @@ function Update()
 			x.spine = 666
 			x.MCAcheck = true
 		end
-		
-		--player fails by time to get to hangar
-		if x.failslow == 1 and x.failtime < GetTime() then
-			AudioMessage("alertpulse.wav")
-			ClearObjectives()
-			AddObjective("tcrs0118.txt", "RED") --CCA knows you're here. Base on full alert.	MISSION FAILED!
-			TCC.FailMission(GetTime() + 3.0, "tcrs01f10.des") --LOSER LOSER LOSER
-			x.spine = 666
-			x.MCAcheck = true
-		end
 	end
 end
 function ObjectSniped(p, k) --NEEDED IF PLAYER SNIPED WHILE IN VEHICLE
+	
 	if p == x.player then
 		SetColorFade(20.0, 0.5, "DKRED")
 		ClearObjectives()
@@ -975,5 +959,6 @@ function ObjectSniped(p, k) --NEEDED IF PLAYER SNIPED WHILE IN VEHICLE
 		MCAcheck = true
 		x.spine = 666
 	end
+	
 end
 --[[END OF SCRIPT]]

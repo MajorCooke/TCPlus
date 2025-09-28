@@ -191,9 +191,15 @@ function Load(a, b, c, d, coreData)
 	TCC.Load(coreData)
 end
 
+local replaced = false;
 function AddObject(h)
+	if (not replaced and (IsCraftButNotPerson(h) or IsBuilding(h))) then
+		local check = RepObject(h);
+		replaced = (check ~= h);
+		if (replaced) then return; end;
+	end
 	--CHECK FOR MISSION SPECIFIC FACTORY AND ARMORY
-	if (not IsAlive(x.farm) or x.farm == nil) and (IsOdf(h, "avarmo:1") or IsOdf(h, "abarmo")) then
+	if (not IsAlive(x.farm) or x.farm == nil) and (IsOdf(h, "avarmo") or IsOdf(h, "abarmo")) then
 		x.farm = h
 	elseif (not IsAlive(x.ffac) or x.ffac == nil) and (IsOdf(h, "avfactss09:1") or IsOdf(h, "abfactss09")) then
 		x.ffac = h

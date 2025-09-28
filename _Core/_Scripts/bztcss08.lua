@@ -102,6 +102,7 @@ local x = { --ugh, variables got rearranged
 	wreckbank = false, 
 	escvbuildtime = {}, 
 	escvstate = {}, 
+	recommand = 0,
 	LAST = true
 }
 --PATHS: pmytank, fpcam, fparm, fpfac, fpcon, fpscv1, fpmeet, epart1-6, epcam1-6, fpnav1-4, ecnv1-14, eptug, eprel, epconvoy, epturn, epgrcy, epgfac, epmeet, eptur0-19, ppatrol1-4,
@@ -111,7 +112,7 @@ function InitialSetup()
 		
 	local odfpreload = {
 		"svartl", "svscout", "svmbike", "svmisl", "svtank", "svrckt", "svwalk", "svturr", "svtug", "svscav", "sblpad", 
-		"avtank", "avfactss08", "avarmoss08", "avconsss08", "avscav", "avturr", "olyrelic02", "apcamra"
+		"avtank", "avfactss08", "avarmo", "avcons", "avscav", "avturr", "olyrelic02", "apcamra"
 	}
 	for k,v in pairs(odfpreload) do
 		PreloadODF(v)
@@ -163,7 +164,7 @@ function Load(a, b, c, coreData)
 end
 
 function AddObject(h)
-	if IsOdf(h, "avtug:1") then
+	if IsOdf(h, "avtug") then
 		for indexadd = 1, x.ftuglength do
 			if (x.ftug[indexadd] == nil or not IsAlive(x.ftug[indexadd])) then
 				x.ftug[indexadd] = h
@@ -247,13 +248,13 @@ function Update()
 
 	--BUILD FRIENDLY UNITS
 	if x.spine == 2 and x.waittime < GetTime() then --shouldn't need to, but x.fally here bc of cam cancel issue
-		x.farm = BuildObject("avarmoss08", 2, "fparm")
+		x.farm = BuildObject("avarmo", 2, "fparm")
 		Goto(x.farm, "fparm", 0)
 		x.ffac = BuildObject("avfactss08", 2, "fpfac")
 		Goto(x.ffac, "fpfac", 0)
-		x.fcon1 = BuildObject("avconsss08", 2, "fpcon")
+		x.fcon1 = BuildObject("avcons", 2, "fpcon")
 		Follow(x.fcon1, x.ffac, 0) --x.farm, 0)
-		x.fcon2 = BuildObject("avconsss08", 2, "fpscv")
+		x.fcon2 = BuildObject("avcons", 2, "fpscv")
 		Follow(x.fcon2, x.ffac, 0) --x.farm, 0)
 		x.fscv[4] = BuildObject("avscav", 2, "fpscv")
 		Follow(x.fscv[4], x.ffac, 0)
@@ -396,29 +397,39 @@ function Update()
 	end
 
 	--...and SEND 1ST CCA TUG ON ITS WAY
-	if x.spine == 11 and HasCargo(x.etug) then
-		Goto(x.etug, "epconvoy")
-		x.etugcargotime = GetTime() + 10.0
-		x.waittime = GetTime() + 10.0
-		for index = 1, x.esrvlength do
-			x.esrv[index] = BuildObject("svserv", 5, "ecnv2")
-			SetSkill(x.esrv[index], x.skillsetting)
-			Defend2(x.esrv[index], x.etug)
+	if x.spine == 11 then
+
+		if (not HasCargo(x.etug)) then
+			-- Try to reforce it to get the relic if for some stupid reason it can't get it.
+			if (x.recommand <= GetTime()) then 
+				Pickup(x.etug, x.relic);
+				x.recommand = GetTime() + 1.0;
+			end
+		else
+			Goto(x.etug, "epconvoy")
+			x.etugcargotime = GetTime() + 10.0
+			x.waittime = GetTime() + 10.0
+			for index = 1, x.esrvlength do
+				x.esrv[index] = BuildObject("svserv", 5, "ecnv2")
+				SetSkill(x.esrv[index], x.skillsetting)
+				Defend2(x.esrv[index], x.etug)
+			end
+			ClearObjectives()
+			AddObjective("tcss0812.txt", "YELLOW")
+			x.spine = x.spine + 1
 		end
-		ClearObjectives()
-		AddObjective("tcss0812.txt", "YELLOW")
-		x.spine = x.spine + 1
 	end
 
 	--MARK TUG AND DATABASE
-	if x.spine == 12 and GetDistance(x.relic, "prepel1") < 100 then
+	if x.spine == 12 and GetDistance(x.relic, "prepel1") < 200 then
 		SetObjectiveOn(x.etug)
 		SetObjectiveOn(x.relic)
 		x.spine = x.spine + 1
 	end
 
 	--SET THE MISSION TO SUCCESS AND END
-	if x.spine == 13 and IsAlive(x.ftugtarget) and GetTug(x.relic) == x.ftugtarget and GetDistance(x.relic, x.ffac) < 40 then
+--	if x.spine == 13 and IsAlive(x.ftugtarget) and GetTug(x.relic) == x.ftugtarget and GetDistance(x.relic, x.ffac) < 200 then
+	if x.spine == 13 and GetDistance(x.relic, x.ffac) < 100 then
 		AudioMessage("tcss0808.wav") --SUCCEED -	Venus is secure
 		AudioMessage("tcss0809.wav") --SUCCEED - GenC - will have scientists find out more on Furies.
 		ClearObjectives()

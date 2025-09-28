@@ -31,7 +31,6 @@ local x = {
 	ccafound = false, 
 	efinalreset = false, 
 	efinalbuild = false, 
-	runcine2 = false, 
 	runcine3 = false, 
 	epadclear = false, 
 	ecnedone = false, 
@@ -41,7 +40,6 @@ local x = {
 	order1time = 99999.9, 
 	einitbuilt = false, 
 	einittime = 99999.9, 
-	einittimecine = 99999.9,
 	eblttime = 99999.9, 
 	ekillfrcytime = 99999.9, 
 	ekillfrcyresendtime = 99999.9, 
@@ -169,9 +167,12 @@ end
 function Update()
 	x.player = GetPlayerHandle() --EVERY PASS SO IF PLAYER CHANGES VEHICLES
 	x.skillsetting = IFace_GetInteger("options.play.difficulty")
-	SetCurHealth(x.ercy, GetMaxHealth(x.ercy)) --want to keep these alive
-	SetCurHealth(x.efac, GetMaxHealth(x.efac))
-	SetCurHealth(x.epad, GetMaxHealth(x.epad))
+	if (x.FIRST) then
+		SetMaxHealth(x.ercy, 0);  --want to keep these alive
+		SetMaxHealth(x.efac, 0);
+		SetMaxHealth(x.epad, 0);
+		x.FIRST = false;
+	end
 	TCC.Update()
 	
 	--START THE MISSION BASICS
@@ -293,10 +294,6 @@ function Update()
 
 	--SETUP HEPHESTUS CINERACTIVE
 	if x.spine == 4 and GetDistance(x.player, x.heph) < 200 then
-		Stop(x.frcy, 0)
-		for index = 1, 3 do
-		 Stop(x.ftnk[index], 0)
-		end
 		x.warn1time = 99999.9
 		x.order1time = 99999.9
 		x.failstate[1] = false
@@ -332,9 +329,6 @@ function Update()
 
 	--ID HEPHESTUS
 	if x.spine == 6 and IsInfo("olyhephb") and GetDistance(x.player, x.heph) < 300 then --precaution to insure x.player IDs correct x.hephestus
-		for index = 1, 3 do
-			Follow(x.ftnk[index], x.player, 0)
-		end
 		SetObjectiveOff(x.heph)
 		AudioMessage("tcss0505.wav") --Gen Col - stdby. Goto nav 1. Recon starport.
 		AudioMessage("tcss0506.wav") --Buz - But Gen. the 5th."
@@ -369,12 +363,6 @@ function Update()
 		AddObjective("	")
 		AddObjective("tcss0503.txt")
 		--Goto(x.frcy, "fpnav1", 0)
-    Follow(x.frcy, x.player, 0)
-    for index = 1, 3 do
-      if x.ftnk[index] ~= x.player then
-        Follow(x.ftnk[index], x.player, 0)
-      end
-    end
 		x.order1time = GetTime() + 240.0
 		x.warn3time = GetTime() + 180.0
 		x.failstate[3] = true
@@ -610,22 +598,9 @@ function Update()
 		
 		if x.einittime < GetTime() then
 			x.audio2 = AudioMessage("tcss0511.wav") --Cmd, CCA patrol approach from canyon.
-			x.runcine2 = true
 			x.einittime = 99999.9
-			x.einittimecine = GetTime() + 6.0
-      x.userfov = IFace_GetInteger("options.graphics.defaultfov")
-      CameraReady()
-      IFace_SetInteger("options.graphics.defaultfov", x.camfov)
 		end
 		
-		if x.runcine2 then --follow a CCA scout
-			CameraObject(x.e5pt[3], -5, 3, -15, x.frcy)
-			if CameraCancelled() or x.einittimecine < GetTime() then
-        CameraFinish()
-        IFace_SetInteger("options.graphics.defaultfov", x.userfov)
-				x.runcine2 = false
-			end
-		end
 		
 		if x.checktimer[1] and GetCockpitTimer() <= 0 then --if timer ends, fail mission
 			for index = 1, 6 do
@@ -868,7 +843,6 @@ function Update()
 			ClearObjectives()
 			AddObjective("failrecycox.txt", "RED") --Your Recycler was destroyed. MISSION FAILED
 			x.spine = 666
-			x.MCAcheck = true
 		end
 		
 		if not x.epadclear and not IsAlive(x.epad) then --don't blow up the launchpad (before IDing) ya knucklehead
@@ -876,7 +850,6 @@ function Update()
 			ClearObjectives()
 			AddObjective("failordr.txt", "RED")
 			x.spine = 666
-			x.MCAcheck = true
 		end
 		
 		if not x.ecnedone and x.gotcone and not IsAlive(x.ecne) then --don't blow up CCA rocket
@@ -884,7 +857,6 @@ function Update()
 			ClearObjectives()
 			AddObjective("failordr.txt", "RED")
 			x.spine = 666
-			x.MCAcheck = true
 		end
 		
 		if x.order1time < GetTime() then --follow orders soldiernot 
@@ -901,8 +873,8 @@ function Update()
 			ClearObjectives()
 			AddObjective("failordr.txt", "RED")
 			x.spine = 666
-			x.MCAcheck = true
 		end
+		x.MCAcheck = true
 	end
 end
 --END OF SCRIPT

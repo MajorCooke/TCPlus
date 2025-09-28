@@ -354,9 +354,9 @@ function Update()
 		AudioMessage("tcss0703.wav") --Colorado, restate last message.
 		RemoveObject(x.fnav)
 		x.camstate = 1
-    x.userfov = IFace_GetInteger("options.graphics.defaultfov")
-    CameraReady()
-    IFace_SetInteger("options.graphics.defaultfov", x.camfov)
+--	x.userfov = IFace_GetInteger("options.graphics.defaultfov")
+--	CameraReady()
+--	IFace_SetInteger("options.graphics.defaultfov", x.camfov)
 		x.waittime = GetTime() + 20.0
 		x.spine = x.spine + 1
 	end
@@ -383,8 +383,8 @@ function Update()
 	--CAMERA FINISH - ELD RECY DEAD
 	if x.spine == 10 and not IsAlive(x.fally[6]) then
 		x.camstate = 0
-    CameraFinish()
-    IFace_SetInteger("options.graphics.defaultfov", x.userfov)
+--	CameraFinish()
+--	IFace_SetInteger("options.graphics.defaultfov", x.userfov)
 		for index = 6, 10 do
 			Damage(x.fally[index], 20000)
 		end
@@ -518,12 +518,13 @@ function Update()
 	----------END MAIN SPINE ----------
 	
 	--CAMERA COLORADO DESTROYED
+
 	if x.camstate == 1 then
-		CameraObject(x.fally[10], 0, 20, 15, x.etnk[1])
+	--	CameraObject(x.fally[10], 0, 20, 15, x.etnk[1])
 		SetCurHealth(x.etnk[1], GetMaxHealth(x.etnk[1]))
 		SetCurHealth(x.etnk[2], GetMaxHealth(x.etnk[2]))
 	end
-
+	
 	--HAS PLAYER OR TEAM HAD FIRST ENCOUNTER WITH A WALKER
 	if not x.ewlkmet then
 		x.player = GetPlayerHandle()
@@ -569,7 +570,7 @@ function Update()
 	--HAND OUT FREE STUFF TO THE CURIOUS
 	if not x.foldmehere then
 		if IsInfo("yvcatass07") and (x.freestuffstate[1] == 0 or x.freestuffstate[2] == 0 or x.freestuffstate[3] == 0) then
-      if x.freestuffstate[1] == 0 and IsAlive(x.freestuff[1]) and GetDistance(x.player, x.freestuff[1]) < 200 then
+	  if x.freestuffstate[1] == 0 and IsAlive(x.freestuff[1]) and GetDistance(x.player, x.freestuff[1]) < 200 then
 				index = 1
 			elseif x.freestuffstate[2] == 0 and IsAlive(x.freestuff[2]) and GetDistance(x.player, x.freestuff[2]) < 200 then
 				index = 2
@@ -888,9 +889,9 @@ function Update()
 		end
 		if x.ekillartmarch then
 			for index = 1, x.ekillartlength do
-        if IsAlive(x.ekillart[index]) and GetTeamNum(x.ekillart[index]) ~= 1 then
-          Attack(x.ekillart[index], x.ekillarttarget)
-        end
+		if IsAlive(x.ekillart[index]) and GetTeamNum(x.ekillart[index]) ~= 1 then
+		  Attack(x.ekillart[index], x.ekillarttarget)
+		end
 			end
 			x.ekillarttime = GetTime() + 180.0 --give time for attack
 			x.ekillartmarch = false

@@ -62,7 +62,40 @@ local x = {
 	eatk2count = 0,
 	eatk2bcount = 0, 
 	labelcount = 0, 
-	LAST = true
+	quota = 300,
+	b1active = false,	b1stage = 0,	b1timer = 0,	
+	b2active = false,	b2stage = 0,	b2timer = 0,
+	LAST = true,
+}
+local GoalText =
+{
+	obj01 = "Enter a vehicle.\n\nBuild and escort a scavenger to the NAV.",
+	obj02 = "Collect 300 units of scrap.",
+	obj03a = "Escort your scavenger back to base immediately.",
+	obj03b = "Enemy reinforcements incoming!",
+	obj04 = "Assist the second scavenger to base.",
+
+	hint01 = "Don't hesitate to build units to support the scavenger.",
+
+	bonus1a = "BONUS: Build up a powerful squadron without bailing/recycling any units.",
+	bonus1c = "Recycler's blue meter indicates progress.",
+	wonus1a = "Impressive!",
+	wonus1b = "The processors have discovered 5 units of Ancient Scrap!",
+
+	bonus2a = "BONUS: ALERT! Incoming CCA attack waves! Fend them off for as long as you can.",
+	bonus2b = "Keep building units to protect your base, it's only going to get harder.",
+	bonus2c = "Bonus content won't prevent you from succeeding the mission.",
+
+	fonus1 = "You bailed out a unit, or recycled too many.",
+	fonus2 = "Couldn't hold out long enough against the waves.",
+	fonusf = "Better luck next time! You can try again by restarting the mission.",
+
+
+	fail01 = "You lost the scavenger.",
+	fail02 = "Your base was destroyed.",
+	fail03 = "You can't be trusted with a budget.",
+
+	win01 = ""
 }
 --PATHS: pplayer, plndr, fprcy, fpscv1, fpscv2, area1, epatk1, epatk1b, epatk2, cam1, cam2, fpspwn1-5 not used, plogostart
 	
@@ -208,7 +241,7 @@ function Update()
 	if x.spine == 3 and x.waittime < GetTime() then
 		SetObjectiveName(x.frcy, "Outpost 3")
 		SetObjectiveOn(x.frcy)
-		x.audio1 = AudioMessage("tcss0102.wav") --Build scav, collect scrap
+		x.audio1 = AudioMessageVol("tcss0102.wav", 0.5); --Build scav, collect scrap
 		x.scrapnav = BuildObject("apcamra", 1, "area1")
 		SetObjectiveName(x.scrapnav, "Bio-Metal Field")
 		SetObjectiveOn(x.scrapnav)
@@ -220,7 +253,7 @@ function Update()
 	--GIVE PRIMARY MISSION OBJECTIVE
 	if x.spine == 4 and IsAudioMessageDone(x.audio1) then
 		ClearObjectives()
-		AddObjective("tcss0101.txt")
+		AddObjective(GoalText.obj01);
 		x.spine = x.spine + 1
 	end
 
@@ -238,23 +271,35 @@ function Update()
 
 	--HAS SCAVENGER ARRIVED AT SCRAP FIELD
 	if x.spine == 7 and IsAlive(x.fscv1) and GetDistance(x.fscv1, "area1") < 200 then
-		if GetMaxScrap(1) > 4 then --haha - don't get to meet quoata by blowing up your units
-			SetScrap(1, 0)
-		end
-		AudioMessage("tcss0103.wav") --Un-ID vehc approach from SW
+		AudioMessageVol("tcss0103.wav", 0.5); --Un-ID vehc approach from SW
 		x.eatk1allow = true
+		x.b1active = true;
+		x.b1timer = GetTime() + 45.0;
 		x.spine = x.spine + 1
+	end
+
+	-- BONUS: Spend scrap on offense/defense!
+	if (x.b1active) then
+		if (x.b1timer > -1) then
+			if (x.b1timer < GetTime()) then
+				x.b1timer = -1;
+				AudioMessage("bonusstart.ogg");
+				AddObjective("");
+				
+				AddObjective(GoalText.hint01, "BLUE");
+			end
+		end
 	end
 
 	--CHECK IF SCRAP QUOTA HAS BEEN MET
 	if x.spine == 8 and IsAlive(x.fscv1) and GetDistance(x.fscv1, x.frcy) > 300 then
 		if (IsAlive(x.fscv1) and (GetCurHealth(x.fscv1) <= (GetMaxHealth(x.fscv1) * 0.5)) and (GetScrap(1) > 40)) or (IsAlive(x.player) and GetCurHealth(x.player) <= (GetMaxHealth(x.player) * 0.3)) then
 			x.gohome = true
-		elseif GetScrap(1) >= 70 then
+		elseif GetScrap(1) >= x.quota then
 			x.gohome = true
 		end
 		if x.gohome then
-			x.audio1 = AudioMessage("tcss0104.wav") --Cmd you hvy outnumber protect scv proceed outpost 3
+			x.audio1 = AudioMessageVol("tcss0104.wav", 0.5); --Cmd you hvy outnumber protect scv proceed outpost 3
 			Goto(x.fscv1, "fpscv1", 0)
 			if IsAlive(x.scrapnav) then
 				SetObjectiveOff(x.scrapnav)
@@ -277,7 +322,7 @@ function Update()
 	if x.spine == 10 and IsAlive(x.fscv1) and GetDistance(x.fscv1, "fpscv1") < 100 then
 		SetCurHealth(x.fscv1, GetMaxHealth(x.fscv1))
 		SetObjectiveOff(x.fscv1)
-		x.audio1 = AudioMessage("tcss0105.wav") --Unfort we have another scav that is threatened
+		x.audio1 = AudioMessageVol("tcss0105.wav", 0.5); --Unfort we have another scav that is threatened
 		x.fscv2 = BuildObject("avscavss1", 2, "fpscv2")--create x.fscv2 on team 2 and send to fpscv1
 		Goto(x.fscv2, "fpscv1")
 		x.fscv1safe = true
@@ -308,8 +353,10 @@ function Update()
 	if x.spine == 12 and IsAlive(x.fscv2) and GetDistance(x.fscv2, "fpscv1") < 100 then
 		AddHealth(x.fscv2, 10000)
 		SetObjectiveOff(x.fscv2)
-		AudioMessage("tcss0106.wav") --Vech of soviet orign bypase outpost 3 on to EN1
-		TCC.SucceedMission(GetTime() + 12.0, "tcss01w.des") --WINNER WINNER WINNER
+		AudioMessageVol("tcss0106.wav", 0.5); --Vech of soviet orign bypase outpost 3 on to EN1
+		if (x.b1active and x.b1stage < 500) then --no secondary fight for you if you fail the first bonus
+			TCC.SucceedMission(GetTime() + 12.0, "tcss01w.des"); --WINNER WINNER WINNER
+		end
 		ClearObjectives()
 		AddObjective("tcss0103.txt", "GREEN")
 		AddObjective("	")
@@ -322,7 +369,7 @@ function Update()
 	----------END MAIN SPINE ----------
 
 	--SENDING ENEMY 1 UNITL 1ST SCAV GETS HOME
-	if (x.eatk1allow) then
+	if (x.spine <= 12 and x.eatk1allow) then
 		if (not IsAlive(x.eatk1) and not x.eatk1hold) then
 			x.eatk1time = GetTime() + 18.0
 			if (x.eskillsetting == 1) then 
@@ -395,7 +442,7 @@ function Update()
 	end
 	
 	--SENDING ENEMY 2 UNITL 2nd SCAV GETS HOME
-	if x.eatk2allow and x.waittime < GetTime() then
+	if x.spine <= 12 and x.eatk2allow and x.waittime < GetTime() then
 		if not IsAlive(x.eatk2) then
 			if x.eatk2count == 0 then
 				x.eatk2 = BuildObject("svscoutss01", 5, "fpscv2")
@@ -433,34 +480,37 @@ function Update()
 		end
 	end
 
+	if (x.b2active) then
+		if (x.b2stage > 0) then
+			if (IsAlive(x.frcy)) then
+				x.b2stage = -1;
+				TCC.SucceedMission(GetTime() + 6.0, "tcss01w.des");
+			end
+		end
 	--CHECK STATUS OF MISSION-CRITICAL ASSETS (MCA)
-	if not x.MCAcheck then
+	elseif not x.MCAcheck then
 		if (not IsAlive(x.fscv1) and x.gotfscv1 and not x.fscv1safe) or (x.fscv2mca and not IsAlive(x.fscv2))then --lose a scav?
 			AudioMessage("tcss0107.wav") --FAIL - scav lost
 			TCC.FailMission(GetTime() + 8.0, "tcss01f1.des") --LOSER LOSER LOSER
 			ClearObjectives()
 			AddObjective("tcss0105.txt", "RED")
 			x.MCAcheck = true
+			x.b1active = false;
 		end
 		
-		if not IsAlive(x.frcy) then --frcy lost
+		if (not IsAlive(x.frcy)) then --frcy lost
 			AudioMessage("failrecygencowav") --6s Gen Col Generic Recycler lost.
 			TCC.FailMission(GetTime() + 7.0, "tcss01f2.des") --LOSER LOSER LOSER
 			ClearObjectives()
 			AddObjective("tcss0106.txt", "RED") --Your Recycler was destroyed. MISSION FAILEDnot
 			x.MCAcheck = true
-		end
-		
-		if not IsAlive(x.fbay) or not IsAlive(x.fcom) or not IsAlive(x.ftec) then --MCA lost --DON'T BLOW UP YOUR OWN BASE (FOR SCRAP)
-			TCC.FailMission(GetTime() + 4.0, "tcss01f3.des") --LOSER LOSER LOSER
-			ClearObjectives()
-			AddObjective("tcss0107.txt", "RED") --You lost a mission-critical asset. MISSION FAILED
-			x.MCAcheck = true
+			x.b1active = false;
 		end
 		
 		if not x.waitbool and not x.gotfscv1 and GetScrap(1) < 20 then --You can't be trusted with a budget
 			x.waitfail = GetTime() + 15.0 --IF spent on scav, wait for it to exist to stop fail
 			x.waitbool = true
+			x.b1active = false;
 		end
 		
 		if not x.gotfscv1 and x.waitfail < GetTime() then
@@ -468,6 +518,7 @@ function Update()
 			ClearObjectives()
 			AddObjective("tcss0108.txt", "RED")
 			x.MCAcheck = true
+			x.b1active = false;
 		end
 	end
 end

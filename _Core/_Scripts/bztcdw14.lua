@@ -193,8 +193,10 @@ end
 function AddObject(h)
 	--get player base buildings for later attack
 	if (not IsAlive(x.farm) or x.farm == nil) and (IsOdf(h, "bvarmo:1") or IsOdf(h, "bbarmo")) then
-		x.farm = RepObject(h);
-		h = x.farm;
+		if (IsOdf(h,"bbarmo")) then
+			h = RepObject(h);
+		end
+		x.farm = h;
 	elseif (not IsAlive(x.ffac) or x.ffac == nil) and (IsOdf(h, "bvfact:1") or IsOdf(h, "bbfact")) then
 		x.ffac = h
 	elseif (not IsAlive(x.fsld) or x.fsld == nil) and IsOdf(h, "bbshld") then

@@ -121,9 +121,11 @@ function Load(a, b, c, coreData)
 end
 function AddObject(h)
 	--get player base buildings for later attack
+	if (IsBuilding(h)) then
+		h = RepObject(h);
+	end
 	if (not IsAlive(x.farm) or x.farm == nil) and IsOdf(h, "bbarmo") then
-		x.farm = RepObject(h);
-		h = x.farm;
+		x.farm = h;
 	elseif (not IsAlive(x.ffac) or x.ffac == nil) and IsOdf(h, "bbfact") then
 		x.ffac = h
 	elseif (not IsAlive(x.fsld) or x.fsld == nil) and IsOdf(h, "bbshld") then

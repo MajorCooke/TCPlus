@@ -168,10 +168,12 @@ function Load(a, b, c, d, coreData)
 end
 
 function AddObject(h)
-	if (not IsAlive(x.farm) or x.farm == nil) and (IsOdf(h, "avarmoss12:1") or IsOdf(h, "abarmoss12")) then
-		x.farm = RepObject(h);
-		h = x.farm;
-	elseif (not IsAlive(x.ffac) or x.ffac == nil) and (IsOdf(h, "avfactss12:1") or IsOdf(h, "abfactss12")) then
+	if (IsCraftButNotPerson(h) or IsBuilding(h)) then
+		h = RepObject(h);
+	end
+	if (not IsAlive(x.farm) or x.farm == nil) and (IsOdf(h, "avarmoss12") or IsOdf(h, "abarmoss12")) then
+		x.farm = h;
+	elseif (not IsAlive(x.ffac) or x.ffac == nil) and (IsOdf(h, "avfactss12") or IsOdf(h, "abfactss12")) then
 		x.ffac = h
 	elseif (not IsAlive(x.fsld) or x.fsld == nil) and IsOdf(h, "abshld") then
 		x.fsld = h

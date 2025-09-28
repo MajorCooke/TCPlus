@@ -140,9 +140,11 @@ function AddObject(h)
 	end
 
 	--check when x.player builds base buildings for AI attacks
+	if (IsCraftButNotPerson(h) or IsBuilding(h)) then
+		h = RepObject(h);
+	end
 	if (not IsAlive(x.farm) or x.farm == nil) and (IsOdf(h, "avarmo") or IsOdf(h, "abarmo")) then
-		x.farm = RepObject(h);
-		h = x.farm;
+		x.farm = h;
 	elseif (not IsAlive(x.ffac) or x.ffac == nil) and (IsOdf(h, "avfactss14:1") or IsOdf(h, "abfactss14")) then
 		x.ffac = h
 	elseif (not IsAlive(x.fsld) or x.fsld == nil) and IsOdf(h, "abshld") then

@@ -160,9 +160,11 @@ function Load(a, b, c, d, coreData)
 end
 
 function AddObject(h)
-	if (not IsAlive(x.farm) or x.farm == nil) and (IsOdf(h, "avarmo:1") or IsOdf(h, "abarmo")) then
-		x.farm = RepObject(h);
-		h = x.farm;
+	if (IsBuilding(h)) then
+		h = RepObject(h);
+	end
+	if (not IsAlive(x.farm) or x.farm == nil) and (IsOdf(h, "abarmo")) then
+		x.farm = h;
 	elseif (not IsAlive(x.ffac) or x.ffac == nil) and (IsOdf(h, "avfact:1") or IsOdf(h, "abfact")) then
 		x.ffac = h
 	elseif (not IsAlive(x.fsld) or x.fsld == nil) and IsOdf(h, "abshld") then
@@ -348,15 +350,15 @@ function Update()
 		x.camheight = x.camheight + 30
 		CameraPath("pcam1", x.camheight, 4000, x.ercy)
 		if IsAudioMessageDone(x.audio1) or CameraCancelled() then
-      CameraFinish()
-      IFace_SetInteger("options.graphics.defaultfov", x.userfov)
+			CameraFinish()
 			SetColorFade(6.0, 0.5, "BLACK")
 			--AddObjective("tcss1501.txt")
 			AddObjective("Establish a base.\n\nDestroy the Fury Recycler and CCA Hangar.\n\nAllied CCA will arrive periodically in group F10.")
 			x.eatk[1] = BuildObject("yvrckt", 5, GetPositionNear("epgfac", 0, 16, 32)) --grpspwn
 			SetSkill(x.eatk[1], x.skillsetting)
 			Attack(x.eatk[1], x.frcy)
-      x.waittime = GetTime() + 20.0
+      x.waittime = GetTime() + 20.0;
+      IFace_SetInteger("options.graphics.defaultfov", tostring(x.userfov));
       x.spine = x.spine + 1
     end
   end

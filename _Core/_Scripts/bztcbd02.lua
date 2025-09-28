@@ -146,17 +146,17 @@ function AddObject(h)
 		end
 		
 		--FACT BUILT
-		if x.gotfac == 0 and IsOdf(h, "bvfactbd02:1") and not IsAlive(x.ffac) then
+		if x.gotfac == 0 and IsType(h, "bbfact") and not IsAlive(x.ffac) then
 			x.ffac = h
 		end
 		
 		--ARMO BUILT
-		if x.gotarm == 0 and IsOdf(h, "bvarmobd02:1") and not IsAlive(x.farm) then
+		if x.gotarm == 0 and IsType(h, "bbarmo") and not IsAlive(x.farm) then
 			x.farm = h
 		end
 		
 		--CBUN BUILT
-		if x.gotcom ==0 and IsOdf(h, "bbcbun") and not IsAlive(x.fcom) then
+		if x.gotcom ==0 and IsType(h, "bbcbun") and not IsAlive(x.fcom) then
 			x.fcom = h
 		end
 		--REMOVED COMBAT UNIT BUILD REQ

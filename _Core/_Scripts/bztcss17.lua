@@ -140,7 +140,7 @@ function InitialSetup()
 	
 	local odfpreload = {
 		"ybship", "ybsrkt", "ybship2", "yvscout", "yvmbike", "yvtank", "yvrckt", "yvartl",	"yvturr", "yvhtnk", "yvwalk", "ybpgen1", "ybgtow", 
-		"avscout", "avmbike", "avmisl", "avtank", "avrckt", "avdolly", "avdrop", "avbiometalroid", "stayput", "bvdolly", "oboompot", "apcamra"
+		"avscout", "avmbike", "avmisl", "avtank", "avrckt", "avdolly", "avdrop", "avbiometalroid", "stayput", "avdolly", "oboompot", "apcamra"
 	}
 	for k,v in pairs(odfpreload) do
 		PreloadODF(v)
@@ -174,7 +174,7 @@ function Load(a, b, c, coreData)
 	index = a;
 	indexadd = b;
 	x = c;
-	TCC.Load(coreData)
+	TCC.Load(coreData);
 end
 
 function Start()
