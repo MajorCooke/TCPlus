@@ -229,12 +229,12 @@ local function InsertHandle(h, arr)
 end
 
 local function RemoveHandle(h, arr)
-	--[[
+	
 	if (arr == nil) then return; end;
 	if (h and arr) then
 		arr[h] = nil;
 	end
-	]]
+	
 end
 
 function M.AddEnt(h)
@@ -274,6 +274,12 @@ end
 -- Changes the team number of the ent.
 function M.SetTeamNum(h, num)
 	if (h == nil) then return; end;
+
+	if (GetClassLabel(h) == "CLASS_DAYWRECKER") then
+		SetTeamNum(h, num);
+		return;
+	end
+
 	M.RemoveEnt(h);
 	SetTeamNum(h, num);
 	M.AddEnt(h);

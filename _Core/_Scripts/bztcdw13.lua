@@ -159,10 +159,19 @@ function Load(a, b, c, d, coreData)
 	TCC.Load(coreData)
 end
 
+local replaced = false;
 function AddObject(h)
+	if (not replaced and IsBuilding(h)) then
+		local check = RepObject(h);
+		if (check ~= h) then 
+			replaced = true;
+			return; 
+		end;
+	end
+	replaced = false;
+
 	if (not IsAlive(x.farm) or x.farm == nil) and IsOdf(h, "bvarmo:1") or IsOdf(h, "bbarmo") then
-		x.farm = rep.RepObject(h);
-		h = x.farm;
+		x.farm = h;
 	elseif (not IsAlive(x.ffac) or x.ffac == nil) and IsOdf(h, "bvfact:1") or IsOdf(h, "bbfact") then
 		x.ffac = h
 	elseif (not IsAlive(x.fsld) or x.fsld == nil) and IsOdf(h, "bbshld") then
