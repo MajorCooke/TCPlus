@@ -202,7 +202,7 @@ function AddObject(h)
 	end
 	
 	--GIVE NEW GRIZZLIES POPGUNS
-	if IsOdf(h, "bvtank:1") then
+	if x.FIRST and IsOdf(h, "bvtank:1") then
 		GiveWeapon(h, "gpopg1a")
 	end
 	
@@ -249,6 +249,7 @@ function Update()
 	x.player = GetPlayerHandle() --EVERY PASS SO IF PLAYER CHANGES VEHICLES
 	x.skillsetting = IFace_GetInteger("options.play.difficulty")
 	TCC.Update();
+	x.FIRST = false;
 	--START THE MISSION BASICS
 	if x.spine == 0 then
 		GiveWeapon(x.mytank, "gpopg1a")
@@ -519,7 +520,7 @@ function Update()
 			x.wrecknotify = 1
 		end
 		if x.wrecknotify == 1 then
-      TCC.SetTeamNum(x.wreckbomb, 5)
+      SetTeamNum(x.wreckbomb, 5)
 			SetObjectiveOn(x.wreckbomb)
 			AudioMessage("alertpulse.wav")
 			x.wrecknotify = 0

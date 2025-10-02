@@ -290,7 +290,7 @@ function Update()
 		AddObjective("tcdw0802.txt")
 		AddObjective("	")
 		AddObjective("tcdw0803.txt", "YELLOW")
-		x.eapc = BuildObject("kvapc", 5, x.dummypos)
+		x.eapc = BuildObject("kvapc", 0, x.dummypos) --[MC] Prevent gun towers from targeting it.
 		SetVelocity(x.eapc, (SetVector(-50.0, 0.0, 0.0))) --setvector is xyz world, ought be xyz handle
 		SetObjectiveName(x.eapc, "Engineer APC")
 		SetObjectiveOn(x.eapc)
