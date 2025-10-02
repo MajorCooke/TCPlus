@@ -144,7 +144,7 @@ soundBuild= "kvslfvf.wav"  //building supplies
 soundCancel = "mnu_buzz.wav"  //"cgrowl.wav"  //"locking3.wav"
 soundFinish= "kvslfvcox02.wav"  //supplies deployed SPECIAL
 
-buildItem9 = "apdwrka"  //daywrecker  //tcen
+buildItem9 = "apdwrkk"  //daywrecker  //tcen
 buildItem10 = "apservap"  //service pod - race specific suffix, armo version
 
 [ArmoryGroup1]
