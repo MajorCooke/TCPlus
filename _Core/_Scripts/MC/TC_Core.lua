@@ -18,12 +18,6 @@ function M.Save()
 		Upgrades = Upgrades.Save(),
 		Challenges = Challenges.Save(),
 	}
-	--[[
-	N.AI = AI.Save();
-	N.Goals = Goals.Save();
-	N.Upgrades = Upgrades.Save();
-	N.Challenges = Challenges.Save();
-	]]
 	return N;
 end
 
@@ -181,6 +175,7 @@ function M.HandleDebug()
 		debugSetup = true;
 		IFace_CreateInteger("script.cheats", 0);
 		IFace_CreateInteger("script.rave", 0);
+		IFace_CreateInteger("script.snipe", 0);
 	end
 
 	local v1 = IFace_GetInteger("script.cheats");
@@ -201,6 +196,20 @@ function M.HandleDebug()
 		end
 	end
 	
+	local v3 = IFace_GetInteger("script.snipe");
+	if (v3 and v3 > 0) then
+		IFace_ConsoleCmd("script.snipe 0", false);
+		local plr = GetPlayerHandle();
+		if (IsAround(plr)) then
+			local tar = GetUserTarget();
+			if (not IsPlayer(tar) and IsAround(tar) and IsCraftButNotPerson(tar) and HasPilot(tar)) then
+				local c = AI.CheckEntType(tar);
+				if (c == TCC_OFFENSIVE or c == TCC_DEFENSIVE or c == TCC_UTILITY) then
+					RemovePilot(tar);
+				end
+			end
+		end
+	end
 end
 
 return M;

@@ -145,16 +145,16 @@ function IsEmpty(arr)
 end
 
 
-local TCC_PLAYER = 1;
-local TCC_OFFENSIVE = 2;
-local TCC_DEFENSIVE = 3;
-local TCC_UTILITY = 4;
-local TCC_PRODUCTION = 5;
-local TCC_OTHER = 6;
-local TCC_PILOT = 7;
-local TCC_BUILDING = 8;
+TCC_PLAYER = 1;
+TCC_OFFENSIVE = 2;
+TCC_DEFENSIVE = 3;
+TCC_UTILITY = 4;
+TCC_PRODUCTION = 5;
+TCC_OTHER = 6;
+TCC_PILOT = 7;
+TCC_BUILDING = 8;
 
-local function CheckEntType(h)
+function M.CheckEntType(h)
 	if (IsAround(h)) then
 		local cls = GetClassSig(h);
 		if (not (
@@ -206,7 +206,7 @@ end
 
 local function GetCategory(h)
 
-	local type = CheckEntType(h);
+	local type = M.CheckEntType(h);
 	if (type <= 0) then return nil; end;
 
 	local team = Teams[GetTeamNum(h)];
