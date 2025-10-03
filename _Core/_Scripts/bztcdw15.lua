@@ -124,6 +124,16 @@ function Update()
 	x.player = GetPlayerHandle() --EVERY PASS SO IF PLAYER CHANGES VEHICLES
 	x.skillsetting = IFace_GetInteger("options.play.difficulty")
 	TCC.Update();
+
+	local pt = GetTeamNum(x.player);
+	for i, unit in pairs(x.eatk) do
+		if ((IsAlive(unit) or IsPlayer(unit) or not HasPilot(unit)) and GetTeamNum(unit) == pt) then
+			SetObjectiveOff(unit);
+			x.eatk[i] = nil;
+			break;
+		end
+	end
+
 	--[[Test Camera Sequence
 	if x.spine == 0 then
 		x.spine = 5
@@ -222,21 +232,9 @@ function Update()
 		ClearObjectives()
 		AddObjective("tcdw1501.txt", "GREEN")
 		AddObjective("\n\nIncoming nuclear strike on launchpad.", "YELLOW")
-		AddObjective("\n\nEVACUATE THE BATTLZONE", "CYAN")
-		--time based distance player starts from launch pad and slowest vehicle player might be in (though ya don't really won't to be in a bvrckt)
-		if GetDistance(x.player, "eppad") >= 800 then
-			StartCockpitTimer(20, 5, 3)
-			x.boomtime = GetTime() + 20.0
-		elseif GetDistance(x.player, "eppad") >= 600 then
-			StartCockpitTimer(25, 10, 5)
-			x.boomtime = GetTime() + 25.0
-		elseif GetDistance(x.player, "eppad") >= 400 then --750m, 27s
-			StartCockpitTimer(30, 10, 7)
-			x.boomtime = GetTime() + 30.0
-		else
-			StartCockpitTimer(35, 15, 7)
-			x.boomtime = GetTime() + 35.0
-		end
+		AddObjective("\n\nEVACUATE THE BATTLEZONE", "CYAN")
+		StartCockpitTimer(35, 15, 7)
+		x.boomtime = GetTime() + 35.0
 		x.boomstate = 1
 		x.spine = x.spine + 1
 	end
