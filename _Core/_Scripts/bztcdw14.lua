@@ -148,7 +148,7 @@ function InitialSetup()
 	SetAutoGroupUnits(true)
 		
 	local odfpreload = {
-		"kvscout", "kvmbike", "kvmisl", "kvtank", "kvrckt", "kvhtnk", "kvartl",	"kvwalk", "kvapc", "kvapcdw14", 
+		"kvscout", "kvmbike", "kvmisl", "kvtank", "kvrckt", "kvhtnk", "kvartl",	"kvwalk", "kvapc", "kvapcdw14", x.wreckname,
 		"bvrecy0", "bvtank", "bvturr", "gpopg1a", "olybolt2", "apdwrka", "npscrx", "apcamrb" 
 	}
 	for k,v in pairs(odfpreload) do
@@ -189,15 +189,16 @@ function Load(a, b, c, d, coreData)
 	x = d;
 	TCC.Load(coreData)
 end
-
+local replaced = false;
 function AddObject(h)
+	if (replaced) then 	replaced = false;	return; 	end;
 	--get player base buildings for later attack
-	if (not IsAlive(x.farm) or x.farm == nil) and (IsOdf(h, "bvarmo:1") or IsOdf(h, "bbarmo")) then
-		if (IsOdf(h,"bbarmo")) then
-			h = RepObject(h);
+	if (not IsAlive(x.farm) or x.farm == nil) and (IsType(h, "bbarmo")) then
+		if (IsBuilding(h)) then
+			h, replaced = RepObject(h);
 		end
 		x.farm = h;
-	elseif (not IsAlive(x.ffac) or x.ffac == nil) and (IsOdf(h, "bvfact:1") or IsOdf(h, "bbfact")) then
+	elseif (not IsAlive(x.ffac) or x.ffac == nil) and (IsType(h, "bvfact:1") or IsType(h, "bbfact")) then
 		x.ffac = h
 	elseif (not IsAlive(x.fsld) or x.fsld == nil) and IsOdf(h, "bbshld") then
 		x.fsld = h
@@ -223,7 +224,7 @@ function AddObject(h)
 	end
 	
 	--get daywrecker for highlight
-	if (not IsAlive(x.wreckbomb) or x.wreckbomb == nil) and IsOdf(h, "apdwrkk") then 
+	if (not IsAlive(x.wreckbomb) or x.wreckbomb == nil) and IsOdf(h, x.wreckname) then 
 		if GetTeamNum(h) == 5 then
 			x.wreckbomb = h --get handle to launched daywrecker
 		end
@@ -507,26 +508,36 @@ function Update()
 		else --4, 11
 			x.wrecktrgt = GetPosition(x.player)
 		end
-		SetCommand(x.earm, 22, 1, 0, 0, x.wreckname) --build (don't use "Build" func)   
+		print("Building daywrecker "..x.wreckname);
+		Build(x.earm, x.wreckname, 0);
+	--	SetCommand(x.earm, 22, 1, 0, 0, x.wreckname) --build (don't use "Build" func)   
+		
 		x.wreckstate = x.wreckstate + 1
 	elseif x.wreckstate == 1 and IsAlive(x.earm) then
-		SetCommand(x.earm, 8, 1, 0, x.wrecktrgt, 0) --dropoff (don't use "Dropoff" func)
+		Dropoff(x.earm, x.wrecktrgt, 0);
+	--	SetCommand(x.earm, 8, 1, 0, x.wrecktrgt, 0) --dropoff (don't use "Dropoff" func)
 		x.wreckstate = x.wreckstate + 1
-	elseif x.wreckstate == 2 and IsAlive(x.wreckbomb) then
-		x.wreckbank = false --reset for scavs
-		if x.skillsetting == x.easy and GetDistance(x.wreckbomb, x.wrecktrgt) < 400 then
-			x.wrecknotify = 1
-		elseif x.skillsetting == x.medium and GetDistance(x.wreckbomb, x.wrecktrgt) < 300 then
-			x.wrecknotify = 1
-		elseif x.skillsetting == x.hard and GetDistance(x.wreckbomb, x.wrecktrgt) < 200 then
-			x.wrecknotify = 1
-		end
-		if x.wrecknotify == 1 then
-      TCC.SetTeamNum(x.wreckbomb, 5)
-			SetObjectiveOn(x.wreckbomb)
-			AudioMessage("alertpulse.wav")
-			x.wrecknotify = 0
-			x.wreckstate = x.wreckstate + 1
+	elseif x.wreckstate == 2 then
+		if (not IsAlive(x.wreckbomb)) then
+			print("For some ungodly reason, "..x.wreckname.." failed to build!");
+			x.wrecktime = GetTime() + 1.0;
+			x.wreckstate = 0;
+		else
+			x.wreckbank = false --reset for scavs
+			if x.skillsetting == x.easy and GetDistance(x.wreckbomb, x.wrecktrgt) < 400 then
+				x.wrecknotify = 1
+			elseif x.skillsetting == x.medium and GetDistance(x.wreckbomb, x.wrecktrgt) < 300 then
+				x.wrecknotify = 1
+			elseif x.skillsetting == x.hard and GetDistance(x.wreckbomb, x.wrecktrgt) < 200 then
+				x.wrecknotify = 1
+			end
+			if x.wrecknotify == 1 then
+				TCC.SetTeamNum(x.wreckbomb, 5)
+				SetObjectiveOn(x.wreckbomb)
+				AudioMessage("alertpulse.wav")
+				x.wrecknotify = 0
+				x.wreckstate = x.wreckstate + 1
+			end
 		end
 	elseif x.wreckstate == 3 and not IsAlive(x.wreckbomb) then		
 		for index = 1, 12 do
