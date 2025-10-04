@@ -6,6 +6,15 @@ Used primarily for storing and performing maintenance on certain units.
 If you borrow this code, please keep this comment intact. Thank you!
 ]]--
 
+TCC_PLAYER = 1;
+TCC_OFFENSIVE = 2;
+TCC_DEFENSIVE = 3;
+TCC_UTILITY = 4;
+TCC_PRODUCTION = 5;
+TCC_OTHER = 6;
+TCC_PILOT = 7;
+TCC_BUILDING = 8;
+
 -- Primary storage
 local MaxTeams = 16;
 local M = {};	-- FUNCTION table (dont save)
@@ -17,21 +26,70 @@ local Teams =
 {
 
 };
+local CleanTime = 30.0;
+local CleanNext = 0.0;
+local function MakeTeam(i)
+	if (i < 0 or i > MaxTeams) then return nil; end;
+	local team = 
+	{
+		units = {},			-- misc
+		offensive = {},		-- offensive
+		defensive =  {},	-- defensive
+		utility = {},		-- tugs & scavs
+		buildings = {},
+		production = {},	-- production units (recy, fact, armory, NOT constructors!)
+		pilots = {},
+		player = nil,
+	}
+	Teams[i] = team;
+end
+local function GetTeam(i)
+	if (i < 0 or i > MaxTeams) then return nil; end;
+	if (Teams[i] == nil) then
+		MakeTeam(i);
+	end
+	return Teams[i];
+end
+
+local function GetTeamHandle(h)
+	if (IsAround(h)) then
+		return GetTeam(GetTeamNum(h));
+	end
+	return nil;
+end
+
+local function CleanTable(tab)
+	if (not tab or type(tab) ~= "table") then return; end;
+	local clean = {};
+
+	for k, v in pairs(tab) do
+		if (IsAround(v)) then clean[k] = v; end;
+	end
+
+	return clean;
+end
+
+local function CleanTeams()
+	CleanNext = GetTime() + CleanTime;
+	for _, team in pairs(Teams) do
+		if (team) then
+			for tname, tab in pairs(team) do
+				if (tab and type(tab) == "table") then
+					local ctab = CleanTable(tab);
+					team[tname] = ctab;
+				end
+			end
+		end
+	end
+end
+
+local function CleanUp()
+	CleanTeams();
+	CleanTable(Bombs);
+end
 
 function M.InitialSetup()
-	for i = 0, MaxTeams do --yes, including team 0.
-		Teams[i] = 
-		{
-			units = {},			-- misc
-			offensive = {},		-- offensive
-			defensive =  {},	-- defensive
-			utility = {},		-- tugs & scavs
-			buildings = {},
-			production = {},	-- production units (recy, fact, armory, NOT constructors!)
-			pilots = {},
-			player = nil,
-		}
-	end
+	
 end
 
 function M.Start()
@@ -39,19 +97,26 @@ function M.Start()
 end
 
 local LoadGame = false;
---function M.Load(_N)
+--[[
 function M.Load()
 	M.InitialSetup();
 	LoadGame = true;
---	N = _N;
-end
---[[
-function M.Save()
-	return N;
 end
 ]]
 
+function M.Load(_Teams, _Bombs)
+	Teams = _Teams;
+	Bombs = _Bombs;
+end
+
+function M.Save()
+	CleanUp();
+	return Teams, Bombs;
+end
+
+
 function M.Update()
+	--[[
 	if (LoadGame) then
 		LoadGame = false;
 		local objs = GetAllGameObjectHandles();
@@ -60,17 +125,19 @@ function M.Update()
 			M.AddObject(objs[i]);
 		end
 	end
-
+	
 	-- Always keep this up to date.
 	for i = 1, MaxTeams do 
 		Teams.player = GetPlayerHandle(i);
 	end
-	
+	]]
 	if (not IsEmpty(Bombs)) then
 		M.HandleBombTargets();
 	end
 
-
+	if (GetTime() >= CleanNext) then
+		CleanUp();
+	end
 end
 
 function M.AddObject(h)
@@ -122,8 +189,8 @@ function M.HandleBombTargets()
 				
 				if (h and IsAround(h) and IsAlive(h)) then
 					local who = GetCurrentWho(h);
-					if (who and GetCurrentCommand(h) == 5 and --CMD_FOLLOW
-						IsOdf(who, "apdwrka")) then
+					if (who and GetCurrentCommand(h) == CMD_FOLLOW and --5
+						IsType(who, "daywrecker")) then
 							count = count + 1;
 							Attack(h, who, 0);
 					end
@@ -139,20 +206,13 @@ end
 function IsEmpty(arr)
 	local count = 0;
 	for _, v in pairs(arr) do
-		if (arr[v]) then return false; end;
+		if (v) then return false; end;
 	end
 	return true;
 end
 
 
-TCC_PLAYER = 1;
-TCC_OFFENSIVE = 2;
-TCC_DEFENSIVE = 3;
-TCC_UTILITY = 4;
-TCC_PRODUCTION = 5;
-TCC_OTHER = 6;
-TCC_PILOT = 7;
-TCC_BUILDING = 8;
+
 
 function M.CheckEntType(h)
 	if (IsAround(h)) then
@@ -192,6 +252,13 @@ function M.CheckEntType(h)
 				cls == "CLASS_CONSTRUCTIONRIG" or
 				cls == "CLASS_CONSTRUCTIONRIGT") then
 				return TCC_PRODUCTION;
+			elseif ( 
+				cls == "CLASS_TURRET" or
+				cls == "CLASS_BUILDING"	) then
+				return TCC_BUILDING;
+			elseif (
+				cls == "CLASS_PERSON"	) then
+				return TCC_PILOT;
 			else
 				return TCC_OTHER;
 			end
@@ -209,21 +276,24 @@ local function GetCategory(h)
 	local type = M.CheckEntType(h);
 	if (type <= 0) then return nil; end;
 
-	local team = Teams[GetTeamNum(h)];
-		if (type == TCC_OFFENSIVE) then 	return team.offensive;
-	elseif (type == TCC_DEFENSIVE) then		return team.defensive;
-	elseif (type == TCC_UTILITY) then 		return team.utility;
-	elseif (type == TCC_PRODUCTION) then	return team.production;
-	elseif (type == TCC_OTHER) then			return team.units; -- gun towers, other things
-	elseif (type == TCC_PILOT) then			return team.pilots;
-	elseif (type == TCC_BUILDING) then		return team.buildings;
+	local team = GetTeamHandle(h);
+	if (team) then
+			if (type == TCC_OFFENSIVE) then 	return team.offensive;
+		elseif (type == TCC_DEFENSIVE) then		return team.defensive;
+		elseif (type == TCC_UTILITY) then 		return team.utility;
+		elseif (type == TCC_PRODUCTION) then	return team.production;
+		elseif (type == TCC_OTHER) then			return team.units; -- gun towers, other things
+		elseif (type == TCC_PILOT) then			return team.pilots;
+		elseif (type == TCC_BUILDING) then		return team.buildings;
+		end
 	end
 	return nil;
 end
 
 local function InsertHandle(h, arr)
 	if (arr == nil) then return; end;
-	if (h and arr) then
+	if (IsAround(h) and arr) then
+	--	table.insert(arr, h);
 		arr[h] = h; -- LUA seriously defies logic...
 	end
 end
@@ -231,15 +301,17 @@ end
 local function RemoveHandle(h, arr)
 	
 	if (arr == nil) then return; end;
-	if (h and arr) then
+	if (IsAround(h) and arr) then
+	--	table.remove(arr, h);
 		arr[h] = nil;
 	end
 	
 end
 
 function M.AddEnt(h)
+	--[[
 	if (IsPlayer(h)) then
-		local team = Teams[GetTeamNum(h)];
+		local team = GetTeamHandle(h);
 		team.player = h;
 	else
 		local arr = GetCategory(h);
@@ -248,17 +320,29 @@ function M.AddEnt(h)
 			InsertHandle(h, arr);
 		end
 	end
+	]]
+	local arr = GetCategory(h);
+	if (arr ~= nil) then 
+	--	arr[h] = h; 
+		InsertHandle(h, arr);
+	end
 end
 
 function M.RemoveEnt(h)
+	--[[
 	if (IsPlayer(h)) then
-		local team = Teams[GetTeamNum(h)];
+		local team = GetTeamHandle(h);
 		team.player = nil;
 	else
 		local arr = GetCategory(h);
 		if (arr ~= nil) then 
 			RemoveHandle(h, arr);
 		end
+	end
+	]]
+	local arr = GetCategory(h);
+	if (arr ~= nil) then 
+		RemoveHandle(h, arr);
 	end
 end
 
@@ -367,6 +451,20 @@ function M.Explode(owner, proj, damage, radius, fullrad, dmgself, teams, type)
 	
 
 	return damage;
+end
+
+
+
+function M.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
+	
+	-- Handle chinese units for Dogs of War missions 
+	--[[
+	if (IsAround(h) and IsCraftButNotPerson(h) and GetRace(h) == "k") then
+		local r = GetRace(h);
+		
+	end
+	]]
+	return value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage;
 end
 
 return M;

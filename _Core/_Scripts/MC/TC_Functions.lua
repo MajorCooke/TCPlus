@@ -93,18 +93,15 @@ end
 ---@param h Handle Vehicle to replace weapons.
 
 function ReplaceStabber(h)
-	if IsAlive(h) or IsPlayer(h) then
-		local race = GetRace(h)
-		if ((race == "a" or race == "b") or (MisnNum >= 50 and (race == "s" or race == "k"))) then 
-			ReplaceWeapon(h, "gstbaa_c", "gstbla_c");
-			ReplaceWeapon(h, "gstbaa_a", "gstbla_a");
-			ReplaceWeapon(h, "gstbas_c", "gstbla_c");
-			ReplaceWeapon(h, "gstbas_a", "gstbla_a");
-			ReplaceWeapon(h, "gstbaa_c_gun", "gstbla_c_gun");
-			ReplaceWeapon(h, "gstbaa_a_gun", "gstbla_a_gun");
-			ReplaceWeapon(h, "gstbas_c_gun", "gstbla_c_gun");
-			ReplaceWeapon(h, "gstbas_a_gun", "gstbla_a_gun");
-		end
+	if (IsCraftButNotPerson(h) or IsPlayer(h)) then
+		ReplaceWeapon(h, "gstbaa_c", "gstbla_c");
+		ReplaceWeapon(h, "gstbaa_a", "gstbla_a");
+		ReplaceWeapon(h, "gstbas_c", "gstbla_c");
+		ReplaceWeapon(h, "gstbas_a", "gstbla_a");
+		ReplaceWeapon(h, "gstbaa_c_gun", "gstbla_c_gun");
+		ReplaceWeapon(h, "gstbaa_a_gun", "gstbla_a_gun");
+		ReplaceWeapon(h, "gstbas_c_gun", "gstbla_c_gun");
+		ReplaceWeapon(h, "gstbas_a_gun", "gstbla_a_gun");
 	end
 end
 

@@ -1,5 +1,5 @@
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
---require('TC_Constants');
+require('TC_Constants');
 require('TC_Functions'); --Just a bunch of functions that don't need saving
 require('TC_Math');
 local AI =			require('TC_AI');
@@ -11,9 +11,11 @@ local M = {};	-- FUNCTION table
 -- Put in all hooks first
 
 function M.Save()
+	local _Teams, _Bombs = AI.Save();
 	local N = 
 	{
-	--	AI = AI.Save(),
+		Teams = _Teams,
+		Bombs = _Bombs,
 		Goals = Goals.Save(),
 		Upgrades = Upgrades.Save(),
 		Challenges = Challenges.Save(),
@@ -21,16 +23,16 @@ function M.Save()
 	return N;
 end
 
-function M.Load(_N)
+function M.Load(N)
 	print("Loading AI...");
---	AI.Load(_N.AI);
-	AI.Load();
+	AI.Load(N.Teams, N.Bombs);
+--	AI.Load();
 	print("Loading Goals...");
-	Goals.Load(_N.Goals);
+	Goals.Load(N.Goals);
 	print("Loading Upgrades...");
-	Upgrades.Load(_N.Upgrades);
+	Upgrades.Load(N.Upgrades);
 	print("Loading Challenges...");
-	Challenges.Load(_N.Challenges);
+	Challenges.Load(N.Challenges);
 	print("Loading complete.");
 end
 
@@ -84,7 +86,10 @@ function M.DeleteObject(h)
 	AI.DeleteObject(h);
 end
 
+function M.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
 
+	return AI.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage);
+end
 
 function M.PreSnipe(world, shooter, victim, OrdTeam, OrdODF)
 	-- 1 prevents, 0 allows
