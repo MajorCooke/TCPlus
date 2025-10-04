@@ -21,51 +21,57 @@ function IsType(h, className)
 	local name = GetOdf(h):lower():gsub("%.odf$", "");
 
 	if name == className then
+	--	print("Found "..name);
 		return true;
 	end
     
     -- by this point h contains the ODF in lowercase with no .odf
 	local check = name..":"..className;
-    local r = CLStore[check];
-    if r then return r end;
+	local r = CLStore[check];
+--	print("Checking "..check);
+    if (r ~= nil and type(r) == "boolean") then 
+		local val = "false";
+
+	--	print("Found "..check.."! "..tostring(r));
+		return r; 
+	end;
 
     local candidate = name;
     local found = true;
     while (found) do
-        candidate, found = GetODFString(candidate..'.odf', "GameObjectClass", "classlabel");
+	--	print(candidate);
+        candidate, found = GetODFString(candidate..".odf", "GameObjectClass", "classlabel");
         if (not found or not candidate) then 
 			CLStore[check] = false;
+		--	print("New registry: "..check.." is false");
 			return false;
 		end -- failed to read ODF value or read as nil
         candidate = candidate:lower();
         if (candidate == className) then
             CLStore[check] = true;
+		--	print("New registry: "..check.. " is true");
             return true;
         end
     end
 	CLStore[check] = false;
+--	print ("End: New Registry "..check.." is false");
     return false;
 end
 
-local SkipReplace = false;
 -- Performs map-specific replacements for certain things.
 ---@param h Handle Object to attempt replacing with
 ---@return Handle, boolean
 function RepObject(h)
-	if (SkipReplace) then
-		SkipReplace = false;
-		return h, false;
-	end
 	local rep = h;
 	-- [MC] Global replacements are here
 	-- [MC] Mission specific replacements begin here
 	if (h and (IsAlive(h) or IsBuilding(h)) and MisnNum > 42) then
-		if (IsType(h, "abarmo")) then		SkipReplace = true;
+		if (IsType(h, "abarmo")) then
 			rep = TCC.ReplaceObject(h, "abarmopl");
-		elseif (IsType(h, "bbarmo")) then 	SkipReplace = true;
+		elseif (IsType(h, "bbarmo")) then
 			rep = TCC.ReplaceObject(h, "bbarmopl");
 		elseif (MisnNum >= 58) then
-			if (IsType(h, "abfact")) then 	SkipReplace = true;
+			if (IsType(h, "abfact")) then
 				rep = TCC.ReplaceObject(h, "abfactss17");
 			end
 		end

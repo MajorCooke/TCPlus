@@ -30,8 +30,9 @@ end
 
 function M.ReadIn(allgoals)
 	allgoals = allgoals or false;
-	local plr = GetPlayerHandle();
-	local pname = GetPlayerName(plr);
+--	local plr = GetPlayerHandle();
+--	local pname = GetPlayerName(GetPlayerHandle());
+	local pname = GetProfileName();
 	N.Path = pname.."_challenges.txt";
 	local file = LoadFile(N.Path);
 	if (file == nil) then

@@ -140,7 +140,7 @@ function M.Update()
 	end
 end
 
-function M.AddObject(h)
+function M.AddObject(h, replaced)
 	if (IsAround(h)) then
 		if (GetClassLabel(h) == "CLASS_DAYWRECKER") then
 			print("Day wrecker registered.");
@@ -183,16 +183,16 @@ Custom Functions
 
 function M.HandleBombTargets()
 	local count = 0;
-	for i, team in ipairs(Teams) do
+	for i, team in pairs(Teams) do
 		if (team) then
-			for j, h in ipairs(team.offensive) do
+			for j, h in pairs(team.offensive) do
 				
-				if (h and IsAround(h) and IsAlive(h)) then
-					local who = GetCurrentWho(h);
-					if (who and GetCurrentCommand(h) == CMD_FOLLOW and --5
-						IsType(who, "daywrecker")) then
+				if (IsAlive(h)) then
+					local tar = GetCurrentWho(h);
+					if (tar and GetCurrentCommand(h) == CMD_FOLLOW and --5
+						GetClassLabel(h) == "CLASS_DAYWRECKER") then
 							count = count + 1;
-							Attack(h, who, 0);
+							Attack(h, tar, 0);
 					end
 				end
 			end

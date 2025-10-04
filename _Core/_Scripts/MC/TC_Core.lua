@@ -74,12 +74,13 @@ function M.ObjectKilled(DeadObject, Killer)
 	return AI.ObjectKilled(DeadObject, Killer);
 end
 
-function M.AddObject(h)
+function M.AddObject(h, replaced)
 	-- Disable Fury pilot ejections. 
 	if (IsCraftButNotPerson(h) and GetRace(h) == "y") then
 		SetEjectRatio(h, 0.0);
 	end
-	AI.AddObject(h);
+	replaced = replaced or false;
+	AI.AddObject(h, replaced);
 end
 
 function M.DeleteObject(h)

@@ -21,8 +21,9 @@ function M.InitialSetup()
 end
 
 function M.Start()
-	local plr = GetPlayerHandle();
-	local pname = GetPlayerName(plr);
+--	local plr = GetPlayerHandle();
+--	local pname = GetPlayerName(GetPlayerHandle());
+	local pname = GetProfileName();
 	N.Path = pname.."_upgrades.txt";
 	local file = LoadFile(N.Path);
 	if (file == nil) then
