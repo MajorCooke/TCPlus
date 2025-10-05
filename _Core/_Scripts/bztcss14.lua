@@ -118,7 +118,9 @@ function Load(a, b, c, coreData)
 	TCC.Load(coreData)
 end
 
+local replaced = false;
 function AddObject(h)  
+	if (replaced) then replaced = false; return; end;
 	if not x.gotextract and IsOdf(h, "abscav") then
 		x.gotextract = true
 	end
@@ -140,12 +142,13 @@ function AddObject(h)
 	end
 
 	--check when x.player builds base buildings for AI attacks
-	if (IsCraftButNotPerson(h) or IsBuilding(h)) then
-		h = RepObject(h);
-	end
 	if (not IsAlive(x.farm) or x.farm == nil) and (IsOdf(h, "avarmo") or IsOdf(h, "abarmo")) then
+		if (IsBuilding(h)) then
+			local check = RepObject(h);
+			if (check and check ~= h) then	replaced = true; end;
+		end
 		x.farm = h;
-	elseif (not IsAlive(x.ffac) or x.ffac == nil) and (IsOdf(h, "avfactss14:1") or IsOdf(h, "abfactss14")) then
+	elseif (not IsAlive(x.ffac) or x.ffac == nil) and (IsOdf(h, "avfactss14") or IsOdf(h, "abfactss14")) then
 		x.ffac = h
 	elseif (not IsAlive(x.fsld) or x.fsld == nil) and IsOdf(h, "abshld") then
 		x.fsld = h
@@ -194,6 +197,10 @@ end
 
 function PostTargetChangedCallback(craft, prev, cur)
 	TCC.PostTargetChangedCallback(craft, prev, cur);
+end
+
+function PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
+	return TCC.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage);
 end
 function Update()
 	x.player = GetPlayerHandle() --EVERY PASS SO IF PLAYER CHANGES VEHICLES

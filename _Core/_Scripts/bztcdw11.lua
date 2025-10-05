@@ -119,12 +119,12 @@ function Load(a, b, c, coreData)
 	x = c;
 	TCC.Load(coreData)
 end
+local replaced = false;
 function AddObject(h)
+	if (replaced) then 	replaced = false;	return; 	end;
 	--get player base buildings for later attack
-	if (IsBuilding(h)) then
-		h = RepObject(h);
-	end
-	if (not IsAlive(x.farm) or x.farm == nil) and IsOdf(h, "bbarmo") then
+	if (not IsAlive(x.farm) or x.farm == nil) and IsType(h, "bbarmo") then
+		h, replaced = RepObject(h);
 		x.farm = h;
 	elseif (not IsAlive(x.ffac) or x.ffac == nil) and IsOdf(h, "bbfact") then
 		x.ffac = h
@@ -194,6 +194,10 @@ end
 
 function PostTargetChangedCallback(craft, prev, cur)
 	TCC.PostTargetChangedCallback(craft, prev, cur);
+end
+
+function PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
+	return TCC.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage);
 end
 
 function Update()

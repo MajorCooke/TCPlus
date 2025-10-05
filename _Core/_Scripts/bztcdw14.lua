@@ -90,7 +90,6 @@ local x = {
 	epatsecs = {}, 
 	escv = {}, --scav stuff
 	escvlength = 2, 
-	wreckbank = false, --have 2
 	escvbuildtime = {}, 
 	escvstate = {}, 
 	wreckstate = 0, --daywrecker
@@ -193,12 +192,10 @@ local replaced = false;
 function AddObject(h)
 	if (replaced) then 	replaced = false;	return; 	end;
 	--get player base buildings for later attack
-	if (not IsAlive(x.farm) or x.farm == nil) and (IsType(h, "bbarmo")) then
-		if (IsBuilding(h)) then
-			h, replaced = RepObject(h);
-		end
+	if (not IsAlive(x.farm) or x.farm == nil) and IsType(h, "bbarmo") then
+		h, replaced = RepObject(h);
 		x.farm = h;
-	elseif (not IsAlive(x.ffac) or x.ffac == nil) and (IsType(h, "bvfact:1") or IsType(h, "bbfact")) then
+	elseif (not IsAlive(x.ffac) or x.ffac == nil) and IsType(h, "bbfact") then
 		x.ffac = h
 	elseif (not IsAlive(x.fsld) or x.fsld == nil) and IsOdf(h, "bbshld") then
 		x.fsld = h
@@ -261,6 +258,11 @@ end
 function PostTargetChangedCallback(craft, prev, cur)
 	TCC.PostTargetChangedCallback(craft, prev, cur);
 end
+
+function PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
+	return TCC.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage);
+end
+
 function Update()
 	x.player = GetPlayerHandle() --EVERY PASS SO IF PLAYER CHANGES VEHICLES
 	x.skillsetting = IFace_GetInteger("options.play.difficulty")
@@ -508,21 +510,15 @@ function Update()
 		else --4, 11
 			x.wrecktrgt = GetPosition(x.player)
 		end
-		print("Building daywrecker "..x.wreckname);
-		Build(x.earm, x.wreckname, 0);
-	--	SetCommand(x.earm, 22, 1, 0, 0, x.wreckname) --build (don't use "Build" func)   
+	--	Build(x.earm, x.wreckname, 0);
+		SetCommand(x.earm, 22, 1, 0, 0, x.wreckname) --build (don't use "Build" func)   
 		
 		x.wreckstate = x.wreckstate + 1
 	elseif x.wreckstate == 1 and IsAlive(x.earm) then
-		Dropoff(x.earm, x.wrecktrgt, 0);
-	--	SetCommand(x.earm, 8, 1, 0, x.wrecktrgt, 0) --dropoff (don't use "Dropoff" func)
+	--	Dropoff(x.earm, x.wrecktrgt, 0);
+		SetCommand(x.earm, 8, 1, 0, x.wrecktrgt, 0) --dropoff (don't use "Dropoff" func)
 		x.wreckstate = x.wreckstate + 1
-	elseif x.wreckstate == 2 then
-		if (not IsAlive(x.wreckbomb)) then
-			print("For some ungodly reason, "..x.wreckname.." failed to build!");
-			x.wrecktime = GetTime() + 1.0;
-			x.wreckstate = 0;
-		else
+	elseif x.wreckstate == 2 and IsAlive(x.wreckbomb) then
 			x.wreckbank = false --reset for scavs
 			if x.skillsetting == x.easy and GetDistance(x.wreckbomb, x.wrecktrgt) < 400 then
 				x.wrecknotify = 1
@@ -538,7 +534,6 @@ function Update()
 				x.wrecknotify = 0
 				x.wreckstate = x.wreckstate + 1
 			end
-		end
 	elseif x.wreckstate == 3 and not IsAlive(x.wreckbomb) then		
 		for index = 1, 12 do
 			x.randompick = math.floor(GetRandomFloat(1.0, 9.0))

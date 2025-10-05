@@ -115,7 +115,7 @@ function InitialSetup()
 		
 	local odfpreload = {
 		"bvrecy0", "bvmbike", "bvtank", "bvcons0", "bvturr", "bvscav", "npscrx", 
-		"kvscout", "kvtank", "kvmisl", "kvhtnk", "kvturr", "kvscav", "kbsilodw13", "apcamrb" 
+		"kvscout", "kvtank", "kvmisl", "kvhtnk", "kvturr", "kvscav", "kbsilodw13", "apcamrb", x.wreckname,
 	}
 	for k,v in pairs(odfpreload) do
 		PreloadODF(v)
@@ -161,18 +161,12 @@ end
 
 local replaced = false;
 function AddObject(h)
-	if (not replaced and IsBuilding(h)) then
-		local check = RepObject(h);
-		if (check ~= h) then 
-			replaced = true;
-			return; 
-		end;
-	end
-	replaced = false;
+	if (replaced) then 	replaced = false;	return; 	end;
 
-	if (not IsAlive(x.farm) or x.farm == nil) and IsOdf(h, "bvarmo:1") or IsOdf(h, "bbarmo") then
+	if (not IsAlive(x.farm) or x.farm == nil) and IsType(h, "bbarmo") then
+		h, replaced = RepObject(h);
 		x.farm = h;
-	elseif (not IsAlive(x.ffac) or x.ffac == nil) and IsOdf(h, "bvfact:1") or IsOdf(h, "bbfact") then
+	elseif (not IsAlive(x.ffac) or x.ffac == nil) and IsType(h, "bbfact") then
 		x.ffac = h
 	elseif (not IsAlive(x.fsld) or x.fsld == nil) and IsOdf(h, "bbshld") then
 		x.fsld = h
@@ -242,6 +236,10 @@ end
 
 function PostTargetChangedCallback(craft, prev, cur)
 	TCC.PostTargetChangedCallback(craft, prev, cur);
+end
+
+function PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
+	return TCC.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage);
 end
 
 function Update()

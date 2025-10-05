@@ -163,7 +163,9 @@ function Load(a, b, c, coreData)
 	TCC.Load(coreData)
 end
 
+local replaced = false;
 function AddObject(h)
+	if (replaced) then replaced = false; return; end;
 	if IsOdf(h, "avtug") then
 		for indexadd = 1, x.ftuglength do
 			if (x.ftug[indexadd] == nil or not IsAlive(x.ftug[indexadd])) then
@@ -199,6 +201,11 @@ end
 function PostTargetChangedCallback(craft, prev, cur)
 	TCC.PostTargetChangedCallback(craft, prev, cur);
 end
+
+function PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
+	return TCC.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage);
+end
+
 function Update()
 	x.player = GetPlayerHandle() --EVERY PASS SO IF PLAYER CHANGES VEHICLES
 	x.skillsetting = IFace_GetInteger("options.play.difficulty")

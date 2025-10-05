@@ -79,8 +79,7 @@ local GoalText =
 
 	bonus1a = "BONUS: Build up a powerful squadron without bailing/recycling any units.",
 	bonus1c = "Recycler's blue meter indicates progress.",
-	wonus1a = "Impressive!",
-	wonus1b = "The processors have discovered 5 units of Ancient Scrap!",
+	wonus1b = "The processors have discovered 5 units of Ancient Scrap in the rubble!",
 
 	bonus2a = "BONUS: ALERT! Incoming CCA attack waves! Fend them off for as long as you can.",
 	bonus2b = "Keep building units to protect your base, it's only going to get harder.",
@@ -137,11 +136,9 @@ function Load(a, coreData)
 end
 
 function AddObject(h)  
-	if IsOdf(h, "sspilo") then
-		RemoveObject(h)
-	end
-	
-	if not x.gotfscv1 and IsOdf(h, "avscavss1:1") then
+	if (GetRace(h) == "s") then
+		SetEjectRatio(h, 0);
+	elseif not x.gotfscv1 and IsOdf(h, "avscavss1:1") then
 		if x.fscv1 == nil then --THE :1 IS TEAM NUMBER FOR VEHICLES
 			x.fscv1 = h
 			x.labelcount = x.labelcount + 1
@@ -181,6 +178,11 @@ end
 function PostTargetChangedCallback(craft, prev, cur)
 	TCC.PostTargetChangedCallback(craft, prev, cur);
 end
+
+function PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
+	return TCC.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage);
+end
+
 function Update()
 	x.player = GetPlayerHandle() --EVERY PASS SO IF PLAYER CHANGES VEHICLES
 	x.skillsetting = IFace_GetInteger("options.play.difficulty") 

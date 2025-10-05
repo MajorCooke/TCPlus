@@ -1,4 +1,8 @@
 --bztcbd10 - Battlezone Total Command - Rise of the Black Dogs - 10/10 PREPARE TO EVACUATE  1185
+--[[  
+[MC] TO DO:
+1.	Remove 
+--]]
 assert(load(assert(LoadFile("_requirefix.lua")),"_requirefix.lua"))();
 TCC = require("TC_Core")
 MisnNum = 56;
@@ -164,36 +168,41 @@ function Load(a, b, c, d, coreData)
 	x = d;
 	TCC.Load(coreData)
 end
-
+local replaced = false;
 function AddObject(h)
-	if (not IsAlive(x.farm) or x.farm == nil) and IsOdf(h, "bvarmo:1") or IsOdf(h, "bbarmo") then
-		x.farm = RepObject(h);
-		h = x.farm;
-	elseif (not IsAlive(x.ffac) or x.ffac == nil) and IsOdf(h, "bvfactbd10:1") or IsOdf(h, "bbfactbd10") then
-		x.ffac = h
-	elseif (not IsAlive(x.fsld) or x.fsld == nil) and IsOdf(h, "bbshld") then
-		x.fsld = h
-	elseif (not IsAlive(x.fhqr) or x.fhqr == nil) and IsOdf(h, "bbhqtr") then
-		x.fhqr = h
-	elseif (not IsAlive(x.ftec) or x.ftec == nil) and IsOdf(h, "bbtcen") then
-		x.ftec = h
-	elseif (not IsAlive(x.ftrn) or x.ftrn == nil) and IsOdf(h, "bbtrain") then
-		x.ftrn = h
-	elseif (not IsAlive(x.fbay) or x.fbay == nil) and IsOdf(h, "bbsbay") then
-		x.fbay = h
-	elseif (not IsAlive(x.fcom) or x.fcom == nil) and IsOdf(h, "bbcbun") then
-		x.fcom = h
-	elseif IsOdf(h, "bbpgen0") then
-		for indexadd = 1, 4 do
-			if x.fpwr[indexadd] == nil or not IsAlive(x.fpwr[indexadd]) then
-				x.fpwr[indexadd] = h
-				break
-			end
-		end
-	else
-		ReplaceStabber(h);
-	end
+	
+	if (replaced) then replaced = false; return; end;
 
+	if (GetTeamNum(h) == 1) then
+		if IsType(h, "bbarmo") then
+			h, replaced = RepObject(h);
+			h = x.farm;
+		elseif IsType(h, "bbfact") then
+		--	h, replaced = RepObject(h);
+			x.ffac = h
+		elseif (not IsAlive(x.fsld) or x.fsld == nil) and IsOdf(h, "bbshld") then
+			x.fsld = h
+		elseif (not IsAlive(x.fhqr) or x.fhqr == nil) and IsOdf(h, "bbhqtr") then
+			x.fhqr = h
+		elseif (not IsAlive(x.ftec) or x.ftec == nil) and IsOdf(h, "bbtcen") then
+			x.ftec = h
+		elseif (not IsAlive(x.ftrn) or x.ftrn == nil) and IsOdf(h, "bbtrain") then
+			x.ftrn = h
+		elseif (not IsAlive(x.fbay) or x.fbay == nil) and IsOdf(h, "bbsbay") then
+			x.fbay = h
+		elseif (not IsAlive(x.fcom) or x.fcom == nil) and IsOdf(h, "bbcbun") then
+			x.fcom = h
+		elseif IsOdf(h, "bbpgen0") then
+			for indexadd = 1, 4 do
+				if x.fpwr[indexadd] == nil or not IsAlive(x.fpwr[indexadd]) then
+					x.fpwr[indexadd] = h
+					break
+				end
+			end
+		else
+			ReplaceStabber(h);
+		end
+	end
 	--new constructor
 	for indexadd = 1, x.fconcount do
 		if IsOdf(h, "bvconsbd10:1") and (not IsAlive(x.fcon[indexadd]) or x.fcon[indexadd] == nil) then
@@ -231,7 +240,7 @@ function AddObject(h)
 
 	--remove pilots since no recy
 	local race = GetRace(h);
-	if (race == "n" or race == "m" or race == "y") then
+	if (race == "n" or race == "m") then -- furies already handled by TCC.AddObject
 		SetEjectRatio(h, 0);
 	end
 	TCC.AddObject(h)
@@ -259,6 +268,10 @@ end
 
 function PostTargetChangedCallback(craft, prev, cur)
 	TCC.PostTargetChangedCallback(craft, prev, cur);
+end
+
+function PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
+	return TCC.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage);
 end
 
 function Update()
@@ -533,7 +546,7 @@ function Update()
     CameraFinish()
     IFace_SetInteger("options.graphics.defaultfov", x.userfov)
     if not IsAlive(x.edom) and not IsAlive(x.efac[1]) and not IsAlive(x.efac[2]) and not IsAlive(x.efac[3]) and not IsAlive(x.efac[4]) then
-      TCC.SucceedMission(GetTime(), "tcbd10w2.des") --ARKIN DEAD ALT ENDING
+      TCC.SucceedMission(GetTime(), "tcbd10w2.des") --ARKIN BASE DESTROYED ALT ENDING
     else
       TCC.SucceedMission(GetTime(), "tcbd10w.des") --WINNER WINNER WINNER
     end
@@ -1226,7 +1239,7 @@ function Update()
 			TCC.FailMission(GetTime() + 1.0, "tcbd10f2.des") --LOSER LOSER LOSER
 			x.MCAcheck = true
 		end
-
+		
 		if x.failstate == 0 and x.fapcexists and (not IsAlive(x.fapc[1]) or not IsAlive(x.fapc[2]) or not IsAlive(x.fapc[3])) then --APC destroyed
 			x.audio6 = AudioMessage("tcbd1013.wav")
 			ClearObjectives()

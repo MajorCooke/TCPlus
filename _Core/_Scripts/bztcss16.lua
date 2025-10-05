@@ -166,38 +166,37 @@ function Load(a, b, c, d, coreData)
 	x = d;
 	TCC.Load(coreData)
 end
-
+local replaced = false;
 function AddObject(h)
-	if (IsCraftButNotPerson(h) or IsBuilding(h)) then
-		h = RepObject(h);
-	end
-	if (not IsAlive(x.farm) or x.farm == nil) and (IsOdf(h, "bbarmo")) then
-		x.farm = h
-	elseif (not IsAlive(x.ffac) or x.ffac == nil) and (IsOdf(h, "bvfact") or IsOdf(h, "bbfact")) then
-		x.ffac = h
-	elseif (not IsAlive(x.fsld) or x.fsld == nil) and IsOdf(h, "bbshld") then
-		x.fsld = h
-	elseif (not IsAlive(x.fhqr) or x.fhqr == nil) and IsOdf(h, "bbhqtr") then
-		x.fhqr = h
-	elseif (not IsAlive(x.ftec) or x.ftec == nil) and IsOdf(h, "bbtcen") then
-		x.ftec = h
-	elseif (not IsAlive(x.ftrn) or x.ftrn == nil) and IsOdf(h, "bbtrain") then
-		x.ftrn = h
-	elseif (not IsAlive(x.fbay) or x.fbay == nil) and IsOdf(h, "bbsbay") then
-		x.fbay = h
-	elseif (not IsAlive(x.fcom) or x.fcom == nil) and IsOdf(h, "bbcbun") then
-		x.fcom = h
-	elseif IsOdf(h, "bbpgen0") then
-		for indexadd = 1, 4 do
-			if x.fpwr[indexadd] == nil or not IsAlive(x.fpwr[indexadd]) then
-				x.fpwr[indexadd] = h
-				break
+	if (replaced) then replaced = false; return; end;
+	if (GetTeamNum(h) == 1) then
+		if (IsType(h, "bbarmo")) then
+			h, replaced = RepObject(h);
+			x.farm = h
+		elseif (IsODF(h, "bbfact")) then
+			x.ffac = h
+		elseif (not IsAlive(x.fsld) or x.fsld == nil) and IsOdf(h, "bbshld") then
+			x.fsld = h
+		elseif (not IsAlive(x.fhqr) or x.fhqr == nil) and IsOdf(h, "bbhqtr") then
+			x.fhqr = h
+		elseif (not IsAlive(x.ftec) or x.ftec == nil) and IsOdf(h, "bbtcen") then
+			x.ftec = h
+		elseif (not IsAlive(x.ftrn) or x.ftrn == nil) and IsOdf(h, "bbtrain") then
+			x.ftrn = h
+		elseif (not IsAlive(x.fbay) or x.fbay == nil) and IsOdf(h, "bbsbay") then
+			x.fbay = h
+		elseif (not IsAlive(x.fcom) or x.fcom == nil) and IsOdf(h, "bbcbun") then
+			x.fcom = h
+		elseif IsOdf(h, "bbpgen0") then
+			for indexadd = 1, 4 do
+				if x.fpwr[indexadd] == nil or not IsAlive(x.fpwr[indexadd]) then
+					x.fpwr[indexadd] = h
+					break
+				end
 			end
+		elseif (IsCraftButNotPerson(h)) then
+			ReplaceStabber(h);
 		end
-	elseif (GetRace(h) == "y") then
-		SetEjectRatio(h, 0.0);
-	else
-		ReplaceStabber(h);
 	end
 	TCC.AddObject(h);
 end
@@ -224,6 +223,10 @@ end
 
 function PostTargetChangedCallback(craft, prev, cur)
 	TCC.PostTargetChangedCallback(craft, prev, cur);
+end
+
+function PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
+	return TCC.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage);
 end
 
 function Update()
@@ -287,13 +290,15 @@ function Update()
 		for index = 1, 24 do
 			x.egun[index] = BuildObject("ybgtow", 5, ("epgun%d"):format(index))
 		end
-    RemoveObject(x.egun[1]) --make easier
-    RemoveObject(x.egun[3]) --make easier
-    RemoveObject(x.egun[5]) --make easier
-    RemoveObject(x.egun[7]) --make easier
-    RemoveObject(x.egun[9]) --make easier
-    RemoveObject(x.egun[11]) --make easier
-    RemoveObject(x.egun[13]) --make easier
+		--[[
+		RemoveObject(x.egun[1]) --make easier
+		RemoveObject(x.egun[3]) --make easier
+		RemoveObject(x.egun[5]) --make easier
+		RemoveObject(x.egun[7]) --make easier
+		RemoveObject(x.egun[9]) --make easier
+		RemoveObject(x.egun[11]) --make easier
+		RemoveObject(x.egun[13]) --make easier
+		]]
 		x.edeftime = GetTime() + 15.0 --let base cam run first
 		for index = 1, x.eguardlength do --init eguard		
 			x.eguardtime = GetTime() + 420.0
@@ -644,10 +649,10 @@ function Update()
 
 	--STOP CAMERA 1B by PLAYER or by TIME DONE
 	if x.camstop == 2 or CameraCancelled() then
-    CameraFinish()
-    IFace_SetInteger("options.graphics.defaultfov", x.userfov)
+		CameraFinish()
 		x.waittime = GetTime() + 2.0 --for dropship
 		x.camstop = 3
+		IFace_SetInteger("options.graphics.defaultfov", x.userfov)
 	end
 	
 	--RUN CAMERA ON BOLTMINE DESTRUCTION
@@ -766,9 +771,6 @@ function Update()
 			if GetDistance(x.player, x.frenemy) > 150 and not x.fallycamhold then
 				x.fallycam = 1
 				x.fallycamtime = GetTime() + 3.0
-	--	x.userfov = IFace_GetInteger("options.graphics.defaultfov")
-	--	CameraReady()
-	--	IFace_SetInteger("options.graphics.defaultfov", x.camfov)
 			end
 			x.fallymovetime = 99999.9
 			AudioMessage("tcss1611.wav") --reinforce incoming - modded tcss1116.wav
@@ -777,10 +779,6 @@ function Update()
 
 	--RUN FALLY CAMERA
 	if x.fallycam == 1 then
-	--	CameraObject(x.fally[1], -60, 60, 60, x.fally[1]) --in meters
---		if x.fallycamtime < GetTime() or CameraCancelled() then
---			CameraFinish()
---			IFace_SetInteger("options.graphics.defaultfov", x.userfov)
 			x.fallycamtime = 99999.9
 			x.fallycam = 0
 --		end
@@ -810,7 +808,8 @@ function Update()
 			elseif not IsAlive(x.epwr[index]) and IsAlive(x.edefa[index]) then
 				Defend(x.edefa[index])
 			end
-			--[[MAKE A LIL EASIER  if IsAlive(x.epwr[index]) and not IsAlive(x.edefb[index]) then
+			--[[MAKE A LIL EASIER  
+			if IsAlive(x.epwr[index]) and not IsAlive(x.edefb[index]) then
 				x.edefb[index] = BuildObject("yvartl", 5, "epgfac3")
 				GiveWeapon(x.edefb[index], "gsldda")
 				SetSkill(x.edefb[index], x.skillsetting)

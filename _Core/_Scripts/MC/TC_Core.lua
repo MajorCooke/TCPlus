@@ -7,7 +7,6 @@ local Goals =		require('TC_Goals');
 local Upgrades =	require('TC_Upgrades');
 local Challenges =	require('TC_Challenges');
 local M = {};	-- FUNCTION table
-
 -- Put in all hooks first
 
 function M.Save()
@@ -88,7 +87,6 @@ function M.DeleteObject(h)
 end
 
 function M.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
-
 	return AI.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage);
 end
 
@@ -179,9 +177,10 @@ function M.HandleDebug()
 	
 	if (not debugSetup) then
 		debugSetup = true;
-		IFace_CreateInteger("script.cheats", 0);
-		IFace_CreateInteger("script.rave", 0);
-		IFace_CreateInteger("script.snipe", 0);
+		IFace_CreateInteger("script.cheats", 0);	-- toggles bz<tnt/body/radar> (and bzfree if > 1)
+		IFace_CreateInteger("script.rave", 0);		-- give player rave gun & techno cannon
+		IFace_CreateInteger("script.snipe", 0);		-- targeted craft by player becomes "sniped"
+		IFace_CreateInteger("script.noff", 0); 		-- no friendly fire
 	end
 
 	local v1 = IFace_GetInteger("script.cheats");
@@ -190,6 +189,9 @@ function M.HandleDebug()
 		IFace_ConsoleCmd("game.cheat bztnt", false);
 		IFace_ConsoleCmd("game.cheat bzbody", false);
 		IFace_ConsoleCmd("game.cheat bzradar", false);
+		if (v1 > 1) then 
+			IFace_ConsoleCmd("game.cheat bzfree", false);
+		end
 	end
 
 	local v2 = IFace_GetInteger("script.rave");
@@ -202,6 +204,9 @@ function M.HandleDebug()
 		end
 	end
 	
+	-- "Snipes" a craft targeted by player. Only works on offensive, defensive and utility units.
+	-- 1  = Respects CanSnipe
+	-- 2+ = Ignores CanSnipe
 	local v3 = IFace_GetInteger("script.snipe");
 	if (v3 and v3 > 0) then
 		IFace_ConsoleCmd("script.snipe 0", false);
@@ -211,7 +216,9 @@ function M.HandleDebug()
 			if (not IsPlayer(tar) and IsAround(tar) and IsCraftButNotPerson(tar) and HasPilot(tar)) then
 				local c = AI.CheckEntType(tar);
 				if (c == TCC_OFFENSIVE or c == TCC_DEFENSIVE or c == TCC_UTILITY) then
-					RemovePilot(tar);
+					if (v3 > 1 or GetCanSnipe(h)) then
+						RemovePilot(tar);
+					end
 				end
 			end
 		end

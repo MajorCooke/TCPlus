@@ -124,7 +124,7 @@ function InitialSetup()
 	local odfpreload = {
 		"avrecyss15", "avfact", "avarmo", "avconsss15", "avserv", "avscout", "avmbike", "avmisl", 
 		"avtank", "avrckt", "avturr", "svscout", "svmbike", "svmisl", "svtank", "svrckt", "svwalk", 
-		"svscav", "svtug", "yvrckt", "yvturr", "ybgtow", "apdwrky", "olybolt2", "apcamra", "abarmopl"
+		"svscav", "svtug", "yvrckt", "yvturr", "ybgtow", "apdwrky", "olybolt2", "apcamra", "abarmopl", x.wreckname,
 	}
 	for k,v in pairs(odfpreload) do
 		PreloadODF(v)
@@ -159,13 +159,13 @@ function Load(a, b, c, d, coreData)
 	TCC.Load(coreData)
 end
 
+local replaced = false;
 function AddObject(h)
-	if (IsBuilding(h)) then
-		h = RepObject(h);
-	end
-	if (not IsAlive(x.farm) or x.farm == nil) and (IsOdf(h, "abarmo")) then
+	if (replaced) then replaced = false; return; end;
+	if (IsODF(h, "abarmo")) then
+		h, replaced = RepObject(h);
 		x.farm = h;
-	elseif (not IsAlive(x.ffac) or x.ffac == nil) and (IsOdf(h, "avfact:1") or IsOdf(h, "abfact")) then
+	elseif (not IsAlive(x.ffac) or x.ffac == nil) and (IsODF(h, "abfact")) then
 		x.ffac = h
 	elseif (not IsAlive(x.fsld) or x.fsld == nil) and IsOdf(h, "abshld") then
 		x.fsld = h
@@ -227,6 +227,10 @@ end
 
 function PostTargetChangedCallback(craft, prev, cur)
 	TCC.PostTargetChangedCallback(craft, prev, cur);
+end
+
+function PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
+	return TCC.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage);
 end
 function Update()
 	x.player = GetPlayerHandle() --EVERY PASS SO IF PLAYER CHANGES VEHICLES

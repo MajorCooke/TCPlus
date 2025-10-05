@@ -120,7 +120,15 @@ function Load(a, c, coreData)
 	TCC.Load(coreData)
 end
 
+local replaced = false;
 function AddObject(h)
+	if (replaced) then replaced = false; return; end;
+	local r = GetRace(h);
+	if (r == "s" or (r == "a" and GetTeamNum(h) == 2)) then
+		SetEjectRatio(h, 0);
+	end
+	
+	--[[
 	if IsOdf(h, "aspilo") and GetTeamNum(h) == 2 then
 		RemoveObject(h)
 	end
@@ -128,7 +136,7 @@ function AddObject(h)
 	if IsOdf(h, "sspilo") and GetTeamNum(h) == 6 then
 		RemoveObject(h)
 	end
-	
+	]]
 	if not x.dummyfound0 and IsOdf(h, "dummy00") then
 		x.dummyobj0 = h
 		x.dummyfound0 = true
@@ -164,6 +172,11 @@ end
 function PostTargetChangedCallback(craft, prev, cur)
 	TCC.PostTargetChangedCallback(craft, prev, cur);
 end
+
+function PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
+	return TCC.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage);
+end
+
 function Update()
 	x.player = GetPlayerHandle() --EVERY PASS SO IF PLAYER CHANGES VEHICLES
 	x.skillsetting = IFace_GetInteger("options.play.difficulty")

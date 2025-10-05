@@ -151,14 +151,16 @@ function Start()
 	TCC.Start();
 end
 
-function AddObject(h)  
-	if not IsAlive(x.farm) and (IsOdf(h, "avarmoss04:1") or IsOdf(h, "abarmoss04")) then --new factory?
-		x.farm = h
+local replaced = false;
+function AddObject(h)
+	if (replaced) then replaced = false; return; end;
+	if (GetTeamNum(h) == 1) then
+		if (IsType(h, "abarmo")) then --new factory?
+			x.farm = h
+		elseif (IsType(h, "abfact")) then --new armory?
+			x.ffac = h
+		end
 	end
-	if not IsAlive(x.ffac) and (IsOdf(h, "avfactss04:1") or IsOdf(h, "abfactss04")) then --new armory?
-		x.ffac = h
-	end
-	
 	for indexadd = 1, x.fartlength do --new artillery? 
 		if (not IsAlive(x.fart[indexadd]) or x.fart[indexadd] == nil) and IsOdf(h, "avartlss04:1") then
 			x.fart[indexadd] = h
@@ -190,6 +192,11 @@ end
 function PostTargetChangedCallback(craft, prev, cur)
 	TCC.PostTargetChangedCallback(craft, prev, cur);
 end
+
+function PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
+	return TCC.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage);
+end
+
 function Update()
 	x.player = GetPlayerHandle() --EVERY PASS SO IF PLAYER CHANGES VEHICLES
 	x.skillsetting = IFace_GetInteger("options.play.difficulty")

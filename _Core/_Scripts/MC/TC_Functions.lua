@@ -58,20 +58,23 @@ function IsType(h, className)
     return false;
 end
 
+local skip = false;
 -- Performs map-specific replacements for certain things.
 ---@param h Handle Object to attempt replacing with
 ---@return Handle, boolean
 function RepObject(h)
+	if (skip) then skip = false; return h, false; end;
 	local rep = h;
+	
 	-- [MC] Global replacements are here
 	-- [MC] Mission specific replacements begin here
-	if (h and (IsAlive(h) or IsBuilding(h)) and MisnNum > 42) then
-		if (IsType(h, "abarmo")) then
+	if (IsAround(h) and (IsAlive(h) or IsBuilding(h)) and MisnNum > 42) then
+		if (IsType(h, "abarmo")) then 			skip = true;
 			rep = TCC.ReplaceObject(h, "abarmopl");
-		elseif (IsType(h, "bbarmo")) then
+		elseif (IsType(h, "bbarmo")) then		skip = true;
 			rep = TCC.ReplaceObject(h, "bbarmopl");
-		elseif (MisnNum >= 58) then
-			if (IsType(h, "abfact")) then
+		elseif (MisnNum >= 58) then				
+			if (IsType(h, "abfact")) then		skip = true;
 				rep = TCC.ReplaceObject(h, "abfactss17");
 			end
 		end

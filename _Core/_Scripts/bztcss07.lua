@@ -170,35 +170,39 @@ function Load(a, b, c, d, coreData)
 	TCC.Load(coreData)
 end
 
+local replaced = false;
 function AddObject(h)
-	if (not IsAlive(x.farm) or x.farm == nil) and (IsOdf(h, "avarmoss07:1") or IsOdf(h, "abarmoss07")) then
-		x.farm = h
-	elseif (not IsAlive(x.ffac) or x.ffac == nil) and (IsOdf(h, "avfactss07:1") or IsOdf(h, "abfactss07")) then
-		x.ffac = h
-	elseif (not IsAlive(x.fsld) or x.fsld == nil) and IsOdf(h, "abshld") then
-		x.fsld = h
-	elseif (not IsAlive(x.fhqr) or x.fhqr == nil) and IsOdf(h, "abhqtr") then
-		x.fhqr = h
-	elseif (not IsAlive(x.ftec) or x.ftec == nil) and IsOdf(h, "abtcen") then
-		x.ftec = h
-	elseif (not IsAlive(x.ftrn) or x.ftrn == nil) and IsOdf(h, "abtrain") then
-		x.ftrn = h
-	elseif (not IsAlive(x.fbay) or x.fbay == nil) and IsOdf(h, "absbay") then
-		x.fbay = h
-	elseif (not IsAlive(x.fcom) or x.fcom == nil) and IsOdf(h, "abcbun") then
-		x.fcom = h
-	elseif IsOdf(h, "abpgen1") then
-		for indexadd = 1, 4 do
-			if x.fpwr[indexadd] == nil or not IsAlive(x.fpwr[indexadd]) then
-				x.fpwr[indexadd] = h
-				break
+	if (replaced) then replaced = false; return; end;
+	if (GetTeamNum(h) == 1) then
+		if (IsType(h, "abarmo")) then
+			x.farm = h
+		elseif (IsType(h, "abfact")) then
+			x.ffac = h
+		elseif (not IsAlive(x.fsld) or x.fsld == nil) and IsOdf(h, "abshld") then
+			x.fsld = h
+		elseif (not IsAlive(x.fhqr) or x.fhqr == nil) and IsOdf(h, "abhqtr") then
+			x.fhqr = h
+		elseif (not IsAlive(x.ftec) or x.ftec == nil) and IsOdf(h, "abtcen") then
+			x.ftec = h
+		elseif (not IsAlive(x.ftrn) or x.ftrn == nil) and IsOdf(h, "abtrain") then
+			x.ftrn = h
+		elseif (not IsAlive(x.fbay) or x.fbay == nil) and IsOdf(h, "absbay") then
+			x.fbay = h
+		elseif (not IsAlive(x.fcom) or x.fcom == nil) and IsOdf(h, "abcbun") then
+			x.fcom = h
+		elseif IsOdf(h, "abpgen1") then
+			for indexadd = 1, 4 do
+				if x.fpwr[indexadd] == nil or not IsAlive(x.fpwr[indexadd]) then
+					x.fpwr[indexadd] = h
+					break
+				end
 			end
 		end
-	end
-	
-	for indexadd = 1, x.fartlength do --new artillery? 
-		if (not IsAlive(x.fart[indexadd]) or x.fart[indexadd] == nil) and IsOdf(h, "avartl:1") then
-			x.fart[indexadd] = h
+		
+		for indexadd = 1, x.fartlength do --new artillery? 
+			if (not IsAlive(x.fart[indexadd]) or x.fart[indexadd] == nil) and IsOdf(h, "avartl:1") then
+				x.fart[indexadd] = h
+			end
 		end
 	end
 	TCC.AddObject(h)
@@ -227,6 +231,11 @@ end
 function PostTargetChangedCallback(craft, prev, cur)
 	TCC.PostTargetChangedCallback(craft, prev, cur);
 end
+
+function PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
+	return TCC.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage);
+end
+
 function Update()
 	x.player = GetPlayerHandle() --EVERY PASS SO IF PLAYER CHANGES VEHICLES
 	x.skillsetting = IFace_GetInteger("options.play.difficulty")

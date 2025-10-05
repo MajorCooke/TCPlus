@@ -181,10 +181,13 @@ function Start()
 	TCC.Start();
 end
 
+local replaced = false;
 function AddObject(h)
-	if (GetTeamNum(h) > 0) then
-		h = RepObject(h); -- [MC] Replace armories and factories
-		if (IsPlayer(h) or IsCraftButNotPerson(h)) then
+	if (replaced) then replaced = false; return; end;
+	if (GetTeamNum(h) == 1) then
+		if (IsBuilding(h)) then
+			h, replaced = RepObject(h); -- [MC] Replace armories and factories
+		elseif (IsPlayer(h) or IsCraftButNotPerson(h)) then
 			ReplaceStabber(h);
 		end
 	end
@@ -214,11 +217,6 @@ function AddObject(h)
 			end
 		end
 	end
-	--[[ Now handled entirely on the TC_Core side by simply setting SetEjectRatio to 0.
-	if IsOdf(h, "yspilo") then --no recy and bz1 consistency
-		RemoveObject(h)
-	end
-	]]
 	
 	if IsCraftButNotPerson(x.player) then --assassin attack player if NOT pilot
 		x.easnallow = true
@@ -255,6 +253,10 @@ end
 
 function PostTargetChangedCallback(craft, prev, cur)
 	TCC.PostTargetChangedCallback(craft, prev, cur);
+end
+
+function PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
+	return TCC.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage);
 end
 
 function Update()

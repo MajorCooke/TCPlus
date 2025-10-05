@@ -14,9 +14,9 @@ local x = {
 	player = nil, 
 	mytank = nil, 
 	skillsetting = 0, 
-  easy = 0, 
-  medium = 1, 
-  hard = 2, 
+	easy = 0, 
+	medium = 1, 
+	hard = 2, 
 	pos = {}, 
 	waittime = 99999.9, 
 	eblockdead = false, 
@@ -114,6 +114,10 @@ end
 
 function PostTargetChangedCallback(craft, prev, cur)
 	TCC.PostTargetChangedCallback(craft, prev, cur);
+end
+
+function PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
+	return TCC.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage);
 end
 function Update()  	
 	x.player = GetPlayerHandle() --EVERY PASS SO IF PLAYER CHANGES VEHICLES

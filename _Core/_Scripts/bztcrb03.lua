@@ -93,6 +93,11 @@ function Load(a, b, c, coreData)
 	TCC.Load(coreData)
 end
 
+function AddObject(h)
+	if (GetTeamNum(h) == 1 or IsAlly(h, x.player)) then ReplaceStabber(h); end;
+	TCC.AddObject(h);
+end
+
 function DeleteObject(h)
 	TCC.DeleteObject(h);
 end
@@ -115,6 +120,10 @@ end
 
 function PostTargetChangedCallback(craft, prev, cur)
 	TCC.PostTargetChangedCallback(craft, prev, cur);
+end
+
+function PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
+	return TCC.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage);
 end
 
 function Update()

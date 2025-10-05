@@ -453,18 +453,31 @@ function M.Explode(owner, proj, damage, radius, fullrad, dmgself, teams, type)
 	return damage;
 end
 
+local function IsShootable(h)
+	return IsAround(h) and (IsAlive(h) or IsPlayer(h) or IsBuilding(h)) and GetHealth(h) > 0;
+end
 
-
-function M.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
+function M.PreDamage(curWorld, victim, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
 	
-	-- Handle chinese units for Dogs of War missions 
-	--[[
-	if (IsAround(h) and IsCraftButNotPerson(h) and GetRace(h) == "k") then
-		local r = GetRace(h);
-		
+	if (not SelfDamage) then
+		if (IsShootable(victim) and IsAround(owner) and GetMaxHealth(victim) > 0) then
+			if (GetTeamNum(victim) == GetTeamNum(owner)) then 
+				local ff = IFace_GetInteger("script.noff");
+				if (ff and ff > 0) then
+					return 0, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage; 
+				end
+			end
+			--[[
+			-- Handle chinese units for Dogs of War missions 
+			if (IsCraftButNotPerson(h) and GetRace(h) == "k") then
+				local r = GetRace(h);
+				
+			end
+			]]
+		end
 	end
-	]]
 	return value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage;
+--	return value;
 end
 
 return M;

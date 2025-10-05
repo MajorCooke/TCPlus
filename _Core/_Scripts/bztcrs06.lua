@@ -118,7 +118,7 @@ function InitialSetup()
 	local odfpreload = {
 		"svscout", "svmbike", "svmisl", "svtank", "svrckt", "svwalk", "svartl", "sbpgen2", "sbgtow", 
 		"kvscout", "kvmbike", "kvmisl", "kvtank", "kvrckt", "kvwalk", "kvhtnk", 
-		"olybldg00", "olybldgt0", "olybldgx0", "ibnav", "apdwrks", "apcamrk", 
+		"olybldg00", "olybldgt0", "olybldgx0", "ibnav", "apdwrks", "apcamrk", x.wreckname,
 	}
 	for k,v in pairs(odfpreload) do
 		PreloadODF(v)
@@ -267,6 +267,11 @@ end
 function PostTargetChangedCallback(craft, prev, cur)
 	TCC.PostTargetChangedCallback(craft, prev, cur);
 end
+
+function PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
+	return TCC.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage);
+end
+
 function Update()
 	x.player = GetPlayerHandle() --EVERY PASS SO IF PLAYER CHANGES VEHICLES
 	x.skillsetting = IFace_GetInteger("options.play.difficulty")

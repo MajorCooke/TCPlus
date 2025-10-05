@@ -152,13 +152,14 @@ function Load(a, b, c, coreData)
 	x = c;
 	TCC.Load(coreData)
 end
-
+local replaced = false;
 function AddObject(h)
 	--SPECIAL THIS MISSION USE PORTAL INSTEAD OF SHIELD 
-	if (not IsAlive(x.farm) or x.farm == nil) and IsOdf(h, "bvarmo:1") or IsOdf(h, "bbarmo") then
-		x.farm = RepObject(h);
-		h = x.farm;
-	elseif (not IsAlive(x.ffac) or x.ffac == nil) and IsOdf(h, "bvfact:1") or IsOdf(h, "bbfact") then
+	if (replaced) then 	replaced = false;	return; 	end;
+	if (not IsAlive(x.farm) or x.farm == nil) and IsType(h, "bbarmo") then
+		h, replaced = RepObject(h);
+		x.farm = h;
+	elseif (not IsAlive(x.ffac) or x.ffac == nil) and IsType(h, "bbfact") then
 		x.ffac = h
 	elseif (not IsAlive(x.fprt) or x.fprt == nil) and IsOdf(h, "bbshld") then
 		x.fsld = h
@@ -227,6 +228,10 @@ end
 
 function PostTargetChangedCallback(craft, prev, cur)
 	TCC.PostTargetChangedCallback(craft, prev, cur);
+end
+
+function PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
+	return TCC.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage);
 end
 
 function Update()

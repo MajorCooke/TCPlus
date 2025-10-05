@@ -141,7 +141,7 @@ function InitialSetup()
 	
 	local odfpreload = {
 		"avturr", "avscout", "avmbike",	"avmisl", "avtank", "avrckt", "avrecyss09", "gflsha_c", 
-		"sblpad2", "sbcone1", "hadrelic01", "svturr", "svtug", "svartl", "stayput", "apcamra", "radjam"
+		"sblpad2", "sbcone1", "hadrelic01", "svturr", "svtug", "svartl", "stayput", "apcamra", "radjam", x.wreckname,
 	}
 	for k,v in pairs(odfpreload) do
 		PreloadODF(v)
@@ -193,42 +193,41 @@ end
 
 local replaced = false;
 function AddObject(h)
-	if (not replaced and (IsCraftButNotPerson(h) or IsBuilding(h))) then
-		local check = RepObject(h);
-		replaced = (check ~= h);
-		if (replaced) then return; end;
-	end
+	if (replaced) then replaced = false; return; end;
 	--CHECK FOR MISSION SPECIFIC FACTORY AND ARMORY
-	if (not IsAlive(x.farm) or x.farm == nil) and (IsOdf(h, "avarmo") or IsOdf(h, "abarmo")) then
-		x.farm = h
-	elseif (not IsAlive(x.ffac) or x.ffac == nil) and (IsOdf(h, "avfactss09:1") or IsOdf(h, "abfactss09")) then
-		x.ffac = h
-	elseif (not IsAlive(x.fsld) or x.fsld == nil) and IsOdf(h, "abshld") then
-		x.fsld = h
-	elseif (not IsAlive(x.fhqr) or x.fhqr == nil) and IsOdf(h, "abhqtr") then
-		x.fhqr = h
-	elseif (not IsAlive(x.ftec) or x.ftec == nil) and IsOdf(h, "abtcen") then
-		x.ftec = h
-	elseif (not IsAlive(x.ftrn) or x.ftrn == nil) and IsOdf(h, "abtrain") then
-		x.ftrn = h
-	elseif (not IsAlive(x.fbay) or x.fbay == nil) and IsOdf(h, "absbay") then
-		x.fbay = h
-	elseif (not IsAlive(x.fcom) or x.fcom == nil) and IsOdf(h, "abcbun") then
-		x.fcom = h
-	elseif IsOdf(h, "abpgen0") then
-		for indexadd = 1, 4 do
-			if x.fpwr[indexadd] == nil or not IsAlive(x.fpwr[indexadd]) then
-				x.fpwr[indexadd] = h
-				break
+	if (GetTeamNum(h) == 1) then
+		if (IsType(h, "abarmo")) then
+			h, replaced = RepObject(h);
+			x.farm = h
+		elseif (IsType(h, "abfact")) then
+			h, replaced = RepObject(h);
+			x.ffac = h
+		elseif (not IsAlive(x.fsld) or x.fsld == nil) and IsOdf(h, "abshld") then
+			x.fsld = h
+		elseif (not IsAlive(x.fhqr) or x.fhqr == nil) and IsOdf(h, "abhqtr") then
+			x.fhqr = h
+		elseif (not IsAlive(x.ftec) or x.ftec == nil) and IsOdf(h, "abtcen") then
+			x.ftec = h
+		elseif (not IsAlive(x.ftrn) or x.ftrn == nil) and IsOdf(h, "abtrain") then
+			x.ftrn = h
+		elseif (not IsAlive(x.fbay) or x.fbay == nil) and IsOdf(h, "absbay") then
+			x.fbay = h
+		elseif (not IsAlive(x.fcom) or x.fcom == nil) and IsOdf(h, "abcbun") then
+			x.fcom = h
+		elseif IsOdf(h, "abpgen0") then
+			for indexadd = 1, 4 do
+				if x.fpwr[indexadd] == nil or not IsAlive(x.fpwr[indexadd]) then
+					x.fpwr[indexadd] = h
+					break
+				end
+			end
+		end
+		for indexadd = 1, x.fartlength do --new artillery? 
+			if (not IsAlive(x.fart[indexadd]) or x.fart[indexadd] == nil) and IsOdf(h, "avartl:1") then
+				x.fart[indexadd] = h
 			end
 		end
 	end
-	for indexadd = 1, x.fartlength do --new artillery? 
-		if (not IsAlive(x.fart[indexadd]) or x.fart[indexadd] == nil) and IsOdf(h, "avartl:1") then
-			x.fart[indexadd] = h
-		end
-	end
-	
 	--get daywrecker for highlight
 	if (not IsAlive(x.wreckbomb) or x.wreckbomb == nil) and IsOdf(h, x.wreckname) then 
 		if GetTeamNum(h) == 5 then
@@ -276,6 +275,11 @@ end
 function PostTargetChangedCallback(craft, prev, cur)
 	TCC.PostTargetChangedCallback(craft, prev, cur);
 end
+
+function PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
+	return TCC.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage);
+end
+
 function Update() 
 	x.player = GetPlayerHandle() --EVERY PASS SO IF PLAYER CHANGES VEHICLES
 	x.skillsetting = IFace_GetInteger("options.play.difficulty")

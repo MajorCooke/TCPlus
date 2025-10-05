@@ -91,7 +91,7 @@ function InitialSetup()
 	local odfpreload = {
 		"kvrecyrs05", "kvfactrs05", "kvconsrs05", "kbpgen1", "kbgtow", "kbsbay", 
 		"svscout", "svmbike", "svmisl", "svtank", "svrckt", "svwalk", "svtug", 
-		"apdwrka", "npscrx", "apcamrk"
+		"apdwrka", "npscrx", "apcamrk", x.wreckname,
 	}
 	for k,v in pairs(odfpreload) do
 		PreloadODF(v)
@@ -190,6 +190,10 @@ end
 
 function PostTargetChangedCallback(craft, prev, cur)
 	TCC.PostTargetChangedCallback(craft, prev, cur);
+end
+
+function PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
+	return TCC.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage);
 end
 
 function Update()

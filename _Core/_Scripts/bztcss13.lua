@@ -179,23 +179,9 @@ function Load(a, b, c, d, e, coreData)
 	TCC.Load(coreData)
 end
 
+local replaced = false;
 function AddObject(h)
-	if not x.fescortalive and IsOdf(h, "avapc:1") then --APC to be x.fescort
-		x.fescort = h
-		SetObjectiveName(x.fescort, "PROTECT APC")
-		SetObjectiveOn(x.fescort)
-		x.fescortalive = true
-	end
-
-	local r = GetRace(h);
-	if (r == "s" or r == "y") then
-		SetEjectRatio(h, 0.0);
-	end
-	--[[
-	if IsOdf(h, "yspilo") then
-		RemoveObject(h);
-		return;
-	end
+	if (replaced) then replaced = false; return; end;
 	
 	if IsOdf(h, "sspilo") then
 		if GetTeamNum(h) ~= 5 then
@@ -203,36 +189,42 @@ function AddObject(h)
 			return;
 		end
 	end
-	]]
-	if (IsCraftButNotPerson(h) or IsBuilding(h)) then
-		h = RepObject(h);
-	end
-	if (not IsAlive(x.farm) or x.farm == nil) and IsOdf(h, "abarmo") then
-		x.farm = h;
-	elseif (not IsAlive(x.ffac) or x.ffac == nil) and (IsOdf(h, "avfact") or IsOdf(h, "abfact")) then
-		x.ffac = h
-	elseif (not IsAlive(x.fsld) or x.fsld == nil) and IsOdf(h, "abshld") then
-		x.fsld = h
-	elseif (not IsAlive(x.fhqr) or x.fhqr == nil) and IsOdf(h, "abhqtr") then
-		x.fhqr = h
-	elseif (not IsAlive(x.ftec) or x.ftec == nil) and IsOdf(h, "abtcen") then
-		x.ftec = h
-	elseif (not IsAlive(x.ftrn) or x.ftrn == nil) and IsOdf(h, "abtrain") then
-		x.ftrn = h
-	elseif (not IsAlive(x.fbay) or x.fbay == nil) and IsOdf(h, "absbay") then
-		x.fbay = h
-	elseif (not IsAlive(x.fcom) or x.fcom == nil) and IsOdf(h, "abcbun") then
-		x.fcom = h
-	elseif IsOdf(h, "abpgen2") then
-		for indexadd = 1, 4 do
-			if x.fpwr[indexadd] == nil or not IsAlive(x.fpwr[indexadd]) then
-				x.fpwr[indexadd] = h
-				break
+	if (GetTeamNum(h) == 1) then
+		if IsType(h, "abarmo") then
+			h, replaced = RepObject(h);
+			x.farm = h;
+		elseif IsType(h, "abfact") then
+			x.ffac = h
+		elseif (not IsAlive(x.fsld) or x.fsld == nil) and IsOdf(h, "abshld") then
+			x.fsld = h
+		elseif (not IsAlive(x.fhqr) or x.fhqr == nil) and IsOdf(h, "abhqtr") then
+			x.fhqr = h
+		elseif (not IsAlive(x.ftec) or x.ftec == nil) and IsOdf(h, "abtcen") then
+			x.ftec = h
+		elseif (not IsAlive(x.ftrn) or x.ftrn == nil) and IsOdf(h, "abtrain") then
+			x.ftrn = h
+		elseif (not IsAlive(x.fbay) or x.fbay == nil) and IsOdf(h, "absbay") then
+			x.fbay = h
+		elseif (not IsAlive(x.fcom) or x.fcom == nil) and IsOdf(h, "abcbun") then
+			x.fcom = h
+		elseif IsOdf(h, "abpgen2") then
+			for indexadd = 1, 4 do
+				if x.fpwr[indexadd] == nil or not IsAlive(x.fpwr[indexadd]) then
+					x.fpwr[indexadd] = h
+					break
+				end
 			end
+		elseif (IsAlive(h) or IsPlayer(h)) then
+			ReplaceStabber(h);
 		end
-	elseif (IsAlive(h) or IsPlayer(h)) then
-		ReplaceStabber(h);
 	end
+	if not x.fescortalive and IsOdf(h, "avapc:1") then --APC to be x.fescort
+		x.fescort = h
+		SetObjectiveName(x.fescort, "PROTECT APC")
+		SetObjectiveOn(x.fescort)
+		x.fescortalive = true
+	end
+	
 	TCC.AddObject(h)
 end
 
@@ -259,6 +251,11 @@ end
 function PostTargetChangedCallback(craft, prev, cur)
 	TCC.PostTargetChangedCallback(craft, prev, cur);
 end
+
+function PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
+	return TCC.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage);
+end
+
 function Update()
 	x.player = GetPlayerHandle() --EVERY PASS SO IF PLAYER CHANGES VEHICLES
 	x.skillsetting = IFace_GetInteger("options.play.difficulty")

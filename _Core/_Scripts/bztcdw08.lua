@@ -112,9 +112,9 @@ end
 
 function AddObject(h)
 	--get player base buildings for later attack
-	if (not IsAlive(x.farm) or x.farm == nil) and (IsOdf(h, "bvarmo:1") or IsOdf(h, "bbarmo")) then
+	if (not IsAlive(x.farm) or x.farm == nil) and (IsOdf(h, "bbarmo")) then
 		x.farm = h
-	elseif (not IsAlive(x.ffac) or x.ffac == nil) and (IsOdf(h, "bvfactdw08:1") or IsOdf(h, "bbfactdw08")) then
+	elseif (not IsAlive(x.ffac) or x.ffac == nil) and (IsOdf(h, "bbfactdw08")) then
 		x.ffac = h
 	elseif (not IsAlive(x.fsld) or x.fsld == nil) and IsOdf(h, "bbshld") then
 		x.fsld = h
@@ -180,6 +180,10 @@ end
 
 function PostTargetChangedCallback(craft, prev, cur)
 	TCC.PostTargetChangedCallback(craft, prev, cur);
+end
+
+function PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
+	return TCC.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage);
 end
 
 function Update()

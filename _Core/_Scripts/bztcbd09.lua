@@ -110,13 +110,41 @@ end
 
 function AddObject(h)
 	local race = GetRace(h);
-	if (race == "m" or race == "n" or race == "y") then
+	if (race == "m" or race == "n") then -- furies already handled by TCC.AddObject
 		SetEjectRatio(h, 0.0);
 	end
 --	if IsOdf(h, "mspilo") or IsOdf(h, "nspilo") or IsOdf(h, "yspilo") then
 --		RemoveObject(h)
 --	end
 	TCC.AddObject(h)
+end
+
+function DeleteObject(h)
+	TCC.DeleteObject(h);
+end
+
+function ObjectKilled(DeadObjectHandle, KillersHandle)
+	return TCC.ObjectKilled(DeadObjectHandle, KillersHandle);
+end
+
+function PreSnipe(world, shooter, victim, OrdTeam, OrdODF)
+	return TCC.PreSnipe(world, shooter, victim, OrdTeam, OrdODF);
+end
+
+function PreGetIn(world, pilot, craft)
+	return TCC.PreGetIn(world, pilot, craft);
+end
+
+function PrePickupPowerup(world, who, item)
+	return TCC.PrePickupPowerup(world, who, item);
+end
+
+function PostTargetChangedCallback(craft, prev, cur)
+	TCC.PostTargetChangedCallback(craft, prev, cur);
+end
+
+function PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
+	return TCC.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage);
 end
 
 function Update() 
