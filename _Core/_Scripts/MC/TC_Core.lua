@@ -215,7 +215,8 @@ function M.HandleDebug()
 			local tar = GetUserTarget();
 			if (not IsPlayer(tar) and IsAround(tar) and IsCraftButNotPerson(tar) and HasPilot(tar)) then
 				local c = AI.CheckEntType(tar);
-				if (c == TCC_OFFENSIVE or c == TCC_DEFENSIVE or c == TCC_UTILITY) then
+				-- Careful if going > 2. Dangerous waters!
+				if (v3 > 2 or c == TCC_OFFENSIVE or c == TCC_DEFENSIVE or c == TCC_UTILITY) then
 					if (v3 > 1 or GetCanSnipe(h)) then
 						RemovePilot(tar);
 					end

@@ -28,6 +28,7 @@ local Teams =
 };
 local CleanTime = 30.0;
 local CleanNext = 0.0;
+
 local function MakeTeam(i)
 	if (i < 0 or i > MaxTeams) then return nil; end;
 	local team = 
@@ -37,12 +38,13 @@ local function MakeTeam(i)
 		defensive =  {},	-- defensive
 		utility = {},		-- tugs & scavs
 		buildings = {},
-		production = {},	-- production units (recy, fact, armory, NOT constructors!)
+		production = {},	-- production units (recy, fact, armory, constructors)
 		pilots = {},
 		player = nil,
 	}
 	Teams[i] = team;
 end
+
 local function GetTeam(i)
 	if (i < 0 or i > MaxTeams) then return nil; end;
 	if (Teams[i] == nil) then
@@ -58,6 +60,8 @@ local function GetTeamHandle(h)
 	return nil;
 end
 
+-- Table Cleanup
+-- Removes any inactive cruft & clears out any dead entries.
 local function CleanTable(tab)
 	if (not tab or type(tab) ~= "table") then return; end;
 	local clean = {};
@@ -97,12 +101,6 @@ function M.Start()
 end
 
 local LoadGame = false;
---[[
-function M.Load()
-	M.InitialSetup();
-	LoadGame = true;
-end
-]]
 
 function M.Load(_Teams, _Bombs)
 	Teams = _Teams;
@@ -116,21 +114,6 @@ end
 
 
 function M.Update()
-	--[[
-	if (LoadGame) then
-		LoadGame = false;
-		local objs = GetAllGameObjectHandles();
-
-		for i = 1, #objs do
-			M.AddObject(objs[i]);
-		end
-	end
-	
-	-- Always keep this up to date.
-	for i = 1, MaxTeams do 
-		Teams.player = GetPlayerHandle(i);
-	end
-	]]
 	if (not IsEmpty(Bombs)) then
 		M.HandleBombTargets();
 	end
@@ -291,55 +274,26 @@ local function GetCategory(h)
 end
 
 local function InsertHandle(h, arr)
-	if (arr == nil) then return; end;
-	if (IsAround(h) and arr) then
-	--	table.insert(arr, h);
+	if (arr ~= nil and IsAround(h)) then
 		arr[h] = h; -- LUA seriously defies logic...
 	end
 end
 
 local function RemoveHandle(h, arr)
-	
-	if (arr == nil) then return; end;
-	if (IsAround(h) and arr) then
-	--	table.remove(arr, h);
+	if (arr ~= nil and IsAround(h)) then
 		arr[h] = nil;
 	end
 	
 end
 
 function M.AddEnt(h)
-	--[[
-	if (IsPlayer(h)) then
-		local team = GetTeamHandle(h);
-		team.player = h;
-	else
-		local arr = GetCategory(h);
-		if (arr ~= nil) then 
-		--	arr[h] = h; 
-			InsertHandle(h, arr);
-		end
-	end
-	]]
 	local arr = GetCategory(h);
 	if (arr ~= nil) then 
-	--	arr[h] = h; 
 		InsertHandle(h, arr);
 	end
 end
 
 function M.RemoveEnt(h)
-	--[[
-	if (IsPlayer(h)) then
-		local team = GetTeamHandle(h);
-		team.player = nil;
-	else
-		local arr = GetCategory(h);
-		if (arr ~= nil) then 
-			RemoveHandle(h, arr);
-		end
-	end
-	]]
 	local arr = GetCategory(h);
 	if (arr ~= nil) then 
 		RemoveHandle(h, arr);
@@ -454,17 +408,17 @@ function M.Explode(owner, proj, damage, radius, fullrad, dmgself, teams, type)
 end
 
 local function IsShootable(h)
-	return IsAround(h) and (IsAlive(h) or IsPlayer(h) or IsBuilding(h)) and GetHealth(h) > 0;
+	return IsAround(h) and (IsAlive(h) or IsPlayer(h) or IsBuilding(h)) and GetHealth(h) > -1;
 end
 
 function M.PreDamage(curWorld, victim, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
 	
 	if (not SelfDamage) then
 		if (IsShootable(victim) and IsAround(owner) and GetMaxHealth(victim) > 0) then
-			if (GetTeamNum(victim) == GetTeamNum(owner)) then 
+			if (GetTeamNum(victim) == GetTeamNum(owner) or IsAlly(victim, owner)) then 
 				local ff = IFace_GetInteger("script.noff");
 				if (ff and ff > 0) then
-					return 0, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage; 
+					return 0; 
 				end
 			end
 			--[[
@@ -477,7 +431,6 @@ function M.PreDamage(curWorld, victim, DamageType, pContext, value, base, armor,
 		end
 	end
 	return value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage;
---	return value;
 end
 
 return M;
