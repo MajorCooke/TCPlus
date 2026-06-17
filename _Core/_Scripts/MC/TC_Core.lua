@@ -93,9 +93,14 @@ end
 function M.PreSnipe(world, shooter, victim, OrdTeam, OrdODF)
 	-- 1 prevents, 0 allows
 	local snipe = AI.PreSnipe(world, shooter, victim, OrdTeam, OrdODF);
+
+	if (IFace_GetInteger("script.nosnipe") and GetPlayerHandle() == victim) then
+		return 1;
+	end
+
 	if (snipe > -1) then
 		return snipe;
-	elseif (GetPlayerHandle() == victim and Upgrades.Get("bulletproof")) then
+	elseif (GetPlayerHandle() == victim and (Upgrades.Get("bulletproof"))) then
 		return 1;
 	end
 	return 0;
@@ -181,6 +186,7 @@ function M.HandleDebug()
 		IFace_CreateInteger("script.rave", 0);		-- give player rave gun & techno cannon
 		IFace_CreateInteger("script.snipe", 0);		-- targeted craft by player becomes "sniped"
 		IFace_CreateInteger("script.noff", 0); 		-- no friendly fire
+		IFace_CreateInteger("script.nosnipe", 0);	-- player snipe immunity
 	end
 
 	local v1 = IFace_GetInteger("script.cheats");
