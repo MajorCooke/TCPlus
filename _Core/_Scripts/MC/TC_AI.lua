@@ -63,7 +63,7 @@ end
 -- Table Cleanup
 -- Removes any inactive cruft & clears out any dead entries.
 local function CleanTable(tab)
-	if (not tab or type(tab) ~= "table") then return; end;
+	if (not tab or type(tab) ~= "table") then return {}; end;
 	local clean = {};
 
 	for k, v in pairs(tab) do
@@ -74,7 +74,7 @@ local function CleanTable(tab)
 end
 
 local function CleanTeams()
-	CleanNext = GetTime() + CleanTime;
+	CleanNext = GetTime() + CleanTime; -- Handled by M.Update() below.
 	for _, team in pairs(Teams) do
 		if (team) then
 			for tname, tab in pairs(team) do
@@ -89,7 +89,7 @@ end
 
 local function CleanUp()
 	CleanTeams();
-	CleanTable(Bombs);
+	Bombs = CleanTable(Bombs);
 end
 
 function M.InitialSetup()
@@ -127,7 +127,6 @@ function M.AddObject(h, replaced)
 	if (IsAround(h)) then
 		if (GetClassLabel(h) == "CLASS_DAYWRECKER") then
 			print("Day wrecker registered.");
-		--	table.insert(Bombs,h);
 			Bombs[h] = h;
 		else
 			M.AddEnt(h);
@@ -283,7 +282,6 @@ local function RemoveHandle(h, arr)
 	if (arr ~= nil and IsAround(h)) then
 		arr[h] = nil;
 	end
-	
 end
 
 function M.AddEnt(h)
