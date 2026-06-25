@@ -1,48 +1,45 @@
-/////////Coxxon - BZTC/////////
-//The "sav" class and AI may not follow orders properly after it attacks something, such as attack, follow, or rescue, as well it may not accept AIP orders. While this fits with the 'independent' mind of a SAV, it hampers gameplay.
-//So made it a hovertank, besides, the high altitude attack isn't particularly effective anyway, and the sav flying through terrain is bad.
-//yvrcktorig.odf is the original sav class version.
+////////Coxxon - BZTC////////
+//see note in yvrckt
+//True sav class but has numerous problems.
 [GameObjectClass]
 baseName = "yvrckt"
-classLabel = "wingman"
+classLabel = "sav"
 geometryName = "yvrcktcox00.fbx"
 cockpitName = "yvrcktcox_cockpit.fbx"
 scrapValue = 30
 scrapCost = 65
 customCost = 80
-buildTime = 15.0  //sav
-customTime = 20.0  //sav
-maxHealth = 6000  //7000  //sav
-addHealth = 20  //sav
-maxAmmo = 4000  //sav
-addAmmo = 20  //sav
-unitName = "Athos sav"  //"SAV rkt"
+buildTime = 15.0
+customTime = 20.0
+maxHealth = 8000  //sav
+addHealth = 10  //sav
+maxAmmo = 6000  //sav
+addAmmo = 20  //Coxxon  //10
+unitName = "Athos SAV"  //"SAV rkt"
 //unitIcon = "icon_yvrckt.png"
 //unitStatus = "wire_yvrckt.png"
 //infoName = "yvrckt.inf"
-//unitIcon = "icon_avmbike.png"
-//unitStatus = "wire_avmbike.png"
-//infoName = "avmbike.inf"  //or baseName, or provide name
-aiName = "RocketTankFriend"  //sav
-aiName2 = "RocketTankEnemy"  //sav
-heatSignature = 0.5  //sav
-imageSignature = 0.8  //sav
-radarSignature = 1.0  //sav
+aiName = "SAVFriend"
+aiName2 = "SAVEnemy"
+heatSignature = 0.5
+imageSignature = 0.8
+radarSignature = 1.0
+needpilot = 1  //so you can fly
+addpilot = 1  //the danged thing
 canSnipe = 0  //sav
 isAssault = 1  //bztc
 armorClass = H  //sav
 boxCollide = 1
 //collisionRadius = 1.0  //bzcc vehc
-//collisionName = "yvrcktcollide.fbx"
 
 /////// OBJECT LIMIT //////////////
-LimitClass1 = "yvrckt"
-LimitClass1Count = 6  //yvrckt
-LimitClass1Text = "Player limit reached."
+//LimitClass1 = "yvrckt"
+//LimitClass1Count = 6  //yvrckt
+//LimitClass1Text = "Player limit reached."
 
-TeamLimitClass1 = "yvrckt"
-TeamLimitClass1Count = 12
-TeamLimitClass1Text = "Teams limit reached."
+//TeamLimitClass1 = "yvrckt"
+//TeamLimitClass1Count = 12
+//TeamLimitClass1Text = "Teams limit reached."
 
 /////// REQUIREMENTS ///////////////
 requireCount = 1
@@ -75,10 +72,25 @@ weaponHard5 = "HP_SHIELD"
 weaponName5 = ""
 weaponAssault5 = 0
 
-//also available: hp_cannon_0-4, hp_gun_1-2, hp_rocket_1-2, hp_mortar_1-2, hp_special_1
+//weaponHard1 = "HP_CANNON_0" //central cannon  1, 2 on sides
+//weaponName1 = "gbolta_a"
+//weaponAssault1 = 1
+//weaponHard2 = "HP_Gun_1"
+//weaponName2 = "ghmrga_a"
+//weaponAssault2 = 1
+//weaponHard3 = "HP_Gun_2"
+//weaponName3 = "ghmrga_a"
+//weaponAssault3 = 1
+//weaponHard4 = "HP_ROCKET_tail"  //1-4 (across front), 0 (body center),  tail
+//weaponName4 = "gwaspa"
+//weaponAssault4 = 1
+//weaponHard5 = "HP_SHIELD"
+//weaponName5 = ""
+//weaponAssault5 = 0
+
+//also available: hp_cannon_0-2, hp_gun_1-2, hp_mortar_1-2, hp_special_1
 
 /////////LIGHTS AND EFFECTS//////////////////
-//light 1-14 avail
 lightHard1 = "hp_light_1"
 lightName1 = "hltred"
 lightHard2 = "hp_light_2"
@@ -87,6 +99,26 @@ lightHard3 = "hp_light_3"
 lightName3 = "hltred"
 lightHard4 = "hp_light_4"
 lightName4 = "hltred"
+//lightHard5 = "hp_light_5"
+//lightName5 = "omniwcy8"
+//lightHard6 = "hp_light_6"
+//lightName6  = "omniwcy8"
+//lightHard7 = "hp_light_7"
+//lightName7 = "omniwcy8"
+//lightHard8 = "hp_light_8"
+//lightName8 = "omniwcy8"
+//lightHard9 = "hp_light_9"
+//lightName9 = "omniwcy8"
+//lightHard10 = "hp_light_10"
+//lightName10 = "omniwcy8"
+//lightHard11 = "hp_light_11"
+//lightName11 = "omniwcy8"
+//lightHard12 = "hp_light_12"
+//lightName12 = "omniwcy8"
+//lightHard13 = "hp_light_13"
+//lightName13 = "omniwcy8"
+//lightHard14 = "hp_light_14"
+//lightName14 = "omniwcy8"
 LightsOnlyWhenPiloted = true
 
 effectHard1 = "hp_dust_1"
@@ -142,37 +174,43 @@ finishRadius = 0.1
 animateTime = 1.0
 rotationRate = 0.5
 
-//////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
 [CraftClass]
 rangeScan = 300.0  //rkt
 periodScan = 5.0
-velocJam = 5.0
+velocJam = 0.0
+DoIdleDispatch = false
 engageRange = 200.0  //rkt
-//RetargetOnStrafe = true  //tnk
-attackTask = "AssaultTankAttack"  //"MortarBikeAttack"  //mbike
-subattackTask = "SupportSubAttack"  //mbike
-subAttackClass = "ANS" //target:Air/grouNd attack:Deploy/Normal range:weaponS/eNgage 
-//attackTaskUsesGroups = false  //Coxxon
+canRescue = true
+canHunt = true
+RetargetOnStrafe = true
+FireWhenCanHitFriends = false
+WingmanProcessAttackMines = false
+NonWingmanProcessAttackMines = false
+ClosestEnemyGoodEyes = true // Furies can see behind them.
+
+avoidSpeed = 64 // 200
+topSpeed = 64 // 200
+
+PathingType = 0 // -1 = auto, 0 = Hover, 1 = Walker, 2 = Person, 3 = Tracked, 4 = Flyer
+subAttackClass = "ANN"	// include air units as attack targets only when deployed
+
+//attackTask = "SAVAttackVehicleTask"  //"MortarBikeAttack"  //"AssaultTankAttack"  //sav
+//subattackTask = "SAVAttackPersonTask"  //"MortarBikeSubAttack"  //"SupportSubAttack"  //sav
+//subAttackClass = "ANS" //target:Air/grouNd attack:Deploy/Normal range:weaponS/eNgage 
+
+attackTaskUsesGroups = false  //Coxxon
 GoToTaskHasLeader = false  //Coxxon
-canHunt = 1	// defaults to 0
+WeaponsConverge = false
+
+OffensiveProcessIsTenacious = false // Fixes dumb AI.
+OffensiveProcessIsDistractable = true // Fixes dumb AI.
+
 //NavIsDropped = true //drop behind - bugged, immed removes nav/camr in MP/MPI
 //NavDropSound = "gprox00.wav"  //sound if navisdropped true
+
 NavConfig = "apcamry" //specify nav beacon/camera type
 AllowedControlsWhenTugged = 31  //7dflt Sumup: 1hop 2bail 4wcycle 8steer 16weapuse
-braccelFactor = 0.03
-velFactor = 0.2
-steerFactor = 1.5
-omegaFactor = 0.2
-strafeFactor = 0.2
-//avoidSpeed = 20;
-//topSpeed = 25;
-//CockpitSniperRadius = 0.1  //sav
-
-//OffensiveProcessIsTenacious = false  //Coxxon  true
-//OffensiveProcessIsTenaciousAITeam = false  //Coxxon
-//DoBlastUsesFields = true  //false  //Coxxon
-//SitAttackAllowIndependence = true  //Coxxon  false
-//SitAttackAllowCounterattack = true  //Coxxon  false
 
 damageEffect1 = "dmgvhcl1"  //less stock dmg effect
 damageEffect2 = "dmgvhcl1"  //but still some sparks
@@ -181,19 +219,7 @@ damageEffect4 = "dmgvhcl1"  //on cloaked units
 
 /////////CRASH INTO COMPONENT PARTS/////////
 xplcrash = "xpl_crash_yvrcktcox"
-
-//chunkEffect1 = "yvrcktcoxchk01.fbx"  
-//chunkEffect2 = "yvrcktcoxchk02.fbx"
-//chunkEffect3 = "yvrcktcoxchk03.fbx"
-//chunkEffect4 = "yvrcktcoxchk04.fbx"
-//chunkEffect5 = "yvrcktcoxchk05.fbx"
-//HasSeparateChunks = true
-//numChunks = 5
-//numChunks1 = 1
-//numChunks2 = 1
-//numChunks3 = 1
-//numChunks4 = 1
-//numChunks5 = 1
+//chunkEffect1 = "yvrcktcoxchk01.fbx"  //chunkEffect2 = "yvrcktcoxchk02.fbx"//chunkEffect3 = "yvrcktcoxchk03.fbx"//chunkEffect4 = "yvrcktcoxchk04.fbx"//chunkEffect5 = "yvrcktcoxchk05.fbx"//HasSeparateChunks = true//numChunks = 5//numChunks1 = 1//numChunks2 = 1//numChunks3 = 1//numChunks4 = 1//numChunks5 = 1
 
 /////////MESSAGES/////////
 selectAttackMsg = "yvhrazvm.wav"  //they are shooting at me
@@ -223,28 +249,37 @@ CollideTerrainSound = "vnvcs1.wav"
 CollideBldgSound = "vnvcs3.wav"
 CollideOtherSound = "vvcre2.wav"  //"vvcbb3.wav"
 
-//////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
 [HoverCraftClass]
-//10ms = 22.37mph  29.055ms = 65mph
-velocForward = 40.0  //sav
+setAltitude = 15.0  //sav
+accelDragStop = 5.0
+alphaTrack = 20.0
+alphaDamp = 5.0
+pitchPitch = 0.6  //sav  //0.25
+pitchThrust = 0.1
+rollStrafe = 0.1
+rollSteer = 0.1
+velocForward = 50.0  //sav
 velocReverse = 20.0  //sav
 velocStrafe = 20.0  /sav
-accelThrust = 50.0  //sav
-accelDragStop = 10.0  //sav
-accelJump = 50.0  //sav
-setAltitude = 15.0  //sav
-alphaTrack = 20.0 //springs speed it rights itself 
-alphaDamp = 5.0 //shocks 
-pitchPitch = 0.25 //nose up 
-pitchThrust = 0.0 //sav nose down 
-rollStrafe = 0.02 //sav
-omegaSpin = 3.75 //spinning in place speed 
-omegaTurn = 2.75 //turning while moving speed 
-alphaSteer = 7.0 //how fast it responds to steering 
-rollSteer = 0.05 //sav
+accelThrust = 50.0
+omegaSpin = 2.0
+omegaTurn = 1.0
+alphaSteer = 7.0  //rkt
+accelJump = 400.0
 soundThrust = "avsavecox0.wav"  //lower vol ver - Coxxon  //"avsave0.wav"
-soundJump = "avsave5.wav"  //"yvturbocox01.wav"
-THRUST_VOLUME_BASE_USER = 0.5  //turn back was too loud Coxxon
 
-//soundDeploy = "avsave6.wav"
-//soundUndeploy = "avsave5.wav"
+coeffDrag = 0.008 //0.01
+BZ1Physics = true
+
+[DeployableClass]
+canAttackWhenDeployed = false // Can't launch SAVs while in the air.
+
+////////////////////////////////////////////////////////
+[SavClass]
+flightAltitude = 150.0
+timeDeploy = 20.0
+emptyAltitude = 0.0  //2.0 // default altitude above ground when empty
+soundDeploy = "avsave6.wav"
+soundUndeploy = "avsave5.wav"
+OverWater = true // true = flightAltitude is over water height, if present

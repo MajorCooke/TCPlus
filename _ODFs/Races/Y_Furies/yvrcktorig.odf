@@ -15,7 +15,7 @@ maxHealth = 8000  //sav
 addHealth = 10  //sav
 maxAmmo = 6000  //sav
 addAmmo = 20  //Coxxon  //10
-unitName = "Athos sav"  //"SAV rkt"
+unitName = "Athos SAV"  //"SAV rkt"
 //unitIcon = "icon_yvrckt.png"
 //unitStatus = "wire_yvrckt.png"
 //infoName = "yvrckt.inf"
@@ -33,13 +33,13 @@ boxCollide = 1
 //collisionRadius = 1.0  //bzcc vehc
 
 /////// OBJECT LIMIT //////////////
-LimitClass1 = "yvrckt"
-LimitClass1Count = 6  //yvrckt
-LimitClass1Text = "Player limit reached."
+//LimitClass1 = "yvrckt"
+//LimitClass1Count = 6  //yvrckt
+//LimitClass1Text = "Player limit reached."
 
-TeamLimitClass1 = "yvrckt"
-TeamLimitClass1Count = 12
-TeamLimitClass1Text = "Teams limit reached."
+//TeamLimitClass1 = "yvrckt"
+//TeamLimitClass1Count = 12
+//TeamLimitClass1Text = "Teams limit reached."
 
 /////// REQUIREMENTS ///////////////
 requireCount = 1
@@ -181,18 +181,37 @@ periodScan = 5.0
 velocJam = 0.0
 DoIdleDispatch = false
 engageRange = 200.0  //rkt
-canRescue = 1
-canHunt = 1
-//RetargetOnStrafe = true  //tnk
-attackTask = "SAVAttackVehicleTask"  //"MortarBikeAttack"  //"AssaultTankAttack"  //sav
-subattackTask = "SAVAttackPersonTask"  //"MortarBikeSubAttack"  //"SupportSubAttack"  //sav
-subAttackClass = "ANS" //target:Air/grouNd attack:Deploy/Normal range:weaponS/eNgage 
-//attackTaskUsesGroups = false  //Coxxon
+canRescue = true
+canHunt = true
+RetargetOnStrafe = true
+FireWhenCanHitFriends = false
+WingmanProcessAttackMines = false
+NonWingmanProcessAttackMines = false
+ClosestEnemyGoodEyes = true // Furies can see behind them.
+
+avoidSpeed = 64 // 200
+topSpeed = 64 // 200
+
+PathingType = 0 // -1 = auto, 0 = Hover, 1 = Walker, 2 = Person, 3 = Tracked, 4 = Flyer
+subAttackClass = "ANN"	// include air units as attack targets only when deployed
+
+//attackTask = "SAVAttackVehicleTask"  //"MortarBikeAttack"  //"AssaultTankAttack"  //sav
+//subattackTask = "SAVAttackPersonTask"  //"MortarBikeSubAttack"  //"SupportSubAttack"  //sav
+//subAttackClass = "ANS" //target:Air/grouNd attack:Deploy/Normal range:weaponS/eNgage 
+
+attackTaskUsesGroups = false  //Coxxon
 GoToTaskHasLeader = false  //Coxxon
+WeaponsConverge = false
+
+OffensiveProcessIsTenacious = false // Fixes dumb AI.
+OffensiveProcessIsDistractable = true // Fixes dumb AI.
+
 //NavIsDropped = true //drop behind - bugged, immed removes nav/camr in MP/MPI
 //NavDropSound = "gprox00.wav"  //sound if navisdropped true
+
 NavConfig = "apcamry" //specify nav beacon/camera type
 AllowedControlsWhenTugged = 31  //7dflt Sumup: 1hop 2bail 4wcycle 8steer 16weapuse
+
 damageEffect1 = "dmgvhcl1"  //less stock dmg effect
 damageEffect2 = "dmgvhcl1"  //but still some sparks
 damageEffect3 = "dmgvhcl1"  //also lower visibility
@@ -249,6 +268,9 @@ omegaTurn = 1.0
 alphaSteer = 7.0  //rkt
 accelJump = 400.0
 soundThrust = "avsavecox0.wav"  //lower vol ver - Coxxon  //"avsave0.wav"
+
+[DeployableClass]
+canAttackWhenDeployed = false // Can't launch SAVs while in the air.
 
 ////////////////////////////////////////////////////////
 [SavClass]
