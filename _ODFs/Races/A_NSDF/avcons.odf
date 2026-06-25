@@ -193,6 +193,7 @@ buildItem9 = "abshld"
 buildLabel = "Production Units"
 buildItem1 = "abfact"
 buildItem2 = "abarmo"
+buildItem3 = "avscavdeploy"
 
 ChromeEffect = 0  // 0 = line, 1 = chrome 
 ChromeTexture = "reflection3.tga"

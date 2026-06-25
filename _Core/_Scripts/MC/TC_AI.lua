@@ -18,14 +18,9 @@ TCC_BUILDING = 8;
 -- Primary storage
 local MaxTeams = 16;
 local M = {};	-- FUNCTION table (dont save)
-local Bombs =	
-{
-}
-
-local Teams =
-{
-
-};
+local Pools = {};
+local Bombs = {};
+local Teams = {};
 local CleanTime = 30.0;
 local CleanNext = 0.0;
 
@@ -90,6 +85,7 @@ end
 local function CleanUp()
 	CleanTeams();
 	Bombs = CleanTable(Bombs);
+	Pools = CleanTable(Pools);
 end
 
 function M.InitialSetup()
@@ -102,14 +98,15 @@ end
 
 local LoadGame = false;
 
-function M.Load(_Teams, _Bombs)
+function M.Load(_Teams, _Bombs, _Pools)
 	Teams = _Teams;
 	Bombs = _Bombs;
+	Pools = _Pools;
 end
 
 function M.Save()
 	CleanUp();
-	return Teams, Bombs;
+	return Teams, Bombs, Pools;
 end
 
 
@@ -128,6 +125,24 @@ function M.AddObject(h, replaced)
 		if (GetClassLabel(h) == "CLASS_DAYWRECKER") then
 			print("Day wrecker registered.");
 			Bombs[h] = h;
+		elseif (GetClassLabel(h) == "CLASS_DEPOSIT") then
+			Pools[h] = h;
+		elseif (IsODF(h,"avscavdeploy") or IsODF(h,"bvscavdeploy") or IsODF(h,"kvscavdeploy") or IsODF(h,"svscavdeploy")) then
+			if (not IsEmpty(Pools)) then
+				local dis = 96;
+				local dist = dis * dis;
+				for _, v in pairs(Pools) do
+					local pool = Pools[v];
+					if (pool ~= nil and IsAround(pool) and Distance2DSquared(GetPosition(h), GetPosition(pool)) <= dist) then
+						Goto(h, pool, 2);
+						M.AddEnt(h);
+						return;
+					end
+				end
+			end
+
+			SetCurHealth(h, 1);
+			Damage(h, 10000);
 		else
 			M.AddEnt(h);
 		end

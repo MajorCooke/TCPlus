@@ -1,4 +1,4 @@
--- Not to be confused with challenges. This is just a bunch of wrapper handles to allow for easier customization of the objectives idsplay.
+-- Not to be confused with challenges. This is just a bunch of wrapper handles to allow for easier customization of the objectives display.
 
 local M = {} 
 local N = 

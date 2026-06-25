@@ -63,38 +63,38 @@ local x = {
 	eatk2bcount = 0, 
 	labelcount = 0, 
 	quota = 300,
-	b1active = false,	b1stage = 0,	b1timer = 0,	
-	b2active = false,	b2stage = 0,	b2timer = 0,
+	b1active = false,	b1stage = 0,	b1quota = 100,	b1timer = 0,
+	b2active = false,	b2stage = 0,	b2quota = 10,	b2timer = 0,
 	LAST = true,
 }
 local GoalText =
 {
-	obj01 = "Enter a vehicle.\n\nBuild and escort a scavenger to the NAV.",
-	obj02 = "Collect 300 units of scrap.",
-	obj03a = "Escort your scavenger back to base immediately.",
-	obj03b = "Enemy reinforcements incoming!",
-	obj04 = "Assist the second scavenger to base.",
+	objVehicle = "Enter a vehicle.\n\nBuild and escort a scavenger to the NAV.",
+	objScrap = "Collect 300 units of scrap.",
+	objScav1 = "Escort your scavenger back to base immediately.",
+	objWarn = "Enemy reinforcements incoming!",
+	objScav2 = "Assist the second scavenger to base.",
 
-	hint01 = "Don't hesitate to build units to support the scavenger.",
+	hint01 = "They can protect your scavenger!",
 
-	bonus1a = "BONUS: Build up a powerful squadron without bailing/recycling any units.",
-	bonus1c = "Recycler's blue meter indicates progress.",
-	wonus1b = "The processors have discovered 5 units of Ancient Scrap in the rubble!",
+	bonusBuild1 = "BONUS: Build up a powerful squadron without bailing/recycling any units BEFORE meeting scrap quota.",
+	bonusBuild2 = "Recycler highlight indicates progress.",
+	fonusBuild = "A unit bailed or was recycled.",
+	wonusBuild = "The processors have discovered 5 units of Ancient Scrap in the rubble!",
 
-	bonus2a = "BONUS: ALERT! Incoming CCA attack waves! Fend them off for as long as you can.",
-	bonus2b = "Keep building units to protect your base, it's only going to get harder.",
-	bonus2c = "Bonus content won't prevent you from succeeding the mission.",
+	bonusDefendA = "BONUS: ALERT! Incoming CCA attack waves! Fend them off for as long as you can.",
+	bonusDefendB = "Construct more units to protect your base, it's only going to get harder.",
+	bonusDefendC = "Bonus content won't prevent you from succeeding the mission.",
+	fonusDefendDied = "You tried, but... you died.",
+	fonusDefendRecy = "They got your recycler.",
+	fonusDefendGeneral = "Better luck next time! You can try again by restarting the mission.",
+	wonusDefendA = "Amazing work!",
 
-	fonus1 = "You bailed out a unit, or recycled too many.",
-	fonus2 = "Couldn't hold out long enough against the waves.",
-	fonusf = "Better luck next time! You can try again by restarting the mission.",
+	failScav = "You lost the scavenger.",
+	failBase = "Your base was destroyed.",
+	failScrap = "You can't be trusted with a budget.",
 
-
-	fail01 = "You lost the scavenger.",
-	fail02 = "Your base was destroyed.",
-	fail03 = "You can't be trusted with a budget.",
-
-	win01 = ""
+	win01 = "All scavengers accounted for and safely within base."
 }
 --PATHS: pplayer, plndr, fprcy, fpscv1, fpscv2, area1, epatk1, epatk1b, epatk2, cam1, cam2, fpspwn1-5 not used, plogostart
 	
@@ -148,7 +148,30 @@ function AddObject(h)
 			x.gotfscv1 = true
 		end
 	end
-	TCC.AddObject(h)
+
+	-- For Build-A-Bundle Bonus 
+	if (GetTeamNum(h) == 1 and x.b1active and x.b1stage < x.b1quota) then
+			if (IsType(h, "avscout")) then	x.b1stage = x.b1stage + 1;	-- Scout
+		elseif (IsType(h, "avmine")) then	x.b1stage = x.b1stage + 1; 	-- Minelayer
+		elseif (IsType(h, "avmbike")) then	x.b1stage = x.b1stage + 2;	-- Light Tank
+		elseif (IsType(h, "avturr")) then	x.b1stage = x.b1stage + 2;	-- Turret
+		elseif (IsType(h, "avartl")) then	x.b1stage = x.b1stage + 3;	-- Howitzer
+		elseif (IsType(h, "avtank")) then 	x.b1stage = x.b1stage + 4;	-- Tank
+		elseif (IsType(h, "avmisl")) then	x.b1stage = x.b1stage + 5;	-- Rocket Tank
+		elseif (IsType(h, "avrckt")) then	x.b1stage = x.b1stage + 8;	-- Bomber
+		elseif (IsType(h, "avhtnk")) then	x.b1stage = x.b1stage + 10;	-- Heavy Tank
+		elseif (IsType(h, "avwalk")) then	x.b1stage = x.b1stage + 15; -- Walker
+		end
+		x.b1stage = ClampInt(x.b1stage, -1, 100);
+
+		-- Use the Recycler's ammo bar as a progress indicator.
+		if (IsAround(x.frcy) and IsAlive(x.frcy)) then
+			SetMaxAmmo(x.frcy, x.b1quota);
+			SetCurAmmo(x.frcy, x.b1stage);
+		end
+	end
+
+	TCC.AddObject(h);
 end
 
 function Start()
@@ -156,10 +179,21 @@ function Start()
 end
 
 function DeleteObject(h)
+	if (x.b1active and x.b1stage < x.b1quota and
+		not IsPlayer(h) and IsAround(x.player) and GetTeamNum(h) == GetTeamNum(x.player) and GetCurrentCommand(h) == CMD_RECYCLE) then
+		-- Any units recycling fails the bonus.
+		GiveBonus1Scrap();
+	end
 	TCC.DeleteObject(h);
 end
 
 function ObjectKilled(DeadObjectHandle, KillersHandle)
+	local h = DeadObjectHandle;
+	if (x.b1active and x.b1stage < x.b1quota and
+		not IsPlayer(h) and IsAround(x.player) and GetTeamNum(h) == GetTeamNum(x.player) and GetCurrentCommand(h) == CMD_BAILOUT) then
+		-- Any units bailing out fails the bonus.
+		GiveBonus1Scrap();
+	end
 	return TCC.ObjectKilled(DeadObjectHandle, KillersHandle);
 end
 
@@ -182,6 +216,54 @@ end
 function PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage)
 	return TCC.PreDamage(curWorld, h, DamageType, pContext, value, base, armor, shield, owner, source, SelfDamage, FriendlyFireDamage);
 end
+
+-- BONUS MISSION OBJECTIVE FUNCTIONS
+
+function SetBonus1Status(active, status, amount)
+
+	x.b1active = active;
+	if (status > 0) then
+		x.b1stage = x.b1quota;
+		x.b1active = false;
+	elseif (status < 0) then
+		x.b1stage = -1;
+		x.b1active = false;
+	else
+		x.b1stage = amount;
+		x.b1active = active;
+	end
+end
+
+function GiveBonus1Scrap()
+	if (not x.b1active) then return; end;
+	x.b1active = false;
+	local reward = math.floor(x.b1stage / (x.b1quota * 0.2));
+	local vec = GetPosition(x.player);
+	SetCurAmmo(x.player, GetMaxAmmo(x.player) / 2);
+	if (reward < 1) then 
+		AddObjective("Bonus Objective Failed.", "ORANGE");
+		BuildObject("ancientfail", 0, vec);
+		return; 
+	end;
+	
+	local earned = string.format("Ancestral Scrap earned: %d", reward);
+	local st = "Bonus Objective ";
+	if (x.b1stage < x.b1quota) then
+		st = st.."Incomplete.";
+	else
+		st = st.."Accomplished!";
+	end
+	AddObjective(st, Make_RGB(128, 128, 255));
+	AddObjective(earned, Make_RGB(128, 255, 128));
+	BuildObject("ancientscrap", 0, vec);
+	SetObjectiveName(x.frcy, "Outpost 3");
+end
+
+function CanBonus2Start()
+	return (x.b1stage >= x.b1quota);
+end
+
+-- MAIN MISSION FUNCTION
 
 function Update()
 	x.player = GetPlayerHandle() --EVERY PASS SO IF PLAYER CHANGES VEHICLES
@@ -255,7 +337,7 @@ function Update()
 	--GIVE PRIMARY MISSION OBJECTIVE
 	if x.spine == 4 and IsAudioMessageDone(x.audio1) then
 		ClearObjectives()
-		AddObjective(GoalText.obj01);
+		AddObjective(GoalText.objVehicle, "WHITE");
 		x.spine = x.spine + 1
 	end
 
@@ -272,34 +354,41 @@ function Update()
 	end
 
 	--HAS SCAVENGER ARRIVED AT SCRAP FIELD
-	if x.spine == 7 and IsAlive(x.fscv1) and GetDistance(x.fscv1, "area1") < 200 then
-		AudioMessageVol("tcss0103.wav", 0.5); --Un-ID vehc approach from SW
+	if (x.spine == 7 and IsAlive(x.fscv1) and GetDistance(x.fscv1, "area1") < 200) then
+		x.audio1 = AudioMessageVol("tcss0103.wav", 0.5); --Un-ID vehc approach from SW
 		x.eatk1allow = true
-		x.b1active = true;
-		x.b1timer = GetTime() + 45.0;
-		x.spine = x.spine + 1
+		x.b1timer = GetTime() + 8.0;
+		x.spine = 7.5;
 	end
 
 	-- BONUS: Spend scrap on offense/defense!
-	if (x.b1active) then
-		if (x.b1timer > -1) then
-			if (x.b1timer < GetTime()) then
-				x.b1timer = -1;
-				AudioMessage("bonusstart.ogg");
-				AddObjective("");
-				
-				AddObjective(GoalText.hint01, "BLUE");
-			end
-		end
+	if (x.spine == 7.5 and not x.b1active and IsAudioMessageDone(x.audio1)) then
+		SetBonus1Status(true, 0, 0);
+		AudioMessage("bonusstart.ogg");
+		AddObjective("");
+		AddObjective(GoalText.bonusBuild1, Make_RGB(64,64,255));
+		AddObjective(GoalText.bonusBuild2, "CYAN");
+		AddObjective(GoalText.hint01, "YELLOW");
+		x.spine = 8;
 	end
 
-	--CHECK IF SCRAP QUOTA HAS BEEN MET
+	if (x.spine >= 8 and x.b1active and x.b1stage >= x.b1quota) then
+		x.b1stage = x.b1quota;
+		GiveBonus1Scrap();
+	end
+
+	if (x.b1active) then
+		SetObjectiveName(x.frcy, ("Outpost 3 (Bonus: %d%%)"):format(x.b1stage));
+	end
+
+	--CHECK IF SCRAP QUOTA HAS BEEN MET (or is in mortal danger)
 	if x.spine == 8 and IsAlive(x.fscv1) and GetDistance(x.fscv1, x.frcy) > 300 then
-		if (IsAlive(x.fscv1) and (GetCurHealth(x.fscv1) <= (GetMaxHealth(x.fscv1) * 0.5)) and (GetScrap(1) > 40)) or (IsAlive(x.player) and GetCurHealth(x.player) <= (GetMaxHealth(x.player) * 0.3)) then
+		if (IsAlive(x.fscv1) and (GetCurHealth(x.fscv1) <= (GetMaxHealth(x.fscv1) * 0.5)) and (GetScrap(1) >= 40)) or (IsAlive(x.player) and GetCurHealth(x.player) <= (GetMaxHealth(x.player) * 0.3)) then
 			x.gohome = true
 		elseif GetScrap(1) >= x.quota then
 			x.gohome = true
 		end
+
 		if x.gohome then
 			x.audio1 = AudioMessageVol("tcss0104.wav", 0.5); --Cmd you hvy outnumber protect scv proceed outpost 3
 			Goto(x.fscv1, "fpscv1", 0)
@@ -307,16 +396,18 @@ function Update()
 				SetObjectiveOff(x.scrapnav)
 				RemoveObject(x.scrapnav)
 			end
+			GiveBonus1Scrap();
 			x.spine = x.spine + 1
 		end
 	end
 
-	--GIVE NEXT MISSION OBJECTIVE
+	--GIVE NEXT MISSION OBJECTIVE (escort scav home)
 	if x.spine == 9 and IsAudioMessageDone(x.audio1) then
-		ClearObjectives()
-		AddObjective("tcss0101.txt", "GREEN")
-		AddObjective("	")
-		AddObjective("tcss0102.txt") --YELLOW)
+		ClearObjectives();
+		AddObjective(GoalText.objVehicle, "GREEN");
+		AddObjective("");
+		AddObjective(GoalText.objScav1, "WHITE"); --YELLOW)
+		
 		x.spine = x.spine + 1
 	end
 
@@ -325,7 +416,7 @@ function Update()
 		SetCurHealth(x.fscv1, GetMaxHealth(x.fscv1))
 		SetObjectiveOff(x.fscv1)
 		x.audio1 = AudioMessageVol("tcss0105.wav", 0.5); --Unfort we have another scav that is threatened
-		x.fscv2 = BuildObject("avscavss1", 2, "fpscv2")--create x.fscv2 on team 2 and send to fpscv1
+		x.fscv2 = BuildObject("avscavss1", 2, "fpscv2"); --create x.fscv2 on team 2 and send to fpscv1
 		Goto(x.fscv2, "fpscv1")
 		x.fscv1safe = true
 		x.eatk1allow = false
@@ -336,9 +427,9 @@ function Update()
 	--GIVE NEXT MISSION OBJECTIVE
 	if x.spine == 11 and IsAudioMessageDone(x.audio1) then
 		ClearObjectives()
-		AddObjective("tcss0102.txt", "GREEN")
-		AddObjective("	")
-		AddObjective("tcss0103.txt", "YELLOW")
+		AddObjective(GoalText.objScav1, "GREEN");
+		AddObjective("");
+		AddObjective(GoalText.objWarn, "YELLOW");
 		SetObjectiveOn(x.fscv2)
 		SetObjectiveName(x.fscv2, "Rescue")
 		x.eatk2allow = true
@@ -352,21 +443,23 @@ function Update()
 	end
 
 	--BIG LOOP TO MAKE SURE 2ND SCAV MAKES IT HOME
-	if x.spine == 12 and IsAlive(x.fscv2) and GetDistance(x.fscv2, "fpscv1") < 100 then
+	if (x.spine == 12 and IsAlive(x.fscv2) and GetDistance(x.fscv2, "fpscv1") < 100) then
 		AddHealth(x.fscv2, 10000)
 		SetObjectiveOff(x.fscv2)
 		AudioMessageVol("tcss0106.wav", 0.5); --Vech of soviet orign bypase outpost 3 on to EN1
-		if (x.b1active and x.b1stage < 500) then --no secondary fight for you if you fail the first bonus
-			TCC.SucceedMission(GetTime() + 12.0, "tcss01w.des"); --WINNER WINNER WINNER
-		end
 		ClearObjectives()
-		AddObjective("tcss0103.txt", "GREEN")
-		AddObjective("	")
-		AddObjective("tcss0104.txt", "GREEN")
+		AddObjective("win01", "GREEN")
 		x.fscv2safe = true
 		x.eatk2allow = false
 		x.fscv2mca = false
-		x.spine = 666
+		x.spine = 13;
+		--[[
+		if (not CanBonus2Start()) then --no secondary fight for you if you fail the first bonus
+			TCC.SucceedMission(GetTime() + 12.0, "tcss01w.des"); --WINNER WINNER WINNER
+		end
+		]]
+		TCC.SucceedMission(GetTime() + 12.0, "tcss01w.des");
+		
 	end
 	----------END MAIN SPINE ----------
 

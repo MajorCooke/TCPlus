@@ -195,6 +195,7 @@ buildItem9 = "kbshld"
 buildLabel = "Production Units"
 buildItem1 = "kbfact"
 buildItem2 = "kbarmo"
+buildItem3 = "kvscavdeploy"
 
 ChromeEffect = 0  // 0 = line, 1 = chrome 
 ChromeTexture = "reflection3.tga"

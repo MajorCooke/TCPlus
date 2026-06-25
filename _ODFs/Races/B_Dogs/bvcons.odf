@@ -190,6 +190,7 @@ buildItem9 = "bbshld"
 buildLabel = "Production Units"
 buildItem1 = "bbfact"
 buildItem2 = "bbarmo"
+buildItem3 = "bvscavdeploy"
 
 ChromeEffect = 0  // 0 = line, 1 = chrome 
 ChromeTexture = "reflection3.tga"

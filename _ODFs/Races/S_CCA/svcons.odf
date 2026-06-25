@@ -189,6 +189,7 @@ buildItem9 = "sbshld"
 buildLabel = "Production Units"
 buildItem1 = "sbfact"
 buildItem2 = "sbarmo"
+buildItem3 = "svscavdeploy"
 
 ChromeEffect = 0  // 0 = line, 1 = chrome 
 ChromeTexture = "reflection3.tga"

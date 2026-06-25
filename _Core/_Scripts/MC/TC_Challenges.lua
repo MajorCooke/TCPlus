@@ -11,7 +11,6 @@ local N =
 --[[
 A typical challenge file will look like this:
 
-mission<number> -- mission number, prepends 0 if single digit
 m<mission number><name>:<amount> -- Name of the challenge, how much scrap's been earned
 
 I.e. Red Arrival's looks like this:
@@ -119,14 +118,18 @@ function M.GetBonusGoal(goal)
 end
 
 function M.Win(Amount)
-	M.SetBonusGoal("victory", Amount, false, true);
+	M.SetBonusGoal("victory", Amount);
 end
 
 -- Sets the bonus goal variable to the specified amount. Takes the RAW name without preformatting!
 -- By default it uses whatever is higher, set force to true to bypass this rule.
+---@param goal string Name of the goal.
+---@param amount number Ancient Scrap to award. Clamps to which is higher: how much they've earned so far, and what they will earn on mission success.
+---@param force boolean? False. If true, ignores clamping and resets the amount earned from this goal.
+---@param prefix boolean? True. DO NOT CHANGE. Adds the mission number behind the variable to ensure unique naming.
 function M.SetBonusGoal(goal, amount, force, prefix)
-	prefix = prefix or true;
-	force = force or false;
+	if (prefix == nil) then prefix = true; end;
+	if (force == nil) then force = false; end;
 	amount = amount or 0;
 
 	if (prefix) then
@@ -144,6 +147,10 @@ function M.SetBonusGoal(goal, amount, force, prefix)
 	else
 		IFace_CreateInteger(formatted, amount);
 		N.Goals[goal] = amount;
+	end
+
+	if (not force and amount > 0) then
+		StartSoundEffect("AncientScrap.ogg");
 	end
 	
 end

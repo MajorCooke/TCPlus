@@ -35,13 +35,19 @@ function M.Load(N)
 	print("Loading complete.");
 end
 
-function M.FailMission(Time, Debrief)
+function M.FailMission(Time, Debrief) --You get no rewards if you fail. Try again.
+	if (Time > 0.0) then
+		AddObjective("");
+		AddObjective("MISSION FAILED", "RED");
+	end;
 	FailMission(Time, Debrief);
 end
 
 -- This version writes out the information.
 function M.SucceedMission(Time, Debrief, Amount)
 	Amount = Amount or 1;
+	AddObjective("");
+	AddObjective("MISSION SUCCESSFUL", "GREEN");
 	Challenges.Win(Amount);
 	Challenges.WriteInfo(); -- Success, save the challenges out with their new values.
 	SucceedMission(Time, Debrief);

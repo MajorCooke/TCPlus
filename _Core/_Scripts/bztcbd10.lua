@@ -328,9 +328,11 @@ function Update()
 		x.player = GetPlayerHandle();
 
 		local newhp = GetMaxHealth(x.mytank) * 2;
+		local newam = GetMaxAmmo(x.mytank) * 2;
 		SetMaxHealth(x.mytank, newhp);
 		SetCurHealth(x.mytank, newhp);
-		SetMaxAmmo(x.mytank, GetMaxAmmo(x.mytank) * 2);
+		SetMaxAmmo(x.mytank, newam);
+		SetCurAmmo(x.mytank, newam);
 
 		for index = 1, 160 do
 			x.fnav[1] = BuildObject("npscrx", 0, "pscrap", index)

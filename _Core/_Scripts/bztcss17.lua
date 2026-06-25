@@ -181,12 +181,10 @@ function Start()
 	TCC.Start();
 end
 
-local replaced = false;
 function AddObject(h)
-	if (replaced) then replaced = false; return; end;
 	if (GetTeamNum(h) == 1) then
 		if (IsBuilding(h)) then
-			h, replaced = RepObject(h); -- [MC] Replace armories and factories
+			h = RepObject(h); -- [MC] Replace armories and factories
 		elseif (IsPlayer(h) or IsCraftButNotPerson(h)) then
 			ReplaceStabber(h);
 		end

@@ -12,7 +12,7 @@ If you borrow this code, please keep this comment intact. Thank you!
 local CLStore = {};
 
 -- Code by Nielk1, modified by me.
---- Is the object a the given classname or odf
+--- Is the object a child of the given classname or odf?
 --- @param h Handle|string Object or odf (no .odf extension)
 --- @param className string  name or odf (no .odf extension)
 function IsType(h, className)
@@ -58,6 +58,7 @@ function IsType(h, className)
     return false;
 end
 
+-- TO DO: Refactor this so skip = <val> doesn't need to be called before each replacement...
 local skip = false;
 -- Performs map-specific replacements for certain things.
 ---@param h Handle Object to attempt replacing with
