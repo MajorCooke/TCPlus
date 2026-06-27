@@ -10,11 +10,12 @@ local M = {};	-- FUNCTION table
 -- Put in all hooks first
 
 function M.Save()
-	local _Teams, _Bombs = AI.Save();
+	local _Teams, _Bombs, _Pools = AI.Save();
 	local N = 
 	{
 		Teams = _Teams,
 		Bombs = _Bombs,
+		Pools = _Pools,
 		Goals = Goals.Save(),
 		Upgrades = Upgrades.Save(),
 		Challenges = Challenges.Save(),
@@ -24,7 +25,7 @@ end
 
 function M.Load(N)
 	print("Loading AI...");
-	AI.Load(N.Teams, N.Bombs);
+	AI.Load(N.Teams, N.Bombs, N.Pools);
 --	AI.Load();
 	print("Loading Goals...");
 	Goals.Load(N.Goals);
